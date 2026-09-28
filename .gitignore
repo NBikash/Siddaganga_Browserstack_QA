@@ -1,0 +1,14 @@
+node_modules/
+.env
+logs/
+browserstack.err
+local.log
+log/
+*.apk
+*.aab
+# added by setup
+*.ipa
+android/evidence/*
+ios/evidence/*
+!android/evidence/.gitkeep
+!ios/evidence/.gitkeep

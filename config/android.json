@@ -1,0 +1,40 @@
+{
+  "platform": "android",
+  "executionApproach": "app-live",
+  "qaBuild": {
+    "source": "uploaded-apk",
+    "status": "available",
+    "description": "QA build uploaded to BrowserStack App Live (Uploaded Apps).",
+    "currentBuild": { "file": "app-release.apk", "packageId": "com.siddaganga", "version": "1.1" },
+    "appLiveUrlEnv": "ANDROID_APP_LIVE_URL",
+    "allowedExtensions": [".apk", ".aab"]
+  },
+  "productionRegression": {
+    "enabled": false,
+    "source": "google-play-store",
+    "note": "Future option only (App Live 'Install via Play Store'). Kept separate from QA-build testing; not implemented."
+  },
+  "defaultDevice": { "name": "Google Pixel 7", "osVersion": "13" },
+  "alternateDevices": [
+    { "name": "Samsung Galaxy S24", "osVersion": "14", "purpose": "Secondary OEM" },
+    { "name": "Google Pixel 9", "osVersion": "15", "purpose": "Latest Android" }
+  ],
+  "testCases": {
+    "inventoryCsv": "manual-exploration/test-cases/banni-test-cases.csv",
+    "inventoryXlsx": "manual-exploration/test-cases/banni-test-cases.xlsx",
+    "expectedCount": 299,
+    "inventorySha256": "771f13d4dd9ca84e182b3bbb3f0e53e311bdc3015729d297fb5eaa17087e8c80",
+    "baselineRecorded": "2026-09-28 (Session 01, 299 cases)",
+    "idPattern": "TC_<MODULE>_<NNN>",
+    "featureMap": "manual-exploration/feature-map.md",
+    "appInfo": "manual-exploration/app-info.md",
+    "sessionNotes": "manual-exploration/session-notes",
+    "note": "Baseline inventory stays in manual-exploration/ (do not move or duplicate). Changes only after explicit approval."
+  },
+  "paths": {
+    "results": "android/results",
+    "reports": "android/reports",
+    "evidence": "android/evidence"
+  },
+  "testAccountEnv": ["BANNI_QA_PHONE", "BANNI_QA_PASSWORD"]
+}

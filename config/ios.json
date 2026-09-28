@@ -1,0 +1,42 @@
+{
+  "platform": "ios",
+  "executionApproach": "app-live",
+  "qaBuild": {
+    "source": "uploaded-ipa",
+    "status": "awaiting-build",
+    "description": "QA build will be an .ipa uploaded to BrowserStack App Live once available. Until then iOS execution/exploration is blocked.",
+    "currentBuild": null,
+    "appLiveUrlEnv": "IOS_APP_LIVE_URL",
+    "allowedExtensions": [".ipa"]
+  },
+  "productionRegression": {
+    "enabled": false,
+    "source": "app-store",
+    "note": "Future option only (App Live 'Install via App Store'). Kept separate from QA-build testing; not implemented."
+  },
+  "otherDistribution": {
+    "status": "undecided",
+    "note": "TestFlight or other distribution is NOT approved. Do not assume or use it."
+  },
+  "defaultDevice": { "name": "iPhone 17 Pro", "osVersion": "26", "verified": "2026-09-28 App Live session launched (iOS 26.6)" },
+  "alternateDevices": [
+    { "name": "iPhone 15", "osVersion": "17", "purpose": "Older supported iOS" },
+    { "name": "iPhone SE 2022", "osVersion": "15", "purpose": "Small screen" }
+  ],
+  "testCases": {
+    "inventoryCsv": "ios/test-cases/banni-ios-test-cases.csv",
+    "inventoryXlsx": "ios/test-cases/banni-ios-test-cases.xlsx",
+    "expectedCount": null,
+    "idPattern": "TC_IOS_<MODULE>_<NNN>",
+    "featureMap": "ios/feature-map.md",
+    "appInfo": "ios/app-info.md",
+    "sessionNotes": "ios/session-notes",
+    "note": "Not created yet. Created by the 'Generate/review' or 'Explore' mode once an IPA is available; the Android inventory may be used as a reference, not copied blindly."
+  },
+  "paths": {
+    "results": "ios/results",
+    "reports": "ios/reports",
+    "evidence": "ios/evidence"
+  },
+  "testAccountEnv": ["BANNI_QA_PHONE", "BANNI_QA_PASSWORD"]
+}

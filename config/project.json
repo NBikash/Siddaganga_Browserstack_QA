@@ -1,0 +1,99 @@
+{
+  "project": "Siddaganga BrowserStack QA",
+  "app": {
+    "name": "Banni",
+    "brandName": "Siddaganga Travels",
+    "description": "Fleet/bus rental booking app (React Native)"
+  },
+  "executionApproach": {
+    "current": "app-live",
+    "notes": "Execution and exploration are driven by Claude Code through the Claude in Chrome extension on BrowserStack App Live. App Automate/Appium (wdio.conf.js) is kept but NOT required."
+  },
+  "prerequisites": {
+    "node": { "minimum": "18.20.0", "recommended": "20.0.0" },
+    "npm": { "minimum": "9.0.0" },
+    "git": { "required": false, "note": "Needed only to clone/push the repository." },
+    "manual": [
+      "Claude Code installed and opened in the project folder",
+      "Google Chrome with the Claude in Chrome extension connected to Claude Code",
+      "User logged in to BrowserStack (App Live access) in that Chrome profile"
+    ]
+  },
+  "env": {
+    "requiredForExecution": ["BANNI_QA_PHONE", "BANNI_QA_PASSWORD"],
+    "requiredForApiUpload": ["BROWSERSTACK_USERNAME", "BROWSERSTACK_ACCESS_KEY"],
+    "optional": ["ANDROID_APP_LIVE_URL", "IOS_APP_LIVE_URL", "BROWSERSTACK_APP"]
+  },
+  "requiredPaths": {
+    "files": [
+      "CLAUDE.md",
+      "SETUP.md",
+      "QA-RUN.md",
+      ".env.example",
+      ".claude/commands/qa-run.md",
+      "config/android.json",
+      "config/ios.json",
+      "testing/templates/results-template.csv",
+      "testing/templates/defect-draft-template.md",
+      "testing/templates/run-report-template.md"
+    ],
+    "dirs": [
+      "setup",
+      "scripts",
+      "config",
+      "testing/templates",
+      "reports",
+      "manual-exploration",
+      "manual-exploration/test-cases",
+      "manual-exploration/session-notes",
+      "android",
+      "android/results",
+      "android/reports",
+      "android/evidence",
+      "ios",
+      "ios/test-cases",
+      "ios/session-notes",
+      "ios/results",
+      "ios/reports",
+      "ios/evidence"
+    ]
+  },
+  "gitignoreRequired": [".env", "node_modules/", "*.apk", "*.aab", "*.ipa", "android/evidence/*", "ios/evidence/*"],
+  "moduleDependencies": {
+    "_note": "Flows that must run first when executing a single module (codes as in TC IDs).",
+    "LOGIN": [],
+    "FPWD": ["LOGIN"],
+    "REG": ["WEL"],
+    "HOME": ["LOGIN"],
+    "LOC": ["LOGIN", "HOME"],
+    "TRIP": ["LOGIN", "HOME", "LOC"],
+    "VLIST": ["LOGIN", "HOME", "LOC", "TRIP"],
+    "VDET": ["LOGIN", "HOME", "LOC", "TRIP", "VLIST"],
+    "CONF": ["LOGIN", "HOME", "LOC", "TRIP", "VLIST", "VDET"],
+    "BOOK": ["LOGIN"],
+    "INQ": ["LOGIN", "BOOK"],
+    "EXPL": ["LOGIN"],
+    "FILT": ["LOGIN", "EXPL"],
+    "CMP": ["LOGIN", "EXPL"],
+    "HELP": ["LOGIN"],
+    "ACC": ["LOGIN"],
+    "PROF": ["LOGIN", "ACC"],
+    "ASET": ["LOGIN", "ACC"],
+    "INV": ["LOGIN", "ACC"],
+    "RWD": ["LOGIN", "ACC"],
+    "NSET": ["LOGIN", "ACC"],
+    "PRIV": ["LOGIN", "ACC"],
+    "NAV": ["LOGIN"]
+  },
+  "requiresExplicitApproval": [
+    "Submitting a booking inquiry (Confirm)",
+    "Any payment (Pay Advance / Razorpay)",
+    "Cancel Trip",
+    "Logout / Logout From All Devices",
+    "Changing password or saving profile, notification or permission settings",
+    "Submitting support tickets or complaints",
+    "Creating accounts / registrations, requesting OTPs or password resets",
+    "Deleting apps or data on BrowserStack",
+    "Creating Jira tickets or any other external posting"
+  ]
+}
