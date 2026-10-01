@@ -31,19 +31,24 @@ Follow this order. Do not skip ahead to testing.
 ## Project map
 - `config/project.json` — prerequisites, env var names, required paths, module dependencies, approval list
 - `config/android.json`, `config/ios.json` — build source, devices, inventory paths, output paths
-- `manual-exploration/` — Android exploration baseline: `test-cases/banni-test-cases.csv|xlsx` (299 cases),
+- `manual-exploration/` — Android exploration baseline: `test-cases/banni-test-cases.csv|xlsx` (306 cases),
   `feature-map.md`, `app-info.md`, `session-notes/`. **Do not move, duplicate, or regenerate.**
 - `android/`, `ios/` — per-platform results, reports, evidence (and iOS test cases/session notes)
 - `testing/templates/` — results CSV, defect draft, run report templates
 - `setup/` — `doctor.mjs`, `bootstrap.mjs`, `setup.ps1`; `scripts/upload-app.js` — build upload
+- `scripts/qa-log.mjs` + `scripts/generate-report.mjs` — standard run log and HTML QA report for **every** execution
+  (`<platform>/reports/<run-id>/qa-report.html`; see QA-RUN.md → Reporting). Always give the report path at the end.
 
 ## Hard rules
+- **App Live stability:** before each major flow and whenever an App Live action/screenshot fails, run the
+  viewport probe `scripts/app-live-viewport-check.js` and follow QA-RUN.md §8 (recover first, never retry input into a
+  broken viewport, don't restart the session for a rendering glitch; unrecoverable → case `Blocked`, environment, not a bug).
 - **Credentials:** never hardcode, print, log, screenshot, or commit credentials, OTPs or access keys.
   `.env` stays git-ignored. The user enters the QA login on the device; Claude does not type passwords.
 - **Irreversible actions need explicit approval each time** (list in `config/project.json →
   requiresExplicitApproval`): booking/inquiry Confirm, payments, Cancel Trip, logout, saving settings,
   support tickets, registrations/OTP/password resets, deletions, Jira tickets.
-- **Test cases:** the Android 299-case inventory is the approved baseline. Add cases only for identified
+- **Test cases:** the Android 306-case inventory is the approved baseline. Add cases only for identified
   gaps, with new IDs continuing the `TC_<MODULE>_<NNN>` sequence, and only after the user approves the diff.
 - **Build sources:** QA builds = uploaded APK (Android) / uploaded IPA (iOS). Play Store / App Store are
   future production-regression sources only — never mix them into QA-build runs. TestFlight is undecided;

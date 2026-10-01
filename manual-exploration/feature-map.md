@@ -1,6 +1,6 @@
 # Feature Map & Coverage
 
-Filled in during exploration. Test-case counts come from `test-cases/banni-test-cases.csv` (299 total, Session 01).
+Filled in during exploration. Test-case counts come from `test-cases/banni-test-cases.csv` (306 total: 299 from Session 01 + 7 new Local Trip cases from run android-20260930-1058-LOCAL, 2026-09-30).
 
 ## Modules
 | Code | Module | Screens found | Explored | Test cases | Notes |
@@ -12,11 +12,11 @@ Filled in during exploration. Test-case counts come from `test-cases/banni-test-
 | LOGIN | Sign In | Sign In to Continue, Mobile, Email | ☑ | 25 | Personal / Corporate tabs |
 | FPWD | Forgot / Reset Password | Reset Password | ☑ | 11 | Email link / Mobile OTP |
 | REG | Registration | Create Your Role, Create Your Account | ☑ (to OTP) | 12 | OTP not exercised |
-| HOME | Home – Start Your Journey | Home, date/time sheets, multi-day calendar | ☑ | 42 | Local / Outstation / Transfer (P2P, By Hour) / Multi |
+| HOME | Home – Start Your Journey | Home, date/time sheets, multi-day calendar | ☑ | 44 | Local / Outstation / Transfer (P2P, By Hour) / Multi |
 | LOC | Location Picker | Pickup / Drop / Destination search | ☑ | 14 | Google Places autocomplete |
-| TRIP | Trip Summary & Vehicle Search | "Now you're ready to explore" sheet | ☑ | 7 | Vehicle Age Preference |
-| VLIST | Available Vehicles | Vehicle list | ☑ | 9 | Category/brand chips, Filters |
-| VDET | Vehicle Details & Fare Breakup | Vehicle Details | ☑ | 14 | Local/Outstation/Transfer breakup |
+| TRIP | Trip Summary & Vehicle Search | "Now you're ready to explore" sheet | ☑ | 9 | Vehicle Age Preference |
+| VLIST | Available Vehicles | Vehicle list | ☑ | 10 | Category/brand chips, Filters |
+| VDET | Vehicle Details & Fare Breakup | Vehicle Details | ☑ | 16 | Local/Outstation/Transfer breakup |
 | CONF | Confirm Trip & Inquiry Submission | Confirm Your Trip, Inquiry Submitted | ☑ | 10 | 1 inquiry submitted (approved) |
 | BOOK | Ride – My Bookings | My Bookings | ☑ | 10 | Today/Week/Month; Live/Upcoming/Completed/Inquired |
 | INQ | Inquiry Details & Payment | Inquiry Details | ☑ | 10 | Razorpay Pay Advance, Cancel Trip not executed |

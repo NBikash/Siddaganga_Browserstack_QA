@@ -22,9 +22,9 @@
   "testCases": {
     "inventoryCsv": "manual-exploration/test-cases/banni-test-cases.csv",
     "inventoryXlsx": "manual-exploration/test-cases/banni-test-cases.xlsx",
-    "expectedCount": 299,
-    "inventorySha256": "771f13d4dd9ca84e182b3bbb3f0e53e311bdc3015729d297fb5eaa17087e8c80",
-    "baselineRecorded": "2026-09-28 (Session 01, 299 cases)",
+    "expectedCount": 306,
+    "inventorySha256": "386836a8a9aa034a559aeb7324f2682cf729a02faf99c501c00ba07da84c9226",
+    "baselineRecorded": "2026-09-30 (Session 01: 299 cases + 7 new Local Trip cases from run android-20260930-1058-LOCAL, user-approved)",
     "idPattern": "TC_<MODULE>_<NNN>",
     "featureMap": "manual-exploration/feature-map.md",
     "appInfo": "manual-exploration/app-info.md",

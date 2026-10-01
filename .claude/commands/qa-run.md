@@ -36,7 +36,12 @@ output paths (run ID), and which irreversible actions are NOT approved (default:
 confirm or pre-approve specific irreversible actions for this run. Then proceed per `QA-RUN.md §3`.
 
 ## Always
+- App Live stability (QA-RUN.md §8): run `scripts/app-live-viewport-check.js` via `javascript_tool` before each major flow
+  and after any failed interaction/screenshot timeout; recover the viewport before sending more device input.
 - Never expose or store credentials; the user signs in on the device.
 - Never modify the approved inventory without showing the diff and getting approval.
 - Draft defects only; no Jira unless asked.
-- Finish with a short summary: what was done, where outputs were written, what is blocked and why.
+- Capture every execution in the run log (`scripts/qa-log.mjs`) and finish with `node scripts/qa-log.mjs finish --run <run-id>`
+  (`--partial "reason"` if stopped early) to produce the standard HTML QA report (QA-RUN.md → Reporting).
+- Finish with a short summary: what was done, the HTML report path (`<platform>/reports/<run-id>/qa-report.html`), other
+  outputs, and what is blocked / not executed and why.

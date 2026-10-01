@@ -1,0 +1,658 @@
+{
+  "runId": "android-20260929-0957-LOGIN-REG",
+  "platform": "android",
+  "scope": "Module: WEL (dependency), LOGIN, REG - Sign Up + Login",
+  "build": "app-release.apk v1.1 (com.siddaganga, uploaded APK)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-09-29T04:27:00Z",
+  "endedAt": "2026-09-29T07:14:00Z",
+  "credentials": [
+    {
+      "account": "QA One Time (personal) account - BANNI_QA_PHONE / BANNI_QA_PASSWORD in .env",
+      "method": "Mobile + password (Personal Login)",
+      "identifier": "+91 ******** (not shown)",
+      "enteredBy": "User on device (never typed or stored by Claude)",
+      "usedFor": "NOT YET USED - TC_LOGIN_002 / 014 / 006 / 017 / 018 and TC_REG_010 are pending"
+    },
+    {
+      "account": "Synthetic unregistered numbers (test data, not accounts)",
+      "method": "Mobile field input",
+      "identifier": "60000000xx, 98765432xx, 2129875433 (dummy)",
+      "enteredBy": "Claude",
+      "usedFor": "Field validation cases and TC_LOGIN_015 (unregistered login)"
+    },
+    {
+      "account": "Dummy password (non-secret test string)",
+      "method": "Password field input",
+      "identifier": "dummy value (not a real credential)",
+      "enteredBy": "Claude",
+      "usedFor": "TC_LOGIN_015, TC_LOGIN_016, TC_LOGIN_026, TC_LOGIN_027"
+    },
+    {
+      "account": "Email-login user / Corporate user",
+      "method": "Email + password; Corporate mobile/email",
+      "identifier": "none - no test account exists",
+      "enteredBy": "-",
+      "usedFor": "TC_LOGIN_003/004/005/020 Blocked"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-09-29T06:56:24.085Z",
+      "text": "User approved Logout when needed to return to the logged-out state (no 'Logout From All Devices')."
+    },
+    {
+      "at": "2026-09-29T06:56:24.211Z",
+      "text": "Sign-up: stop before OTP (no OTP sent, no account created). TC_LOGIN_018 lockout test to run last. Email/corporate positive logins Blocked (no test account)."
+    }
+  ],
+  "environmentNotes": [
+    "App Live instability: Chrome renderer froze repeatedly (Page.captureScreenshot timeouts), the page zoom/viewport changed on its own (once shrinking to 240x514 until the user reset zoom with Ctrl+0), and 3 Pixel 7 sessions ended (2 inactivity timeouts during freezes, 1 unexpected close). Each new session reinstalls the APK, so onboarding was skipped again.",
+    "App Live typing artefacts: fast desktop typing occasionally drops digits (re-typed and verified on screen); Shift is not transmitted (@ -> 2, # -> 3, ! -> 1, capitals -> lowercase), so symbols were entered with the device's on-screen keyboard.",
+    "Root cause of the renderer freezes found late in the run: the Chrome window hosting App Live was minimized (outer size 160x28, page visibility 'hidden'), so Chrome stopped painting the device stream; screenshots timed out and App Live closed sessions for inactivity. Keep that window un-minimized for the remaining cases.",
+    "Device API traffic is not visible from an App Live Live session (no device network log); API information in bug reports comes from on-screen messages and device Logcat (com.siddaganga, Warning level)."
+  ],
+  "cases": [
+    {
+      "id": "TC_WEL_001",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:27:30Z",
+      "endedAt": "2026-09-29T04:28:30Z",
+      "actual": "After onboarding Skip, 'Welcome to Siddaganga' shows Continue as Guest, Sign In and Create Account cards plus the Terms of Service / Privacy Policy footer.",
+      "evidence": [
+        "TC_WEL_001_1.png"
+      ]
+    },
+    {
+      "id": "TC_WEL_004",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:28:30Z",
+      "endedAt": "2026-09-29T04:31:00Z",
+      "actual": "Terms of Service opens siddagangatravels.com 'General Terms & Condition' and Privacy Policy opens 'Information We Collect' in external Chrome (not in-app). Returning to the app via Recents works. Observations: every tap opens a new Chrome tab; on the website the Privacy heading overflows on the right and the Terms body text is clipped on the left (website layout, not app).",
+      "evidence": [
+        "TC_WEL_004_1_terms.png",
+        "TC_WEL_004_2_privacy.png"
+      ],
+      "notes": "Documents open outside the app; no in-app close - user must use system Back/Recents."
+    },
+    {
+      "id": "TC_WEL_003",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:31:00Z",
+      "endedAt": "2026-09-29T04:31:20Z",
+      "actual": "Create Account opens the role selection screen ('Create Your Role')."
+    },
+    {
+      "id": "TC_REG_001",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:31:20Z",
+      "endedAt": "2026-09-29T04:31:40Z",
+      "actual": "One Time User (ticked by default) and Corporate User cards with descriptions, Continue and Back are shown. Title reads 'Create Your Role' (OBS-05). One Time User description is truncated mid-sentence: '...single or occasional trip with quick'.",
+      "evidence": [
+        "TC_REG_001_1.png"
+      ],
+      "bugs": [
+        "BUG-LR-003"
+      ]
+    },
+    {
+      "id": "TC_REG_003",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:31:40Z",
+      "endedAt": "2026-09-29T04:31:50Z",
+      "actual": "Full Name, Mobile Number (+91 flag prefix), Email Address (Optional) and Continue are shown. Required fields carry no '*' marker (UX observation).",
+      "evidence": [
+        "TC_REG_003_1.png"
+      ]
+    },
+    {
+      "id": "TC_REG_004",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:31:50Z",
+      "endedAt": "2026-09-29T04:32:00Z",
+      "actual": "Empty Continue shows 'Full name is required' and 'Please enter mobile number'; no navigation.",
+      "evidence": [
+        "TC_REG_004_1.png"
+      ]
+    },
+    {
+      "id": "TC_REG_005",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:32:00Z",
+      "endedAt": "2026-09-29T04:32:20Z",
+      "actual": "'12345' shows 'Please enter a valid 10-digit mobile number' inline while typing; numeric keypad opens."
+    },
+    {
+      "id": "TC_REG_013",
+      "isNew": true,
+      "module": "Registration",
+      "feature": "Create Your Account",
+      "scenario": "Sign-up mobile field limited to 10 digits",
+      "testType": "Boundary",
+      "priority": "Medium",
+      "preconditions": "On Create Your Account",
+      "steps": "1. Tap Mobile Number 2. Type 14 digits",
+      "testData": "98765432101234",
+      "expected": "Only the first 10 digits are accepted",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:32:20Z",
+      "endedAt": "2026-09-29T04:32:40Z",
+      "actual": "Field stops at 10 digits (9876543210); extra digits ignored; error clears for a valid number."
+    },
+    {
+      "id": "TC_REG_014",
+      "isNew": true,
+      "module": "Registration",
+      "feature": "Create Your Account",
+      "scenario": "Sign-up mobile field filters letters and symbols",
+      "testType": "Validation",
+      "priority": "Medium",
+      "preconditions": "On Create Your Account",
+      "steps": "1. Tap Mobile Number 2. Type letters and - . characters",
+      "testData": "ab-9.8",
+      "expected": "Letters and symbols are not accepted; only digits entered",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:32:40Z",
+      "endedAt": "2026-09-29T04:33:00Z",
+      "actual": "Letters, '-' and '.' were dropped; only digits remained. (App Live sends Shift+2/Shift+3 for @/# as digits 2/3 - tool artefact, not app behaviour.)"
+    },
+    {
+      "id": "TC_REG_015",
+      "isNew": true,
+      "module": "Registration",
+      "feature": "Create Your Account",
+      "scenario": "Sign-up mobile starting with 0-5 rejected",
+      "testType": "Validation",
+      "priority": "High",
+      "preconditions": "On Create Your Account",
+      "steps": "1. Enter 10 digits starting with 2",
+      "testData": "2129875433",
+      "expected": "Inline error 'Please enter a valid 10-digit mobile number'; Continue does not proceed",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:33:00Z",
+      "endedAt": "2026-09-29T04:34:00Z",
+      "actual": "10 digits starting with 2 show 'Please enter a valid 10-digit mobile number'; Continue stays on the form."
+    },
+    {
+      "id": "TC_REG_007",
+      "status": "Fail",
+      "startedAt": "2026-09-29T04:34:00Z",
+      "endedAt": "2026-09-29T04:36:30Z",
+      "actual": "Full Name '12345' and '@#$' are both accepted: no name error after Continue (only the mobile error shows). Confirms OBS-06.",
+      "evidence": [
+        "TC_REG_007_1_numeric-name.png",
+        "TC_REG_007_2_special-name.png"
+      ],
+      "bugs": [
+        "BUG-LR-001"
+      ]
+    },
+    {
+      "id": "TC_REG_006",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:36:30Z",
+      "endedAt": "2026-09-29T04:36:50Z",
+      "actual": "Email 'bad' shows 'Please enter a valid email address'."
+    },
+    {
+      "id": "TC_REG_008",
+      "status": "Fail",
+      "startedAt": "2026-09-29T04:36:50Z",
+      "endedAt": "2026-09-29T04:38:30Z",
+      "actual": "Min enforced: 'a' shows 'Full name must be at least 2 characters'; 'ab' accepted. Max NOT enforced: 110+ characters accepted with no error after Continue (expected max+1 = 101 rejected).",
+      "evidence": [
+        "TC_REG_008_1_no-max.png"
+      ],
+      "bugs": [
+        "BUG-LR-002"
+      ]
+    },
+    {
+      "id": "TC_REG_012",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:38:40Z",
+      "endedAt": "2026-09-29T04:46:30Z",
+      "actual": "Back from Create Your Account returns to role selection with the previous role still ticked (checked for One Time User and for Corporate User). The account form is cleared on re-entry.",
+      "notes": "Back must be tapped on the 'Back' label; earlier missed taps were caused by App Live viewport resizing (stale coordinates), not the app."
+    },
+    {
+      "id": "TC_REG_002",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:46:30Z",
+      "endedAt": "2026-09-29T04:47:20Z",
+      "actual": "Corporate User can be selected (tick moves) and Continue opens 'Create Your Account'. The corporate form is identical to the One Time form (Full Name, Mobile, optional Email) - no company/GST fields at this step.",
+      "evidence": [
+        "TC_REG_002_1_corporate-selected.png",
+        "TC_REG_002_2_corporate-form.png"
+      ]
+    },
+    {
+      "id": "TC_WEL_002",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:47:20Z",
+      "endedAt": "2026-09-29T04:47:40Z",
+      "actual": "Sign In card opens 'Sign In to Continue'."
+    },
+    {
+      "id": "TC_LOGIN_001",
+      "status": "Pass",
+      "startedAt": "2026-09-29T04:47:40Z",
+      "endedAt": "2026-09-29T04:48:00Z",
+      "actual": "Personal Login (selected by default) / Corporate Login toggle, Login with Mobile, Login with Email, Back and Terms/Privacy footer are shown.",
+      "evidence": [
+        "TC_LOGIN_001_1.png"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_007",
+      "status": "Pass",
+      "startedAt": "2026-09-29T05:17:00Z",
+      "endedAt": "2026-09-29T05:17:30Z",
+      "actual": "+91 with flag is a fixed prefix; tapping the field opens the numeric keypad; placeholder reads 'Enter 10-digit number'.",
+      "evidence": [
+        "TC_LOGIN_007_1.png"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_008",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:08:30Z",
+      "endedAt": "2026-09-29T06:09:10Z",
+      "actual": "Typing 9876543210123 leaves 9876543210 - only the first 10 digits are accepted."
+    },
+    {
+      "id": "TC_LOGIN_009",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:09:10Z",
+      "endedAt": "2026-09-29T06:10:30Z",
+      "actual": "Letters (ab) and keypad symbols (- . , space) are not accepted; only the digits '12' remain.",
+      "evidence": [
+        "TC_LOGIN_009_1.png"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_011",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:10:30Z",
+      "endedAt": "2026-09-29T06:18:30Z",
+      "actual": "9 digits (987654321): no error while typing; on moving focus to Password 'Please enter a valid 10-digit mobile number' is shown and Sign In stays disabled."
+    },
+    {
+      "id": "TC_LOGIN_026",
+      "isNew": true,
+      "module": "Sign In",
+      "feature": "Sign In button",
+      "scenario": "Sign In stays disabled when password is filled but mobile is invalid",
+      "testType": "Validation",
+      "priority": "Medium",
+      "preconditions": "Login with Mobile",
+      "steps": "1. Enter 9-digit mobile 2. Enter any password 3. Observe Sign In",
+      "testData": "987654321 / dummy password",
+      "expected": "Sign In remains disabled until the mobile number is valid",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:18:30Z",
+      "endedAt": "2026-09-29T06:19:10Z",
+      "actual": "With a 9-digit mobile and a password entered, Sign In remains disabled (greyed) and the mobile error stays visible.",
+      "evidence": [
+        "TC_LOGIN_016_1_password-plain-by-default.png"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_016",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:19:10Z",
+      "endedAt": "2026-09-29T06:36:00Z",
+      "actual": "Eye icon toggles the password between plain text and masked (dummy123 <-> ••••••••). However the field starts UNMASKED by default (see TC_LOGIN_027 / BUG-LR-004).",
+      "evidence": [
+        "TC_LOGIN_016_2_masked-after-toggle.png"
+      ],
+      "bugs": [
+        "BUG-LR-004"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_027",
+      "isNew": true,
+      "module": "Sign In",
+      "feature": "Password",
+      "scenario": "Password is masked by default when typed",
+      "testType": "Security",
+      "priority": "High",
+      "preconditions": "Login with Mobile (fresh screen, eye icon not touched)",
+      "steps": "1. Open Login with Mobile 2. Tap Password 3. Type any password without touching the eye icon",
+      "testData": "dummy password",
+      "expected": "Characters are masked (••••) by default; plain text only after tapping the eye icon",
+      "status": "Fail",
+      "startedAt": "2026-09-29T06:18:30Z",
+      "endedAt": "2026-09-29T06:44:00Z",
+      "actual": "Password is displayed in plain text by default ('dummy123') while the eye icon shows the struck-through (hidden) state; reproduced in 2 of 2 fresh sessions. Keyboard also shows a suggestion strip for the field.",
+      "evidence": [
+        "TC_LOGIN_016_1_password-plain-by-default.png",
+        "TC_LOGIN_027_1_plain-by-default-session3.png"
+      ],
+      "bugs": [
+        "BUG-LR-004"
+      ]
+    },
+    {
+      "id": "TC_LOGIN_012",
+      "status": "Pass",
+      "startedAt": "2026-09-29T06:36:00Z",
+      "endedAt": "2026-09-29T06:36:40Z",
+      "actual": "Correcting the mobile to a valid 10-digit number starting with 6 removes the error and enables Sign In (password filled)."
+    },
+    {
+      "id": "TC_LOGIN_015",
+      "status": "Fail",
+      "startedAt": "2026-09-29T06:36:40Z",
+      "endedAt": "2026-09-29T06:46:00Z",
+      "actual": "Unregistered 10-digit mobile (6000000011) + dummy password -> dialog 'Siddaganga Travels - User not found!'. The message reveals that the number is not registered (user enumeration); expected a generic 'invalid credentials' message. The numeric keyboard stays open behind the dialog.",
+      "evidence": [
+        "TC_LOGIN_015_1_user-not-found.png"
+      ],
+      "bugs": [
+        "BUG-LR-005"
+      ],
+      "notes": "First attempt in session 2 ended when the App Live session dropped; re-run in session 3."
+    },
+    {
+      "id": "TC_LOGIN_013",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Environment - BrowserStack App Live renderer",
+      "actual": "Blocked: BrowserStack App Live renderer/screenshot timeout. Valid mobile was entered with the password left empty, but the Chrome renderer froze (Page.captureScreenshot timeout) before the Sign In state could be observed, and the session then closed.",
+      "dependency": "Stable App Live session (Chrome window kept un-minimized)",
+      "startedAt": "2026-09-29T07:11:00Z",
+      "endedAt": "2026-09-29T07:13:00Z"
+    },
+    {
+      "id": "TC_LOGIN_010",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Environment - BrowserStack App Live renderer",
+      "actual": "Blocked: BrowserStack App Live renderer/screenshot timeout. 2129876543 was typed but the result could not be observed (renderer frozen; window minimized; session closed). Equivalent sign-up rule passed (TC_REG_015).",
+      "dependency": "Stable App Live session",
+      "startedAt": "2026-09-29T07:13:00Z",
+      "endedAt": "2026-09-29T07:14:00Z"
+    },
+    {
+      "id": "TC_LOGIN_002",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused after the App Live session ended and the Claude in Chrome extension disconnected.",
+      "dependency": "User types the QA mobile + password (BANNI_QA_PHONE / BANNI_QA_PASSWORD from .env) on the device",
+      "endedAt": "2026-09-29T15:01:44.522Z"
+    },
+    {
+      "id": "TC_LOGIN_014",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "User types the QA mobile on the device; Claude types a dummy wrong password",
+      "endedAt": "2026-09-29T15:01:44.533Z"
+    },
+    {
+      "id": "TC_LOGIN_006",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "QA (personal) credentials typed by the user under Corporate Login",
+      "endedAt": "2026-09-29T15:01:44.533Z"
+    },
+    {
+      "id": "TC_LOGIN_017",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "User types the QA password with leading/trailing spaces on the device",
+      "endedAt": "2026-09-29T15:01:44.533Z"
+    },
+    {
+      "id": "TC_LOGIN_018",
+      "status": "Not Executed",
+      "blockCategory": "Pending - scheduled last (lockout risk)",
+      "actual": "Pending: scheduled to run last (after TC_LOGIN_002) so a lockout cannot block other cases.",
+      "dependency": "QA mobile typed by the user; 5+ dummy wrong passwords; runs after TC_LOGIN_002",
+      "endedAt": "2026-09-29T15:01:44.533Z"
+    },
+    {
+      "id": "TC_LOGIN_019",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "Stable App Live session",
+      "endedAt": "2026-09-29T15:01:44.533Z"
+    },
+    {
+      "id": "TC_LOGIN_021",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "Stable App Live session",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_022",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "Stable App Live session",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_023",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "Stable App Live session (opening Reset Password only - no reset submitted)",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_024",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "App Live 'Throttle Network' offline profile",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_025",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "Stable App Live session",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_REG_010",
+      "status": "Not Executed",
+      "blockCategory": "Pending - execution paused",
+      "actual": "Pending: execution paused.",
+      "dependency": "User types the QA mobile on Create Your Account; confirm with user before Continue in case the app sends an OTP to an existing number",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_003",
+      "status": "Blocked",
+      "blockCategory": "Test data - no test account",
+      "actual": "Blocked: no email-login test account exists (inventory: 'Valid email user').",
+      "dependency": "Registered personal user with an email + password, stored in .env",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_004",
+      "status": "Blocked",
+      "blockCategory": "Test data - no test account",
+      "actual": "Blocked: no corporate test account ('Corporate test account (TBD)').",
+      "dependency": "Corporate test account (mobile + password)",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_005",
+      "status": "Blocked",
+      "blockCategory": "Test data - no test account",
+      "actual": "Blocked: no corporate test account ('Corporate test account (TBD)').",
+      "dependency": "Corporate test account (email + password)",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_LOGIN_020",
+      "status": "Blocked",
+      "blockCategory": "Test data - no test account",
+      "actual": "Blocked: needs a registered email user (same dependency as TC_LOGIN_003).",
+      "dependency": "Registered email-login test account",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_REG_009",
+      "status": "Not Executed",
+      "blockCategory": "Approval required - OTP / account creation",
+      "actual": "Not Executed (approval required): completing sign-up sends a real OTP and creates an account; user chose 'stop before OTP'. Form validation leading up to Continue was covered by TC_REG_003-008 and TC_REG_013-015.",
+      "dependency": "User approval + an unregistered mobile the user controls; user enters the OTP",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    },
+    {
+      "id": "TC_REG_011",
+      "status": "Not Executed",
+      "blockCategory": "Approval required - OTP / account creation",
+      "actual": "Not Executed (approval required): corporate registration completes only after OTP. Observed up to the form: corporate form has the same fields as One Time (no company/GST fields at step 1).",
+      "dependency": "User approval + unregistered mobile the user controls; business rule for corporate approval",
+      "endedAt": "2026-09-29T15:01:44.534Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-LR-001",
+      "title": "Sign-up Full Name accepts numbers-only and symbols-only names",
+      "module": "Registration - Create Your Account",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New (draft)",
+      "tcIds": [
+        "TC_REG_007"
+      ],
+      "reproducibility": "Always (2 of 2 inputs)",
+      "preconditions": "Fresh install, onboarding skipped, logged out. Welcome > Create Account > One Time User > Continue.",
+      "steps": [
+        "Tap Full Name and enter '12345'",
+        "Leave Mobile Number invalid (e.g. 9 digits) so no OTP can be sent",
+        "Tap Continue and observe the Full Name field",
+        "Repeat with '@#$' (entered via the device's on-screen symbol keys)"
+      ],
+      "expected": "A name validation error is shown (e.g. 'Please enter a valid name'); only letters, spaces and common name characters are accepted.",
+      "actual": "No error is shown for '12345' or '@#$' - only the mobile error appears. The name is treated as valid (confirms Session 01 observation OBS-06).",
+      "errorInfo": "Client-side validation only; no API call is made because Continue stays on the form while the mobile is invalid. No Logcat error.",
+      "evidence": [
+        "TC_REG_007_1_numeric-name.png",
+        "TC_REG_007_2_special-name.png"
+      ],
+      "notes": "Suspected area: Full Name validator on Create Your Account checks only required + min length (2)."
+    },
+    {
+      "id": "BUG-LR-002",
+      "title": "Sign-up Full Name has no maximum length",
+      "module": "Registration - Create Your Account",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New (draft)",
+      "tcIds": [
+        "TC_REG_008"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "On Create Your Account (One Time User).",
+      "steps": [
+        "Tap Full Name",
+        "Type a 110-character name (e.g. 'ab' followed by the alphabet repeated)",
+        "Tap Continue with the mobile left invalid"
+      ],
+      "expected": "Input is limited to the spec maximum (inventory implies 100; max+1 = 101 rejected) or a length error is shown.",
+      "actual": "All 110+ characters are accepted, the text scrolls inside the field and no error is shown after Continue. Minimum length works ('a' -> 'Full name must be at least 2 characters').",
+      "errorInfo": "Client-side only; no API call. Backend limit unknown - an over-long name may be rejected or truncated server-side at account creation (not reached: OTP step not executed).",
+      "evidence": [
+        "TC_REG_008_1_no-max.png"
+      ],
+      "notes": "Confirm the intended maximum with product; add maxLength to the TextInput and a matching validation message."
+    },
+    {
+      "id": "BUG-LR-003",
+      "title": "One Time User role description is cut off mid-sentence",
+      "module": "Registration - Role selection",
+      "severity": "Low",
+      "priority": "P4",
+      "status": "New (draft)",
+      "tcIds": [
+        "TC_REG_001"
+      ],
+      "reproducibility": "Always (Pixel 7 / Android 13)",
+      "preconditions": "Welcome > Create Account.",
+      "steps": [
+        "Observe the One Time User card on 'Create Your Role'"
+      ],
+      "expected": "The full description is visible (wrapped over more lines or ellipsised at a word boundary with the complete text available).",
+      "actual": "The text ends abruptly: 'An individual booking vehicles for a single or occasional trip with quick' - the rest of the sentence is clipped.",
+      "errorInfo": "UI layout only; no errors in Logcat.",
+      "evidence": [
+        "TC_REG_001_1.png"
+      ],
+      "notes": "Likely numberOfLines=2 on the description Text. Title wording 'Create Your Role' is tracked separately as OBS-05."
+    },
+    {
+      "id": "BUG-LR-004",
+      "title": "Login password field shows the password in plain text by default",
+      "module": "Sign In - Login with Mobile",
+      "severity": "High",
+      "priority": "P1",
+      "status": "New (draft)",
+      "tcIds": [
+        "TC_LOGIN_027",
+        "TC_LOGIN_016"
+      ],
+      "reproducibility": "Always (2 of 2 fresh App Live sessions)",
+      "preconditions": "Fresh install, onboarding skipped, logged out. Welcome > Sign In > Personal Login > Login with Mobile. Do not touch the eye icon.",
+      "steps": [
+        "Tap the Password field",
+        "Type any password (a dummy value was used)",
+        "Observe the field without tapping the eye icon",
+        "Tap the eye icon once, then observe again"
+      ],
+      "expected": "Password characters are masked (••••) by default and shown only after the user taps the eye icon; the keyboard should not offer suggestions for the password field.",
+      "actual": "The password is displayed in clear text by default ('dummy123') while the eye icon shows the struck-through state. Tapping the eye once masks it; the toggle itself works. Shoulder-surfing / screen-recording exposure of credentials.",
+      "errorInfo": "UI state bug; no API involved. Suspected: secureTextEntry initial state inverted (e.g. useState(false) paired with an icon that assumes hidden). Keyboard shows a suggestion strip on the field.",
+      "evidence": [
+        "TC_LOGIN_016_1_password-plain-by-default.png",
+        "TC_LOGIN_027_1_plain-by-default-session3.png",
+        "TC_LOGIN_016_2_masked-after-toggle.png"
+      ],
+      "notes": "Check the Email login and Reset/Create Password screens for the same component."
+    },
+    {
+      "id": "BUG-LR-005",
+      "title": "Login reveals whether a mobile number is registered ('User not found!')",
+      "module": "Sign In - Login with Mobile",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New (draft)",
+      "tcIds": [
+        "TC_LOGIN_015"
+      ],
+      "reproducibility": "Always (1 of 1)",
+      "preconditions": "Login with Mobile; a 10-digit number that is not registered.",
+      "steps": [
+        "Enter an unregistered 10-digit mobile (6000000011 was used)",
+        "Enter any password",
+        "Tap Sign In"
+      ],
+      "expected": "A generic message such as 'Invalid mobile number or password' that does not reveal whether the account exists (no user enumeration).",
+      "actual": "An alert 'Siddaganga Travels - User not found!' is shown, confirming the number is not registered. Combined with a different message for a wrong password, this lets an attacker enumerate registered customers' phone numbers. The numeric keyboard also remains open behind the alert.",
+      "errorInfo": "Message originates from the login API response (shown verbatim in a native Alert). Device Logcat (Warning level, com.siddaganga) showed no error around 06:45 UTC. API request/response not capturable from App Live Live sessions (no network log for the device).",
+      "evidence": [
+        "TC_LOGIN_015_1_user-not-found.png"
+      ],
+      "notes": "Fix server-side: return one generic error for unknown user and wrong password; add rate limiting (see TC_LOGIN_018, pending)."
+    }
+  ],
+  "partial": true,
+  "partialReason": "Execution paused after the 5th App Live session ended and the Claude in Chrome extension disconnected; 20 cases remain (see section 8). The run can be resumed with the same run ID."
+}
