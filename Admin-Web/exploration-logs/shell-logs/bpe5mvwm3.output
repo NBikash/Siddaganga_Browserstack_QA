@@ -1,0 +1,79 @@
+/dashboard/user-management :: User Management -> /dashboard/user-management
+/dashboard/user-management :: Role Management -> /dashboard/user-management H[All Roles]
+/dashboard/user-management :: Deleted Users -> unsafe-word
+/dashboard/employee-management :: Total Employees -> /dashboard/employee-management
+/dashboard/employee-management :: All Drivers and Helpers Count -> /dashboard/employee-management
+/dashboard/employee-management :: Client Request Portal -> /dashboard/employee-management
+/dashboard/employee-management :: Incentive Programs -> /dashboard/employee-management
+/dashboard/employee-management :: Sales Incentive Programs -> /dashboard/employee-management
+/dashboard/employee-management :: Employee Onboarding -> /dashboard/employee-management
+/dashboard/employee-management :: Employee Tracker -> /dashboard/employee-management
+/dashboard/employee-management :: View All Employees -> /dashboard/employee-management/totalemployees H[Retention Rate | 100]
+/dashboard/employee-management :: Operations Roster -> /dashboard/employee-management H[Operations Roster | Employees Scheduled Today | 5 | Coverage % vs Required | Shortage | Shift Roster(Employee scheduling)]
+/dashboard/employee-management :: Client Request -> /dashboard/employee-management H[Client Request | Total Bookings | Open Requests | High Priority | Completion Rate | Booking Requests]
+/dashboard/employee-management :: HR Overview -> /dashboard/employee-management H[HR Overview | 0.00 | Retention Rate | 100 | Complaints | Onboarding Progress | Headcount by Department | Diversity Count Snapshot]
+/dashboard/fleet-vehicle-management :: Total Buses / Active -> /dashboard/fleet-vehicle-management
+/dashboard/fleet-vehicle-management :: Approved & Track Live Trips -> unsafe-word
+/dashboard/fleet-vehicle-management :: Vehicle Allocation Portal -> /dashboard/fleet-vehicle-management
+/dashboard/fleet-vehicle-management :: Tarrif Management -> /dashboard/fleet-vehicle-management/tarrifs H[Tariff Management | Local]
+/dashboard/booking-management/total-booking :: Total Bookings -> /dashboard/booking-management/total-booking
+/dashboard/booking-management/total-booking :: Live Trips -> /dashboard/booking-management/total-booking
+/dashboard/booking-management/total-booking :: Upcoming Trips -> /dashboard/booking-management/total-booking
+/dashboard/booking-management/total-booking :: Pending Vehicle Allocations -> /dashboard/booking-management/pending-allocation H[Allocation Portal]
+/dashboard/booking-management/total-booking :: Pre-Bookings -> /dashboard/booking-management/total-booking
+/dashboard/booking-management/total-booking :: Booked -> /dashboard/booking-management/total-booking H[Booked]
+/dashboard/booking-management/total-booking :: Completed -> /dashboard/booking-management/total-booking H[Completed]
+/dashboard/inquiry-management/total-inquiries :: Total Inquiries -> /dashboard/inquiry-management/total-inquiries
+/dashboard/inquiry-management/total-inquiries :: Conversion Rate -> /dashboard/inquiry-management/total-inquiries
+/dashboard/inquiry-management/total-inquiries :: Pending Approvals -> /dashboard/inquiry-management/total-inquiries
+/dashboard/inquiry-management/total-inquiries :: Total Quote Value -> /dashboard/inquiry-management/total-inquiries
+/dashboard/client-management/regular-clients :: All Bookings -> /dashboard/client-management/regular-clients?tab=allBookings
+/dashboard/client-management/regular-clients :: Invoice & Payment -> /dashboard/client-management/regular-clients?tab=invoiceAndPayment
+/dashboard/client-management/regular-clients :: Customer Requests -> /dashboard/client-management/regular-clients?tab=customerRequests
+/dashboard/client-management/regular-clients :: Regular Customers -> /dashboard/client-management/regular-clients
+/dashboard/client-management/regular-clients :: Contracted Client -> /dashboard/client-management/contracted-clients H[User Management | 48 | Invoice Management | 22 | Client Requests | 14 | New Clients/Onboard | 8 | All Clients]
+/dashboard/client-management/regular-clients :: International Client -> /dashboard/client-management/international-clients H[0 | 0 | 0]
+/dashboard/client-management/regular-clients :: All Customers -> /dashboard/client-management/regular-clients
+/dashboard/client-management/regular-clients :: Active Customers -> /dashboard/client-management/regular-clients H[Active Customers]
+/dashboard/client-management/contracted-clients :: User Management -> /dashboard/client-management/contracted-clients?tab=userManagement
+/dashboard/client-management/contracted-clients :: Invoice Management -> /dashboard/client-management/contracted-clients?tab=invoiceManagement H[Invoice & Payment]
+/dashboard/client-management/contracted-clients :: Client Requests -> /dashboard/client-management/contracted-clients?tab=clientRequests
+/dashboard/client-management/contracted-clients :: New Clients/Onboard -> /dashboard/client-management/contracted-clients?tab=clientOnboard
+/dashboard/vendor-management/vendors :: All Vendors -> /dashboard/vendor-management/vendors
+/dashboard/vendor-management/vendors :: Manage Vendor Requests -> /dashboard/vendor-management/vendors
+/dashboard/vendor-management/vendors :: Vehicles Onboarded -> /dashboard/vendor-management/vendors
+/dashboard/vendor-management/vendors :: Products Linked -> /dashboard/vendor-management/vendors
+/dashboard/service-maintenance/service-requests :: Service Requests -> /dashboard/service-maintenance/service-requests
+/dashboard/service-maintenance/service-requests :: All Service and Maintenance -> /dashboard/service-maintenance/all-service-and-maintenance H[All Scheduled Requests]
+/dashboard/service-maintenance/service-requests :: Job Tracker -> /dashboard/service-maintenance/service-requests
+/dashboard/service-maintenance/service-requests :: Cost Analytics -> /dashboard/service-maintenance/service-requests
+/dashboard/service-maintenance/service-requests :: All Requests -> /dashboard/service-maintenance/service-requests
+/dashboard/service-maintenance/service-requests :: Under Review -> /dashboard/service-maintenance/service-requests H[Under Review Requests]
+/dashboard/service-maintenance/service-requests :: Parts Request -> /dashboard/service-maintenance/service-requests H[All Parts Requests]
+/dashboard/service-maintenance/service-requests :: Approved Requests -> unsafe-word
+/dashboard/service-maintenance/service-requests :: Rejected Requests -> unsafe-word
+/dashboard/service-maintenance/manage-service-type :: All Service Type -> /dashboard/service-maintenance/manage-service-type
+/dashboard/service-maintenance/manage-service-type :: Pre-Departure Checklist -> /dashboard/service-maintenance/manage-service-type H[Pre-Departure Checklist]
+/dashboard/service-maintenance/manage-service-type :: Post-arrival Checklist -> /dashboard/service-maintenance/manage-service-type H[Post-arrival Checklist]
+/dashboard/financial-management :: Dashboard -> /dashboard/financial-management
+/dashboard/financial-management :: Masters -> /dashboard/financial-management
+/dashboard/financial-management :: Income -> /dashboard/financial-management
+/dashboard/financial-management :: Expenses -> /dashboard/financial-management
+/dashboard/financial-management :: Receivables -> /dashboard/financial-management H[Corporate Client Ledger]
+/dashboard/financial-management :: Payables -> /dashboard/financial-management
+/dashboard/financial-management :: Banking -> /dashboard/financial-management
+/dashboard/financial-management :: Assets -> /dashboard/financial-management
+/dashboard/financial-management :: Compliance -> /dashboard/financial-management
+/dashboard/financial-management :: Profitability -> /dashboard/financial-management
+/dashboard/financial-management :: Reports -> /dashboard/financial-management H[12 | 45 | 02 | 05]
+/dashboard/financial-management :: More -> /dashboard/financial-management H[₹1,60,10,452.537 | ₹16,66,268.21 | ₹1,43,44,184.327]
+/dashboard/inventory-management/dashboard :: Dashboard -> /dashboard/inventory-management/dashboard
+/dashboard/inventory-management/dashboard :: Manage Inventory -> /dashboard/inventory-management/dashboard
+/dashboard/inventory-management/dashboard :: Purchasing -> /dashboard/inventory-management/dashboard
+/dashboard/inventory-management/dashboard :: Settings -> /dashboard/inventory-management/dashboard
+/dashboard/inventory-management/dashboard :: Reports & Analytics -> /dashboard/inventory-management/dashboard H[Recent Reports]
+/dashboard/payment-management :: Penalty Slabs -> /dashboard/payment-management
+/dashboard/payment-management :: B2B Rebate Tiers -> /dashboard/payment-management
+/dashboard/payment-management :: B2C Rebate Tiers -> /dashboard/payment-management
+
+[exited with code 0]

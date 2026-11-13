@@ -1,0 +1,280 @@
+{
+  "id": "TC-04",
+  "started": "2026-11-12T08:31:15.769Z",
+  "steps": [
+    {
+      "label": "main",
+      "input": {
+        "label": "main",
+        "md": true,
+        "dd": true,
+        "pickup": "Jayanagar 4th Block",
+        "drop": "Mysuru Palace",
+        "mdDates": [
+          {
+            "next": 1,
+            "d": 5
+          },
+          {
+            "next": 1,
+            "d": 6
+          }
+        ],
+        "time": "3:00 PM",
+        "pax": 50,
+        "hrs": 8,
+        "vehicle": [
+          "L45V",
+          "L9UB"
+        ]
+      },
+      "pickupSuggest": {
+        "query": "Jayanagar 4th Block",
+        "suggestions": [
+          "4th Block, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block East, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block, Jayanagar, Bengaluru, Karnataka",
+          "4th Block East, Pattabhirama Nagar, Jayanagar Bengaluru, Karnataka, India",
+          "JAYANAGAR 4TH BLOCK KHADIM'S STAFF ROOM 3rd Cross Road, 5T Block, Marenahalli, DK Naik Nagar, Jayanagar, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "4th Block, Jayanagar, Bengaluru, Karnataka, India"
+      },
+      "dropSuggest": {
+        "query": "Mysuru Palace",
+        "suggestions": [
+          "Mysore Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace View Dasara Exhibition Road, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace parking entrance Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace Entrance Agrahara Circle, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace Hostel by Borrbo Mysore 9th Cross Road, Gokulam 3rd Stage, Gokulam, Mysuru, Karnataka, India"
+        ],
+        "chosen": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": true,
+        "differentDrop": true,
+        "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "date": "",
+        "time": "3:00 PM",
+        "selectedDates": "Selected Dates (3):",
+        "pax": "50",
+        "hours": "8"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-form-r2.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12 Nov, 2026 | 5,6 Dec, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:3 Days Passengers:50 Pax Drop Address:Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹36,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹37,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹43,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹15,000"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹25,800"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹18,300"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-results-summary-r2.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-results-vehicles-r2.png"
+        ]
+      },
+      "detailsAll": [
+        {
+          "vehicle": "L45V",
+          "onPage": 3,
+          "fareBreakup": {
+            "header": "View Vehicle Details | 45 Seater Luxury Volvo",
+            "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+            "tags": [
+              "Corporate",
+              "VIP",
+              "Long-Distance Travel"
+            ],
+            "package": "Local Trip – 8 Hrs / 80 Kms",
+            "baseRate": {
+              "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+              "value": "₹15,500"
+            },
+            "extraKm": {
+              "label": "Extra Km Charge",
+              "value": "₹70 / km"
+            },
+            "extraHour": {
+              "label": "Extra Hour Charge",
+              "value": "₹1,500 / hr"
+            },
+            "dayBata": {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹1,500"
+            },
+            "nightBata": {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹1,500"
+            },
+            "toll": {
+              "label": "Toll & Parking",
+              "value": "Actuals"
+            },
+            "gst": {
+              "label": "GST",
+              "value": "Additional"
+            },
+            "other": [],
+            "comfortRaw": [
+              "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+              "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+              "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})"
+            ]
+          },
+          "shots": [
+            "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-fare-breakup.png",
+            "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-vehicle-specs.png"
+          ]
+        },
+        {
+          "vehicle": "L9UB",
+          "onPage": 1,
+          "fareBreakup": {
+            "header": "View Vehicle Details | 9 Seater Luxury Urbania",
+            "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+            "tags": [
+              "Corporate",
+              "VIP",
+              "Long-Distance Travel"
+            ],
+            "package": "Local Trip – 8 Hrs / 80 Kms",
+            "baseRate": {
+              "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+              "value": "₹9,500"
+            },
+            "extraKm": {
+              "label": "Extra Km Charge",
+              "value": "₹70 / km"
+            },
+            "extraHour": {
+              "label": "Extra Hour Charge",
+              "value": "₹1,000 / hr"
+            },
+            "dayBata": {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹1,000"
+            },
+            "nightBata": {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹1,000"
+            },
+            "toll": {
+              "label": "Toll & Parking",
+              "value": "Actuals"
+            },
+            "gst": {
+              "label": "GST",
+              "value": "Additional"
+            },
+            "other": [],
+            "comfortRaw": [
+              "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+              "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+              "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+              "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})"
+            ]
+          },
+          "shots": [
+            "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L9UB-fare-breakup.png",
+            "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L9UB-vehicle-specs.png"
+          ]
+        }
+      ],
+      "details": {
+        "vehicle": "L45V",
+        "onPage": 3,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 45 Seater Luxury Volvo",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹15,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹70 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹1,500 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹1,500"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹1,500"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+            "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+            "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-vehicle-specs.png"
+        ]
+      },
+      "intermediate": [
+        {
+          "vehicle": "L45V",
+          "popup": "Passenger Capacity Not Complete! You need seats for 50 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry",
+          "buttons": [
+            "Cancel Inquiry"
+          ],
+          "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-after-select.png"
+        }
+      ],
+      "error": "TimeoutError: locator.innerText: Timeout 30000ms exceeded.",
+      "errorShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-error-r2.png"
+    }
+  ],
+  "finished": "2026-11-12T08:34:56.842Z"
+}

@@ -1,0 +1,306 @@
+{
+  "id": "TC-02",
+  "started": "2026-11-12T07:13:32.646Z",
+  "steps": [
+    {
+      "label": "pax13",
+      "input": {
+        "label": "pax13",
+        "md": true,
+        "pickup": "Malleshwaram",
+        "mdDates": [
+          {
+            "next": 0,
+            "d": 20
+          }
+        ],
+        "time": "1:30 PM",
+        "pax": 13,
+        "hrs": 24
+      },
+      "pickupSuggest": {
+        "query": "Malleshwaram",
+        "suggestions": [
+          "Malleshwaram Bengaluru, Karnataka, India",
+          "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Traffic Police Station 5th Cross Road, Near KCG Hospital, Malleshwaram, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": true,
+        "differentDrop": false,
+        "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "",
+        "time": "1:30 PM",
+        "selectedDates": "Selected Dates (2):",
+        "pax": "13",
+        "hours": "24"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax13-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Malleshwaram, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12,20 Nov, 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:2 Days Passengers:13 Pax Drop Address:Malleshwaram, Bengaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 24 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹22,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹23,000"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹27,000"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹9,000"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹15,600"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹10,600"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax13-results-summary.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax13-results-vehicles.png"
+        ]
+      }
+    },
+    {
+      "label": "pax12",
+      "input": {
+        "label": "pax12",
+        "md": true,
+        "pickup": "Malleshwaram",
+        "mdDates": [
+          {
+            "next": 0,
+            "d": 20
+          }
+        ],
+        "time": "1:30 PM",
+        "pax": 12,
+        "hrs": 24,
+        "vehicle": "D12TT"
+      },
+      "pickupSuggest": {
+        "query": "Malleshwaram",
+        "suggestions": [
+          "Malleshwaram Bengaluru, Karnataka, India",
+          "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Traffic Police Station 5th Cross Road, Near KCG Hospital, Malleshwaram, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": true,
+        "differentDrop": false,
+        "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "",
+        "time": "1:30 PM",
+        "selectedDates": "Selected Dates (2):",
+        "pax": "12",
+        "hours": "24"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Malleshwaram, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12,20 Nov, 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:2 Days Passengers:12 Pax Drop Address:Malleshwaram, Bengaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 24 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹22,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹23,000"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹27,000"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹9,000"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹15,600"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹10,600"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-results-summary.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 1,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 12 Seater Tempo Traveller",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹4,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹25 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹500 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹800"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹800"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+            "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+            "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+            "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : 12 Seater Tempo Traveller – 1",
+          "dates": "12,20 Nov, 2026",
+          "passenger": "12",
+          "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹9,000"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹1,600"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹0"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹10,600"
+            }
+          ],
+          "buttons": [
+            "500 m Click to toggle between metric and imperial units",
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "P",
+            "G",
+            "Keyboard shortcuts",
+            "Map data ©2026 Google",
+            "Terms",
+            "Report a map error",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : 12 Seater Tempo Traveller – 1",
+            "12 Seater Tempo Traveller",
+            "12 Seater",
+            "Type: 12 Seater Tempo Traveller",
+            "Luggage: Rear Luggage Space (1–2 m³)",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Malleshwaram, Bengaluru, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "12,20 Nov, 2026",
+            "Passenger",
+            "12",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹9,000",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹1,600",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0",
+            "Estimated Grand Total",
+            "₹10,600",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-02-pax12-applied-fare.png"
+        ],
+        "submitClicked": false
+      }
+    }
+  ],
+  "finished": "2026-11-12T07:16:45.827Z"
+}

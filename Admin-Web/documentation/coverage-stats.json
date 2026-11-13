@@ -1,0 +1,15 @@
+{
+  "Modules discovered": 18,
+  "Submodules discovered": 71,
+  "Screens / views discovered": 96,
+  "Functionalities identified (traceability rows)": 234,
+  "Use cases documented": 269,
+  "Screens fully explored": 17,
+  "Screens partially explored": 5,
+  "Screens not accessible / blocked": 0,
+  "Screens not explored": 73,
+  "Use cases \u2013 Documented": 144,
+  "Use cases \u2013 Needs Verification": 123,
+  "Use cases \u2013 Blocked": 2,
+  "Functionalities requiring clarification": 81
+}

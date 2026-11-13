@@ -1,0 +1,262 @@
+{
+  "runId": "android-20261006-1730-HELP",
+  "platform": "android",
+  "scope": "Help & Support: TC_HELP_001-008, 011, 012, 014, 015 (12 in scope) + gap cases. Excluded (submitting support tickets not approved - not counted): TC_HELP_009, TC_HELP_010, TC_HELP_013.",
+  "build": "Uploaded APK app-release_5Oct26.apk v1.1 (com.siddaganga), latest upload as of 2026-10-06",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-06T12:00:39.673Z",
+  "endedAt": "2026-10-06T14:20:38.932Z",
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE from .env)",
+      "method": "Login with Mobile + password, entered manually by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-06T12:00:40.173Z",
+      "text": "No irreversible actions approved for this run (2026-10-06). Approval-gated actions skipped and excluded from counts per user instruction."
+    }
+  ],
+  "environmentNotes": [
+    "Scope: 12 cases in scope (HELP 001-008, 011, 012, 014, 015). Excluded and not counted (submitting support tickets not approved): TC_HELP_009, TC_HELP_010 (requires tapping Submit on an empty form), TC_HELP_013. No ticket was submitted; Cancel Request used to leave forms. Session rebuilt once after an inactivity timeout (environment)."
+  ],
+  "cases": [
+    {
+      "id": "TC_HELP_001",
+      "status": "Pass",
+      "actual": "Help tab: Help & Support / How can we help you?; toggle Raise a Support Request (selected) / My Support History; Trip-Based Support card (Live trip issues, Faster response, Raise Ticket) and General Complaint card (Non-urgent, Response within SLA, Submit Feedback); Frequently Asked Questions grouped by Booking & Inquiry, Pricing & Payments.",
+      "endedAt": "2026-10-06T14:20:38.198Z"
+    },
+    {
+      "id": "TC_HELP_002",
+      "status": "Pass",
+      "actual": "My Support History (no tickets): Your support history will appear here once you raise a ticket.",
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_003",
+      "status": "Pass",
+      "actual": "Raise Ticket opens Trip-Based Support form: Booking ID (Select Booking ID), Title, Request Type, Service Type, Date (dd/mm/yyyy), Assign To (Select Role), Priority (Medium default), Status (Open default), Description; Submit Complaint and Cancel Request at the bottom.",
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_004",
+      "status": "Fail",
+      "actual": "Booking ID dropdown opens no list (tapped field and arrow, waited 5 s) although the account has 26+ inquiries in My Bookings; no booking can be selected, so a trip-based ticket cannot be linked to a trip. OBS-22 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_004_1_booking-id-no-options.png"
+      ],
+      "bugs": [
+        "BUG-HELP-001"
+      ],
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_005",
+      "status": "Fail",
+      "actual": "Request Type and Service Type dropdowns open no options in either the Trip-Based Support form (focus border only, no list after 5-7 s). Mandatory classification fields cannot be filled. OBS-22 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_004_1_booking-id-no-options.png"
+      ],
+      "bugs": [
+        "BUG-HELP-001"
+      ],
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_006",
+      "status": "Pass",
+      "actual": "Priority dropdown lists Low / Medium (selected) / High.",
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_007",
+      "status": "Fail",
+      "actual": "Customer-facing form lets the user set Assign To with internal staff roles (Super Admin, Admin, Operations, Garage Supervisor, Finance...) and an editable Status dropdown (default Open). Customers should not choose the assignee or status. OBS-23 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_007_1_assign-to-internal-roles.png"
+      ],
+      "bugs": [
+        "BUG-HELP-002"
+      ],
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_008",
+      "status": "Pass",
+      "actual": "Trip-Based Support form scrolls (touch swipe) to Description, Submit Complaint and Cancel Request - all fields and the submit button reachable (OBS-24 not reproduced; the stream needs a moment to update). Observation: trip-based ticket button is labelled Submit Complaint, same as General Complaint.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_008_1_trip-form-submit-reachable.png"
+      ],
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_011",
+      "status": "Fail",
+      "actual": "No length limit or character counter: Title accepted ~170 characters (Trip-Based form) and Description ~175 characters (General Complaint) without truncation or message. No maximum is enforced or communicated (exact spec limit not documented). Form was not submitted (not approved).",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_011_1_title-no-length-limit.png",
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_011_2_description-no-length-limit.png"
+      ],
+      "bugs": [
+        "BUG-HELP-003"
+      ],
+      "endedAt": "2026-10-06T14:20:38.200Z"
+    },
+    {
+      "id": "TC_HELP_012",
+      "status": "Pass",
+      "actual": "Submit Feedback opens General Complaint: Title, Request Type, Service Type, Date, Assign To, Priority (Medium), Status (Open), Description; no Booking ID; Submit Complaint / Cancel Request. Cancel Request returns to Help without creating a ticket (My Support History still empty).",
+      "endedAt": "2026-10-06T14:20:38.201Z"
+    },
+    {
+      "id": "TC_HELP_014",
+      "status": "Pass",
+      "actual": "FAQ accordion: How do I submit a new inquiry? and How is the trip fare calculated? expand to show the answer and collapse on a second tap (chevron toggles); other questions listed under Booking & Inquiry and Pricing & Payments.",
+      "endedAt": "2026-10-06T14:20:38.201Z"
+    },
+    {
+      "id": "TC_HELP_015",
+      "status": "Fail",
+      "actual": "Ticket Date picker allows future dates: selected 07-10-2026 (tomorrow; wheel also offers 2027) and it is accepted in the field. Issue date should not be in the future.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-HELP/TC_HELP_015_1_future-issue-date-accepted.png"
+      ],
+      "bugs": [
+        "BUG-HELP-004"
+      ],
+      "endedAt": "2026-10-06T14:20:38.201Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-HELP-001",
+      "title": "Support ticket Booking ID, Request Type and Service Type dropdowns show no options",
+      "module": "Help & Support",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open",
+      "tcIds": [
+        "TC_HELP_004",
+        "TC_HELP_005"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in with an account that has bookings/inquiries; Help > Raise Ticket",
+      "steps": [
+        "Open Help > Trip-Based Support > Raise Ticket",
+        "Tap Booking ID",
+        "Tap Request Type",
+        "Tap Service Type"
+      ],
+      "expected": "Booking ID lists the user's bookings; Request Type and Service Type list their options.",
+      "actual": "Fields get a focus border but no option list opens for any of the three; required classification fields cannot be completed, so a valid ticket cannot be raised.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HELP_004_1_booking-id-no-options.png"
+      ],
+      "errorInfo": "No error shown.",
+      "notes": "Inventory remark OBS-22."
+    },
+    {
+      "id": "BUG-HELP-002",
+      "title": "Customers can choose the ticket assignee (internal staff roles) and status",
+      "module": "Help & Support",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open",
+      "tcIds": [
+        "TC_HELP_007"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Help > Raise Ticket or Submit Feedback",
+      "steps": [
+        "Open the ticket form",
+        "Tap Assign To",
+        "Tap Status"
+      ],
+      "expected": "Assignee and status are set by the back office, not editable by the customer.",
+      "actual": "Assign To lists Super Admin, Admin, Operations, Garage Supervisor, Finance; Status is an editable dropdown.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HELP_007_1_assign-to-internal-roles.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark OBS-23; exposes internal role names to customers."
+    },
+    {
+      "id": "BUG-HELP-003",
+      "title": "Support ticket Title and Description have no length limit or counter",
+      "module": "Help & Support",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_HELP_011"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Ticket form open",
+      "steps": [
+        "Type ~170 characters into Title",
+        "Type ~175 characters into Description"
+      ],
+      "expected": "A documented maximum is enforced and/or a counter shown.",
+      "actual": "All text accepted with no limit, counter or message.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HELP_011_1_title-no-length-limit.png",
+        "TC_HELP_011_2_description-no-length-limit.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Spec limit not documented; form not submitted (not approved), server-side limit unknown."
+    },
+    {
+      "id": "BUG-HELP-004",
+      "title": "Support ticket issue Date accepts future dates",
+      "module": "Help & Support",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_HELP_015"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Ticket form open",
+      "steps": [
+        "Tap Date",
+        "Scroll to tomorrow (or 2027)",
+        "Done"
+      ],
+      "expected": "Dates after today are not selectable for an issue date.",
+      "actual": "07-10-2026 (tomorrow) accepted; year wheel offers 2027.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HELP_015_1_future-issue-date-accepted.png"
+      ],
+      "errorInfo": "-",
+      "notes": "New in this run."
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "",
+    "current": "setup",
+    "next": "first in-scope case",
+    "state": "Sign In with Mobile screen, waiting for user login",
+    "at": "2026-10-06T12:03:44.505Z"
+  },
+  "recoveryEvents": [
+    {
+      "at": "2026-10-06T14:09:56.522Z",
+      "issue": "App Live session closed due to inactivity while Claude was paused (usage limit)",
+      "detection": "Banner: Your remote testing session is closed due to inactivity",
+      "actions": [
+        "New Pixel 7 / Android 13 session started, app reinstalled",
+        "Onboarding skipped; waiting for manual user login"
+      ],
+      "outcome": "Session rebuilt; awaiting user login"
+    }
+  ],
+  "partial": false
+}

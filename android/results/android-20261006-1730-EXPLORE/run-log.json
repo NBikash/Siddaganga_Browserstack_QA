@@ -1,0 +1,394 @@
+{
+  "runId": "android-20261006-1730-EXPLORE",
+  "platform": "android",
+  "scope": "Explore module 100% of applicable cases: TC_EXPL_001-005, TC_FILT_001-009, TC_CMP_001-010 (24) + gap cases. No approval-gated actions in this module.",
+  "build": "Uploaded APK app-release_5Oct26.apk v1.1 (com.siddaganga), latest upload as of 2026-10-06",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-06T12:00:39.535Z",
+  "endedAt": "2026-10-06T14:07:05.182Z",
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE from .env)",
+      "method": "Login with Mobile + password, entered manually by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-06T12:00:40.012Z",
+      "text": "No irreversible actions approved for this run (2026-10-06). Approval-gated actions skipped and excluded from counts per user instruction."
+    }
+  ],
+  "environmentNotes": [
+    "Scope: 24 inventory cases (EXPL 001-005, FILT 001-009, CMP 001-010) + 1 gap case (TC_EXPL_006). No approval-gated actions in this module; nothing excluded."
+  ],
+  "cases": [
+    {
+      "id": "TC_EXPL_001",
+      "status": "Pass",
+      "actual": "Explore tab: category chips Luxury (default, selected) / Premium / Deluxe, filter icon, brand chips (Volvo Bus India, Ashok Leyland, SML Isuzu, Eicher India, Daimler India, Force India, Tata Motors...), Vehicle Comparison card with Compare Vehicles, All Vehicles 2-column grid (6 Luxury vehicles).",
+      "endedAt": "2026-10-06T12:13:10.644Z"
+    },
+    {
+      "id": "TC_EXPL_002",
+      "status": "Fail",
+      "actual": "Premium shows only Premium vehicles (16 Seater Premium Urbania, 21 Seater Premium AC...). Deluxe shows No vehicles found matching your criteria. although 33/40 Seater Deluxe Coaches and Sedan (Delux badge) exist in the fleet. BUG-VLIST-001 still reproducible on app-release_5Oct26.apk.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_EXPL_002_1_deluxe-no-vehicles.png"
+      ],
+      "bugs": [
+        "BUG-VLIST-001"
+      ],
+      "endedAt": "2026-10-06T12:13:10.647Z"
+    },
+    {
+      "id": "TC_EXPL_003",
+      "status": "Pass",
+      "actual": "Brand chips scroll horizontally (Volvo Bus India ... Eicher India, Daimler India, Force India, Tata Motors). Luxury + Volvo Bus India -> only Volvo models (49 Seater Luxury 9600, 45 Seater Luxury 9600...); Luxury + Force India -> 9 and 12 Seater Luxury Urbania; Luxury + Ashok Leyland -> empty state (no Ashok Luxury vehicle). Observation: a selected brand chip cannot be deselected by tapping it again (only Reset Filters clears it) - logged as TC_EXPL_006.",
+      "endedAt": "2026-10-06T12:13:10.647Z"
+    },
+    {
+      "id": "TC_EXPL_004",
+      "status": "Fail",
+      "actual": "Every vehicle card shows a stray value 100 below the seater/price row with no label or icon (e.g. 45 Seater Luxury BharatBenz, 49 Seater Luxury 9600 Volvo). OBS-19 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_EXPL_004_1_unlabelled-100.png"
+      ],
+      "bugs": [
+        "BUG-EXPL-001"
+      ],
+      "endedAt": "2026-10-06T12:13:10.647Z"
+    },
+    {
+      "id": "TC_EXPL_005",
+      "status": "Pass",
+      "actual": "Tapping the 9 Seater Luxury Urbania card opens its Vehicle Details (9 Seats, Diesel, Automatic, Monocoque Van; Pricing Local Rs 9,500 = card Starts From Rs 9,500). Back returns to Explore with the brand filter retained.",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_001",
+      "status": "Pass",
+      "actual": "Filter sheet: header Filters with X; groups Vehicle Type (Midi Coach, Full-Size Coach, Sedan, MPV, Passenger Van, Mini Coach, Luxury Van, Single-Axle Luxury Coach, Multi-Axle Luxury Coach, SUVs), AC (AC / Non AC), Seat Type (1+1, 2+1, 2+2, 2+3), Passenger Seater Capacity (7 ... 60+, Other), Vehicle Type (Body Type), Amenities / Features, Luggage Capacity; sticky Reset All / Apply Filters footer while scrolling.",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_002",
+      "status": "Pass",
+      "actual": "Luxury + Leathered Seats -> Apply: grid narrowed to 1 vehicle (45 Seater Luxury Volvo).",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_003",
+      "status": "Pass",
+      "actual": "Luxury + AC + 2+2 + 40-45 Seater -> 3 vehicles, all 45 Seater Luxury with AC icon (BharatBenz, 9600 Volvo, Volvo); the 49-seat Volvo and 9/12-seat Urbanias are excluded - AND across groups works.",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_004",
+      "status": "Pass",
+      "actual": "OR within Vehicle Type: Luxury Van + Multi-Axle Luxury Coach -> 2 vehicles, one of each type (49 Seater Luxury 9600 Volvo, 9 Seater Luxury Urbania). The case data Sedan + SUVs returns the empty state because the Luxury category chip is always applied and Sedan/SUV are not Luxury (Deluxe chip broken - BUG-VLIST-001).",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_005",
+      "status": "Fail",
+      "actual": "With Leathered Seats applied, the filter icon on Explore shows no badge/count; the active-filter count (1/2/3) is shown only inside the open sheet (next to Filters title and on Apply Filters). OBS-20 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_FILT_005_1_no-active-filter-indicator.png"
+      ],
+      "bugs": [
+        "BUG-FILT-001"
+      ],
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_006",
+      "status": "Pass",
+      "actual": "Reset All inside the sheet clears every selection, closes the sheet and restores the full Luxury list (6 vehicles); empty-state Reset Filters button behaves the same.",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_007",
+      "status": "Pass",
+      "actual": "Leathered Seats applied; opened sheet, added AC (count 2), closed with X -> list unchanged; reopening shows count 1 and AC unselected - previous applied state retained.",
+      "endedAt": "2026-10-06T12:13:10.648Z"
+    },
+    {
+      "id": "TC_FILT_008",
+      "status": "Pass",
+      "actual": "Luxury + Force India + Leathered Seats (no match) -> No vehicles found matching your criteria. with a Reset Filters button.",
+      "endedAt": "2026-10-06T12:13:10.649Z"
+    },
+    {
+      "id": "TC_FILT_009",
+      "status": "Pass",
+      "actual": "Leathered Seats filter applied -> Home tab -> Explore tab: same filtered list (1 vehicle) shown; filters persist across tab switch.",
+      "endedAt": "2026-10-06T12:13:10.649Z"
+    },
+    {
+      "id": "TC_EXPL_006",
+      "isNew": true,
+      "module": "EXPL",
+      "feature": "Explore - Brand",
+      "scenario": "Selected brand chip can be deselected by tapping it again",
+      "testType": "UI/UX",
+      "priority": "Low",
+      "preconditions": "Explore with a brand chip selected",
+      "steps": "1. Tap Force India 2. Tap Force India again",
+      "testData": "Force India",
+      "expected": "Second tap deselects the brand and restores the unfiltered category list",
+      "status": "Fail",
+      "actual": "Second tap leaves Force India selected and the list filtered; the only way to clear the brand is Reset Filters (which also clears all other filters).",
+      "bugs": [
+        "BUG-EXPL-002"
+      ],
+      "endedAt": "2026-10-06T12:13:10.649Z"
+    },
+    {
+      "id": "TC_CMP_001",
+      "status": "Pass",
+      "actual": "Compare Vehicles -> compare mode: Current select (0/2), button changes to Select 2 Vehicles to Compare, Cancel Comparison link shown.",
+      "endedAt": "2026-10-06T14:07:04.362Z"
+    },
+    {
+      "id": "TC_CMP_002",
+      "status": "Pass",
+      "actual": "Tapping 45 Seater Luxury BharatBenz and 49 Seater Luxury 9600 Volvo highlights both cards, counter Current select (2/2), button becomes Compare Vehicles (enabled).",
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_003",
+      "status": "Fail",
+      "actual": "With 2 selected, tapping a third card (45 Seater Luxury 9600 Volvo) silently replaces the most recently selected vehicle (49 Seater) - no message, counter stays 2/2. Neither blocked with a message nor replaces the oldest selection; the user is not told a selection was dropped.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_003_1_third-replaces-latest-no-message.png"
+      ],
+      "bugs": [
+        "BUG-CMP-002"
+      ],
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_004",
+      "status": "Pass",
+      "actual": "Tapping a selected card deselects it: counter 2/2 -> 1/2, button reverts to Select 2 Vehicles to Compare.",
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_005",
+      "status": "Pass",
+      "actual": "With 1 selected, tapping Select 2 Vehicles to Compare shows dialog Siddaganga Travels - Select two vehicles from the grid to compare. (OK); comparison not opened.",
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_006",
+      "status": "Pass",
+      "actual": "Compare mode with 1 vehicle selected -> Cancel Comparison: selection cleared, counter and Cancel link hidden, normal Compare Vehicles button restored.",
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_007",
+      "status": "Fail",
+      "actual": "Vehicle Comparison (45 Seater Luxury 9600 Volvo vs 49 Seater Luxury 9600 Volvo): all expected rows present (capacity, body type, local base rate, outstation rate Rs 85/km vs Rs 120/km, daily min km, driver allowance, mileage, fuel type, toll/parking, night charge, AC type, seat type, luggage capacity, model year, condition, suspension, amenities), but Mileage, Fuel type, Toll/Parking, Luggage capacity, Model year and Condition are a dash for both vehicles (Fuel type is Diesel on Vehicle Details). BUG-CMP-001 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_007_1_blank-mileage-fuel-toll.png",
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_007_2_blank-luggage-year-condition.png"
+      ],
+      "bugs": [
+        "BUG-CMP-001"
+      ],
+      "endedAt": "2026-10-06T14:07:04.366Z"
+    },
+    {
+      "id": "TC_CMP_008",
+      "status": "Pass",
+      "actual": "CURRENT tag on 45 Seater; tapping the 49 Seater card moves CURRENT to it.",
+      "endedAt": "2026-10-06T14:07:04.367Z"
+    },
+    {
+      "id": "TC_CMP_009",
+      "status": "Pass",
+      "actual": "With CURRENT = 49 Seater Luxury 9600 Volvo, View Full Details opens Vehicle Details of that vehicle (49 Seats, L49NV); back returns to Explore.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_009_1_details-of-current-vehicle.png"
+      ],
+      "endedAt": "2026-10-06T14:07:04.367Z"
+    },
+    {
+      "id": "TC_CMP_010",
+      "status": "Fail",
+      "actual": "49 Seater: comparison Local base rate Rs 22,500 = details Local Rs 22,500 and Outstation Rs 120/km = details + Rs 120/km, but details Outstation price is Rs 60,000 /day + Rs 120/km while the comparison Outstation rate row omits the Rs 60,000/day component - outstation rate not shown consistently.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_007_1_blank-mileage-fuel-toll.png",
+        "android/evidence/android-20261006-1730-EXPLORE/TC_CMP_009_1_details-of-current-vehicle.png"
+      ],
+      "bugs": [
+        "BUG-CMP-001"
+      ],
+      "endedAt": "2026-10-06T14:07:04.367Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-VLIST-001",
+      "title": "Deluxe category chip returns 0 vehicles although Deluxe (Delux) vehicles exist",
+      "module": "Explore / Vehicle list",
+      "severity": "High",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_EXPL_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Explore tab.",
+      "steps": [
+        "Open Explore",
+        "Tap the Deluxe category chip"
+      ],
+      "expected": "Grid lists the Deluxe vehicles (33 Seater Deluxe Coach, 40 Seater Deluxe Coach, Sedan).",
+      "actual": "No vehicles found matching your criteria. with Reset Filters.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_EXPL_002_1_deluxe-no-vehicles.png"
+      ],
+      "errorInfo": "No error shown.",
+      "notes": "First logged in an earlier Local run; still reproducible."
+    },
+    {
+      "id": "BUG-EXPL-001",
+      "title": "Explore vehicle cards show an unlabelled value 100",
+      "module": "Explore",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open",
+      "tcIds": [
+        "TC_EXPL_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Explore tab",
+      "steps": [
+        "Open Explore",
+        "Look under the seater / Starts From row of any card"
+      ],
+      "expected": "Every value on the card has a label or icon.",
+      "actual": "A bare 100 is shown on every card with no label.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_EXPL_004_1_unlabelled-100.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark OBS-19."
+    },
+    {
+      "id": "BUG-EXPL-002",
+      "title": "Selected brand chip cannot be deselected by tapping it again",
+      "module": "Explore",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_EXPL_006"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Explore tab",
+      "steps": [
+        "Tap Force India",
+        "Tap Force India again"
+      ],
+      "expected": "Second tap deselects the brand and restores the full category list.",
+      "actual": "Brand stays selected; only Reset Filters clears it (also clearing other filters).",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [],
+      "errorInfo": "-",
+      "notes": "New in this run."
+    },
+    {
+      "id": "BUG-FILT-001",
+      "title": "No active-filter badge or count on the Explore filter icon",
+      "module": "Explore - Filters",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open",
+      "tcIds": [
+        "TC_FILT_005"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "A filter applied",
+      "steps": [
+        "Apply Leathered Seats",
+        "Look at the filter icon on Explore"
+      ],
+      "expected": "Icon shows a badge/count of active filters.",
+      "actual": "Icon unchanged; count visible only inside the open sheet.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_FILT_005_1_no-active-filter-indicator.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark OBS-20."
+    },
+    {
+      "id": "BUG-CMP-001",
+      "title": "Vehicle Comparison shows blank mileage, fuel, toll, luggage, model year and condition; Outstation rate omits the per-day charge",
+      "module": "Compare Vehicles",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_CMP_007",
+        "TC_CMP_010"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Explore > Compare with 2 vehicles",
+      "steps": [
+        "Select 45 Seater Luxury 9600 Volvo and 49 Seater Luxury 9600 Volvo",
+        "Compare Vehicles",
+        "Scroll the table"
+      ],
+      "expected": "Every row has a value; Outstation rate matches Vehicle Details (per day + per km).",
+      "actual": "Six rows show a dash for both vehicles (Fuel type is Diesel on details); Outstation rate shows only Rs 120/km while details show Rs 60,000/day + Rs 120/km.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CMP_007_1_blank-mileage-fuel-toll.png",
+        "TC_CMP_007_2_blank-luggage-year-condition.png",
+        "TC_CMP_009_1_details-of-current-vehicle.png"
+      ],
+      "errorInfo": "-",
+      "notes": "First logged in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-CMP-002",
+      "title": "Selecting a third vehicle in compare mode silently replaces the latest selection",
+      "module": "Compare Vehicles",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_CMP_003"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Compare mode with 2 vehicles selected",
+      "steps": [
+        "Select two vehicles",
+        "Tap a third vehicle card"
+      ],
+      "expected": "Blocked with a message (max 2) or the oldest selection replaced with feedback.",
+      "actual": "The most recent selection is dropped without any message; counter stays 2/2.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CMP_003_1_third-replaces-latest-no-message.png"
+      ],
+      "errorInfo": "-",
+      "notes": "New in this run."
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "",
+    "current": "setup",
+    "next": "first in-scope case",
+    "state": "Sign In with Mobile screen, waiting for user login",
+    "at": "2026-10-06T12:03:43.819Z"
+  },
+  "partial": false
+}

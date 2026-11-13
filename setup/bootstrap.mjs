@@ -5,16 +5,22 @@
 //  - appends missing .gitignore rules (never removes lines)
 //  - re-runs the doctor at the end
 // Usage: npm run setup   (or: node setup/bootstrap.mjs)
+//        npm run setup -- --app saagane   (also creates that app's folders; default app is Banni)
 import { existsSync, mkdirSync, writeFileSync, copyFileSync, readFileSync, appendFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
-import { p, readJson } from './lib/common.mjs';
+import { p, readJson, appArg, appInfo, DEFAULT_APP } from './lib/common.mjs';
 
 const project = readJson('config/project.json');
 const log = (msg) => console.log(`[setup] ${msg}`);
+const app = appArg();
+let meta;
+try { meta = appInfo(app); } catch (e) { console.error(`[setup] ${e.message}`); process.exit(2); }
+const appFlag = app === DEFAULT_APP ? '' : ` --app ${app}`;
+const dirs = [...project.requiredPaths.dirs, ...(app === DEFAULT_APP ? [] : meta.requiredPaths?.dirs || [])];
 
 // 1. Folders
 let created = 0;
-for (const dir of project.requiredPaths.dirs) {
+for (const dir of dirs) {
     if (!existsSync(p(dir))) {
         mkdirSync(p(dir), { recursive: true });
         writeFileSync(p(dir, '.gitkeep'), '');
@@ -53,7 +59,7 @@ if (missing.length) {
 const doctor = () => {
     const opts = { cwd: p(), encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
     try {
-        return JSON.parse(execSync('node setup/doctor.mjs --json', opts));
+        return JSON.parse(execSync(`node setup/doctor.mjs --json${appFlag}`, opts));
     } catch (e) {
         return JSON.parse(e.stdout);
     }
@@ -71,7 +77,7 @@ if (depFail) {
 // 5. Verify
 log('verifying environment...');
 try {
-    execSync('node setup/doctor.mjs', { cwd: p(), stdio: 'inherit' });
+    execSync(`node setup/doctor.mjs${appFlag}`, { cwd: p(), stdio: 'inherit' });
 } catch {
     process.exitCode = 1;
 }

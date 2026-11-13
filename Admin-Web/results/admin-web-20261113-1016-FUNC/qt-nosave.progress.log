@@ -1,0 +1,6 @@
+qt07 {"combos":[{"cur":"Local","options":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]},{"cur":"","options":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]},{"cur":"November","options":["1","2","3","4","5","6","7"
+qt06 {"dialog":"Change GST Value GST Value 5% Cancel Save","buttons":["","Cancel","Save"],"gstEnabledNow":true}
+qt05 {"applyFound":0,"fixedDisabled":true}
+qt04 {"base":"8300.00","addlHr1":"8300.00","addlKm10":"8300.00","toll100":"8300.00","extras50":"8300.00","dayBata2":"8300.00","shot":"screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-04-recalculated.png","restored":"8300.00"}
+qt03 {"pax_0":{"value":"0","errors":[]},"pax_-1":{"value":"-1","errors":[]},"pax_1.5":{"value":"1.5","errors":[]},"pax_100":{"value":"100","errors":[]},"pax_abc":{"value":"abc","errors":[]},"days_0":{"value":"0","errors":[],"total":"8300.00"},"days_-2":{"value":"-2","errors":[],"total":"8300.00"},"days_4
+qt12 [{"v":"12:00 AM","dis":false,"ro":true},{"v":"12:00 AM","dis":false,"ro":true}]

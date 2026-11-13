@@ -1,0 +1,252 @@
+{
+  "id": "TC-03",
+  "started": "2026-11-12T07:54:37.750Z",
+  "steps": [
+    {
+      "label": "main",
+      "input": {
+        "label": "main",
+        "dd": true,
+        "pickup": "Electronic City Phase 1",
+        "drop": "Kotilingeshwara Temple Kammasandra",
+        "date": "2026-11-20",
+        "time": "6:00 PM",
+        "pax": 49,
+        "hrs": 12,
+        "vehicle": "D49NA"
+      },
+      "pickupSuggest": {
+        "query": "Electronic City Phase 1",
+        "suggestions": [
+          "Phase 1, Electronic City Bengaluru, Karnataka, India",
+          "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+          "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+          "Electronic City Phase I Makkah Masjid Road, Shikaripalya, Electronic City, Bengaluru, Karnataka, India",
+          "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+        ],
+        "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+      },
+      "dropSuggest": {
+        "query": "Kotilingeshwara Temple Kammasandra",
+        "suggestions": [
+          "Kotilingeshwara temple KGF Taluk, Kammasandra, Bethamangala, Karnataka, India",
+          "Kotilingeshwara Temple near kotilingeshwara devaalaya, Kammasandra, Ghattiragadahalli, Karnataka, India",
+          "Kotilingeshwara Temple Road Kammasandra, Karnataka, India"
+        ],
+        "chosen": "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India"
+      },
+      "form": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "drop": "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India",
+        "date": "2026-11-20",
+        "time": "6:00 PM",
+        "selectedDates": "",
+        "pax": "49",
+        "hours": "12"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India → Garage (Return) Distance:80 KM Dates :20 Nov, 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:12 Hours Passengers:49 Pax Drop Address:Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India",
+        "found": "20 Buses Found | Local - 12 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹12,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹12,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹14,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹5,000"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹8,600"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹6,100"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-results-summary.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 1,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 49 Seater Deluxe Coach",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹12,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹55 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹1,200 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹1,000"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹1,000"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+            "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+            "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+            "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : 49 Seater Deluxe Coach – 1",
+          "dates": "20 Nov, 2026",
+          "passenger": "49",
+          "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹12,500"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹1,000"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹1,000"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹14,500"
+            }
+          ],
+          "buttons": [
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "D",
+            "G",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : 49 Seater Deluxe Coach – 1",
+            "49 Seater Deluxe Coach",
+            "49 Seater",
+            "Type: 49 Seater Deluxe Coach",
+            "Luggage: Rear Boot + Overhead Racks (2–4 m³)",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+            "Dropoff Location",
+            "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "20 Nov, 2026",
+            "Passenger",
+            "49",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹12,500",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹1,000",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹1,000",
+            "Estimated Grand Total",
+            "₹14,500",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-applied-fare.png"
+        ],
+        "submission": {
+          "ctaLabel": "Confirm & Submit Booking",
+          "urlBefore": "https://preprod.siddagangatravels.com/send-inquiry",
+          "urlAfter": "https://preprod.siddagangatravels.com/send-inquiry",
+          "messages": [
+            "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹14,500 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+          ],
+          "apiCalls": [
+            {
+              "method": "POST",
+              "url": "/user/save-inquiry",
+              "status": 201,
+              "body": "{\"encrypted\":true,\"iv\":\"os8DVtYZDbEIyMEq\",\"tag\":\"73KuXaPGDUg/aAecrR5f8A==\",\"data\":\"ahYMGkSOQ5vJF6FElAP5JuVaZ3ACSWA8ieLGzvZj+yuxTczTbIAdE19jOCNHFHPzsDr41EVSc9KbWSrrQxeWMJ9qGy4goTv0z5GV6W20jiuePbiyE+HutIiu8p6PO4PCxWr95O8C5z9jx40hmKyOfZbarzlyPdKdmLOV03qOWoGB9lvto36JrCjrllc9PZKgOPC+aIp4saG8+o4NkTFAHnqOKwneIqW/MaS4eukCSLteMUr7y+KppAUQnuQO+2n/SpUz431j/AvyCFQ=\"}"
+            },
+            {
+              "method": "POST",
+              "url": "/user/draft-inquiry/delete",
+              "status": 200,
+              "body": "{\"encrypted\":true,\"iv\":\"tRYfMFbES2XaRKR8\",\"tag\":\"9kYuzk2u0fmff+EsyVJcFQ==\",\"data\":\"VCz6idOUKxqRyvuB3L/VHKLVU7JiTZ2oSF0CzXmBP60Abu4Yy7hqFBdTfsRKlI17V0b9tdDcAKCGoObEbZs0tmwtu6d46+0gNQQKmV2UnXmwUYsakEJCI1ZhGSOfXbrG4yKgoCjA9qQavI7kasa3Nq3x0DKLKEtzWm3RZmO6MujCTjN9bQ==\"}"
+            }
+          ],
+          "inquiryRef": null,
+          "paymentShown": false,
+          "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-submit-result.png",
+          "success": true
+        }
+      }
+    }
+  ],
+  "finished": "2026-11-12T07:56:45.479Z"
+}

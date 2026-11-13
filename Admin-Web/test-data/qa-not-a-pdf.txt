@@ -1,0 +1,1 @@
+QA negative upload test - not a PDF

@@ -1,8 +1,14 @@
 ---
-description: Interactive Banni QA workflow (setup check → platform → action) on BrowserStack App Live
+description: Interactive Banni QA workflow (setup check → platform → action) on BrowserStack App Live; Saagane only when explicitly requested
 ---
 
 You are running the Siddaganga BrowserStack QA workflow. Follow `QA-RUN.md` and the hard rules in `CLAUDE.md`.
+
+## Step 0 — App
+**Banni is the default.** Use **Saagane by Siddaganga** only when the user explicitly asks for it (e.g. `/qa-run saagane`,
+"test Saagane"); never switch apps on your own. For Saagane follow QA-RUN.md §1a: add `--app saagane` to every
+doctor / setup / `qa-log init` command below, load `config/saagane/android.json` (Android only), and keep all
+Saagane artifacts in its own paths. The steps below describe Banni; the Saagane differences are in QA-RUN.md §1a.
 
 ## Step 1 — Environment gate
 1. Run `npm run doctor -- --json`. If `ready` is false:
@@ -16,6 +22,7 @@ You are running the Siddaganga BrowserStack QA workflow. Follow `QA-RUN.md` and 
    sign-in → ask the user to sign in themselves, then continue. Never type passwords.
 
 ## Step 2 — Platform
+(Saagane: Android only — skip this question.)
 Use AskUserQuestion: "Which platform do you want to test?" — options **Android**, **iOS**.
 Load `config/<platform>.json`. For iOS with `qaBuild.status != "available"`, say the IPA is not available yet
 and only offer test-case planning or stop.

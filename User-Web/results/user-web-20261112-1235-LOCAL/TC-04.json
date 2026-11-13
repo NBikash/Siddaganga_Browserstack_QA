@@ -1,0 +1,185 @@
+{
+  "id": "TC-04",
+  "started": "2026-11-12T07:27:55.089Z",
+  "steps": [
+    {
+      "label": "main",
+      "input": {
+        "label": "main",
+        "md": true,
+        "dd": true,
+        "pickup": "Jayanagar 4th Block",
+        "drop": "Mysuru Palace",
+        "mdDates": [
+          {
+            "next": 1,
+            "d": 5
+          },
+          {
+            "next": 1,
+            "d": 6
+          }
+        ],
+        "time": "1:30 PM",
+        "pax": 50,
+        "hrs": 8,
+        "vehicle": "L45V"
+      },
+      "pickupSuggest": {
+        "query": "Jayanagar 4th Block",
+        "suggestions": [
+          "4th Block, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block East, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block, Jayanagar, Bengaluru, Karnataka",
+          "4th Block East, Pattabhirama Nagar, Jayanagar Bengaluru, Karnataka, India",
+          "JAYANAGAR 4TH BLOCK KHADIM'S STAFF ROOM 3rd Cross Road, 5T Block, Marenahalli, DK Naik Nagar, Jayanagar, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "4th Block, Jayanagar, Bengaluru, Karnataka, India"
+      },
+      "dropSuggest": {
+        "query": "Mysuru Palace",
+        "suggestions": [
+          "Mysore Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace View Dasara Exhibition Road, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace parking entrance Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace Entrance Agrahara Circle, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace Hostel by Borrbo Mysore 9th Cross Road, Gokulam 3rd Stage, Gokulam, Mysuru, Karnataka, India"
+        ],
+        "chosen": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": true,
+        "differentDrop": true,
+        "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "date": "",
+        "time": "1:30 PM",
+        "selectedDates": "Selected Dates (3):",
+        "pax": "50",
+        "hours": "8"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-form-r2.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12 Nov, 2026 | 5,6 Dec, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:3 Days Passengers:50 Pax Drop Address:Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹33,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹34,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹40,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹13,500"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹23,400"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹15,900"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-results-summary.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 3,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 45 Seater Luxury Volvo",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹15,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹70 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹1,500 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹1,500"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹1,500"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+            "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+            "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Passenger Capacity Not Complete!",
+          "dates": null,
+          "passenger": "You need seats for 50 passengers, but your selected buses cover only 45 seats.",
+          "pickup": null,
+          "drop": null,
+          "cost": [],
+          "buttons": [
+            "Cancel Inquiry"
+          ],
+          "hasGST": false,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Passenger Capacity Not Complete!",
+            "You need seats for 50 passengers, but your selected buses cover only 45 seats.",
+            "Please add one or more buses to continue.",
+            "Cancel Inquiry"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-applied-fare.png"
+        ],
+        "submitClicked": false
+      }
+    }
+  ],
+  "finished": "2026-11-12T07:29:41.882Z"
+}

@@ -65,3 +65,57 @@ export function satisfies(version, range) {
     if (range.startsWith('>=')) return true;
     return cmpVersion(version, base) === 0;
 }
+
+// ---------- Apps (config/project.json -> apps). Banni is the default and keeps its original layout. ----------
+export const DEFAULT_APP = 'banni';
+
+// Value of --app <name> (or --app=<name>) from argv; defaults to Banni.
+export function appArg(argv = process.argv) {
+    const i = argv.findIndex((a) => a === '--app' || a.startsWith('--app='));
+    if (i === -1) return DEFAULT_APP;
+    const v = argv[i].includes('=') ? argv[i].split('=')[1] : argv[i + 1];
+    return String(v || DEFAULT_APP).toLowerCase();
+}
+
+// Registry entry for an app; throws for unknown names so a typo never falls back to Banni silently.
+export function appInfo(app = DEFAULT_APP) {
+    const apps = readJson('config/project.json').apps || {};
+    const info = apps[app];
+    if (!info || typeof info !== 'object' || !info.configs) {
+        const known = Object.keys(apps).filter((k) => apps[k]?.configs);
+        throw new Error(`unknown app "${app}" (known: ${known.join(', ') || DEFAULT_APP})`);
+    }
+    return { id: app, ...info };
+}
+
+// Platform config for an app, e.g. appConfig('saagane', 'android') -> config/saagane/android.json.
+export function appConfig(app, platform) {
+    const rel = appInfo(app).configs[platform];
+    if (!rel) throw new Error(`app "${app}" has no ${platform} configuration`);
+    return readJson(rel);
+}
+
+// Artifact folders (relative to ROOT) for a run. Banni keeps <platform>/{results,reports,evidence};
+// other apps use the paths in their own config (e.g. android/results/saagane, reports/saagane).
+export function runPaths(platform, app = DEFAULT_APP) {
+    if (app === DEFAULT_APP) return { results: `${platform}/results`, reports: `${platform}/reports`, evidence: `${platform}/evidence` };
+    const { results, reports, evidence } = appConfig(app, platform).paths || {};
+    if (!results || !reports || !evidence) throw new Error(`config for ${app}/${platform} needs paths.results, paths.reports and paths.evidence`);
+    return { results, reports, evidence };
+}
+
+// Locates <results>/<run-id>/run-log.json across registered apps (Banni first). Pass app to restrict the search.
+// Returns null when not found; throws if the same run ID exists for more than one app/platform.
+export function findRunLogFile(runId, app) {
+    const apps = readJson('config/project.json').apps || { [DEFAULT_APP]: { configs: { android: 1, ios: 1 } } };
+    const hits = [];
+    for (const [id, info] of Object.entries(apps)) {
+        if (!info?.configs || (app && id !== app)) continue;
+        for (const platform of Object.keys(info.configs)) {
+            const f = p(runPaths(platform, id).results, runId, 'run-log.json');
+            if (existsSync(f)) hits.push(f);
+        }
+    }
+    if (hits.length > 1) throw new Error(`run "${runId}" exists in several places (${hits.join(', ')}); pass --app <id>`);
+    return hits[0] || null;
+}

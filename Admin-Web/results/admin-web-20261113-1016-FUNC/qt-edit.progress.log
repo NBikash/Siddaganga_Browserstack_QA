@@ -1,0 +1,20 @@
+qt13 {"browserDialog":null,"urlAfterBack":"https://dari-preprod.siddagangatravels.com/dashboard/inquiry-management/total-inquiries","inAppWarning":0,"descAfterReturn":""}
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('main button:visible:text-is("Update Quote")')[22m
+[2m    - locator resolved to <button tabindex="0" type="submit" class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary mui-1ptwqbt">Update Quote</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+    at Module.default (D:\Siddaganga-BrowserStack-QA\Admin-Web\steps\inq2trip\f-qt-edit.mjs:25:69)
+    at async file:///D:/Siddaganga-BrowserStack-QA/Admin-Web/scripts/run.mjs:24:14 {
+  log: [
+    `  - waiting for locator('main button:visible:text-is("Update Quote")')`,
+    '    - locator resolved to <button tabindex="0" type="submit" class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary mui-1ptwqbt">Update Quote</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '  - element was detached from the DOM, retrying'
+  ],
+  name: 'TimeoutError'
+}

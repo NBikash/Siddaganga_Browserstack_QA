@@ -1,0 +1,5 @@
+[login] no .env credentials - please sign in manually in the Chrome window
+[login] waiting up to 10 min for sign-in to finish (OTP etc. must be completed by the user)...
+[login] authenticated; landing URL: https://dari-dev.siddagangatravels.com/dashboard
+
+[exited with code 0]

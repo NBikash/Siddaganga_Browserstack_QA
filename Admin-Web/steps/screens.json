@@ -1,0 +1,911 @@
+[
+ {
+  "key": "dashboard",
+  "folder": "dashboard",
+  "route": "/dashboard",
+  "autoOpen": true,
+  "rowActions": true,
+  "rowButtons": [
+   "Availability"
+  ]
+ },
+ {
+  "key": "role-users",
+  "folder": "role-permission",
+  "route": "/dashboard/user-management",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "role-roles",
+  "folder": "role-permission",
+  "route": "/dashboard/user-management",
+  "click": [
+   "Role Management"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "role-deleted-users",
+  "folder": "role-permission",
+  "route": "/dashboard/user-management",
+  "click": [
+   "Deleted Users"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "employee-dashboard",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "employee-all",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management/totalemployees",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "employee-onboarding",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "click": [
+   "Employee Onboarding"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "employee-roster",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "click": [
+   "Operations Roster"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "employee-client-request",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "click": [
+   "Client Request"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "employee-hr-overview",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "click": [
+   "HR Overview"
+  ],
+  "autoOpen": true
+ },
+ {
+  "key": "fleet-portal",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management"
+ },
+ {
+  "key": "fleet-total-buses",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management",
+  "click": [
+   "Total Buses / Active"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-live-trips",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management",
+  "click": [
+   "Approved & Track Live Trips"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-allocation-portal",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management",
+  "click": [
+   "Vehicle Allocation Portal"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-tariff",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/tarrifs",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-bus-types",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/bus-types",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-bus-manufacturers",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/bus-manufacturer",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-bus-models",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/bus-modal-page",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-seat-types",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/seat-type",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "booking-pre-bookings",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "booking-booked",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "click": [
+   "Booked"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "booking-completed",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "click": [
+   "Completed"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "booking-pending-allocation",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/pending-allocation",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "inquiry-all",
+  "folder": "inquiry-management",
+  "route": "/dashboard/inquiry-management/total-inquiries",
+  "autoOpen": true,
+  "rowActions": true,
+  "rowButtons": [
+   "View Quote"
+  ]
+ },
+ {
+  "key": "lead-all",
+  "folder": "lead-management",
+  "route": "/dashboard/lead-management/total-lead",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-regular",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-regular-all-bookings",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients?tab=allBookings",
+  "rowActions": true
+ },
+ {
+  "key": "client-regular-invoice-payment",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients?tab=invoiceAndPayment",
+  "rowActions": true
+ },
+ {
+  "key": "client-regular-customer-requests",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients?tab=customerRequests",
+  "rowActions": true
+ },
+ {
+  "key": "client-contracted",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-contracted-user-mgmt",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients?tab=userManagement",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-contracted-invoice-mgmt",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients?tab=invoiceManagement",
+  "rowActions": true
+ },
+ {
+  "key": "client-contracted-client-requests",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients?tab=clientRequests",
+  "rowActions": true
+ },
+ {
+  "key": "client-contracted-onboard",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients?tab=clientOnboard",
+  "rowActions": true
+ },
+ {
+  "key": "client-international",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/international-clients",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-trip-wise",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/trip-wise-client",
+  "rowActions": true
+ },
+ {
+  "key": "client-manage-client",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/manage-client",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "client-request-category",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/request-category",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "vendor-all",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/vendors",
+  "autoOpen": true,
+  "rowActions": true,
+  "rowButtons": [
+   "Manage Profile"
+  ]
+ },
+ {
+  "key": "vendor-requests",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/vendors",
+  "click": [
+   "Manage Vendor Requests"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "vendor-vehicles-onboarded",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/vendors",
+  "click": [
+   "Vehicles Onboarded"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "vendor-products-linked",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/vendors",
+  "click": [
+   "Products Linked"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "vendor-request-type",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/manage-request-type",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "vendor-deactivated",
+  "folder": "vendor-management",
+  "route": "/dashboard/vendor-management/deactivated-vendors",
+  "rowActions": true
+ },
+ {
+  "key": "category-main",
+  "folder": "category-management",
+  "route": "/dashboard/category-management/main-category",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "category-sub",
+  "folder": "category-management",
+  "route": "/dashboard/category-management/sub-category",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "category-unit-type",
+  "folder": "category-management",
+  "route": "/dashboard/category-management/manage-unit-type",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "service-requests",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "service-under-review",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Under Review"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "service-parts-request",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Parts Request"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "service-approved",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Approved Requests"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "service-rejected",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Rejected Requests"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "service-job-tracker",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Job Tracker"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "service-cost-analytics",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/service-requests",
+  "click": [
+   "Cost Analytics"
+  ]
+ },
+ {
+  "key": "service-all-scheduled",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/all-service-and-maintenance",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "service-type-all",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/manage-service-type",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "service-type-pre-departure",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/manage-service-type",
+  "click": [
+   "Pre-Departure Checklist"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "service-type-post-arrival",
+  "folder": "service-maintenance",
+  "route": "/dashboard/service-maintenance/manage-service-type",
+  "click": [
+   "Post-arrival Checklist"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-dashboard",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management"
+ },
+ {
+  "key": "finance-masters",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Masters"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-income",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Income"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-expenses",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Expenses"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-receivables",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Receivables"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-payables",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Payables"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-banking",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Banking"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-assets",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Assets"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-compliance",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Compliance"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "finance-profitability",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Profitability"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "finance-reports",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "Reports"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "finance-more",
+  "folder": "financial-management",
+  "route": "/dashboard/financial-management",
+  "click": [
+   "More"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "inventory-dashboard",
+  "folder": "inventory-management",
+  "route": "/dashboard/inventory-management/dashboard",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "inventory-manage",
+  "folder": "inventory-management",
+  "route": "/dashboard/inventory-management/dashboard",
+  "click": [
+   "Manage Inventory"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "inventory-purchasing",
+  "folder": "inventory-management",
+  "route": "/dashboard/inventory-management/dashboard",
+  "click": [
+   "Purchasing"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "inventory-settings",
+  "folder": "inventory-management",
+  "route": "/dashboard/inventory-management/dashboard",
+  "click": [
+   "Settings"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "inventory-reports",
+  "folder": "inventory-management",
+  "route": "/dashboard/inventory-management/dashboard",
+  "click": [
+   "Reports & Analytics"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "cms-popular-routes",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-routes",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-service-category",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-service-category",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-service-sub-category",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-service-sub-category",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-service-route",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-service-route",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-why-required",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-service-why-required",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-required-for",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/popular-service-required-for",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "cms-whatsapp-faq",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/whatsapp-faq",
+  "open": [
+   "Add FAQ"
+  ],
+  "rowActions": true
+ },
+ {
+  "key": "cms-app-force-update-user",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/app-force-update"
+ },
+ {
+  "key": "cms-app-force-update-ops",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/app-force-update",
+  "click": [
+   "Internal Ops App"
+  ]
+ },
+ {
+  "key": "cms-marketing-notification",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/marketing-notification"
+ },
+ {
+  "key": "cms-privacy-policy",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/policies-and-info"
+ },
+ {
+  "key": "cms-terms",
+  "folder": "cms",
+  "route": "/dashboard/content-management-system/policies-and-info",
+  "click": [
+   "Terms & Conditions"
+  ]
+ },
+ {
+  "key": "payment-penalty-slabs",
+  "folder": "payment-refund",
+  "route": "/dashboard/payment-management",
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "payment-b2b-rebate",
+  "folder": "payment-refund",
+  "route": "/dashboard/payment-management",
+  "click": [
+   "B2B Rebate Tiers"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "payment-b2c-rebate",
+  "folder": "payment-refund",
+  "route": "/dashboard/payment-management",
+  "click": [
+   "B2C Rebate Tiers"
+  ],
+  "autoOpen": true,
+  "rowActions": true
+ },
+ {
+  "key": "fleet-live-trips-r2",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management",
+  "clickSel": [
+   "main :text-is(\"Approved & Track Live Trips\") >> xpath=ancestor::*[contains(@class,'MuiCard') or contains(@class,'card') or contains(@class,'Card')][1]"
+  ],
+  "openWait": 2000,
+  "autoOpen": true,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "role-users-r2",
+  "folder": "role-permission",
+  "route": "/dashboard/user-management",
+  "open": [
+   "+ Add User",
+   "Access",
+   "Add More Permissions"
+  ],
+  "openWait": 3000,
+  "followup": true
+ },
+ {
+  "key": "role-roles-r2",
+  "folder": "role-permission",
+  "route": "/dashboard/user-management",
+  "click": [
+   "Role Management"
+  ],
+  "open": [
+   "+ Add New Role"
+  ],
+  "openWait": 3000,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "employee-client-request-r2",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "clickSel": [
+   "main button:text-is(\"Client Request\")"
+  ],
+  "openWait": 2500,
+  "open": [
+   "+ Add Request"
+  ],
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "employee-onboarding-r2",
+  "folder": "employee-management",
+  "route": "/dashboard/employee-management",
+  "clickSel": [
+   "main button:text-is(\"Employee Onboarding\")"
+  ],
+  "openWait": 2500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "client-regular-r2",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients",
+  "open": [
+   "Manage Invoice Signatures",
+   "Manage Client Category"
+  ],
+  "openWait": 2500,
+  "followup": true
+ },
+ {
+  "key": "booking-booked-r2",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "clickSel": [
+   "main button:text-is(\"Booked\")"
+  ],
+  "openWait": 1500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "booking-completed-r2",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "clickSel": [
+   "main button:text-is(\"Completed\")"
+  ],
+  "openWait": 1500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "inquiry-all-r2",
+  "folder": "inquiry-management",
+  "route": "/dashboard/inquiry-management/total-inquiries",
+  "autoOpen": true,
+  "rowActions": true,
+  "rowButtons": [
+   "View Quote",
+   "New quotation",
+   "Revised quotation"
+  ],
+  "followup": true
+ },
+ {
+  "key": "booking-pre-bookings-r2",
+  "folder": "booking-operations",
+  "route": "/dashboard/booking-management/total-booking",
+  "open": [
+   "Record Advance"
+  ],
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "fleet-live-trips-r3",
+  "folder": "fleet-vehicle",
+  "route": "/dashboard/fleet-vehicle-management/approved-trips",
+  "rowActions": true,
+  "rowButtons": [
+   "Edit Allocation"
+  ],
+  "followup": true
+ },
+ {
+  "key": "client-regular-invoice-payment-r2",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/regular-clients",
+  "clickSel": [
+   "main :text-is(\"Invoice & Payment\")"
+  ],
+  "openWait": 1500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "client-contracted-invoice-mgmt-r2",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients",
+  "clickSel": [
+   "main :text-is(\"Invoice Management\")"
+  ],
+  "openWait": 1500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "client-contracted-client-requests-r2",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/contracted-clients",
+  "clickSel": [
+   "main :text-is(\"Client Requests\")"
+  ],
+  "openWait": 1500,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "client-request-category-r2",
+  "folder": "client-management",
+  "route": "/dashboard/client-management/request-category",
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "category-sub-r2",
+  "folder": "category-management",
+  "route": "/dashboard/category-management/sub-category",
+  "autoOpen": true,
+  "rowActions": true,
+  "followup": true
+ },
+ {
+  "key": "category-unit-type-r2",
+  "folder": "category-management",
+  "route": "/dashboard/category-management/manage-unit-type",
+  "rowActions": true,
+  "followup": true
+ }
+]

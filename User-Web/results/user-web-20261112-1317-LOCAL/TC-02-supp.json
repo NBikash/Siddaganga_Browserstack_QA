@@ -1,0 +1,97 @@
+{
+  "id": "TC-02-supp",
+  "started": "2026-11-12T08:34:59.535Z",
+  "steps": [
+    {
+      "label": "pax13-capacity",
+      "input": {
+        "label": "pax13-capacity",
+        "md": true,
+        "pickup": "Malleshwaram",
+        "mdDates": [
+          {
+            "next": 0,
+            "d": 20
+          }
+        ],
+        "time": "3:00 PM",
+        "pax": 13,
+        "hrs": 24,
+        "vehicle": "D12TT",
+        "details": false,
+        "capacityOnly": true
+      },
+      "pickupSuggest": {
+        "query": "Malleshwaram",
+        "suggestions": [
+          "Malleshwaram Bengaluru, Karnataka, India",
+          "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+          "Malleshwaram Traffic Police Station 5th Cross Road, Near KCG Hospital, Malleshwaram, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+      },
+      "integrity": [],
+      "form": {
+        "multiDay": true,
+        "differentDrop": false,
+        "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "",
+        "time": "3:00 PM",
+        "selectedDates": "Selected Dates (2):",
+        "pax": "13",
+        "hours": "24"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Malleshwaram, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12,20 Nov, 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:2 Days Passengers:13 Pax Drop Address:Malleshwaram, Bengaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 24 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹22,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹23,000"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹27,000"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹9,000"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹15,600"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹10,600"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-results-summary.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-results-vehicles.png"
+        ]
+      },
+      "intermediate": [],
+      "capacity": {
+        "popup": "Passenger Capacity Not Complete! You need seats for 13 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-capacity-popup.png"
+      }
+    }
+  ],
+  "finished": "2026-11-12T08:37:04.521Z"
+}

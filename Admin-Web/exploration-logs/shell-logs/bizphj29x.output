@@ -1,0 +1,12 @@
+client-contracted-client-requests: ok
+client-request-category: ok
+category-sub: ok
+category-unit-type: ok
+fleet-live-trips-r2: ok
+booking-pre-bookings: ok
+inquiry-all: ok
+client-regular-invoice-payment: ok
+client-contracted-invoice-mgmt: ok
+client-trip-wise: ok
+
+[exited with code 0]

@@ -1,0 +1,221 @@
+{
+  "lt01": {
+    "rows": 1,
+    "headers": [
+      "TRIP ID",
+      "CUSTOMER NAME",
+      "CUSTOMER TYPE",
+      "JOURNEY",
+      "DATES",
+      "ROUTE",
+      "PICKUP DATE",
+      "DROP DATE",
+      "ASSIGNED STATUS",
+      "ACTION"
+    ],
+    "row": "TP-112 Bikash N Local Local 20/11/2026 Whitefield, Bengaluru, Karnataka, India-> Whitefield, Bengaluru, Karnataka, India 20 Nov 2026, 12:00 AM 20 Nov 2026, 12:00 AM On going",
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-01-live-row-r2.png"
+  },
+  "menu": [
+    "Edit Trip Sheet",
+    "Track Live Location",
+    "Driver Details",
+    "Emergency Alerts",
+    "Breakdown Protocol",
+    "Refuel Request",
+    "Notify Service Manager",
+    "Edit Trip Details",
+    "Complete Trip",
+    "Send Notification",
+    "Record Advance"
+  ],
+  "Breakdown Protocol": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Emergency & Breakdown Request Details Add Emergency / Breakdown Request Vehicle Number AR 01 U 8228 Reported By Reported Time Location Issue Description Priority ​ Assigned to Vendor / Technician ​ Is Towing Required? Replace Vehicle? Cancel Add Request Existing Emergency / Breakdown Requests REQUEST ID VEHICLE REPORTED BY LOCATION PRIORITY ASSIGNED TO REPORTED TIME STATUS No requests found",
+    "buttons": [
+      "Cancel",
+      "Add Request"
+    ],
+    "fields": [
+      {
+        "n": "vehiclenumber",
+        "v": "4",
+        "ro": false
+      },
+      {
+        "n": "reportedby",
+        "v": "Test Driver",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "Search for a location",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "issueDescription",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "priority",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "assignedTo",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-breakdown-protocol-r2.png",
+    "submitLabel": "Add Request",
+    "submitDisabled": false,
+    "blank": {
+      "errors": [
+        "Reported Time",
+        "Reported Time is required",
+        "Location",
+        "Location is required",
+        "Issue Description",
+        "Issue Description is required",
+        "Priority",
+        "​",
+        "Priority is required",
+        "Assigned to Vendor / Technician",
+        "Assigned Vendor / Technician is required"
+      ],
+      "toasts": [],
+      "net": [],
+      "open": true
+    },
+    "shotBlank": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-breakdown-protocol-blank.png"
+  },
+  "Notify Service Manager": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 0,
+    "text": "Total Buses / Active 54 Approved & Track Live Trips 5 Vehicle Allocation Portal 6 Tarrif Management 20 Approved VehiclesReady For TripLive Trips Completed Trips Active Trip Portal ​ TRIP ID CUSTOMER NAME CUSTOMER TYPE JOURNEY DATES ROUTE PICKUP DATE DROP DATE ASSIGNED STATUS ACTION TP-112 Bikash N Local Local 20/11/2026 Whitefield, Bengaluru, Karnataka, India-> Whitefield, Bengaluru, Karnataka, India 20 Nov 2026, 12:00 AM 20 Nov 2026, 12:00 AM On going TP-93 Subrata S Local Local 10/11/2026 Marathahalli, Bengaluru, Karnataka 560037, India-> Marathahalli, Bengaluru, Karnataka 560037, India 10 N",
+    "buttons": [
+      "Approved Vehicles",
+      "Ready For Trip",
+      "Live Trips",
+      "Completed Trips",
+      "On going",
+      "On going",
+      "On going",
+      "On going",
+      "On going",
+      "1",
+      "2"
+    ],
+    "fields": [
+      {
+        "n": "Search client by name or mobile",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "Search Details",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "5",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-notify-service-manager.png"
+  },
+  "Send Notification": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Send Notification Customer Name Customer Phone Customer Email Notification Title Email Subject Message Send Via WhatsApp SMS Mail Notification Send Now Cancel",
+    "buttons": [
+      "Send Now",
+      "Cancel"
+    ],
+    "fields": [
+      {
+        "n": "text",
+        "v": "Bikash N",
+        "ro": true
+      },
+      {
+        "n": "text",
+        "v": "7008287992",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "Message from Siddaganga T",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "Update from Siddaganga Tr",
+        "ro": false
+      },
+      {
+        "n": "Your custom message here",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-send-notification.png"
+  },
+  "lt06": {
+    "confirm": "Complete Trip Are you sure you want to complete this trip? Confirm Cancel",
+    "shotConfirm": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-06-complete-confirm.png",
+    "toasts": [
+      "Data updated successfully!"
+    ],
+    "net": [
+      "POST /api/v1/admin/end-trip 200"
+    ]
+  }
+}

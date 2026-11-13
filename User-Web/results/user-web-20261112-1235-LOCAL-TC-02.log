@@ -1,0 +1,31 @@
+[
+  {
+    "label": "pax13",
+    "nav": true,
+    "found": "20 Buses Found | Local - 24 HR / 80 KM"
+  },
+  {
+    "label": "pax12",
+    "nav": true,
+    "found": "20 Buses Found | Local - 24 HR / 80 KM",
+    "applied": [
+      {
+        "label": "Vehicle Base Cost",
+        "value": "₹9,000"
+      },
+      {
+        "label": "Day Bata Cost (Before 10pm or After 6am)",
+        "value": "₹1,600"
+      },
+      {
+        "label": "Night Bata Cost (Before 6am or After 10pm)",
+        "value": "₹0"
+      },
+      {
+        "label": "Estimated Grand Total",
+        "value": "₹10,600"
+      }
+    ],
+    "pkg": "Local Trip – 8 Hrs / 80 Kms"
+  }
+]

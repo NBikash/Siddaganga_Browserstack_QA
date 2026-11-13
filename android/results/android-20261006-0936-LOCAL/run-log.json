@@ -1,0 +1,1804 @@
+{
+  "runId": "android-20261006-0936-LOCAL",
+  "platform": "android",
+  "scope": "Local module full coverage on new QA build app-release_5Oct26.apk: 108 Local cases (HOME Local form, LOC, TRIP, VLIST, VDET, CONF, BOOK, INQ incl. payment screen and cancellation) + re-verification of open Local defects",
+  "build": "Uploaded APK app-release_5Oct26.apk (v1.1, com.siddaganga)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-06T04:06:35.914Z",
+  "endedAt": "2026-10-06T05:22:26.948Z",
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE)",
+      "method": "Mobile + password, entered by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-06T04:06:43.682Z",
+      "text": "User approved in chat (2026-10-06): submitting Local inquiries; cancelling only inquiries created during this run; payment flow up to the gateway without entering payment details; offline toggling. Logout, profile/settings saves, support tickets, registrations, Jira NOT approved."
+    },
+    {
+      "at": "2026-10-06T04:54:53.518Z",
+      "text": "Local inquiry A submitted under user approval (2026-10-06 ~04:54 device time): 33 Seater Deluxe Coach, Majestic -> Kempegowda Intl Airport, 06-10-2026 10:00 am, 4 pax, 8 hrs, est. Rs 12,000 (double-tap Confirm for TC_CONF_006)."
+    },
+    {
+      "at": "2026-10-06T05:11:08.785Z",
+      "text": "Local inquiry B submitted under user approval (~05:10 device time): multi-day 8 & 13 Oct 2026, 10:00 am, 4 pax, 8 hrs, Majestic, 33 Seater Deluxe Coach, est. Rs 12,000 (list Rs 31,000). Created for TC_CONF_002/009 and cancellation slab TC_INQ_014/008/012."
+    },
+    {
+      "at": "2026-10-06T05:19:45.292Z",
+      "text": "Cancelled under user approval (only inquiries created in this run): 562 (15 Oct, INV-72) and 561 (8 & 13 Oct, INV-73). Inquiry 560 (today 10:00 am) could not be cancelled online - app blocks cancellation within 6 hours of departure; it remains open on the QA account."
+    }
+  ],
+  "environmentNotes": [
+    "Environment: App Live session in the Claude tab was taken over by another App Live tab/session (dashboard shows 'You already have a session running' - plan allows one parallel session). Testing paused until the user closes the other App Live tab. Not an app defect.",
+    "Inquiry 560 (Local, today 06-10-2026 10:00 am, created this run) could not be cancelled: app blocks online cancellation within 6 hours of departure. It remains in Inquired on the QA account with 3 PENDING Razorpay payment links (Rs 500 / 13,000 / 1, unpaid). Cancel manually via admin if required.",
+    "App Live input: desktop typing occasionally drops characters (e.g. 'mjestic'); every typed value was verified on screen before use."
+  ],
+  "cases": [
+    {
+      "id": "TC_HOME_005",
+      "status": "Pass",
+      "actual": "Local tab selected by default; Pickup Location empty ('Select Pickup Location'), Pickup Date = today (06-10-2026), Pickup Time = current slot (04:19 am at load), Passengers 1, Hours 1, Multi-day trip and Different drop location unchecked; Search Vehicles + 'You won't be charged yet!'.",
+      "endedAt": "2026-10-06T04:24:21.638Z"
+    },
+    {
+      "id": "TC_HOME_007",
+      "status": "Pass",
+      "actual": "Search Vehicles with empty pickup shows inline 'Pickup location is required' (red field outline); no navigation.",
+      "evidence": [
+        "TC_HOME_007_1_pickup-required-and-past-time.png"
+      ],
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_043",
+      "status": "Pass",
+      "actual": "Form left idle: default 04:19 am became past (device clock 04:22). Search shows 'Selected date and time has already passed.' under the date/time row. Switching trip tab back to Local refreshes the time to the current slot.",
+      "evidence": [
+        "TC_HOME_007_1_pickup-required-and-past-time.png"
+      ],
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_004",
+      "status": "Pass",
+      "actual": "Local / Outstation / Transfer / Multi tabs switch the form: Outstation shows Destination + '+ Add Another Destination' + Drop Date & Time; Transfer shows Point To Point / By Hour, From/To, Add Return; Multi shows 'Leg #1 Local' with Local/Outstation/Transfer chips. Selected tab highlighted in maroon.",
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_008",
+      "status": "Pass",
+      "actual": "Date of Travel bottom sheet with month/day/year wheels; Done applies (06-11-2027 shown); changing to December then X closes without changing the value (still 06-11-2027).",
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_009",
+      "status": "Pass",
+      "actual": "Past values (September, day 5) are shown greyed on the wheel; tapping them snaps back to today (October 6 2026). Past date cannot be selected.",
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_010",
+      "status": "Pass",
+      "actual": "Dates more than one year ahead are allowed: 06-11-2027 accepted (+13 months); year wheel offers 2028. No maximum enforced - business rule not defined, consistent with previous build.",
+      "endedAt": "2026-10-06T04:24:21.648Z"
+    },
+    {
+      "id": "TC_HOME_011",
+      "status": "Pass",
+      "actual": "Pickup Time sheet with hour / minute (00, 30 only) / AM-PM wheels; 10:00 AM selected shows '10:00 am'.",
+      "endedAt": "2026-10-06T04:27:52.964Z"
+    },
+    {
+      "id": "TC_HOME_013",
+      "status": "Pass",
+      "actual": "Single tap on Done closed the Pickup Time sheet and applied 10:00 am.",
+      "endedAt": "2026-10-06T04:27:52.974Z"
+    },
+    {
+      "id": "TC_HOME_012",
+      "status": "Pass",
+      "actual": "Today selected, device time 04:25: earlier hour (3) snaps back to 4; 4:00 AM can be set on the wheel but on Done auto-corrects to the next valid slot 04:30 am. Past time cannot be kept.",
+      "endedAt": "2026-10-06T04:27:52.974Z"
+    },
+    {
+      "id": "TC_HOME_014",
+      "status": "Pass",
+      "actual": "Passengers 4 typed via numeric keypad and accepted (no error). Reflected on Trip Summary verified in TC_TRIP_001 (Passengers value shown).",
+      "endedAt": "2026-10-06T04:27:52.974Z"
+    },
+    {
+      "id": "TC_HOME_015",
+      "status": "Pass",
+      "actual": "0 -> inline 'Enter at least 1 passenger'; blank -> 'Number of passengers is required' (on Search).",
+      "evidence": [
+        "TC_HOME_015_1_zero-pax-hours-required.png"
+      ],
+      "endedAt": "2026-10-06T04:27:52.974Z"
+    },
+    {
+      "id": "TC_HOME_017",
+      "status": "Pass",
+      "actual": "Numeric keypad only; '2.5' stored as 25 (decimal stripped), '-1' stored as 1 (minus stripped). Decimal/negative values cannot be entered.",
+      "endedAt": "2026-10-06T04:27:52.975Z"
+    },
+    {
+      "id": "TC_HOME_018",
+      "status": "Pass",
+      "actual": "Hours blank -> 'Number of hours is required'; 0 -> 'Enter at least 1 hour'; 25 (and 57) -> 'Maximum trip duration is 24 hours'; 24 accepted (error clears); 1 accepted (default, used in happy path).",
+      "endedAt": "2026-10-06T04:27:52.975Z"
+    },
+    {
+      "id": "TC_HOME_027",
+      "status": "Fail",
+      "actual": "Clear resets date to today, time to current slot (04:25 am) and passengers to 1, but Number of Hours is left EMPTY ('Enter Number Of Hours') instead of the default 1; a subsequent Search then shows 'Number of hours is required'. BUG-HOME-003 still reproducible on app-release_5Oct26.apk.",
+      "bugs": [
+        "BUG-HOME-003"
+      ],
+      "evidence": [
+        "TC_HOME_027_1_clear-hours-empty.png"
+      ],
+      "endedAt": "2026-10-06T04:27:52.975Z"
+    },
+    {
+      "id": "TC_LOC_001",
+      "status": "Pass",
+      "actual": "Pickup Location screen: back arrow, title 'Pickup Location', subtitle 'Select Pickup Location', search box 'Search For A Location...', 'Use Current Location' button pinned at the bottom.",
+      "endedAt": "2026-10-06T04:32:51.381Z"
+    },
+    {
+      "id": "TC_LOC_005",
+      "status": "Pass",
+      "actual": "Suggestions start from 1 character ('m' -> Mumbai, Maharashtra, Madurai, Majestic, Munnar) and refine with more characters; no lag/flicker. (Note: first character typed immediately after focusing the box can be dropped by App Live input - environment.)",
+      "endedAt": "2026-10-06T04:32:51.404Z"
+    },
+    {
+      "id": "TC_LOC_002",
+      "status": "Pass",
+      "actual": "'majestic bangalore' lists Google Places suggestions with name + address (Majestic - Bangalore, Karnataka, India; Majestic - Majestic, Bangalore; MAJESTIC - LakshmanPuri, Gandhi Nagar...; Race Course Rd...).",
+      "evidence": [
+        "TC_LOC_002_1_suggestions.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_LOC_004",
+      "status": "Fail",
+      "actual": "Gibberish 'zqxkwjqpzx' returns a completely blank list with no 'No results' / empty-state message (no crash). BUG-LOC-001 still reproducible on app-release_5Oct26.apk.",
+      "bugs": [
+        "BUG-LOC-001"
+      ],
+      "evidence": [
+        "TC_LOC_004_1_no-results-blank.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_LOC_006",
+      "status": "Pass",
+      "actual": "~200-character input with symbols (- / , . ; ' [ ] =), letters and digits accepted; field scrolls horizontally, blank results, no crash or freeze; text could be deleted afterwards.",
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_LOC_003",
+      "status": "Pass",
+      "actual": "Tapping the first suggestion returns to Home; Pickup Location shows 'Majestic, Bengaluru, Karnataka, India'; other form values retained.",
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_LOC_013",
+      "status": "Pass",
+      "actual": "Back arrow on Pickup Location without selecting returns to Home; Pickup Location still 'Majestic, Bengaluru, Karnataka, India'.",
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_HOME_025",
+      "status": "Pass",
+      "actual": "Turning on 'Different drop location' shows a 'Drop Location' field ('Select Drop Location') under Additional Options. Observation: only the small switch reacts - tapping the label text 'Different drop location' does not toggle it (two attempts).",
+      "endedAt": "2026-10-06T04:32:51.405Z",
+      "bugs": [
+        "BUG-HOME-004"
+      ],
+      "evidence": [
+        "TC_HOME_025_1_label-tap-no-toggle.png"
+      ]
+    },
+    {
+      "id": "TC_HOME_026",
+      "status": "Pass",
+      "actual": "With Different drop ON and drop empty, Search shows 'Drop location is required' under the field; no navigation.",
+      "endedAt": "2026-10-06T04:32:51.405Z"
+    },
+    {
+      "id": "TC_LOC_010",
+      "status": "Pass",
+      "actual": "Drop Location screen: title 'Drop Location', subtitle 'Select your drop location to complete your inquiry' (correct copy, BUG-LOC-002 fix holds).",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_LOC_011",
+      "status": "Pass",
+      "actual": "FIXED: selecting 'Kempegowda International Airport Bengaluru (BLR)' fills Drop Location with 'Kempegowda International Airport Be...' (place name kept); Trip Summary shows 'Kempegowda International Airport Bengaluru, Devanahalli, Bengaluru, Karnataka 560300, India'. BUG-LOC-003 verified fixed on app-release_5Oct26.apk.",
+      "evidence": [
+        "TC_LOC_011_1_drop-place-name-shown.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_HOME_006",
+      "status": "Pass",
+      "actual": "Local: pickup Majestic, drop Kempegowda Airport, 06-10-2026 10:00 am, 4 passengers, 8 hours -> Search Vehicles opens Trip Summary sheet 'Now you're ready to explore' (Local Trip badge, route map) -> Search Vehicles -> Available Vehicles (20 vehicles found).",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_001",
+      "status": "Pass",
+      "actual": "Trip Summary shows map with route + vehicle marker, 'Local Trip' badge, route heading, Trip Type 'Local Trip', Route, Distance, Dates '06 Oct, 2026', Pickup Location, Drop Location, Passengers 4, Vehicle Age Preference, Comfort Priority, Edit Trip Details and Search Vehicles. (Map tiles take ~3-5 s to load; blank grey area shown meanwhile.)",
+      "evidence": [
+        "TC_TRIP_002_1_distance-80km-majestic-airport.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_002",
+      "status": "Fail",
+      "actual": "Majestic -> Kempegowda International Airport (approx. 35-40 km by road) shows Distance '80 KM' on Trip Summary - same fixed 80 KM value as every Local trip. BUG-TRIP-002 still reproducible.",
+      "bugs": [
+        "BUG-TRIP-002"
+      ],
+      "evidence": [
+        "TC_TRIP_002_1_distance-80km-majestic-airport.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_003",
+      "status": "Fail",
+      "actual": "Local single-day trip with 10:00 am pickup and 8 hours: Trip Summary shows only Dates '06 Oct, 2026' - no pickup time and no Number of Hours anywhere on the sheet. BUG-TRIP-001 still reproducible.",
+      "bugs": [
+        "BUG-TRIP-001"
+      ],
+      "evidence": [
+        "TC_TRIP_003_1_no-time-no-hours.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_004",
+      "status": "Pass",
+      "actual": "Vehicle Age Preference chips Brand New (0-2 years) / New (2-5 years) / Any (5+ years): single-select, selected chip highlighted with maroon border; selection moves when another chip is tapped.",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_008",
+      "status": "Pass",
+      "actual": "Comfort Priority: Seat pitch / Luggage space / Ride comfort priority can all be checked together (multi-select); tapping a checked item (Luggage space) unchecks it while the others stay checked.",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_005",
+      "status": "Pass",
+      "actual": "Edit Trip Details closes the sheet and returns to the Local form with all values (Majestic, 06-10-2026, 10:00 am, 4 pax, 8 hrs, drop Kempegowda Airport) retained.",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_006",
+      "status": "Pass",
+      "actual": "X on the Trip Summary closes the sheet and returns to the filled Home form.",
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_TRIP_007",
+      "status": "Pass",
+      "actual": "Search Vehicles on the Trip Summary opens 'Available Vehicles - 20 vehicles found'.",
+      "evidence": [
+        "TC_VLIST_001_1_available-vehicles.png"
+      ],
+      "endedAt": "2026-10-06T04:32:51.406Z"
+    },
+    {
+      "id": "TC_VLIST_001",
+      "status": "Pass",
+      "actual": "Back, Filters (red dot), title 'Available Vehicles', '20 vehicles found', category chips (Luxury/Premium/Deluxe) and brand chips row.",
+      "evidence": [
+        "TC_VLIST_001_1_available-vehicles.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.039Z"
+    },
+    {
+      "id": "TC_VLIST_004",
+      "status": "Fail",
+      "actual": "Luxury -> 6 vehicles (all Luxury), Premium -> 7 (all Premium), Deluxe -> '0 vehicles found / No Vehicles Found' although 7 'Delux'-badged vehicles (33/40/49 Seater Deluxe Coach, Sedan, MPVs, 12 Seater Tempo Traveller, SUV) are in the full list. BUG-VLIST-001 still reproducible.",
+      "bugs": [
+        "BUG-VLIST-001"
+      ],
+      "evidence": [
+        "TC_VLIST_004_1_deluxe-zero.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.044Z"
+    },
+    {
+      "id": "TC_VLIST_007",
+      "status": "Pass",
+      "actual": "No-match chip selection (Deluxe; Volvo + Deluxe) shows empty state 'No Vehicles Found' with a 'Clear selection' button that restores all 20 vehicles.",
+      "endedAt": "2026-10-06T04:41:14.044Z"
+    },
+    {
+      "id": "TC_VLIST_005",
+      "status": "Pass",
+      "actual": "Volvo Bus India brand chip -> '3 vehicles found', all Volvo (45 Seater Luxury Volvo, 45 Seater Luxury 9600 Volvo, 49 Seater Luxury 9600 Volvo).",
+      "endedAt": "2026-10-06T04:41:14.044Z"
+    },
+    {
+      "id": "TC_VLIST_010",
+      "status": "Pass",
+      "actual": "Volvo + Luxury -> 3 vehicles (AND); Volvo + Deluxe -> 0 with empty state; Clear selection resets both chips -> 20 vehicles.",
+      "endedAt": "2026-10-06T04:41:14.044Z"
+    },
+    {
+      "id": "TC_VLIST_008",
+      "status": "Pass",
+      "actual": "Scrolled through all 20 cards to the end (last: 45 Seater Luxury BharatBenz, Rs 16,000); images load as cards scroll in, smooth scroll, no duplicate cards. Order: 33/40/49 Seater Deluxe Coach, Sedan, MPVs, 12 Seater Tempo Traveller, 45/40/35/28/25/21 Seater Premium AC Coach, 16 Seater Premium Urbania, 12/9 Seater Luxury Urbania, 45 Luxury Volvo, 45/49 Luxury 9600 Volvo, SUV, 45 Luxury BharatBenz.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VLIST_002",
+      "status": "Fail",
+      "actual": "Cards show image, class badge, 'Starts From Rs', rating 4.5, name, code, seats, amenity icons and Best For tags - except the SUV card (LSUV): still 'N/A Seater' and no Best For tags. Partially fixed: SUV now has a class badge ('Delux'). Also SUV 'Starts From Rs 19,500' is higher than the 45 Seater Luxury Volvo (Rs 17,000) while the MPV with the same Innova image is Rs 7,800 - suspicious data. BUG-VLIST-002 still reproducible.",
+      "bugs": [
+        "BUG-VLIST-002"
+      ],
+      "evidence": [
+        "TC_VLIST_002_1_suv-na-seater.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VLIST_009",
+      "status": "Pass",
+      "actual": "Tapping the 33 Seater Deluxe Coach card opens its Vehicle Details.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VLIST_003",
+      "status": "Fail",
+      "actual": "Card: '33 Seater Deluxe Coach', '35 Seater', Starts From Rs 11,000. Details: title '33 Seater Deluxe Coach', line '35-Seater - D35NA', tile '35 Seats', Local Rs 10,000 / footer Starting From Rs 10,000. Confirm estimate Rs 12,000. Seat count (33 vs 35) and price (11,000 vs 10,000) still inconsistent. BUG-VLIST-003 still reproducible.",
+      "bugs": [
+        "BUG-VLIST-003"
+      ],
+      "evidence": [
+        "TC_VLIST_003_1_details-35seats-10000.png",
+        "TC_VLIST_001_1_available-vehicles.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_001",
+      "status": "Pass",
+      "actual": "Auto-sliding image carousel (3 dots, image changed while on page), back button, 'Delux' class badge, title '33 Seater Deluxe Coach', rating 4.5, line '35-Seater - D35NA - Openable Window - AC/Non-AC'.",
+      "evidence": [
+        "TC_VLIST_003_1_details-35seats-10000.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_002",
+      "status": "Fail",
+      "actual": "Class badge still reads 'Delux' on Vehicle Details and on all Deluxe-class cards (expected 'Deluxe'). BUG-VDET-001 still reproducible.",
+      "bugs": [
+        "BUG-VDET-001"
+      ],
+      "evidence": [
+        "TC_VLIST_003_1_details-35seats-10000.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_003",
+      "status": "Pass",
+      "actual": "Spec tiles: 35 Seats (Seater), Diesel (Fuel Type), Automatic (Transmission), Chassis-Built Coach (Ladder Frame) (Body Type).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_004",
+      "status": "Pass",
+      "actual": "Pricing card: Local Starts Rs 10,000 (8hr/80km); Outstation Rs 16,500 /day + Rs 55/km; Transfer Rs 14,500 (City -> Airport).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_005",
+      "status": "Pass",
+      "actual": "View Fare Breakup expands (label -> 'Hide Fare Breakup', tabs Local Trip / Outstation Trip / Transfer Trip); Hide collapses (label -> 'View Fare Breakup').",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_006",
+      "status": "Pass",
+      "actual": "Local Package Pricing: Base Rate (8Hr/80Km) Included (Driver, Fuel, Day Allowance) Rs 10,000; Extra Km Charge Rs 55/km; Extra Hour Charge Rs 1,000/hr; Bata Cost x2 Rs 1,000; Toll & Parking Actuals; GST Additional; disclaimer 'Toll & parking are actuals. GST is additional. Pricing may vary by city, time and availability.'",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_009",
+      "status": "Fail",
+      "actual": "Bata labels still 'Bata Cost (Before 6am or After 10pm)' and 'Bata Cost (Before 10pm or After 6am)' - the second label covers the entire day. BUG-VDET-002 still reproducible.",
+      "bugs": [
+        "BUG-VDET-002"
+      ],
+      "evidence": [
+        "TC_VDET_009_1_bata-labels.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_010",
+      "status": "Pass",
+      "actual": "Extra-km rate Rs 55/km on footer ('Rs 55/km - Excludes taxes'), pricing card (Outstation '+ Rs 55/km') and Local fare breakup - consistent.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_011",
+      "status": "Pass",
+      "actual": "Amenities chips: Speakers, Music, Curtains, Charging, GPS, Emergency + 'View All Amenities (8)'.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_015",
+      "status": "Pass",
+      "actual": "View All Amenities (8) opens modal 'Amenities (8)' listing Speakers, Music, Curtains, Charging, GPS, Emergency, TV, CCTV; Close dismisses it.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_016",
+      "status": "Pass",
+      "actual": "Vehicle Technical Specifications accordions Engine Performance (125 hp - 400 Nm - 21% gradeability), Suspension (Semi-Elliptic Leaf Spring), Safety Features, Transmission - one open at a time, expand/collapse works; Vehicle Comfort Metrics bars labelled (Seat Pitch 690mm/729mm, Recliner Degree 108/117, Acoustic Insulation 55%/61%, Vertical Smoothness 62pts/71pts).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_012",
+      "status": "Pass",
+      "actual": "Footer 'Starting From Rs 10,000 / Rs 55/km - Excludes taxes' + Book Now stays pinned while scrolling the entire page (gallery, pricing, breakup, amenities, specs).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_VDET_013",
+      "status": "Pass",
+      "actual": "Single Book Now tap (stream verified live first) opens the 'Confirm Your Trip' modal.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_CONF_001",
+      "status": "Pass",
+      "actual": "Modal: map route (pickup G -> drop D); Customer Details (name, email, phone); Selected Vehicles '33 Seater Deluxe Coach - 1' with '35 Seater' chip and amenity icons; Route Summary (Local chip, Pickup Majestic, Dropoff Kempegowda International Airport...); Dates 6 Oct 2026; 4 Passengers; Estimated Trip Cost; Note; Edit Inquiry / Confirm. Observation: pickup time and hours are not shown anywhere on the modal.",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_CONF_010",
+      "status": "Pass",
+      "actual": "Customer Details shows the profile email (not 'No email address found') together with name and phone (not captured in evidence - personal data).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_CONF_003",
+      "status": "Pass",
+      "actual": "Vehicle Base Cost Rs 10,000 + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Estimated Grand Total Rs 12,000 - arithmetic correct. (Applicability of the night bata to a 10:00 am-6:00 pm trip is raised separately as BUG-CONF-002.)",
+      "evidence": [
+        "TC_CONF_003_1_estimate-12000-night-bata.png"
+      ],
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_CONF_004",
+      "status": "Pass",
+      "actual": "Edit Inquiry closes the modal and returns to the Home Local form with all values retained (Majestic, 06-10-2026, 10:00 am, 4 pax, 8 hrs, Different drop location ON).",
+      "endedAt": "2026-10-06T04:41:14.045Z"
+    },
+    {
+      "id": "TC_CONF_007",
+      "status": "Pass",
+      "actual": "Device set offline (App Live Throttle Network > Offline Mode); single Confirm tap shows native dialog \"Siddaganga Travels - No internet connection\" with OK after ~5 s; modal stays open, no inquiry submitted (verified later in My Bookings). Retry after reconnect covered by TC_CONF_005 submission.",
+      "evidence": [
+        "TC_CONF_007_1_no-internet-dialog.png"
+      ],
+      "endedAt": "2026-10-06T04:47:43.303Z"
+    },
+    {
+      "id": "TC_LOC_008",
+      "status": "Pass",
+      "actual": "Fresh install (new session): Use Current Location -> Android prompt 'Allow Banni by Siddaganga Travels to access this device's location?' -> Don't allow -> app dialog 'Location Permission Required - Please enable location permission to use your current location.' with OK / SETTINGS; OK returns to the picker and manual search still works.",
+      "evidence": [
+        "TC_LOC_008_1_permission-required-dialog.png"
+      ],
+      "endedAt": "2026-10-06T04:50:04.391Z"
+    },
+    {
+      "id": "TC_LOC_007",
+      "status": "Pass",
+      "actual": "Use Current Location again -> prompt -> 'While using the app' -> returns to Home with Pickup Location 'P126, Electronic Zone, MIDC Industrial Ar...' (the BrowserStack device's current location; Change Location not used).",
+      "evidence": [
+        "TC_LOC_007_1_current-location-filled.png"
+      ],
+      "endedAt": "2026-10-06T04:50:04.401Z"
+    },
+    {
+      "id": "TC_LOC_009",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Environment - BrowserStack",
+      "dependency": "Ability to switch device GPS/location services off",
+      "actual": "Cannot switch GPS off: App Live 'Android Settings' offers only App Orientation and Time Zone ('Upgrade to the App Live Team Pro plan to access more Android settings'); device Quick Settings (managed device 'Your organization...') shows only Screen record, Quick Share and Screen Cast - no Location tile.",
+      "evidence": [
+        "TC_LOC_009_1_quick-settings-no-location-tile.png"
+      ],
+      "endedAt": "2026-10-06T04:50:04.401Z"
+    },
+    {
+      "id": "TC_VLIST_006",
+      "status": "Fail",
+      "actual": "Local search with 40 passengers (Majestic, 06-10-2026 10:00 am, 8 hrs): Trip Summary 'Passengers 40'; Available Vehicles still lists all '20 vehicles found' starting with 33 Seater Deluxe Coach (35 seats), Sedan (4), MPVs (7) etc. Vehicles with fewer seats than passengers are not filtered out. BUG-VLIST-004 still reproducible.",
+      "bugs": [
+        "BUG-VLIST-004"
+      ],
+      "evidence": [
+        "TC_VLIST_006_1_40pax-20-vehicles.png"
+      ],
+      "endedAt": "2026-10-06T04:52:47.119Z"
+    },
+    {
+      "id": "TC_VDET_019",
+      "status": "Fail",
+      "actual": "40 passengers -> 33 Seater Deluxe Coach (35 seats) -> Book Now -> dialog 'Passenger Capacity Not Complete! You need seats for 40 passengers, but your selected buses cover only 35 seats. Please add one or more buses to continue.' with only 'Cancel' (and X). There is still no control anywhere (list, details, dialog) to add a second bus, so the user cannot follow the instruction. Under-capacity booking is correctly prevented. BUG-VDET-003 still reproducible.",
+      "bugs": [
+        "BUG-VDET-003"
+      ],
+      "evidence": [
+        "TC_VDET_019_1_capacity-dialog-cancel-only.png"
+      ],
+      "endedAt": "2026-10-06T04:52:47.129Z"
+    },
+    {
+      "id": "TC_HOME_016",
+      "status": "Fail",
+      "actual": "999 passengers accepted without any maximum/validation; Trip Summary shows 'Passengers 999' and Available Vehicles lists 20 vehicles (largest 49 seats). Max not enforced and unsuitable vehicles listed. BUG-VLIST-004 still reproducible.",
+      "bugs": [
+        "BUG-VLIST-004"
+      ],
+      "evidence": [
+        "TC_HOME_016_1_999-pax-summary.png",
+        "TC_HOME_016_2_999-pax-20-vehicles.png"
+      ],
+      "endedAt": "2026-10-06T04:52:47.129Z"
+    },
+    {
+      "id": "TC_LOC_012",
+      "status": "Pass",
+      "actual": "FIXED: Different drop ON, pickup Majestic and drop Majestic -> inline red 'Pickup and drop location cannot be the same.' under Drop Location immediately after selection; Search Vehicles is blocked (no Trip Summary). Changing the drop to Kempegowda Airport clears the error. BUG-LOC-004 verified fixed on app-release_5Oct26.apk. (Without Different drop, Trip Summary still shows Majestic -> Majestic as a round trip - by design.)",
+      "evidence": [
+        "TC_LOC_012_1_same-pickup-drop-blocked.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.674Z"
+    },
+    {
+      "id": "TC_CONF_005",
+      "status": "Pass",
+      "actual": "Confirm -> 'Inquiry Submitted Successfully!' ('We're calculating the most accurate price for your trip.') with Estimated Cost (Approx.) Rs 12,000, Track My Inquiry and Back to Home. Inquiry ID 560 created (this run, user-approved).",
+      "evidence": [
+        "TC_CONF_005_1_inquiry-submitted.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.694Z"
+    },
+    {
+      "id": "TC_CONF_006",
+      "status": "Pass",
+      "actual": "Confirm double-tapped quickly (button switches to a spinner after the first tap): only one new inquiry (560) created - Today > Inquired shows a single Majestic -> Kempegowda card for 6 Oct; Today count 5 includes 4 pre-existing inquiries (Outstation x2, Transfer, older Local).",
+      "endedAt": "2026-10-06T04:58:31.694Z"
+    },
+    {
+      "id": "TC_CONF_008",
+      "status": "Pass",
+      "actual": "Track My Inquiry opens Ride > My Bookings (Today period selected).",
+      "evidence": [
+        "TC_CONF_008_1_my-bookings.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_001",
+      "status": "Pass",
+      "actual": "My Bookings: title + subtitle 'Track your trips and create new bookings'; Today / Week / Month segmented filter; tiles Active 0, Completed 0, Total Spent Rs 0; status tabs Live 0 / Upcoming 0 / Completed 0 / Inquired 5 with counts; bottom nav with Ride highlighted.",
+      "evidence": [
+        "TC_CONF_008_1_my-bookings.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_003",
+      "status": "Pass",
+      "actual": "Inquired tab shows card for inquiry 560: Local badge, 'Inquired' chip, Majestic, Bengaluru, Karnataka, India - Kempegowda Int..., 1 day, 80 KM/Day, 35 seats, 4 pax, 33 Seater Deluxe Coach, Starts From Rs 12,000, View Details.",
+      "evidence": [
+        "TC_BOOK_003_1_inquiry-560-card.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_004",
+      "status": "Pass",
+      "actual": "Card values (1 day, 33 Seater Deluxe Coach, 35 seats, 4 pax, Rs 12,000, Majestic -> Kempegowda Airport) match the Confirm modal and success screen.",
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_005",
+      "status": "Pass",
+      "actual": "FIXED: status chip now reads 'Inquired' (capitalised) on all cards; trip badges 'Local' / 'Outstation' / 'Transfer' consistently cased. BUG-OUT-010 casing issue no longer reproducible for the status chip on app-release_5Oct26.apk.",
+      "evidence": [
+        "TC_BOOK_003_1_inquiry-560-card.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_002",
+      "status": "Pass",
+      "actual": "Inquiry 560 (trip today 6 Oct) present in Today (Inquired 5), Week (Inquired 11) and Month (Inquired 20); counts and lists change per period. Note: case data expected 'absent in Today' because previous inquiries were future-dated; here the trip date is today so presence in Today is correct.",
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_006",
+      "status": "Pass",
+      "actual": "Live (and Upcoming, Completed) tabs with no bookings show the empty state 'No bookings found'.",
+      "evidence": [
+        "TC_BOOK_006_1_live-empty.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_007",
+      "status": "Pass",
+      "actual": "Live 0, Upcoming 0, Completed 0 for Today/Week/Month - each tab shows 'No bookings found', consistent with the account having only unpaid inquiries (none advanced to booked status; payment cannot complete - BUG-OUT-013). Inquired tab lists all inquiries. Tabs switch correctly; full Upcoming/Live/Completed transitions untestable without a confirmed booking.",
+      "endedAt": "2026-10-06T04:58:31.695Z"
+    },
+    {
+      "id": "TC_BOOK_008",
+      "status": "Pass",
+      "actual": "Tiles Active 0 / Completed 0 / Total Spent Rs 0 for Today, Week and Month - consistent with no paid/active/completed bookings (only inquiries with Advance Received Rs 0).",
+      "endedAt": "2026-10-06T04:58:31.696Z"
+    },
+    {
+      "id": "TC_BOOK_009",
+      "status": "Fail",
+      "actual": "Pulling down on the My Bookings list (twice, from list top) shows no refresh indicator and no visible reload - the content only over-scrolls. Pull-to-refresh not available/discoverable; list updates only when the screen is re-entered.",
+      "bugs": [
+        "BUG-BOOK-001"
+      ],
+      "endedAt": "2026-10-06T04:58:31.696Z",
+      "evidence": [
+        "TC_BOOK_009_1_pull-no-refresh-indicator.png"
+      ]
+    },
+    {
+      "id": "TC_BOOK_010",
+      "status": "Pass",
+      "actual": "View Details on the 560 card opens Inquiry Details with 'Inquiry ID: 560'.",
+      "evidence": [
+        "TC_INQ_001_1_inquiry-560-details.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.696Z"
+    },
+    {
+      "id": "TC_INQ_002",
+      "status": "Pass",
+      "actual": "Expected arrival '06 Oct, 2026, 06:00 pm' = pickup 10:00 am + 8 hours.",
+      "evidence": [
+        "TC_INQ_001_1_inquiry-560-details.png"
+      ],
+      "endedAt": "2026-10-06T04:58:31.696Z"
+    },
+    {
+      "id": "TC_INQ_001",
+      "status": "Pass",
+      "actual": "Inquiry Details: 'Inquiry ID: 560'; Local Trip; Majestic, Bengaluru -> Distance 80 KM/Day -> Kempegowda International Airport Bengaluru, Devanahalli...; Schedule (Date 6 Oct 2026, Pickup 10:00 am, Expected arrival 06 Oct 2026 06:00 pm); Total Amount Rs 12000; Payment Information; Cancel Trip.",
+      "evidence": [
+        "TC_INQ_001_1_inquiry-560-details.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.151Z"
+    },
+    {
+      "id": "TC_INQ_003",
+      "status": "Pass",
+      "actual": "Advance Received Rs 0; Invoice Status 'Not generated yet'; Payment amount default 500; Razorpay selected (Cashfree option); Pay Advance button; Cancel Trip below.",
+      "evidence": [
+        "TC_INQ_003_1_payment-defaults.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.172Z"
+    },
+    {
+      "id": "TC_INQ_004",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Approval / Safety - payment details",
+      "dependency": "Razorpay TEST-mode credentials/link and a user-performed test payment",
+      "actual": "FIXED part: Pay Advance (Rs 500, Razorpay) no longer fails with '\"gateway\" is not allowed field' - it opens in-app 'Secure Payment' (Booking PNR BNEA514381) showing a Razorpay payment link 'Payment Request from Siddaganga Services - Advance payment for booking BNEA514381 - INR 500.00 - Expire by Apr 6 2027 - Proceed to Pay'. Stopped at the gateway as approved: completing the payment needs card/UPI details (not entered by Claude) and the page shows no test-mode marker. Cashfree gateway fails: 'Payment Error - link_creation_api is not enabled or approved. Please reach out to care@cashfree.com.' (BUG-INQ-001). BUG-OUT-013 fixed for Razorpay only.",
+      "bugs": [
+        "BUG-INQ-001"
+      ],
+      "evidence": [
+        "TC_INQ_004_1_razorpay-link-500.png",
+        "TC_INQ_004_2_cashfree-error.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.173Z"
+    },
+    {
+      "id": "TC_INQ_007",
+      "status": "Fail",
+      "actual": "Payment cancel: opened the Razorpay link (Rs 500) and pressed back without paying -> returns to Inquiry Details with no cancelled/failed message; Advance Received stays Rs 0 and retry is possible (Pay Advance available), but a 'Payment History' section now lists 'Advance - Razorpay (Online) Rs 500 - PENDING' that never resolves. Repeating with Rs 13,000 and Rs 1 adds more PENDING entries (3 in total). Gateway-side failure path not executed (would need payment details).",
+      "bugs": [
+        "BUG-INQ-002"
+      ],
+      "evidence": [
+        "TC_INQ_007_1_back-no-message-pending.png",
+        "TC_INQ_007_2_pending-history.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.173Z"
+    },
+    {
+      "id": "TC_INQ_005",
+      "status": "Fail",
+      "actual": "0 -> 'Invalid Amount - Please enter a valid amount to pay.' (blocked). 1 -> accepted, Razorpay link for INR 1.00 created. 13000 (> total Rs 12,000) -> accepted, Razorpay link for INR 13,000.00 created and recorded as PENDING. No minimum advance and no maximum (total/balance) enforced. BUG-OUT-012 still reproducible (now reaches the payment gateway).",
+      "bugs": [
+        "BUG-OUT-012"
+      ],
+      "evidence": [
+        "TC_INQ_005_1_zero-invalid.png",
+        "TC_INQ_005_2_overpay-13000-link.png",
+        "TC_INQ_005_3_one-rupee-link.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.173Z"
+    },
+    {
+      "id": "TC_INQ_006",
+      "status": "Pass",
+      "actual": "On-device keypad is numeric, but text typed via App Live keyboard ('abc-100') can enter the field; Pay Advance then shows 'Invalid Amount - Please enter a valid amount to pay.' - non-numeric/negative amount rejected.",
+      "evidence": [
+        "TC_INQ_006_1_abc-invalid.png"
+      ],
+      "endedAt": "2026-10-06T05:03:36.173Z"
+    },
+    {
+      "id": "TC_INQ_009",
+      "status": "Pass",
+      "actual": "Cancel Trip on inquiry 560 opens \"Cancel Booking & Process Refund\" (Refund Calculation: Trip cost Rs 12,000, One day charge Rs 9,500, Penalty 100%, Penalty retained Rs 12,000, Refund amount Rs 0, Hours before trip start 4 hours, Penalty slab T < 6 hrs - NO_SHOW; note \"Cancellation is not allowed for this time window. Trips within 6 hours of departure cannot be cancelled online.\"). Back closes it; inquiry 560 unchanged (still Inquired, 20 in Month).",
+      "evidence": [
+        "TC_INQ_009_1_cancel-sheet-no-show-window.png"
+      ],
+      "endedAt": "2026-10-06T05:04:12.378Z"
+    },
+    {
+      "id": "TC_INQ_010",
+      "status": "Pass",
+      "actual": "Back from Inquiry Details returns to My Bookings with Month period and Inquired tab still selected.",
+      "endedAt": "2026-10-06T05:04:12.381Z"
+    },
+    {
+      "id": "TC_HOME_019",
+      "status": "Pass",
+      "actual": "Turning on Multi-day trip shows an inline month calendar (October 2026, past days 1-5 greyed) and replaces 'Pickup Date & Time' with a 'Pickup Time' field.",
+      "evidence": [
+        "TC_HOME_019_1_multiday-calendar.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.899Z"
+    },
+    {
+      "id": "TC_HOME_023",
+      "status": "Pass",
+      "actual": "Multi-day ON with no dates: Search shows 'Select at least one travel date' under the calendar (plus 'Selected date and time has already passed.' on Pickup Time because 05:04 am today had passed); no navigation.",
+      "evidence": [
+        "TC_HOME_023_1_select-date-required.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_024",
+      "status": "Fail",
+      "actual": "Calendar '<' from October navigates to September 2026 - a fully past month (all days greyed); the '<' arrow then disappears so earlier months are not reachable. '>' navigates forward (November 2026) and back. Partially fixed: only one past month reachable now (previously unlimited), but navigating to a fully disabled past month is still possible. BUG-HOME-001 partially fixed.",
+      "bugs": [
+        "BUG-HOME-001"
+      ],
+      "evidence": [
+        "TC_HOME_024_1_past-month-september.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_020",
+      "status": "Pass",
+      "actual": "Tapping 8, 9 and 13 Oct highlights each date and lists 'Selected Dates (3): Oct 8, 2026 x / Oct 9, 2026 x / Oct 13, 2026 x' in date order. Observation: under App Live lag a second tap on a date toggles it off (expected toggle behaviour).",
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_021",
+      "status": "Pass",
+      "actual": "Tapping X on the 'Oct 9, 2026' chip removes it: chips 'Selected Dates (2): Oct 8, Oct 13' and 9 Oct un-highlighted in the calendar.",
+      "evidence": [
+        "TC_HOME_021_1_chip-removed.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_022",
+      "status": "Pass",
+      "actual": "Non-consecutive dates 8 and 13 Oct accepted; Trip Summary shows Dates '8, 13 Oct 2026' (not a range); Confirm shows '8, 13 Oct 2026'; inquiry B created with these dates.",
+      "evidence": [
+        "TC_HOME_044_1_0300-future-dates-summary.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_044",
+      "status": "Pass",
+      "actual": "Multi-day with only future dates (8, 13 Oct) and Pickup Time 03:00 am (earlier than device time 05:06): wheel allows earlier hours, value kept (not auto-corrected), Search opens Trip Summary without a 'time has passed' error. BUG-HOME-002 fix holds.",
+      "evidence": [
+        "TC_HOME_044_1_0300-future-dates-summary.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_CONF_002",
+      "status": "Fail",
+      "actual": "Multi-day Local 8 & 13 Oct, 10:00 am, 8 hrs, 4 pax, 33 Seater Deluxe Coach: list card 'Starts From Rs 31,000'; Confirm estimate Vehicle Base Cost Rs 10,000 (one day) + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Rs 12,000; success screen Rs 12,000. Base not multiplied by 2 days, night bata charged for a daytime trip, and estimate differs from list price (Rs 31,000). BUG-CONF-001 still reproducible.",
+      "bugs": [
+        "BUG-CONF-001"
+      ],
+      "evidence": [
+        "TC_CONF_002_1_list-31000-two-days.png",
+        "TC_CONF_002_2_estimate-12000-two-days.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_CONF_009",
+      "status": "Pass",
+      "actual": "Inquiry B submitted; 'Back to Home' returns to Home with the form reset (Local, pickup empty, 06-10-2026, current time 05:10 am, 1 passenger, Multi-day and Different drop off). Observations: Number of Hours left EMPTY after the reset (BUG-HOME-003) and the Home screen first rendered scrolled to a blank area below the form (needed a manual scroll up).",
+      "bugs": [
+        "BUG-HOME-003",
+        "BUG-HOME-005"
+      ],
+      "evidence": [
+        "TC_CONF_009_0_inquiry-b-submitted.png",
+        "TC_CONF_009_1_home-reset-hours-empty.png"
+      ],
+      "endedAt": "2026-10-06T05:11:09.910Z"
+    },
+    {
+      "id": "TC_HOME_042",
+      "status": "Pass",
+      "actual": "Local with pickup Majestic and 3 passengers -> Outstation: pickup empty, Outstation fields shown with defaults; back to Local: pickup empty, passengers 1, hours 1, current time. Data cleared consistently in both directions - no stale hidden data carried between trip types.",
+      "evidence": [
+        "TC_HOME_042_1_back-to-local-cleared.png"
+      ],
+      "endedAt": "2026-10-06T05:14:59.971Z"
+    },
+    {
+      "id": "TC_TRIP_009",
+      "status": "Fail",
+      "actual": "Valid Local form (Majestic, 06-10-2026 10:30 am, 1 pax, 1 hr), device offline (App Live Throttle Network > Offline Mode): Search Vehicles tap gives no feedback at all for 15+ s - no Trip Summary, no spinner, no 'No internet connection' message, no retry (stream verified live). Confirm-step offline handling exists (TC_CONF_007) but not here. BUG-LOC-005 still reproducible.",
+      "bugs": [
+        "BUG-LOC-005"
+      ],
+      "evidence": [
+        "TC_TRIP_009_1_offline-search-no-feedback.png"
+      ],
+      "endedAt": "2026-10-06T05:14:59.980Z"
+    },
+    {
+      "id": "TC_LOC_014",
+      "status": "Fail",
+      "actual": "Offline: typing 'hebbal' in Pickup Location search shows a blank list with no offline / no-results message (no crash). BUG-LOC-005 still reproducible.",
+      "bugs": [
+        "BUG-LOC-005"
+      ],
+      "evidence": [
+        "TC_LOC_014_1_offline-blank-list.png"
+      ],
+      "endedAt": "2026-10-06T05:14:59.980Z"
+    },
+    {
+      "id": "TC_INQ_022",
+      "status": "Pass",
+      "actual": "Inquiry 562 (Local, 15 Oct 2026 10:30 am, 9 days 5 hours before start): Refund Calculation slab 'T > 7 days - fully refundable', Penalty 0%, Add one day charge No, Penalty retained Rs 0. Slab and 0% penalty correct. (Refund amount issue for unpaid inquiry logged under TC_INQ_012.)",
+      "evidence": [
+        "TC_INQ_022_1_7days-fully-refundable.png"
+      ],
+      "endedAt": "2026-10-06T05:19:46.179Z"
+    },
+    {
+      "id": "TC_INQ_008",
+      "status": "Pass",
+      "actual": "Cancel Trip -> 'Cancel Booking & Process Refund' sheet (Refund Calculation + optional reason) -> Confirm Cancellation -> 'Booking Cancelled (Inquiry #562)' with Refund Summary and Cancellation Invoice INV-72; Close returns to My Bookings and the inquiry is removed from Inquired (Month 22 -> 21). Same flow for 561 (INV-73).",
+      "evidence": [
+        "TC_INQ_012_1_unpaid-refund-12000-INV72.png"
+      ],
+      "endedAt": "2026-10-06T05:19:46.191Z"
+    },
+    {
+      "id": "TC_INQ_012",
+      "status": "Fail",
+      "actual": "Cancelling unpaid inquiry 562 (Advance Received Rs 0, only PENDING/unpaid links): Refund amount Rs 12,000 and Cancellation Invoice INV-72 (penalty Rs 0, refund Rs 12,000). Cancelling unpaid 561: refund Rs 100, invoice INV-73. Expected refund Rs 0 and no refund invoice when nothing was paid. Refund is computed from trip cost, not amount paid. BUG-OUT-014 still reproducible (now refunds the full trip cost).",
+      "bugs": [
+        "BUG-OUT-014"
+      ],
+      "evidence": [
+        "TC_INQ_012_1_unpaid-refund-12000-INV72.png",
+        "TC_INQ_014_2_cancelled-INV73-refund-100.png"
+      ],
+      "endedAt": "2026-10-06T05:19:46.191Z"
+    },
+    {
+      "id": "TC_INQ_014",
+      "status": "Fail",
+      "actual": "Inquiry 561 (Local multi-day 8 & 13 Oct, trip cost Rs 12,000, advance Rs 0, 2 days 4 hours before start): slab '24 hrs < T < 3 days', Penalty 20% + one day charge Rs 9,500 -> Penalty retained Rs 11,900; reason optional (confirmed with empty reason) -> 'Booking Cancelled (Inquiry #561)', INV-73. Slab and penalty applied per policy, but refund Rs 100 is computed from trip cost although nothing was paid (BUG-OUT-014); trip cost Rs 12,000 for a 2-day trip reflects BUG-CONF-001.",
+      "bugs": [
+        "BUG-OUT-014",
+        "BUG-CONF-001"
+      ],
+      "evidence": [
+        "TC_INQ_014_1_slab-under-3-days.png",
+        "TC_INQ_014_2_cancelled-INV73-refund-100.png"
+      ],
+      "endedAt": "2026-10-06T05:19:46.191Z"
+    },
+    {
+      "id": "TC_BOOK_011",
+      "status": "Fail",
+      "actual": "After cancelling 562 (and 561) they disappear from My Bookings: Month Inquired 22 -> 21 -> 20; tabs are only Live / Upcoming / Completed / Inquired (Today/Week/Month) - no Cancelled tab/status to view the cancelled inquiries or invoices INV-72 / INV-73. BUG-OUT-015 still reproducible.",
+      "bugs": [
+        "BUG-OUT-015"
+      ],
+      "evidence": [
+        "TC_BOOK_011_1_no-cancelled-tab.png"
+      ],
+      "endedAt": "2026-10-06T05:19:46.191Z"
+    },
+    {
+      "id": "TC_CONF_019",
+      "isNew": true,
+      "module": "Confirm Trip & Inquiry Submission",
+      "feature": "Estimated cost",
+      "scenario": "Single-day daytime Local estimate: bata applied by pickup time window and price consistent with list and details",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Logged in; Local tab; Multi-day off",
+      "steps": "1. Local: pickup Majestic, drop Kempegowda Airport, today/future date, 10:00 am, 8 hrs, 4 pax 2. Search Vehicles > Search Vehicles 3. Note list price of 33 Seater Deluxe Coach 4. Open details, note Local price 5. Book Now and read Estimated Trip Cost",
+      "testData": "10:00 am pickup, 8 hours (ends 6:00 pm)",
+      "expected": "Only bata for the applicable time window is charged (no 'Before 6am or After 10pm' night bata for a 10:00 am-6:00 pm trip); estimate equals the package price shown on the list card and Vehicle Details",
+      "status": "Fail",
+      "actual": "Estimate = Base Rs 10,000 + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Rs 12,000; list card Rs 11,000; details Rs 10,000 - three different prices and night bata for a daytime trip.",
+      "bugs": [
+        "BUG-CONF-002"
+      ],
+      "evidence": [
+        "TC_CONF_003_1_estimate-12000-night-bata.png",
+        "TC_VLIST_003_1_details-35seats-10000.png"
+      ],
+      "endedAt": "2026-10-06T05:21:20.359Z"
+    },
+    {
+      "id": "TC_INQ_023",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Payment",
+      "scenario": "Pay Advance opens Secure Payment with a Razorpay payment link for the entered amount and booking PNR",
+      "testType": "Positive",
+      "priority": "High",
+      "preconditions": "Logged in; unpaid Local inquiry in Inquiry Details",
+      "steps": "1. Payment amount 500, gateway Razorpay 2. Tap Pay Advance 3. Review Secure Payment screen (do not pay) 4. Tap back",
+      "testData": "Rs 500, Razorpay",
+      "expected": "'Secure Payment' screen shows Booking PNR, payee, purpose, INR amount equal to the entered amount, expiry and Proceed to Pay; back returns to Inquiry Details without recording an advance",
+      "status": "Pass",
+      "actual": "Secure Payment (Booking PNR BNEA514381): 'Payment Request from Siddaganga Services - Advance payment for booking BNEA514381 - INR 500.00 - Expire by Apr 6 2027 - Proceed to Pay' (Razorpay). Back returns to Inquiry Details; Advance Received stays Rs 0. (Stale PENDING history entry tracked as BUG-INQ-002.)",
+      "bugs": [],
+      "evidence": [
+        "TC_INQ_004_1_razorpay-link-500.png"
+      ],
+      "endedAt": "2026-10-06T05:21:20.362Z"
+    },
+    {
+      "id": "TC_INQ_024",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Payment",
+      "scenario": "Pay Advance with the Cashfree gateway",
+      "testType": "Positive",
+      "priority": "High",
+      "preconditions": "Logged in; unpaid Local inquiry in Inquiry Details",
+      "steps": "1. Payment amount 500 2. Select Cashfree 3. Tap Pay Advance",
+      "testData": "Rs 500, Cashfree",
+      "expected": "Cashfree checkout/payment link opens for Rs 500 (or Cashfree is not offered if unavailable); friendly error otherwise",
+      "status": "Fail",
+      "actual": "Dialog 'Payment Error - link_creation_api is not enabled or approved. Please reach out to care@cashfree.com.'; no checkout opens.",
+      "bugs": [
+        "BUG-INQ-001"
+      ],
+      "evidence": [
+        "TC_INQ_004_2_cashfree-error.png"
+      ],
+      "endedAt": "2026-10-06T05:21:20.362Z"
+    },
+    {
+      "id": "TC_INQ_025",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Cancel Trip",
+      "scenario": "Cancel Trip within 6 hours of departure is blocked (T < 6 hrs - NO_SHOW slab)",
+      "testType": "Boundary",
+      "priority": "Medium",
+      "preconditions": "Logged in; Local inquiry whose pickup is less than 6 hours away",
+      "steps": "1. Open Inquiry Details 2. Tap Cancel Trip 3. Review Refund Calculation 4. Tap Back",
+      "testData": "Inquiry 560: pickup today 10:00 am, opened at ~05:03 am",
+      "expected": "Sheet shows slab 'T < 6 hrs - NO_SHOW', 100% penalty, clear message that online cancellation is not allowed, and no Confirm Cancellation button; Back leaves the inquiry unchanged",
+      "status": "Pass",
+      "actual": "Refund Calculation: Hours before trip start 4 hours, Penalty slab 'T < 6 hrs - NO_SHOW', Penalty 100%, Refund Rs 0; message 'Cancellation is not allowed for this time window. Trips within 6 hours of departure cannot be cancelled online.'; only Back button; inquiry unchanged.",
+      "bugs": [],
+      "evidence": [
+        "TC_INQ_009_1_cancel-sheet-no-show-window.png"
+      ],
+      "endedAt": "2026-10-06T05:21:20.362Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-CONF-002",
+      "title": "Single-day daytime Local estimate adds night bata and differs from list and details price (Rs 11,000 / Rs 10,000 / Rs 12,000)",
+      "module": "Confirm Trip & Inquiry Submission",
+      "severity": "High",
+      "priority": "P1",
+      "status": "New",
+      "tcIds": [
+        "TC_CONF_003",
+        "TC_VLIST_003"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in as QA user; Local tab; single day (Multi-day off).",
+      "steps": [
+        "Local: Pickup Majestic, Different drop location ON -> Kempegowda International Airport",
+        "Date 06-10-2026, Pickup time 10:00 am, 4 passengers, 8 hours",
+        "Search Vehicles > Search Vehicles; note 33 Seater Deluxe Coach card 'Starts From Rs 11,000'",
+        "Open the card: Local Rs 10,000 (8hr/80km), footer Starting From Rs 10,000",
+        "Tap Book Now and scroll to Estimated Trip Cost"
+      ],
+      "expected": "An 8-hour 10:00 am - 6:00 pm trip within the 8hr/80km package costs the package base (Rs 10,000) with no night bata ('Before 6am or After 10pm' does not apply); the same amount is shown consistently on the list card, details and Confirm estimate.",
+      "actual": "Estimate = Vehicle Base Cost Rs 10,000 + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Rs 12,000. Both bata lines are always charged regardless of pickup time. The same vehicle is priced Rs 11,000 on the list, Rs 10,000 on details and Rs 12,000 on Confirm.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CONF_003_1_estimate-12000-night-bata.png",
+        "TC_VLIST_003_1_details-35seats-10000.png",
+        "TC_VLIST_001_1_available-vehicles.png"
+      ],
+      "errorInfo": "Over-quoting risk: customers see three different prices for the same trip; night allowance charged for a daytime trip. Related to BUG-CONF-001 (multi-day) and BUG-VDET-002 (bata labels).",
+      "notes": "New in this run - the single-day variant was not raised before (previous runs only reported the multi-day case)."
+    },
+    {
+      "id": "BUG-BOOK-001",
+      "title": "My Bookings has no pull-to-refresh - pulling the list shows no indicator and does not reload",
+      "module": "My Bookings",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_BOOK_009"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Ride > My Bookings with inquiries listed (Month > Inquired).",
+      "steps": [
+        "Open Ride > My Bookings",
+        "Scroll the list to the top",
+        "Pull down on the list and release"
+      ],
+      "expected": "A refresh indicator appears and the bookings list / counts are reloaded from the server.",
+      "actual": "No refresh indicator or reload; the list only over-scrolls and springs back. The list is refreshed only when the screen is left and re-opened.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_BOOK_009_1_pull-no-refresh-indicator.png"
+      ],
+      "errorInfo": "UX: users cannot manually refresh booking status (e.g. after payment/cancellation done elsewhere).",
+      "notes": "First execution of TC_BOOK_009 (not executed in previous runs)."
+    },
+    {
+      "id": "BUG-INQ-001",
+      "title": "Pay Advance with Cashfree fails with raw provider error 'link_creation_api is not enabled or approved'",
+      "module": "Inquiry Details / Payment",
+      "severity": "High",
+      "priority": "P1",
+      "status": "New",
+      "tcIds": [
+        "TC_INQ_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; unpaid Local inquiry (560) open in Inquiry Details.",
+      "steps": [
+        "Ride > My Bookings > Inquired > View Details (inquiry 560)",
+        "Payment amount 500",
+        "Select Payment gateway 'Cashfree'",
+        "Tap Pay Advance"
+      ],
+      "expected": "Cashfree checkout opens (or the Cashfree option is hidden if not available); any error is a friendly, actionable message.",
+      "actual": "Dialog 'Payment Error - link_creation_api is not enabled or approved. Please reach out to care@cashfree.com.' - raw provider configuration error shown to the customer; payment cannot be made with Cashfree. Razorpay works up to the payment link.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_004_2_cashfree-error.png"
+      ],
+      "errorInfo": "Backend Cashfree merchant account lacks Payment Links API approval. Replaces the earlier '\"gateway\" is not allowed field' error (BUG-OUT-013) for Cashfree.",
+      "notes": "New in this build."
+    },
+    {
+      "id": "BUG-INQ-002",
+      "title": "Abandoned Razorpay payment links stay as PENDING entries in Payment History and no cancel/failure feedback is shown",
+      "module": "Inquiry Details / Payment",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New",
+      "tcIds": [
+        "TC_INQ_007",
+        "TC_INQ_005"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; unpaid Local inquiry (560).",
+      "steps": [
+        "Inquiry Details > Pay Advance (Razorpay, Rs 500)",
+        "On 'Secure Payment' (Razorpay link) tap back without paying",
+        "Repeat with amounts 13000 and 1"
+      ],
+      "expected": "User is told the payment was cancelled/not completed; abandoned attempts are marked cancelled/expired or not listed; amounts above the balance are never recorded.",
+      "actual": "No message after returning; 'Payment History' lists 'Advance - Razorpay (Online)' Rs 500, Rs 13,000 and Rs 1, all 'PENDING' (links valid until Apr 2027). Advance Received stays Rs 0. A pending Rs 13,000 advance exceeds the Rs 12,000 trip total.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_007_1_back-no-message-pending.png",
+        "TC_INQ_007_2_pending-history.png"
+      ],
+      "errorInfo": "Each Pay Advance tap creates a new year-long payment link; stale PENDING entries confuse customers and ops; risk of paying an old/over-amount link later.",
+      "notes": "New in this build (Payment History section is new)."
+    },
+    {
+      "id": "BUG-LOC-001",
+      "title": "Location search shows a blank list with no \"No results\" message for unmatched input",
+      "module": "Location Picker",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_LOC_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local; Pickup Location picker open.",
+      "steps": [
+        "Tap the search box on Pickup Location",
+        "Type a string with no matches, e.g. zzqxv",
+        "Wait 5-10 seconds"
+      ],
+      "expected": "An empty-state message such as No results found / Try a different search is shown.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Gibberish search returns a blank list with no No-results message. | Original: apk via TC_LOC_004. Original: The suggestion area stays blank; the user gets no feedback whether the search ran, failed or matched nothing.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_LOC_004_1_no-results-blank.png"
+      ],
+      "errorInfo": "No error shown on device.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-LOC-003",
+      "title": "Selected drop place shows only the address (Devanahalli...) instead of the place name",
+      "module": "Location Picker",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Fixed - verified",
+      "tcIds": [
+        "TC_LOC_011"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local; Different drop location enabled.",
+      "steps": [
+        "Open Select Drop Location",
+        "Search 'kempegowda international airport'",
+        "Tap 'Kempegowda International Airport Bengaluru (BLR)'"
+      ],
+      "expected": "Drop field shows a recognisable name, e.g. 'Kempegowda International Airport Bengaluru (BLR)'.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Drop field now shows the place name Kempegowda International Airport Bengaluru. | Original: apk via TC_LOC_011. Original: Drop field shows 'Devanahalli, Bengaluru, Karnataka 560...' - no place name.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_LOC_011_1_drop-place-name-shown.png"
+      ],
+      "errorInfo": "Previously OBS-10. Pickup selections keep the name (e.g. 'Majestic, Bengaluru...').",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Fixed - verified."
+    },
+    {
+      "id": "BUG-LOC-004",
+      "title": "Identical pickup and drop accepted; Trip Summary shows 80 KM and a looping route",
+      "module": "Location Picker / Trip Summary",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Fixed - verified",
+      "tcIds": [
+        "TC_LOC_012"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; location permission granted; Home > Local.",
+      "steps": [
+        "Set Pickup via Use Current Location (Kempegowda Bus Station)",
+        "Enable Different drop location",
+        "Set Drop via Use Current Location (same place)",
+        "Tap Search Vehicles"
+      ],
+      "expected": "Validation (drop must differ from pickup) or sensible 0-distance handling.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Inline error Pickup and drop location cannot be the same; Search blocked. | Original: apk via TC_LOC_012. Original: No validation; Trip Summary shows route X -> X, Distance 80 KM; the map draws a loop.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_LOC_012_1_same-pickup-drop-blocked.png"
+      ],
+      "errorInfo": "Distance 80 KM equals the Local package allowance; confirm how Local distance is computed.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Fixed - verified."
+    },
+    {
+      "id": "BUG-LOC-005",
+      "title": "No offline feedback: location search and Search Vehicles fail silently without network",
+      "module": "Location Picker / Trip Search",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_LOC_014",
+        "TC_TRIP_009"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local; App Live Throttle Network = Offline Mode.",
+      "steps": [
+        "Open Pickup Location and type a place name",
+        "Go back with a valid Local form and tap Search Vehicles twice"
+      ],
+      "expected": "A clear no-internet message (with retry) in both places.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Offline: location search blank list; Search Vehicles gives no feedback at all. | Original: apk via TC_LOC_014, TC_TRIP_009. Original: Location search shows a blank list; Search Vehicles does nothing. No toast, banner or error; no crash.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_LOC_014_1_offline-blank-list.png",
+        "TC_TRIP_009_1_offline-search-no-feedback.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-TRIP-001",
+      "title": "Trip Summary omits pickup time and number of hours for Local trips",
+      "module": "Trip Summary & Vehicle Search",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_TRIP_003"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local.",
+      "steps": [
+        "Set pickup (e.g. Majestic), date 30-09-2026, time 10:00 am, 4 passengers, 4 hours",
+        "Tap Search Vehicles",
+        "Scroll through the Trip Summary sheet"
+      ],
+      "expected": "Summary shows the pickup time (10:00 am) and the booked hours (4 hrs) so the user can review the trip before searching.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Trip Summary still has no pickup time and no hours (also absent on Confirm modal). | Original: apk via TC_TRIP_003. Original: Only Trip Type, Route, Distance, Dates, Pickup, Drop and Passengers are shown; time and hours are missing.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_TRIP_003_1_no-time-no-hours.png"
+      ],
+      "errorInfo": "Previously OBS-11 (multi-day); reproduces for single-day.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-TRIP-002",
+      "title": "Local trip distance always 80 KM regardless of route",
+      "module": "Trip Summary & Vehicle Search",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_TRIP_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local.",
+      "steps": [
+        "Search Majestic -> Same as pickup",
+        "Search Majestic -> Kempegowda International Airport (Different drop location)",
+        "Compare Distance on the Trip Summary"
+      ],
+      "expected": "Distance reflects the actual route (0 km for same place; ~35-40 km Majestic -> KIA), or is labelled as the package allowance.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Majestic to Kempegowda Airport shows 80 KM (fixed value). | Original: apk via TC_TRIP_002. Original: Distance 80 KM in every case.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_TRIP_002_1_distance-80km-majestic-airport.png"
+      ],
+      "errorInfo": "80 km = Local package allowance (8Hr/80Km); label 'Distance' is misleading.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VLIST-001",
+      "title": "Deluxe category chip returns 0 vehicles although Deluxe ('Delux') vehicles are listed",
+      "module": "Available Vehicles",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VLIST_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; valid Local search (Majestic, 4 pax, 4 hrs) -> Available Vehicles shows 20 vehicles.",
+      "steps": [
+        "Note cards with the 'Delux' badge in the unfiltered list (e.g. 33 Seater Deluxe Coach)",
+        "Tap the 'Deluxe' category chip"
+      ],
+      "expected": "All Deluxe vehicles are listed (about 7 of 20: 20 - 6 Luxury - 7 Premium).",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Deluxe chip returns 0 vehicles. | Original: apk via TC_VLIST_004. Original: '0 vehicles found' / 'No Vehicles Found'. Users cannot filter to the Deluxe class at all.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VLIST_004_1_deluxe-zero.png"
+      ],
+      "errorInfo": "Likely value mismatch: vehicle class stored/badged as 'Delux' while the chip filters on 'Deluxe' (see also TC_VDET_002 badge spelling).",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VLIST-002",
+      "title": "SUV card shows 'N/A Seater' and no class badge",
+      "module": "Available Vehicles",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - partially fixed",
+      "tcIds": [
+        "TC_VLIST_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; valid Local search -> Available Vehicles (20).",
+      "steps": [
+        "Scroll the list to the SUV card (code LSUV, Starts From Rs 19,500)",
+        "Read the seat line and badge"
+      ],
+      "expected": "Seat capacity (e.g. 7 Seater) and class badge are shown like other cards; capacity is needed to match the passenger count.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): SUV card now has a Delux badge but still N/A Seater and no Best For tags. | Original: apk via TC_VLIST_002. Original: 'N/A Seater', no class badge, no Best For tags. The vehicle is still offered for the 4-passenger search although its capacity is unknown.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VLIST_002_1_suv-na-seater.png"
+      ],
+      "errorInfo": "Vehicle master data missing seats/class for SUV.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - partially fixed."
+    },
+    {
+      "id": "BUG-VLIST-003",
+      "title": "Vehicle '33 Seater' title shows 35 seats; list price differs from details (Rs 11,000 vs Rs 10,000)",
+      "module": "Available Vehicles / Vehicle Details",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VLIST_003"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Local search (Majestic, 4 pax, 4 hrs) -> Available Vehicles.",
+      "steps": [
+        "Read the first card: title, seat line, Starts From price",
+        "Tap the card",
+        "Compare title, seats and Local/Starting From price on Vehicle Details"
+      ],
+      "expected": "Title, seat count and starting price are identical on list and details.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): 33 Seater title vs 35 seats; list Rs 11,000 vs details Rs 10,000. | Original: apk via TC_VLIST_003. Original: List: title '33 Seater Deluxe Coach' with '35 Seater', Starts From Rs 11,000 (single-day search). Details: title '33 Seater Deluxe Coach' with 35 Seats and Local Starts / Starting From Rs 10,000. Title seat count contradicts the seat count, and the starting price differs between list and details.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VLIST_003_1_details-35seats-10000.png",
+        "TC_VLIST_001_1_available-vehicles.png"
+      ],
+      "errorInfo": "Previously OBS-12 (card showed Rs 23,000). Price shown to the user changes between screens.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VLIST-004",
+      "title": "Available Vehicles ignores passenger count (40/999 pax still list 4-35 seat vehicles)",
+      "module": "Available Vehicles / Home",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VLIST_006",
+        "TC_HOME_016"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local.",
+      "steps": [
+        "Pickup Majestic, Passengers 40, Hours 4",
+        "Search Vehicles > Search Vehicles",
+        "Review the list"
+      ],
+      "expected": "Only vehicles with seats >= passengers (or a clear capacity warning); an upper limit on passengers.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): 40 and 999 passengers still list all 20 vehicles; no max passengers. | Original: New capacity guard on Book Now (\"Passenger Capacity Not Complete!\") prevents booking an under-capacity vehicle, but Available Vehicles still lists all 20 vehicles for 40/999 passengers. Original: 20 vehicles found - identical to the 4-passenger search; 35-seat coach first, 4-seat Sedan and 12-seat vans included. 999 passengers is accepted.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VLIST_006_1_40pax-20-vehicles.png",
+        "TC_HOME_016_1_999-pax-summary.png",
+        "TC_HOME_016_2_999-pax-20-vehicles.png"
+      ],
+      "errorInfo": "Customers can raise inquiries for vehicles that cannot carry their group.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VDET-001",
+      "title": "Class badge misspelled 'Delux' on vehicle cards and details",
+      "module": "Vehicle Details / Available Vehicles",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VDET_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Available Vehicles after a Local search.",
+      "steps": [
+        "Look at the class badge on a Deluxe vehicle card / details carousel"
+      ],
+      "expected": "Badge reads 'Deluxe' (same as the category chip).",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Badge still Delux. | Original: apk via TC_VDET_002. Original: Badge reads 'Delux'.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VLIST_003_1_details-35seats-10000.png"
+      ],
+      "errorInfo": "Likely the same data value that breaks the Deluxe chip filter (BUG-VLIST-001).",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VDET-002",
+      "title": "Local fare breakup bata labels are illogical ('Before 10pm or After 6am')",
+      "module": "Vehicle Details & Fare Breakup",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VDET_009"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Vehicle Details > View Fare Breakup > Local Trip.",
+      "steps": [
+        "Read the two Bata Cost lines"
+      ],
+      "expected": "Labels clearly describe when each bata applies (e.g. night: before 6am or after 10pm; the second line should describe its real condition).",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Bata labels Before 6am or After 10pm / Before 10pm or After 6am. | Original: apk via TC_VDET_009. Original: 'Bata Cost (Before 6am or After 10pm)' Rs 1,000 and 'Bata Cost (Before 10pm or After 6am)' Rs 1,000 - the second label covers normal daytime hours.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VDET_009_1_bata-labels.png"
+      ],
+      "errorInfo": "Previously OBS-15.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-VDET-003",
+      "title": "Passenger capacity dialog asks to \"add one or more buses\" but there is no way to select multiple vehicles",
+      "module": "Vehicle Details & Fare Breakup",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VDET_019"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Local search with 40 passengers (Majestic, 03 Oct).",
+      "steps": [
+        "Search Vehicles -> Available Vehicles (20 listed)",
+        "Open 33 Seater Deluxe Coach (35 seats)",
+        "Tap Book Now",
+        "Read dialog; look for a way to add a second bus"
+      ],
+      "expected": "Either only vehicles that fit the passenger count are offered, or the dialog offers a working way to add another vehicle (multi-vehicle selection / Add bus).",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Capacity dialog asks to add buses; only Cancel, no add-bus control. | Original: Dialog \"Passenger Capacity Not Complete! You need seats for 40 passengers, but your selected buses cover only 35 seats. Please add one or more buses to continue.\" with only Cancel. No add-bus control exists on Vehicle Details, the list cards or the Confirm modal; the user is stuck unless they pick a larger vehicle.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VDET_019_1_capacity-dialog-cancel-only.png"
+      ],
+      "errorInfo": "New behaviour in this build (capacity guard) without a multi-vehicle flow.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-HOME-001",
+      "title": "Multi-day calendar allows navigating to past months",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - partially fixed",
+      "tcIds": [
+        "TC_HOME_024"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local; Multi-day trip on (current month September 2026).",
+      "steps": [
+        "Tap the previous-month arrow above the calendar",
+        "Tap it again"
+      ],
+      "expected": "Previous arrow disabled/hidden in the current month.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Calendar can still go back to September 2026 (fully past); earlier months now blocked. | Original: apk via TC_HOME_024. Original: Calendar moves to August and July 2026 (all dates disabled).",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_024_1_past-month-september.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - partially fixed."
+    },
+    {
+      "id": "BUG-HOME-003",
+      "title": "Clear leaves Number of Hours empty instead of default 1",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_HOME_027",
+        "TC_CONF_009"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Home > Local with values entered.",
+      "steps": [
+        "Enter pickup, passengers 6, hours 3, enable Different drop location",
+        "Tap Clear"
+      ],
+      "expected": "All fields reset to the same defaults as a fresh form (Hours = 1).",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Clear and Back to Home leave Number of Hours empty. | Original: apk via TC_HOME_027. Original: Hours field is empty (placeholder Enter Number Of Hours); other fields reset.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_027_1_clear-hours-empty.png",
+        "TC_CONF_009_1_home-reset-hours-empty.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-CONF-001",
+      "title": "Multi-day Local estimate charges base for one day and applies night bata to a daytime pickup",
+      "module": "Confirm Trip & Inquiry Submission",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_CONF_002",
+        "TC_INQ_014"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Local; Multi-day on with 2 dates (16, 20 Oct 2026); pickup 10:30 am; 4 pax; Majestic -> KIA.",
+      "steps": [
+        "Search Vehicles > Search Vehicles",
+        "Open 33 Seater Deluxe Coach (card shows Starts From Rs 29,000)",
+        "Tap Book Now and scroll to Estimated Trip Cost"
+      ],
+      "expected": "Base cost x number of days (2 x Rs 10,000) plus only the applicable bata; estimate consistent with the card price.",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): 2-day Local (8 & 13 Oct) estimate Rs 12,000 = one day base + both batas; list shows Rs 31,000. | Original: apk via TC_CONF_002. Original: Vehicle Base Cost Rs 10,000 (one day); Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000; Grand Total Rs 12,000 - while the card showed Rs 29,000.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CONF_002_1_list-31000-two-days.png",
+        "TC_CONF_002_2_estimate-12000-two-days.png"
+      ],
+      "errorInfo": "Previously OBS-16. Under-quoting risk on inquiries.",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-OUT-010",
+      "title": "Inconsistent casing: status chip 'inquired' and trip badge 'OutStation'",
+      "module": "My Bookings",
+      "severity": "Low",
+      "priority": "P4",
+      "status": "Fixed - verified (status chip)",
+      "tcIds": [
+        "TC_BOOK_005"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Ride > Week > Inquired"
+      ],
+      "expected": "'Inquired' and 'Outstation' as used elsewhere",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Status chip now Inquired (capitalised) on Local cards. | Original: Trip badge casing fixed (\"Outstation\"); status chip still lowercase \"inquired\". Original: 'inquired' chip and 'OutStation' badge (also 'OutStation Trip' on Inquiry Details)",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_BOOK_003_1_inquiry-560-card.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Fixed - verified (status chip)."
+    },
+    {
+      "id": "BUG-OUT-012",
+      "title": "Advance payment amount above the inquiry total is not validated",
+      "module": "Inquiry Details",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_INQ_005"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Open Inquiry 520 (total Rs18,500)",
+        "Payment amount 20000",
+        "Pay Advance"
+      ],
+      "expected": "Client-side rule: amount must be > 0 and <= total (or <= remaining balance) with a clear message",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Rs 1 and Rs 13,000 (above Rs 12,000 total) accepted and payment links created. | Original: apk via TC_INQ_005. Original: Request is sent; only the backend 'gateway' error appears. Amount 0 is correctly rejected.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_005_2_overpay-13000-link.png",
+        "TC_INQ_005_3_one-rupee-link.png"
+      ],
+      "errorInfo": "Dialog: Payment Error - \"gateway\" is not allowed field",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-OUT-013",
+      "title": "Pay Advance fails for both gateways with raw API error '\"gateway\" is not allowed field'",
+      "module": "Inquiry Details / Payments",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Fixed - verified (Razorpay); Cashfree fails differently (BUG-INQ-001)",
+      "tcIds": [
+        "TC_INQ_004"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Open any inquiry (e.g. 520)",
+        "Keep amount 500, select Razorpay (or Cashfree)",
+        "Tap Pay Advance"
+      ],
+      "expected": "Gateway checkout opens; or, if payments are disabled in this build, a friendly 'Online payment is not available yet' message / hidden button",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Razorpay opens a payment link; gateway-not-allowed error gone. | Original: apk via TC_INQ_004, TC_INQ_007. Original: Dialog 'Payment Error - \"gateway\" is not allowed field' (backend schema validation text) for both gateways; no checkout",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_004_1_razorpay-link-500.png",
+        "TC_INQ_004_2_cashfree-error.png"
+      ],
+      "errorInfo": "\"gateway\" is not allowed field",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Fixed - verified (Razorpay); Cashfree fails differently (BUG-INQ-001)."
+    },
+    {
+      "id": "BUG-OUT-014",
+      "title": "Cancelling an unpaid inquiry generates a refund of Rs16,650 and a cancellation invoice",
+      "module": "Inquiry Details / Cancellation",
+      "severity": "Critical",
+      "priority": "P1",
+      "status": "Open - still reproducible (worse)",
+      "tcIds": [
+        "TC_INQ_012",
+        "TC_INQ_014"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Create an Outstation inquiry (Inquiry 520, total Rs18,500); do not pay any advance (Advance Received Rs0)",
+        "Inquiry Details > Cancel Trip",
+        "Review Refund Calculation; Confirm Cancellation"
+      ],
+      "expected": "Refund is based on the amount actually paid (Rs0) - no refund and no refund invoice; or penalty only if a policy requires it",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Unpaid Local inquiry 562 cancelled with refund Rs 12,000 (INV-72); 561 refund Rs 100 (INV-73). | Original: apk via TC_INQ_014, TC_INQ_012. Original: Refund amount Rs16,650 (trip cost Rs18,500 minus 10% penalty Rs1,850) and Cancellation Invoice INV-56 issued with Refund Rs16,650; 'One day charge Rs9,500' is unexplained Also reproduced on Local inquiry 533 (slab 6-24 h, trip cost Rs 12,500, advance Rs 0): refund Rs 500 + invoice INV-67; 534/535: refund Rs 5,300 + INV-65/66.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_012_1_unpaid-refund-12000-INV72.png",
+        "TC_INQ_014_2_cancelled-INV73-refund-100.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible (worse)."
+    },
+    {
+      "id": "BUG-OUT-015",
+      "title": "Cancelled inquiries disappear from My Bookings - no Cancelled tab/status to view them or their invoice",
+      "module": "My Bookings",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_BOOK_011"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Cancel an inquiry",
+        "Open Ride > My Bookings, check Today/Week/Month and all tabs"
+      ],
+      "expected": "Cancelled booking visible with status Cancelled and access to the cancellation invoice",
+      "actual": "Retest on app-release_5Oct26.apk (Local run 2026-10-06): Cancelled Local inquiries 561/562 vanish; no Cancelled tab. | Original: apk via TC_BOOK_011. Original: Only Live/Upcoming/Completed/Inquired tabs; the cancelled inquiry is no longer listed anywhere",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_BOOK_011_1_no-cancelled-tab.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Carried forward from android-20261002-0743-LOCAL-OUT-REG; retest status on 5Oct26 build: Open - still reproducible."
+    },
+    {
+      "id": "BUG-HOME-004",
+      "title": "'Different drop location' (and 'Multi-day trip') label text is not tappable - only the small switch toggles",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_HOME_025"
+      ],
+      "reproducibility": "Always (2/2 attempts)",
+      "preconditions": "Logged in; Home > Local form",
+      "steps": [
+        "Scroll to Additional Options",
+        "Tap on the text 'Different drop location'"
+      ],
+      "expected": "Tapping the label toggles the option (standard Android checkbox/switch row behaviour, larger touch target).",
+      "actual": "Nothing happens; only tapping the small switch to the left of the label toggles the option and shows the Drop Location field.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_025_1_label-tap-no-toggle.png"
+      ],
+      "errorInfo": "Accessibility/usability: small touch target.",
+      "notes": "New observation in this run."
+    },
+    {
+      "id": "BUG-HOME-005",
+      "title": "After 'Back to Home' from the inquiry success screen, Home opens scrolled to a blank area below the form",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_CONF_009"
+      ],
+      "reproducibility": "Observed once (inquiry B submission)",
+      "preconditions": "Logged in; Local inquiry submitted from Vehicle Details",
+      "steps": [
+        "Confirm an inquiry",
+        "On 'Inquiry Submitted Successfully!' tap 'Back to Home'"
+      ],
+      "expected": "Home opens at the top of the reset Start Your Journey form.",
+      "actual": "Home opened scrolled down: only the bottom of the form (Additional Options, Search Vehicles) at the top and a large empty area below; user must scroll up to see the form.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CONF_009_0_inquiry-b-submitted.png"
+      ],
+      "errorInfo": "Scroll position of the previous Home visit is retained after the form reset.",
+      "notes": "New observation in this run."
+    }
+  ],
+  "recoveryEvents": [
+    {
+      "at": "2026-10-06T04:18:02.782Z",
+      "issue": "App Live session ended right after the user logged in on the device; MCP tab replaced (new tabId) and showing the App Live dashboard",
+      "detection": "tabs_context_mcp returned a new tab id; screenshot shows dashboard, no device stream",
+      "actions": [
+        "Recorded incident",
+        "Started a new Pixel 7 / Android 13 session with app-release_5Oct26.apk",
+        "Asked user to log in again on the device"
+      ],
+      "outcome": "In progress",
+      "affectedCase": "none (before first case)"
+    },
+    {
+      "at": "2026-10-06T04:45:56.272Z",
+      "issue": "After App Live Throttle Network was switched from Offline Mode back to Turn off network simulation, the device stream froze on a dimmed frame with a loading spinner (device clock stuck at 04:43 for 4+ min) while #bslive_video kept playing",
+      "detection": "Device clock unchanged across zooms; harmless tap on map produced no change; probe ok=true",
+      "actions": [
+        "Waited ~4 min without device input",
+        "Harmless tap on map area",
+        "Toggled App Live zoom +/- to force re-render"
+      ],
+      "outcome": "In progress",
+      "affectedCase": "TC_CONF_005"
+    },
+    {
+      "at": "2026-10-06T04:47:43.890Z",
+      "issue": "Device stream froze after switching network simulation back online (spinner overlay, clock stuck 04:43)",
+      "detection": "Device clock unchanged for 4+ min; no response to harmless tap",
+      "actions": [
+        "Checkpoint written",
+        "Cleared onbeforeunload and reloaded App Live dashboard",
+        "Started new Pixel 7 / Android 13 session with app-release_5Oct26.apk",
+        "App opened logged in on Home (login persisted) - no user action needed"
+      ],
+      "outcome": "Recovered - session rebuilt; resuming at TC_CONF_005 after re-creating search",
+      "affectedCase": "TC_CONF_005"
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "TC_CONF_007 (offline Confirm -> No internet connection dialog; not yet logged)",
+    "current": "TC_CONF_005/006 (submit Local inquiry A, double-tap)",
+    "next": "TC_CONF_008, BOOK, INQ",
+    "state": "Confirm Your Trip modal for 33 Seater Deluxe Coach, Local Majestic->KIA 06-10-2026 10:00 am 4 pax 8 hrs; network simulation being turned off; no inquiry submitted yet",
+    "at": "2026-10-06T04:45:55.730Z"
+  },
+  "partial": false
+}

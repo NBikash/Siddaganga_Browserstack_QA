@@ -1,0 +1,63 @@
+va06a {"text":"Change Bus Type & Pricing Trip: TP-112 · Bikash N Saving will clear assigned vehicles and drivers for this bus type line, and reset allocation status. Current Bus Type Line 16 Seater Premium Urbania · Qty 1 · ₹8,300 New Vehicle Type Calculate Pricing Cancel Save Changes","buttons":["Calculate Pricing","Cancel","Save Changes"]}
+va06b "All Vendor List One Time Vendor Vehicle SR. NO. VENDOR NAME VEHICLE REGISTRATION NUMBER BUS CATEGORY SEATS ACTION Showing 0 to 0 of 0 entries 05 ​ 1"
+va06c {"pref":["Vehicle Preferences","Assigned Vehicles","Siddaganga Vehicles","Vendor Vehicles","All Vehicles"],"matching":["AR 01 U 8228 Bus Category: 16 Seater Premium Urbania","NL 01 B 3364 Bus Category: 16 Seater Premium Urbania","NL 01 B 3675 Bus Category: 16 Seater Premium Urbania","NL 01 B 3683 Bus Category: 16 Seater Premium Urbania"],"total":54}
+va07 {"checkedBefore":0,"disabled":true,"shot":"screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-07-confirm-none-selected.png"}
+locator.uncheck: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('main div').filter({ hasText: /^\s*AR 01 U 8228\s*$/ }).filter({ has: locator('input[type=checkbox]') }).last().locator('input[type=checkbox]')[22m
+[2m    - locator resolved to <input type="checkbox"/>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    14 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+
+    at Module.default (D:\Siddaganga-BrowserStack-QA\Admin-Web\steps\inq2trip\f-va2.mjs:47:83)
+    at async file:///D:/Siddaganga-BrowserStack-QA/Admin-Web/scripts/run.mjs:24:14 {
+  log: [
+    "  - waiting for locator('main div').filter({ hasText: /^\\s*AR 01 U 8228\\s*$/ }).filter({ has: locator('input[type=checkbox]') }).last().locator('input[type=checkbox]')",
+    '    - locator resolved to <input type="checkbox"/>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    14 × waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <div tabindex="-1" role="presentation" class="MuiDialog-container MuiDialog-scrollPaper mui-fh1hs4">…</div> from <div role="presentation" class="MuiDialog-root MuiModal-root mui-w5hhrz">…</div> subtree intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms',
+    '    - waiting for element to be visible, enabled and stable'
+  ],
+  name: 'TimeoutError'
+}

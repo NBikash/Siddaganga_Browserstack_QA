@@ -1,0 +1,217 @@
+{
+  "lt01": {
+    "rows": 1,
+    "headers": [
+      "TRIP ID",
+      "CUSTOMER NAME",
+      "CUSTOMER TYPE",
+      "JOURNEY",
+      "DATES",
+      "ROUTE",
+      "PICKUP DATE",
+      "DROP DATE",
+      "ASSIGNED STATUS",
+      "ACTION"
+    ],
+    "row": "TP-112 Bikash N Local Local 20/11/2026 Whitefield, Bengaluru, Karnataka, India-> Whitefield, Bengaluru, Karnataka, India 20 Nov 2026, 12:00 AM 20 Nov 2026, 12:00 AM On going",
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-01-live-row.png"
+  },
+  "menu": [
+    "Edit Trip Sheet",
+    "Track Live Location",
+    "Driver Details",
+    "Emergency Alerts",
+    "Breakdown Protocol",
+    "Refuel Request",
+    "Notify Service Manager",
+    "Edit Trip Details",
+    "Complete Trip",
+    "Send Notification",
+    "Record Advance"
+  ],
+  "Edit Trip Sheet": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "View Trip Sheet Trip ID Select Date 20 Nov 2026 Vehicle AR 01 U 8228 Pre-departure Checklist Trip Sheet Pre-departure Overall Vehicle Check-up Pre-Post Departure Readiness Module Vehicle Front Photo No photo uploaded Vehicle Back Photo No photo uploaded Vehicle Interior Photo No photo uploaded Odometer Photo No photo uploaded Fuel Meter Photo No photo uploaded Driver Selfie No photo uploaded Driver in Uniform Proof No photo uploaded Safety equipment confirmation Trip sheet has already been generated. This form is view-only. Add Note",
+    "buttons": [
+      "Pre-departure Checklist",
+      "Trip Sheet"
+    ],
+    "fields": [
+      {
+        "n": "tripId",
+        "v": "TP-112",
+        "ro": true
+      },
+      {
+        "n": "vehicleNo",
+        "v": "20 Nov 2026",
+        "ro": false
+      },
+      {
+        "n": "vehicleNo",
+        "v": "4",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": true
+      },
+      {
+        "n": "note",
+        "v": "QA functional test dispat",
+        "ro": true
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-edit-trip-sheet.png"
+  },
+  "Edit Trip Details": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Edit Active Trip Details Customer Name Customer Type Arrival Date Pickup Time Drop Time Route Plan Submit Cancel",
+    "buttons": [
+      "Submit",
+      "Cancel"
+    ],
+    "fields": [
+      {
+        "n": "text",
+        "v": "Bikash N",
+        "ro": true
+      },
+      {
+        "n": "text",
+        "v": "Local",
+        "ro": true
+      },
+      {
+        "n": "Arrival Date",
+        "v": "20/11/2026",
+        "ro": false
+      },
+      {
+        "n": "Select Pickup Time",
+        "v": "12:00 AM",
+        "ro": false
+      },
+      {
+        "n": "Select Drop Time",
+        "v": "12:00 AM",
+        "ro": false
+      },
+      {
+        "n": "routePlan",
+        "v": "Whitefield, Bengaluru, Ka",
+        "ro": true
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-edit-trip-details.png"
+  },
+  "Track Live Location": {
+    "adv": false,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Track Live Location Details Map Satellite Keyboard shortcuts Map data ©2026 Google Terms Report a map error Refresh Location Vehicle Number : AR 01 U 8228 Driver Assigned : Test Driver Booking Date & Time : 20 Nov, 2026 - 00:00:00 Pickup Location : Whitefield, Bengaluru, Karnataka, India Drop Location : Whitefield, Bengaluru, Karnataka, India Current Location : N/A Last Updated : N/A Speed : N/A Distance Covered : N/A Fuel Level (If Available) : N/A",
+    "buttons": [
+      "Map",
+      "Satellite",
+      "Keyboard shortcuts",
+      "Refresh Location"
+    ],
+    "fields": [],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-track-live-location.png"
+  },
+  "Driver Details": {
+    "adv": false,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Driver Active Trip Details Select Vehicle AR 01 U 8228 Select Vehicle Whitefield, Bengaluru, Karnataka, India -> Whitefield, Bengaluru, Karnataka, India Vehicle Number : AR 01 U 8228 Driver Name : Test Driver Mobile Number : <phone> Email Address : <email> Aadhaar Number : 121212121212 Department : Drivers-Helpers Driver Bata : 1000 Night Allowance : 1200 Trip Number : TP-112 Trip Status : On Going Duty Date : 2026-11-20 To 2026-11-20 Start Odometer : 20000 Fuel Filled : 30 Mileage : 10 Helper : QA Test Helper Pre-Departure Submitted : Yes",
+    "buttons": [],
+    "fields": [
+      {
+        "n": "text",
+        "v": "4",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-driver-details.png"
+  },
+  "Emergency Alerts": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Emergency Alerts TRIP VEHICLE NO. DRIVER NAME ALERT TYPE TIME LOCATION DESCRIPTION STATUS No data available Showing 0 to 0 of 0 entries 05 ​ 1",
+    "buttons": [
+      "1"
+    ],
+    "fields": [
+      {
+        "n": "text",
+        "v": "5",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-emergency-alerts.png"
+  },
+  "Breakdown Protocol": {
+    "adv": true,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "dialog": 1,
+    "text": "Emergency & Breakdown Request Details Add Emergency / Breakdown Request Vehicle Number AR 01 U 8228 Reported By Reported Time Location Issue Description Priority ​ Assigned to Vendor / Technician ​ Is Towing Required? Replace Vehicle? Cancel Add Request Existing Emergency / Breakdown Requests REQUEST ID VEHICLE REPORTED BY LOCATION PRIORITY ASSIGNED TO REPORTED TIME STATUS No requests found",
+    "buttons": [
+      "Cancel",
+      "Add Request"
+    ],
+    "fields": [
+      {
+        "n": "vehiclenumber",
+        "v": "4",
+        "ro": false
+      },
+      {
+        "n": "reportedby",
+        "v": "Test Driver",
+        "ro": false
+      },
+      {
+        "n": "text",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "Search for a location",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "issueDescription",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "priority",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "assignedTo",
+        "v": "",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      },
+      {
+        "n": "checkbox",
+        "v": "on",
+        "ro": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-breakdown-protocol.png"
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "V4 passengers invalid values",
+    "err": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "name": "V5 hours invalid values"
+  },
+  {
+    "name": "V6 past date typed"
+  }
+]

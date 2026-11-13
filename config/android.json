@@ -5,26 +5,44 @@
     "source": "uploaded-apk",
     "status": "available",
     "description": "QA build uploaded to BrowserStack App Live (Uploaded Apps).",
-    "currentBuild": { "file": "app-release.apk", "packageId": "com.siddaganga", "version": "1.1" },
+    "currentBuild": {
+      "file": "app-release_7Oct26.apk",
+      "packageId": "com.siddaganga",
+      "version": "1.1"
+    },
     "appLiveUrlEnv": "ANDROID_APP_LIVE_URL",
-    "allowedExtensions": [".apk", ".aab"]
+    "allowedExtensions": [
+      ".apk",
+      ".aab"
+    ]
   },
   "productionRegression": {
     "enabled": false,
     "source": "google-play-store",
     "note": "Future option only (App Live 'Install via Play Store'). Kept separate from QA-build testing; not implemented."
   },
-  "defaultDevice": { "name": "Google Pixel 7", "osVersion": "13" },
+  "defaultDevice": {
+    "name": "Google Pixel 7",
+    "osVersion": "13"
+  },
   "alternateDevices": [
-    { "name": "Samsung Galaxy S24", "osVersion": "14", "purpose": "Secondary OEM" },
-    { "name": "Google Pixel 9", "osVersion": "15", "purpose": "Latest Android" }
+    {
+      "name": "Samsung Galaxy S24",
+      "osVersion": "14",
+      "purpose": "Secondary OEM"
+    },
+    {
+      "name": "Google Pixel 9",
+      "osVersion": "15",
+      "purpose": "Latest Android"
+    }
   ],
   "testCases": {
     "inventoryCsv": "manual-exploration/test-cases/banni-test-cases.csv",
     "inventoryXlsx": "manual-exploration/test-cases/banni-test-cases.xlsx",
-    "expectedCount": 306,
-    "inventorySha256": "386836a8a9aa034a559aeb7324f2682cf729a02faf99c501c00ba07da84c9226",
-    "baselineRecorded": "2026-09-30 (Session 01: 299 cases + 7 new Local Trip cases from run android-20260930-1058-LOCAL, user-approved)",
+    "expectedCount": 386,
+    "inventorySha256": "1fd7fb7868080fa9e257d284705a65e471745e024e3019ccc0f0ddf5489c5250",
+    "baselineRecorded": "2026-10-08 (Session 01: 299 + 7 Local Trip + 24 Outstation + 27 Transfer + 19 Multi + 2 Local/Outstation regression (android-20261002-0743-LOCAL-OUT-REG: TC_VDET_019, TC_BOOK_015) + 4 Local (android-20261006-0936-LOCAL: TC_CONF_019, TC_INQ_023, TC_INQ_024, TC_INQ_025) + 3 Local (android-20261008-0835-LOCAL: TC_VLIST_015, TC_VDET_020, TC_BOOK_016) + 1 Multi (android-20261008-1504-MULTI: TC_HOME_077), user-approved 2026-10-08)",
     "idPattern": "TC_<MODULE>_<NNN>",
     "featureMap": "manual-exploration/feature-map.md",
     "appInfo": "manual-exploration/app-info.md",
@@ -36,5 +54,8 @@
     "reports": "android/reports",
     "evidence": "android/evidence"
   },
-  "testAccountEnv": ["BANNI_QA_PHONE", "BANNI_QA_PASSWORD"]
+  "testAccountEnv": [
+    "BANNI_QA_PHONE",
+    "BANNI_QA_PASSWORD"
+  ]
 }

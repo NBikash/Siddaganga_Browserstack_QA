@@ -1,0 +1,1983 @@
+[
+  {
+    "ts": "2026-11-13T04:50:58.173Z",
+    "id": "LM-01",
+    "module": "Lead Management",
+    "title": "Identify test record by PNR, then Lead ID lookup",
+    "objective": "PNR is the identity source; Lead ID becomes the lookup key",
+    "pre": "PNR SOQS555799 supplied",
+    "steps": [
+      "Search Lead Info = LD-353 (Lead ID known from the 20261112 run)",
+      "Row menu > View Lead",
+      "Read Inquiry Information > Inquiry PNR"
+    ],
+    "expected": "Exactly one row; PNR equals SOQS555799",
+    "actual": "One row LD-353; Inquiry PNR SOQS555799 (exact), Inquiry ID 944, status New quotation",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-01-view-lead-pnr.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.179Z",
+    "id": "LM-02",
+    "module": "Lead Management",
+    "title": "View Lead details vs User-Web inquiry",
+    "objective": "Lead data matches what the customer submitted",
+    "pre": "LM-01",
+    "steps": [
+      "Open View Lead for LD-353",
+      "Compare each field with User-Web TC-07 input"
+    ],
+    "expected": "Customer, pax, date, pickup time, location, journey type, vehicle and cost match",
+    "actual": "Match: Bikash N, National, 1 pax, 1 day, 20/11/2026, Whitefield->Whitefield, Local, 16 Seater Premium Urbania x1, Rs 8,300. Mismatch: Pickup/Drop Time 12:00 AM (submitted 9:00 AM). Hours package not shown in lead",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-01-view-lead-pnr.png"
+    ],
+    "issues": [
+      "ISS-01"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.179Z",
+    "id": "LM-03",
+    "module": "Lead Management",
+    "title": "Search Lead Info variants",
+    "objective": "Search by full ID, partial ID, name, PNR, no-match",
+    "pre": "Lead list",
+    "steps": [
+      "Search LD-353",
+      "Search LD-35",
+      "Search Bikash",
+      "Search SOQS555799",
+      "Search zzzz-no-match"
+    ],
+    "expected": "Matching rows; clear empty state for no match",
+    "actual": "LD-353: 1 row; LD-35: 10 entries; Bikash: 13 entries; PNR: 0 rows (PNR not searchable); no-match: \"No data available\", Showing 0 to 0 of 0",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-03-search-no-match.png"
+    ],
+    "issues": [
+      "ISS-12"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.180Z",
+    "id": "LM-04",
+    "module": "Lead Management",
+    "title": "Status filter dropdown and Reset Filter",
+    "objective": "Filter options and reset",
+    "pre": "Lead list",
+    "steps": [
+      "Open status dropdown",
+      "Select Open",
+      "Click Reset Filter"
+    ],
+    "expected": "Options listed; only Open rows; reset restores all",
+    "actual": "Options All Status/Active/Closed/Open; Open -> 142 entries, all Open; Reset -> All Status, 143 entries",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-04-status-options.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.181Z",
+    "id": "LM-05",
+    "module": "Lead Management",
+    "title": "Date filter and pagination / rows per page",
+    "objective": "List navigation",
+    "pre": "Lead list",
+    "steps": [
+      "Look for a date filter",
+      "Rows per page 05 -> 10",
+      "Open last page"
+    ],
+    "expected": "Page size and page count update; last page shows remaining rows",
+    "actual": "No date filter on the Lead list (search + status only). Sizes 05/10/15/20; 10 -> 15 pages; last page shows 141-143 of 143",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-05-pagination-last-page.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.182Z",
+    "id": "LM-06",
+    "module": "Lead Management",
+    "title": "Lead table values vs lead details",
+    "objective": "List columns reflect the lead",
+    "pre": "LM-01",
+    "steps": [
+      "Search LD-353",
+      "Compare row with View Lead"
+    ],
+    "expected": "Stage and Expected Value populated from the inquiry",
+    "actual": "Stage N/A, Expected Value N/A although Total Costing is Rs 8,300; Assigned To Unassigned; Status Open",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-06-row-values.png"
+    ],
+    "issues": [
+      "ISS-02"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:50:58.182Z",
+    "id": "LM-08",
+    "module": "Lead Management",
+    "title": "View Lead modal behaviour",
+    "objective": "Close, refresh, re-open",
+    "pre": "LM-01",
+    "steps": [
+      "Open View Lead",
+      "Press Escape",
+      "Re-open",
+      "Browser refresh"
+    ],
+    "expected": "Modal closes via a visible control and Escape; refresh returns to list",
+    "actual": "Escape closes the modal; the only button is \"Send To Inquiry\" (no visible Close/X); refresh closes the modal and clears the search field",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-08-view-lead-modal.png"
+    ],
+    "issues": [
+      "ISS-03"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:54:42.205Z",
+    "id": "LM-07",
+    "module": "Lead Management",
+    "title": "+ Add Lead form: fields, dropdowns, mandatory and invalid validation (not saved)",
+    "objective": "Create-lead form validation without creating a record",
+    "pre": "Lead list",
+    "steps": [
+      "Click + Add Lead",
+      "Open Stage and Status dropdowns",
+      "Click Create Lead with all fields blank",
+      "Enter whitespace-only Client Name and Expected Value -500, click Create Lead",
+      "Type letters into Expected Value",
+      "Reload page (discard)"
+    ],
+    "expected": "Required-field and range errors; letters rejected; no lead created",
+    "actual": "Fields: Client Name*, Expected Value* (number, min 0), Stage (Prospecting/Qualification/Proposal/Negotiation/Closed Won/Closed Lost, default Prospecting), Status (Active/Open/Closed, default Active). Blank: \"Client name is required\", \"Expected value is required\". Whitespace name rejected; -500: \"Expected value must be 0 or greater\"; letters cannot be typed. Form stayed open; nothing created",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-07-add-lead-form-r2.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-07-add-lead-blank-submit-r2.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-07-add-lead-invalid-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:54:42.211Z",
+    "id": "LM-09",
+    "module": "Lead Management",
+    "title": "Assign lead to employee (dialog + empty-state validation)",
+    "objective": "Assign dialog content and validation (saving is approval-needed)",
+    "pre": "LD-353 listed",
+    "steps": [
+      "LD-353 menu > Assign",
+      "Open Assign Employee dropdown",
+      "Check Assign button state"
+    ],
+    "expected": "Employee list available; Assign disabled until an employee is chosen",
+    "actual": "Dialog shows \"No sales employees found\"; dropdown only \"Select Employee\"; Assign stays disabled. Lead remains Unassigned. Assignment cannot be exercised in this environment",
+    "status": "Blocked",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-09-assign-dialog-r2.png"
+    ],
+    "issues": [
+      "ISS-04"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.336Z",
+    "id": "LM-10",
+    "module": "Lead Management",
+    "title": "Send To Inquiry from the lead",
+    "objective": "Forward transition to the quote form",
+    "pre": "LD-353 Open",
+    "steps": [
+      "LD-353 menu > Send To Inquiry"
+    ],
+    "expected": "Update Inquiry form opens for Inquiry 944",
+    "actual": "Navigated to /inquiry-management/update-inquiry/dfb79d89-... (no toast). Lead stays \"Open\" in Lead list until the quote is saved",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/LM-10-send-to-inquiry-opened.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.343Z",
+    "id": "QT-01",
+    "module": "Quotation / Update Quote",
+    "title": "Pre-filled quote values vs User-Web inquiry",
+    "objective": "Quote form reflects the submitted inquiry",
+    "pre": "LM-10",
+    "steps": [
+      "Read every field and the Vehicle Costs row"
+    ],
+    "expected": "Booking type, client, dates, pickup time, pax, trip days, vehicle, package and cost match TC-07",
+    "actual": "Local, OTP + Domestic, 20/11/2026, 1 day, 1 pax, 16 Seater Premium Urbania x1, 8 HR/80 KM Rs 7,500 + driver allowance Rs 800 x1 = Rs 8,300, extra km 40, extra hour 800, GST 5%. Arrival/Departure 12:00 AM (submitted 9:00 AM). Requested hour package (8 or 9 HR) not visible anywhere in Admin",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ],
+    "issues": [
+      "ISS-01",
+      "ISS-08"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.345Z",
+    "id": "QT-02",
+    "module": "Quotation / Update Quote",
+    "title": "Mandatory field: Pax blank -> Update Quote",
+    "objective": "Required-field validation on save",
+    "pre": "QT-01",
+    "steps": [
+      "Clear \"Enter Number of Pax's\"",
+      "Click Update Quote",
+      "Re-open the form",
+      "Restore pax 1 and save"
+    ],
+    "expected": "Save blocked with \"Pax is required\"",
+    "actual": "Saved: toast \"Data updated successfully !\", APIs update-inquiry 200; re-opened pax is empty. Restored to 1",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-02-pax-blank.png"
+    ],
+    "issues": [
+      "ISS-05"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.346Z",
+    "id": "QT-03",
+    "module": "Quotation / Update Quote",
+    "title": "Invalid / boundary input (pax, trip days, fare)",
+    "objective": "Format and range validation",
+    "pre": "QT-01",
+    "steps": [
+      "Type pax 0, -1, 1.5, 100, abc (inline)",
+      "Save with pax 0",
+      "Save with trip days 0",
+      "Type trip days -2 / 400, base fare -100 (inline, not saved)"
+    ],
+    "expected": "Pax must be a whole number 1..vehicle capacity (16); trip days >= 1; fare >= 0",
+    "actual": "Pax field is free text: accepts 0, -1, 1.5, 100 (> 16 seats), \"abc\" with no message; pax 0 SAVED (re-opens empty; restored to 1). Trip days 0 blocked by browser validation \"Value must be greater than or equal to 1\" (not saved). Negative base fare accepted inline without message (not saved)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-03-boundary.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-03-pax-0.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-03-tripDuration-0.png"
+    ],
+    "issues": [
+      "ISS-05"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.346Z",
+    "id": "QT-04",
+    "module": "Quotation / Update Quote",
+    "title": "Cost recalculation (additional km/hours, toll, extras, bata days)",
+    "objective": "Total Approx Cost follows cost inputs",
+    "pre": "QT-01",
+    "steps": [
+      "Change Additional HR's 1, Additional KM 10, Toll 100, Extras 50, Day Bata Days 2 (no save)",
+      "Save Additional HR's = 1",
+      "Re-open",
+      "Restore 0 and save"
+    ],
+    "expected": "Total recomputes (e.g. +1 hr x Rs 800 -> Rs 9,100) on screen and after save",
+    "actual": "Total stays Rs 8,300.00 for every change, before and after saving (Additional HR's 1.00 persisted, total 8,300.00). Restored to 0",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-04-recalculated.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-04-saved-addl-hr-1.png"
+    ],
+    "issues": [
+      "ISS-06"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.347Z",
+    "id": "QT-05",
+    "module": "Quotation / Update Quote",
+    "title": "Fixed Cost / Apply checkbox",
+    "objective": "Fixed cost override behaviour",
+    "pre": "QT-01",
+    "steps": [
+      "Tick Apply in the Fixed Cost cell",
+      "Enter 9000",
+      "Untick"
+    ],
+    "expected": "Fixed Cost enabled when Apply ticked; Final Quote uses the fixed cost (rule to confirm)",
+    "actual": "Fixed Cost enabled only when Apply ticked (correct); Final Quote stays Rs 8,300.00 with fixed cost 9000; untick disables field again. Not saved",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-05-apply-fixed-cost.png"
+    ],
+    "issues": [
+      "ISS-06"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.349Z",
+    "id": "QT-06",
+    "module": "Quotation / Update Quote",
+    "title": "GST Change dialog",
+    "objective": "GST edit control",
+    "pre": "QT-01",
+    "steps": [
+      "Click Change next to GST Value",
+      "Close without saving"
+    ],
+    "expected": "Dialog to edit GST with Save/Cancel",
+    "actual": "Dialog \"Change GST Value\" with GST Value 5%, Cancel, Save; closed with Escape, GST unchanged 5%",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-06-gst-change.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.349Z",
+    "id": "QT-07",
+    "module": "Quotation / Update Quote",
+    "title": "Dropdown options (Booking Type, Month, Client, Trip Description)",
+    "objective": "Option lists",
+    "pre": "QT-01",
+    "steps": [
+      "Open each dropdown"
+    ],
+    "expected": "Relevant options",
+    "actual": "Booking Type: Local/Outstation/Transfer/Dynamic; Month: January..December; Client search lists the client; Trip Description: free text, no presets",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-07-dropdowns-r.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.351Z",
+    "id": "QT-08",
+    "module": "Quotation / Update Quote",
+    "title": "Date/Day-wise Category Assignment calendar",
+    "objective": "Calendar controls",
+    "pre": "QT-01",
+    "steps": [
+      "Inspect calendar"
+    ],
+    "expected": "Trip date highlighted; month navigation, Reset Selection, Save Assignment",
+    "actual": "November 2026 with 20 highlighted; Previous/Next Month, Reset Selection, Save Assignment present. Save Assignment not exercised (would re-assign categories)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-08-calendar-assignment.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.351Z",
+    "id": "QT-09",
+    "module": "Quotation / Update Quote",
+    "title": "+ Add New Journey (not saved)",
+    "objective": "Add journey behaviour",
+    "pre": "QT-01",
+    "steps": [
+      "Click + Add New Journey",
+      "Reload without saving"
+    ],
+    "expected": "New journey section with required inputs; discarded on reload",
+    "actual": "Adds \"Trip-2 / Journey A: Local\" with \"Add information\" button; discarded after reload (not saved). Journey form itself not filled (would create a second trip)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-09-add-new-journey.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.353Z",
+    "id": "QT-10",
+    "module": "Quotation / Update Quote",
+    "title": "Edit Trip Description + Toll and verify persistence",
+    "objective": "Edited values persist after save and re-open",
+    "pre": "QT-01",
+    "steps": [
+      "Type Trip Description \"QA functional test LD-353\"",
+      "Toll & Parking 100",
+      "Save",
+      "Re-open + refresh",
+      "View Quote in Inquiry list",
+      "Restore toll 0"
+    ],
+    "expected": "Both values persist; total includes toll (or rule documented)",
+    "actual": "Description and Toll 100.00 persisted; Total Approx Cost and View Quote costing stay Rs 8,300.00. Pressing Enter in Trip Description submits the whole form. Toll restored to 0; description kept for traceability",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-10-after-reopen-toll100-total8300.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-04-view-quote.png"
+    ],
+    "issues": [
+      "ISS-06",
+      "ISS-09"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.353Z",
+    "id": "QT-11",
+    "module": "Quotation / Update Quote",
+    "title": "Preview Quote Summary",
+    "objective": "Summary content",
+    "pre": "QT-01",
+    "steps": [
+      "Click Preview Quote Summary",
+      "Close"
+    ],
+    "expected": "Summary of legs and costing",
+    "actual": "\"Quotation Summary\": Trip 1 Leg 1, Quote ID 1701, Local, 16 Seater Premium Urbania, Rs 8300.00; buttons Combined Quotes, Detailed Quotes (download, not run), Cancel",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-11-preview-quote-summary.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.354Z",
+    "id": "QT-12",
+    "module": "Quotation / Update Quote",
+    "title": "Arrival / Departure time editability",
+    "objective": "Pickup time can be corrected",
+    "pre": "QT-01",
+    "steps": [
+      "Inspect Select Arrival/Departure Time"
+    ],
+    "expected": "Admin can correct the pickup time (9:00 AM)",
+    "actual": "Both read-only, fixed at 12:00 AM; no way to correct the wrong time",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ],
+    "issues": [
+      "ISS-01",
+      "ISS-07"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.355Z",
+    "id": "QT-13",
+    "module": "Quotation / Update Quote",
+    "title": "Leave form with unsaved changes",
+    "objective": "Data-loss protection",
+    "pre": "QT-01",
+    "steps": [
+      "Type in Trip Description",
+      "Browser Back",
+      "Re-open"
+    ],
+    "expected": "Unsaved-changes warning (or documented as not required)",
+    "actual": "No warning; navigated to Total Inquiries; change lost",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-10-edited-before-save.png"
+    ],
+    "issues": [
+      "ISS-10"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.082Z",
+    "id": "IM-01",
+    "module": "Inquiry Management",
+    "title": "Search, start-date and client filters, Reset Filter",
+    "objective": "Locate the inquiry by ID/name/date",
+    "pre": "QRY-944 exists",
+    "steps": [
+      "Search QRY-944, Bikash, 944, QRY-9, zzzz",
+      "Start Date = 20 Nov",
+      "Client filter \"Bikash\"",
+      "Reset Filter"
+    ],
+    "expected": "Correct filtering; empty state for no match; reset restores",
+    "actual": "QRY-944 -> 1; Bikash -> 1; 944 -> 4; QRY-9 -> 7; zzzz -> \"No data available\"; Start Date 20/11 -> 1 row (20/11/2026); client filter lists 1 client; Reset -> 8 entries",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-01-start-date-filter.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-01-search-recheck.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.089Z",
+    "id": "IM-02",
+    "module": "Inquiry Management",
+    "title": "KPI cards",
+    "objective": "Cards reflect inquiry data",
+    "pre": "Inquiry list",
+    "steps": [
+      "Read KPI cards",
+      "Compare with list"
+    ],
+    "expected": "Total matches the list; conversion/pending/quote value consistent with data",
+    "actual": "Total Inquiries 109 while the unfiltered All Inquiries list shows 8 entries; Conversion Rate 0, Pending Approvals 0, Total Quote Value 0 despite inquiries with quotes (e.g. QRY-944 Rs 8,300)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-02-kpi-cards.png"
+    ],
+    "issues": [
+      "ISS-11"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.090Z",
+    "id": "IM-03",
+    "module": "Inquiry Management",
+    "title": "Inquiry row values vs quote",
+    "objective": "List shows the quote data",
+    "pre": "QT-10",
+    "steps": [
+      "Search QRY-944",
+      "Compare columns with the quote"
+    ],
+    "expected": "Client, type, vehicle, start date, status consistent",
+    "actual": "QRY-944, Bikash N, National, 16 Seater Premium Urbania, 20/11/2026, View Quote, status \"Revised quotation\"",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-03-row-after-quote-edit-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.091Z",
+    "id": "IM-04",
+    "module": "Inquiry Management",
+    "title": "View Quote",
+    "objective": "Quote summary from the list",
+    "pre": "QT-10",
+    "steps": [
+      "Click View Quote in the row",
+      "Close"
+    ],
+    "expected": "Quotation summary with correct costing",
+    "actual": "Quotation Summary: Quote ID 1701, Local, 16 Seater Premium Urbania, Rs 8300.00 (toll 100 saved at that time not reflected; see ISS-06). Combined/Detailed Quotes not run (downloads)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-04-view-quote.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.092Z",
+    "id": "IM-05",
+    "module": "Inquiry Management",
+    "title": "Edit inquiry opens saved values",
+    "objective": "Edit path and persistence",
+    "pre": "QT-10",
+    "steps": [
+      "QRY-944 menu > Edit",
+      "Wait for form to load"
+    ],
+    "expected": "Update form with saved values",
+    "actual": "Opens the same /update-inquiry/<uuid> form; Trip Description \"QA functional test LD-353\", Pax 1, total 8300.00 (persisted)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-05-edit-loaded.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.094Z",
+    "id": "IM-06",
+    "module": "Inquiry Management",
+    "title": "+ Add inquiry form (inspect only)",
+    "objective": "Create form structure",
+    "pre": "Inquiry list",
+    "steps": [
+      "Click + Add inquiry",
+      "Inspect fields and buttons",
+      "Leave"
+    ],
+    "expected": "Create form with required fields",
+    "actual": "/inquiry-management/add-inquiry with \"Generate Quote\" and Cancel; no fields marked required. Blank submit NOT run: Update Quote already saves blank pax (ISS-05), so a blank Generate Quote could create a junk inquiry",
+    "status": "Not Run",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-06-add-inquiry-form.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.096Z",
+    "id": "IM-07",
+    "module": "Inquiry Management",
+    "title": "Status terminology across stages",
+    "objective": "Status labels",
+    "pre": "Inquiry list",
+    "steps": [
+      "Read status for QRY-944 before/after quote"
+    ],
+    "expected": "Clear progression",
+    "actual": "Lead details status \"New quotation\"; after Update Quote list shows \"Revised quotation\"; lead list still \"Open\"",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-03-row-after-quote-edit-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.168Z",
+    "id": "PB-01",
+    "module": "Pre-Bookings",
+    "title": "Choose Trip(s): no leg selected",
+    "objective": "Convert requires a selected quote leg",
+    "pre": "QRY-944 with quote 1701",
+    "steps": [
+      "QRY-944 menu > Send To Booking",
+      "Untick Leg 1"
+    ],
+    "expected": "Convert into Booking disabled or validation shown",
+    "actual": "Convert into Booking disabled when no leg is ticked",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-01-no-leg-selected.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.188Z",
+    "id": "PB-02",
+    "module": "Pre-Bookings",
+    "title": "Convert confirmation: No, then Yes",
+    "objective": "Confirmation dialog behaviour and transition",
+    "pre": "PB-01",
+    "steps": [
+      "Tick Leg 1 > Convert into Booking",
+      "Click No",
+      "Repeat and click Yes"
+    ],
+    "expected": "No keeps the inquiry; Yes creates the booking",
+    "actual": "No closes the confirmation only (Choose Trip(s) stays open, nothing converted). Yes: inquiry/send-trip-to-booking 200, alert \"New booking for inquiry SOQS555799 ... received\"; QRY-944 leaves the inquiry list; B-944 in Pre-Bookings",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-02-convert-confirm.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-02-after-convert-inquiry-list.png"
+    ],
+    "issues": [
+      "ISS-13"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.189Z",
+    "id": "PB-03",
+    "module": "Pre-Bookings",
+    "title": "Pre-Bookings search and filters",
+    "objective": "Locate booking; filter by client, vehicle, date range; reset",
+    "pre": "B-944 in Pre-Bookings",
+    "steps": [
+      "Search B-944",
+      "Client filter Bikash",
+      "Open vehicle filter",
+      "Open date range",
+      "Reset Filter"
+    ],
+    "expected": "Correct results; options listed; reset restores",
+    "actual": "B-944 -> 1 row; client Bikash -> 1 row; vehicle filter lists 20 vehicle types + None; date-range picker opens; reset -> 10 entries",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-03-search-B-944.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-03-date-range.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.190Z",
+    "id": "PB-04",
+    "module": "Pre-Bookings",
+    "title": "View Booking details",
+    "objective": "Booking details vs quote",
+    "pre": "PB-03",
+    "steps": [
+      "B-944 menu > View Booking"
+    ],
+    "expected": "Status Pre-Booking; vehicle, locations, costing, tax consistent with quote",
+    "actual": "Booking ID B-944, Local, 16 Seater Premium Urbania x1, Whitefield->Whitefield, Vehicle Costing Rs 8300.00. But Booking Status \"On Trip\" (record is only pre-booked); Invoice Summary New Base Fare Rs 0.00 and Tax Rs 0.00 (GST 5%); map \"Loading vehicle location...\" with no vehicle; Download Invoice offered (not run)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-04-view-booking.png"
+    ],
+    "issues": [
+      "ISS-14",
+      "ISS-15"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.192Z",
+    "id": "PB-05",
+    "module": "Pre-Bookings",
+    "title": "Edit Booking and persistence",
+    "objective": "Edit a field and verify after re-open",
+    "pre": "PB-03",
+    "steps": [
+      "B-944 menu > Edit Booking",
+      "Advance prompt: No, Not Now",
+      "Change Trip Description to \"QA functional test LD-353 booking edit\"",
+      "Update Booking",
+      "Re-open"
+    ],
+    "expected": "Edit form opens directly; value persists",
+    "actual": "A \"Record Advance Payment?\" prompt appears first; after declining, /update-booking/<uuid> opens. Update Booking -> \"Data updated successfully !\" (API update-inquiry); value persisted",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-05-edit-booking-click-result.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-05-edit-booking-persisted.png"
+    ],
+    "issues": [
+      "ISS-16"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.194Z",
+    "id": "PB-06",
+    "module": "Pre-Bookings",
+    "title": "Confirm Booking form values and confirm",
+    "objective": "Values carried into confirmation; transition",
+    "pre": "PB-05",
+    "steps": [
+      "B-944 menu > Confirm Booking",
+      "Compare form with quote",
+      "Click Confirm Booking"
+    ],
+    "expected": "Same values as quote; booking confirmed",
+    "actual": "Description, pax 1, trip days 1, 16 Seater Premium Urbania, base 7500, total 8300 match; times 12:00 AM. update-inquiry, booking/details, booking/confirm 200; \"Data updated successfully !\"; B-944 moved to Booked",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-06-confirm-booking-form.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.195Z",
+    "id": "PB-07",
+    "module": "Pre-Bookings",
+    "title": "KPI cards after confirmation",
+    "objective": "Cards update with the transition",
+    "pre": "PB-06",
+    "steps": [
+      "Read cards before/after confirming"
+    ],
+    "expected": "Counts move consistently and labels match what they count",
+    "actual": "Total Bookings 10 -> 9, Upcoming Trips 14 -> 15. \"Total Bookings\" equals the Pre-Bookings count, while Booked lists 24 bookings",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-01-booked-B-944.png"
+    ],
+    "issues": [
+      "ISS-17"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.197Z",
+    "id": "PB-08",
+    "module": "Pre-Bookings",
+    "title": "+ Add New Booking form (inspect only)",
+    "objective": "Create form structure",
+    "pre": "Pre-Bookings",
+    "steps": [
+      "Click + Add New Booking",
+      "Inspect",
+      "Leave"
+    ],
+    "expected": "Create form",
+    "actual": "/booking-management/add-booking with \"Add Booking\" and Cancel. Blank submit not run (ISS-05: weak validation could create a junk booking)",
+    "status": "Not Run",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-08-add-new-booking.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.198Z",
+    "id": "BK-01",
+    "module": "Booked",
+    "title": "Booked tab listing and menu",
+    "objective": "Confirmed booking visible with correct values",
+    "pre": "PB-06",
+    "steps": [
+      "Open Booked tab",
+      "Locate B-944",
+      "Open row menu"
+    ],
+    "expected": "B-944 listed with same values; booking search available",
+    "actual": "B-944 Bikash N, National, 1, Local, 20 Nov 2026, Rs. 8,300. Menu: Edit Booking, Send Trip Info, Cancel Booking, Back to Pre-Bookings, Cancel & Notify. No Booking ID search box on Booked (only client, vehicle, date range). Closed booking B-932 (TP-111, Trip Closed Yes) still listed under Booked",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-01-booked-B-944.png"
+    ],
+    "issues": [
+      "ISS-18"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.199Z",
+    "id": "BK-02",
+    "module": "Booked",
+    "title": "Back to Pre-Bookings and re-confirm",
+    "objective": "Reverse transition and recovery",
+    "pre": "BK-01",
+    "steps": [
+      "B-944 menu > Back to Pre-Bookings",
+      "Move Back",
+      "Check Pre-Bookings",
+      "Confirm Booking again",
+      "Check Booked"
+    ],
+    "expected": "Booking returns to Pre-Bookings with data intact; can be re-confirmed",
+    "actual": "Dialog \"Are you sure you want to move this confirmed booking back to Pre-Bookings?\" > Move Back: booking/unconfirm 200, toast \"Booking unconfirmed and related booking data removed!\"; B-944 in Pre-Bookings; form data (description, pax, cost) intact; re-confirm succeeded and B-944 back in Booked",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-02-back-to-prebookings-dialog.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-02-back-in-prebookings.png"
+    ],
+    "issues": [
+      "ISS-19"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.200Z",
+    "id": "BK-03",
+    "module": "Booked",
+    "title": "Completed tab (read-only)",
+    "objective": "Completed bookings table",
+    "pre": "Booked tab",
+    "steps": [
+      "Open Completed tab",
+      "Read columns and rows"
+    ],
+    "expected": "Completed bookings with Booking IDs",
+    "actual": "4 entries; column \"BOOKING ID\" shows trip IDs (e.g. TP-110); columns include Feedback Score, Complaints, Payment Status, Trip Closed",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-03-completed-tab.png"
+    ],
+    "issues": [
+      "ISS-20"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.707Z",
+    "id": "UT-01",
+    "module": "Upcoming Trip / Trip Approval",
+    "title": "Booking listed in Upcoming Trips",
+    "objective": "Confirmed booking appears with its data",
+    "pre": "B-944 Booked",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)"
+    ],
+    "expected": "Row with Booking/Trip reference and correct times",
+    "actual": "Row present (Bikash N, Local, 20 Nov 2026 12:00 AM - 20 Nov 2026 12:00 AM, status Confirm) with blank TRIP ID until approval; identity confirmed via prompt text \"Booking B-944\". Times 12:00 AM (ISS-01)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-02-client-filter.png"
+    ],
+    "issues": [
+      "ISS-21",
+      "ISS-01"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.723Z",
+    "id": "UT-02",
+    "module": "Upcoming Trip / Trip Approval",
+    "title": "Client filter, date range, Reset",
+    "objective": "Filters on Upcoming Trips",
+    "pre": "UT-01",
+    "steps": [
+      "Open Select Client Name",
+      "Reset Filter"
+    ],
+    "expected": "Client list; filtering; reset",
+    "actual": "Client dropdown lists None + 7 clients (each with mobile number in the option text); Trip Date Range present; Reset restores 15 entries. Selecting by exact name not exercised (option text includes the phone)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-02-client-filter.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.734Z",
+    "id": "UT-03",
+    "module": "Upcoming Trip / Trip Approval",
+    "title": "Edit Booking from Upcoming Trips",
+    "objective": "Edit path at this stage",
+    "pre": "UT-01",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Row menu > Edit Booking",
+      "Advance prompt > No, Not Now"
+    ],
+    "expected": "Update Booking form opens (as from Pre-Bookings)",
+    "actual": "Advance prompt \"Booking B-944\" appears; after No, Not Now nothing opens; page stays on Upcoming Trips",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-03-edit-booking-after-decline.png"
+    ],
+    "issues": [
+      "ISS-22"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.740Z",
+    "id": "UT-04",
+    "module": "Upcoming Trip / Trip Approval",
+    "title": "Vehicle Allocation before approval",
+    "objective": "Guard against allocating unapproved trips",
+    "pre": "UT-01",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Row menu > Vehicle Allocation"
+    ],
+    "expected": "Allocation blocked until approval",
+    "actual": "Dialog \"Booking Approval Required - Before allocating a vehicle to this trip, please send it for approval. Yes / No\"; closed without answering",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-04-vehicle-allocation-prompt.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.745Z",
+    "id": "UT-05",
+    "module": "Upcoming Trip / Trip Approval",
+    "title": "Send To Trip Approval: No, then Yes",
+    "objective": "Confirmation behaviour and transition",
+    "pre": "UT-01",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Row menu > Send To Trip Approval > No",
+      "Repeat > Yes"
+    ],
+    "expected": "No keeps state; Yes approves and generates a Trip ID",
+    "actual": "No: dialog closes, row unchanged. Yes: send-to-trip-approval-vechicle-allocation-list 200; \"Data generated !\"; notification \"New duty TP-112 - Local, report 12:00 AM @ -, drop -\"; row now TP-112",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-05-trip-approval-confirm.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-05-after-trip-approval.png"
+    ],
+    "issues": [
+      "ISS-23"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.294Z",
+    "id": "VA-01",
+    "module": "Vehicle Allocation Portal",
+    "title": "Portal tabs content",
+    "objective": "Tabs show allocation data",
+    "pre": "TP-112 approved",
+    "steps": [
+      "Open Available Vehicles, Pending Allocation Confirmations, Trip Approvals & Vehicle Assignment"
+    ],
+    "expected": "Each tab lists relevant data",
+    "actual": "Available Vehicles: 54 vehicles (number, type, location, vendor, status, available from); Pending Allocation Confirmations: empty; Trip Approvals: 7 trips incl. TP-112",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Available.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Pending.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Trip.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.343Z",
+    "id": "VA-03",
+    "module": "Vehicle Allocation Portal",
+    "title": "TP-112 row actions before allocation",
+    "objective": "Correct CTAs",
+    "pre": "VA-01",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicle Management > Fleet & Vehicles > Vehicle Allocation Portal",
+      "Trip Approvals & Vehicle Assignment, page 2: TP-112"
+    ],
+    "expected": "Allocate enabled, Allocate Driver absent",
+    "actual": "TP-112 Bikash N, Bengaluru->Bengaluru, 20/11/2026, No-invoice: Record Advance + Allocate (enabled); no Allocate Driver",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-03-TP-112-row.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.344Z",
+    "id": "VA-04",
+    "module": "Vehicle Allocation Portal",
+    "title": "Allocation type dialog",
+    "objective": "Allocation type selection",
+    "pre": "VA-03",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicle Management > Fleet & Vehicles > Vehicle Allocation Portal",
+      "Trip Approvals & Vehicle Assignment, page 2: TP-112",
+      "Allocate",
+      "Advance prompt: No, Continue to Allocation"
+    ],
+    "expected": "Allocation types offered",
+    "actual": "Only \"Dynamic Allocation\" (pre-selected radio) + Continue/Cancel",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-04-allocation-type.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.346Z",
+    "id": "VA-05",
+    "module": "Vehicle Allocation Portal",
+    "title": "Allocation page details",
+    "objective": "Trip and requirement shown",
+    "pre": "VA-04",
+    "steps": [
+      "Continue",
+      "Read header"
+    ],
+    "expected": "Trip number, required bus type, date, status",
+    "actual": "Trip Number TP-112, Bus Required 16 Seater Premium Urbania, Vehicle Age any, date 2026-11-20, status Not Assigned Yet; 54 vehicle tiles (first render briefly showed \"Bus Required: -\" with no tiles)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-05-allocation-page-after-wait.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.348Z",
+    "id": "VA-06",
+    "module": "Vehicle Allocation Portal",
+    "title": "Requested vehicle availability, Change Bus Type, Vendor List, preferences",
+    "objective": "Match requested type/capacity",
+    "pre": "VA-05",
+    "steps": [
+      "List tiles of category 16 Seater Premium Urbania",
+      "Open Change Bus Type (close)",
+      "Open Vendor List (close)",
+      "Open Vehicle Preferences"
+    ],
+    "expected": "Requested type available and selectable; supporting dialogs informative",
+    "actual": "Requested 16 Seater Premium Urbania x1 (User-Web P16UB): 4 matching vehicles AR 01 U 8228, NL 01 B 3364, NL 01 B 3675, NL 01 B 3683. Change Bus Type & Pricing dialog warns \"Saving will clear assigned vehicles and drivers...\" (not saved). Vendor List: empty (0 entries). Preferences: Assigned / Siddaganga / Vendor / All Vehicles",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-06-change-bus-type.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-06-vendor-list.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.350Z",
+    "id": "VA-07",
+    "module": "Vehicle Allocation Portal",
+    "title": "Confirm Allocation with no vehicle selected",
+    "objective": "Validation",
+    "pre": "VA-05",
+    "steps": [
+      "With no tile ticked, check Confirm Allocation"
+    ],
+    "expected": "Disabled or validation",
+    "actual": "Confirm Allocation disabled",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-07-confirm-none-selected.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.351Z",
+    "id": "VA-08",
+    "module": "Vehicle Allocation Portal",
+    "title": "Selecting more vehicles than requested",
+    "objective": "Quantity enforcement (request = 1)",
+    "pre": "VA-05",
+    "steps": [
+      "Tick AR 01 U 8228",
+      "Tick NL 01 B 3364",
+      "Close dialog with X"
+    ],
+    "expected": "Second selection prevented with a clear message",
+    "actual": "Dialog \"Bus Selected Already - the required buses are already selected.If you want to select this bus then deselect the another one\" (Ok/Cancel); closed with X, AR 01 U 8228 stays selected. Multi-vehicle combination not testable (request was 1 vehicle)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-08-second-vehicle-dialog.png"
+    ],
+    "issues": [
+      "ISS-24"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.353Z",
+    "id": "VA-09",
+    "module": "Vehicle Allocation Portal",
+    "title": "Allocate requested vehicle and confirm",
+    "objective": "Correct vehicle allocated",
+    "pre": "VA-08",
+    "steps": [
+      "Verify ticked tile AR 01 U 8228 / 16 Seater Premium Urbania",
+      "Confirm Allocation"
+    ],
+    "expected": "Allocation success; status updated",
+    "actual": "assign-vehicle 200; toast \"All vehicles assigned, drivers pending\"; status \"Fully Assigned\". Requested = allocated (16 Seater Premium Urbania, 16 seats, qty 1)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-09-selected-AR01U8228-r2.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-09-after-confirm.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.355Z",
+    "id": "DA-01",
+    "module": "Driver Allocation",
+    "title": "Allocate Driver available after vehicle allocation",
+    "objective": "Driver step offered",
+    "pre": "VA-09",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicle Management > Fleet & Vehicles > Vehicle Allocation Portal",
+      "Trip Approvals & Vehicle Assignment, page 2: TP-112"
+    ],
+    "expected": "Allocate Driver enabled for TP-112",
+    "actual": "TP-112 row shows Record Advance, Allocate, Allocate Driver (enabled). (Run 20261112 auto-assigned a driver instead.)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/driver/DA-01-allocate-driver-available.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.356Z",
+    "id": "DA-02",
+    "module": "Driver Allocation",
+    "title": "Allocate Driver: validation and submit",
+    "objective": "Driver assignment",
+    "pre": "DA-01",
+    "steps": [
+      "Click Allocate Driver",
+      "Check Submit with no driver",
+      "Open Select Driver",
+      "Choose Test Driver",
+      "Submit"
+    ],
+    "expected": "Submit blocked until a driver is chosen; assignment saved",
+    "actual": "Dialog fields Trip ID TP-112, Date 20 Nov 2026, Vehicle AR 01 U 8228, Select Driver, Request Amenities, Purpose, Requested By. Submit disabled when blank. Drivers: Test Driver, John Anthony, Doe John, Daniel Samuel. Submit: assign-driver-and-amenities 200, \"Driver and amenities assigned successfully!\", pre-departure record notification",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/driver/DA-02-submit-blank.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/driver/DA-02-driver-options.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/driver/DA-02-after-submit.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.335Z",
+    "id": "AT-01",
+    "module": "Approved & Track Live Trips",
+    "title": "Approved Vehicles filters and Trip ID search",
+    "objective": "Locate trips",
+    "pre": "TP-112 approved",
+    "steps": [
+      "Search Trip ID TP-112",
+      "Search TP-999",
+      "Open Vendor and Vehicle dropdowns"
+    ],
+    "expected": "Correct filtering and options",
+    "actual": "TP-112 -> 1 row; TP-999 -> No data available; Vendor list (Sri Lalintha Tours & Travels, Mango Cabs, Sai Eshwar Enterprises (HPB)); Vehicle list of registrations; client and date-range inputs present",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-01-filters.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.343Z",
+    "id": "AT-02",
+    "module": "Approved & Track Live Trips",
+    "title": "Approved trip row values vs allocation",
+    "objective": "Row reflects vehicle/driver",
+    "pre": "DA-02",
+    "steps": [
+      "Locate TP-112",
+      "Compare with allocation"
+    ],
+    "expected": "Vehicle, type, capacity, route, date, driver match",
+    "actual": "TP-112, AR 01 U 8228, 16 Seater Premium Urbania, capacity 16, Local, Whitefield->Whitefield, 20 Nov 2026, Test Driver; STATUS empty; menu Edit Bus Details, Edit Driver Details, Add Extra Amenities, Initiate Vehicle Dispatch, Refuel Request, Record Advance",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-02-TP-112-row.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.344Z",
+    "id": "AT-03",
+    "module": "Approved & Track Live Trips",
+    "title": "Edit Allocation",
+    "objective": "Change allocation path",
+    "pre": "AT-02",
+    "steps": [
+      "Click Edit Allocation"
+    ],
+    "expected": "Allocation editor for TP-112",
+    "actual": "Shows \"Record Advance Before Allocation? Bikash N - Trip TP-112\" (closed without continuing, to keep the matched vehicle)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-03-edit-allocation.png"
+    ],
+    "note": "Re-allocation not executed (would replace the matching vehicle)"
+  },
+  {
+    "ts": "2026-11-13T05:44:17.346Z",
+    "id": "AT-04",
+    "module": "Approved & Track Live Trips",
+    "title": "Edit Bus Details",
+    "objective": "Bus details edit form",
+    "pre": "AT-02",
+    "steps": [
+      "Menu > Edit Bus Details",
+      "Advance prompt: No, Not Now"
+    ],
+    "expected": "Bus details form",
+    "actual": "Opens \"Select the type of allocation you need - Dynamic Allocation\" (the allocation flow), not a bus-details form; closed",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-04-edit-bus-details.png"
+    ],
+    "issues": [
+      "ISS-25"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.347Z",
+    "id": "AT-05",
+    "module": "Approved & Track Live Trips",
+    "title": "Add Extra Amenities: form and empty validation",
+    "objective": "Amenity add",
+    "pre": "AT-02",
+    "steps": [
+      "Menu > Add Extra Amenities",
+      "Advance prompt: No",
+      "Click Add with nothing selected"
+    ],
+    "expected": "Validation",
+    "actual": "Form Journey ID \"TP-112 : Local\", Add Amenity, Note; empty Add -> toast \"Please select at least one amenity\". No amenity added",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-05-add-extra-amenities.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-05-add-blank.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.350Z",
+    "id": "AT-06",
+    "module": "Approved & Track Live Trips",
+    "title": "Refuel Request: form and blank validation (not sent)",
+    "objective": "Refuel validation",
+    "pre": "AT-02",
+    "steps": [
+      "Menu > Refuel Request",
+      "Advance prompt: No",
+      "Send Request blank"
+    ],
+    "expected": "Required-field errors",
+    "actual": "Errors: Vehicle No, Fuel Station, Requested Quantity, Estimated Cost, Payment Method required. Vehicle No not pre-filled with the trip vehicle. Request not sent (approval-needed)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-06-refuel-request.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-06-refuel-request-blank-submit.png"
+    ],
+    "issues": [
+      "ISS-26"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:44:17.351Z",
+    "id": "DA-03",
+    "module": "Driver Allocation",
+    "title": "Edit Driver Details: form and empty validation",
+    "objective": "Driver replacement",
+    "pre": "DA-02",
+    "steps": [
+      "Menu > Edit Driver Details",
+      "Advance prompt: No",
+      "Check Update with no replacement"
+    ],
+    "expected": "Shows assigned driver; Update disabled until replacement chosen",
+    "actual": "Vehicle AR 01 U 8228, type 16 Seater Premium Urbania, Assigned Driver Test Driver, Replace Driver select; Update disabled. Replacement not saved (would reassign another driver)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/DA-03-edit-driver-details.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/driver/DA-03-update-blank.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.581Z",
+    "id": "VD-01",
+    "module": "Vehicle Dispatch",
+    "title": "Predeparture Checklist: Next without safety confirmation / note",
+    "objective": "Checklist enforcement",
+    "pre": "TP-112 approved with driver",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Leave Safety equipment confirmation unticked and Add Note empty",
+      "Click Next"
+    ],
+    "expected": "Either blocked with a message, or both optional (and accepted at submit)",
+    "actual": "Next allowed with no message; the empty note is rejected only at final submit as \"Remarks\" (VD-06 first attempt)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-01-next-without-safety.png"
+    ],
+    "issues": [
+      "ISS-28",
+      "ISS-32"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.592Z",
+    "id": "VD-02",
+    "module": "Vehicle Dispatch",
+    "title": "Trip Sheet blank submit",
+    "objective": "Required-field validation",
+    "pre": "VD-01",
+    "steps": [
+      "On Trip Sheet leave all fields empty",
+      "Click Generate Trip Sheet & Mark Vehicle Ready"
+    ],
+    "expected": "Per-field required messages",
+    "actual": "No message, no toast, nothing happens (only a tabbi vehicle-data call)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-02-blank-submit.png"
+    ],
+    "issues": [
+      "ISS-27"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.595Z",
+    "id": "VD-03",
+    "module": "Vehicle Dispatch",
+    "title": "Trip Sheet invalid / boundary values",
+    "objective": "Range and consistency validation",
+    "pre": "VD-01",
+    "steps": [
+      "Start Odometer -50",
+      "Start Odometer \"abc\"",
+      "Fuel Filled 99999",
+      "Mileage 0",
+      "Opening Km 100 vs Start Odometer 200, submit"
+    ],
+    "expected": "Negative/implausible values and odometer mismatch rejected",
+    "actual": "-50 accepted; letters cannot be typed (number input); 99999 litres accepted; mileage 0 accepted; mismatch submit only reports \"permitDocument cannot be null\"",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-03-invalid-values.png"
+    ],
+    "issues": [
+      "ISS-30",
+      "ISS-31"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.597Z",
+    "id": "VD-04",
+    "module": "Vehicle Dispatch",
+    "title": "Present Diesel auto-calculation",
+    "objective": "Derived value",
+    "pre": "VD-01",
+    "steps": [
+      "Last Diesel 10",
+      "Fuel Filled 30"
+    ],
+    "expected": "Present Diesel = 40",
+    "actual": "Present Diesel 40 (auto)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-06-valid-before-submit.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.599Z",
+    "id": "VD-05",
+    "module": "Vehicle Dispatch",
+    "title": "Permit upload: non-PDF rejected, PDF accepted, Remove",
+    "objective": "Upload validation",
+    "pre": "VD-01",
+    "steps": [
+      "Attach test-data/qa-not-a-pdf.txt",
+      "Attach test-data/qa-test-permit.pdf",
+      "Remove",
+      "Attach PDF again"
+    ],
+    "expected": "Only PDF accepted; remove works",
+    "actual": "TXT: \"Only PDF files are allowed\", not attached. PDF attached and shown; Remove clears it; re-attached",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-05-non-pdf-upload.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-05-pdf-attached.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.601Z",
+    "id": "VD-06",
+    "module": "Vehicle Dispatch",
+    "title": "Dispatch with valid test values",
+    "objective": "Transition to Ready for Trip",
+    "pre": "VD-05",
+    "steps": [
+      "Start Odometer 20000, Opening Km 20000, Fuel 30, Last Diesel 10, Mileage 10, Helper \"QA Test Helper\", permit PDF",
+      "Submit (rejected: \"Remarks\" not allowed to be empty, API 400)",
+      "Back to Predeparture Checklist: tick safety, Add Note",
+      "Next > Submit"
+    ],
+    "expected": "Trip ready for dispatch",
+    "actual": "Second submit: \"Trip is ready for dispatch - TP-112 (AR 01 U 8228)\"",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-06-valid-before-submit.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-06-checklist-note-added.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-06-dispatched.png"
+    ],
+    "issues": [
+      "ISS-28",
+      "ISS-29"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.032Z",
+    "id": "RT-01",
+    "module": "Ready for Trip",
+    "title": "Dispatched trip listed in Ready For Trip",
+    "objective": "Transition result",
+    "pre": "VD-06",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Ready For Trip",
+      "Locate TP-112"
+    ],
+    "expected": "TP-112 listed with route/date",
+    "actual": "TP-112 Bikash N, Local, 20/11/2026, Whitefield->Whitefield, status Schedule, Edit Allocation",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/ready/RT-01-ready-row.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.043Z",
+    "id": "RT-02",
+    "module": "Ready for Trip",
+    "title": "Edit Tripsheet",
+    "objective": "Edit dispatch values and persist",
+    "pre": "RT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Ready For Trip",
+      "Locate TP-112",
+      "Menu > Edit Tripsheet",
+      "Advance prompt: No, Not Now",
+      "Open Trip Sheet tab",
+      "Try to change Mileage"
+    ],
+    "expected": "Editable trip sheet (menu says Edit)",
+    "actual": "Dialog is \"View Trip Sheet\": all values read-only (start odometer 20000, fuel 30, helper, opening km 20000, diesel 40, mileage 10 - persisted from dispatch); only Download offered",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/ready/RT-02-edit-tripsheet-fields.png"
+    ],
+    "issues": [
+      "ISS-33"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.048Z",
+    "id": "RT-03",
+    "module": "Ready for Trip",
+    "title": "Ready For Trip menu actions",
+    "objective": "Action inventory",
+    "pre": "RT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Ready For Trip",
+      "Locate TP-112",
+      "Open menu"
+    ],
+    "expected": "Stage-appropriate actions",
+    "actual": "Menu not captured in this run (output lost); per run 20261112: Start Trip, Edit Tripsheet, Edit Bus Details, Edit Driver Details, Add Extra Amenities, Record Advance, Cancel Trip. Edit Bus/Driver/Amenities covered at AT-04/DA-03/AT-05",
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "ts": "2026-11-13T06:03:16.051Z",
+    "id": "RT-04",
+    "module": "Ready for Trip",
+    "title": "Start Trip: dismiss, then confirm",
+    "objective": "Confirmation and transition",
+    "pre": "RT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Ready For Trip",
+      "Locate TP-112",
+      "Menu > Start Trip > advance prompt No, Not Now",
+      "Close confirmation (X)",
+      "Repeat > Confirm"
+    ],
+    "expected": "Dismiss keeps state; Confirm starts the trip",
+    "actual": "Dismiss: still in Ready For Trip. Confirm: start-trip 200, \"Data updated successfully!\"",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/ready/RT-04-start-trip-confirm.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.053Z",
+    "id": "LT-01",
+    "module": "Live Trips",
+    "title": "Started trip listed in Live Trips",
+    "objective": "Transition result and values",
+    "pre": "RT-04",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112"
+    ],
+    "expected": "TP-112 On going, customer type National",
+    "actual": "TP-112 Bikash N, CUSTOMER TYPE \"Local\" (should be National), Local, 20/11/2026, pickup/drop 20 Nov 2026 12:00 AM, On going",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-01-live-row.png"
+    ],
+    "issues": [
+      "ISS-34",
+      "ISS-01"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.055Z",
+    "id": "LT-02",
+    "module": "Live Trips",
+    "title": "Edit Trip Sheet / Edit Trip Details",
+    "objective": "Editability during the trip",
+    "pre": "LT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Edit Trip Sheet (advance prompt declined)",
+      "Menu > Edit Trip Details (advance prompt declined)"
+    ],
+    "expected": "Trip sheet editable as labelled; trip details editable",
+    "actual": "Edit Trip Sheet opens \"View Trip Sheet ... Trip sheet has already been generated. This form is view-only.\" Edit Trip Details (\"Edit Active Trip Details\"): Customer/Type/Route read-only, Arrival Date, Pickup Time, Drop Time editable (12:00 AM shown). Not saved",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-edit-trip-sheet.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-edit-trip-details.png"
+    ],
+    "issues": [
+      "ISS-33"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.057Z",
+    "id": "LT-03",
+    "module": "Live Trips",
+    "title": "Track Live Location",
+    "objective": "Live tracking view",
+    "pre": "LT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Track Live Location"
+    ],
+    "expected": "Map with vehicle position or clear empty state",
+    "actual": "Google map; Vehicle AR 01 U 8228, Driver Test Driver, Booking 20 Nov 2026 00:00:00, pickup/drop Whitefield; Current Location, Last Updated, Speed, Distance, Fuel N/A (no GPS data for test vehicle); Refresh Location",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-track-live-location.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.060Z",
+    "id": "LT-04",
+    "module": "Live Trips",
+    "title": "Driver Details",
+    "objective": "Driver and trip info",
+    "pre": "LT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Driver Details"
+    ],
+    "expected": "Driver details with sensitive IDs masked",
+    "actual": "Vehicle AR 01 U 8228, Test Driver, mobile, email, Aadhaar Number shown in full (121212121212), Driver Bata 1000, Night Allowance 1200, TP-112, On Going, odometer 20000, fuel 30, mileage 10, helper, Pre-Departure Submitted Yes",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-driver-details.png"
+    ],
+    "issues": [
+      "ISS-35",
+      "ISS-36"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.063Z",
+    "id": "LT-05",
+    "module": "Live Trips",
+    "title": "Emergency Alerts / Breakdown / Notify Service Manager / Send Notification (no submit)",
+    "objective": "Forms open and validate",
+    "pre": "LT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Open each item (advance prompt declined)",
+      "Breakdown Protocol: Add Request blank"
+    ],
+    "expected": "Each opens; blank submit validated; nothing sent",
+    "actual": "Emergency Alerts: list (no data). Breakdown Protocol: vehicle prefilled; blank Add Request -> Reported Time / Location / Issue Description ... required. Notify Service Manager: nothing opens after the prompt. Send Notification: form (title, subject, message, WhatsApp/SMS/Mail/Notification) - not sent (approval-needed). Refuel Request validated at AT-06",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-emergency-alerts.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-breakdown-protocol-r2.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-breakdown-protocol-blank.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-notify-service-manager.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-send-notification.png"
+    ],
+    "issues": [
+      "ISS-37"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.065Z",
+    "id": "LT-06",
+    "module": "Live Trips",
+    "title": "Complete Trip",
+    "objective": "Transition to Completed",
+    "pre": "LT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Complete Trip > advance prompt No, Not Now",
+      "Confirm"
+    ],
+    "expected": "Trip completed",
+    "actual": "\"Are you sure you want to complete this trip?\" > Confirm: end-trip 200, \"Data updated successfully!\"",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-06-complete-confirm.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.703Z",
+    "id": "CT-01",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Completed trip listed with costs",
+    "objective": "Transition result",
+    "pre": "LT-06",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112"
+    ],
+    "expected": "TP-112 with estimated/actual cost and Trip Closed No",
+    "actual": "TP-112 Bikash N, National, 20/11/2026, Whitefield->Whitefield, 12:00 AM, Estimated Rs 8,300.00, Actual Rs 8,300.00, Trip Closed No; menu View Trip Summary, Close Trip, Record Advance",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-01-completed-row.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.725Z",
+    "id": "CT-02",
+    "module": "Completed Trip / Trip Closure",
+    "title": "View Trip Summary (TP-112 and closed TP-111, read-only)",
+    "objective": "Summary content vs trip data",
+    "pre": "CT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > View Trip Summary",
+      "Repeat for TP-111"
+    ],
+    "expected": "Booking ID, vehicle, duty type, times, km, cost and tax consistent with the trip",
+    "actual": "TP-112: Booking B-944, Invoice INV-103 (shown before closure), Duty local-1701-1, PASSENGER N/A, VEH.NUM N/A, DUTY TYPE N/A, times 00:00, driver allowance 800, total 8,300, CAR HIRE 8,300, CGST 2.5%... TP-111: Booking B-932, INV-101, vehicle KA21AB9876, 8HR/80KM, total 4,500",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-112.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-111.png"
+    ],
+    "issues": [
+      "ISS-41",
+      "ISS-42"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.734Z",
+    "id": "CT-03",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Close Trip Sheet validation (closing km, total km, diesel)",
+    "objective": "Reject invalid closing values",
+    "pre": "CT-01",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > Close Trip > advance prompt No, Not Now",
+      "Post-arrival Checklist (pre-filled) > Next",
+      "Closing Km 19990 (< opening 20000), Total Km 10, Present Diesel 20 > submit",
+      "Closing Km 20040, Total Km 5, Present Diesel -5 > submit"
+    ],
+    "expected": "Both submissions rejected (closing < opening; negative diesel)",
+    "actual": "First: rejected - \"Closing Km must be greater than or equal to Opening Km\", \"Total Km cannot be negative\". Total Km auto-recomputed to 40 (typed 5 overwritten). Second (Present Diesel -5): ACCEPTED - the trip was closed (Completed Trips shows Trip Closed Yes)",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-closing-below-opening.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-negative-diesel-km-mismatch.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-state-after-negative-diesel.png"
+    ],
+    "issues": [
+      "ISS-43"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.773Z",
+    "id": "CT-04",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Add Expense form",
+    "objective": "Extra expense entry and validation",
+    "pre": "Close sheet open",
+    "steps": [
+      "Planned after CT-03"
+    ],
+    "expected": "Expense types and validation",
+    "actual": "Not reached: the CT-03 invalid submission closed the trip; not executed on any other record",
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "ts": "2026-11-13T06:09:30.818Z",
+    "id": "CT-05",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Driver Bata recompute on the close sheet",
+    "objective": "Total bata recalculation",
+    "pre": "Close sheet open",
+    "steps": [
+      "Planned after CT-03"
+    ],
+    "expected": "Total Driver Bata Cost recomputes",
+    "actual": "Not reached (trip closed during CT-03). Close sheet showed Driver Bata 800 x 1, Night Bata 800 x 0 pre-filled",
+    "status": "Not Run",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-closing-below-opening.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.837Z",
+    "id": "CT-06",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Close Trip and post-close state",
+    "objective": "Trip closure and menu after closing",
+    "pre": "CT-03",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Read Trip Closed",
+      "Open menu"
+    ],
+    "expected": "Trip Closed Yes; Close Trip no longer offered",
+    "actual": "Closed (via the CT-03 submission with Present Diesel -5; closing km 20040, total km 40, permit and helper carried from dispatch). Trip Closed Yes, Actual Rs 8,300.00. Menu still offers Close Trip (plus View Trip Summary, Download Invoice, Record Advance). Invoice notification not captured",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-state-after-negative-diesel.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-07-closed-menu.png"
+    ],
+    "issues": [
+      "ISS-39",
+      "ISS-43"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.858Z",
+    "id": "CT-07",
+    "module": "Completed Trip / Trip Closure",
+    "title": "Actual vs estimated cost after closure",
+    "objective": "Billing outcome",
+    "pre": "CT-06",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Compare Estimated and Actual cost",
+      "View Trip Summary after closing"
+    ],
+    "expected": "Actual reflects trip sheet (40 km within package -> Rs 8,300 + GST)",
+    "actual": "Estimated Rs 8,300.00 = Actual Rs 8,300.00 (40 km within 80 km). View Trip Summary did not open on the single post-close attempt during server instability (not counted as a defect)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-07-closed-menu.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.863Z",
+    "id": "XC-01",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "Same values at every stage",
+    "objective": "Data consistency Lead -> Trip",
+    "pre": "Full flow",
+    "steps": [
+      "Compare customer, client type, pax, date, pickup time, locations, journey, vehicle, cost across Lead, Quote, Booking, Upcoming, Allocation, Approved, Ready, Live, Completed, Summary"
+    ],
+    "expected": "Identical values",
+    "actual": "Consistent: Bikash N, 1 pax, 20/11/2026, Whitefield->Whitefield, Local, 16 Seater Premium Urbania x1, Rs 8,300. Inconsistent: pickup time 12:00 AM everywhere (submitted 9:00 AM); customer type Local in Live Trips; notification locations \"-\"; Trip Summary VEH.NUM/PASSENGER/DUTY TYPE N/A; View Booking status \"On Trip\" at pre-booking",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-01-view-lead-pnr.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-01-live-row.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-112.png"
+    ],
+    "issues": [
+      "ISS-01",
+      "ISS-14",
+      "ISS-23",
+      "ISS-34",
+      "ISS-41"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.869Z",
+    "id": "XC-02",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "ID chain and where each ID is searchable",
+    "objective": "Traceability",
+    "pre": "Full flow",
+    "steps": [
+      "Record IDs at each stage and the search that finds them"
+    ],
+    "expected": "One reference traceable end to end",
+    "actual": "PNR SOQS555799 -> LD-353 (Lead search) -> Inquiry 944 / QRY-944 (Inquiry search) -> Quote 1701 -> B-944 (Pre-Bookings search; no search in Booked) -> TP-112 (Approved Trip ID search) -> INV-103 / duty local-1701-1. PNR appears only in View Lead, booking alert and invoice notification; not searchable",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-03-search-no-match.png"
+    ],
+    "issues": [
+      "ISS-12",
+      "ISS-18",
+      "ISS-21"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.876Z",
+    "id": "XC-03",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "Notification content",
+    "objective": "Notifications match the record",
+    "pre": "Full flow",
+    "steps": [
+      "Read notifications at convert, approval, allocation, dispatch"
+    ],
+    "expected": "Correct IDs, time and locations",
+    "actual": "Booking alert (PNR SOQS555799) correct; duty TP-112 \"report 12:00 AM @ -, drop -\"; pre-departure TP-112 (AR 01 U 8228) and ready-for-dispatch correct",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-05-after-trip-approval.png"
+    ],
+    "issues": [
+      "ISS-23"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.881Z",
+    "id": "XC-04",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "Refresh / browser Back on forms and modals",
+    "objective": "Navigation robustness",
+    "pre": "Various",
+    "steps": [
+      "Refresh with View Lead open",
+      "Back from Update Inquiry with unsaved change",
+      "Reload during Add New Journey"
+    ],
+    "expected": "No broken state; warning before losing edits",
+    "actual": "Refresh closes modal and clears search; Back from the quote loses edits silently; unsaved journey discarded on reload (no data corruption)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-08-view-lead-modal.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-10-edited-before-save.png"
+    ],
+    "issues": [
+      "ISS-10"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.885Z",
+    "id": "XC-05",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "Terminology and content across modules",
+    "objective": "Consistent labels",
+    "pre": "Full flow",
+    "steps": [
+      "Review labels seen during the run"
+    ],
+    "expected": "Consistent, correctly spelled labels",
+    "actual": "\"Tarrif Management\" (card), \"Enter Number of Pax's\", \"Tabbi have no data\"/\"Tabbi suggested\", \"Edit Tripsheet\" vs \"Trip Sheet\", close-sheet button \"Generate Trip Sheet & Mark Vehicle Ready\", \"Are you sure want to convert\", over-selection message",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Available.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ],
+    "issues": [
+      "ISS-13",
+      "ISS-24",
+      "ISS-33",
+      "ISS-38",
+      "ISS-40"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.889Z",
+    "id": "XC-06",
+    "module": "Cross-module consistency & UI/UX",
+    "title": "Advance prompt interruptions",
+    "objective": "Flow usability",
+    "pre": "Full flow",
+    "steps": [
+      "Count Record Advance prompts encountered"
+    ],
+    "expected": "Prompt only where advance is relevant",
+    "actual": "Prompt before Edit Booking, Confirm Booking (once), Allocate, Edit Allocation, Edit Bus/Driver Details, Add Amenities, Refuel, Dispatch, Edit Tripsheet, Start, Live-trip items, Complete, Close, View Trip Summary; always declined",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-05-edit-booking-click-result.png"
+    ],
+    "issues": [
+      "ISS-16"
+    ]
+  },
+  {
+    "id": "VA-02",
+    "module": "Vehicle Allocation Portal",
+    "title": "Portal KPI cards",
+    "objective": "Cards visible and plausible",
+    "pre": "Portal open",
+    "steps": [
+      "Open Vehicle Allocation Portal",
+      "Read cards"
+    ],
+    "expected": "Counts for buses, approved trips, portal trips, tariffs",
+    "actual": "Total Buses / Active 54, Approved & Track Live Trips 5, Vehicle Allocation Portal 7 (6 after allocation), Tarrif Management 20 (spelling ISS-38)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Available.png"
+    ],
+    "issues": [
+      "ISS-38"
+    ]
+  },
+  {
+    "id": "VA-10",
+    "module": "Vehicle Allocation Portal",
+    "title": "Available Vehicles after allocation",
+    "objective": "Allocated vehicle shown as booked for the date",
+    "pre": "VA-09",
+    "steps": [
+      "Planned: Available Vehicles tab, AR 01 U 8228 status for 20/11/2026"
+    ],
+    "expected": "Vehicle unavailable for 20/11/2026",
+    "actual": "Not executed in this run",
+    "status": "Not Run",
+    "evidence": []
+  }
+]

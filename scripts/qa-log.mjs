@@ -4,11 +4,16 @@
 //
 //   node scripts/qa-log.mjs init   --platform android --run-id <id> --scope "Module: LOGIN, REG" \
 //                                  --device "Google Pixel 7" --os 13 --build "app-release.apk v1.1 (uploaded APK)"
+//   Other apps: add --app <id> to init (e.g. --app saagane -> android/results/saagane/<run-id>/, evidence and
+//   reports under that app's config paths). Default app is Banni (<platform>/results|evidence|reports).
+//   Later commands find the run automatically; add --app <id> only if the same run ID exists for two apps.
 //   node scripts/qa-log.mjs case   --run <id> --json '{"id":"TC_LOGIN_002","status":"Pass","actual":"..."}'
 //   node scripts/qa-log.mjs bug    --run <id> --json '{"id":"BUG-...","title":"...", ...}'
 //   node scripts/qa-log.mjs cred   --run <id> --json '{"account":"QA One Time user","method":"Mobile + password"}'
 //   node scripts/qa-log.mjs note   --run <id> --text "App Live input lag drops digits"
 //   node scripts/qa-log.mjs approval --run <id> --text "Logout approved by user"
+//   node scripts/qa-log.mjs clarify  --run <id> --list assumptions|questions|uxFindings --json '{"id":"Q-1","text":"..."}'
+//   init also accepts --role "Superadmin" (shown in the report header).
 //   node scripts/qa-log.mjs finish --run <id>        (sets end time, then generates CSV + defects + HTML report)
 //   node scripts/qa-log.mjs finish --run <id> --partial "reason"   (interim/partial report; run can be resumed and finished later)
 //   Case fields for non-executed cases: status Blocked|Not Executed, blockCategory, dependency, attempted (true if started).
@@ -21,6 +26,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { DEFAULT_APP, appInfo, runPaths, findRunLogFile } from '../setup/lib/common.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const STATUSES = ['Pass', 'Fail', 'Blocked', 'Skipped', 'Not Executed'];
@@ -38,11 +44,9 @@ function args(argv) {
   return out;
 }
 
-export function findRunLog(runId) {
-  for (const platform of ['android', 'ios']) {
-    const f = join(ROOT, platform, 'results', runId, 'run-log.json');
-    if (existsSync(f)) return f;
-  }
+export function findRunLog(runId, app) {
+  const f = findRunLogFile(runId, app);
+  if (f) return f;
   throw new Error(`run-log.json not found for run "${runId}" (run "init" first)`);
 }
 
@@ -68,14 +72,20 @@ async function main() {
 
   if (cmd === 'init') {
     const platform = a.platform || 'android';
+    const app = typeof a.app === 'string' ? a.app.toLowerCase() : DEFAULT_APP;
+    const meta = appInfo(app);
     if (!a['run-id']) throw new Error('--run-id is required');
-    const dir = join(ROOT, platform, 'results', a['run-id']);
+    const paths = runPaths(platform, app);
+    const dir = join(ROOT, paths.results, a['run-id']);
     const f = join(dir, 'run-log.json');
     if (existsSync(f)) { console.log(`exists: ${f}`); return; }
+    const other = findRunLogFile(a['run-id']);
+    if (other) throw new Error(`run ID "${a['run-id']}" is already used by ${other}; choose another`);
     mkdirSync(join(dir, 'defects'), { recursive: true });
-    mkdirSync(join(ROOT, platform, 'evidence', a['run-id']), { recursive: true });
+    mkdirSync(join(ROOT, paths.evidence, a['run-id']), { recursive: true });
     save(f, {
-      runId: a['run-id'], platform, scope: a.scope || '', build: a.build || '',
+      runId: a['run-id'], ...(app === DEFAULT_APP ? {} : { app, appName: meta.name }), ...(a.role ? { role: String(a.role) } : {}),
+      platform, scope: a.scope || '', build: a.build || '',
       device: a.device || '', osVersion: String(a.os || ''), executedBy: a.by || 'Claude Code (App Live via Claude in Chrome)',
       startedAt: a.started || now(), endedAt: null,
       credentials: [], approvals: [], environmentNotes: [], cases: [], bugs: [],
@@ -85,7 +95,7 @@ async function main() {
   }
 
   if (!a.run) throw new Error('--run <run-id> is required');
-  const f = findRunLog(a.run);
+  const f = findRunLog(a.run, typeof a.app === 'string' ? a.app.toLowerCase() : undefined);
   const log = load(f);
 
   switch (cmd) {
@@ -102,6 +112,16 @@ async function main() {
     case 'cred': log.credentials.push(parseJson(a.json)); console.log('credential usage recorded'); break;
     case 'note': log.environmentNotes.push(String(a.text)); console.log('note recorded'); break;
     case 'approval': log.approvals.push({ at: now(), text: String(a.text) }); console.log('approval recorded'); break;
+    case 'clarify': {
+      // Report-only lists, upserted by id: --list assumptions|questions|uxFindings --json '{"id":"Q-1","text":"...","tcIds":[...]}'
+      // (uxFindings entries: id, area, finding, recommendation, priority, tcIds[], bugs[], evidence[]).
+      const key = String(a.list || '');
+      if (!['assumptions', 'questions', 'uxFindings', 'pendingApprovals', 'coverageGaps'].includes(key)) throw new Error('--list must be assumptions, questions, uxFindings, pendingApprovals or coverageGaps');
+      log[key] = log[key] || [];
+      const j = parseJson(a.json);
+      for (const e of Array.isArray(j) ? j : [j]) console.log(`${e.id}: ${upsert(log[key], e)}`);
+      break;
+    }
     case 'checkpoint': {
       // Resumable position: {lastCompleted, current, next, state} - state = app/screen state needed to resume.
       log.checkpoint = { ...parseJson(a.json), at: now() };
@@ -128,7 +148,7 @@ async function main() {
       if (a.partial && typeof a.partial === 'string') log.partialReason = a.partial;
       save(f, log);
       const { generate } = await import('./generate-report.mjs');
-      const out = await generate(log.runId, { link: !!a.link });
+      const out = await generate(log.runId, { link: !!a.link, app: log.app });
       console.log(out.summary);
       return;
     }

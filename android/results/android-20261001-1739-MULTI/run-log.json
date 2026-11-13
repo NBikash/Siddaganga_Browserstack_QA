@@ -1,0 +1,749 @@
+{
+  "runId": "android-20261001-1739-MULTI",
+  "platform": "android",
+  "scope": "Multi trip type: Leg form (Local/Outstation/Transfer chips per leg), Add Next Stop, edit/delete legs, per-leg dates/times, validation, location picker, Trip Summary, vehicles/filters/pricing, Vehicle Details & breakup, Confirm, Inquiry, Inquiry Details, payment attempt, Cancel Trip; baseline TC_HOME_038-041 + gap cases",
+  "build": "Uploaded APK app-release.apk v1.1 (com.siddaganga)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-01T12:09:28.493Z",
+  "endedAt": "2026-10-01T13:01:57.288Z",
+  "credentials": [
+    {
+      "account": "QA test account (personal, mobile login)",
+      "method": "Entered manually on device by the user; values from .env - not seen or logged by Claude",
+      "usedFor": "All Multi cases"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-01T12:09:28.719Z",
+      "text": "User request (chat, 2026-10-01): test Multi completely incl. Confirm -> Inquiry -> Inquiry Details, applicable payment/cancellation (payment not integrated - record Blocked/Fail). Claude will not enter card/UPI/bank details. New genuine Multi cases pre-approved for CSV/XLSX."
+    }
+  ],
+  "environmentNotes": [
+    "Test data created and cleaned up: Multi inquiries 527-529 (3 legs: Local/Outstation/Transfer) and the 2-leg pair ending 530 (Local multi-day + Transfer) - cancelled via one leg each (INV-62, INV-63), which cancelled all linked legs. Pay Advance attempted on 529 (gateway error); no payment details entered."
+  ],
+  "cases": [
+    {
+      "id": "TC_HOME_038",
+      "status": "Pass",
+      "actual": "Multi tab: \"Leg 1 Local\" with Local (selected) / Outstation / Transfer chips; Local leg fields (Pickup Location, Pickup Date & Time, Number of Passengers, Number of Hours, Additional Options Multi-day trip / Different drop location); Add Next Stop button; Search Vehicles.",
+      "endedAt": "2026-10-01T12:15:30.996Z",
+      "evidence": [
+        "TC_HOME_038_1_multi-leg-form.png"
+      ]
+    },
+    {
+      "id": "TC_HOME_039",
+      "status": "Pass",
+      "actual": "Add Next Stop with Leg 1 empty -> inline \"Pickup location is required\" under Pickup Location; no Leg 2 added (form scrolled back to Leg 1).",
+      "endedAt": "2026-10-01T12:15:30.998Z",
+      "evidence": [
+        "TC_HOME_039_1_add-next-stop-validation.png"
+      ]
+    },
+    {
+      "id": "TC_HOME_040",
+      "status": "Pass",
+      "actual": "After Leg 1 (Local, Majestic, 04-10 11:30 am, 4 h) Add Next Stop collapses Leg 1 into a chip 'Leg 1 : Majestic ... -> Same as pickup' with X and opens 'Leg 2 Local'; choosing Outstation switches Leg 2 to Outstation fields (Pickup, Pickup Date & Time, First Destination, + Add Another Destination, Drop Date & Time, Passengers, Different drop location). Leg 2 filled Majestic -> Mysuru 06-10 12:14 pm to 07-10 12:00 pm. Leg chips have an X (remove).",
+      "evidence": [
+        "TC_HOME_040_1_leg2-outstation-reset.png"
+      ],
+      "notes": "Switching the leg type discards the values prefilled for the leg (pickup and date reset to empty/today).",
+      "endedAt": "2026-10-01T12:33:24.520Z"
+    },
+    {
+      "id": "TC_HOME_066",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "New leg defaults continue from the previous leg (pickup = previous drop/destination, start after previous end)",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Multi with Leg 1 Local (Majestic, 04-10 11:30, 4 h) and Leg 2 Outstation (Majestic -> Mysuru, 06-10 to 07-10)",
+      "steps": "1. Add Next Stop after Leg 1 2. Note Leg 2 defaults 3. Add Next Stop after Leg 2 4. Note Leg 3 defaults",
+      "testData": "-",
+      "expected": "Next leg pickup = previous leg drop/destination; date/time defaults after the previous leg ends",
+      "status": "Fail",
+      "actual": "Leg 2 defaulted to Leg 1's pickup and exact start (Majestic, 04-10 11:30 am - overlapping Leg 1's 4 h). Leg 3 defaulted to Leg 2's pickup Majestic and start 06-10 12:14 pm instead of Mysuru / after 07-10 12:00.",
+      "evidence": [
+        "TC_HOME_066_1_leg2-copies-leg1-start.png",
+        "TC_HOME_066_2_leg3-copies-leg2-pickup.png"
+      ],
+      "bugs": [
+        "BUG-MLT-001"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_HOME_067",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Filled leg still open in the form is included on Search Vehicles",
+      "testType": "Functional",
+      "priority": "Critical",
+      "preconditions": "Legs 1-2 committed (chips); Leg 3 Transfer fully filled but not committed with Add Next Stop",
+      "steps": "1. Fill Leg 3 completely 2. Tap Search Vehicles (without Add Next Stop)",
+      "testData": "Leg 3 Mysuru -> Majestic",
+      "expected": "All filled legs (1-3) included, or user warned that the open leg is not saved",
+      "status": "Fail",
+      "actual": "Trip Summary shows only Leg 1 and Leg 2 tabs - the filled open Leg 3 is silently dropped. With a single fully filled open leg and no committed legs, Search shows \"Please add at least one journey to continue.\" Only after Add Next Stop (which commits the leg and opens a copy) is it included; the new open leg is then ignored.",
+      "evidence": [
+        "TC_HOME_067_1_open-leg3-dropped.png",
+        "TC_HOME_067_2_leg3-committed-on-add.png",
+        "TC_HOME_067_3_add-at-least-one-journey.png"
+      ],
+      "bugs": [
+        "BUG-MLT-002"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_HOME_068",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Leg dated before the previous legs (chronology)",
+      "testType": "Negative",
+      "priority": "High",
+      "preconditions": "Leg 1 04-10, Leg 2 06-07 Oct",
+      "steps": "1. Leg 3 Transfer pickup/drop 02-10 2. Commit leg 3 3. Search Vehicles",
+      "testData": "Leg 3 on 02-10",
+      "expected": "Validation: each leg must start after the previous leg ends",
+      "status": "Fail",
+      "actual": "Accepted - summary shows Leg 3 'Transfer (Point to Point)' Mysuru -> Majestic dated 02 Oct 2026, before Leg 1 (04 Oct). No chronology or overlap validation (Leg 2 default also overlapped Leg 1).",
+      "evidence": [
+        "TC_HOME_068_1_leg3-before-leg1-accepted.png"
+      ],
+      "bugs": [
+        "BUG-MLT-003"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_HOME_041",
+      "status": "Fail",
+      "actual": "Summary 'Now you're ready to explore' with Leg 1 / Leg 2 / Leg 3 tabs: Leg 1 'Local Trip' Majestic -> Same as Pickup, 80 KM, 04 Oct; Leg 2 'Outstation Trip' Majestic -> Mysuru 600 KM 06-07 Oct; Leg 3 'Transfer (Point to Point)' Mysuru -> Majestic < 30 KM 02 Oct; Review Inquiry & Select Vehicles (Vehicle Age, Comfort Priority). Summary lists legs correctly, but pricing does not combine legs: list Rs 11,000, Confirm Rs 12,000 (Leg 1 only), inquiries Rs 36,000 each x3.",
+      "evidence": [
+        "TC_HOME_041_1_summary-3-legs.png"
+      ],
+      "bugs": [
+        "BUG-MLT-004"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_VLIST_013",
+      "isNew": true,
+      "module": "Available Vehicles",
+      "feature": "Pricing",
+      "scenario": "Multi-leg vehicle list price reflects all legs",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "3-leg Multi search (Local 4 h + Outstation 2 days + Transfer)",
+      "steps": "1. Search Vehicles 2. Read Starts From; 3. Premium chip",
+      "testData": "33 Seater Deluxe Coach",
+      "expected": "Starts From = combined estimate of all legs",
+      "status": "Fail",
+      "actual": "'20 vehicles found'; 33 Seater Deluxe Coach Rs 11,000 (about the Local 4 h leg alone; Outstation day rate is Rs 16,500). Premium chip -> 7 vehicles (filtering works).",
+      "evidence": [
+        "TC_VLIST_013_1_multi-list-11000.png"
+      ],
+      "bugs": [
+        "BUG-MLT-004"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_CONF_017",
+      "isNew": true,
+      "module": "Confirm Trip & Inquiry Submission",
+      "feature": "Route summary / Estimated cost",
+      "scenario": "Multi-leg Confirm lists every leg with a combined estimate",
+      "testType": "Business Flow",
+      "priority": "Critical",
+      "preconditions": "3-leg Multi, 33 Seater Deluxe Coach",
+      "steps": "1. Book Now 2. Review route summary, dates, Estimated Trip Cost",
+      "testData": "-",
+      "expected": "All legs (routes, dates) shown; total = sum of legs",
+      "status": "Fail",
+      "actual": "Run 1 (3 legs): badge 'Multi-Leg (Local)', only Leg 1 route/date (4 Oct), Rs 10,000 + bata 1,000 + 1,000 = Rs 12,000. Run 2 (Local multi-day 8-9 Oct + Transfer 10-11 Oct, Sedan): only Leg 1 shown (dates 8,9 Oct), base Rs 4,000 (single day for a 2-day leg) + bata 500 + 500 = Rs 5,000; list said Rs 9,500. Legs 2+ never shown or priced.",
+      "evidence": [
+        "TC_CONF_017_1_multileg-local-badge.png",
+        "TC_CONF_017_2_estimate-12000-leg1-only.png",
+        "TC_CONF_017_3_multiday-leg-5000.png"
+      ],
+      "bugs": [
+        "BUG-MLT-004"
+      ],
+      "endedAt": "2026-10-01T12:33:24.522Z"
+    },
+    {
+      "id": "TC_CONF_018",
+      "isNew": true,
+      "module": "Confirm Trip & Inquiry Submission",
+      "feature": "Confirm",
+      "scenario": "Submit a multi-leg inquiry",
+      "testType": "Business Flow",
+      "priority": "Critical",
+      "preconditions": "3-leg Multi Confirm modal",
+      "steps": "1. Confirm (approved, single tap)",
+      "testData": "-",
+      "expected": "Success modal with combined estimate; one linked booking",
+      "status": "Fail",
+      "actual": "'Inquiry Submitted Successfully!' Estimated Cost Rs 12,000 - but three separate inquiries were created (Inquired 11 -> 14), each Rs 36,000.",
+      "evidence": [
+        "TC_CONF_018_1_success-12000.png"
+      ],
+      "bugs": [
+        "BUG-MLT-004"
+      ],
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_BOOK_014",
+      "isNew": true,
+      "module": "Ride - My Bookings",
+      "feature": "Inquired list",
+      "scenario": "Multi-leg inquiry appears with correct per-leg data and amounts",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Multi-leg inquiry submitted",
+      "steps": "1. Track My Inquiry 2. Week > Inquired",
+      "testData": "-",
+      "expected": "Legs linked/grouped; distances and amounts match the summary/Confirm",
+      "status": "Fail",
+      "actual": "Run 1: 3 cards (Local 80 KM/Day, OutStation 0 km, Transfer < 30 KM/Day) each Rs 36,000 vs Rs 12,000 confirmed. Run 2: 2 cards (Local 2 days, Transfer 2 days, Sedan) each Rs 10,000 vs Rs 5,000 confirmed; future-dated legs appear only under Month (expected filter behaviour). No grouping as one Multi trip.",
+      "evidence": [
+        "TC_BOOK_014_1_three-inquiries-36000.png",
+        "TC_BOOK_014_2_outstation-0km-transfer.png",
+        "TC_BOOK_014_3_two-legs-10000-each.png"
+      ],
+      "bugs": [
+        "BUG-MLT-004",
+        "BUG-MLT-005"
+      ],
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_INQ_020",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Details",
+      "scenario": "Multi-leg inquiry details per leg (distance, schedule, amount)",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Outstation leg inquiry 529",
+      "steps": "1. View Details on the OutStation leg card",
+      "testData": "Inquiry 529",
+      "expected": "600 km, 6-7 Oct, pickup 12:14 pm, return 07-10 12:00 pm, leg amount",
+      "status": "Fail",
+      "actual": "Inquiry 529 (Outstation leg): Distance 0 km, Expected arrival 03:30 pm (Leg 1 end). Inquiry 530 (Transfer leg, 10-11 Oct): Expected arrival 01:47 pm = pickup + Leg 1's 1 hour, not the leg's own drop (11-10 12:47 pm). Total Rs10000 vs Rs 5,000 confirmed.",
+      "evidence": [
+        "TC_INQ_020_1_inquiry-529-0km-arrival.png",
+        "TC_INQ_020_2_inquiry-530-arrival.png"
+      ],
+      "bugs": [
+        "BUG-MLT-005"
+      ],
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_INQ_004",
+      "status": "Fail",
+      "attempted": true,
+      "actual": "Multi-leg inquiry 529: Pay Advance (500, Razorpay) -> 'Payment Error - \"gateway\" is not allowed field' (payment not integrated).",
+      "evidence": [
+        "TC_INQ_004_1_payment-gateway-error.png"
+      ],
+      "bugs": [
+        "BUG-OUT-013"
+      ],
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_INQ_007",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Feature not available in build",
+      "dependency": "Payment gateway integration",
+      "actual": "Gateway never opens (same 'gateway' error), so payment cancel/failure cannot be tested.",
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_INQ_021",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Cancel Trip",
+      "scenario": "Cancelling one leg of a multi-leg inquiry",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "3 leg inquiries from one Multi Confirm",
+      "steps": "1. Open Outstation leg 529 2. Cancel Trip 3. Confirm Cancellation 4. Check Inquired",
+      "testData": "Inquiry 529",
+      "expected": "Dialog states scope (this leg / whole trip); amounts based on the leg; only intended legs cancelled",
+      "status": "Fail",
+      "actual": "Dialog for Inquiry 529 only: trip cost Rs12,000 (inquiry shows Rs36,000), slab 3 days <= T < 7 days 10%, penalty Rs1,200, refund Rs10,800 on an unpaid inquiry; invoice INV-62. After closing, Inquired 14 -> 11: all three legs were cancelled without warning.",
+      "evidence": [
+        "TC_INQ_021_1_cancel-529-12000.png",
+        "TC_INQ_021_2_all-legs-removed.png"
+      ],
+      "bugs": [
+        "BUG-MLT-006",
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-01T12:33:24.523Z"
+    },
+    {
+      "id": "TC_HOME_069",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Multi leg of type Transfer By Hour with per-leg validation",
+      "testType": "Validation",
+      "priority": "Medium",
+      "preconditions": "Home > Multi",
+      "steps": "1. Leg 1 Transfer > By Hour 2. Pickup Majestic, 05-10 12:34 pm 3. Hours 0 4. Add Next Stop 5. Hours 3 6. Add Next Stop",
+      "testData": "Hours 0 / 3",
+      "expected": "Leg shows By Hour fields; 0 hours blocked with an error; valid leg commits",
+      "status": "Pass",
+      "actual": "Leg 1 Transfer shows Point To Point / By Hour segment; By Hour shows Pickup, Date & Time, Passengers, Hours, Additional Options. Hours 0 -> 'Enter at least 1 hour', leg not committed; Hours 3 -> leg committed as chip 'Leg 1 : Majestic ... -> Same as pickup'.",
+      "evidence": [
+        "TC_HOME_069_1_leg1-transfer-byhour.png",
+        "TC_HOME_069_2_leg-hours-0-blocked.png"
+      ],
+      "endedAt": "2026-10-01T13:00:54.683Z"
+    },
+    {
+      "id": "TC_HOME_070",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Committed legs persist when switching bottom-nav tabs",
+      "testType": "Navigation",
+      "priority": "Medium",
+      "preconditions": "Multi with Leg 1 committed and Leg 2 open",
+      "steps": "1. Tap Ride 2. Tap Home",
+      "testData": "-",
+      "expected": "Multi tab with leg chips and open leg intact",
+      "status": "Pass",
+      "actual": "After Ride -> Home the Multi tab still shows the Leg 1 chip and the open Leg 2 (Transfer By Hour, Majestic, 05-10 12:34 pm).",
+      "evidence": [
+        "TC_HOME_070_1_legs-kept-after-ride-tab.png"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_071",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Remove committed legs via chip X (first and middle) and renumbering",
+      "testType": "Functional",
+      "priority": "Medium",
+      "preconditions": "Multi with several committed legs",
+      "steps": "1. Tap X on Leg 1 chip (with Leg 2 open) 2. With 5 legs, tap X on Leg 3",
+      "testData": "-",
+      "expected": "Leg removed (ideally with confirmation); remaining legs renumbered in order",
+      "status": "Pass",
+      "actual": "X on Leg 1 removed it immediately and the open leg became 'Leg 1'. With 5 legs, X on Leg 3 left Legs 1-4 and open 'Leg 5' - renumbering correct.",
+      "evidence": [
+        "TC_HOME_071_1_chip-x-removes-leg.png",
+        "TC_HOME_071_2_middle-leg-removed-renumbered.png"
+      ],
+      "notes": "No confirmation before deleting a leg; tapping a chip does not open it for editing (committed legs can only be deleted; no edit or reorder).",
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_072",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Maximum number of legs and duplicate/overlapping legs",
+      "testType": "Boundary",
+      "priority": "Low",
+      "preconditions": "Multi",
+      "steps": "1. Commit identical legs repeatedly with Add Next Stop",
+      "testData": "5 identical legs (Majestic, 05-10 12:34 pm, 3 h)",
+      "expected": "A maximum is enforced and duplicate/overlapping legs are flagged",
+      "status": "Fail",
+      "actual": "5 identical legs (same pickup, same date/time) committed plus open Leg 6 - no maximum, no duplicate or overlap warning.",
+      "evidence": [
+        "TC_HOME_072_1_five-identical-legs.png"
+      ],
+      "bugs": [
+        "BUG-MLT-003"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_073",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "App stability while editing a multi-leg form",
+      "testType": "Non-Functional",
+      "priority": "High",
+      "preconditions": "Multi: Leg 1 Local multi-day (8, 9 Oct) committed; Leg 2 Transfer P2P being edited",
+      "steps": "1. Set Leg 2 pickup date 10-10 2. Scroll the form",
+      "testData": "-",
+      "expected": "App stays open; form state retained",
+      "status": "Fail",
+      "attempted": true,
+      "actual": "While scrolling, the app closed to the Android home screen. Relaunching started fresh on Home (Local tab) - all Multi legs lost. Observed once; logcat not captured, so the crash cause is unconfirmed.",
+      "evidence": [
+        "TC_HOME_073_1_relaunch-state-lost.png"
+      ],
+      "bugs": [
+        "BUG-MLT-007"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_074",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Switching trip type away from Multi with committed legs",
+      "testType": "UI/UX",
+      "priority": "Medium",
+      "preconditions": "Multi with Leg 1 committed",
+      "steps": "1. Tap Local 2. Tap Multi",
+      "testData": "-",
+      "expected": "Legs kept, or a warning before the itinerary is discarded",
+      "status": "Fail",
+      "actual": "Returning to Multi shows a fresh 'Leg 1 Local' - the committed legs were discarded silently.",
+      "evidence": [
+        "TC_HOME_074_1_type-switch-discards-legs.png"
+      ],
+      "bugs": [
+        "BUG-MLT-008"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_027",
+      "status": "Pass",
+      "actual": "Multi context: Clear with 4 committed legs removes all legs and resets to the Local tab (no confirmation).",
+      "evidence": [
+        "TC_HOME_027_1_clear-wipes-legs.png"
+      ],
+      "notes": "Re-executed in Multi context; wiping a whole itinerary without confirmation is a UX risk (see BUG-MLT-008).",
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_075",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Per-leg validation: leg drop before leg pickup",
+      "testType": "Negative",
+      "priority": "Medium",
+      "preconditions": "Multi Leg 2 Transfer P2P, pickup 10-10, drop 01-10",
+      "steps": "1. Tap Add Next Stop",
+      "testData": "-",
+      "expected": "Leg not committed; clear error on the drop date",
+      "status": "Pass",
+      "actual": "Leg not committed; 'Please select a later time.' under the drop time (same unclear wording as BUG-TRF-001).",
+      "evidence": [
+        "TC_HOME_075_1_leg-drop-before-pickup.png"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_HOME_076",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Multi",
+      "scenario": "Multi-day dates inside a Multi leg",
+      "testType": "Positive",
+      "priority": "Medium",
+      "preconditions": "Multi Leg 1 Local",
+      "steps": "1. Toggle Multi-day trip in Leg 1 2. Select 8 and 9 Oct 3. Commit 4. Search",
+      "testData": "Oct 8, Oct 9",
+      "expected": "Calendar selection kept; summary shows both dates",
+      "status": "Pass",
+      "actual": "Calendar shows; 'Selected Dates (2): Oct 8, 2026, Oct 9, 2026'; Trip Summary Leg 1 'Local Trip' Dates '8, 9 Oct 2026'; Leg 2 Transfer '10-11 Oct, 2026'.",
+      "evidence": [
+        "TC_HOME_076_1_multiday-leg-summary.png"
+      ],
+      "notes": "Next leg copied Multi-day ON from the previous leg.",
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_VLIST_014",
+      "isNew": true,
+      "module": "Available Vehicles",
+      "feature": "Filters",
+      "scenario": "Category chips and Filters on Multi results",
+      "testType": "Positive",
+      "priority": "Low",
+      "preconditions": "Multi search results",
+      "steps": "1. Premium chip 2. Clear 3. Filters > Sedan > Apply",
+      "testData": "-",
+      "expected": "Lists filter correctly",
+      "status": "Pass",
+      "actual": "Premium -> 7 vehicles; Filters Vehicle Type Sedan -> '1 vehicles found' Sedan Rs 9,500.",
+      "evidence": [
+        "TC_VLIST_014_1_filters-on-multi.png"
+      ],
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_INQ_022",
+      "isNew": true,
+      "module": "Inquiry Details & Payment",
+      "feature": "Cancel Trip",
+      "scenario": "Cancellation 7+ days before trip start (fully refundable slab)",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Multi Transfer-leg inquiry 530 starting 10-10 (8 days 23 h away), no advance paid",
+      "steps": "1. Cancel Trip 2. Review slab 3. Confirm Cancellation",
+      "testData": "Inquiry 530",
+      "expected": "Slab 'T >= 7 days - fully refundable', 0% penalty",
+      "status": "Pass",
+      "actual": "Trip cost Rs5,000, penalty 0%, add one day charge No, penalty retained Rs0, refund Rs5,000, slab 'T >= 7 days - fully refundable'; Booking Cancelled 530, invoice INV-63. Both Multi legs removed (Month Inquired 12 -> 10, BUG-MLT-006 2/2).",
+      "evidence": [
+        "TC_INQ_022_1_fully-refundable-slab.png",
+        "TC_INQ_021_3_both-legs-removed-month.png"
+      ],
+      "notes": "Refund on an unpaid inquiry still tracked under BUG-OUT-014.",
+      "endedAt": "2026-10-01T13:00:54.687Z"
+    },
+    {
+      "id": "TC_LOC_004",
+      "status": "Fail",
+      "actual": "Multi leg Pickup Location: 'zzqxv' -> blank list after 7 s, no 'No results' message (same as BUG-LOC-001 in run android-20260930-1058-LOCAL).",
+      "evidence": [
+        "TC_LOC_004_1_multi-leg-no-results.png"
+      ],
+      "notes": "Re-executed in Multi context; existing defect, not re-filed.",
+      "endedAt": "2026-10-01T13:00:54.688Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-MLT-001",
+      "title": "Multi: new leg copies the previous leg's start instead of continuing from its drop/end",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_066",
+      "steps": [
+        "Home > Multi; Leg 1 Local Majestic 04-10 11:30 am, 4 h",
+        "Add Next Stop - observe Leg 2 defaults",
+        "Fill Leg 2 Outstation Majestic -> Mysuru 06-10 to 07-10; Add Next Stop - observe Leg 3 defaults"
+      ],
+      "expected": "Next leg pickup = previous drop/destination; start after previous end",
+      "actual": "Leg 2 = Majestic 04-10 11:30 (overlaps Leg 1); Leg 3 = Majestic 06-10 12:14 (not Mysuru, overlaps Leg 2)",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2)",
+      "evidence": [
+        "TC_HOME_066_1_leg2-copies-leg1-start.png",
+        "TC_HOME_066_2_leg3-copies-leg2-pickup.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-002",
+      "title": "Multi: the leg open in the form is silently dropped on Search Vehicles",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_067",
+      "steps": [
+        "Home > Multi; commit Legs 1-2 with Add Next Stop",
+        "Fill Leg 3 completely",
+        "Tap Search Vehicles"
+      ],
+      "expected": "Leg 3 included (or a prompt to save/discard it)",
+      "actual": "Summary shows only committed legs; the filled open leg is lost without notice. With only an open (uncommitted) leg, Search shows \"Please add at least one journey to continue.\" although a complete leg is on screen. Committing via Add Next Stop creates a pre-filled extra leg which is in turn ignored",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2)",
+      "evidence": [
+        "TC_HOME_067_1_open-leg3-dropped.png",
+        "TC_HOME_067_2_leg3-committed-on-add.png",
+        "TC_HOME_067_3_add-at-least-one-journey.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-003",
+      "title": "Multi: no chronology/overlap validation between legs",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_068",
+      "steps": [
+        "Leg 1 04-10, Leg 2 06-07 Oct",
+        "Leg 3 pickup/drop 02-10",
+        "Search Vehicles"
+      ],
+      "expected": "Error: leg must start after previous leg ends",
+      "actual": "Accepted; Leg 3 shown as 02 Oct before Leg 1",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_HOME_068_1_leg3-before-leg1-accepted.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-004",
+      "title": "Multi-leg pricing broken: list Rs 11,000, Confirm Rs 12,000 (Leg 1 only), then 3 inquiries at Rs 36,000 each",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Vehicle list / Confirm / My Bookings",
+      "testCase": "TC_HOME_041, TC_VLIST_013, TC_CONF_017, TC_CONF_018, TC_BOOK_014",
+      "steps": [
+        "Multi: Leg 1 Local 4 h, Leg 2 Outstation 2 days, Leg 3 Transfer",
+        "Search > 33 Seater Deluxe Coach (Rs 11,000) > Book Now",
+        "Confirm shows 'Multi-Leg (Local)', Leg 1 only, Rs 12,000; Confirm",
+        "My Bookings > Week > Inquired"
+      ],
+      "expected": "One combined estimate across all legs, consistent on every screen; inquiries match the confirmed amount",
+      "actual": "Rs 11,000 -> Rs 12,000 -> three inquiries each Rs 36,000 (Rs 1,08,000) after approving Rs 12,000",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2: Rs 12,000 -> 3 x Rs 36,000; Rs 5,000 -> 2 x Rs 10,000)",
+      "evidence": [
+        "TC_VLIST_013_1_multi-list-11000.png",
+        "TC_CONF_017_2_estimate-12000-leg1-only.png",
+        "TC_CONF_017_3_multiday-leg-5000.png",
+        "TC_BOOK_014_1_three-inquiries-36000.png",
+        "TC_BOOK_014_3_two-legs-10000-each.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-005",
+      "title": "Multi Outstation leg saved with 0 km and the wrong expected-arrival time",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "My Bookings / Inquiry Details",
+      "testCase": "TC_BOOK_014, TC_INQ_020",
+      "steps": [
+        "Submit a Multi inquiry with an Outstation leg (Majestic -> Mysuru, 06-10 12:14 to 07-10 12:00; summary 600 KM)",
+        "Open the OutStation card / Inquiry 529"
+      ],
+      "expected": "600 km; arrival/return 07-10 12:00 pm",
+      "actual": "Distance 0 km; 'Expected arrival 03:30 pm' (Leg 1 end time)",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2: Inquiry 529 Outstation leg, Inquiry 530 Transfer leg)",
+      "evidence": [
+        "TC_BOOK_014_2_outstation-0km-transfer.png",
+        "TC_INQ_020_1_inquiry-529-0km-arrival.png",
+        "TC_INQ_020_2_inquiry-530-arrival.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-006",
+      "title": "Cancelling one Multi leg silently cancels all legs; dialog amount (Rs12,000) differs from the inquiry total (Rs36,000)",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Inquiry Details / Cancellation",
+      "testCase": "TC_INQ_021",
+      "steps": [
+        "Submit a 3-leg Multi inquiry",
+        "Open one leg (529) > Cancel Trip > Confirm Cancellation",
+        "Check Inquired count"
+      ],
+      "expected": "Scope stated; only intended leg(s) cancelled; amounts consistent",
+      "actual": "Only 529 mentioned; all three legs removed (14 -> 11); one invoice INV-62 on trip cost Rs12,000",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2: 3-leg and 2-leg trips)",
+      "evidence": [
+        "TC_INQ_021_1_cancel-529-12000.png",
+        "TC_INQ_021_2_all-legs-removed.png",
+        "TC_INQ_021_3_both-legs-removed-month.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-007",
+      "title": "App closed unexpectedly while scrolling the Multi form; all legs lost on relaunch",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_073",
+      "steps": [
+        "Home > Multi; Leg 1 Local Multi-day (8, 9 Oct) committed",
+        "Leg 2 Transfer P2P Majestic -> KIA; set pickup date 10-10",
+        "Scroll the form down"
+      ],
+      "expected": "App remains open with form state",
+      "actual": "App closed to the Android home screen; relaunch opened Home (Local) with the Multi itinerary lost",
+      "errorInfo": "Not captured - App Live logcat was closed; cause (crash vs. process kill) unconfirmed. Check device logs/Crashlytics for com.siddaganga around 2026-10-01 12:46 device time",
+      "reproducibility": "Observed once (1/1); not reproduced in a second identical build-up",
+      "evidence": [
+        "TC_HOME_073_1_relaunch-state-lost.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-008",
+      "title": "Switching trip type or tapping Clear silently discards an entire Multi itinerary",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_074, TC_HOME_027",
+      "steps": [
+        "Home > Multi; commit one or more legs",
+        "Tap the Local tab (or Clear)",
+        "Return to Multi"
+      ],
+      "expected": "Legs kept per tab, or a confirmation before discarding",
+      "actual": "Fresh 'Leg 1 Local'; all legs lost without warning",
+      "errorInfo": "-",
+      "reproducibility": "Always (2/2)",
+      "evidence": [
+        "TC_HOME_074_1_type-switch-discards-legs.png",
+        "TC_HOME_027_1_clear-wipes-legs.png"
+      ]
+    }
+  ],
+  "recoveryEvents": [
+    {
+      "at": "2026-10-01T12:13:30.763Z",
+      "issue": "Previous App Live session closed due to inactivity between runs",
+      "detection": "Tab title App Live Dashboard, red inactivity banner, probe: device stream not found",
+      "actions": [
+        "Started new Pixel 7 / Android 13 session with uploaded APK",
+        "Closed DevTools via its button",
+        "Onboarding Skip -> Sign In -> Login with Mobile",
+        "User signed in on device"
+      ],
+      "outcome": "Session recreated",
+      "affectedCase": "-",
+      "durationSec": 240
+    },
+    {
+      "at": "2026-10-01T13:01:00.868Z",
+      "issue": "Claude in Chrome extension disconnected mid-batch (twice)",
+      "detection": "Tool error: Browser extension is not connected / disconnected mid-operation",
+      "actions": [
+        "Re-checked tabs_context_mcp",
+        "Re-probed viewport and re-anchored with a zoom",
+        "Verified the batch had executed before continuing"
+      ],
+      "outcome": "Recovered",
+      "affectedCase": "TC_HOME_040 / TC_HOME_076",
+      "durationSec": 30
+    },
+    {
+      "at": "2026-10-01T13:01:00.868Z",
+      "issue": "App closed to Android home screen while scrolling the Multi form (possible app crash - logged as BUG-MLT-007, not environment)",
+      "detection": "Device showed launcher instead of app",
+      "actions": [
+        "Opened app drawer and relaunched Banni (session kept, user still logged in)",
+        "Rebuilt the Multi itinerary and continued"
+      ],
+      "outcome": "Recovered",
+      "affectedCase": "TC_HOME_073",
+      "durationSec": 90
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "Leg mgmt checks (chip X, max legs, clear, type switch)",
+    "current": "Rebuilding Multi E2E 2 after unexpected app close (Leg1 Local multi-day 8-9 Oct, Leg2 Transfer Majestic->KIA 10-10)",
+    "next": "per-leg drop<pickup validation, E2E 2 confirm/inquiry/cancel",
+    "state": "App relaunched, Home Local tab",
+    "at": "2026-10-01T12:47:27.462Z"
+  },
+  "partial": false
+}

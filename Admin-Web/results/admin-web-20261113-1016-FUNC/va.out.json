@@ -1,0 +1,92 @@
+{
+  "cards": "Total Buses / Active 54 Approved & Track Live Trips 5 Vehicle Allocation Portal 7 Tarrif Management 20 Trip Approvals & Vehicle As",
+  "tabs": {
+    "Available Vehicles": {
+      "headers": [
+        "SR. NO.",
+        "VEHICLE NUMBER",
+        "BUS TYPE",
+        "LOCATION",
+        "VENDOR",
+        "STATUS",
+        "AVAILABLE FROM"
+      ],
+      "showing": "Showing 1 to 5 of 54 entries",
+      "text": "signmentAvailable Vehicles Pending Allocation Confirmations Allocation Portal Select Status Reset Filter View All SR. NO. VEHICLE NUMBER BUS TYPE LOCATION VENDOR STATUS AVAILABLE FROM 1 KA21AB9876 Sedan Bengaluru Not a vendor Vehicle Available 13/11/2026 2 Test bus 4 40 Seater Deluxe Coach",
+      "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Available.png"
+    },
+    "Pending Allocation Confirmations": {
+      "headers": [
+        "TRIP ID",
+        "VEHICLE NO",
+        "VEHICLE TYPE",
+        "FROM -> TO",
+        "STATUS",
+        "DRIVER",
+        "ACTION"
+      ],
+      "showing": "Showing 0 to 0 of 0 entries",
+      "text": "signmentAvailable Vehicles Pending Allocation Confirmations Pending Allocation Confirmations TRIP ID VEHICLE NO VEHICLE TYPE FROM -> TO STATUS DRIVER ACTION No data available Showing 0 to 0 of 0 entries 05 ​ 1",
+      "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Pending.png"
+    },
+    "Trip Approvals & Vehicle Assignment": {
+      "headers": [
+        "SR. NO.",
+        "TRIP ID",
+        "CUSTOMER",
+        "ROUTE",
+        "DATES",
+        "ADVANCE",
+        "ADVANCE",
+        "STATUS",
+        "ACTION"
+      ],
+      "showing": "Showing 1 to 5 of 7 entries",
+      "text": "signment Available Vehicles Pending Allocation Confirmations Trip Approvals & Vehicle Assignment Select Trip ID Reset Filter View All SR. NO. TRIP ID CUSTOMER ROUTE DATES ADVANCE ADVANCE STATUS ACTION 1 TP-78 S Subrat 06/11/2026, 07/11/2026 ₹53,400 received Record Advance Confirm Allocate ",
+      "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Trip.png"
+    }
+  },
+  "va03": {
+    "rows": 1,
+    "row": "7 TP-112 Bikash N Bengaluru-> Bengaluru 20/11/2026 No-invoice Record Advance Confirm Allocate",
+    "ctl": [
+      {
+        "t": "Record Advance",
+        "dis": false
+      },
+      {
+        "t": "Allocate",
+        "dis": false
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-03-TP-112-row.png"
+  },
+  "va04": {
+    "advance": true,
+    "text": "Select the type of allocation you need Dynamic Allocation Continue Cancel",
+    "radios": [
+      {
+        "checked": true,
+        "label": "Dynamic Allocation"
+      }
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-04-allocation-type.png"
+  },
+  "va05": {
+    "trip": "TP-112",
+    "required": "-",
+    "age": "any",
+    "status": "Not Assigned Yet",
+    "buttons": [
+      "Trip Approvals & Vehicle Assignment",
+      "Available Vehicles",
+      "Pending Allocation Confirmations",
+      "Change Bus Type",
+      "Vendor List",
+      "Confirm Allocation"
+    ],
+    "tiles": [],
+    "matching": [],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-05-allocation-page.png"
+  }
+}

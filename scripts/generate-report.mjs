@@ -9,9 +9,11 @@
 //
 // Case details not given in the log (scenario, steps, expected, type, priority...) are taken from the platform's
 // test-case inventory. Secrets from .env are redacted from every output as a safety net.
+// Runs of other apps (run-log "app", e.g. saagane) use that app's inventory and config paths instead of <platform>/...
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve, relative, extname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { DEFAULT_APP, appInfo, appConfig, runPaths, findRunLogFile } from '../setup/lib/common.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const STATUS_ORDER = ['Pass', 'Fail', 'Blocked', 'Skipped', 'Not Executed'];
@@ -61,16 +63,18 @@ function redactor() {
   const secrets = secretsFromEnv().sort((a, b) => b.length - a.length);
   return (s) => { let t = String(s); for (const v of secrets) t = t.split(v).join('[REDACTED]'); return t; };
 }
-function findRunLog(runId) {
-  for (const platform of ['android', 'ios']) {
-    const f = join(ROOT, platform, 'results', runId, 'run-log.json');
-    if (existsSync(f)) return f;
-  }
+function findRunLog(runId, app) {
+  const f = findRunLogFile(runId, app);
+  if (f) return f;
   throw new Error(`run-log.json not found for run "${runId}"`);
 }
-function loadInventory(platform) {
-  const cfg = JSON.parse(readFileSync(join(ROOT, 'config', `${platform}.json`), 'utf8'));
-  const rel = cfg.testCases?.inventoryCsv || (platform === 'ios' ? 'ios/test-cases/banni-ios-test-cases.csv' : null);
+const appOf = (log) => log.app || DEFAULT_APP;
+const dirsOf = (log) => runPaths(log.platform, appOf(log));
+function loadInventory(platform, app = DEFAULT_APP) {
+  const cfg = app === DEFAULT_APP
+    ? JSON.parse(readFileSync(join(ROOT, 'config', `${platform}.json`), 'utf8'))
+    : appConfig(app, platform);
+  const rel = cfg.testCases?.inventoryCsv || (platform === 'ios' && app === DEFAULT_APP ? 'ios/test-cases/banni-ios-test-cases.csv' : null);
   if (!rel || !existsSync(join(ROOT, rel))) return { map: new Map(), path: rel };
   const rows = parseCsv(readFileSync(join(ROOT, rel), 'utf8'));
   return { map: new Map(rows.map((r) => [r['TC ID'], r])), path: rel, count: rows.length };
@@ -78,7 +82,7 @@ function loadInventory(platform) {
 
 // ---------- model ----------
 function buildModel(log) {
-  const inv = loadInventory(log.platform);
+  const inv = loadInventory(log.platform, appOf(log));
   const cases = log.cases.map((c) => {
     const r = inv.map.get(c.id) || {};
     const t0 = Date.parse(c.startedAt); const t1 = Date.parse(c.endedAt);
@@ -87,8 +91,8 @@ function buildModel(log) {
       isNew: !!c.isNew || (!inv.map.has(c.id) && c.isNew !== false),
       module: c.module || r['Module'] || c.id.split('_')[1],
       moduleCode: c.id.split('_')[1],
-      feature: c.feature || r['Feature / Screen'] || '',
-      scenario: c.scenario || r['Scenario'] || '',
+      feature: c.feature || r['Feature / Screen'] || r['Submodule / Screen'] || '',
+      scenario: c.scenario || r['Scenario'] || r['Test Scenario'] || '',
       testType: c.testType || r['Test Type'] || '',
       priority: c.priority || r['Priority'] || '',
       preconditions: c.preconditions || r['Preconditions'] || '',
@@ -126,13 +130,13 @@ function writeResultsCsv(model, platform, red) {
     'Executed At': c.endedAt || '', 'Notes': [c.isNew ? 'NEW case (discovered this run)' : '', c.notes].filter(Boolean).join(' | '),
   }[h] ?? '');
   const out = [head.join(','), ...cases.map((c) => head.map((h) => csvCell(red(val(c, h)))).join(','))].join('\r\n') + '\r\n';
-  const f = join(ROOT, platform, 'results', `${log.runId}.csv`);
+  const f = join(ROOT, dirsOf(log).results, `${log.runId}.csv`);
   writeFileSync(f, '\uFEFF' + out);
   return f;
 }
 
 function writeDefectDrafts(model, platform, red) {
-  const { log, bugs } = model; const dir = join(ROOT, platform, 'results', log.runId, 'defects');
+  const { log, bugs } = model; const dir = join(ROOT, dirsOf(log).results, log.runId, 'defects');
   mkdirSync(dir, { recursive: true });
   for (const b of bugs) {
     const md = `# ${b.id} — ${b.title}
@@ -141,7 +145,8 @@ function writeDefectDrafts(model, platform, red) {
 
 | Field | Value |
 |---|---|
-| Platform | ${platform === 'ios' ? 'iOS' : 'Android'} |
+${appOf(log) === DEFAULT_APP ? '' : `| App | ${log.appName || appInfo(log.app).name} |
+`}| Platform | ${platform === 'ios' ? 'iOS' : 'Android'} |
 | Test case | ${(b.tcIds || []).join(', ')} |
 | Module | ${b.module || ''} |
 | Severity (proposed) | ${b.severity || ''} |
@@ -166,7 +171,7 @@ ${b.expected || ''}
 ${b.actual || ''}
 
 ## Evidence
-${(b.evidence || []).map((e) => `- \`${platform}/evidence/${log.runId}/${e}\``).join('\n') || '-'}
+${(b.evidence || []).map((e) => `- \`${dirsOf(log).evidence}/${log.runId}/${e}\``).join('\n') || '-'}
 
 ## Error / API / log information
 ${b.errorInfo || '-'}
@@ -179,8 +184,8 @@ ${b.notes || '-'}
   return dir;
 }
 
-function imgTag(platform, runId, file, reportDir, link) {
-  const abs = join(ROOT, platform, 'evidence', runId, file);
+function imgTag(evidenceDir, runId, file, reportDir, link) {
+  const abs = join(ROOT, evidenceDir, runId, file);
   if (!existsSync(abs)) return `<div class="missing">Missing evidence file: ${esc(file)}</div>`;
   const src = link
     ? relative(reportDir, abs).split('\\').join('/')
@@ -199,12 +204,12 @@ function renderHtml(model, platform, reportDir, link) {
   const edge = cases.filter((c) => EDGE_TYPES.includes(c.testType) || c.edge);
   const bugById = new Map(bugs.map((b) => [b.id, b]));
   const sevCount = groupBy(bugs, (b) => b.severity || 'Unrated');
-  const img = (f) => imgTag(platform, log.runId, f, reportDir, link);
+  const img = (f) => imgTag(dirsOf(log).evidence, log.runId, f, reportDir, link);
   const runMs = Date.parse(log.endedAt) - Date.parse(log.startedAt);
   const notExec = cases.filter((c) => !['Pass', 'Fail'].includes(c.status));
   const logged = cases.filter((c) => ['Pass', 'Fail'].includes(c.status) || c.attempted);
   const partialBanner = log.partial || notExec.length
-    ? `<div class="banner${log.partial ? ' partial' : ''}"><b>${log.partial ? 'PARTIAL EXECUTION' : 'Execution incomplete for some cases'}</b> — ${t.executed} of ${t.total} cases executed (Pass/Fail); ${notExec.length} not executed (${t.Blocked} Blocked, ${t['Not Executed'] + t.Skipped} Not Executed / pending). ${log.partial && log.partialReason ? esc(log.partialReason) : ''} Not-executed cases are never counted as Passed or Failed — see <a href="#notexec">8. Not Executed Cases</a>.</div>`
+    ? `<div class="banner${log.partial ? ' partial' : ''}"><b>${log.partial ? esc(log.interimLabel || 'PARTIAL EXECUTION') : 'Execution incomplete for some cases'}</b> — ${t.executed} of ${t.total} cases executed (Pass/Fail); ${notExec.length} not executed (${t.Blocked} Blocked, ${t['Not Executed'] + t.Skipped} Not Executed / pending). ${log.partial && log.partialReason ? esc(log.partialReason) : ''} Not-executed cases are never counted as Passed or Failed — see <a href="#notexec">8. Not Executed Cases</a>.</div>`
     : '';
   const notExecRows = notExec.map((c) => `<tr><td><a href="#case-${esc(c.id)}">${esc(c.id)}</a> ${c.isNew ? '<span class="badge new">NEW</span>' : ''}</td><td>${esc(c.scenario)}</td><td>${badge(c.status)}</td><td>${esc(c.blockCategory || '')}</td><td>${esc(c.actual || c.notes || '')}</td><td>${esc(c.dependency || '-')}</td></tr>`).join('');
   const notExecByCat = [...groupBy(notExec, (c) => c.blockCategory || 'Uncategorised')].map(([k, l]) => `<tr><td>${esc(k)}</td><td>${l.filter((c) => c.status === 'Blocked').length}</td><td>${l.filter((c) => c.status !== 'Blocked').length}</td><td>${l.map((c) => esc(c.id)).join(', ')}</td></tr>`).join('');
@@ -223,7 +228,9 @@ function renderHtml(model, platform, reportDir, link) {
   <article class="bug" id="${esc(b.id)}">
     <header><h3>${esc(b.id)} — ${esc(b.title)}</h3><div>${sevBadge(b.severity)} <span class="badge prio">${esc(b.priority || '')}</span> <span class="badge st">${esc(b.status || 'New (draft)')}</span></div></header>
     <table class="kv">
+      ${b.issueType ? `<tr><th>Issue type</th><td>${esc(b.issueType)}</td></tr>` : ''}
       <tr><th>Module</th><td>${esc(b.module || '')}</td></tr>
+      ${b.description ? `<tr><th>Description</th><td>${esc(b.description)}</td></tr>` : ''}
       <tr><th>Related test cases</th><td>${(b.tcIds || []).map((id) => `<a href="#case-${esc(id)}">${esc(id)}</a>`).join(', ')}</td></tr>
       <tr><th>Environment</th><td>${esc(log.device)} / Android ${esc(log.osVersion)} — BrowserStack App Live (real device)<br>Build: ${esc(log.build)}</td></tr>
       <tr><th>Test account</th><td>${esc(b.account || 'Not required (logged-out flow)')}</td></tr>
@@ -237,6 +244,40 @@ function renderHtml(model, platform, reportDir, link) {
     </table>
     <div class="shots">${(b.evidence || []).map(img).join('') || '<p class="muted">No screenshot captured.</p>'}</div>
   </article>`).join('');
+
+  // Optional sections (rendered only when the run log has them): assumptions/questions and UI/UX findings.
+  const assumptions = log.assumptions || []; const questions = log.questions || []; const ux = log.uxFindings || [];
+  const approvals = log.pendingApprovals || []; const gaps = log.coverageGaps || [];
+  const extraNav = (assumptions.length || questions.length || approvals.length || gaps.length ? '<a href="#clarify">9. Assumptions, questions &amp; approvals</a>' : '')
+    + (ux.length ? '<a href="#ux">10. UI/UX findings</a>' : '')
+    + (log.showInventory ? '<a href="#inventory">11. Test inventory</a>' : '');
+  // Optional inventory section (log.showInventory): totals and module x priority of the app's inventory CSV.
+  let inventorySection = '';
+  if (log.showInventory && inv.map.size) {
+    const all = [...inv.map.values()]; const prios = [...new Set(all.map((r) => r['Priority']))].sort();
+    const byMod = groupBy(all, (r) => r['Module']);
+    const runIds = new Set(cases.map((c) => c.id));
+    inventorySection = `
+<section id="inventory"><h2>11. Test-Case Inventory</h2>
+<div class="stats">${statCard('Inventory cases', all.length, '')}${statCard('Modules', byMod.size, '')}${statCard('In this run', all.filter((r) => runIds.has(r['TC ID'])).length, '')}${statCard('New cases this run', fresh.length, 'new')}</div>
+<p class="muted">Source: <code>${esc(inv.path || '')}</code> (CSV is the source of truth; the XLSX is generated from it).</p>
+<div class="tw"><table><tr><th>Module</th><th>Total</th>${prios.map((p) => `<th>${esc(p)}</th>`).join('')}<th>In this run</th></tr>
+${[...byMod].map(([m, l]) => `<tr><td>${esc(m)}</td><td>${l.length}</td>${prios.map((p) => `<td>${l.filter((r) => r['Priority'] === p).length}</td>`).join('')}<td>${l.filter((r) => runIds.has(r['TC ID'])).length}</td></tr>`).join('')}
+<tr><th>Total</th><th>${all.length}</th>${prios.map((p) => `<th>${all.filter((r) => r['Priority'] === p).length}</th>`).join('')}<th>${all.filter((r) => runIds.has(r['TC ID'])).length}</th></tr></table></div></section>`;
+  }
+  const listRows = (l) => l.map((x) => `<tr><td>${esc(x.id || '')}</td><td>${esc(x.text || '')}</td><td>${(x.tcIds || []).map((id) => `<a href="#case-${esc(id)}">${esc(id)}</a>`).join(', ')}</td></tr>`).join('');
+  const clarifySection = assumptions.length || questions.length || approvals.length || gaps.length ? `
+<section id="clarify"><h2>9. Assumptions, Open Questions, Pending Approvals &amp; Coverage Gaps</h2>
+${approvals.length ? `<h3>Pending approvals</h3><div class="tw"><table><tr><th>ID</th><th>Action requiring approval</th><th>Proposed target / condition</th><th>Cases</th></tr>${approvals.map((x) => `<tr><td>${esc(x.id || '')}</td><td>${esc(x.text || '')}</td><td>${esc(x.target || '')}</td><td>${(x.tcIds || []).map((id) => `<a href="#case-${esc(id)}">${esc(id)}</a>`).join(', ')}</td></tr>`).join('')}</table></div>` : ''}
+${gaps.length ? `<h3 style="margin-top:14px">Coverage gaps</h3><div class="tw"><table><tr><th>ID</th><th>Gap</th><th>Related cases</th></tr>${listRows(gaps)}</table></div>` : ''}
+<p class="muted">Not reported as defects: expected behaviour that could not be confirmed from the build and needs a product decision.</p>
+${assumptions.length ? `<h3>Assumptions</h3><div class="tw"><table><tr><th>ID</th><th>Assumption</th><th>Related cases</th></tr>${listRows(assumptions)}</table></div>` : ''}
+${questions.length ? `<h3 style="margin-top:14px">Questions for confirmation</h3><div class="tw"><table><tr><th>ID</th><th>Question</th><th>Related cases</th></tr>${listRows(questions)}</table></div>` : ''}</section>` : '';
+  const uxSection = ux.length ? `
+<section id="ux"><h2>10. UI/UX Findings &amp; Recommendations</h2>
+<div class="tw"><table><tr><th>ID</th><th>Area</th><th>Finding</th><th>Recommendation</th><th>Priority</th><th>Related</th></tr>
+${ux.map((x) => `<tr><td>${esc(x.id || '')}</td><td>${esc(x.area || '')}</td><td>${esc(x.finding || '')}</td><td>${esc(x.recommendation || '')}</td><td>${esc(x.priority || '')}</td><td>${[...(x.tcIds || []).map((id) => `<a href="#case-${esc(id)}">${esc(id)}</a>`), ...(x.bugs || []).map((id) => `<a href="#${esc(id)}">${esc(id)}</a>`)].join(', ')}</td></tr>`).join('')}
+</table></div>${ux.some((x) => (x.evidence || []).length) ? `<div class="shots">${ux.flatMap((x) => x.evidence || []).map(img).join('')}</div>` : ''}</section>` : '';
 
   const scenarioLog = logged.map((c) => `
   <article class="case st-${slug(c.status)}" id="case-${esc(c.id)}" data-status="${esc(c.status)}">
@@ -296,9 +337,9 @@ ul.tight{margin:4px 0;padding-left:20px}
 @media (max-width:600px){table.kv th{width:auto;display:block;border:0;padding-bottom:0}table.kv td{display:block}}
 @media print{nav,.filters{display:none}section{break-inside:avoid-page}}
 </style></head><body>
-<header class="top"><h1>QA Execution Report — ${esc(log.scope)}${log.partial ? ' (PARTIAL)' : ''}</h1>
-<p>${esc(log.runId)} · ${esc(log.platform === 'ios' ? 'iOS' : 'Android')} · ${esc(log.device)} / ${esc(log.osVersion)} · ${esc(log.build)}</p></header>
-<nav><a href="#summary">1. Bug summary</a><a href="#bugs">2. Bug reports</a><a href="#edge">3. Edge cases</a><a href="#coverage">4. Coverage</a><a href="#creds">5. Credentials</a><a href="#time">6. Execution time</a><a href="#log">7. Scenario log</a><a href="#notexec">8. Not executed</a></nav>
+<header class="top"><h1>${log.partial && log.interimLabel ? `<span style="display:inline-block;background:#fff;color:var(--brand);border-radius:6px;padding:2px 10px;margin:0 8px 6px 0;font-size:15px">${esc(log.interimLabel)}</span><br>` : ''}QA Execution Report — ${esc(log.scope)}${log.partial && !log.interimLabel ? ' (PARTIAL)' : ''}</h1>
+<p>${appOf(log) === DEFAULT_APP ? '' : `${esc(log.appName || appInfo(log.app).name)} · `}${esc(log.runId)} · ${esc(log.platform === 'ios' ? 'iOS' : 'Android')} · ${esc(log.device)} / ${esc(log.osVersion)} · ${esc(log.build)}${log.role ? ` · Role: ${esc(log.role)}` : ''} · Executed ${esc(fmtTime(log.startedAt))}</p></header>
+<nav><a href="#summary">1. Bug summary</a><a href="#bugs">2. Bug reports</a><a href="#edge">3. Edge cases</a><a href="#coverage">4. Coverage</a><a href="#creds">5. Credentials</a><a href="#time">6. Execution time</a><a href="#log">7. Scenario log</a><a href="#notexec">8. Not executed</a>${extraNav}</nav>
 <main>
 ${partialBanner}
 <section id="summary"><h2>1. Bug Summary</h2>
@@ -306,7 +347,7 @@ ${partialBanner}
 <div class="tw"><table><tr><th>Bug ID</th><th>Title</th><th>Module</th><th>Severity</th><th>Priority</th><th>Test cases</th><th>Status</th></tr>
 ${bugs.map((b) => `<tr><td><a href="#${esc(b.id)}">${esc(b.id)}</a></td><td>${esc(b.title)}</td><td>${esc(b.module || '')}</td><td>${sevBadge(b.severity)}</td><td>${esc(b.priority || '')}</td><td>${(b.tcIds || []).join(', ')}</td><td>${esc(b.status || 'New (draft)')}</td></tr>`).join('') || '<tr><td colspan="7">No bugs found in this run.</td></tr>'}
 </table></div>
-<p class="muted">Defects are drafts only (<code>${esc(platform)}/results/${esc(log.runId)}/defects/</code>); nothing was submitted to Jira or any tracker.</p></section>
+<p class="muted">Defects are drafts only (<code>${esc(dirsOf(log).results)}/${esc(log.runId)}/defects/</code>); nothing was submitted to Jira or any tracker.</p></section>
 
 <section id="bugs"><h2>2. Detailed Bug Reports</h2>${bugDetail || '<p>No bugs found.</p>'}</section>
 
@@ -348,7 +389,8 @@ ${scenarioLog}</section>
 <p class="muted">${notExec.length} case(s) in scope were not executed to a Pass/Fail verdict. <b>Blocked</b> = attempted or impossible because of an external dependency (environment, test data); <b>Not Executed</b> = not started (pending, or needs approval). None of these are counted as Passed or Failed.</p>
 <div class="tw"><table><tr><th>Reason category</th><th>Blocked</th><th>Not Executed</th><th>Cases</th></tr>${notExecByCat || '<tr><td colspan="4">None</td></tr>'}</table></div>
 <div class="tw" style="margin-top:12px"><table><tr><th>TC ID</th><th>Scenario</th><th>Status</th><th>Category</th><th>Reason</th><th>Required dependency / input</th></tr>${notExecRows || '<tr><td colspan="6">All cases executed.</td></tr>'}</table></div></section>
-<p class="muted">Generated ${esc(new Date().toISOString())} by scripts/generate-report.mjs from ${esc(platform)}/results/${esc(log.runId)}/run-log.json.</p>
+${clarifySection}${uxSection}${inventorySection}
+<p class="muted">Generated ${esc(new Date().toISOString())} by scripts/generate-report.mjs from ${esc(dirsOf(log).results)}/${esc(log.runId)}/run-log.json.</p>
 </main>
 <script>
 document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
@@ -358,15 +400,15 @@ document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('clic
 </script></body></html>`;
 }
 
-export async function generate(runId, { link = false } = {}) {
-  const f = findRunLog(runId);
+export async function generate(runId, { link = false, app } = {}) {
+  const f = findRunLog(runId, app);
   const log = JSON.parse(readFileSync(f, 'utf8'));
   const platform = log.platform;
   const red = redactor();
   const model = buildModel(log);
   const csv = writeResultsCsv(model, platform, red);
   const defects = writeDefectDrafts(model, platform, red);
-  const reportDir = join(ROOT, platform, 'reports', log.runId);
+  const reportDir = join(ROOT, dirsOf(log).reports, log.runId);
   mkdirSync(reportDir, { recursive: true });
   const html = join(reportDir, 'qa-report.html');
   writeFileSync(html, red(renderHtml(model, platform, reportDir, link)));
@@ -385,7 +427,8 @@ export async function generate(runId, { link = false } = {}) {
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const i = process.argv.indexOf('--run');
-  if (i === -1) { console.error('usage: node scripts/generate-report.mjs --run <run-id> [--link]'); process.exit(1); }
-  generate(process.argv[i + 1], { link: process.argv.includes('--link') })
+  if (i === -1) { console.error('usage: node scripts/generate-report.mjs --run <run-id> [--link] [--app <id>]'); process.exit(1); }
+  const j = process.argv.indexOf('--app');
+  generate(process.argv[i + 1], { link: process.argv.includes('--link'), app: j === -1 ? undefined : process.argv[j + 1] })
     .then((o) => console.log(o.summary)).catch((e) => { console.error(`generate-report: ${e.message}`); process.exit(1); });
 }

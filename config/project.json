@@ -85,6 +85,45 @@
     "PRIV": ["LOGIN", "ACC"],
     "NAV": ["LOGIN"]
   },
+  "apps": {
+    "_note": "App registry. Banni is the default: everything above (env, requiredPaths, moduleDependencies, requiresExplicitApproval) describes Banni. Other apps are selected explicitly with --app <id> and keep their own config, inventory and artifact paths.",
+    "default": "banni",
+    "banni": {
+      "name": "Banni by Siddaganga",
+      "configs": { "android": "config/android.json", "ios": "config/ios.json" }
+    },
+    "saagane": {
+      "name": "Saagane by Siddaganga",
+      "description": "Internal operations app (Superadmin, Admin). Test Superadmin first, then Admin separately.",
+      "configs": { "android": "config/saagane/android.json" },
+      "buildSelection": "Latest Saagane APK in BrowserStack App Live (Uploaded Apps). Not stored locally.",
+      "requiredPaths": {
+        "files": ["config/saagane/android.json"],
+        "dirs": [
+          "manual-exploration/saagane",
+          "manual-exploration/saagane/test-cases",
+          "manual-exploration/saagane/session-notes",
+          "android/results/saagane",
+          "android/evidence/saagane",
+          "reports/saagane"
+        ]
+      },
+      "moduleDependencies": {
+        "_note": "To be defined from Saagane exploration (module codes as in its TC IDs)."
+      },
+      "requiresExplicitApproval": [
+        "Creating, editing, approving, rejecting or deleting any record (users, staff, vehicles, drivers, bookings, trips, pricing)",
+        "Changing roles, permissions or app/organisation settings",
+        "Assigning or reassigning vehicles, drivers or trips",
+        "Sending notifications, messages or reports to customers or staff",
+        "Payments, refunds, invoices or payouts",
+        "Logout / Logout From All Devices",
+        "Password resets, OTP requests or account registrations",
+        "Deleting apps or data on BrowserStack",
+        "Creating Jira tickets or any other external posting"
+      ]
+    }
+  },
   "requiresExplicitApproval": [
     "Submitting a booking inquiry (Confirm)",
     "Any payment (Pay Advance / Razorpay)",

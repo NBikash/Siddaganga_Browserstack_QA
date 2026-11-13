@@ -13,6 +13,25 @@ sign-in redirect. Otherwise stop and fix (see `SETUP.md`).
 - iOS: if `qaBuild.status` is not `available` (no IPA yet), explain that iOS execution/exploration is
   blocked and offer only "Generate/review test cases" (planning from the Android baseline) or stop.
 
+## 1a. Saagane by Siddaganga (only when explicitly selected)
+Banni is the default app. Use Saagane only when the user names it. Then everything in this document applies, with:
+
+| Item | Saagane |
+|---|---|
+| Doctor / setup | `npm run doctor -- --app saagane --json`, `npm run setup -- --app saagane` |
+| Config | `config/saagane/android.json` (Android only); registry `config/project.json → apps.saagane` |
+| Build | Latest Saagane APK in App Live → Uploaded Apps (not stored locally). Confirm the app name, record the build name/upload date shown in App Live in the run log `--build` |
+| Roles | **Superadmin first**, then Admin as a separate run/session; record the role in `--scope` |
+| Test accounts | `SAAGANE_SUPERADMIN_*`, `SAAGANE_ADMIN_*` in `.env` — the user signs in on the device |
+| Inventory | `manual-exploration/saagane/test-cases/saagane-test-cases.csv` — does not exist until Saagane is explored; never reuse Banni cases. Start with **Explore** |
+| Session notes | `manual-exploration/saagane/session-notes/` |
+| Approvals | `config/project.json → apps.saagane.requiresExplicitApproval` (admin actions change real data) |
+| Run ID | `saagane-android-<yyyymmdd>-<hhmm>-<ROLE>-<SCOPE>` |
+| Run log | `node scripts/qa-log.mjs init --app saagane --platform android --run-id <id> ...` → `android/results/saagane/<id>/` |
+| Evidence / report | `android/evidence/saagane/<id>/`, `reports/saagane/<id>/qa-report.html` |
+
+Never write Saagane results, evidence or cases into Banni paths, or Banni artifacts into Saagane paths.
+
 ## 2. Choose action
 
 | Option | Summary |

@@ -1,0 +1,208 @@
+[
+  {
+    "ts": "2026-11-12T17:03:39.865Z",
+    "stage": "S0",
+    "result": "Pass",
+    "observed": "Preprod login -> /dashboard (verified earlier in session)",
+    "shot": "screenshots/login/preprod-login-verification.png"
+  },
+  {
+    "ts": "2026-11-12T17:03:39.877Z",
+    "stage": "S1",
+    "result": "Pass",
+    "observed": "LD-341 View Lead: Inquiry PNR MWAG650153 (exact), Inquiry ID 932, Status New quotation; trip details match TC-01 (Whitefield, 12/11/2026, 1 pax, Sedan, Local, Rs 4,500)",
+    "reference": "LD-341 / 932",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S01-view-lead-pnr.png",
+    "issue": "Pickup/Drop time shown 12:00 AM; User-Web TC-01 submitted 3:00 PM"
+  },
+  {
+    "ts": "2026-11-12T17:05:39.206Z",
+    "stage": "S1b",
+    "result": "Pass",
+    "observed": "Returned to LD-341 (search by Lead ID, single row)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S01b-matched-lead.png"
+  },
+  {
+    "ts": "2026-11-12T17:05:39.218Z",
+    "stage": "S2",
+    "result": "Pass",
+    "observed": "LD-341 menu > Send To Inquiry navigated (after >2.5 s, no toast/dialog) to /dashboard/inquiry-management/update-inquiry/<id> (Update Inquiry form, pre-filled from the User-Web inquiry)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S02-update-inquiry-opened.png",
+    "note": "Arrival/Departure time shown 12:00 AM and read-only; User-Web submitted 3:00 PM"
+  },
+  {
+    "ts": "2026-11-12T17:08:42.365Z",
+    "stage": "S3",
+    "result": "Pass",
+    "observed": "Update Quote with pre-filled values (total 4500.00, unchanged per user). POST update-inquiry 200, inquiry/details 200, lead-target/attach-inquiry 200. Button showed a loader; no visible success toast/text",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S03-update-quote-result.png",
+    "issue": "No visible success confirmation after Update Quote (UX)"
+  },
+  {
+    "ts": "2026-11-12T17:09:15.583Z",
+    "stage": "S4",
+    "result": "Pass",
+    "observed": "Total Inquiries search \"932\": single row QRY-932, Bikash N, Sedan, 12/11/2026, status Revised quotation. PNR not searchable in this list",
+    "reference": "QRY-932",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S04-total-inquiry.png"
+  },
+  {
+    "ts": "2026-11-12T17:10:10.406Z",
+    "stage": "S5",
+    "result": "Pass",
+    "observed": "QRY-932 menu > Send To Booking opened Choose Trip(s): Quote ID 1686, Leg 1, Local, Sedan, Rs 4500.00 (leg pre-selected)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S05-send-to-booking-details.png"
+  },
+  {
+    "ts": "2026-11-12T17:10:57.658Z",
+    "stage": "S5",
+    "result": "Pass",
+    "observed": "QRY-932 menu > Send To Booking opened Choose Trip(s): Quote ID 1686, Leg 1, Local, Sedan, Rs 4500.00 (leg pre-selected)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S05-send-to-booking-details.png"
+  },
+  {
+    "ts": "2026-11-12T17:10:58.322Z",
+    "stage": "S6",
+    "result": "Pass",
+    "observed": "Convert into Booking > 'Are you sure want to convert this inquiry into booking?' > Yes. POST inquiry/send-trip-to-booking 200; alert 'New booking for inquiry MWAG650153 ... received'",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S06-converted.png",
+    "issue": "Grammar in confirmation: 'Are you sure want to convert'"
+  },
+  {
+    "ts": "2026-11-12T17:10:58.875Z",
+    "stage": "S7",
+    "result": "Pass",
+    "observed": "Total Booking > Pre-Bookings, search 932: single row B-932, Bikash N, 1, Local, 12 Nov 2026, Rs. 4,500. PNR not searchable",
+    "reference": "B-932",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S-Pre-list.png"
+  },
+  {
+    "ts": "2026-11-12T17:14:28.446Z",
+    "stage": "S8",
+    "result": "Pass",
+    "observed": "B-932 menu > Confirm Booking opened /booking-management/confirm-booking/<id> form (pre-filled: Local, 12/11/2026, pax 1, Sedan, total 4500.00). Form Confirm Booking > POST update-inquiry 200, booking/details 200, booking/confirm 200; toast 'Data updated successfully !'. No separate confirmation popup",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S08-after-confirm.png",
+    "note": "Automation incident before this: a generic menu script opened B-932 'Cancel and Notify' dialog; Cancel & Notify NOT clicked, dialog closed, B-932 verified intact in Pre-Bookings after reload (screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S08-B932-intact-after-reload.png). Form briefly renders empty fields (GST 0%) while loading."
+  },
+  {
+    "ts": "2026-11-12T17:14:55.609Z",
+    "stage": "S9",
+    "result": "Pass",
+    "observed": "Total Booking > Booked: B-932 listed (Bikash N, Local, 12 Nov 2026, Rs. 4,500). Counters: Total Bookings 10->9, Upcoming Trips 14->15. Booked tab has no booking-ID search",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S09-booked.png"
+  },
+  {
+    "ts": "2026-11-12T17:17:00.902Z",
+    "stage": "S10-identify",
+    "result": "Pass",
+    "observed": "Upcoming Trips (/booking-management/upcoming-trips) lists by TRIP ID; the Bikash N 12 Nov 2026 12:00 AM row has a BLANK Trip ID and is the only Bikash N row of 15. No View option in its menu (Vehicle Allocation, Edit Booking, Send To Trip Approval, Cancel Booking, Cancel & Notify). Edit Booking showed popup 'Record Advance Payment? Bikash N - Booking B-932' which confirms identity; none of its buttons clicked, closed via browser Back",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S10-identity-edit-booking-url.png",
+    "issue": "Trip ID blank for B-932 in Upcoming Trips; duplicate rows across pages (TP-105 twice, two identical Subrata S 11 Nov rows); Edit Booking unexpectedly opens a Record Advance prompt"
+  },
+  {
+    "ts": "2026-11-12T17:17:43.777Z",
+    "stage": "S10",
+    "result": "Pass",
+    "observed": "Bikash N/B-932 row > Send To Trip Approval > 'Are you sure you want to send this booking to trip approvals?' > Yes. POST booking/send-to-trip-approval-vechicle-allocation-list 200; toasts 'Data generated !' and 'New Duty Assignment New duty TP-111 - Local, report 12:00 AM @ -, drop -'. No advance prompt",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S10-after.png",
+    "issue": "Duty notification shows pickup '@ -' and drop '-' (Whitefield missing); API path typo 'vechicle'"
+  },
+  {
+    "ts": "2026-11-12T17:18:35.258Z",
+    "stage": "S11",
+    "result": "Pass",
+    "observed": "Fleet & Vehicles > Vehicle Allocation Portal (Trip Approvals & Vehicle Assignment, page 2 of 7 entries): TP-111 Bikash N Bengaluru->Bengaluru 12/11/2026 No-invoice, status Confirm; Allocate enabled (Allocate Driver not yet shown). Only Bikash N row; no client-name/ID search used",
+    "reference": "TP-111",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S11-allocation-portal-p2.png"
+  },
+  {
+    "ts": "2026-11-12T17:19:31.554Z",
+    "stage": "S12",
+    "result": "Pass",
+    "observed": "TP-111 Allocate > 'Record Advance Before Allocation? Bikash N - Trip TP-111' > No, Continue to Allocation (advance NOT recorded) > 'Select the type of allocation you need: Dynamic Allocation' (pre-selected) > Continue > Allocation Portal: Trip Number TP-111, Bus Required Sedan, Status Not Assigned Yet",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S12-allocate-step3.png"
+  },
+  {
+    "ts": "2026-11-12T17:20:28.401Z",
+    "stage": "S13",
+    "result": "Pass",
+    "observed": "Selected first Sedan KA21AB9876 (user: first valid option) > Confirm Allocation (no separate 'Allocate Vehicle' button, no confirm dialog). POST assign-vehicle 200; notification 'New pre-departure record generated for trip TP-111 (KA21AB9876)'",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S13-confirm-allocation-1.png",
+    "issue": "Allocation page still shows 'Bus Assigned Status for this Trip : Not Assigned Yet' right after a successful allocation"
+  },
+  {
+    "ts": "2026-11-12T17:21:55.972Z",
+    "stage": "S14",
+    "result": "Blocked",
+    "observed": "After Confirm Allocation, TP-111 is no longer in Vehicle Allocation Portal (Trip Approvals list 7->6; not in Pending Allocation Confirmations). 'Allocate Driver' was never offered for TP-111. Record found instead in Approved & Track Live Trips > Approved Vehicles: TP-111, Bikash N, KA21AB9876, Sedan, cap 4, Local, Whitefield->Whitefield, 12 Nov 2026, Assigned Driver 'Test Driver' (auto-assigned), Status 'On trip'. Flow deviates from the specified steps 20-22; paused for user decision",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S16-approved-list.png",
+    "issue": "Driver auto-assigned without Allocate Driver step; status 'On trip' shown before dispatch/start"
+  },
+  {
+    "ts": "2026-11-12T17:21:56.287Z",
+    "stage": "S15",
+    "result": "Not Run",
+    "observed": "Allocate Driver not available; driver already shown as Test Driver"
+  },
+  {
+    "ts": "2026-11-12T17:23:19.250Z",
+    "stage": "S16",
+    "result": "Pass",
+    "observed": "Approved & Track Live Trips (/fleet-vehicle-management/approved-trips) > Approved Vehicles: TP-111 listed (Bikash N, KA21AB9876, Sedan, Test Driver, On trip)",
+    "reference": "TP-111",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S16-approved-list.png"
+  },
+  {
+    "ts": "2026-11-12T17:26:26.905Z",
+    "stage": "S17",
+    "result": "Pass",
+    "observed": "TP-111 menu > Initiate Vehicle Dispatch > 'Record Advance Payment? Bikash N - Trip TP-111' > No, Not Now (advance NOT recorded) > form (Trip ID TP-111, KA21AB9876). Predeparture Checklist: Safety equipment confirmation ticked, note added (photos optional, skipped) > Next > Trip Sheet: Start Odometer 10000, Opening Km 10000, Fuel 20, Last Diesel 20, Mileage 12, Helper 'QA Test Helper', permit test PDF (test-data/qa-test-permit.pdf) > Generate Trip Sheet & Mark Vehicle Ready > POST update-pre-depature-check 200; 'Trip is ready for dispatch - TP-111 (KA21AB9876)'. Two earlier submits rejected: 'permitDocument cannot be null' (client), '\"Helper\" is not allowed to be empty field' (API 400)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S17-dispatched-2.png",
+    "issue": "Permit document and Helper are required but not marked required; raw validation messages ('permitDocument cannot be null', '\"Helper\" is not allowed to be empty field'); text 'Tabbi have no data'; API path typo 'depature'"
+  },
+  {
+    "ts": "2026-11-12T17:27:02.893Z",
+    "stage": "S18",
+    "result": "Pass",
+    "observed": "Approved & Track Live Trips > Ready For Trip: TP-111 listed (Bikash N, Local, 12/11/2026, Whitefield->Whitefield, status Schedule)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S18-ready.png"
+  },
+  {
+    "ts": "2026-11-12T17:27:55.407Z",
+    "stage": "S19",
+    "result": "Pass",
+    "observed": "Ready For Trip TP-111 menu (Start Trip, Edit Tripsheet, Edit Bus Details, Edit Driver Details, Add Extra Amenities, Record Advance, Cancel Trip) > Start Trip > Record Advance prompt declined (No, Not Now) > Start Trip Are you sure you want to start this trip? > Confirm. POST start-trip 200; toast Data updated successfully!",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S19-started.png",
+    "issue": "Record Advance prompt shown before Start Trip as well"
+  },
+  {
+    "ts": "2026-11-12T17:28:26.467Z",
+    "stage": "S20",
+    "result": "Pass",
+    "observed": "Live Trips: TP-111 listed (Bikash N, Local, 12/11/2026, Whitefield->Whitefield, Assigned Status On going)",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S20-live.png",
+    "issue": "Live Trips CUSTOMER TYPE shows Local (journey type) instead of National"
+  },
+  {
+    "ts": "2026-11-12T17:29:05.726Z",
+    "stage": "S21",
+    "result": "Pass",
+    "observed": "Live Trips TP-111 menu > Complete Trip > Record Advance prompt declined (No, Not Now) > Complete Trip Are you sure you want to complete this trip? > Confirm. POST end-trip 200; Data updated successfully!",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S21-completed.png"
+  },
+  {
+    "ts": "2026-11-12T17:29:34.525Z",
+    "stage": "S22",
+    "result": "Pass",
+    "observed": "Completed Trips: TP-111 listed (Bikash N, National, 12/11/2026, Whitefield->Whitefield, Estimated Rs 4,500.00, Actual Rs 4,500.00, Trip Closed: No). Menu: View Trip Summary, Close Trip, Record Advance",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S22-completed.png"
+  },
+  {
+    "ts": "2026-11-12T17:31:19.162Z",
+    "stage": "S23",
+    "result": "Pass",
+    "observed": "Completed Trips TP-111 > Close Trip > Record Advance prompt declined (No, Not Now) > Close Trip Sheet (Post-arrival Checklist pre-filled from dispatch) > Next > Trip Sheet: Closing Km 10040, Total Km 40, Present Diesel 20 (others pre-filled; no extra expenses) > Generate Trip Sheet & Mark Vehicle Ready > POST update-post-depature-check 200; notification 'New invoice INV-101 for Rs 4,725 from Bikash N (trip MWAG650153)'. Completed Trips now shows Trip Closed: Yes, Estimated Rs 4,500.00, Actual Rs 4,500.00",
+    "shot": "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S23-verify-closed.png",
+    "issue": "Close Trip still offered in the menu after the trip is closed; close-sheet submit labelled 'Generate Trip Sheet & Mark Vehicle Ready'; 'Select Date' and 'Vehicle' inputs both named vehicleNo (Vehicle input holds '60')"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "tc04": {
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  },
+  "tc05": {
+    "base": "20 Buses Found | Local - 1 HR / 80 KM",
+    "premium": "7 Buses Found | Local - 1 HR / 80 KM",
+    "shotPremium": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-filter-premium-r2.png",
+    "volvo": "0 Buses Found | Local - 1 HR / 80 KM",
+    "afterClear": "20 Buses Found | Local - 1 HR / 80 KM",
+    "brandNew": "20 Buses Found | Local - 1 HR / 80 KM",
+    "shotBrandNew": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-filter-brand-new-r2.png",
+    "advanced": "Vehicle Age PreferenceBrand New(0-2 years)Brand New(0-2 years)Brand New(0-2 years)Comfort PrioritySeat pitch priorityLuggage space priorityRide comfort priorityClear SelectionHide Filters",
+    "shotAdvanced": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-filter-advanced-r2.png"
+  },
+  "tc01quote": {
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "label": "8hr-baseline",
+    "nav": true,
+    "found": "20 Buses Found | Local - 8 HR / 80 KM",
+    "applied": [
+      {
+        "label": "Vehicle Base Cost",
+        "value": "₹7,500"
+      },
+      {
+        "label": "Day Bata Cost (Before 10pm or After 6am)",
+        "value": "₹800"
+      },
+      {
+        "label": "Night Bata Cost (Before 6am or After 10pm)",
+        "value": "₹0"
+      },
+      {
+        "label": "Estimated Grand Total",
+        "value": "₹8,300"
+      }
+    ],
+    "pkg": "Local Trip – 8 Hrs / 80 Kms"
+  },
+  {
+    "label": "9hr-boundary",
+    "nav": true,
+    "found": "20 Buses Found | Local - 9 HR / 80 KM",
+    "applied": [
+      {
+        "label": "Vehicle Base Cost",
+        "value": "₹7,500"
+      },
+      {
+        "label": "Day Bata Cost (Before 10pm or After 6am)",
+        "value": "₹800"
+      },
+      {
+        "label": "Night Bata Cost (Before 6am or After 10pm)",
+        "value": "₹0"
+      },
+      {
+        "label": "Estimated Grand Total",
+        "value": "₹8,300"
+      }
+    ],
+    "pkg": "Local Trip – 8 Hrs / 80 Kms"
+  }
+]

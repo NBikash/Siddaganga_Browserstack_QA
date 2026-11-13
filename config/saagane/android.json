@@ -1,0 +1,40 @@
+{
+  "platform": "android",
+  "executionApproach": "app-live",
+  "appName": "Saagane by Siddaganga",
+  "appType": "internal-operations",
+  "roles": {
+    "initialRole": "Superadmin",
+    "supported": ["Superadmin", "Admin"]
+  },
+  "qaBuild": {
+    "source": "uploaded-apk",
+    "status": "available",
+    "description": "Latest Saagane QA APK uploaded to BrowserStack App Live.",
+    "currentBuild": null,
+    "appLiveUrlEnv": "SAAGANE_ANDROID_APP_LIVE_URL",
+    "allowedExtensions": [".apk", ".aab"]
+  },
+  "defaultDevice": {
+    "name": "Google Pixel 7",
+    "osVersion": "13"
+  },
+  "testCases": {
+    "inventoryCsv": "manual-exploration/saagane/test-cases/saagane-test-cases.csv",
+    "inventoryXlsx": "manual-exploration/saagane/test-cases/saagane-test-cases.xlsx",
+    "idPattern": "TC_<MODULE>_<NNN>",
+    "baselineRecorded": null,
+    "note": "Create a separate inventory after exploring Saagane. Never reuse or modify Banni test cases without approval."
+  },
+  "paths": {
+    "results": "android/results/saagane",
+    "reports": "reports/saagane",
+    "evidence": "android/evidence/saagane"
+  },
+  "testAccountEnv": [
+    "SAAGANE_SUPERADMIN_USERNAME",
+    "SAAGANE_SUPERADMIN_PASSWORD",
+    "SAAGANE_ADMIN_USERNAME",
+    "SAAGANE_ADMIN_PASSWORD"
+  ]
+}

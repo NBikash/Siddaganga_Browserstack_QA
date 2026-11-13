@@ -1,0 +1,13 @@
+file:///D:/Siddaganga-BrowserStack-QA/Admin-Web/scripts/lib.mjs:30
+  return path.relative(ROOT, file).replaceAll('\', '/');
+                                                     ^^^
+
+SyntaxError: Invalid or unexpected token
+    at compileSourceTextModule (node:internal/modules/esm/utils:338:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:102:18)
+    at #translate (node:internal/modules/esm/loader:468:12)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:515:27)
+
+Node.js v22.14.0
+
+[exited with code 1]

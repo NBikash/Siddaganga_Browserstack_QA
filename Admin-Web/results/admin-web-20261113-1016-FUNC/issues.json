@@ -1,0 +1,1065 @@
+[
+  {
+    "ts": "2026-11-13T04:54:42.212Z",
+    "id": "ISS-01",
+    "module": "Lead Management",
+    "screen": "View Lead (also Update Inquiry, bookings, trips)",
+    "title": "Pickup and drop time shown as 12:00 AM instead of the time submitted in User-Web",
+    "classification": "Data inconsistency",
+    "severity": "High",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "PNR SOQS555799 / LD-353 / Inquiry 944 (User-Web TC-07, submitted 9:00 AM)",
+    "pre": "Inquiry submitted from User-Web with pickup time 9:00 AM on 20/11/2026",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\"",
+      "Row menu > View Lead",
+      "Read Inquiry Information > Pickup Time / Drop Time and Journey 1 > Pickup Time"
+    ],
+    "expected": "Pickup Time 9:00 AM (as submitted); Drop time derived from the 8/9 hour package",
+    "actual": "Pickup Time 12:00 AM, Drop Time 12:00 AM (lead header and Journey 1)",
+    "description": "The customer-selected pickup time is lost when the inquiry becomes a lead; the same 12:00 AM value then flows to the quote, booking and trip records (also seen for LD-341 / TP-111 in run 20261112). Operations would dispatch at the wrong time.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-01-view-lead-pnr.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:54:42.213Z",
+    "id": "ISS-02",
+    "module": "Lead Management",
+    "screen": "Lead list (All Leads table)",
+    "title": "Lead list shows Stage and Expected Value as N/A for an inquiry lead with a costing",
+    "classification": "Data inconsistency",
+    "severity": "Low",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353",
+    "pre": "Lead created from a User-Web inquiry",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\"",
+      "Read STAGE and EXPECTED VALUE columns",
+      "Open View Lead > Total Costing"
+    ],
+    "expected": "Expected Value reflects the inquiry cost (Rs 8,300) or a stage is set; or the business rule is documented",
+    "actual": "STAGE N/A, EXPECTED VALUE N/A while View Lead shows Total Costing Rs 8,300",
+    "description": "Inquiry-originated leads carry no stage/value in the list, so the pipeline value columns are empty for all such leads (manually created LD-357 shows Prospecting / Rs 5,000). Clarify whether this is intended.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-06-row-values.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-01-view-lead-pnr.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:54:42.214Z",
+    "id": "ISS-03",
+    "module": "Lead Management",
+    "screen": "View Lead modal",
+    "title": "View Lead modal has no visible Close control",
+    "classification": "UX",
+    "severity": "Low",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353",
+    "pre": "Lead list",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\"",
+      "Row menu > View Lead",
+      "Look for a Close/X button"
+    ],
+    "expected": "A visible Close (X) or Close button",
+    "actual": "Only a \"Send To Inquiry\" button; the modal closes only with Escape or by clicking outside",
+    "description": "Users without keyboard habits have no obvious way to dismiss the details modal other than the forward action button.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-08-view-lead-modal.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T04:54:42.214Z",
+    "id": "ISS-04",
+    "module": "Lead Management",
+    "screen": "Assign dialog",
+    "title": "Assign lead: \"No sales employees found\", lead cannot be assigned",
+    "classification": "Functional",
+    "severity": "Medium",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353",
+    "pre": "Lead list",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\"",
+      "Row menu > Assign",
+      "Open Assign Employee dropdown"
+    ],
+    "expected": "List of sales employees to assign",
+    "actual": "\"No sales employees found\"; only placeholder \"Select Employee\"; Assign disabled",
+    "description": "Either no employee has the sales role in Preprod (test-data gap) or the employee query fails. Needs clarification; blocks LM-09.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-09-assign-dialog-r2.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T04:54:42.215Z",
+    "id": "ISS-12",
+    "module": "Lead / Inquiry / Booking lists",
+    "screen": "Search fields",
+    "title": "Inquiry PNR is not searchable in Lead, Inquiry or Booking lists",
+    "classification": "UX",
+    "severity": "Medium",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "SOQS555799 / LD-353",
+    "pre": "Lead list",
+    "steps": [
+      "Lead Management > Search Lead Info \"SOQS555799\""
+    ],
+    "expected": "The lead with that PNR is found (PNR is the customer-facing reference)",
+    "actual": "\"No data available\"; PNR only visible inside View Lead",
+    "description": "Support staff receiving a PNR from a customer cannot locate the lead/inquiry/booking without already knowing the Lead ID (same in Inquiry and Booking search, run 20261112).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/lead/LM-03-search-no-match.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.357Z",
+    "id": "ISS-05",
+    "module": "Quotation / Update Quote",
+    "screen": "Update Inquiry > Enter Number of Pax's",
+    "title": "Pax accepts blank, 0, negative, decimal, text and values above vehicle capacity; blank/0 are saved",
+    "classification": "Validation",
+    "severity": "High",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...",
+    "pre": "Inquiry open in Update Inquiry",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\" > menu > Send To Inquiry (opens Update Inquiry)",
+      "Clear \"Enter Number of Pax's\" (or type 0 / -1 / 1.5 / 100 / abc)",
+      "Click Update Quote",
+      "Re-open the inquiry"
+    ],
+    "expected": "Validation message; pax must be an integer between 1 and the selected vehicle capacity (16); save blocked",
+    "actual": "No message for any value; blank and 0 save with \"Data updated successfully !\" and re-open as an empty Pax field",
+    "description": "Pax is a plain text input without required/format/range checks, unlike Trip Days (min 1). An inquiry/booking can be confirmed with no passengers or more passengers than seats.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-02-pax-blank.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-03-pax-0.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-03-boundary.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.358Z",
+    "id": "ISS-06",
+    "module": "Quotation / Update Quote",
+    "screen": "Update Inquiry > Vehicle Costs > Final Quote / Total Approx Cost",
+    "title": "Total Approx Cost (Final Quote) is not recalculated when cost components change, even after saving",
+    "classification": "Functional",
+    "severity": "Critical",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...",
+    "pre": "Inquiry open in Update Inquiry; total Rs 8,300",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\" > menu > Send To Inquiry (opens Update Inquiry)",
+      "In Vehicle Costs set ADDITIONAL HR'S = 1 (EXTRA HOUR rate 800)",
+      "Click Update Quote",
+      "Re-open the inquiry; also open Inquiry list > View Quote"
+    ],
+    "expected": "Final Quote = 7,500 + 800 + 1 x 800 = Rs 9,100 (live and after save)",
+    "actual": "Final Quote stays Rs 8,300.00; Additional HR's 1.00 is saved. Same for Additional KM 10, Toll 100 (saved), Any Extras 50, Day Bata Days 2 and Fixed Cost 9000 with Apply ticked",
+    "description": "The quote total ignores edits to every cost component, so revised quotes, bookings and invoices keep the original amount. Mirrors the User-Web defect where the 9 HR inquiry is priced as 8 HR.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-04-saved-addl-hr-1.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-04-recalculated.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-05-apply-fixed-cost.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-04-view-quote.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.359Z",
+    "id": "ISS-07",
+    "module": "Quotation / Update Quote",
+    "screen": "Update Inquiry > Select Arrival/Departure Time",
+    "title": "Arrival and Departure time are read-only, so the wrong 12:00 AM pickup time cannot be corrected",
+    "classification": "Functional",
+    "severity": "High",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...",
+    "pre": "Inquiry open in Update Inquiry",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\" > menu > Send To Inquiry (opens Update Inquiry)",
+      "Click Select Arrival Time / Select Departure Time"
+    ],
+    "expected": "Time picker to set the correct pickup/drop time",
+    "actual": "Fields are read-only and show 12:00 AM",
+    "description": "Combined with ISS-01 the operator has no way to fix the pickup time before booking/dispatch.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.360Z",
+    "id": "ISS-08",
+    "module": "Quotation / Update Quote",
+    "screen": "Lead details / Update Inquiry",
+    "title": "Requested hour package from User-Web is not visible in Admin",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...; User-Web TC-07 submitted 8 HR and 9 HR variants (LD-352, LD-353)",
+    "pre": "Two User-Web inquiries differing only by hours",
+    "steps": [
+      "Open View Lead for LD-353",
+      "Open Update Inquiry for LD-353"
+    ],
+    "expected": "Requested hours (e.g. 9 HR) shown, with Additional HR's pre-filled",
+    "actual": "Neither screen shows the requested hours; package column fixed at 8 HR/80 KM with Additional HR's 0",
+    "description": "Admin cannot tell whether the customer asked for 8 or 9 hours, so the extra-hour charge cannot be applied. Business clarification needed on where the hours are stored.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T05:08:30.360Z",
+    "id": "ISS-09",
+    "module": "Quotation / Update Quote",
+    "screen": "Update Inquiry > Trip Description",
+    "title": "Pressing Enter in Trip Description submits the whole quote form",
+    "classification": "UX",
+    "severity": "Low",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...",
+    "pre": "Inquiry open in Update Inquiry",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\" > menu > Send To Inquiry (opens Update Inquiry)",
+      "Type in Trip Description",
+      "Press Enter"
+    ],
+    "expected": "Enter confirms the description entry only",
+    "actual": "Form is submitted (Update Quote) and the page navigates to Total Inquiries",
+    "description": "Accidental saves of half-edited quotes.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-10-after-reopen-toll100-total8300.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:08:30.361Z",
+    "id": "ISS-10",
+    "module": "Quotation / Update Quote",
+    "screen": "Update Inquiry",
+    "title": "No unsaved-changes warning when leaving the quote form",
+    "classification": "UX",
+    "severity": "Low",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "LD-353 / Inquiry 944 (QRY-944) / Quote 1701, form /inquiry-management/update-inquiry/dfb79d89-...",
+    "pre": "Inquiry open in Update Inquiry",
+    "steps": [
+      "Login to Admin Preprod",
+      "Lead Management > Search Lead Info \"LD-353\" > menu > Send To Inquiry (opens Update Inquiry)",
+      "Change Trip Description",
+      "Press browser Back"
+    ],
+    "expected": "Warning before discarding edits",
+    "actual": "Leaves silently; edits lost",
+    "description": "Long quote forms lose edits without notice.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-10-edited-before-save.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:11:16.098Z",
+    "id": "ISS-11",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries KPI cards",
+    "title": "Inquiry KPI cards inconsistent with the list (109 vs 8; conversion, pending and quote value 0)",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "Inquiry list (QRY-944 among others)",
+    "pre": "Inquiries with quotes exist",
+    "steps": [
+      "Login to Admin Preprod",
+      "Open Inquiry Management",
+      "Read KPI cards and the \"Showing x of y entries\" with no filters"
+    ],
+    "expected": "Total Inquiries equals the list total (or the card states its scope); Total Quote Value sums quotes; conversion rate reflects converted inquiries",
+    "actual": "Total Inquiries 109; list \"Showing 1 to 5 of 8 entries\"; Conversion Rate 0, Pending Approvals 0, Total Quote Value 0",
+    "description": "Either the list hides converted inquiries without saying so, or the cards are not computed. Needs business clarification of each card definition.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/inquiry/IM-02-kpi-cards.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T05:25:07.203Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-13",
+    "module": "Inquiry Management",
+    "screen": "Convert Into Booking confirmation",
+    "title": "Grammar: \"Are you sure want to convert this inquiry into booking?\"",
+    "classification": "Content",
+    "severity": "Low",
+    "pre": "Inquiry with quote",
+    "steps": [
+      "Inquiry Management > QRY-944 menu > Send To Booking",
+      "Convert into Booking"
+    ],
+    "expected": "\"Are you sure you want to convert this inquiry into a booking?\"",
+    "actual": "\"Are you sure want to convert this inquiry into booking?\"",
+    "description": "Missing \"you\" and article.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-02-convert-confirm.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.205Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-14",
+    "module": "Pre-Bookings",
+    "screen": "View Booking",
+    "title": "View Booking shows Booking Status \"On Trip\" for a pre-booking",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "pre": "B-944 in Pre-Bookings, no vehicle allocated",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Pre-Bookings > Search Booking Info \"B-944\"",
+      "Row menu > View Booking",
+      "Read Booking Status"
+    ],
+    "expected": "Status Pre-Booking / Pending confirmation",
+    "actual": "Booking Status: On Trip; Vehicle Number, Driver N/A; map \"Loading vehicle location...\"",
+    "description": "The status shown to staff contradicts the tab the booking sits in.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-04-view-booking.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.207Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-15",
+    "module": "Pre-Bookings",
+    "screen": "View Booking > Invoice Summary",
+    "title": "Invoice Summary shows New Base Fare Rs 0.00 and Tax Rs 0.00 while GST is 5% on Rs 8,300",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "pre": "B-944 quote Rs 8,300 with GST 5%",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Pre-Bookings > Search Booking Info \"B-944\"",
+      "Row menu > View Booking",
+      "Read Invoice Summary"
+    ],
+    "expected": "Base fare and 5% tax consistent with the quote (tax Rs 415)",
+    "actual": "New Base Fare Rs 0.00, Vehicle Costing Rs 8300.00, Tax Rs 0.00",
+    "description": "Summary amounts are not populated; run 20261112 invoice was Rs 4,725 = 4,500 + 5%, so tax is applied later but shown as 0 here.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-04-view-booking.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.208Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-16",
+    "module": "Pre-Bookings",
+    "screen": "Pre-Bookings > Edit Booking",
+    "title": "Edit Booking opens a \"Record Advance Payment?\" prompt before the edit form",
+    "classification": "UX",
+    "severity": "Low",
+    "pre": "B-944 in Pre-Bookings",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Pre-Bookings > Search Booking Info \"B-944\"",
+      "Row menu > Edit Booking"
+    ],
+    "expected": "Update Booking form opens",
+    "actual": "Prompt \"Record Advance Payment? Bikash N - Booking B-944\" (Yes, Record Advance / No, Not Now / Cancel); form opens only after No, Not Now",
+    "description": "The advance prompt interrupts unrelated actions (edit, confirm, allocation, dispatch, start, complete, close).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/prebooking/PB-05-edit-booking-click-result.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.209Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-17",
+    "module": "Pre-Bookings",
+    "screen": "Booking & Operations KPI cards",
+    "title": "\"Total Bookings\" card counts only Pre-Bookings",
+    "classification": "Terminology",
+    "severity": "Low",
+    "pre": "Bookings in Pre-Bookings and Booked",
+    "steps": [
+      "Booking & Operations",
+      "Compare \"Total Bookings\" with Pre-Bookings and Booked counts"
+    ],
+    "expected": "Total Bookings = all bookings, or card renamed \"Pre-Bookings\"",
+    "actual": "Total Bookings 9-10 = Pre-Bookings count; Booked tab lists 24 bookings",
+    "description": "Card label misrepresents its count.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-01-booked-B-944.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.210Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-932 / TP-111 (closed in run 20261112); B-944",
+    "id": "ISS-18",
+    "module": "Booked",
+    "screen": "Booked tab",
+    "title": "Closed booking B-932 (trip TP-111, Trip Closed Yes) still listed under Booked; Booked has no Booking ID search",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "pre": "Trip TP-111 closed (Completed Trips: Trip Closed Yes)",
+    "steps": [
+      "Booking & Operations > Booked",
+      "Page through the list"
+    ],
+    "expected": "Closed booking moves out of Booked (Completed); Booking ID search available as in Pre-Bookings",
+    "actual": "B-932 still in Booked (row 4); only client/vehicle/date filters",
+    "description": "Booked mixes active and closed bookings, and staff must page through to find a booking ID.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-01-booked-B-944.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:25:07.211Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-19",
+    "module": "Booked",
+    "screen": "Back to Pre-Bookings",
+    "title": "Back to Pre-Bookings toast says \"related booking data removed\" without stating what is removed",
+    "classification": "Content",
+    "severity": "Low",
+    "pre": "B-944 in Booked",
+    "steps": [
+      "Booked > B-944 menu > Back to Pre-Bookings",
+      "Move Back"
+    ],
+    "expected": "Clear message; confirmation dialog warns about data removal",
+    "actual": "Dialog only asks to move back; toast afterwards \"Booking unconfirmed and related booking data removed!\" (description/pax/cost were intact)",
+    "description": "Users are warned of data loss only after the action; the scope of removal is unclear (clarify).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-02-back-to-prebookings-dialog.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-02-back-in-prebookings.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T05:25:07.212Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 (LD-353 / QRY-944 / PNR SOQS555799)",
+    "id": "ISS-20",
+    "module": "Booked",
+    "screen": "Completed tab",
+    "title": "Completed tab column \"BOOKING ID\" shows trip IDs (TP-110)",
+    "classification": "Terminology",
+    "severity": "Low",
+    "pre": "Completed bookings exist",
+    "steps": [
+      "Booking & Operations > Completed"
+    ],
+    "expected": "Booking IDs (B-xxx) or column named Trip ID",
+    "actual": "BOOKING ID column values TP-110 etc.",
+    "description": "Column label and values disagree.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/booked/BK-03-completed-tab.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.749Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 / TP-112 (LD-353, PNR SOQS555799)",
+    "id": "ISS-21",
+    "module": "Upcoming Trip / Trip Approval",
+    "screen": "Upcoming Trips table",
+    "title": "Upcoming Trips shows a blank TRIP ID (and no Booking ID) for a confirmed booking until trip approval",
+    "classification": "UI",
+    "severity": "Medium",
+    "pre": "B-944 confirmed, not yet sent to trip approval",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Read TRIP ID column"
+    ],
+    "expected": "A reference (Booking ID or Trip ID) identifying the row",
+    "actual": "TRIP ID empty; row identifiable only by client/date; Booking ID visible only inside the advance prompt",
+    "description": "Also seen for B-932 in run 20261112. Staff cannot tell which booking a row belongs to.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-02-client-filter.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.752Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 / TP-112 (LD-353, PNR SOQS555799)",
+    "id": "ISS-22",
+    "module": "Upcoming Trip / Trip Approval",
+    "screen": "Upcoming Trips > Edit Booking",
+    "title": "Edit Booking from Upcoming Trips does nothing after declining the advance prompt",
+    "classification": "Functional",
+    "severity": "Medium",
+    "pre": "B-944 in Upcoming Trips (before approval)",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Row menu > Edit Booking",
+      "Click No, Not Now"
+    ],
+    "expected": "Update Booking form opens",
+    "actual": "Prompt closes; no form, page stays on Upcoming Trips",
+    "description": "From Pre-Bookings the same action opens /update-booking/<uuid>; from Upcoming Trips the edit path is dead.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-03-edit-booking-after-decline.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:28:53.755Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "B-944 / TP-112 (LD-353, PNR SOQS555799)",
+    "id": "ISS-23",
+    "module": "Upcoming Trip / Trip Approval",
+    "screen": "Duty assignment notification",
+    "title": "Duty notification shows pickup \"@ -\" and drop \"-\" and report time 12:00 AM",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "pre": "B-944 in Upcoming Trips",
+    "steps": [
+      "Login to Admin Preprod",
+      "Booking & Operations > Upcoming Trips card (/booking-management/upcoming-trips)",
+      "Locate row Bikash N, Local, 20 Nov 2026 12:00 AM (Trip ID blank before approval)",
+      "Row menu > Send To Trip Approval > Yes",
+      "Read notification"
+    ],
+    "expected": "Report time 9:00 AM @ Whitefield, drop Whitefield",
+    "actual": "\"New duty TP-112 - Local, report 12:00 AM @ -, drop -\"",
+    "description": "Locations missing although the trip has Whitefield; same in run 20261112 (TP-111).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/upcoming/UT-05-after-trip-approval.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:38:21.359Z",
+    "id": "ISS-24",
+    "module": "Vehicle Allocation Portal",
+    "screen": "Allocation page > vehicle tiles",
+    "title": "Over-selection message has spacing/grammar errors",
+    "classification": "Content",
+    "severity": "Low",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112",
+    "pre": "TP-112 allocation page, 1 vehicle required, one tile ticked",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicle Management > Fleet & Vehicles > Vehicle Allocation Portal",
+      "Trip Approvals & Vehicle Assignment, page 2: TP-112",
+      "Allocate > No, Continue to Allocation > Continue",
+      "Tick a second 16 Seater Premium Urbania"
+    ],
+    "expected": "\"The required number of buses is already selected. To select this bus, deselect another one.\"",
+    "actual": "\"the required buses are already selected.If you want to select this bus then deselect the another one\" (lower-case start, missing space, \"the another\")",
+    "description": "Copy quality.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-08-second-vehicle-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.604Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-25",
+    "module": "Approved & Track Live Trips",
+    "screen": "Approved Vehicles > Edit Bus Details",
+    "title": "\"Edit Bus Details\" opens the allocation-type dialog instead of a bus details form",
+    "classification": "Functional",
+    "severity": "Medium",
+    "pre": "TP-112 in Approved Vehicles",
+    "steps": [
+      "Login",
+      "Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Edit Bus Details",
+      "Advance prompt: No, Not Now"
+    ],
+    "expected": "Form to edit bus details for the trip",
+    "actual": "\"Select the type of allocation you need - Dynamic Allocation - Continue / Cancel\"",
+    "description": "Menu label does not match the action; it re-enters the vehicle allocation flow.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-04-edit-bus-details.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.605Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-26",
+    "module": "Approved & Track Live Trips",
+    "screen": "Refuel Request",
+    "title": "Refuel Request does not pre-fill the trip vehicle number",
+    "classification": "UX",
+    "severity": "Low",
+    "pre": "TP-112 in Approved Vehicles (vehicle AR 01 U 8228)",
+    "steps": [
+      "TP-112 menu > Refuel Request",
+      "Advance prompt: No, Not Now",
+      "Read Vehicle No"
+    ],
+    "expected": "Vehicle No = AR 01 U 8228",
+    "actual": "Vehicle No empty; \"Vehicle No is required\" on submit",
+    "description": "Opened from a specific trip, the form should know the vehicle.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-06-refuel-request.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/approved/AT-06-refuel-request-blank-submit.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.607Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-27",
+    "module": "Vehicle Dispatch",
+    "screen": "Initiate Vehicle Dispatch > Trip Sheet",
+    "title": "Blank Trip Sheet submit gives no feedback",
+    "classification": "Validation",
+    "severity": "Medium",
+    "pre": "Dispatch form open, Trip Sheet tab",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Next",
+      "Leave all Trip Sheet fields empty",
+      "Click Generate Trip Sheet & Mark Vehicle Ready"
+    ],
+    "expected": "Required-field messages for each mandatory field",
+    "actual": "Nothing happens: no message, no toast",
+    "description": "User cannot tell why the trip is not marked ready.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-02-blank-submit.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.608Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-28",
+    "module": "Vehicle Dispatch",
+    "screen": "Initiate Vehicle Dispatch > Predeparture Checklist / submit",
+    "title": "\"Add Note\" is mandatory only at final submit, reported as raw \"\\\"Remarks\\\" is not allowed to be empty field\"",
+    "classification": "Validation",
+    "severity": "Medium",
+    "pre": "Dispatch form open",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Leave Add Note empty",
+      "Next",
+      "Fill all Trip Sheet fields and attach permit",
+      "Submit"
+    ],
+    "expected": "Note marked required on the checklist (or optional and accepted); friendly message on the checklist tab",
+    "actual": "Next allowed; final submit -> API 400 toast \"\\\"Remarks\\\" is not allowed to be empty field\"",
+    "description": "Field is called \"Add Note\" in the UI but \"Remarks\" in the error; user is on another tab when it fails.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-01-next-without-safety.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-06-checklist-note-added.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.610Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-111 (run 20261112); same form for TP-112",
+    "id": "ISS-29",
+    "module": "Vehicle Dispatch",
+    "screen": "Initiate Vehicle Dispatch > Trip Sheet > Helper",
+    "title": "Helper is mandatory but not marked; error is raw \"\\\"Helper\\\" is not allowed to be empty field\"",
+    "classification": "Validation",
+    "severity": "Low",
+    "pre": "Dispatch Trip Sheet with permit attached",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Next",
+      "Fill all fields except Helper",
+      "Submit"
+    ],
+    "expected": "Helper marked required with an inline message (or optional)",
+    "actual": "API 400, toast \"\\\"Helper\\\" is not allowed to be empty field\"",
+    "description": "Observed in run 20261112 on the same form; avoided today by filling Helper.",
+    "evidence": [
+      "screenshots/inquiry-to-trip/admin-web-20261112-2229-INQ2TRIP/S17-dispatched.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.611Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-30",
+    "module": "Vehicle Dispatch",
+    "screen": "Initiate Vehicle Dispatch > Trip Sheet > Permit",
+    "title": "Permit document is mandatory but not marked; message \"permitDocument cannot be null\" exposes the field name",
+    "classification": "Validation",
+    "severity": "Low",
+    "pre": "Dispatch Trip Sheet",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Next",
+      "Fill fields without a permit PDF",
+      "Submit"
+    ],
+    "expected": "\"Please upload the permit document\" next to the upload, field marked required",
+    "actual": "\"permitDocument cannot be null\"",
+    "description": "Raw validation key shown to users.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-03-invalid-values.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.612Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-31",
+    "module": "Vehicle Dispatch",
+    "screen": "Initiate Vehicle Dispatch > Trip Sheet",
+    "title": "Odometer, fuel and mileage accept implausible values (negative odometer, 99,999 L, mileage 0, opening km != start odometer)",
+    "classification": "Validation",
+    "severity": "Medium",
+    "pre": "Dispatch Trip Sheet",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Next",
+      "Start Odometer -50; Fuel Filled 99999; Mileage 0; Opening Km 100 with Start Odometer 200",
+      "Submit"
+    ],
+    "expected": "Range checks and consistency between Start Odometer and Opening Km",
+    "actual": "All values accepted; only the missing permit is reported",
+    "description": "These values feed the trip sheet and later km billing.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-03-invalid-values.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T05:47:16.614Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 (B-944, LD-353)",
+    "id": "ISS-32",
+    "module": "Vehicle Dispatch",
+    "screen": "Predeparture Checklist",
+    "title": "Safety equipment confirmation is not required to dispatch (clarify)",
+    "classification": "Validation",
+    "severity": "Low",
+    "pre": "Dispatch form open",
+    "steps": [
+      "Login to Admin Preprod",
+      "Fleet & Vehicles > Approved & Track Live Trips > Approved Vehicles",
+      "TP-112 menu > Initiate Vehicle Dispatch",
+      "Advance prompt: No, Not Now",
+      "Leave Safety equipment confirmation unticked",
+      "Next"
+    ],
+    "expected": "Business rule: safety confirmation mandatory before dispatch?",
+    "actual": "Next allowed without it (submit later succeeded with it ticked; not tested unticked to avoid dispatching unsafely)",
+    "description": "Needs business confirmation.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/dispatch/VD-01-next-without-safety.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T06:03:16.067Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 / Test Driver (B-944, LD-353)",
+    "id": "ISS-33",
+    "module": "Ready for Trip / Live Trips",
+    "screen": "Edit Tripsheet / Edit Trip Sheet",
+    "title": "\"Edit Tripsheet\" / \"Edit Trip Sheet\" menu items open a read-only \"View Trip Sheet\"",
+    "classification": "Terminology",
+    "severity": "Medium",
+    "pre": "TP-112 dispatched",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Ready For Trip",
+      "Locate TP-112",
+      "Menu > Edit Tripsheet",
+      "Advance prompt: No, Not Now",
+      "Trip Sheet tab: try to edit any field"
+    ],
+    "expected": "Editable trip sheet, or menu item named \"View Trip Sheet\"",
+    "actual": "Title \"View Trip Sheet\"; all fields read-only; Live stage text \"Trip sheet has already been generated. This form is view-only.\"",
+    "description": "Label promises editing; dispatch values (e.g. wrong odometer) cannot be corrected. Also \"Tripsheet\" vs \"Trip Sheet\" spelling differs between tabs.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/ready/RT-02-edit-tripsheet-fields.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-edit-trip-sheet.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.070Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 / Test Driver (B-944, LD-353)",
+    "id": "ISS-34",
+    "module": "Live Trips",
+    "screen": "Live Trips table",
+    "title": "Live Trips CUSTOMER TYPE shows \"Local\" instead of \"National\"",
+    "classification": "Data inconsistency",
+    "severity": "Low",
+    "pre": "TP-112 started",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Read CUSTOMER TYPE"
+    ],
+    "expected": "National (as in lead, inquiry, booking, completed)",
+    "actual": "Local (journey type)",
+    "description": "Wrong field mapped to the column (also TP-111 in run 20261112).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-01-live-row.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.071Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 / Test Driver (B-944, LD-353)",
+    "id": "ISS-35",
+    "module": "Live Trips",
+    "screen": "Driver Details",
+    "title": "Driver Aadhaar number displayed unmasked",
+    "classification": "Functional",
+    "severity": "High",
+    "pre": "TP-112 live",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Driver Details"
+    ],
+    "expected": "Aadhaar masked (e.g. XXXX XXXX 1212) per data-protection practice",
+    "actual": "Full 12-digit Aadhaar number shown",
+    "description": "Sensitive government ID exposed to every user who can open the trip (test driver value here, but production drivers would be affected).",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-driver-details.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:03:16.072Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 / Test Driver (B-944, LD-353)",
+    "id": "ISS-36",
+    "module": "Live Trips",
+    "screen": "Driver Details vs quote",
+    "title": "Driver Bata Rs 1,000 / Night Allowance Rs 1,200 differ from quoted driver allowance Rs 800 (clarify)",
+    "classification": "Data inconsistency",
+    "severity": "Low",
+    "pre": "Quote 1701 driver allowance Rs 800 x 1 day",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Driver Details",
+      "Compare with Update Inquiry driver allowance"
+    ],
+    "expected": "Clarify whether driver pay and customer allowance are separate",
+    "actual": "Driver Bata 1000, Night Allowance 1200; quote 800 / 800",
+    "description": "Possibly intentional (driver payout vs billed allowance); needs business confirmation.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-driver-details.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T06:03:16.074Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / AR 01 U 8228 / Test Driver (B-944, LD-353)",
+    "id": "ISS-37",
+    "module": "Live Trips",
+    "screen": "Live Trips > Notify Service Manager",
+    "title": "Notify Service Manager does nothing after declining the advance prompt",
+    "classification": "Functional",
+    "severity": "Medium",
+    "pre": "TP-112 live",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Live Trips",
+      "Locate TP-112",
+      "Menu > Notify Service Manager",
+      "Advance prompt: No, Not Now"
+    ],
+    "expected": "Notify form or confirmation",
+    "actual": "No dialog, no navigation, no message",
+    "description": "Dead action at the Live stage.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/live/LT-notify-service-manager.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.901Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-38",
+    "module": "Fleet & Vehicle Management / Quote",
+    "screen": "KPI card, quote form, trip sheet",
+    "title": "Spelling/terminology: \"Tarrif Management\", \"Pax's\", \"Tabbi have no data\"",
+    "classification": "Content",
+    "severity": "Low",
+    "pre": "Logged in",
+    "steps": [
+      "Fleet & Vehicles: read card \"Tarrif Management\"",
+      "Update Inquiry: label \"Enter Number of Pax's\"",
+      "Dispatch Trip Sheet: \"Tabbi have no data\""
+    ],
+    "expected": "\"Tariff Management\", \"Number of Passengers\", user-facing wording instead of internal \"Tabbi\"",
+    "actual": "As listed",
+    "description": "Copy errors across modules.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/allocation/VA-01-tab-Available.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/quote/QT-01-prefilled.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.908Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-39",
+    "module": "Completed Trip / Trip Closure",
+    "screen": "Completed Trips row menu",
+    "title": "\"Close Trip\" still offered after the trip is closed",
+    "classification": "Functional",
+    "severity": "Medium",
+    "pre": "TP-112 closed (Trip Closed Yes)",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Open row menu"
+    ],
+    "expected": "Close Trip hidden/disabled once closed",
+    "actual": "Menu: View Trip Summary, Close Trip, Download Invoice, Record Advance (same for TP-111 in run 20261112)",
+    "description": "Risk of re-closing / overwriting the closing trip sheet.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-07-closed-menu.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.911Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-40",
+    "module": "Completed Trip / Trip Closure",
+    "screen": "Close Trip Sheet",
+    "title": "Close Trip Sheet submit button labelled \"Generate Trip Sheet & Mark Vehicle Ready\"",
+    "classification": "Terminology",
+    "severity": "Low",
+    "pre": "TP-112 completed",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > Close Trip > No, Not Now > Next",
+      "Read submit button"
+    ],
+    "expected": "\"Close Trip\" / \"Submit Closing Sheet\"",
+    "actual": "\"Generate Trip Sheet & Mark Vehicle Ready\" (same label as dispatch)",
+    "description": "Copy-paste label; misleading at closure.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-closing-below-opening.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.922Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-41",
+    "module": "Completed Trip / Trip Closure",
+    "screen": "View Trip Summary",
+    "title": "Trip Summary for TP-112 shows VEH.NUM, PASSENGER and DUTY TYPE as N/A and all times 00:00",
+    "classification": "Data inconsistency",
+    "severity": "Medium",
+    "pre": "TP-112 completed with vehicle AR 01 U 8228",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > View Trip Summary"
+    ],
+    "expected": "Vehicle AR 01 U 8228, passenger Bikash N, duty type 8HR/80KM, start/end times",
+    "actual": "VEH.NUM N/A, PASSENGER N/A, DUTY TYPE N/A, S/E TIME 00:00 (TP-111 summary shows vehicle and 8HR/80KM)",
+    "description": "Invoice line lacks vehicle and duty details for the new record.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-112.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-111.png"
+    ]
+  },
+  {
+    "ts": "2026-11-13T06:09:30.927Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-42",
+    "module": "Completed Trip / Trip Closure",
+    "screen": "View Trip Summary",
+    "title": "Invoice number INV-103 shown before the trip is closed (clarify)",
+    "classification": "Data inconsistency",
+    "severity": "Low",
+    "pre": "TP-112 completed, Trip Closed No",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > View Trip Summary",
+      "Read Invoice Number"
+    ],
+    "expected": "Invoice number assigned at closure (rule to confirm)",
+    "actual": "Invoice Number INV-103, Invoice Date 13-11-2026 while Trip Closed is No",
+    "description": "Business clarification: is the invoice generated at completion or closure?",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-112.png"
+    ],
+    "clarification": true
+  },
+  {
+    "ts": "2026-11-13T06:09:30.942Z",
+    "env": "Admin Preprod (dari-preprod.siddagangatravels.com), Superadmin session",
+    "record": "TP-112 / B-944 / LD-353 / PNR SOQS555799",
+    "id": "ISS-43",
+    "module": "Completed Trip / Trip Closure",
+    "screen": "Close Trip Sheet > Present Diesel Input",
+    "title": "Close Trip accepts a negative Present Diesel Input and closes the trip",
+    "classification": "Validation",
+    "severity": "High",
+    "pre": "TP-112 completed; close sheet open (opening km 20000, last diesel 40)",
+    "steps": [
+      "Login",
+      "Fleet & Vehicles > Approved & Track Live Trips > Completed Trips",
+      "Locate TP-112",
+      "Menu > Close Trip > No, Not Now",
+      "Next",
+      "Closing Km 20040, Present Diesel Input -5",
+      "Click Generate Trip Sheet & Mark Vehicle Ready"
+    ],
+    "expected": "Rejected: diesel cannot be negative (as Total Km is)",
+    "actual": "Accepted; trip closed (Trip Closed Yes) with negative diesel saved",
+    "description": "Irreversible closure with invalid fuel data; diesel usage/mileage reports become wrong.",
+    "evidence": [
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-negative-diesel-km-mismatch.png",
+      "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-state-after-negative-diesel.png"
+    ]
+  }
+]

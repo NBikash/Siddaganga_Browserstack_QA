@@ -1,0 +1,403 @@
+{
+  "id": "TC-06",
+  "started": "2026-11-12T07:29:43.191Z",
+  "checks": [
+    {
+      "name": "V1 blank pickup submit (CFG-1)",
+      "url": "https://preprod.siddagangatravels.com/",
+      "msgs": {
+        "inline": [
+          "Pickup location is required"
+        ],
+        "toasts": []
+      },
+      "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V1-blank-pickup.png"
+    },
+    {
+      "name": "V2 DD ON, drop blank",
+      "url": "https://preprod.siddagangatravels.com/",
+      "msgs": {
+        "inline": [
+          "Drop location is required"
+        ],
+        "toasts": []
+      },
+      "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V2-blank-drop.png"
+    },
+    {
+      "name": "V3 drop same as pickup (Whitefield → Whitefield)",
+      "drop": "Whitefield, Bengaluru, Karnataka, India",
+      "form": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "date": "2026-11-12",
+        "time": "12:59 PM",
+        "selectedDates": "",
+        "pax": "1",
+        "hours": "1"
+      },
+      "url": "https://preprod.siddagangatravels.com/send-inquiry",
+      "msgs": {
+        "inline": [],
+        "toasts": []
+      },
+      "shots": [
+        "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V3-same-pickup-drop-form.png",
+        "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V3-same-pickup-drop-results.png"
+      ],
+      "summary": "Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Hour Passengers:1 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India"
+    },
+    {
+      "0": {
+        "valueAfter": "1",
+        "msgs": []
+      },
+      "999": {
+        "valueAfter": "999",
+        "msgs": []
+      },
+      "name": "V4 passengers invalid values",
+      "blank": {
+        "valueAfter": "",
+        "msgs": []
+      },
+      "shotBlank": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V4-pax-blank.png",
+      "-3": {
+        "valueAfter": "1",
+        "msgs": []
+      },
+      "letters": {
+        "valueAfter": ""
+      }
+    },
+    {
+      "0": {
+        "valueAfter": "0",
+        "msgs": []
+      },
+      "25": {
+        "valueAfter": "25",
+        "msgs": []
+      },
+      "name": "V5 hours invalid values",
+      "shot25": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V5-hours-25.png",
+      "blank": {
+        "valueAfter": "",
+        "msgs": []
+      },
+      "shotBlank": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V5-hours-blank.png",
+      "1.5": {
+        "valueAfter": "1",
+        "msgs": []
+      }
+    },
+    {
+      "name": "V6 past date typed",
+      "before": "2026-11-12",
+      "typed": "2026-11-01",
+      "after": "2026-11-12",
+      "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V6-past-date-disabled.png"
+    },
+    {
+      "name": "V7 toggle transitions with data entered",
+      "cfg1_filled": {
+        "multiDay": false,
+        "differentDrop": false,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-12",
+        "time": "1:02 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "dd_on_with_drop": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "Mangaluru, Karnataka, India",
+        "date": "2026-11-12",
+        "time": "1:02 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "dd_off": {
+        "multiDay": false,
+        "differentDrop": false,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-12",
+        "time": "1:02 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "dd_on_again": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-12",
+        "time": "1:02 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "md_on": {
+        "multiDay": true,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "",
+        "time": "1:02 PM",
+        "selectedDates": "Selected Dates (1):",
+        "pax": "3",
+        "hours": "2"
+      },
+      "md_click_today": {
+        "multiDay": true,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "",
+        "time": "1:02 PM",
+        "selectedDates": "Selected Dates (1):",
+        "pax": "3",
+        "hours": "2"
+      },
+      "md_off": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-12",
+        "time": "1:02 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "shots": [
+        "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V7-dd-off-on-drop-retained.png",
+        "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-V7-md-today-locked.png"
+      ]
+    },
+    {
+      "name": "R1 recovery: CFG-3 Whitefield → Mangaluru, today 2:00 PM, 3 pax, 2 hrs, MPV",
+      "pickup": "Whitefield, Bengaluru, Karnataka, India",
+      "drop": "Mangaluru, Karnataka, India",
+      "form": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "Mangaluru, Karnataka, India",
+        "date": "2026-11-12",
+        "time": "2:00 PM",
+        "selectedDates": "",
+        "pax": "3",
+        "hours": "2"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :12 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:2 Hours Passengers:3 Pax Drop Address:Mangaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 2 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹11,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹11,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹13,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹4,500"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹7,800"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹5,300"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-results-summary.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 1,
+        "fareBreakup": {
+          "header": "View Vehicle Details | MPV's",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹7,000"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹50 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹700 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹800"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹800"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+            "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+            "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+            "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : MPV's – 1",
+          "dates": "12 Nov, 2026",
+          "passenger": "3",
+          "pickup": "Whitefield, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹7,000"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹800"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹0"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹7,800"
+            }
+          ],
+          "buttons": [
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "D",
+            "G",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : MPV's – 1",
+            "MPV's",
+            "7 Seater",
+            "Type: MPV's",
+            "Luggage: Car Boot (400–500 L)",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Whitefield, Bengaluru, Karnataka, India",
+            "Dropoff Location",
+            "Mangaluru, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "12 Nov, 2026",
+            "Passenger",
+            "3",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹7,000",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹800",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0",
+            "Estimated Grand Total",
+            "₹7,800",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R1-applied-fare.png"
+        ],
+        "submitClicked": false
+      }
+    },
+    {
+      "name": "R2 results page refresh",
+      "url": "https://preprod.siddagangatravels.com/",
+      "stillHasResults": false,
+      "summaryKept": false,
+      "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R2-after-refresh.png"
+    },
+    {
+      "name": "R3 browser back to home form",
+      "url": "https://preprod.siddagangatravels.com/",
+      "form": {
+        "multiDay": false,
+        "differentDrop": false,
+        "pickup": "",
+        "drop": "",
+        "date": "2026-11-12",
+        "time": "1:09 PM",
+        "selectedDates": "",
+        "pax": "1",
+        "hours": "1"
+      },
+      "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-06-R3-after-back.png"
+    }
+  ],
+  "finished": "2026-11-12T07:40:31.666Z"
+}

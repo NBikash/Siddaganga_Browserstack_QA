@@ -1,0 +1,41 @@
+{
+  "id": "TC-06",
+  "started": "2026-11-12T08:37:06.423Z",
+  "checks": [
+    {
+      "name": "V4 passengers invalid values",
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+    },
+    {
+      "0": {
+        "valueAfter": "0",
+        "msgs": []
+      },
+      "25": {
+        "valueAfter": "25",
+        "msgs": []
+      },
+      "name": "V5 hours invalid values",
+      "shot25": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V5-hours-25.png",
+      "blank": {
+        "valueAfter": "",
+        "msgs": [
+          "numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+        ]
+      },
+      "shotBlank": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V5-hours-blank.png",
+      "1.5": {
+        "valueAfter": "1",
+        "msgs": []
+      }
+    },
+    {
+      "name": "V6 past date typed",
+      "before": "2026-11-12",
+      "typed": "2026-11-01",
+      "after": "2026-11-12",
+      "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V6-past-date-disabled.png"
+    }
+  ],
+  "finished": "2026-11-12T08:39:05.352Z"
+}

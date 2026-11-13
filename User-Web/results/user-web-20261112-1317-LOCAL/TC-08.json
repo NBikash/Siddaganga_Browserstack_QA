@@ -1,0 +1,254 @@
+{
+  "id": "TC-08",
+  "started": "2026-11-12T08:10:26.722Z",
+  "steps": [
+    {
+      "label": "peenya-maddur-8hr",
+      "input": {
+        "label": "peenya-maddur-8hr",
+        "dd": true,
+        "pickup": "Peenya",
+        "drop": "Maddur",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "pax": 1,
+        "hrs": 8,
+        "vehicle": "P16UB"
+      },
+      "pickupSuggest": {
+        "query": "Peenya",
+        "suggestions": [
+          "Peenya Bengaluru, Karnataka, India",
+          "Peenya 2nd Stage Vaddarapalya, Ragavendra Industrial Estate, Bengaluru, Karnataka, India",
+          "Peenya Metro Station parking Peenya, Yeswanthpur, Bengaluru, Karnataka, India",
+          "Peenya 1st Stage, Peenya Bengaluru, Karnataka, India",
+          "Peenya Industrial Area Phase IV, Peenya Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Peenya, Bengaluru, Karnataka, India"
+      },
+      "dropSuggest": {
+        "query": "Maddur",
+        "suggestions": [
+          "Maddur Karnataka, India",
+          "Maddur Tiffanys @ Nidagatta new Express Highway, Nidaghatta, Maddur, Karnataka, India",
+          "Maddur Bus Stop Maddur Main Road, Maddur, Karnataka, India",
+          "Maddur Tiffanys @ shivapura Maddur, Karnataka, India",
+          "Maddur Railway Station Maddur Railway Station Road, Shivapura, Karnataka, India"
+        ],
+        "chosen": "Maddur, Karnataka, India"
+      },
+      "form": {
+        "multiDay": false,
+        "differentDrop": true,
+        "pickup": "Peenya, Bengaluru, Karnataka, India",
+        "drop": "Maddur, Karnataka, India",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "selectedDates": "",
+        "pax": "1",
+        "hours": "8"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Peenya, Bengaluru, Karnataka, India → Maddur, Karnataka, India → Garage (Return) Distance:80 KM Dates :20 Nov, 2026 Pickup Address:Peenya, Bengaluru, Karnataka, India Duration:8 Hours Passengers:1 Pax Drop Address:Maddur, Karnataka, India",
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹11,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹11,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹13,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹4,500"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹7,800"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹5,300"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-results-summary.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 3,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 16 Seater Premium Urbania",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹7,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹40 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹800 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹800"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹800"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+            "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+            "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+            "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : 16 Seater Premium Urbania – 1",
+          "dates": "20 Nov, 2026",
+          "passenger": "1",
+          "pickup": "Peenya, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹7,500"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹800"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹0"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹8,300"
+            }
+          ],
+          "buttons": [
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "D",
+            "G",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : 16 Seater Premium Urbania – 1",
+            "16 Seater Premium Urbania",
+            "16 Seater",
+            "Type: 16 Seater Premium Urbania",
+            "Luggage:",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Peenya, Bengaluru, Karnataka, India",
+            "Dropoff Location",
+            "Maddur, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "20 Nov, 2026",
+            "Passenger",
+            "1",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹7,500",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹800",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0",
+            "Estimated Grand Total",
+            "₹8,300",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-applied-fare.png"
+        ],
+        "submission": {
+          "ctaLabel": "Confirm & Submit Booking",
+          "urlBefore": "https://preprod.siddagangatravels.com/send-inquiry",
+          "urlAfter": "https://preprod.siddagangatravels.com/send-inquiry",
+          "messages": [
+            "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹8,300 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+          ],
+          "apiCalls": [
+            {
+              "method": "POST",
+              "url": "/user/save-inquiry",
+              "status": 201,
+              "body": "{\"encrypted\":true,\"iv\":\"nTAb09ePKAH44xb8\",\"tag\":\"2RK0Jy2KEtTk3JeSqJcrHg==\",\"data\":\"HlMjzy70JOYkMkkhk1SZWaCMfroA91zEdleTQZxcLIf021c0WSzfxDks+92kQNEo0pzcIdNLriMKo5A5q/OGXUfFMR5TORuvJl3XJDlrlqZzcozMCeow6ZmvE2y7yKa+0yZo0+hBBUYznPbXRDfw4yu9m4G4y3P86ArDQWfo1h5TZ5xE9ly4A1BEAxUr3ln7/6xBGKcGGrI/8k7sPnlf5wbHsDVPTy4JW3Rs2nflHYUbZ15kRTICdgojPOWJlMv7cg2ynADz0FWCiQ==\"}"
+            },
+            {
+              "method": "POST",
+              "url": "/user/draft-inquiry/delete",
+              "status": 200,
+              "body": "{\"encrypted\":true,\"iv\":\"Vt8XQ5MtXy1Q7Vu4\",\"tag\":\"9M2EKUOWU5QWY0uKMa0eUA==\",\"data\":\"IwVYzM6rUvUNTv+d1kauH/0ut7ksd46dKdXuV1IGsOeFtN1CV+8+akYevz8Xovl/I2Ps1OAIn5BkcHs2M/aW8glTp+BuGi2XUWiCNJLbcWhZPGZaky8+hsLYa3inDOfFy3m+Txe5WcppwSb2Cslw8LY3dbAfMgilcpbSdn/FslrXL92CKQ==\"}"
+            }
+          ],
+          "inquiryRef": null,
+          "paymentShown": false,
+          "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-submit-result.png",
+          "success": true
+        }
+      }
+    }
+  ],
+  "finished": "2026-11-12T08:12:38.377Z"
+}

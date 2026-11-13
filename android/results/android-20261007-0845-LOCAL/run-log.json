@@ -1,0 +1,26 @@
+{
+  "runId": "android-20261007-0845-LOCAL",
+  "platform": "android",
+  "scope": "Local module full coverage on new QA build app-release_6Oct26.apk: 112 Local cases (HOME Local form, LOC, TRIP, VLIST, VDET, CONF, BOOK, INQ incl. payment screen and cancellation) + re-verification of open Local defects",
+  "build": "Uploaded APK app-release_6Oct26.apk (v1.1, com.siddaganga)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-07T03:15:52.108Z",
+  "endedAt": null,
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE)",
+      "method": "Mobile + password, entered by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-07T03:15:52.396Z",
+      "text": "User approved in chat (2026-10-07): submitting Local inquiries; cancelling only inquiries created during this run. NOT approved: Pay Advance to gateway, offline/network toggling, logout, profile/settings saves, support tickets, registrations, Jira."
+    }
+  ],
+  "environmentNotes": [],
+  "cases": [],
+  "bugs": []
+}

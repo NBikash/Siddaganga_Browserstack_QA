@@ -1,0 +1,987 @@
+{
+  "runId": "android-20261029-1044-OUTSTATION-UC",
+  "platform": "android",
+  "scope": "Module: Outstation - 88 use-case variations, manual-exploration/outstation-use-case.xlsx sheet Outstation",
+  "build": "app-release_28thOct.apk v1.1 (uploaded APK, App Live)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-29T05:14:27.066Z",
+  "endedAt": "2026-10-29T08:42:15.388Z",
+  "credentials": [],
+  "approvals": [
+    {
+      "at": "2026-10-29T05:14:27.726Z",
+      "text": "User approved (2026-10-29): inquiry Confirm for Outstation submission variations; Cancel Trip only on inquiries created in this run; open the payment page without paying. NOT approved: changing app language. Devices: Pixel 7 / Android 13 only."
+    }
+  ],
+  "environmentNotes": [
+    "Case IDs UC_OS_<UC>_<n> map to manual-exploration/outstation-use-case.xlsx (e.g. UC_OS_OP1_01 = OP-1 row 1, UC_OS_ON2_05 = ON-2 row 5).",
+    "Inquiry 4605 created 29-10 05:34 device time (Outstation Majestic->Mysuru round trip, 29-31 Oct, 4 pax, 49 Seater, Rs 1,60,900). Payment link opened for Rs 2,00,000 (PNR TQXC180085, Razorpay test mode) - NOT paid.",
+    "Inquiry 4605 cannot be cancelled online (within 6 h NO_SHOW) - needs admin clean-up, including the pending Rs 2,00,000 payment-link entry."
+  ],
+  "cases": [
+    {
+      "id": "UC_OS_OP1_15",
+      "status": "Pass",
+      "actual": "Outstation form: Pickup Location, Pickup Date & Time (pre-filled 29-10-2026 05:30 am; 30-minute steps), Destination / First Destination *, '+ Add Another Destination' (icon visible), Drop Date & Time (empty), Number of Passengers = 1, Additional Options 'Different drop location'; no Hours / Multi-day.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Delete a middle destination when 3 or more are added; the remaining destinations keep their order",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_01",
+      "status": "Pass",
+      "actual": "Search Vehicles with Pickup empty -> 'Pickup location is required'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting a Pickup Location (field left blank)",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_02",
+      "status": "Pass",
+      "actual": "First Destination empty -> 'First destination is required'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting First Destination location (field left blank)",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_05",
+      "status": "Pass",
+      "actual": "Drop Date empty -> 'This field is required' under Drop Date & Time (generic wording).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting a Drop Date",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_06",
+      "status": "Pass",
+      "actual": "Drop Time empty -> covered by the same 'This field is required' under Drop Date & Time.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting a Drop Time",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_03",
+      "status": "Pass",
+      "actual": "Pickup Date cannot be left blank - pre-filled with today; wheel has no empty value (verified default).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting a Pickup Date",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_04",
+      "status": "Pass",
+      "actual": "Pickup Time cannot be left blank - pre-filled with the next half hour (verified default).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Submit without selecting a Pickup Time",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_11",
+      "status": "Pass",
+      "actual": "Passengers 0 -> inline 'Enter at least 1 passenger'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Enter zero (0) in the Number of Passengers field",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_12",
+      "status": "Pass",
+      "actual": "Passengers empty -> field highlighted red and Search blocked.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Leave the Number of Passengers field completely empty",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_19",
+      "status": "Fail",
+      "actual": "'-4' becomes 4, '1.5' becomes 15 silently (decimal point stripped); field accepts 999 passengers (3 digits) - no maximum, and inconsistent with Multi which caps at 2 digits.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Passengers: negative, decimal or non-numeric input rejected; maximum passengers enforced [limit to confirm]",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "bugs": [
+        "BUG-UI-OS-001"
+      ]
+    },
+    {
+      "id": "UC_OS_ON2_13",
+      "status": "Pass",
+      "actual": "'Different drop location' ON with empty drop -> 'Drop location is required'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Enable \"Different drop location\" toggle but leave the drop location field blank",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_15",
+      "status": "Pass",
+      "actual": "'+ Add Another Destination' left empty -> 'Destination location is required', search blocked. (Message shown immediately on add - BUG-MLT-020.)",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Add a secondary destination (+ Add Another Destination) but leave it empty before submitting",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_14",
+      "status": "Pass",
+      "actual": "First Destination = Majestic (same as pickup) -> 'Destination cannot be the same as the pickup location.' (BUG-OUT-016 fixed).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Select identical locations for both Pickup and First Destination",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "evidence": [
+        "UC_OS_ON2_14_1_same-as-pickup-error.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP8_04",
+      "status": "Pass",
+      "actual": "First Destination picker title 'First Destination', subtitle 'Select your destination to complete your inquiry' (BUG-OUT-002 fixed); field shows the place name 'Mysuru, Karnataka, India'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-8 - Outstation — Navigation, Content and Account Type",
+      "scenario": "Destination picker shows the correct title and subtitle, and the selected place name appears in the field",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_09",
+      "status": "Pass",
+      "actual": "Pickup date wheel springs back from 28 to 29 Oct (today) - past dates cannot be selected.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Select a past Pickup Date in the date picker calendar",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_10",
+      "status": "Fail",
+      "actual": "Pickup time set to 29-10 05:00 am at device time 05:24 - accepted with no inline error (QA report 'missing error for a past pickup time' still open).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Select a past Pickup Time for the current date",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "bugs": [
+        "BUG-OS-001"
+      ]
+    },
+    {
+      "id": "UC_OS_ON2_21",
+      "status": "Pass",
+      "actual": "Drop/Return date picker titled 'Return Date' opens on 29-10 (pickup date = today); earlier date springs back. Title shown as 'Return Date' although a different drop location is enabled (one-way).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Default pickup time becomes past while the form is idle: Search is blocked with a clear message",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "bugs": [
+        "BUG-UI-OS-002"
+      ]
+    },
+    {
+      "id": "UC_OS_ON2_07",
+      "status": "Pass",
+      "actual": "Drop date earlier than pickup cannot be selected (wheel springs back to the pickup date).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Select a Drop Date that is earlier than the Pickup Date",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_08",
+      "status": "Pass",
+      "actual": "Same date, drop 05:30 am < pickup 09:00 am -> 'Drop date & time must be after pickup date & time'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Select a Drop Time earlier than the Pickup Time on the exact same date",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "evidence": [
+        "UC_OS_ON2_08_1_drop-before-pickup.png"
+      ]
+    },
+    {
+      "id": "UC_OS_ON2_18",
+      "status": "Pass",
+      "actual": "Drop 29-10 09:00 am = pickup 09:00 am -> 'Drop date & time must be after pickup date & time'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Drop date and time exactly equal to the pickup date and time is rejected",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_02",
+      "status": "Pass",
+      "actual": "Two destinations (Mysuru, Madikeri) shown in order on Ready to Explore.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Multiple destinations using \"+ Add Another Destination\" button",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_05",
+      "status": "Pass",
+      "actual": "Different drop location Mangaluru: route '... -> Madikeri -> Mangaluru', Drop Location Mangaluru.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Custom final drop location using \"Different drop location\" toggle",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_06",
+      "status": "Pass",
+      "actual": "Single-day trip 29-10 09:00 am -> 08:00 pm accepted; Dates '29 Oct, 2026'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Single-day outstation trip (Pickup & Drop on the exact same date)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_12",
+      "status": "Pass",
+      "actual": "4 passengers accepted; Ready to Explore 'Passengers 4'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Standard group passenger count fitting inside a single vehicle (e.g., 4 or 6 passengers)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP8_01",
+      "status": "Pass",
+      "actual": "Ride -> Home: all Outstation values (stops, dates, passengers, different drop) kept.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-8 - Outstation — Navigation, Content and Account Type",
+      "scenario": "Form values are kept after switching bottom-nav tabs (Ride -> Home)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_ON2_17",
+      "status": "Pass",
+      "actual": "Double-tap Search Vehicles opened a single Ready to Explore sheet (no duplicate).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Tap Search Vehicles rapidly multiple times (Double-tap) to test duplicate request prevention",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_14",
+      "status": "Pass",
+      "actual": "Search Vehicles opens 'Now you're ready to explore' with Outstation Trip badge and map route.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Search vehicles for valid route and successfully navigate to Vehicle Listing (Explore screen)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00"
+    },
+    {
+      "id": "UC_OS_OP3_01",
+      "status": "Fail",
+      "actual": "Ready to Explore lists all stops in order and drop Mangaluru, but shows no pickup time and no drop/return time (only 'Dates 29 Oct, 2026') - BUG-OUT-006 still present.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-3 - Review the Outstation Trip in Ready to Explore",
+      "scenario": "Summary shows every stop in order, pickup time, return date and time, and the correct drop location",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:28:37.079724+00:00",
+      "endedAt": "2026-10-29T05:28:37.079724+00:00",
+      "bugs": [
+        "BUG-OUT-006"
+      ],
+      "evidence": [
+        "UC_OS_OP3_01_1_summary-no-times.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP3_04",
+      "status": "Pass",
+      "actual": "Vehicle Age Preference (Brand New / New / Any) and Comfort Priority checkboxes select/unselect correctly. Note: after 'Edit Trip Details' and re-search the selections were reset to none (not kept).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-3 - Review the Outstation Trip in Ready to Explore",
+      "scenario": "Vehicle Age Preference (Brand New / New / Any) and Comfort Priority options can be selected and unselected, and are kept when searching",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP3_03",
+      "status": "Pass",
+      "actual": "Edit Trip Details -> form with values kept; Destination 2 changed Madikeri -> Hassan; re-search shows route via Hassan and distance 401 -> 423 KM.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-3 - Review the Outstation Trip in Ready to Explore",
+      "scenario": "Edit Trip Details: change a destination or date and verify the updated summary",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP3_02",
+      "status": "Pass",
+      "actual": "Distance reflects the route and updates with destinations (401 KM via Madikeri, 423 KM via Hassan, 290 KM Majestic-Mysuru-Majestic); Inquiry 4605 Distance 290 KM = summary 290 KM (QA 163 vs 1000 KM not reproduced).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-3 - Review the Outstation Trip in Ready to Explore",
+      "scenario": "Distance reflects the full route and matches the booking card and Inquiry Details",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_03",
+      "status": "Pass",
+      "actual": "Destination 2 (Hassan) removed with the bin icon in the edit form; route reverted to Majestic -> Mysuru.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Remove an added secondary destination before submitting",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_01",
+      "status": "Pass",
+      "actual": "Single destination round trip Majestic -> Mysuru (no different drop) searched, priced and submitted (Inquiry 4605).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Single destination (Standard One-Way trip)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP1_04",
+      "status": "Fail",
+      "actual": "[Rule to confirm] Different drop OFF: Ready to Explore shows Drop Location 'Mysuru' (final destination) while Confirm shows Dropoff 'Majestic' (pickup) and Inquiry Details ends at 'Mysuru' - the same trip shows two different drops.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Default drop location (automatically set to final destination)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-MLT-015"
+      ],
+      "evidence": [
+        "UC_OS_OP1_04_1_summary-drop-mysuru.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP1_07",
+      "status": "Pass",
+      "actual": "Multi-day trip 29-31 Oct (drop 2 days after pickup) accepted; summary 'Dates 29-31 Oct, 2026', Confirm '29-31 Oct 2026 Pickup Time 09:00 am Return Time 08:00 pm'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-1 - Create an Outstation Journey",
+      "scenario": "Multi-day outstation trip (Drop Date 2+ days after Pickup Date)",
+      "testType": "Functional",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP4_01",
+      "status": "Pass",
+      "actual": "Available Vehicles '32 vehicles found' with category chips (Luxury/Premium/Deluxe) and brand chips; Filters available (filter options test data - BUG-VLIST-006).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-4 - Outstation Vehicle Selection and Fare",
+      "scenario": "Select different vehicle categories and use the category chips / Filters",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP4_02",
+      "status": "Fail",
+      "actual": "3-day trip (29-31 Oct): list 'Starts From' and Vehicle Details footer show Rs 52,500 (one day) while Confirm estimate is Rs 1,60,900 - list price does not reflect days/route (BUG-OUT-007 still present).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-4 - Outstation Vehicle Selection and Fare",
+      "scenario": "Vehicle list shows 'N vehicles found', scrolls smoothly with images loading; a filter with no match shows 'No Vehicles Found' with Clear selection",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-OUT-007"
+      ],
+      "evidence": [
+        "UC_OS_OP4_02_1_list-52500-3day.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP4_03",
+      "status": "Pass",
+      "actual": "Vehicle Details from an Outstation search: footer 'Starting From Rs 52,500 /day + Rs 105/km'; View Fare Breakup opens on the 'Outstation Trip' tab.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-4 - Outstation Vehicle Selection and Fare",
+      "scenario": "List 'Starts From' price reflects the number of days and the route, and changes when the duration changes",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP4_04",
+      "status": "Fail",
+      "actual": "Fare breakup (Outstation tab): Base Rate Rs 52,500 (driver/fuel/day allowance), Day Bata Rs 800, Night Bata Rs 900, Toll & Parking Actuals, GST Additional - no per-km or minimum-km line although the pricing card says '+ Rs 105/km'; no State Tax line though Confirm adds State Tax Rs 1,000.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-4 - Outstation Vehicle Selection and Fare",
+      "scenario": "Vehicle Details opened from an Outstation search shows the Outstation price and opens the fare breakup on the Outstation tab",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-OUT-008"
+      ],
+      "evidence": [
+        "UC_OS_OP4_04_1_breakup-no-per-km.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP4_05",
+      "status": "Fail",
+      "actual": "Confirm: Base 1,57,500 (3 x 52,500) + Day Bata 3 x 800 + Night Bata 0 + State Tax 1,000 = Rs 1,60,900. Per-day part correct, but no km charge for 290 km at Rs 105/km and total does not equal the list price (52,500). [Per-km rule to confirm]",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-4 - Outstation Vehicle Selection and Fare",
+      "scenario": "Fare breakup lists per-day base, per-km / minimum km, bata, state tax and the toll/GST note",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-OUT-009"
+      ],
+      "evidence": [
+        "UC_OS_OP4_05_1_confirm-160900.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP5_01",
+      "status": "Pass",
+      "actual": "Confirm shows Outstation badge, pickup Majestic -> Mysuru, (multi-stop: -> Mysuru -> Hassan, Dropoff Mangaluru), Dates '29-31 Oct 2026' with Pickup/Return times, '4 Passengers', vehicle '49 Seater MultiAxle Volvo - 1'. Date range uses an en dash - QA comma/hyphen issue not reproduced.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-5 - Confirm and Submit the Outstation Inquiry",
+      "scenario": "Confirm Your Trip shows every stop, the drop, the date range with correct separators, passengers and the selected vehicle",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP5_04",
+      "status": "Pass",
+      "actual": "Customer Details: name, 'No email address found', phone.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-5 - Confirm and Submit the Outstation Inquiry",
+      "scenario": "Confirm Your Trip shows customer details (name, email or 'No email address found', phone) above the selected vehicle",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP5_02",
+      "status": "Pass",
+      "actual": "'Edit Inquiry' opens the Home Outstation form with all values kept (QA 'navigates back' issue not reproduced).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-5 - Confirm and Submit the Outstation Inquiry",
+      "scenario": "'Edit Inquiry' opens the edit form with all values kept",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP5_03",
+      "status": "Pass",
+      "actual": "Submit -> 'Inquiry Submitted Successfully!' Estimated Cost (Approx.) Rs 1,60,900 = Confirm total.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-5 - Confirm and Submit the Outstation Inquiry",
+      "scenario": "Confirm and submit: the success modal 'Estimated Cost' equals the Confirm total",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "evidence": [
+        "UC_OS_OP5_03_1_success-160900.png"
+      ]
+    },
+    {
+      "id": "UC_OS_ON2_22",
+      "status": "Pass",
+      "actual": "Double-tap on Confirm created exactly one inquiry (Week Inquired 10 -> 11; one card Rs 1,60,900, Inquiry 4605).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC ON-2 - Create an Outstation Journey — Negative Scenarios",
+      "scenario": "Drop / Return date picker opens on the pickup date and offers no earlier dates; picker title matches the trip ('Return Date' for a round trip, 'Drop Date' with a different drop)",
+      "testType": "Negative",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP5_06",
+      "status": "Pass",
+      "actual": "'Track My Inquiry' opens Ride > My Bookings.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-5 - Confirm and Submit the Outstation Inquiry",
+      "scenario": "After submission: 'Track My Inquiry' opens Ride; 'Back to Home' returns to a reset form",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP6_01",
+      "status": "Pass",
+      "actual": "Inquiry appears under Week > Inquired: card 'Outstation', 3 days, 290 KM, 49 seats, 4 pax, 49 Seater MultiAxle Volvo, Starts From Rs 1,60,900.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "The inquiry appears in Ride (Week / Month); the card shows type, stops, distance and amount",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP6_02",
+      "status": "Fail",
+      "actual": "Inquiry 4605: Schedule 29-31 Oct 2026, Pickup 09:00 am, Expected arrival 31 Oct 2026 08:00 pm (return shown - BUG-OUT-011 fixed); but route ends at 'Mysuru' for a round trip and Total shown unformatted 'Rs160900'.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "Inquiry Details shows all stops, the schedule with the return date and time, and the total",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-MLT-015"
+      ],
+      "evidence": [
+        "UC_OS_OP6_02_1_inq4605.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP6_06",
+      "status": "Pass",
+      "actual": "Payment section: Advance Received Rs0, Invoice 'Not generated yet', Payment amount 500, Razorpay selected / Cashfree, Pay Advance.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "Payment section defaults: Advance Received Rs 0, Invoice 'Not generated yet', amount 500, Razorpay selected",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP6_05",
+      "status": "Fail",
+      "actual": "Advance Rs 2,00,000 entered (inquiry total Rs 1,60,900) -> no validation; Secure Payment (Razorpay test mode) created a payment link for INR 2,00,000.00 (PNR TQXC180085). Not paid - backed out.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "Payment: an advance higher than the total is rejected; a gateway failure is shown cleanly and nothing is recorded",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00",
+      "bugs": [
+        "BUG-OUT-012"
+      ],
+      "evidence": [
+        "UC_OS_OP6_05_1_advance-above-total.png"
+      ]
+    },
+    {
+      "id": "UC_OS_OP6_07",
+      "status": "Pass",
+      "actual": "Pay Advance opens 'Secure Payment' with Booking PNR TQXC180085, payee Siddaganga Services, 'Advance payment for booking TQXC180085', amount = entered amount, expiry, Test Mode notice, Proceed to Pay. Back returns to Inquiry Details with Advance Rs0 (no payment made).",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "Enter a valid advance amount and open the Secure Payment page with the correct amount and PNR (real payment only with approval)",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:37:31.303517+00:00",
+      "endedAt": "2026-10-29T05:37:31.303517+00:00"
+    },
+    {
+      "id": "UC_OS_OP7_02",
+      "status": "Pass",
+      "actual": "Inquiry 4605 (pickup 29-10 09:00 am, 3 hours ahead): Cancel sheet shows slab 'T < 6 hrs - NO_SHOW', penalty 100%, refund Rs0.00 and 'Cancellation is not allowed for this time window. Trips within 6 hours of departure cannot be cancelled online.' Only a Back button - no Confirm Cancellation.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-7 - Cancel an Outstation Inquiry",
+      "scenario": "Less than 6 hours before departure: online cancellation is blocked (NO_SHOW)",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:38:41.561370+00:00",
+      "endedAt": "2026-10-29T05:38:41.561370+00:00"
+    },
+    {
+      "id": "UC_OS_OP6_08",
+      "status": "Fail",
+      "actual": "Opening the payment page and backing out without paying added a 'Payment History' entry 'Advance - Razorpay (Online) Rs200000, PENDING' on Inquiry 4605 (amount above the Rs 1,60,900 total); abandoned links stay as pending payments.",
+      "isNew": false,
+      "module": "Outstation",
+      "feature": "UC OP-6 - Verify the Outstation Inquiry in the Ride Module",
+      "scenario": "Back from Inquiry Details returns to My Bookings with the period and tab filter kept",
+      "testType": "Business Flow",
+      "priority": "High",
+      "startedAt": "2026-10-29T05:38:41.561370+00:00",
+      "endedAt": "2026-10-29T05:38:41.561370+00:00",
+      "bugs": [
+        "BUG-OUT-012"
+      ],
+      "evidence": [
+        "UC_OS_OP6_08_1_pending-payment-entry.png"
+      ]
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-OUT-006",
+      "title": "Outstation Ready to Explore shows no pickup time and no return/drop time",
+      "module": "TRIP - Outstation",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible on 28thOct build",
+      "tcIds": [
+        "UC_OS_OP3_01"
+      ],
+      "reproducibility": "Always (2/2)",
+      "preconditions": "Home > Outstation",
+      "steps": [
+        "Pickup Majestic 29-10 09:00 am, destinations Mysuru, Madikeri, drop Mangaluru 29-10 08:00 pm, 4 pax",
+        "Search Vehicles",
+        "Read the Ready to Explore card"
+      ],
+      "expected": "Pickup time and return/drop date and time shown with the dates",
+      "actual": "Only 'Dates 29 Oct, 2026' (and '29-31 Oct, 2026' for the multi-day trip); no times",
+      "evidence": [
+        "UC_OS_OP3_01_1_summary-no-times.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-007",
+      "title": "Outstation list and Vehicle Details price shows one day (Rs 52,500) for a 3-day trip; Confirm shows Rs 1,60,900",
+      "module": "VLIST / VDET - Outstation",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "UC_OS_OP4_02"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Outstation round trip Majestic -> Mysuru 29-31 Oct, 4 pax",
+      "steps": [
+        "Search Vehicles > Search Vehicles",
+        "Read 'Starts From' of 49 Seater MultiAxle Volvo",
+        "Open details (footer) > Book Now > read Estimated Grand Total"
+      ],
+      "expected": "List / details price reflects the trip (days, route) and equals the Confirm estimate",
+      "actual": "List and details footer Rs 52,500 (/day); Confirm Rs 1,60,900",
+      "evidence": [
+        "UC_OS_OP4_02_1_list-52500-3day.png",
+        "UC_OS_OP4_05_1_confirm-160900.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-008",
+      "title": "Outstation fare breakup has no per-km / minimum-km line although the pricing card shows '+ Rs 105/km'; State Tax missing",
+      "module": "VDET - Outstation",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "UC_OS_OP4_04"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Vehicle Details from an Outstation search",
+      "steps": [
+        "Vehicle Details > View Fare Breakup > Outstation Trip tab"
+      ],
+      "expected": "Per-day base, per-km / minimum km, bata, state tax, toll/GST note",
+      "actual": "Base Rate 52,500, Day Bata 800, Night Bata 900, Toll & Parking Actuals, GST Additional - no km line, no State Tax (Confirm adds State Tax 1,000)",
+      "evidence": [
+        "UC_OS_OP4_04_1_breakup-no-per-km.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-009",
+      "title": "Outstation estimate charges no km for a 290 km trip (per-day only)",
+      "module": "CONF - Outstation",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - rule to confirm",
+      "tcIds": [
+        "UC_OS_OP4_05"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Outstation 29-31 Oct, 290 KM, 49 Seater (Rs 52,500/day + Rs 105/km)",
+      "steps": [
+        "Book Now > Confirm Your Trip > Estimated Trip Cost"
+      ],
+      "expected": "Base x days + km charge per the rate card + applicable bata + state tax",
+      "actual": "Base 1,57,500 (3 x 52,500) + Day Bata 3 x 800 + State Tax 1,000 = Rs 1,60,900; no km charge",
+      "evidence": [
+        "UC_OS_OP4_05_1_confirm-160900.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-012",
+      "title": "Advance payment above the inquiry total is accepted and leaves a Pending payment entry",
+      "module": "INQ - Outstation",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "UC_OS_OP6_05",
+        "UC_OS_OP6_08"
+      ],
+      "reproducibility": "Always (1/1)",
+      "preconditions": "Inquiry 4605, total Rs 1,60,900, Advance Rs 0",
+      "steps": [
+        "Inquiry Details > Payment amount 200000 > Pay Advance",
+        "Secure Payment opens - tap back without paying",
+        "Scroll Inquiry Details"
+      ],
+      "expected": "Amount above the total rejected; abandoned payment not recorded",
+      "actual": "Razorpay test-mode link created for INR 2,00,000.00 (PNR TQXC180085); Payment History shows 'Advance - Razorpay (Online) Rs200000 PENDING'",
+      "evidence": [
+        "UC_OS_OP6_05_1_advance-above-total.png",
+        "UC_OS_OP6_08_1_pending-payment-entry.png"
+      ]
+    },
+    {
+      "id": "BUG-MLT-015",
+      "title": "Outstation round trip: drop shown as the destination (Mysuru) on Ready to Explore and Inquiry Details but as the pickup (Majestic) on Confirm",
+      "module": "TRIP / CONF / INQ - Outstation",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - rule to confirm (same issue in Multi)",
+      "tcIds": [
+        "UC_OS_OP1_04",
+        "UC_OS_OP6_02"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Outstation Majestic -> Mysuru, Different drop location OFF",
+      "steps": [
+        "Search Vehicles: read Drop Location",
+        "Confirm Your Trip: read Dropoff Location",
+        "Inquiry Details 4605: read the last route stop"
+      ],
+      "expected": "One consistent drop for a round trip (rule to confirm: pickup or final destination)",
+      "actual": "Ready to Explore 'Mysuru'; Confirm 'Majestic'; Inquiry Details ends at 'Mysuru'",
+      "evidence": [
+        "UC_OS_OP1_04_1_summary-drop-mysuru.png",
+        "UC_OS_OP6_02_1_inq4605.png"
+      ]
+    },
+    {
+      "id": "BUG-OS-001",
+      "title": "Outstation accepts a pickup time earlier than the current time today without any error",
+      "module": "HOME - Outstation",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open (QA report Issues: missing error for past pickup time)",
+      "tcIds": [
+        "UC_OS_ON2_10"
+      ],
+      "reproducibility": "Always (1/1)",
+      "preconditions": "Device time 05:24, today 29-10-2026",
+      "steps": [
+        "Outstation > Pickup Date 29-10-2026 > Pickup Time 05:00 am > Done"
+      ],
+      "expected": "Inline 'Selected date and time has already passed' and search blocked",
+      "actual": "05:00 am accepted with no error",
+      "evidence": []
+    },
+    {
+      "id": "BUG-UI-OS-001",
+      "title": "Outstation passenger field: no maximum (999 accepted), '1.5' silently becomes 15, '-4' becomes 4",
+      "module": "HOME - Outstation",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "UC_OS_ON2_19"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Home > Outstation",
+      "steps": [
+        "Number of Passengers: type 999, then 1.5, then -4"
+      ],
+      "expected": "Maximum enforced; decimal/negative rejected with a message",
+      "actual": "999 accepted (Multi limits to 2 digits); 1.5 -> 15; -4 -> 4",
+      "evidence": []
+    },
+    {
+      "id": "BUG-UI-OS-002",
+      "title": "Drop date/time picker titled 'Return Date' / 'Return Time' even for a one-way trip with a different drop location",
+      "module": "HOME - Outstation",
+      "severity": "Low",
+      "priority": "P4",
+      "status": "New",
+      "tcIds": [
+        "UC_OS_ON2_21"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Outstation with Different drop location ON",
+      "steps": [
+        "Tap Drop Date & Time"
+      ],
+      "expected": "Picker titled 'Drop Date' / 'Drop Time' for a one-way trip",
+      "actual": "'Return Date' / 'Return Time'",
+      "evidence": []
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "UC_OS_OP7_02",
+    "current": "(paused - usage limit)",
+    "next": "OP-7 slabs on a 7+ day inquiry, OP-4 multi-bus (60 pax), OP-1 rows 7-13/16-20, OP-8, ON-2 remaining",
+    "state": "App Live Pixel 7, Inquiry Details 4605 with NO_SHOW cancel sheet open",
+    "at": "2026-10-29T05:38:42.639Z"
+  },
+  "partial": true,
+  "partialReason": "Interim report at 53/88 variations; remaining variations pending"
+}

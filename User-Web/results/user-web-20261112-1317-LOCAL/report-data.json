@@ -1,0 +1,1937 @@
+{
+  "meta": {
+    "environment": "User App Preprod (preprod.siddagangatravels.com), Chrome via Playwright, 1440×900, Personal Login (mobile)",
+    "subtitle": "Run user-web-20261112-1317-LOCAL · 12 Nov 2026 · Preprod · TC-01 to TC-08 (approved plan) · inquiry submission approved",
+    "table": {
+      "Run ID": "user-web-20261112-1317-LOCAL",
+      "Environment": "User App Preprod (preprod.siddagangatravels.com), Chrome via Playwright, 1440×900, Personal Login (mobile)",
+      "Module": "Local (Smart Inquiry)",
+      "Test data": "User_WEB_cases.xlsx — LOCAL, ADDITIONAL_TEST_INFO",
+      "Fare procedure": "User-Web/.claude/shared/fare-verification.md",
+      "Inquiries submitted": "9 (TC-01, TC-02, TC-03, TC-05, TC-06, TC-07 ×2, TC-08) — each confirmed by \"Inquiry Submitted Successfully!\" and save-inquiry HTTP 201",
+      "Not submitted": "TC-04 (application prevents multi-vehicle selection)",
+      "Confirmed defects": "8",
+      "Out of scope (not performed)": "Booking, payment, cancellation, Save As Draft, Custom Quote submit"
+    },
+    "highlights": [
+      "Extra-hour charges displayed in every Fare Breakup are never applied (TC-07, TC-03).",
+      "Distance is always 80 KM, so extra-km charges can never apply (TC-05, TC-06, TC-08).",
+      "Groups above 49 passengers cannot submit: a second vehicle replaces the first (TC-04).",
+      "Vehicle details show wrong subtitle/photos and raw JSON; booking vs inquiry wording is inconsistent end to end.",
+      "TC-06 passenger validation was not recorded (automation timeout) — not reported as an app defect."
+    ]
+  },
+  "cases": [
+    {
+      "id": "TC-01",
+      "title": "Normal Local trip (CFG-1)",
+      "cfg": "MD OFF · DD OFF",
+      "keyData": "Whitefield · 12 Nov 2026 3:00 PM · 1 pax · 1 hr",
+      "vehicle": "Sedan (D SDN)",
+      "status": "Pass",
+      "objective": "Main Local path from search to submitted inquiry with default drop = pickup; fare consistent with the Sedan Fare Breakup.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "OFF",
+        "Data row": "LOC-001",
+        "Pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "Drop": "(default = pickup) Whitefield",
+        "Date": "12 Nov 2026",
+        "Time": "3:00 PM",
+        "Passengers": "1",
+        "Hours": "1",
+        "Selected vehicle": "Sedan (D SDN, 4 seats), results page 1"
+      },
+      "journey": [
+        "Logged in (automated, Mobile Number mode).",
+        "Home → Local; entered pickup via Google suggestion; set date, time, passengers 1, hours 1.",
+        "Book Now! → /send-inquiry: 20 vehicles, \"Local – 1 HR / 80 KM\", Distance 80 KM.",
+        "Opened View Full Vehicle Details for Sedan → recorded Local Trip Pricing.",
+        "Book This Vehicle → \"Confirm Your Trip & Selected Vehicles\" → recorded Estimated Trip Cost.",
+        "Clicked \"Confirm & Submit Booking\" → \"Inquiry Submitted Successfully!\" (API save-inquiry 201)."
+      ],
+      "expected": [
+        "Results load with the trip summary and vehicles.",
+        "Fare Breakup visible for the selected vehicle.",
+        "Applied fare consistent with the Fare Breakup.",
+        "Inquiry submitted successfully."
+      ],
+      "actual": [
+        "Results loaded (20 vehicles).",
+        "Fare Breakup recorded (₹4,000 base, ₹32/km, ₹400/hr, Day/Night Bata ₹500).",
+        "Applied: ₹4,000 + Day Bata ₹500 + Night Bata ₹0 = ₹4,500 — consistent.",
+        "Success popup with Estimated Cost ₹4,500; save-inquiry 201."
+      ],
+      "statusReason": "All case-specific expectations met. Content/UI issues were observed and are reported separately; GST presentation is a clarification, not a failed expectation.",
+      "fare": [
+        {
+          "vehicle": "Sedan (D SDN)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹4,000",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹32 / km",
+              "No (80 KM)"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹400 / hr",
+              "No (1 hr ≤ 8)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹500",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹500",
+              "No (3 PM–4 PM)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost",
+              "₹4,000"
+            ],
+            [
+              "Day Bata",
+              "₹500"
+            ],
+            [
+              "Night Bata",
+              "₹0"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹4,500"
+            ]
+          ],
+          "arithmetic": "4,000 + 500 + 0 = 4,500 ✔",
+          "comparison": [
+            "Base equals Fare Breakup base rate.",
+            "1-hour trip charged the full 8 Hr / 80 Km base (minimum package) — consistent with breakup wording; label mismatch reported (TC-01-Issue-05)."
+          ],
+          "verdict": "Pass",
+          "clarify": [
+            "GST \"Additional\" not in estimate."
+          ]
+        }
+      ],
+      "issues": [
+        "TC-01-Issue-01",
+        "TC-01-Issue-02",
+        "TC-01-Issue-03",
+        "TC-01-Issue-04",
+        "TC-01-Issue-05",
+        "TC-01-Issue-06",
+        "TC-01-Issue-07",
+        "TC-01-Issue-08"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-form.png",
+          "caption": "Form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-results-summary.png",
+          "caption": "Results summary"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-results-vehicles.png",
+          "caption": "Vehicles"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-confirm-trip.png",
+          "caption": "Confirmation"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-applied-fare.png",
+          "caption": "Applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-submit-result.png",
+          "caption": "Submission result"
+        }
+      ]
+    },
+    {
+      "id": "TC-02",
+      "title": "Multi-day trip (CFG-2)",
+      "cfg": "MD ON · DD OFF",
+      "keyData": "Malleshwaram · 12 & 20 Nov · 3:00 PM · 13→12 pax · 24 hrs",
+      "vehicle": "12 Seater Tempo Traveller (D12TT)",
+      "status": "Inconclusive",
+      "objective": "Multi-day minimum (2 dates), capacity boundary (13 vs 12 seats), hours maximum (24); fare = day fare × days.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "ON",
+        "Different Drop": "OFF",
+        "Data row": "LOC-013 (pickup only)",
+        "Pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+        "Dates": "12 Nov 2026 (auto-selected, cannot be removed) + 20 Nov 2026",
+        "Time": "3:00 PM",
+        "Passengers": "13 (comparison search) then 12 (submitted)",
+        "Hours": "24",
+        "Selected vehicle": "12 Seater Tempo Traveller (D12TT)"
+      },
+      "journey": [
+        "Search 1: 13 passengers → results unchanged (20 vehicles incl. Sedan) — passenger count does not filter the list.",
+        "Supplementary: Book This Vehicle on D12TT with 13 pax → \"Passenger Capacity Not Complete! … cover only 12 seats\" (capacity is enforced at selection).",
+        "Search 2: 12 passengers → View Full Vehicle Details (D12TT) → Book This Vehicle → Confirm & Submit → success (save-inquiry 201)."
+      ],
+      "expected": [
+        "Two dates accepted; Duration 2 Days.",
+        "Capacity enforced for 13 pax on a 12-seater.",
+        "Fare = per-day fare × 2, consistent with Fare Breakup.",
+        "Inquiry submitted."
+      ],
+      "actual": [
+        "Dates \"12,20 Nov, 2026\", Duration 2 Days, \"Local – 24 HR / 80 KM\".",
+        "Capacity popup shown for 13 pax (enforced only after selection).",
+        "Applied ₹4,500×2 + ₹800×2 = ₹10,600; no extra hours, night bata ₹0.",
+        "Submitted successfully."
+      ],
+      "statusReason": "Flow and submission verified, but whether 24 hours/day should add extra-hour and night-bata charges in multi-day trips is not defined (TC-02-Issue-01). Not marked Pass.",
+      "fare": [
+        {
+          "vehicle": "12 Seater Tempo Traveller (D12TT)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹4,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹25 / km",
+              "No (80 KM shown)"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹500 / hr",
+              "Unclear (24 h/day)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹800",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹800",
+              "Unclear (24 h/day)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost (2 days)",
+              "₹9,000"
+            ],
+            [
+              "Day Bata (2 days)",
+              "₹1,600"
+            ],
+            [
+              "Night Bata",
+              "₹0"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹10,600"
+            ]
+          ],
+          "arithmetic": "4,500 × 2 + 800 × 2 + 0 = 10,600 ✔ (arithmetic correct)",
+          "comparison": [
+            "Per-day base and day bata multiplied by 2 dates.",
+            "Extra hours (16/day × ₹500) and night bata not applied — rule unclear for multi-day."
+          ],
+          "verdict": "Inconclusive",
+          "clarify": [
+            "Hours per day vs per trip in multi-day.",
+            "Night bata for 24-hour days."
+          ]
+        }
+      ],
+      "issues": [
+        "TC-02-Issue-01",
+        "TC-06-Issue-04",
+        "TC-04-Issue-01",
+        "TC-04-Issue-02",
+        "TC-01-Issue-01"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax13-results-vehicles.png",
+          "caption": "13 pax: list not filtered"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-capacity-popup.png",
+          "caption": "Supplementary: capacity popup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-form.png",
+          "caption": "Form (12 pax)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-results-summary.png",
+          "caption": "Summary"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-applied-fare.png",
+          "caption": "Applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-submit-result.png",
+          "caption": "Submission"
+        }
+      ]
+    },
+    {
+      "id": "TC-03",
+      "title": "Different drop location (CFG-3), 49 passengers",
+      "cfg": "MD OFF · DD ON",
+      "keyData": "EC Phase 1 → Kotilingeshwara Temple · 20 Nov 6:00 PM · 49 pax · 12 hrs",
+      "vehicle": "49 Seater Deluxe Coach (D49NA)",
+      "status": "Fail",
+      "objective": "Drop field and suggestions, 49 = single-vehicle maximum, evening start (night window), 12 hours.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "ON",
+        "Data row": "LOC-002",
+        "Pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "Drop": "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Karnataka, India",
+        "Date": "20 Nov 2026",
+        "Time": "6:00 PM",
+        "Passengers": "49",
+        "Hours": "12",
+        "Selected vehicle": "49 Seater Deluxe Coach (D49NA)"
+      },
+      "journey": [
+        "Entered pickup and drop via suggestions; date, 6:00 PM, 49 pax, 12 hrs.",
+        "Book Now! → summary shows drop, \"12 HR / 80 KM\", Distance 80 KM.",
+        "View Full Vehicle Details (D49NA) → Book This Vehicle (49 seats accepted, no capacity popup) → Confirm & Submit → success."
+      ],
+      "expected": [
+        "Drop accepted and shown.",
+        "49 pax fits one 49-seater.",
+        "Applied fare matches Fare Breakup incl. 4 extra hours and night bata.",
+        "Inquiry submitted."
+      ],
+      "actual": [
+        "Drop shown in results summary (not on confirmation screen).",
+        "Accepted.",
+        "Applied ₹12,500 + Day ₹1,000 + Night ₹1,000 = ₹14,500; 4 extra hours × ₹1,200 not applied.",
+        "Submitted."
+      ],
+      "statusReason": "Fare contradicts the displayed Extra Hour rule (TC-07-Issue-01).",
+      "fare": [
+        {
+          "vehicle": "49 Seater Deluxe Coach (D49NA)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹12,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹55 / km",
+              "Cannot evaluate (80 KM)"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹1,200 / hr",
+              "Yes — 12 h > 8 h"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹1,000",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹1,000",
+              "Yes (6 PM–6 AM)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost",
+              "₹12,500"
+            ],
+            [
+              "Day Bata",
+              "₹1,000"
+            ],
+            [
+              "Night Bata",
+              "₹1,000"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹14,500"
+            ]
+          ],
+          "arithmetic": "12,500 + 1,000 + 1,000 = 14,500 (missing 4 × 1,200 = 4,800 extra hours per displayed rule)",
+          "comparison": [
+            "Night bata correctly applied for a 6 PM start.",
+            "Extra-hour charge missing."
+          ],
+          "verdict": "Fail",
+          "clarify": []
+        }
+      ],
+      "issues": [
+        "TC-07-Issue-01",
+        "TC-01-Issue-07",
+        "TC-01-Issue-01"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-form.png",
+          "caption": "Form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-results-summary.png",
+          "caption": "Summary"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-confirm-trip.png",
+          "caption": "Confirmation (drop missing)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-applied-fare.png",
+          "caption": "Applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-submit-result.png",
+          "caption": "Submission"
+        }
+      ]
+    },
+    {
+      "id": "TC-04",
+      "title": "Multi-day + different drop (CFG-4), 50 passengers / multiple vehicles",
+      "cfg": "MD ON · DD ON",
+      "keyData": "Jayanagar 4th Block → Mysuru Palace · 12 Nov + 5, 6 Dec · 3:00 PM · 50 pax · 8 hrs",
+      "vehicle": "45 Seater Luxury Volvo (L45V) + 9 Seater Luxury Urbania (L9UB)",
+      "status": "Fail",
+      "objective": "Above 49 passengers with multiple vehicles (ADD-006), cross-month multi-day dates with a drop, fare × 3 days.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "ON",
+        "Different Drop": "ON",
+        "Data row": "LOC-004",
+        "Pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "Drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "Dates": "12 Nov 2026 (auto) + 5 Dec + 6 Dec 2026",
+        "Time": "3:00 PM",
+        "Passengers": "50",
+        "Hours": "8",
+        "Selected vehicles": "L45V (45) + L9UB (9) = 54 seats (plan: \"+ second vehicle if offered\")"
+      },
+      "journey": [
+        "Search OK: \"12 Nov, 2026 | 5,6 Dec, 2026\", Duration 3 Days, \"8 HR / 80 KM\".",
+        "Fare Breakup recorded for both vehicles.",
+        "Book This Vehicle on L45V → \"Passenger Capacity Not Complete! … only 45 seats\" (only button \"Cancel Inquiry\").",
+        "Closed with × → L45V still \"Already Selected\".",
+        "Book This Vehicle on L9UB → popup \"… only 9 seats\" (selection replaced).",
+        "One additional read-only check confirmed: no quantity/add control; only \"Compare\" checkboxes. Stopped — no submission possible; Cancel Inquiry not clicked."
+      ],
+      "expected": [
+        "Two vehicles combined to cover 50 passengers.",
+        "Confirmation shows both vehicles and fare × 3 days.",
+        "Inquiry submitted."
+      ],
+      "actual": [
+        "Second selection replaces the first; capacity never satisfied.",
+        "Confirmation screen never reached; no applied fare.",
+        "Not submitted."
+      ],
+      "statusReason": "The application prevents the intended multi-vehicle flow (TC-04-Issue-01). Test data and expectation unchanged. Status Fail (application defect), inquiry not submitted.",
+      "fare": [
+        {
+          "vehicle": "45 Seater Luxury Volvo (L45V)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹15,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹70 / km",
+              "—"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹1,500 / hr",
+              "—"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹1,500",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹1,500",
+              "—"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Applied fare",
+              "Not reached (blocked)"
+            ]
+          ],
+          "arithmetic": "n/a",
+          "comparison": [
+            "9 Seater Luxury Urbania breakup: Base ₹9,500, ₹70/km, ₹1,000/hr, Day/Night Bata ₹1,000."
+          ],
+          "verdict": "Inconclusive",
+          "clarify": []
+        }
+      ],
+      "issues": [
+        "TC-04-Issue-01",
+        "TC-04-Issue-02",
+        "TC-04-Issue-03",
+        "TC-06-Issue-04"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-form-r2.png",
+          "caption": "Form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-results-summary-r2.png",
+          "caption": "Summary (3 days)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-fare-breakup.png",
+          "caption": "Fare Breakup L45V"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L9UB-fare-breakup.png",
+          "caption": "Fare Breakup L9UB"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-after-select.png",
+          "caption": "Capacity popup (45)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-multi-second-vehicle-replaces-first.png",
+          "caption": "Second vehicle replaces first (9)"
+        }
+      ]
+    },
+    {
+      "id": "TC-05",
+      "title": "Long-distance and out-of-state drop (CFG-3)",
+      "cfg": "MD OFF · DD ON",
+      "keyData": "Yeshwanthpur → Belagavi (then Sarjapur Rd → Hogenakkal) · 15 Nov 2028 9:00 AM · 22 pax · 1 hr",
+      "vehicle": "25 Seater Premium AC Coach (P25AC)",
+      "status": "Fail",
+      "objective": "Long-distance behaviour in Local, out-of-state drop, booking-window limit (2028), capacity 22 on a 25-seater.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "ON",
+        "Data rows": "LOC-023, LOC-016",
+        "Pickup": "Yeshwanthpur, Bengaluru, Karnataka, India",
+        "Drop": "Belagavi, Karnataka, India (submitted); comparison: Sarjapur Road → Hogenakkal (Tamil Nadu)",
+        "Date": "15 Nov 2028",
+        "Time": "9:00 AM",
+        "Passengers": "22",
+        "Hours": "1",
+        "Selected vehicle": "25 Seater Premium AC Coach (P25AC), results page 2"
+      },
+      "journey": [
+        "Belagavi search → Distance 80 KM.",
+        "Fare Breakup P25AC → Book This Vehicle → Confirm & Submit → success.",
+        "Comparison search to Hogenakkal → resolved to Tamil Nadu, accepted, Distance 80 KM (no vehicle selected)."
+      ],
+      "expected": [
+        "Route distance reflects ~500 km (or Local rejects/redirects per business rule).",
+        "Date in 2028 handled per booking-window rule.",
+        "Fare consistent with Fare Breakup.",
+        "Inquiry submitted."
+      ],
+      "actual": [
+        "Distance 80 KM for Belagavi.",
+        "2028 date accepted (no window limit).",
+        "₹9,500 + ₹1,000 = ₹10,500; extra-km cannot be evaluated.",
+        "Submitted."
+      ],
+      "statusReason": "Displayed distance is wrong for the route (TC-05-Issue-01). Long-distance/out-of-state acceptance is a clarification.",
+      "fare": [
+        {
+          "vehicle": "25 Seater Premium AC Coach (P25AC)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹9,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹50 / km",
+              "Should apply (~500 km) — distance not recognised"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹1,000 / hr",
+              "No (1 h)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹1,000",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹1,000",
+              "No (9 AM)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost",
+              "₹9,500"
+            ],
+            [
+              "Day Bata",
+              "₹1,000"
+            ],
+            [
+              "Night Bata",
+              "₹0"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹10,500"
+            ]
+          ],
+          "arithmetic": "9,500 + 1,000 + 0 = 10,500 ✔ for 80 KM",
+          "comparison": [
+            "Extra-km fare check Inconclusive because distance shows 80 KM."
+          ],
+          "verdict": "Inconclusive",
+          "clarify": [
+            "Local distance/state limits."
+          ]
+        }
+      ],
+      "issues": [
+        "TC-05-Issue-01",
+        "TC-05-Issue-02",
+        "TC-01-Issue-07"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-form.png",
+          "caption": "Form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-results-summary.png",
+          "caption": "Distance 80 KM"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-applied-fare.png",
+          "caption": "Applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-submit-result.png",
+          "caption": "Submission"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-hogenakkal-results-summary.png",
+          "caption": "Hogenakkal (TN)"
+        }
+      ]
+    },
+    {
+      "id": "TC-06",
+      "title": "Validations and toggle transitions, then valid CFG-3 inquiry",
+      "cfg": "CFG-1 ↔ CFG-4 checks · final CFG-3",
+      "keyData": "Whitefield → Whitefield (checks) · final Whitefield → Mangaluru · 12 Nov 2:00 PM · 3 pax · 2 hrs",
+      "vehicle": "MPV's (D MPV)",
+      "status": "Partial",
+      "objective": "Field validations, toggle behaviour with data, then a clean end-to-end inquiry with LOC-021.",
+      "data": {
+        "Final E2E – Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "ON",
+        "Data row": "LOC-021",
+        "Pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "Drop": "Mangaluru, Karnataka, India",
+        "Date": "12 Nov 2026",
+        "Time": "2:00 PM",
+        "Passengers": "3",
+        "Hours": "2",
+        "Selected vehicle": "MPV's (D MPV)"
+      },
+      "journey": [
+        "Exploratory validation checks (status recorded separately, below).",
+        "Final E2E: Whitefield → Mangaluru → Book Now! → Fare Breakup (MPV) → Book This Vehicle → Confirm & Submit → success (save-inquiry 201).",
+        "Refresh on results page → home page, search lost; Back → empty form."
+      ],
+      "expected": [
+        "Blank pickup / blank drop rejected.",
+        "Invalid passengers and hours rejected with clear messages.",
+        "Past dates not selectable.",
+        "Toggle changes keep data sensibly.",
+        "Valid inquiry submitted."
+      ],
+      "actual": [
+        "V1 blank pickup → \"Pickup location is required\" ✔.",
+        "V2 DD ON + blank drop → \"Drop location is required\" ✔.",
+        "V3 same pickup/drop → accepted (TC-06-Issue-03).",
+        "V4 passengers (blank/0/-3/999): NOT RECORDED in this run — automation click timeout on two attempts; no application defect claimed (exploration on 12 Nov: 0/-3 reset to 1, 999 accepted, blank → raw message).",
+        "V5 hours: 0 / 25 accepted into the field; blank → raw message (TC-06-Issue-01); 1.5 → 1.",
+        "V6 typed past date 2026-11-01 rejected (field stays 12 Nov) ✔.",
+        "V7 toggles: drop cleared on DD OFF→ON; MD keeps today locked; MD OFF restores single date.",
+        "Final E2E submitted ✔. Refresh/back loses data (TC-06-Issue-02)."
+      ],
+      "statusReason": "End-to-end inquiry completed and submitted, but the passenger-validation sub-check (V4) could not be recorded due to an automation timeout. Exploratory checks are reported separately from the E2E result.",
+      "fare": [
+        {
+          "vehicle": "MPV's (D MPV)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹7,000",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹50 / km",
+              "Should apply (~350 km) — distance not recognised"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹700 / hr",
+              "No (2 h)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹800",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹800",
+              "No (2 PM)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost",
+              "₹7,000"
+            ],
+            [
+              "Day Bata",
+              "₹800"
+            ],
+            [
+              "Night Bata",
+              "₹0"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹7,800"
+            ]
+          ],
+          "arithmetic": "7,000 + 800 + 0 = 7,800 ✔ for 80 KM",
+          "comparison": [
+            "Extra km Inconclusive (80 KM shown for Mangaluru)."
+          ],
+          "verdict": "Inconclusive",
+          "clarify": []
+        }
+      ],
+      "issues": [
+        "TC-06-Issue-01",
+        "TC-06-Issue-02",
+        "TC-06-Issue-03",
+        "TC-06-Issue-04",
+        "TC-06-Issue-05",
+        "TC-06-Issue-06",
+        "TC-05-Issue-01"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V1-blank-pickup.png",
+          "caption": "V1 blank pickup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V2-blank-drop.png",
+          "caption": "V2 blank drop"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V3-same-pickup-drop-results.png",
+          "caption": "V3 same pickup/drop accepted"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V5-hours-25.png",
+          "caption": "V5 hours 25"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V5-hours-blank.png",
+          "caption": "V5 hours blank"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V6-past-date-disabled.png",
+          "caption": "V6 past dates disabled"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V7-md-today-locked.png",
+          "caption": "V7 MD today locked"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-form.png",
+          "caption": "E2E form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-fare-breakup.png",
+          "caption": "E2E Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-applied-fare.png",
+          "caption": "E2E applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-submit-result.png",
+          "caption": "E2E submission"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R2-after-refresh.png",
+          "caption": "Refresh → home"
+        }
+      ]
+    },
+    {
+      "id": "TC-07",
+      "title": "Fare boundary — hours: 9 HR / 80 KM vs 8 HR / 80 KM",
+      "cfg": "MD OFF · DD OFF",
+      "keyData": "Whitefield · 20 Nov 9:00 AM · 1 pax · 8 hrs vs 9 hrs",
+      "vehicle": "16 Seater Premium Urbania (P16UB)",
+      "status": "Fail",
+      "objective": "Same vehicle and inputs; only hours change (8 → 9). Verify extra-hour charge against the Fare Breakup.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "OFF",
+        "Data row": "LOC-001",
+        "Pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "Date": "20 Nov 2026",
+        "Time": "9:00 AM",
+        "Passengers": "1",
+        "Hours": "8 (baseline) and 9 (boundary)",
+        "Selected vehicle": "16 Seater Premium Urbania (P16UB), results page 3"
+      },
+      "journey": [
+        "Baseline 8 hrs: results \"8 HR / 80 KM\" → Fare Breakup → Book This Vehicle → applied ₹8,300 → submitted.",
+        "Boundary 9 hrs (identical otherwise): \"9 HR / 80 KM\" → Fare Breakup unchanged → applied ₹8,300 → submitted.",
+        "Note: a first baseline attempt in this run read back 24 hours instead of 8 and was discarded (TC-07-Issue-03); the re-run verified hours = 8 before searching. Both final runs are complete and submitted."
+      ],
+      "expected": [
+        "9-hour total = 8-hour total + 1 × Extra Hour Charge (₹800) per the displayed Fare Breakup.",
+        "Both inquiries submitted."
+      ],
+      "actual": [
+        "8 hrs: ₹7,500 + ₹800 day bata = ₹8,300.",
+        "9 hrs: ₹7,500 + ₹800 day bata = ₹8,300 — no extra-hour line.",
+        "Both submitted (save-inquiry 201)."
+      ],
+      "statusReason": "Execution complete for both runs. Extra-hour charge displayed (₹800/hr) is not applied → Fail (TC-07-Issue-01). Business confirmation of the package definition is still requested.",
+      "fare": [
+        {
+          "vehicle": "16 Seater Premium Urbania (P16UB)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹7,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹40 / km",
+              "No (80 KM)"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹800 / hr",
+              "8 h: No · 9 h: Yes (1 h)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹800",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹800",
+              "No (ends 5–6 PM)"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "8 hr — Base / Day / Night / Total",
+              "₹7,500 / ₹800 / ₹0 / ₹8,300"
+            ],
+            [
+              "9 hr — Base / Day / Night / Total",
+              "₹7,500 / ₹800 / ₹0 / ₹8,300"
+            ]
+          ],
+          "arithmetic": "Expected per displayed rule: 8,300 + 1 × 800 = 9,100; actual 8,300",
+          "comparison": [
+            "Difference between 9 h and 8 h: ₹0 (expected ₹800)."
+          ],
+          "verdict": "Fail",
+          "clarify": [
+            "Package definition (fixed 8 Hr/80 Km vs per-hour packages)."
+          ]
+        }
+      ],
+      "issues": [
+        "TC-07-Issue-01",
+        "TC-07-Issue-02",
+        "TC-07-Issue-03",
+        "TC-01-Issue-05"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-form-r2.png",
+          "caption": "Baseline form (8 hrs)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-P16UB-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-applied-fare-r2.png",
+          "caption": "Baseline applied ₹8,300"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-submit-result-r2.png",
+          "caption": "Baseline submitted"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-form-r2.png",
+          "caption": "Boundary form (9 hrs)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-applied-fare-r2.png",
+          "caption": "Boundary applied ₹8,300"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-submit-result-r2.png",
+          "caption": "Boundary submitted"
+        }
+      ]
+    },
+    {
+      "id": "TC-08",
+      "title": "Fare boundary — kilometres: Peenya → Maddur (8 HR, route > 80 KM)",
+      "cfg": "MD OFF · DD ON",
+      "keyData": "Peenya → Maddur · 20 Nov 9:00 AM · 1 pax · 8 hrs",
+      "vehicle": "16 Seater Premium Urbania (P16UB)",
+      "status": "Inconclusive",
+      "objective": "Compare the 8 HR / 80 KM package fare with the actual route distance (~90 km) on the same vehicle; only distance matters.",
+      "data": {
+        "Trip type": "Local",
+        "Multi-day": "OFF",
+        "Different Drop": "ON",
+        "Data row": "LOC-017",
+        "Pickup": "Peenya, Bengaluru, Karnataka, India",
+        "Drop": "Maddur, Karnataka, India",
+        "Date": "20 Nov 2026",
+        "Time": "9:00 AM",
+        "Passengers": "1",
+        "Hours": "8",
+        "Selected vehicle": "16 Seater Premium Urbania (P16UB)"
+      },
+      "journey": [
+        "Search → Distance 80 KM, \"8 HR / 80 KM\".",
+        "Fare Breakup P16UB → Book This Vehicle → applied ₹8,300 → submitted (save-inquiry 201)."
+      ],
+      "expected": [
+        "Displayed distance > 80 KM so the extra-km rule (₹40/km) can be evaluated.",
+        "Inquiry submitted."
+      ],
+      "actual": [
+        "Distance shown 80 KM → boundary not reached.",
+        "Applied ₹8,300 (same as TC-07 baseline).",
+        "Submitted."
+      ],
+      "statusReason": "Per the approved rule: the app still shows 80 KM, so the extra-km fare check is Inconclusive; the incorrect distance is recorded separately (TC-05-Issue-01).",
+      "fare": [
+        {
+          "vehicle": "16 Seater Premium Urbania (P16UB)",
+          "breakup": [
+            [
+              "Package",
+              "Local Trip – 8 Hrs / 80 Kms (Standard local rental package)",
+              "Yes"
+            ],
+            [
+              "Base Rate (8Hr/80Km) incl. Driver, Fuel, Day Allowance",
+              "₹7,500",
+              "Yes"
+            ],
+            [
+              "Extra Km Charge",
+              "₹40 / km",
+              "Cannot evaluate (80 KM shown)"
+            ],
+            [
+              "Extra Hour Charge",
+              "₹800 / hr",
+              "No (8 h)"
+            ],
+            [
+              "Day Bata (Before 10pm or After 6am)",
+              "₹800",
+              "Yes"
+            ],
+            [
+              "Night Bata (Before 6am or After 10pm)",
+              "₹800",
+              "No"
+            ],
+            [
+              "Toll & Parking",
+              "Actuals",
+              "Not shown in estimate"
+            ],
+            [
+              "GST",
+              "Additional",
+              "Not shown in estimate (clarify)"
+            ]
+          ],
+          "applied": [
+            [
+              "Vehicle Base Cost",
+              "₹7,500"
+            ],
+            [
+              "Day Bata",
+              "₹800"
+            ],
+            [
+              "Night Bata",
+              "₹0"
+            ],
+            [
+              "Estimated Grand Total",
+              "₹8,300"
+            ]
+          ],
+          "arithmetic": "7,500 + 800 + 0 = 8,300 ✔ for 80 KM",
+          "comparison": [
+            "Identical to the 8 HR / 80 KM package fare; distance not recognised."
+          ],
+          "verdict": "Inconclusive",
+          "clarify": [
+            "Whether Garage legs count toward km."
+          ]
+        }
+      ],
+      "issues": [
+        "TC-05-Issue-01",
+        "TC-07-Issue-02"
+      ],
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-form.png",
+          "caption": "Form"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-results-summary.png",
+          "caption": "Distance 80 KM"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-fare-breakup.png",
+          "caption": "Fare Breakup"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-applied-fare.png",
+          "caption": "Applied fare"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-submit-result.png",
+          "caption": "Submission"
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "TC-07-Issue-01",
+      "case": "TC-07",
+      "alsoIn": [
+        "TC-03"
+      ],
+      "type": "Defect",
+      "severity": "High",
+      "category": "Fare",
+      "title": "Extra-hour charge shown in the Fare Breakup is not applied when hours exceed the 8-hour package",
+      "where": "Results page → View Full Vehicle Details → Local Trip Pricing; Confirm Your Trip & Selected Vehicles → Estimated Trip Cost",
+      "steps": [
+        "Log in to User App Preprod (Personal Login → Mobile Number).",
+        "Home → Smart Inquiry → Local. Keep Multi-day OFF and Different Drop OFF.",
+        "Pickup: Whitefield, Bengaluru. Date 20 Nov 2026, 9:00 AM. Passengers 1. Number of Hours 8.",
+        "Click Book Now! → on the results page open View Full Vehicle Details for \"16 Seater Premium Urbania\" (P16UB) and note Local Trip Pricing: Base Rate (8Hr/80Km) ₹7,500, Extra Hour Charge ₹800/hr, Day Bata ₹800.",
+        "Close the details → Book This Vehicle on P16UB → note Estimated Grand Total ₹8,300.",
+        "Repeat steps 2–5 with Number of Hours 9 (all other inputs identical)."
+      ],
+      "expected": "With 9 hours (1 hour above the 8-hour package) the Estimated Trip Cost includes an extra-hour line of ₹800 (as displayed in the vehicle Fare Breakup), i.e. a total higher than the 8-hour baseline.",
+      "actual": "9-hour total = ₹8,300, identical to the 8-hour baseline (Base ₹7,500 + Day Bata ₹800 + Night Bata ₹0). No extra-hour line is shown. The results header does change to \"Local – 9 HR / 80 KM\". Same in TC-03: 12 hours for the 49 Seater Deluxe Coach (Extra Hour ₹1,200/hr) is charged only Base ₹12,500 + bata (₹14,500); 4 × ₹1,200 = ₹4,800 is not applied.",
+      "impact": "Under-quotes every Local trip longer than 8 hours; the estimate shown to the customer contradicts the pricing rule displayed on the same page.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-P16UB-fare-breakup.png",
+          "caption": "TC-07 Fare Breakup P16UB (₹800/hr extra hour)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-applied-fare-r2.png",
+          "caption": "TC-07 8 hr applied fare ₹8,300"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-results-summary-r2.png",
+          "caption": "TC-07 9 hr search (9 HR / 80 KM)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-applied-fare-r2.png",
+          "caption": "TC-07 9 hr applied fare — still ₹8,300"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-fare-breakup.png",
+          "caption": "TC-03 Fare Breakup 49 Seater (₹1,200/hr)"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-applied-fare.png",
+          "caption": "TC-03 12 hr applied fare ₹14,500"
+        }
+      ]
+    },
+    {
+      "id": "TC-05-Issue-01",
+      "case": "TC-05",
+      "alsoIn": [
+        "TC-06",
+        "TC-08"
+      ],
+      "type": "Defect",
+      "severity": "High",
+      "category": "Functional / Fare",
+      "title": "Trip distance is always shown as 80 KM regardless of the actual route",
+      "where": "Results page → \"You have Searched For\" → Distance; results header \"N HR / 80 KM\"",
+      "steps": [
+        "Home → Local → turn ON \"Drop at different location\".",
+        "Pickup: Yeshwanthpur, Bengaluru. Drop: Belagavi, Karnataka. Date 15 Nov 2028, 9:00 AM, Passengers 22, Hours 1.",
+        "Click Book Now! and read Distance in the trip summary."
+      ],
+      "expected": "Distance reflects the calculated route (Bengaluru → Belagavi is roughly 500 km one way; Garage legs as per business rule), so that the Extra Km Charge in the Fare Breakup can be applied.",
+      "actual": "Distance: 80 KM. Identical value for Whitefield → Mangaluru (TC-06, ~350 km), Peenya → Maddur (TC-08, ~90 km) and Sarjapur Road → Hogenakkal (TC-05). Extra-km charges are therefore never computed.",
+      "impact": "Extra-km pricing (₹25–₹70/km displayed per vehicle) can never take effect; long trips are under-quoted and the displayed distance is misleading.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-belagavi-results-summary.png",
+          "caption": "TC-05 Yeshwanthpur → Belagavi: Distance 80 KM"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-08-peenya-maddur-8hr-results-summary.png",
+          "caption": "TC-08 Peenya → Maddur: Distance 80 KM"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-results-summary.png",
+          "caption": "TC-06 Whitefield → Mangaluru: Distance 80 KM"
+        }
+      ]
+    },
+    {
+      "id": "TC-04-Issue-01",
+      "case": "TC-04",
+      "alsoIn": [
+        "TC-02 (supplementary)"
+      ],
+      "type": "Defect",
+      "severity": "High",
+      "category": "Functional",
+      "title": "Passengers above 49 cannot be submitted: selecting a second vehicle replaces the first instead of adding it",
+      "where": "Results page → Book This Vehicle → \"Passenger Capacity Not Complete!\" popup",
+      "steps": [
+        "Home → Local → turn ON Multi-day Trip and Drop at different location.",
+        "Pickup: Jayanagar 4th Block. Drop: Mysuru Palace. Dates: 12 Nov (auto), 5 Dec, 6 Dec 2026. Time 3:00 PM. Passengers 50. Hours 8.",
+        "Book Now! → Book This Vehicle on \"45 Seater Luxury Volvo\" (L45V). Popup: \"You need seats for 50 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue.\" Only button: \"Cancel Inquiry\".",
+        "Close the popup with × (L45V card still shows \"Already Selected\").",
+        "Book This Vehicle on \"9 Seater Luxury Urbania\" (L9UB)."
+      ],
+      "expected": "The second vehicle is added to the selection (45 + 9 = 54 seats ≥ 50) and the flow continues to Confirm Your Trip & Selected Vehicles (ADD-006: above 49 passengers → multiple vehicles).",
+      "actual": "Popup now says \"cover only 9 seats\" — the 9-seater replaced the 45-seater. No quantity / add-vehicle control exists; the popup offers only \"Cancel Inquiry\". The inquiry cannot be submitted for 50 passengers.",
+      "impact": "Any group above the largest single vehicle (49) cannot raise a Local inquiry through the standard flow, although the app itself instructs the user to add buses.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-L45V-after-select.png",
+          "caption": "Popup after selecting L45V: 45 seats"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-multi-after-close-popup.png",
+          "caption": "After closing popup: L45V still \"Already Selected\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-multi-second-vehicle-replaces-first.png",
+          "caption": "After selecting L9UB: \"cover only 9 seats\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-error-r2.png",
+          "caption": "Execution attempt: same result"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-01",
+      "case": "TC-01",
+      "alsoIn": [
+        "TC-02",
+        "TC-03",
+        "TC-04",
+        "TC-05",
+        "TC-06",
+        "TC-07",
+        "TC-08"
+      ],
+      "type": "Defect",
+      "severity": "Medium",
+      "category": "Content / Data",
+      "title": "Vehicle details show the same \"49-Seater Multi-Axle Volvo Coach | BS6\" subtitle, tags and bus photos for every vehicle (including Sedan)",
+      "where": "Results page → View Full Vehicle Details (modal header and gallery); vehicle cards and confirmation image",
+      "steps": [
+        "Run a Local search (e.g. Whitefield, 1 pax, 1 hr) → Book Now!.",
+        "Open View Full Vehicle Details for \"Sedan\"."
+      ],
+      "expected": "Subtitle, tags and images describe the selected Sedan (4 seats).",
+      "actual": "Header \"View Vehicle Details | Sedan\" with subtitle \"49-Seater Multi-Axle Volvo Coach | BS6\", tags Corporate / VIP / Long-Distance Travel and coach photos. Same subtitle for 12 Seater Tempo Traveller, 25/49 Seater coaches, 16 Seater Urbania, etc. The confirmation screen also shows a coach image for Sedan.",
+      "impact": "Misleading vehicle information at the decision point; undermines trust in the selection.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-fare-breakup.png",
+          "caption": "Sedan details: \"49-Seater Multi-Axle Volvo Coach | BS6\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-confirm-trip.png",
+          "caption": "Sedan shown with a coach photo"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-fare-breakup.png",
+          "caption": "12 Seater Tempo Traveller: same subtitle"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-02",
+      "case": "TC-01",
+      "alsoIn": [
+        "all cases with vehicle details"
+      ],
+      "type": "Defect",
+      "severity": "Medium",
+      "category": "UI",
+      "title": "Vehicle Comfort Metrics display raw JSON and empty bars",
+      "where": "View Full Vehicle Details → Vehicle Comfort Metrics",
+      "steps": [
+        "Open View Full Vehicle Details for any vehicle (e.g. Sedan in TC-01).",
+        "Scroll to \"Vehicle Comfort Metrics\"."
+      ],
+      "expected": "Readable values (e.g. \"Seat Pitch: 690 mm\") and filled indicator bars.",
+      "actual": "Labels show raw data: Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"}), Recliner Degree ({...}), Acoustic Insulation ({...}), Vertical Smoothness ({...}); bars are empty. Suspension / Safety Features / Transmission sections are collapsed with no visible content.",
+      "impact": "Unprofessional UI; information is unusable for customers.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-vehicle-specs.png",
+          "caption": "Raw JSON in Comfort Metrics; \"Proceed To Booking\" CTA"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-03",
+      "case": "TC-01",
+      "alsoIn": [],
+      "type": "Defect",
+      "severity": "Medium",
+      "category": "Data",
+      "title": "Seat capacity mismatch: \"33 Seater Deluxe Coach\" card shows 35 Seater",
+      "where": "Results page → vehicle card (code D35NA)",
+      "steps": [
+        "Run any Local search → Book Now!.",
+        "Look at the first card \"33 Seater Deluxe Coach\" (D35NA)."
+      ],
+      "expected": "Name, code and seat count agree.",
+      "actual": "Name \"33 Seater Deluxe Coach\", code D35NA, capacity \"35 Seater\". (During exploration the SUV card also showed \"0 Seater\"; not re-captured in this run.)",
+      "impact": "Capacity checks and customer choice rely on the seat count; wrong data can block or mislead group inquiries.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-results-vehicles.png",
+          "caption": "33 Seater Deluxe Coach — 35 Seater"
+        }
+      ]
+    },
+    {
+      "id": "TC-06-Issue-01",
+      "case": "TC-06",
+      "alsoIn": [],
+      "type": "Defect",
+      "severity": "Medium",
+      "category": "Validation",
+      "title": "Blank Number of Hours shows a raw technical validation message",
+      "where": "Home → Smart Inquiry → Local → Number of Hours",
+      "steps": [
+        "Home → Local. Pickup: Whitefield.",
+        "Clear Number of Hours (leave it blank).",
+        "Click Book Now!."
+      ],
+      "expected": "A user-friendly message such as \"Please enter number of hours (1–24)\".",
+      "actual": "Message: numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`). (Exploration on 12 Nov showed the equivalent message for blank Passengers; the passenger check could not be re-recorded in this run — see TC-06.)",
+      "impact": "Exposes internal field names/validation library text to customers.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V5-hours-blank.png",
+          "caption": "Raw message for blank hours"
+        }
+      ]
+    },
+    {
+      "id": "TC-07-Issue-02",
+      "case": "TC-07",
+      "alsoIn": [
+        "TC-08"
+      ],
+      "type": "Defect",
+      "severity": "Low",
+      "category": "Content",
+      "title": "\"Luggage:\" is blank for 16 Seater Premium Urbania on the confirmation screen",
+      "where": "Confirm Your Trip & Selected Vehicles → selected vehicle panel",
+      "steps": [
+        "Local search (Whitefield, 20 Nov 2026 9:00 AM, 1 pax, 8 hrs) → Book Now!.",
+        "Book This Vehicle on 16 Seater Premium Urbania (P16UB)."
+      ],
+      "expected": "Luggage capacity is shown (as for Sedan: \"Car Boot (400–500 L)\").",
+      "actual": "\"Luggage:\" label with no value.",
+      "impact": "Incomplete vehicle information.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-confirm-trip-r2.png",
+          "caption": "Luggage value missing"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-04",
+      "case": "TC-01",
+      "alsoIn": [
+        "all cases"
+      ],
+      "type": "Inconsistency",
+      "severity": "Medium",
+      "category": "Content / Terminology",
+      "title": "Inquiry flow uses booking terminology (\"Book Now!\", \"Book This Vehicle\", \"Proceed To Booking\", \"Confirm & Submit Booking\", \"Track My Booking\")",
+      "where": "Home form CTA; results cards; vehicle details CTA; confirmation CTA; success popup",
+      "steps": [
+        "Home → Local: primary CTA \"Book Now!\" (next to \"Save As Draft\").",
+        "Results: each card \"Book This Vehicle\"; details modal \"Proceed To Booking — Confirm availability & lock pricing\".",
+        "Confirmation modal CTA: \"Confirm & Submit Booking\".",
+        "After clicking it: popup \"Inquiry Submitted Successfully! … Estimated Cost (Approx.)\" with buttons \"Track My Booking\" / \"Back to Home\"."
+      ],
+      "expected": "Consistent wording that matches what actually happens: an inquiry is raised and a price is calculated later (e.g. \"Get Quote\", \"Select Vehicle\", \"Submit Inquiry\", \"Track My Inquiry\").",
+      "actual": "Booking wording everywhere except the success title, which says Inquiry; the page intro also says \"submit your inquiry\". \"lock pricing\" contradicts \"Final quote may vary\".",
+      "impact": "Customers may believe a confirmed booking or locked price was created.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-form.png",
+          "caption": "Home form: \"Book Now!\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-vehicle-specs.png",
+          "caption": "Details: \"Proceed To Booking / lock pricing\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-submit-result.png",
+          "caption": "Success: \"Inquiry Submitted Successfully!\" + \"Track My Booking\""
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-05",
+      "case": "TC-01",
+      "alsoIn": [
+        "TC-07",
+        "TC-08"
+      ],
+      "type": "Inconsistency",
+      "severity": "Medium",
+      "category": "Fare / Content",
+      "title": "Package label differs between card and Fare Breakup (\"Local (1 HR / 80 KM) ₹4,000\" vs \"Base Rate (8Hr/80Km) ₹4,000\")",
+      "where": "Selected vehicle card → Pricing Breakdown; results header; View Full Vehicle Details → Local Trip Pricing",
+      "steps": [
+        "Local search with Hours = 1 → Book Now!.",
+        "Book This Vehicle on Sedan and close/observe the card behind the success popup; open View Full Vehicle Details."
+      ],
+      "expected": "One consistent package definition (either an N-hour package or the 8 Hr / 80 Km minimum package).",
+      "actual": "Card/header say \"1 HR / 80 KM\" at ₹4,000 while the Fare Breakup calls ₹4,000 the 8 Hr / 80 Km base rate. Same pattern for 8/9/12/24 hrs.",
+      "impact": "Customer cannot tell what is included; related to TC-07-Issue-01.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-submit-result.png",
+          "caption": "Card: \"Local (1 HR / 80 KM) ₹4,000\""
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-fare-breakup.png",
+          "caption": "Breakup: Base Rate (8Hr/80Km) ₹4,000"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-06",
+      "case": "TC-01",
+      "alsoIn": [
+        "all fare cases"
+      ],
+      "type": "Inconsistency",
+      "severity": "Low",
+      "category": "Content",
+      "title": "Bata time windows are worded illogically (\"Day Bata (Before 10pm or After 6am)\", \"Night Bata (Before 6am or After 10pm)\")",
+      "where": "Fare Breakup and Estimated Trip Cost",
+      "steps": [
+        "Open View Full Vehicle Details → Local Trip Pricing."
+      ],
+      "expected": "Clear windows, e.g. \"Day Bata (6 AM – 10 PM)\", \"Night Bata (10 PM – 6 AM)\".",
+      "actual": "\"Before 10pm or After 6am\" literally covers every hour of the day; the Day Bata also appears while the Base Rate already says \"✔ Day Allowance\" included.",
+      "impact": "Ambiguous charges; possible double counting of day allowance (see clarifications).",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-fare-breakup.png",
+          "caption": "Bata wording"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-applied-fare.png",
+          "caption": "Day Bata ₹500 added on top of base"
+        }
+      ]
+    },
+    {
+      "id": "TC-06-Issue-02",
+      "case": "TC-06",
+      "alsoIn": [],
+      "type": "Inconsistency",
+      "severity": "Medium",
+      "category": "UX",
+      "title": "Refreshing the results page discards the search and returns to an empty home form",
+      "where": "/send-inquiry (results page) → browser refresh (F5)",
+      "steps": [
+        "Home → Local → Drop at different location ON. Pickup Whitefield, Drop Mangaluru, 12 Nov 2026 2:00 PM, 3 pax, 2 hrs.",
+        "Click Book Now! → results page (/send-inquiry) loads.",
+        "Press F5 / browser refresh.",
+        "Then press browser Back."
+      ],
+      "expected": "The results page reloads with the same search, or the form is restored with the entered values.",
+      "actual": "After refresh the app lands on the home page (/) with no results; after Back the home form is empty (pickup blank, passengers 1, hours 1, current time).",
+      "impact": "Users lose all entered trip details on an accidental refresh/back and must start again.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R1-results-summary.png",
+          "caption": "Before refresh: results for Whitefield → Mangaluru"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R2-after-refresh.png",
+          "caption": "After refresh: home page, search lost"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-R3-after-back.png",
+          "caption": "After Back: empty form"
+        }
+      ]
+    },
+    {
+      "id": "TC-06-Issue-03",
+      "case": "TC-06",
+      "alsoIn": [],
+      "type": "Inconsistency",
+      "severity": "Low",
+      "category": "Validation",
+      "title": "\"Drop at different location\" accepts a drop identical to the pickup",
+      "where": "Home → Local → Drop Location",
+      "steps": [
+        "Home → Local → Drop at different location ON.",
+        "Pickup: Whitefield, Bengaluru. Drop: Whitefield, Bengaluru.",
+        "Book Now!."
+      ],
+      "expected": "Validation such as \"Drop location must be different from pickup\" (pending business confirmation).",
+      "actual": "No message; results page opens with pickup = drop.",
+      "impact": "Contradicts the toggle meaning; creates meaningless inquiries.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V3-same-pickup-drop-form.png",
+          "caption": "Same pickup and drop"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V3-same-pickup-drop-results.png",
+          "caption": "Accepted"
+        }
+      ]
+    },
+    {
+      "id": "TC-06-Issue-04",
+      "case": "TC-06",
+      "alsoIn": [
+        "TC-02",
+        "TC-04"
+      ],
+      "type": "Inconsistency",
+      "severity": "Medium",
+      "category": "UX",
+      "title": "Multi-day Trip always includes today; today cannot be deselected",
+      "where": "Home → Local → Multi-day Trip ON → Select Travel Dates",
+      "steps": [
+        "Home → Local → Multi-day Trip ON.",
+        "Observe \"Selected Dates (1)\" = today; click today's date."
+      ],
+      "expected": "User can choose any future dates (e.g. only 5–6 Dec) and deselect today.",
+      "actual": "Today stays selected (count remains 1). TC-02 and TC-04 were therefore forced to include 12 Nov 2026 (summary \"12 Nov, 2026 | 5,6 Dec, 2026\", Duration 3 Days).",
+      "impact": "Multi-day trips that start in the future are charged/recorded with an extra day today.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V7-md-today-locked.png",
+          "caption": "Today locked in Selected Dates"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-main-results-summary-r2.png",
+          "caption": "TC-04 summary includes 12 Nov"
+        }
+      ]
+    },
+    {
+      "id": "TC-04-Issue-02",
+      "case": "TC-04",
+      "alsoIn": [
+        "TC-02 (supplementary)"
+      ],
+      "type": "Inconsistency",
+      "severity": "Low",
+      "category": "UX / CTA",
+      "title": "Capacity popup offers only \"Cancel Inquiry\" although it asks the user to add buses",
+      "where": "\"Passenger Capacity Not Complete!\" popup",
+      "steps": [
+        "Search with more passengers than the vehicle seats (e.g. 13 pax) → Book This Vehicle on 12 Seater Tempo Traveller."
+      ],
+      "expected": "A primary action to add/select another vehicle (or adjust passengers) and a neutral close.",
+      "actual": "Text says \"Please add one or more buses to continue\" but the only button is \"Cancel Inquiry\"; closing is only possible via ×.",
+      "impact": "Users may cancel the whole inquiry by mistake.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-supp-pax13-capacity-capacity-popup.png",
+          "caption": "13 pax vs 12 seats popup"
+        }
+      ]
+    },
+    {
+      "id": "TC-06-Issue-05",
+      "case": "TC-06",
+      "alsoIn": [
+        "TC-01"
+      ],
+      "type": "Inconsistency",
+      "severity": "Low",
+      "category": "UX",
+      "title": "Pickup time defaults to the current minute (e.g. 12:59 PM), which is not one of the 30-minute slots",
+      "where": "Home → Local → Pickup Date & Time",
+      "steps": [
+        "Open Home → Local without changing time."
+      ],
+      "expected": "Default to the next valid slot (e.g. 1:00 PM / 1:30 PM).",
+      "actual": "Default shows the current clock time (12:59 PM, 1:02 PM in this run).",
+      "impact": "Inconsistent with the slot picker; may submit an odd pickup time.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V3-same-pickup-drop-form.png",
+          "caption": "Default time 12:59 PM"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-07",
+      "case": "TC-01",
+      "alsoIn": [
+        "all cases"
+      ],
+      "type": "Suggestion",
+      "severity": "",
+      "category": "UX",
+      "title": "Show pickup time, number of hours/days and distance on the confirmation screen",
+      "where": "Confirm Your Trip & Selected Vehicles",
+      "steps": [
+        "Proceed to the confirmation modal in any case."
+      ],
+      "expected": "Route Summary shows date, time, hours/days, distance and drop (for Different Drop).",
+      "actual": "Only Garage → Pickup → Garage, Dates and Passenger are shown; no time, hours, distance, and the drop location is not listed even when Different Drop is ON (TC-03/05/08).",
+      "impact": "Customer cannot verify the full trip before submitting.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-03-main-confirm-trip.png",
+          "caption": "TC-03: drop not shown on confirmation"
+        }
+      ]
+    },
+    {
+      "id": "TC-04-Issue-03",
+      "case": "TC-04",
+      "alsoIn": [],
+      "type": "Suggestion",
+      "severity": "",
+      "category": "UX",
+      "title": "Support multi-vehicle selection explicitly (quantity stepper or \"Add another vehicle\") with a running seat total",
+      "where": "Results page",
+      "steps": [
+        "See TC-04-Issue-01."
+      ],
+      "expected": "—",
+      "actual": "—",
+      "impact": "Enables groups > 49 to complete inquiries.",
+      "evidence": []
+    },
+    {
+      "id": "TC-06-Issue-06",
+      "case": "TC-06",
+      "alsoIn": [],
+      "type": "Suggestion",
+      "severity": "",
+      "category": "UX",
+      "title": "Keep the drop location when \"Drop at different location\" is toggled OFF and ON again",
+      "where": "Home → Local",
+      "steps": [
+        "Enter drop Mangaluru, toggle Different Drop OFF then ON."
+      ],
+      "expected": "Drop retained.",
+      "actual": "Drop field is cleared (pickup, passengers, hours are kept).",
+      "impact": "Minor re-entry effort.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-06-V7-dd-off-on-drop-retained.png",
+          "caption": "Drop cleared after OFF → ON"
+        }
+      ]
+    },
+    {
+      "id": "TC-01-Issue-08",
+      "case": "TC-01",
+      "alsoIn": [
+        "all fare cases"
+      ],
+      "type": "Clarification",
+      "severity": "",
+      "category": "Fare",
+      "title": "GST shown as \"Additional\" in the Fare Breakup but not included or itemised in the Estimated Grand Total",
+      "where": "Fare Breakup vs Estimated Trip Cost",
+      "steps": [
+        "Compare any Fare Breakup with its Estimated Trip Cost."
+      ],
+      "expected": "Business to confirm whether GST must be shown in the estimate.",
+      "actual": "No GST/tax line; note says \"Final quote may vary … taxes\".",
+      "impact": "Customer-facing estimate may be lower than payable.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-01-main-applied-fare.png",
+          "caption": "No GST line"
+        }
+      ]
+    },
+    {
+      "id": "TC-02-Issue-01",
+      "case": "TC-02",
+      "alsoIn": [],
+      "type": "Clarification",
+      "severity": "",
+      "category": "Fare",
+      "title": "Multi-day: meaning of \"Number of Hours\" (24) and night bata for 24-hour days",
+      "where": "Multi-day results and Estimated Trip Cost",
+      "steps": [
+        "TC-02: 2 dates, 3:00 PM, 24 hours, 12 Seater Tempo Traveller."
+      ],
+      "expected": "Business to define whether hours are per day or per trip, and when Extra Hour / Night Bata apply in multi-day trips.",
+      "actual": "Charged Base ₹4,500 × 2 days + Day Bata ₹800 × 2 = ₹10,600; Night Bata ₹0 and no extra hours although 24 hrs/day exceeds the 8-hr package and spans the night window.",
+      "impact": "Multi-day pricing cannot be verified.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-fare-breakup.png",
+          "caption": "Fare Breakup 12 Seater TT"
+        },
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-02-pax12-applied-fare.png",
+          "caption": "Applied ₹10,600"
+        }
+      ]
+    },
+    {
+      "id": "TC-07-Issue-03",
+      "case": "TC-07",
+      "alsoIn": [],
+      "type": "Clarification",
+      "severity": "",
+      "category": "Functional (needs investigation)",
+      "title": "Hours value changed from 8 to 24 after entry in one execution attempt",
+      "where": "Home → Local → Number of Hours",
+      "steps": [
+        "First TC-07 baseline attempt in this run (after TC-02 had used 24 hours): Number of Hours was entered as 8."
+      ],
+      "expected": "Entered value persists.",
+      "actual": "Form read back 24 and the search ran as \"24 HR / 80 KM\" (attempt discarded and re-run; the re-run kept 8). Cause not proven — possibly a restored draft from the previous inquiry, possibly automation timing. Not reported as a defect.",
+      "impact": "If caused by draft restore, users could submit stale hours unknowingly.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-results-summary.png",
+          "caption": "Discarded attempt: 24 HR shown"
+        }
+      ]
+    },
+    {
+      "id": "TC-05-Issue-02",
+      "case": "TC-05",
+      "alsoIn": [],
+      "type": "Clarification",
+      "severity": "",
+      "category": "Business rule",
+      "title": "Local accepts very long and out-of-state drops (Belagavi ~500 km; Hogenakkal resolved to Tamil Nadu)",
+      "where": "Home → Local → Drop Location",
+      "steps": [
+        "TC-05 data (LOC-023, LOC-016)."
+      ],
+      "expected": "Business to confirm limits for Local (max distance / state) or redirect to Outstation.",
+      "actual": "Both accepted; Hogenakkal suggestion resolves to \"…Hogenakkal, Tamil Nadu, India\".",
+      "impact": "Local may be used for outstation trips at local pricing.",
+      "evidence": [
+        {
+          "path": "screenshots/local/user-web-20261112-1317-LOCAL/TC-05-hogenakkal-results-summary.png",
+          "caption": "Hogenakkal, Tamil Nadu accepted"
+        }
+      ]
+    }
+  ],
+  "fareSummary": [
+    [
+      "TC-01",
+      "Sedan",
+      "1 h · 80 KM",
+      "₹4,000 base, ₹400/hr, ₹32/km, Day ₹500",
+      "₹4,500",
+      "Pass"
+    ],
+    [
+      "TC-02",
+      "12 Seater TT",
+      "2 days · 24 h",
+      "₹4,500 base, ₹500/hr, Day ₹800",
+      "₹10,600",
+      "Inconclusive"
+    ],
+    [
+      "TC-03",
+      "49 Seater Deluxe",
+      "12 h · 6 PM start",
+      "₹12,500 base, ₹1,200/hr, Day/Night ₹1,000",
+      "₹14,500 (no extra hrs)",
+      "Fail"
+    ],
+    [
+      "TC-04",
+      "45 Luxury Volvo + 9 Luxury Urbania",
+      "3 days · 50 pax",
+      "₹15,500 / ₹9,500 base",
+      "Not reached",
+      "Inconclusive"
+    ],
+    [
+      "TC-05",
+      "25 Seater Premium AC",
+      "Belagavi · 80 KM shown",
+      "₹9,500 base, ₹50/km",
+      "₹10,500",
+      "Inconclusive"
+    ],
+    [
+      "TC-06",
+      "MPV's",
+      "Mangaluru · 80 KM shown",
+      "₹7,000 base, ₹50/km",
+      "₹7,800",
+      "Inconclusive"
+    ],
+    [
+      "TC-07",
+      "16 Seater Premium Urbania",
+      "8 h vs 9 h",
+      "₹7,500 base, ₹800/hr",
+      "₹8,300 vs ₹8,300",
+      "Fail"
+    ],
+    [
+      "TC-08",
+      "16 Seater Premium Urbania",
+      "Maddur · 80 KM shown",
+      "₹7,500 base, ₹40/km",
+      "₹8,300",
+      "Inconclusive"
+    ]
+  ],
+  "clarifications": [
+    "Local package definition: fixed 8 Hr / 80 Km minimum package, or one package per hour value (labels show \"N HR / 80 KM\")?",
+    "Per-vehicle extra-hour and extra-km rates — are the Fare Breakup values authoritative for the estimate?",
+    "Do Garage → pickup and drop → Garage legs count toward kilometres?",
+    "GST: should the estimate include or itemise GST (\"Additional\")?",
+    "Day Bata vs \"Day Allowance included\" in Base Rate — is Day Bata a separate charge?",
+    "Multi-day: hours per day vs per trip; when do extra hours and night bata apply?",
+    "Is today intentionally forced into every multi-day selection?",
+    "Local limits: maximum distance / allowed states (Belagavi, Hogenakkal-TN accepted).",
+    "Passenger maximum (999 accepted in exploration) and Hours 0/25 accepted into the field before validation.",
+    "Hours value 8 → 24 once (possible draft restore) — developer to confirm draft-restore behaviour."
+  ],
+  "scope": [
+    "Executed: TC-01 to TC-08 from the approved plan (Local_Test_Combinations.md), run user-web-20261112-1317-LOCAL. Earlier pre-submission runs (exploration and user-web-20261112-1235-LOCAL) are not used for status.",
+    "Supplementary (not counted in case status): TC-02 capacity popup (13 pax on 12-seater) — done; TC-04 multi-vehicle read-only check — done; TC-05 results filters — done (Premium 7, Volvo Bus India 0, Clear Preferences → 20, Brand New 20); TC-04 Modify Inquiry and TC-01 Request Custom Quote (view only) — NOT completed (automation click timeout; no application conclusion drawn).",
+    "Automation notes: TC-06 V4 passenger validation not recorded (click timeout, two attempts). First TC-07 baseline attempt discarded (hours read back 24); re-run verified. First TC-04 attempt stopped at the capacity popup. Superseded raw results are kept under results/<run>/superseded/.",
+    "Submission verification: success popup + save-inquiry HTTP 201 for each submitted case. Responses are encrypted, so no inquiry reference number could be captured; Dashboard/“Track My Booking” listing was not checked.",
+    "Vehicles used in Local: Sedan, 12 Seater Tempo Traveller, 49 Seater Deluxe Coach, 45 Seater Luxury Volvo, 9 Seater Luxury Urbania (TC-04, not submitted), 25 Seater Premium AC Coach, MPV's, 16 Seater Premium Urbania.",
+    "Personal data (account name, phone, email, customer details) is masked in all screenshots."
+  ]
+}

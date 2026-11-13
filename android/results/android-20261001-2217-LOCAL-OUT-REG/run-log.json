@@ -1,0 +1,21 @@
+{
+  "runId": "android-20261001-2217-LOCAL-OUT-REG",
+  "platform": "android",
+  "scope": "Regression on new QA build: all Local + Outstation cases (138) - Home (Local/Outstation forms, date/time, multi-day, passengers, hours, destinations), Location picker, Trip Summary, Vehicle list/filters, Vehicle Details & breakup, Confirm, My Bookings, Inquiry Details, payment, Cancel Trip; re-verification of BUG-LOC/HOME/TRIP/VLIST/VDET/CONF/OUT defects",
+  "build": "Uploaded APK app-release_1stOct26.apk (v1.1 string unchanged, com.siddaganga) - new QA build 2026-10-01",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-01T16:47:08.412Z",
+  "endedAt": null,
+  "credentials": [],
+  "approvals": [
+    {
+      "at": "2026-10-01T16:47:08.717Z",
+      "text": "User request (chat, 2026-10-01): retest Local + Outstation on the new build with 100% coverage incl. Confirm -> Inquiry -> Inquiry Details, cancellation and payment (Blocked if unavailable). Prior approvals for inquiry submission/cancellation in these modules apply; Claude will not enter payment details."
+    }
+  ],
+  "environmentNotes": [],
+  "cases": [],
+  "bugs": []
+}

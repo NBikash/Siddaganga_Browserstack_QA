@@ -31,7 +31,7 @@ Follow this order. Do not skip ahead to testing.
 ## Project map
 - `config/project.json` — prerequisites, env var names, required paths, module dependencies, approval list
 - `config/android.json`, `config/ios.json` — build source, devices, inventory paths, output paths
-- `manual-exploration/` — Android exploration baseline: `test-cases/banni-test-cases.csv|xlsx` (306 cases),
+- `manual-exploration/` — Android exploration baseline: `test-cases/banni-test-cases.csv|xlsx` (376 cases),
   `feature-map.md`, `app-info.md`, `session-notes/`. **Do not move, duplicate, or regenerate.**
 - `android/`, `ios/` — per-platform results, reports, evidence (and iOS test cases/session notes)
 - `testing/templates/` — results CSV, defect draft, run report templates
@@ -48,10 +48,29 @@ Follow this order. Do not skip ahead to testing.
 - **Irreversible actions need explicit approval each time** (list in `config/project.json →
   requiresExplicitApproval`): booking/inquiry Confirm, payments, Cancel Trip, logout, saving settings,
   support tickets, registrations/OTP/password resets, deletions, Jira tickets.
-- **Test cases:** the Android 306-case inventory is the approved baseline. Add cases only for identified
+- **Test cases:** the Android 376-case inventory is the approved baseline. Add cases only for identified
   gaps, with new IDs continuing the `TC_<MODULE>_<NNN>` sequence, and only after the user approves the diff.
 - **Build sources:** QA builds = uploaded APK (Android) / uploaded IPA (iOS). Play Store / App Store are
   future production-regression sources only — never mix them into QA-build runs. TestFlight is undecided;
   do not assume it.
 - **Evidence:** crop or avoid personal data (phone numbers, emails, addresses) in screenshots.
 - Git is managed by the user — do not `git init`, commit or push unless asked.
+
+## Multiple App Support
+
+This repository supports two separate applications:
+
+- **Banni by Siddaganga:** Existing customer-facing application. Preserve its configuration, test cases, execution results, evidence, and reports.
+- **Saagane by Siddaganga:** Internal operations application for Superadmin and Admin roles. Its configuration is `config/saagane/android.json`.
+
+### Saagane rules
+- Start with the Superadmin role, then test Admin separately.
+- Use the latest APK uploaded to BrowserStack App Live; do not require APKs to be stored locally in the project.
+- Keep Saagane test cases, results, screenshots, and reports separate from Banni.
+- Reuse the existing QA setup, BrowserStack workflow, recovery procedures, and report-generation tools where compatible.
+- Before testing, inspect the existing project instructions and scripts. Identify any changes required to support Saagane without breaking Banni.
+- Never overwrite or mix existing Banni artifacts.
+- Select Saagane explicitly with `--app saagane` (doctor, setup, `qa-log init`); without it every command targets Banni.
+  Details: QA-RUN.md §1a; registry and approval list: `config/project.json → apps.saagane`.
+- Do not assume the current Banni test inventory or app-specific workflows apply to Saagane. Explore Saagane first and build its own test inventory.
+

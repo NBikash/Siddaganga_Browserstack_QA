@@ -1,0 +1,32 @@
+[
+  {
+    "name": "V1 blank pickup submit (CFG-1)"
+  },
+  {
+    "name": "V2 DD ON, drop blank"
+  },
+  {
+    "name": "V3 drop same as pickup (Whitefield → Whitefield)"
+  },
+  {
+    "name": "V4 passengers invalid values"
+  },
+  {
+    "name": "V5 hours invalid values"
+  },
+  {
+    "name": "V6 past date typed"
+  },
+  {
+    "name": "V7 toggle transitions with data entered"
+  },
+  {
+    "name": "R1 recovery: CFG-3 Whitefield → Mangaluru, today 2:00 PM, 3 pax, 2 hrs, MPV"
+  },
+  {
+    "name": "R2 results page refresh"
+  },
+  {
+    "name": "R3 browser back to home form"
+  }
+]

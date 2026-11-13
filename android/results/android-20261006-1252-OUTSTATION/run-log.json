@@ -1,0 +1,884 @@
+{
+  "runId": "android-20261006-1252-OUTSTATION",
+  "platform": "android",
+  "scope": "Outstation module 100% on latest QA build: module cases TC_HOME_004/028-032/042/045-054, LOC_015-016, TRIP_010-011, VLIST_011-012, VDET_004/007/017/019, CONF_011-012, BOOK_011/015, INQ_011-014, CMP_007/010 + shared flows via Outstation path (TRIP_005, HOME_026-027, CONF_001/005-009, BOOK_002-005/010, INQ_001/003-010) + gap cases. Approved: Confirm, Cancel Trip. Not approved: Pay Advance.",
+  "build": "Uploaded APK app-release_5Oct26.apk v1.1 (com.siddaganga), uploaded 2026-10-06",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-06T07:22:48.831Z",
+  "endedAt": "2026-10-06T10:00:38.918Z",
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE from .env)",
+      "method": "Login with Mobile + password, entered manually by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-06T07:22:49.271Z",
+      "text": "User pre-approved for this run (2026-10-06): submitting booking inquiries (Confirm) and Cancel Trip on inquiries created in this run. Pay Advance NOT approved."
+    }
+  ],
+  "environmentNotes": [
+    "07:37 device time: Chrome window holding App Live was resized/moved externally twice (1536 -> 767 -> 526 px wide, screenX 762/1002). Fullscreen restore worked briefly, then window snapped again to ~541x823 at the right of the screen. Device stream still fully rendered (234x519) and usable; testing continued at that size. Environment only.",
+    "Run paused 08:24 device time: Claude usage limit reached. Remaining Outstation cases not yet executed: TC_VDET_019, TC_CMP_007, TC_CMP_010. Excluded from scope (Pay Advance not approved, per user instruction not counted): TC_INQ_004-007.",
+    "Verified fixed on app-release_5Oct26.apk: BUG-OUT-002 (destination picker subtitle, TC_LOC_015), BUG-OUT-003 (place name kept, TC_LOC_016), BUG-OUT-010 (status chip casing, TC_BOOK_005), BUG-OUT-011 (return date on Inquiry Details, TC_INQ_011), BUG-OUT-018 (cross-month dates, TC_TRIP_011). Not reproduced this run (Pay Advance not approved): BUG-OUT-012, BUG-OUT-013.",
+    "Scope and coverage: 55 in-scope cases (37 Outstation module cases + 18 shared CONF/BOOK/INQ/TRIP/HOME flows executed via the Outstation path). Excluded from scope and not counted (Pay Advance not approved by user): TC_INQ_004, TC_INQ_005, TC_INQ_006, TC_INQ_007. Inquiries created and cancelled in this run (approved): 565, 566. Gap cases: none new for Outstation (one new defect BUG-CMP-001 found under existing TC_CMP_007)."
+  ],
+  "cases": [
+    {
+      "id": "TC_HOME_028",
+      "status": "Pass",
+      "actual": "Outstation tab shows Pickup Location, Pickup Date & Time (today/now), Destination > First Destination * (Search Destination 1 Location), + Add Another Destination, Drop Date & Time (dd/mm/yyyy, --:--), Number of Passengers 1, Additional Options: Different drop location. No Number of Hours / Multi-day trip.",
+      "endedAt": "2026-10-06T07:33:58.050Z"
+    },
+    {
+      "id": "TC_HOME_045",
+      "status": "Pass",
+      "actual": "Search Vehicles on the untouched form is blocked: Pickup location is required, First destination is required, This field is required under Drop date and Drop time; also Selected date and time has already passed under the default pickup time. Fields outlined red.",
+      "endedAt": "2026-10-06T07:33:58.063Z"
+    },
+    {
+      "id": "TC_HOME_029",
+      "status": "Pass",
+      "actual": "+ Add Another Destination adds Destination 2 (Search Destination 2 Location) with a trash icon; tapping the trash removes it. New fields show Destination location is required once the form has been validated.",
+      "endedAt": "2026-10-06T07:33:58.063Z"
+    },
+    {
+      "id": "TC_HOME_030",
+      "status": "Fail",
+      "actual": "Added destinations up to Destination 10; + Add Another Destination stays enabled, no maximum, message or disabled state (form remains usable and scrolls). BUG-OUT-001 still reproducible on app-release_5Oct26.apk.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_HOME_030_1_no-destination-limit.png"
+      ],
+      "bugs": [
+        "BUG-OUT-001"
+      ],
+      "endedAt": "2026-10-06T07:33:58.063Z"
+    },
+    {
+      "id": "TC_HOME_046",
+      "status": "Pass",
+      "actual": "Trash icon only on Destination 2..10; deleting all of them leaves First Destination * which has no trash icon.",
+      "endedAt": "2026-10-06T07:33:58.063Z"
+    },
+    {
+      "id": "TC_LOC_015",
+      "status": "Pass",
+      "actual": "First Destination picker: title First Destination, subtitle Select your destination to complete your inquiry (destination-specific). BUG-OUT-002 fixed on app-release_5Oct26.apk. Drop Location picker subtitle also now reads Select your drop location to complete your inquiry.",
+      "endedAt": "2026-10-06T07:52:00.007Z"
+    },
+    {
+      "id": "TC_LOC_016",
+      "status": "Pass",
+      "actual": "Searched mysuru palace, selected Mysore Palace suggestion; First Destination field shows Mysuru Palace, Agrahara, Chamrajpura, M... (place name kept). BUG-OUT-003 fixed on this build.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_047",
+      "status": "Pass",
+      "actual": "Outstation with pickup Majestic and First Destination Mysuru Palace; Ride tab (My Bookings) then Home tab: Outstation still selected, pickup and destination retained.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_050",
+      "status": "Fail",
+      "actual": "Pickup date set to 09-10-2026; Drop date picker (sheet titled Return Date) opens on 6 October 2026 (today) and offers 6/7/8 Oct, earlier than the pickup date; 08-10 can be applied (search then blocked by validation). BUG-OUT-004 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_HOME_050_1_return-date-before-pickup.png"
+      ],
+      "bugs": [
+        "BUG-OUT-004"
+      ],
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_031",
+      "status": "Pass",
+      "actual": "Pickup 09-10-2026 10:30 am, Drop 08-10-2026 07:30 am: inline Drop date & time must be after pickup date & time; Search Vehicles blocked.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_048",
+      "status": "Pass",
+      "actual": "Pickup 09-10-2026 10:30 am, Drop 09-10-2026 07:30 am (same day, 3 h earlier): Drop date & time must be after pickup date & time; Search Vehicles blocked.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_049",
+      "status": "Pass",
+      "actual": "Valid pickup/destination/dates, Destination 2 added and left empty: Search blocked, form scrolls up to Destination 2 with Destination location is required.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_052",
+      "status": "Pass",
+      "actual": "Destinations Mysuru Palace, Ooty, Madikeri; trash on Destination 2 (Ooty) removes it; Madikeri becomes Destination 2 with value intact.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_026",
+      "status": "Pass",
+      "actual": "Outstation with Different drop location ON and Drop Location empty: Search shows Drop location is required under the field; search blocked.",
+      "endedAt": "2026-10-06T07:52:00.020Z"
+    },
+    {
+      "id": "TC_HOME_053",
+      "status": "Pass",
+      "actual": "Majestic -> Mysuru Palace -> Madikeri, Different drop = Mangaluru, 08-10 10:30 am to 10-10 07:30 pm: loader then Trip Summary with Outstation Trip badge, route lists all stops in order ending at Mangaluru, map shows multi-stop route, Distance 395 KM (realistic), Dates 08-10 Oct 2026, Drop Location Mangaluru, Passengers 1.",
+      "endedAt": "2026-10-06T07:52:00.021Z"
+    },
+    {
+      "id": "TC_VDET_004",
+      "status": "Pass",
+      "actual": "33 Seater Deluxe Coach Pricing card: Local Starts Rs 10,000 (8hr/80km), Outstation Rs 16,500 /day + Rs 55/km, Transfer Rs 14,500 (City -> Airport). (Case data says Rs 35/km; Rs 55/km is consistent with the footer.)",
+      "endedAt": "2026-10-06T07:52:00.021Z"
+    },
+    {
+      "id": "TC_VDET_017",
+      "status": "Fail",
+      "actual": "Vehicle Details from the Outstation search: footer Starting From Rs 16,500 /day + Rs 55/km (Outstation context - OK), but View Fare Breakup opens on the Local Trip tab (Local Package Pricing) instead of Outstation Trip.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_VDET_017_1_breakup-opens-local-tab.png"
+      ],
+      "bugs": [
+        "BUG-TRF-016"
+      ],
+      "endedAt": "2026-10-06T07:52:00.021Z"
+    },
+    {
+      "id": "TC_VDET_007",
+      "status": "Fail",
+      "actual": "Outstation Trip tab (Outstation Pricing - Daily minimum and distance-based estimate): Base Rate incl. Driver/Fuel/Day Allowance Rs 16,500; Bata Cost (Before 6am or After 10pm) Rs 1,000; Bata Cost (Before 10pm or After 6am) Rs 1,000; Toll & Parking Actuals; GST Additional. No per-km / minimum-km line although the card says + Rs 55/km. BUG-OUT-008 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_VDET_007_1_no-per-km-line.png"
+      ],
+      "bugs": [
+        "BUG-OUT-008"
+      ],
+      "endedAt": "2026-10-06T07:52:00.021Z"
+    },
+    {
+      "id": "TC_CONF_001",
+      "status": "Pass",
+      "actual": "Outstation Confirm Your Trip modal (inquiry B): route map with all stops, Customer Details (name, email, phone - not captured), Selected Vehicles 33 Seater Deluxe Coach - 1 with 35 Seater chip and amenity icons, Route Summary Outstation badge with Pickup Majestic, stops Mysuru Palace and Madikeri, Dropoff Mangaluru; Dates 8-10 Oct 2026 with Pickup Time 10:30 am and Return Time 07:30 pm; 1 Passenger; Estimated Trip Cost; Note; Edit Inquiry / Confirm.",
+      "endedAt": "2026-10-06T07:56:09.309Z"
+    },
+    {
+      "id": "TC_CONF_012",
+      "status": "Fail",
+      "actual": "3-day multi-stop trip (08-10 Oct, 395 KM, 33 Seater Deluxe Coach): Vehicle Base Cost Rs 16,500 + Bata Rs 1,000 + Bata Rs 1,000 = Estimated Grand Total Rs 18,500 - identical to a 1-day fare; days and km not charged (vehicle list showed Rs 52,500 for the same trip). Compared with 4-day trip in TC_CONF_011. BUG-OUT-009 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CONF_012_1_3day-estimate-18500.png"
+      ],
+      "bugs": [
+        "BUG-OUT-009",
+        "BUG-OUT-007"
+      ],
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_CONF_006",
+      "status": "Pass",
+      "actual": "Confirm double-tapped quickly (approved): one Inquiry Submitted Successfully modal; My Bookings Week > Inquired shows a single new Outstation card (Inquiry 565) followed by an older Local inquiry - no duplicate.",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_CONF_005",
+      "status": "Pass",
+      "actual": "Confirm (approved) -> Inquiry Submitted Successfully! We are calculating the most accurate price for your trip, Estimated Cost (Approx.) Rs 18,500, Track My Inquiry and Back to Home. Inquiry 565 created (Outstation multi-stop, 08-10 Oct).",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_CONF_008",
+      "status": "Pass",
+      "actual": "Track My Inquiry opens Ride > My Bookings (Today filter).",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_BOOK_002",
+      "status": "Pass",
+      "actual": "Inquiry 565 (trip 08 Oct): Today > Inquired count stays 7 (not listed); Week > Inquired shows 14 with the new Outstation card on top.",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_BOOK_003",
+      "status": "Pass",
+      "actual": "Week > Inquired card: Outstation badge, Inquired chip, rating 0.00, route Majestic, Bengaluru... - Mangaluru, Karn..., 3 days, 900 km, 35 seats, 1 pax, 33 Seater Deluxe Coach, Starts From Rs 18,500, View Details. (Distance mismatch tracked in TC_BOOK_015.)",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_BOOK_004",
+      "status": "Pass",
+      "actual": "Card values (3 days, 33 Seater Deluxe Coach, Rs 18,500, 1 pax) match the Confirm modal.",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_BOOK_005",
+      "status": "Pass",
+      "actual": "Status chip now reads Inquired (capitalised, matches the Inquired tab) and trip badge reads Outstation. BUG-OUT-010 fixed on app-release_5Oct26.apk.",
+      "endedAt": "2026-10-06T07:56:09.318Z"
+    },
+    {
+      "id": "TC_BOOK_010",
+      "status": "Pass",
+      "actual": "View Details opens Inquiry Details with Inquiry ID: 565 (ID shows a dash for ~1 s while loading).",
+      "endedAt": "2026-10-06T07:56:09.319Z"
+    },
+    {
+      "id": "TC_INQ_001",
+      "status": "Pass",
+      "actual": "Inquiry 565: Outstation Trip; Majestic -> Distance 900 km -> Mangaluru; Schedule Date 8-10 Oct 2026, Pickup 10:30 am, Expected arrival: 10 Oct, 2026, 07:30 pm; Total Amount Rs18500; Payment Information; Cancel Trip. All sections present (distance/stops defects tracked in TC_BOOK_015 / TC_INQ_013).",
+      "endedAt": "2026-10-06T07:56:09.319Z"
+    },
+    {
+      "id": "TC_INQ_003",
+      "status": "Pass",
+      "actual": "Payment Information: Advance Received Rs0, Invoice Status Not generated yet, Payment amount default 500, gateway Razorpay selected (Cashfree also offered), Pay Advance button. (Observed only; no payment attempted - not approved.)",
+      "endedAt": "2026-10-06T07:56:09.319Z"
+    },
+    {
+      "id": "TC_INQ_013",
+      "status": "Fail",
+      "actual": "Inquiry 565 (Majestic -> Mysuru Palace -> Madikeri -> drop Mangaluru): Inquiry Details route shows only Majestic -> Distance 900 km -> Mangaluru; intermediate stops Mysuru and Madikeri missing (also absent on the booking card). Trip Summary and Confirm listed all stops. BUG-OUT-017 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_INQ_013_1_stops-missing-900km.png"
+      ],
+      "bugs": [
+        "BUG-OUT-017"
+      ],
+      "endedAt": "2026-10-06T07:56:09.319Z"
+    },
+    {
+      "id": "TC_INQ_010",
+      "status": "Pass",
+      "actual": "Back arrow on Inquiry Details (565) returns to My Bookings with Week period and Inquired tab still selected (count 14).",
+      "endedAt": "2026-10-06T07:59:55.161Z"
+    },
+    {
+      "id": "TC_INQ_009",
+      "status": "Pass",
+      "actual": "Cancel Trip opens Cancel Booking & Process Refund (Inquiry ID 565, refund calculation, optional reason, Back / Confirm Cancellation); Back closes it; inquiry unchanged (Total Rs18500, Advance Rs0, Cancel Trip still available).",
+      "endedAt": "2026-10-06T07:59:55.166Z"
+    },
+    {
+      "id": "TC_INQ_014",
+      "status": "Fail",
+      "actual": "Inquiry 565 (trip cost Rs 18,500, Advance Received Rs 0, 2 days 2 hours before start): slab 24 hrs <= T < 3 days, Penalty 20% + one day charge Rs 9,500 -> Penalty retained Rs 13,200; reason optional (confirmed with empty reason) - slab and optional reason OK. But Refund amount Rs 5,300 and Cancellation Invoice INV-74 (refund Rs 5,300) are generated for an inquiry with nothing paid; refund should be based on the amount paid (Rs 0). BUG-OUT-014 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_INQ_014_1_refund-5300-on-unpaid.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_INQ_014_2_cancelled-INV-74-refund-5300.png"
+      ],
+      "bugs": [
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-06T07:59:55.166Z"
+    },
+    {
+      "id": "TC_INQ_008",
+      "status": "Pass",
+      "actual": "Cancel Trip -> confirmation dialog -> Confirm Cancellation (approved, single tap after stale-frame check) -> Booking Cancelled (Inquiry #565) with Refund Summary and Cancellation Invoice INV-74; Close returns to My Bookings and Week > Inquired drops 14 -> 13 (565 removed).",
+      "endedAt": "2026-10-06T07:59:55.166Z"
+    },
+    {
+      "id": "TC_BOOK_011",
+      "status": "Fail",
+      "actual": "After cancelling Inquiry 565 it disappears from My Bookings; tabs are still only Live / Upcoming / Completed / Inquired (Today/Week/Month) - no Cancelled tab or status, so the cancelled inquiry and its invoice INV-74 cannot be viewed. BUG-OUT-015 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_BOOK_011_1_no-cancelled-view.png"
+      ],
+      "bugs": [
+        "BUG-OUT-015"
+      ],
+      "endedAt": "2026-10-06T07:59:55.166Z"
+    },
+    {
+      "id": "TC_HOME_004",
+      "status": "Pass",
+      "actual": "Local / Outstation / Transfer / Multi tabs each highlight when tapped and swap the form (Local: Pickup, date/time, passengers, hours, Multi-day / Different drop; Outstation: First Destination *, + Add Another Destination, Drop Date & Time; Transfer: Point To Point / By Hour, From/To with swap; Multi: Leg #1 with Local/Outstation/Transfer).",
+      "endedAt": "2026-10-06T08:15:43.624Z"
+    },
+    {
+      "id": "TC_HOME_042",
+      "status": "Pass",
+      "actual": "Local with pickup Majestic -> switched to Outstation: pickup empty; back to Local: pickup cleared too. Consistent clearing between trip types - no stale hidden data carried.",
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_HOME_032",
+      "status": "Pass",
+      "actual": "Majestic -> Mysuru Palace, 12-10-2026 10:30 am to 15-10-2026 06:30 pm, 20 pax: loader then Trip Summary with Outstation Trip badge, route Majestic -> Mysuru Palace -> Majestic, map route, computed Distance 281 KM (realistic round trip), Dates 12-15 Oct 2026.",
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_TRIP_010",
+      "status": "Fail",
+      "actual": "Round trip (no different drop): Drop Location correctly shows Majestic (return point), but the Trip Summary shows only Dates 12-15 Oct, 2026 - pickup time 10:30 am and return date/time 15 Oct 06:30 pm are not shown (the Confirm modal does show Pickup Time / Return Time). BUG-OUT-006 partially fixed only.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_TRIP_010_1_no-pickup-return-times.png"
+      ],
+      "bugs": [
+        "BUG-OUT-006"
+      ],
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_TRIP_005",
+      "status": "Pass",
+      "actual": "Edit Trip Details on the Outstation summary returns to the form with Majestic, Mysuru Palace, 12-10 10:30 am, 15-10 06:30 pm and 20 passengers retained.",
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_VLIST_011",
+      "status": "Fail",
+      "actual": "4-day Outstation (12-15 Oct, 281 KM, 20 pax): list card 33 Seater Deluxe Coach Starts From Rs 70,000 (40 Seater Rs 76,000); Vehicle Details footer Rs 16,500 /day + Rs 55/km; Confirm/inquiry estimate Rs 18,500 - three different prices for the same trip. BUG-OUT-007 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_VLIST_011_1_list-4day-70000.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CONF_011_1_4day-estimate-18500.png"
+      ],
+      "bugs": [
+        "BUG-OUT-007"
+      ],
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_VLIST_012",
+      "status": "Fail",
+      "actual": "List Starts From scales with duration (33 Seater Deluxe Coach: 3-day 08-10 Oct Rs 52,500; 4-day 12-15 Oct Rs 70,000 = +Rs 17,500/day) but neither matches the Confirm estimate (Rs 18,500 for both).",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_VLIST_011_1_list-4day-70000.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CONF_012_1_3day-estimate-18500.png"
+      ],
+      "bugs": [
+        "BUG-OUT-007",
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_CONF_011",
+      "status": "Fail",
+      "actual": "4-day Outstation (12-15 Oct, 281 KM, pickup 10:30 am, 20 pax, 33 Seater Deluxe Coach): Vehicle Base Cost Rs 16,500 (one day) + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Estimated Grand Total Rs 18,500. Not x4 days, no km charge (281 km x Rs 55), night bata applied to a 10:30 am pickup; total differs from list Rs 70,000. BUG-OUT-009 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CONF_011_1_4day-estimate-18500.png"
+      ],
+      "bugs": [
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-06T08:15:43.636Z"
+    },
+    {
+      "id": "TC_CONF_007",
+      "status": "Pass",
+      "actual": "App Live Throttle Network > Offline Mode with the Confirm modal open (inquiry A); Confirm -> dialog Siddaganga Travels - No internet connection (OK); modal stays open, no inquiry created. After Turn off network simulation, a single Confirm retry succeeded (Inquiry Submitted Successfully, Rs 18,500).",
+      "endedAt": "2026-10-06T08:15:43.637Z"
+    },
+    {
+      "id": "TC_CONF_009",
+      "status": "Pass",
+      "actual": "Back to Home closes the success modal and opens Home with the Outstation form reset (pickup and destination empty, date today 06-10-2026, time now, drop empty, 1 passenger, Different drop location off).",
+      "endedAt": "2026-10-06T08:15:43.637Z"
+    },
+    {
+      "id": "TC_BOOK_015",
+      "status": "Fail",
+      "actual": "Trip Summary distances vs saved inquiry: (a) Inquiry 565 Majestic -> Mysuru -> Madikeri -> Mangaluru: summary 395 KM, card and Inquiry Details 900 km; (b) Inquiry 566 Majestic -> Mysuru Palace round trip: summary 281 KM, card and Inquiry Details 1200 km (300 km x days placeholder). BUG-OUT-005 only fixed on the Trip Summary.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_BOOK_015_1_card-900km-vs-summary-395km.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_BOOK_015_2_card-1200km-vs-summary-281km.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_BOOK_015_3_inquiry-566-1200km.png"
+      ],
+      "bugs": [
+        "BUG-OUT-005"
+      ],
+      "endedAt": "2026-10-06T08:18:30.983Z"
+    },
+    {
+      "id": "TC_INQ_011",
+      "status": "Pass",
+      "actual": "Inquiry 566 (Outstation 12-15 Oct, pickup 10:30 am, drop 15-10 06:30 pm): Schedule shows Date 12-15 Oct 2026, Pickup 10:30 am and Expected arrival: 15 Oct, 2026, 06:30 pm - return date and time now stated (BUG-OUT-011 fixed). Observation: route end point shows Mysuru Palace for a round trip (Trip Summary drop = Majestic).",
+      "endedAt": "2026-10-06T08:18:30.985Z"
+    },
+    {
+      "id": "TC_INQ_012",
+      "status": "Fail",
+      "actual": "Inquiry 566 (trip cost Rs 18,500, Advance Received Rs 0, 6 days 2 hours before start): slab 3 days <= T < 7 days, Penalty 10%, Add one day charge No, Penalty retained Rs 1,850, Refund amount Rs 16,650; after Confirm Cancellation (reason entered) Booking Cancelled (Inquiry #566) with Cancellation Invoice INV-75 refunding Rs 16,650. Expected refund Rs 0 / no refund invoice for an unpaid inquiry. BUG-OUT-014 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_INQ_012_1_refund-16650-on-unpaid.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_INQ_012_2_cancelled-INV-75-refund-16650.png"
+      ],
+      "bugs": [
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-06T08:18:30.985Z"
+    },
+    {
+      "id": "TC_HOME_051",
+      "status": "Fail",
+      "actual": "Pickup Majestic, First Destination Majestic, 09-11 Oct: no validation; Trip Summary Outstation Trip Majestic -> Majestic -> Majestic, Distance 900 KM, map draws a loop. BUG-OUT-016 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_HOME_051_1_same-pickup-destination-900km.png"
+      ],
+      "bugs": [
+        "BUG-OUT-016"
+      ],
+      "endedAt": "2026-10-06T08:23:43.587Z"
+    },
+    {
+      "id": "TC_TRIP_011",
+      "status": "Pass",
+      "actual": "Majestic -> Panaji, Goa, 09 Oct - 08 Nov 2026: Trip Summary Dates 09 Oct - 08 Nov, 2026; Confirm modal 9 Oct - 8 Nov 2026.",
+      "endedAt": "2026-10-06T08:23:43.589Z"
+    },
+    {
+      "id": "TC_HOME_054",
+      "status": "Fail",
+      "actual": "31-day interstate trip (09 Oct - 08 Nov, Majestic -> Panaji, Goa): accepted, no maximum duration; Trip Summary consistent (1175 KM). Pricing inconsistent: list 33 Seater Deluxe Coach Starts From Rs 5,42,500 vs Confirm Estimated Grand Total Rs 18,500 (one-day fare). Confirm not submitted (Edit Inquiry).",
+      "bugs": [
+        "BUG-OUT-007",
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-06T08:23:43.589Z"
+    },
+    {
+      "id": "TC_CMP_007",
+      "status": "Pass",
+      "actual": "Explore > Compare Vehicles: selected 45 Seater Luxury BharatBenz and 49 Seater Luxury 9600 Volvo -> Vehicle Comparison sheet lists all expected rows side by side: Passenger capacity (45/49), Body type, Local base rate (Rs 14,500 / Rs 22,500, 8hrs/80km), Outstation rate (Rs 70/km / Rs 120/km), Daily min km (400 / 500 km/day), Driver allowance (Rs 1,500 / Rs 1,750 per day), Mileage, Fuel type, Toll/Parking, Night charge (Rs 1,500 / Rs 1,750), AC type, Seat type, Luggage capacity, Model year, Condition, Suspension (stars), amenity icons, View Full Details. Observation: Mileage, Fuel type, Toll/Parking, Luggage capacity, Model year and Condition show a dash for both vehicles (logged as BUG-CMP-001, Low).",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CMP_007_1_compare-rates-blank-rows.png",
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_CMP_007_2_compare-blank-luggage-year-condition.png"
+      ],
+      "bugs": [
+        "BUG-CMP-001"
+      ],
+      "endedAt": "2026-10-06T09:09:05.345Z"
+    },
+    {
+      "id": "TC_CMP_010",
+      "status": "Pass",
+      "actual": "View Full Details on 45 Seater Luxury BharatBenz: Pricing Local Rs 14,500 (8hr/80km), Outstation Rs 28,000 /day + Rs 70/km, Transfer Rs 20,000 - Local base rate and Outstation per-km rate equal the comparison values. Observation: the comparison Outstation rate row shows only Rs 70/km and omits the Rs 28,000/day component. Also: Deluxe category chip on Explore still returns No vehicles found (BUG-VLIST-001, out of scope).",
+      "endedAt": "2026-10-06T09:09:05.348Z"
+    },
+    {
+      "id": "TC_VDET_019",
+      "status": "Fail",
+      "actual": "Outstation search Majestic -> Mysuru Palace, 07-08 Oct, 40 passengers: vehicle list still offers 20 vehicles incl. the 35-seat 33 Seater Deluxe Coach first. Book Now shows Passenger Capacity Not Complete! You need seats for 40 passengers, but your selected buses cover only 35 seats. Please add one or more buses to continue. with only Cancel; after Cancel there is no add-bus / multi-vehicle control anywhere on Vehicle Details. Booking is prevented (OK) but the dialog asks for an action the app does not offer. BUG-VDET-003 still reproducible.",
+      "evidence": [
+        "android/evidence/android-20261006-1252-OUTSTATION/TC_VDET_019_1_capacity-dialog-no-add-bus.png"
+      ],
+      "bugs": [
+        "BUG-VDET-003"
+      ],
+      "endedAt": "2026-10-06T09:13:19.147Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-OUT-001",
+      "title": "Outstation: no maximum number of destinations enforced",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_HOME_030"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Home > Outstation",
+        "Tap + Add Another Destination repeatedly"
+      ],
+      "expected": "A reasonable maximum (per spec) is enforced with a message or disabled button",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_HOME_030: Added destinations up to Destination 10; + Add Another Destination stays enabled, no maximum, message or disabled state (form remains usable and scrolls). BUG-OUT-001 still reproducible on app-release_5Oct26.apk.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_030_1_no-destination-limit.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-004",
+      "title": "Return Date picker allows dates before the selected pickup date",
+      "module": "Home - Start Your Journey",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_HOME_050"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Home > Outstation",
+        "Set pickup date 04-10-2026",
+        "Open Drop Date"
+      ],
+      "expected": "Picker minimum = pickup date",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_HOME_050: Pickup date set to 09-10-2026; Drop date picker (sheet titled Return Date) opens on 6 October 2026 (today) and offers 6/7/8 Oct, earlier than the pickup date; 08-10 can be applied (search then blocked by validation). BUG-OUT-004 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_050_1_return-date-before-pickup.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-TRF-016",
+      "title": "Vehicle Details opened from an Outstation (and Transfer) search opens the fare breakup on the Local Trip tab",
+      "module": "Vehicle Details & Fare Breakup",
+      "severity": "Low",
+      "priority": "Medium",
+      "status": "Open - still reproducible (also affects Outstation)",
+      "tcIds": [
+        "TC_VDET_017"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Transfer P2P search Majestic -> KIA",
+        "Filters > Sedan",
+        "Open Sedan",
+        "View Fare Breakup"
+      ],
+      "expected": "Breakup opens on the Transfer Trip tab (search context)",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_VDET_017: Vehicle Details from the Outstation search: footer Starting From Rs 16,500 /day + Rs 55/km (Outstation context - OK), but View Fare Breakup opens on the Local Trip tab (Local Package Pricing) instead of Outstation Trip.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VDET_017_1_breakup-opens-local-tab.png"
+      ],
+      "errorInfo": "No error shown on device.",
+      "notes": "Originally logged in an earlier run (Remaining part of the TC_VDET_018 finding of 01-10 (footer now fixed).). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-008",
+      "title": "Outstation fare breakup has no per-km / minimum-km line although the pricing card shows '+ Rs 55/km'",
+      "module": "Vehicle Details & Fare Breakup",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VDET_007"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Vehicle Details > View Fare Breakup",
+        "Outstation Trip tab"
+      ],
+      "expected": "Base rate per day, per-km charge and daily minimum km, bata, toll, GST",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_VDET_007: Outstation Trip tab (Outstation Pricing - Daily minimum and distance-based estimate): Base Rate incl. Driver/Fuel/Day Allowance Rs 16,500; Bata Cost (Before 6am or After 10pm) Rs 1,000; Bata Cost (Before 10pm or After 6am) Rs 1,000; Toll & Parking Actuals; GST Additional. No per-km / minimum-km line although the card says + Rs 55/km. BUG-OUT-008 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VDET_007_1_no-per-km-line.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-009",
+      "title": "Outstation 4-day inquiry estimated at one day's base fare (Rs 18,500) - days and km not charged",
+      "module": "Confirm Trip & Inquiry Submission",
+      "severity": "Critical",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_CONF_012",
+        "TC_VLIST_012",
+        "TC_CONF_011",
+        "TC_HOME_054"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Outstation search 04-10 10:30 am to 07-10 06:30 am (4 days, 1200 KM)",
+        "Select 33 Seater Deluxe Coach > Book Now",
+        "Review Estimated Trip Cost; Confirm"
+      ],
+      "expected": "Estimate = Rs 16,500 x 4 days and/or 1200 km x Rs 55 + applicable bata (approx. Rs 66,000-73,000+), consistent with the list price",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_CONF_012: 3-day multi-stop trip (08-10 Oct, 395 KM, 33 Seater Deluxe Coach): Vehicle Base Cost Rs 16,500 + Bata Rs 1,000 + Bata Rs 1,000 = Estimated Grand Total Rs 18,500 - identical to a 1-day fare; days and km not charged (vehicle list showed Rs 52,500 for the same trip). Compared with 4-day trip in TC_CONF_011. BUG-OUT-009 still reproducible. | TC_VLIST_012: List Starts From scales with duration (33 Seater Deluxe Coach: 3-day 08-10 Oct Rs 52,500; 4-day 12-15 Oct Rs 70,000 = +Rs 17,500/day) but neither matches the Confirm estimate (Rs 18,500 for both). | TC_CONF_011: 4-day Outstation (12-15 Oct, 281 KM, pickup 10:30 am, 20 pax, 33 Seater Deluxe Coach): Vehicle Base Cost Rs 16,500 (one day) + Bata (Before 6am or After 10pm) Rs 1,000 + Bata (Before 10pm or After 6am) Rs 1,000 = Estimated Grand Total Rs 18,500. Not x4 days, no km charge (281 km x Rs 55), night bata applied to a 10:30 am pickup; total differs from list Rs 70,000. BUG-OUT-009 still reproducible. | TC_HOME_054: 31-day interstate trip (09 Oct - 08 Nov, Majestic -> Panaji, Goa): accepted, no maximum duration; Trip Summary consistent (1175 KM). Pricing inconsistent: list 33 Seater Deluxe Coach Starts From Rs 5,42,500 vs Confirm Estimated Grand Total Rs 18,500 (one-day fare). Confirm not submitted (Edit Inquiry).",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CONF_012_1_3day-estimate-18500.png",
+        "TC_VLIST_011_1_list-4day-70000.png",
+        "TC_CONF_011_1_4day-estimate-18500.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-007",
+      "title": "Outstation price inconsistent across screens: list Rs 73,000, details footer Rs 10,000, confirm/inquiry Rs 18,500",
+      "module": "Vehicle Listing / Vehicle Details",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_CONF_012",
+        "TC_VLIST_011",
+        "TC_VLIST_012",
+        "TC_HOME_054"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Outstation search 4-7 Oct, Majestic -> Mysuru",
+        "Note Starts From on 33 Seater Deluxe Coach card",
+        "Open the vehicle; read footer and breakup default tab",
+        "Book Now; read Estimated Grand Total"
+      ],
+      "expected": "One consistent outstation estimate across list, details and confirm; details opened from an Outstation search default to the Outstation context",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_CONF_012: 3-day multi-stop trip (08-10 Oct, 395 KM, 33 Seater Deluxe Coach): Vehicle Base Cost Rs 16,500 + Bata Rs 1,000 + Bata Rs 1,000 = Estimated Grand Total Rs 18,500 - identical to a 1-day fare; days and km not charged (vehicle list showed Rs 52,500 for the same trip). Compared with 4-day trip in TC_CONF_011. BUG-OUT-009 still reproducible. | TC_VLIST_011: 4-day Outstation (12-15 Oct, 281 KM, 20 pax): list card 33 Seater Deluxe Coach Starts From Rs 70,000 (40 Seater Rs 76,000); Vehicle Details footer Rs 16,500 /day + Rs 55/km; Confirm/inquiry estimate Rs 18,500 - three different prices for the same trip. BUG-OUT-007 still reproducible. | TC_VLIST_012: List Starts From scales with duration (33 Seater Deluxe Coach: 3-day 08-10 Oct Rs 52,500; 4-day 12-15 Oct Rs 70,000 = +Rs 17,500/day) but neither matches the Confirm estimate (Rs 18,500 for both). | TC_HOME_054: 31-day interstate trip (09 Oct - 08 Nov, Majestic -> Panaji, Goa): accepted, no maximum duration; Trip Summary consistent (1175 KM). Pricing inconsistent: list 33 Seater Deluxe Coach Starts From Rs 5,42,500 vs Confirm Estimated Grand Total Rs 18,500 (one-day fare). Confirm not submitted (Edit Inquiry).",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CONF_012_1_3day-estimate-18500.png",
+        "TC_VLIST_011_1_list-4day-70000.png",
+        "TC_CONF_011_1_4day-estimate-18500.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - partially fixed.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-017",
+      "title": "Intermediate Outstation destinations are lost in Inquiry Details and booking card",
+      "module": "Inquiry Details",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_INQ_013"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Create Outstation inquiry Majestic -> Mysuru -> Madikeri with drop Mangaluru",
+        "My Bookings > Inquired > View Details"
+      ],
+      "expected": "All stops shown in order",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_INQ_013: Inquiry 565 (Majestic -> Mysuru Palace -> Madikeri -> drop Mangaluru): Inquiry Details route shows only Majestic -> Distance 900 km -> Mangaluru; intermediate stops Mysuru and Madikeri missing (also absent on the booking card). Trip Summary and Confirm listed all stops. BUG-OUT-017 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_013_1_stops-missing-900km.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-014",
+      "title": "Cancelling an unpaid inquiry generates a refund of Rs16,650 and a cancellation invoice",
+      "module": "Inquiry Details / Cancellation",
+      "severity": "Critical",
+      "priority": "P1",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_INQ_014",
+        "TC_INQ_012"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Create an Outstation inquiry (Inquiry 520, total Rs18,500); do not pay any advance (Advance Received Rs0)",
+        "Inquiry Details > Cancel Trip",
+        "Review Refund Calculation; Confirm Cancellation"
+      ],
+      "expected": "Refund is based on the amount actually paid (Rs0) - no refund and no refund invoice; or penalty only if a policy requires it",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_INQ_014: Inquiry 565 (trip cost Rs 18,500, Advance Received Rs 0, 2 days 2 hours before start): slab 24 hrs <= T < 3 days, Penalty 20% + one day charge Rs 9,500 -> Penalty retained Rs 13,200; reason optional (confirmed with empty reason) - slab and optional reason OK. But Refund amount Rs 5,300 and Cancellation Invoice INV-74 (refund Rs 5,300) are generated for an inquiry with nothing paid; refund should be based on the amount paid (Rs 0). BUG-OUT-014 still reproducible. | TC_INQ_012: Inquiry 566 (trip cost Rs 18,500, Advance Received Rs 0, 6 days 2 hours before start): slab 3 days <= T < 7 days, Penalty 10%, Add one day charge No, Penalty retained Rs 1,850, Refund amount Rs 16,650; after Confirm Cancellation (reason entered) Booking Cancelled (Inquiry #566) with Cancellation Invoice INV-75 refunding Rs 16,650. Expected refund Rs 0 / no refund invoice for an unpaid inquiry. BUG-OUT-014 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INQ_014_1_refund-5300-on-unpaid.png",
+        "TC_INQ_014_2_cancelled-INV-74-refund-5300.png",
+        "TC_INQ_012_1_refund-16650-on-unpaid.png",
+        "TC_INQ_012_2_cancelled-INV-75-refund-16650.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally reported in an earlier run; re-tested on app-release_1stOct26.apk.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-015",
+      "title": "Cancelled inquiries disappear from My Bookings - no Cancelled tab/status to view them or their invoice",
+      "module": "My Bookings",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_BOOK_011"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Cancel an inquiry",
+        "Open Ride > My Bookings, check Today/Week/Month and all tabs"
+      ],
+      "expected": "Cancelled booking visible with status Cancelled and access to the cancellation invoice",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_BOOK_011: After cancelling Inquiry 565 it disappears from My Bookings; tabs are still only Live / Upcoming / Completed / Inquired (Today/Week/Month) - no Cancelled tab or status, so the cancelled inquiry and its invoice INV-74 cannot be viewed. BUG-OUT-015 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_BOOK_011_1_no-cancelled-view.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-006",
+      "title": "Outstation Trip Summary omits pickup time and return date/time",
+      "module": "Trip Summary & Vehicle Search",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open - partially fixed (Drop Location now shows the return point)",
+      "tcIds": [
+        "TC_TRIP_010"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Valid Outstation search (pickup 10:30 am, drop 07-10 06:30 am, Different drop location off)",
+        "Review Trip Summary"
+      ],
+      "expected": "Pickup time and return date/time shown; Drop reflects the return point",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_TRIP_010: Round trip (no different drop): Drop Location correctly shows Majestic (return point), but the Trip Summary shows only Dates 12-15 Oct, 2026 - pickup time 10:30 am and return date/time 15 Oct 06:30 pm are not shown (the Confirm modal does show Pickup Time / Return Time). BUG-OUT-006 partially fixed only.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_TRIP_010_1_no-pickup-return-times.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - partially fixed.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-005",
+      "title": "Outstation Trip Summary 'Distance' shows 1200 KM for a ~145 km Bengaluru-Mysuru route",
+      "module": "Trip Summary & Vehicle Search",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_BOOK_015"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Home > Outstation",
+        "Pickup Majestic, Bengaluru; First Destination Mysuru Palace",
+        "Pickup 04-10-2026 10:30 am, Drop 07-10-2026 06:30 am, 20 pax",
+        "Search Vehicles"
+      ],
+      "expected": "Distance is the computed route distance (~145 km one way / ~290 km return), or clearly labelled as chargeable minimum km",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_BOOK_015: Trip Summary distances vs saved inquiry: (a) Inquiry 565 Majestic -> Mysuru -> Madikeri -> Mangaluru: summary 395 KM, card and Inquiry Details 900 km; (b) Inquiry 566 Majestic -> Mysuru Palace round trip: summary 281 KM, card and Inquiry Details 1200 km (300 km x days placeholder). BUG-OUT-005 only fixed on the Trip Summary.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_BOOK_015_1_card-900km-vs-summary-395km.png",
+        "TC_BOOK_015_2_card-1200km-vs-summary-281km.png",
+        "TC_BOOK_015_3_inquiry-566-1200km.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - partially fixed.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-OUT-016",
+      "title": "Outstation allows the destination to be the same as the pickup location",
+      "module": "Home - Start Your Journey",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_HOME_051"
+      ],
+      "reproducibility": "Always",
+      "steps": [
+        "Home > Outstation",
+        "Pickup Majestic, Bengaluru",
+        "First Destination Majestic, Bengaluru",
+        "Valid dates; Search Vehicles"
+      ],
+      "expected": "Validation error - destination must differ from pickup",
+      "actual": "Reproduced on app-release_5Oct26.apk: TC_HOME_051: Pickup Majestic, First Destination Majestic, 09-11 Oct: no validation; Trip Summary Outstation Trip Majestic -> Majestic -> Majestic, Distance 900 KM, map draws a loop. BUG-OUT-016 still reproducible.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_HOME_051_1_same-pickup-destination-900km.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Originally logged in an earlier run (Originally logged in android-20261001-1122-OUTSTATION. Retest status on new build: Open - still reproducible.). Retested in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-CMP-001",
+      "title": "Vehicle Comparison shows blank values for mileage, fuel type, toll/parking, luggage capacity, model year and condition",
+      "module": "Compare Vehicles",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "New",
+      "tcIds": [
+        "TC_CMP_007"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Explore tab.",
+      "steps": [
+        "Explore > Compare Vehicles",
+        "Select 45 Seater Luxury BharatBenz and 49 Seater Luxury 9600 Volvo",
+        "Open the comparison and scroll through all rows"
+      ],
+      "expected": "Every comparison row shows a value (or a clear Not available label) so vehicles can be compared on all listed attributes; Outstation rate row should include the per-day charge shown on Vehicle Details.",
+      "actual": "Mileage (km/l), Fuel type, Toll/Parking, Luggage capacity, Model year and Condition rows show a dash for both vehicles; Outstation rate row shows only Rs 70/km while Vehicle Details shows Rs 28,000/day + Rs 70/km.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_CMP_007_1_compare-rates-blank-rows.png",
+        "TC_CMP_007_2_compare-blank-luggage-year-condition.png"
+      ],
+      "errorInfo": "No error shown on device.",
+      "notes": "New in android-20261006-1252-OUTSTATION."
+    },
+    {
+      "id": "BUG-VDET-003",
+      "title": "Passenger capacity dialog asks to \"add one or more buses\" but there is no way to select multiple vehicles",
+      "module": "Vehicle Details & Fare Breakup",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open - still reproducible",
+      "tcIds": [
+        "TC_VDET_019"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Local search with 40 passengers (Majestic, 03 Oct).",
+      "steps": [
+        "Search Vehicles -> Available Vehicles (20 listed)",
+        "Open 33 Seater Deluxe Coach (35 seats)",
+        "Tap Book Now",
+        "Read dialog; look for a way to add a second bus"
+      ],
+      "expected": "Either only vehicles that fit the passenger count are offered, or the dialog offers a working way to add another vehicle (multi-vehicle selection / Add bus).",
+      "actual": "Reproduced on app-release_5Oct26.apk via TC_VDET_019 (Outstation, 40 pax, 35-seat coach): dialog asks to add buses but only Cancel is offered; no multi-vehicle selection exists.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_VDET_019_1_capacity-dialog-no-add-bus.png"
+      ],
+      "errorInfo": "New behaviour in this build (capacity guard) without a multi-vehicle flow.",
+      "notes": "Retested in android-20261006-1252-OUTSTATION."
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "TC_HOME_054",
+    "current": "",
+    "next": "TC_VDET_019, TC_CMP_007, TC_CMP_010",
+    "state": "Outstation Confirm modal closed via Edit Inquiry; inquiries 565 and 566 created and cancelled",
+    "at": "2026-10-06T08:23:43.892Z"
+  },
+  "partial": false,
+  "partialReason": "Interim - usage limit reached; 3 cases pending (TC_VDET_019, TC_CMP_007, TC_CMP_010)",
+  "recoveryEvents": [
+    {
+      "at": "2026-10-06T09:01:55.181Z",
+      "issue": "App Live session closed due to inactivity while Claude was paused (usage limit); app returned to onboarding",
+      "detection": "Banner: Your remote testing session is closed due to inactivity; window also shrunk to 560x823",
+      "actions": [
+        "Clear onbeforeunload",
+        "Close tab",
+        "Open new window",
+        "Start new Pixel 7 / Android 13 session with app-release_5Oct26.apk",
+        "Onboarding skip, user manual login"
+      ],
+      "outcome": "In progress"
+    },
+    {
+      "at": "2026-10-06T09:05:34.505Z",
+      "issue": "App Live session closed due to inactivity while Claude was paused (usage limit); app returned to onboarding",
+      "detection": "Banner: Your remote testing session is closed due to inactivity",
+      "actions": [
+        "Cleared onbeforeunload, closed tab",
+        "Extension reconnected after ~3 retries",
+        "New window (pinned right half, ~746 px wide)",
+        "New Pixel 7 / Android 13 session, app-release_5Oct26.apk reinstalled",
+        "Onboarding skipped, Sign In > Login with Mobile; waiting for manual login"
+      ],
+      "outcome": "Session rebuilt; awaiting user login"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ct01": {
+    "rows": 1,
+    "headers": [
+      "TRIP ID",
+      "CUSTOMER NAME",
+      "CUSTOMER TYPE",
+      "TRIP DATES",
+      "ROUTE PLAN",
+      "PICKUP TIME",
+      "DROP TIME",
+      "ESTIMATED COST",
+      "ACTUAL COST",
+      "TRIP CLOSED",
+      "ACTION"
+    ],
+    "row": "TP-112 Bikash N National 20/11/2026, Whitefield, Bengaluru, Karnataka, India-> Whitefield, Bengaluru, Karnataka, India 20 Nov 2026, 12:00 AM 20 Nov 2026, 12:00 AM ₹8,300.00 ₹8,300.00 No",
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-01-completed-row.png",
+    "menu": [
+      "View Trip Summary",
+      "Close Trip",
+      "Record Advance"
+    ]
+  },
+  "sum_TP-112": {
+    "dialog": 1,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "text": "View Trip Summary Client Name: BIKASH N Phone: <phone> PAN: N/A GSTIN: N/A Booking ID: B-944 Invoice Number: INV-103 Invoice Date: 13-11-2026 Due Date: N/A Invoice Period: 20-11-2026 to 20-11-2026 SR. DUTY ID PASSENGER VEH.GROUP VEH.NUM. DUTY TYPE S.DATE E.DATE S.TIME E.TIME TTIME EX.TIME QTY 8 HR/ 80 KM * ADDITIONAL KM'S * EXTRA KM * ADDITIONAL HR'S * EXTRA HOUR * DRIVER DAY BATA * DAY BATA COUNT * DRIVER ALLOW. DRIVER NIGHT BATA * NIGHT BATA COUNT * LATE ALLOW. ANY EXTRA'S * FIXED COST * FINAL QUOTE * 1 local-1701-1 N/A 16 Seater Premium Urbania N/A N/A 20-11 20-11 00:00 00:00 00:00 00:00 1 ​ ​ ​ ​ ​ ​ ​ 800.00 ​ ​ 0.00 ​ ​ ​ Total 00:00 00:00 0.00 0.00 8,300.00 SR. DESCRIPTION RATE QTY AMOUNT 1 CAR HIRE CHARGES 8,300.00 1 8,300.00 Taxable Sub Total: 8,300.00 CGST 2.5%: 207.50 SGST 2.5%: 207.50 TOTAL: 8,715.00 In words: Eight Thousand Seven Hundred Fifteen Rupees Only Save Download Close",
+    "buttons": [
+      "Save",
+      "Download",
+      "Close"
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-112.png"
+  },
+  "sum_TP-111": {
+    "dialog": 1,
+    "url": "https://dari-preprod.siddagangatravels.com/dashboard/fleet-vehicle-management/approved-trips",
+    "text": "View Trip Summary Client Name: BIKASH N Phone: <phone> PAN: N/A GSTIN: N/A Booking ID: B-932 Invoice Number: INV-101 Invoice Date: 13-11-2026 Due Date: N/A Invoice Period: 12-11-2026 to 12-11-2026 SR. DUTY ID PASSENGER VEH.GROUP VEH.NUM. DUTY TYPE S.DATE E.DATE S.TIME E.TIME TTIME EX.TIME QTY 8 HR/ 80 KM * ADDITIONAL KM'S * EXTRA KM * ADDITIONAL HR'S * EXTRA HOUR * DRIVER DAY BATA * DAY BATA COUNT * DRIVER ALLOW. DRIVER NIGHT BATA * NIGHT BATA COUNT * LATE ALLOW. ANY EXTRA'S * FIXED COST * FINAL QUOTE * 1 #TP-111-1 Bikash N Sedan KA21AB9876 8HR/80KM 12-11 12-11 00:00 00:00 08:00 00:00 1 ​ ​ ​ ​ ​ ​ ​ 500.00 ​ ​ 0.00 ​ ​ ​ Total 08:00 00:00 0.00 0.00 4,500.00 SR. DESCRIPTION RATE QTY AMOUNT 1 CAR HIRE CHARGES 4,500.00 1 4,500.00 Taxable Sub Total: 4,500.00 CGST 2.5%: 112.50 SGST 2.5%: 112.50 TOTAL: 4,725.00 In words: Four Thousand Seven Hundred Twenty Five Rupees Only Save Download Close",
+    "buttons": [
+      "Save",
+      "Download",
+      "Close"
+    ],
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-02-trip-summary-TP-111.png"
+  },
+  "closeAdv": true,
+  "chk": {
+    "note": "QA functional test dispatch TP-112",
+    "safety": true
+  },
+  "sheet": [
+    "tripId=TP-112(RO)",
+    "vehicleNo=20 Nov 2026",
+    "vehicleNo=4",
+    "startOdometer=20000",
+    "helper=QA Test Helper",
+    "serviceRequired=false",
+    "openingKm=20000",
+    "closingKm=",
+    "lastDieselInput=40",
+    "presentDieselInput=",
+    "totalKm=",
+    "overallDieselUsage=30",
+    "mileage=10",
+    "DriverBata=800",
+    "DriverBataDay=1",
+    "DriverNightBata=800",
+    "DriverNightBataDay=0"
+  ],
+  "submitLabel": "Generate Trip Sheet & Mark Vehicle Ready",
+  "ct03a": {
+    "errors": [
+      "Closing Km",
+      "Closing Km must be greater than or equal to Opening Km",
+      "Total Km",
+      "Total Km cannot be negative",
+      "Tabbi suggested: 1.00",
+      "Tabbi suggested: 0.00"
+    ],
+    "toasts": [
+      "Closing Km must be greater than or equal to Opening Km"
+    ],
+    "net": [],
+    "open": true,
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-closing-below-opening.png"
+  },
+  "ct03b": {
+    "totalKmAuto": "40",
+    "diesel": "-5",
+    "errors": [
+      "Tabbi suggested: 1.00",
+      "Tabbi suggested: 0.00"
+    ],
+    "toasts": [
+      "Closing Km must be greater than or equal to Opening Km"
+    ],
+    "net": [],
+    "open": true,
+    "shot": "screenshots/functional/admin-web-20261113-1016-FUNC/completed/CT-03-negative-diesel-km-mismatch.png"
+  }
+}

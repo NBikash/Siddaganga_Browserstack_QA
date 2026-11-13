@@ -1,0 +1,513 @@
+{
+  "runId": "android-20261006-1730-ACCOUNT",
+  "platform": "android",
+  "scope": "Account: 25 inventory cases (ACC_001-003/005/006, PROF_001/007/008/012, ASET_001/008, INV_001-004, RWD_001-004, NSET_001/003/004, PRIV_001/002/006) + 3 gap cases. Excluded (approval not granted - not counted): TC_ACC_004, TC_ASET_002-007, TC_ASET_009, TC_PROF_002-006, TC_PROF_009-011, TC_NSET_002/005/006, TC_PRIV_003-005.",
+  "build": "Uploaded APK app-release_5Oct26.apk v1.1 (com.siddaganga), latest upload as of 2026-10-06",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-06T12:00:39.863Z",
+  "endedAt": "2026-10-06T14:33:11.277Z",
+  "credentials": [
+    {
+      "account": "QA test account (BANNI_QA_PHONE from .env)",
+      "method": "Login with Mobile + password, entered manually by the user on the device"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-06T12:00:40.318Z",
+      "text": "No irreversible actions approved for this run (2026-10-06). Approval-gated actions skipped and excluded from counts per user instruction."
+    }
+  ],
+  "environmentNotes": [
+    "Scope: 25 inventory cases + 3 gap cases (TC_ASET_010, TC_INV_005, TC_PROF_013) = 28. Excluded and not counted (approval not granted): TC_ACC_004 (logout), TC_ASET_002/003/007/009 (password change, logout all devices), TC_ASET_004/005/006 (no live validation exists - rule errors appear only after tapping Update, which could change the shared QA password), TC_PROF_002-006/009/010/011 (saving profile), TC_NSET_002/005/006 (saving preferences, OS permissions), TC_PRIV_003-005 (permission settings). Blocked (genuine dependency): TC_ACC_006 (no corporate account), TC_RWD_003 (no completed trips). No profile, password, notification or permission change was saved; Cancel/back used everywhere. Personal data (name, phone, email, address, invoice PDF) not captured; screenshots cropped."
+  ],
+  "cases": [
+    {
+      "id": "TC_ACC_001",
+      "status": "Pass",
+      "actual": "Account tab: Welcome Back - <Name>! header with Regular Client badge; menu Personal Information, Account Settings, Invoices & Receipts, Booking History, My Support Tickets, Rewards & Loyalty, Notifications, Privacy & Security, Logout - each with subtitle and chevron.",
+      "endedAt": "2026-10-06T14:32:54.815Z"
+    },
+    {
+      "id": "TC_ACC_002",
+      "status": "Pass",
+      "actual": "Booking History opens the bookings screen (title Booking History, Today/Week/Month, Live/Upcoming/Completed/Inquired 18) with the Ride tab highlighted; back arrow returns to Account.",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_ACC_003",
+      "status": "Pass",
+      "actual": "My Support Tickets opens Help > My Support History (title My Support Tickets) with the empty-state text; Help tab highlighted.",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_ACC_005",
+      "status": "Pass",
+      "actual": "Logout -> Logout Confirmation (Are you sure you want to logout? CANCEL / LOGOUT); CANCEL (single tap after live-stream check) closes the dialog and the user stays logged in on the Account screen. LOGOUT was not tapped (not approved).",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_ACC_006",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Test data",
+      "dependency": "Corporate test account",
+      "actual": "Regular Client badge shown for the regular QA account (consistent). The corporate side of the check needs a corporate user, which is not available; corporate badge could not be verified.",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_PROF_001",
+      "status": "Pass",
+      "actual": "Personal Information (Edit User Information) prefilled with account data: Name *, Email Address (greyed/read-only), Phone Number *, Address (location field), I need a GST invoice for my bookings checkbox, Submit and Cancel. (Not captured - personal data.)",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_PROF_007",
+      "status": "Pass",
+      "actual": "Address opens the Address picker (Search For A Location, Use Current Location); searching majestic and selecting Majestic updates the Address field to Majestic, Bengaluru, Karnataka, India. Form not submitted (Cancel used).",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_PROF_008",
+      "status": "Pass",
+      "actual": "Ticking I need a GST invoice reveals GSTIN Number *, Legal Name (as per GST) *, State *; unticking hides them. (Stored GST values are invalid - see TC_PROF_013.)",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_PROF_012",
+      "status": "Pass",
+      "actual": "Edited Name (appended qa) and Address (Majestic) -> Cancel -> reopen Personal Information: original Name and Address retained; nothing saved.",
+      "endedAt": "2026-10-06T14:32:54.818Z"
+    },
+    {
+      "id": "TC_PROF_013",
+      "isNew": true,
+      "module": "PROF",
+      "feature": "Personal Information - GST",
+      "scenario": "Previously saved GST details are valid when the GST section is reopened",
+      "testType": "Validation",
+      "priority": "Medium",
+      "preconditions": "Account with GST details saved earlier",
+      "steps": "1. Open Personal Information 2. Tick I need a GST invoice 3. Read stored GSTIN, Legal Name, State",
+      "testData": "QA account",
+      "expected": "Stored GSTIN is a valid 15-character GSTIN whose state code matches State; Legal Name is a name",
+      "status": "Fail",
+      "actual": "Stored GSTIN is s#_&+( (6 characters with symbols), Legal Name 12838838 (digits), State Uttar Pradesh - invalid GST data was accepted and saved earlier, so GSTIN format validation is not enforced on save.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_PROF_013_1_invalid-gstin-stored.png"
+      ],
+      "bugs": [
+        "BUG-PROF-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_ASET_001",
+      "status": "Pass",
+      "actual": "Account Settings: Current, New, Confirm Password fields each with an eye toggle; Update / Cancel; Password Requirements list (8+ chars, upper & lower, number, special); Security section with Logout From All Devices.",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_ASET_008",
+      "status": "Pass",
+      "actual": "Eye toggle on New Password masks that field only; Confirm Password stays visible - toggles work independently. (Default unmasked state logged as TC_ASET_010.)",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_ASET_010",
+      "isNew": true,
+      "module": "ASET",
+      "feature": "Account Settings - Change Password",
+      "scenario": "Password fields are masked by default",
+      "testType": "Security",
+      "priority": "High",
+      "preconditions": "Logged in; Account Settings",
+      "steps": "1. Type into New Password 2. Type into Confirm Password 3. Observe before touching the eye icons",
+      "testData": "Dummy values (not the real password)",
+      "expected": "Typed characters are masked (dots) until the eye icon is tapped",
+      "status": "Fail",
+      "actual": "New Password (abcdefg) and Confirm Password (xyz) displayed in plain text by default; tapping the eye masks them, so the default state is inverted. Real passwords would be shown on screen while typing.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_ASET_010_1_passwords-unmasked-by-default.png"
+      ],
+      "bugs": [
+        "BUG-ASET-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_INV_001",
+      "status": "Pass",
+      "actual": "Invoices & Receipts: All / This Month / Last 3 Months tabs; Summary (Total Spent, Total Trips, Average per Trip); invoice cards with ID, status chip, date range, amount, trip type, Download PDF / View Invoice. Empty state not shown because invoices exist for this account.",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_INV_002",
+      "status": "Fail",
+      "actual": "All: Rs 42,950 / 10 trips (INV-78..). This Month: identical. Last 3 Months: Rs 93,100 / 10 trips / avg Rs 9,310 starting at INV-70 - higher than All and missing the October invoices INV-71..78. Summary appears to cover only the 10 loaded invoices, so period totals are wrong.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_INV_002_1_last3months-exceeds-all.png",
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_INV_002_2_this-month.png"
+      ],
+      "bugs": [
+        "BUG-INV-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_INV_003",
+      "status": "Pass",
+      "actual": "Download PDF on INV-78 (PAID) offers Open with (Edge / Drive PDF Viewer); opened once in Drive: INV-78.pdf Cancelled Invoice Details with invoice no., booking inquiry ID 571, trip cost Rs 8,000, refund Rs 8,000 - matches the cancellation. (Not captured - PDF shows name, phone, email.)",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_INV_004",
+      "status": "Pass",
+      "actual": "Average per Trip = Total Spent / Total Trips in every period (42,950/10 = 4,295; 93,100/10 = 9,310); no divide-by-zero. (Which invoices are counted is wrong - TC_INV_002/TC_INV_005.)",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_INV_005",
+      "isNew": true,
+      "module": "INV",
+      "feature": "Invoices & Receipts",
+      "scenario": "Invoice list shows the correct trip type and distinguishes cancellation invoices",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Cancelled Transfer inquiries with cancellation invoices (INV-77, INV-78)",
+      "steps": "1. Open Invoices & Receipts 2. Read INV-78 card 3. View Invoice",
+      "testData": "INV-77, INV-78",
+      "expected": "Card shows Transfer and marks it as a cancellation; payment status and amount match the cancellation invoice",
+      "status": "Fail",
+      "actual": "INV-78 card shows Local - Sedan, PAID, Rs 0 while View Invoice shows Trip Type Transfer, Trip Status Cancelled, Payment Method Cash, Paid, Rs 0 and the PDF refunds Rs 8,000; INV-77 card Local - Sedan UNPAID Rs 1,600 (Transfer cancellation penalty on an unpaid inquiry). Cancellation invoices are counted as trips/spend in the summary.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_INV_005_1_cancellation-invoices-local-sedan.png",
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_INV_005_2_inv78-transfer-paid-cash.png"
+      ],
+      "bugs": [
+        "BUG-INV-002"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_RWD_001",
+      "status": "Pass",
+      "actual": "Rewards & Loyalty: Trips Done 02, Collected Points 02, user card with tier badge, text You are 6 trips away from unlocking Gold Status, progress bar Silver Status -> Gold Status.",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_RWD_002",
+      "status": "Fail",
+      "actual": "Trips Done 02 although Booking History shows Completed 0 (no completed trips); progress bar is ~75% towards Gold while the text says 6 trips away. OBS-25 still present.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_RWD_002_1_trips-done-02.png",
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_RWD_002_2_six-trips-away-bar-near-gold.png"
+      ],
+      "bugs": [
+        "BUG-RWD-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_RWD_003",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Test data",
+      "dependency": "Completed trips (requires paid, completed bookings)",
+      "actual": "Tier upgrade needs trips to be completed; no trip can be completed in QA without payment (not approved) and operator completion, so the threshold cannot be reached.",
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_RWD_004",
+      "status": "Fail",
+      "actual": "Tier badge reads JUSTELITE SILVER (likely Just Elite / Elite Silver) - misspelled tier name.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_RWD_004_1_justelite-silver.png"
+      ],
+      "bugs": [
+        "BUG-RWD-002"
+      ],
+      "endedAt": "2026-10-06T14:32:54.819Z"
+    },
+    {
+      "id": "TC_NSET_001",
+      "status": "Pass",
+      "actual": "Notifications (Booking Updates): Email, SMS, Push, WhatsApp (with Enable WhatsApp button), Offers & Discounts, Loyalty Updates (all on), Newsletter (off); Save Preferences button at the bottom.",
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    },
+    {
+      "id": "TC_NSET_003",
+      "status": "Pass",
+      "actual": "Toggled Newsletter on, left with back arrow without saving, reopened: Newsletter is off - unsaved change discarded (no prompt).",
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    },
+    {
+      "id": "TC_NSET_004",
+      "status": "Fail",
+      "actual": "Enable WhatsApp tapped twice (waited 8-10 s each): nothing happens - no WhatsApp/consent opt-in flow, no browser, no message.",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_NSET_004_1_enable-whatsapp-no-action.png"
+      ],
+      "bugs": [
+        "BUG-NSET-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    },
+    {
+      "id": "TC_PRIV_001",
+      "status": "Pass",
+      "actual": "Privacy & Security: Privacy Policy link (Read our privacy policy); Permissions - Location Access (For pickup/drop location suggestions) and Camera Access (For profile photo & document upload) toggles with descriptions (both off).",
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    },
+    {
+      "id": "TC_PRIV_002",
+      "status": "Pass",
+      "actual": "Privacy Policy opens full in-app text (1. What this policy covers, entities, grievance officer, 2. What this policy covers...), scrolls, back arrow returns to Privacy & Security.",
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    },
+    {
+      "id": "TC_PRIV_006",
+      "status": "Fail",
+      "actual": "No account deletion option in Privacy & Security, Account Settings or the Account menu (only Logout / Logout From All Devices). OBS-26 still present (Google Play account-deletion requirement).",
+      "evidence": [
+        "android/evidence/android-20261006-1730-ACCOUNT/TC_PRIV_006_1_no-delete-account.png"
+      ],
+      "bugs": [
+        "BUG-PRIV-001"
+      ],
+      "endedAt": "2026-10-06T14:32:54.820Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-ASET-001",
+      "title": "Change Password fields show passwords in plain text by default",
+      "module": "Account Settings",
+      "severity": "High",
+      "priority": "P1",
+      "status": "New",
+      "tcIds": [
+        "TC_ASET_010"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in; Account > Account Settings",
+      "steps": [
+        "Type any value in New Password",
+        "Type any value in Confirm Password",
+        "Do not touch the eye icons"
+      ],
+      "expected": "Characters are masked until the user taps the eye icon.",
+      "actual": "Values are shown in clear text; tapping the eye masks them (inverted default).",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_ASET_010_1_passwords-unmasked-by-default.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Dummy values used; Update never tapped. Shoulder-surfing / screen-recording risk."
+    },
+    {
+      "id": "BUG-INV-001",
+      "title": "Invoice period filters show wrong totals: Last 3 Months exceeds All and omits recent invoices",
+      "module": "Invoices & Receipts",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New",
+      "tcIds": [
+        "TC_INV_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Account with more than 10 invoices",
+      "steps": [
+        "Open Invoices & Receipts (All)",
+        "Tap This Month",
+        "Tap Last 3 Months"
+      ],
+      "expected": "All >= Last 3 Months >= This Month; each list contains the invoices of its period.",
+      "actual": "All and This Month: Rs 42,950 / 10 trips; Last 3 Months: Rs 93,100 / 10 trips, starting at INV-70 and missing INV-71..78 from October.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INV_002_1_last3months-exceeds-all.png",
+        "TC_INV_002_2_this-month.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Summary seems computed from a page of 10 items."
+    },
+    {
+      "id": "BUG-INV-002",
+      "title": "Cancellation invoices listed as Local trips with inconsistent payment status and counted as spend",
+      "module": "Invoices & Receipts",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New",
+      "tcIds": [
+        "TC_INV_005"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Cancelled Transfer inquiries (INV-77, INV-78)",
+      "steps": [
+        "Open Invoices & Receipts",
+        "Read INV-78 and INV-77 cards",
+        "View Invoice on INV-78",
+        "Download PDF"
+      ],
+      "expected": "Cards show Transfer and mark cancellation invoices; status/amount match the cancellation (refund).",
+      "actual": "Cards say Local - Sedan; INV-78 PAID Rs 0 with Payment Method Cash while the PDF refunds Rs 8,000; INV-77 UNPAID Rs 1,600 penalty for an unpaid inquiry; both counted in Total Trips / Total Spent.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_INV_005_1_cancellation-invoices-local-sedan.png",
+        "TC_INV_005_2_inv78-transfer-paid-cash.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Related to BUG-OUT-014 (refunds on unpaid cancellations)."
+    },
+    {
+      "id": "BUG-RWD-001",
+      "title": "Rewards shows Trips Done 02 with 0 completed trips; progress bar contradicts 6 trips away",
+      "module": "Rewards & Loyalty",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "Open",
+      "tcIds": [
+        "TC_RWD_002"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Account with 0 completed trips",
+      "steps": [
+        "Account > Rewards & Loyalty",
+        "Compare with Booking History Completed count"
+      ],
+      "expected": "Trips Done equals completed trips; progress bar matches remaining trips.",
+      "actual": "Trips Done 02 / Collected Points 02 while Completed is 0; bar ~75% filled although 6 trips remain.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_RWD_002_1_trips-done-02.png",
+        "TC_RWD_002_2_six-trips-away-bar-near-gold.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark OBS-25."
+    },
+    {
+      "id": "BUG-RWD-002",
+      "title": "Loyalty tier badge misspelled JUSTELITE SILVER",
+      "module": "Rewards & Loyalty",
+      "severity": "Low",
+      "priority": "P3",
+      "status": "Open",
+      "tcIds": [
+        "TC_RWD_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Rewards & Loyalty",
+      "steps": [
+        "Open Rewards & Loyalty",
+        "Read the tier badge"
+      ],
+      "expected": "Correct tier name (e.g. Silver / Elite Silver).",
+      "actual": "JUSTELITE SILVER",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_RWD_004_1_justelite-silver.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark."
+    },
+    {
+      "id": "BUG-NSET-001",
+      "title": "Enable WhatsApp button does nothing",
+      "module": "Notifications",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New",
+      "tcIds": [
+        "TC_NSET_004"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Account > Notifications",
+      "steps": [
+        "Tap Enable WhatsApp",
+        "Wait 10 s",
+        "Tap again"
+      ],
+      "expected": "WhatsApp opt-in / consent flow opens.",
+      "actual": "No navigation, dialog or message on either tap.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_NSET_004_1_enable-whatsapp-no-action.png"
+      ],
+      "errorInfo": "-",
+      "notes": "WhatsApp may not be installed on the BrowserStack device; app should still show a fallback/message."
+    },
+    {
+      "id": "BUG-PRIV-001",
+      "title": "No in-app account deletion option",
+      "module": "Privacy & Security",
+      "severity": "High",
+      "priority": "P1",
+      "status": "Open",
+      "tcIds": [
+        "TC_PRIV_006"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "Logged in",
+      "steps": [
+        "Check Account menu, Account Settings and Privacy & Security for delete account"
+      ],
+      "expected": "A Delete Account path exists (Google Play account-deletion policy).",
+      "actual": "Only Logout / Logout From All Devices; no deletion option.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_PRIV_006_1_no-delete-account.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Inventory remark OBS-26; store-compliance risk."
+    },
+    {
+      "id": "BUG-PROF-001",
+      "title": "Invalid GSTIN and Legal Name are stored on the profile",
+      "module": "Personal Information",
+      "severity": "Medium",
+      "priority": "P2",
+      "status": "New",
+      "tcIds": [
+        "TC_PROF_013"
+      ],
+      "reproducibility": "Always",
+      "preconditions": "QA account with GST data saved earlier",
+      "steps": [
+        "Personal Information",
+        "Tick I need a GST invoice",
+        "Read stored values"
+      ],
+      "expected": "Only a valid 15-character GSTIN (state code matching State) and a name can be saved.",
+      "actual": "GSTIN s#_&+(, Legal Name 12838838 are stored and shown.",
+      "environment": "Google Pixel 7 / Android 13, BrowserStack App Live, app-release_5Oct26.apk (v1.1)",
+      "evidence": [
+        "TC_PROF_013_1_invalid-gstin-stored.png"
+      ],
+      "errorInfo": "-",
+      "notes": "Save-side GSTIN validation (TC_PROF_009) not executed - saving not approved; this is evidence that validation was bypassed earlier."
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "",
+    "current": "setup",
+    "next": "first in-scope case",
+    "state": "Sign In with Mobile screen, waiting for user login",
+    "at": "2026-10-06T12:03:45.147Z"
+  },
+  "recoveryEvents": [
+    {
+      "at": "2026-10-06T14:09:56.911Z",
+      "issue": "App Live session closed due to inactivity while Claude was paused (usage limit)",
+      "detection": "Banner: Your remote testing session is closed due to inactivity",
+      "actions": [
+        "New Pixel 7 / Android 13 session started, app reinstalled",
+        "Onboarding skipped; waiting for manual user login"
+      ],
+      "outcome": "Session rebuilt; awaiting user login"
+    }
+  ],
+  "partial": false
+}

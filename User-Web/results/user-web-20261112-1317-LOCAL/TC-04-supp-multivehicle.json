@@ -1,0 +1,13 @@
+{
+  "popup1": "Passenger Capacity Not Complete! You need seats for 50 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry",
+  "afterClose": {
+    "alreadySelected": [
+      "✓ Already Selected Compare Luxury Starts From ₹55,500 4.5 45 Seater Luxury Volvo Pricing Breakdown Local (8 HR / 80 KM) ₹15,500 Already Sele"
+    ],
+    "qtyControls": [],
+    "compareCheckboxes": 9
+  },
+  "shotAfterClose": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-multi-after-close-popup.png",
+  "popup2": "Passenger Capacity Not Complete! You need seats for 50 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry",
+  "shotPopup2": "screenshots/local/user-web-20261112-1317-LOCAL/TC-04-multi-second-vehicle-replaces-first.png"
+}

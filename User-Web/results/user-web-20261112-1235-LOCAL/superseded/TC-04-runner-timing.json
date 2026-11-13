@@ -1,0 +1,73 @@
+{
+  "id": "TC-04",
+  "started": "2026-11-12T07:18:05.702Z",
+  "steps": [
+    {
+      "label": "main",
+      "input": {
+        "label": "main",
+        "md": true,
+        "dd": true,
+        "pickup": "Jayanagar 4th Block",
+        "drop": "Mysuru Palace",
+        "mdDates": [
+          {
+            "next": 1,
+            "d": 5
+          },
+          {
+            "next": 1,
+            "d": 6
+          }
+        ],
+        "time": "1:30 PM",
+        "pax": 50,
+        "hrs": 8,
+        "vehicle": "L45V"
+      },
+      "pickupSuggest": {
+        "query": "Jayanagar 4th Block",
+        "suggestions": [
+          "4th Block, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block East, Jayanagar Bengaluru, Karnataka, India",
+          "Jayanagar 4th Block, Jayanagar, Bengaluru, Karnataka",
+          "4th Block East, Pattabhirama Nagar, Jayanagar Bengaluru, Karnataka, India",
+          "JAYANAGAR 4TH BLOCK KHADIM'S STAFF ROOM 3rd Cross Road, 5T Block, Marenahalli, DK Naik Nagar, Jayanagar, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "4th Block, Jayanagar, Bengaluru, Karnataka, India"
+      },
+      "dropSuggest": {
+        "query": "Mysuru Palace",
+        "suggestions": [
+          "Mysore Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace View Dasara Exhibition Road, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace parking entrance Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysore Palace Entrance Agrahara Circle, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Palace Hostel by Borrbo Mysore 9th Cross Road, Gokulam 3rd Stage, Gokulam, Mysuru, Karnataka, India"
+        ],
+        "chosen": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": true,
+        "differentDrop": true,
+        "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "date": "",
+        "time": "1:30 PM",
+        "selectedDates": "Selected Dates (3):",
+        "pax": "50",
+        "hours": "8"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-form.png",
+      "result": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": []
+        },
+        "shot": "screenshots/local/user-web-20261112-1235-LOCAL/TC-04-main-validation.png"
+      }
+    }
+  ],
+  "finished": "2026-11-12T07:19:40.310Z"
+}

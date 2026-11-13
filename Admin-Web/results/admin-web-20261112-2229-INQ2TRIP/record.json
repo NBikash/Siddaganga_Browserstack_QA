@@ -1,0 +1,36 @@
+{
+  "pnr": "MWAG650153",
+  "sourceRun": "user-web-20261112-1317-LOCAL",
+  "sourceTc": "TC-01",
+  "leadId": "LD-341",
+  "adminInquiryId": "932",
+  "laterIds": [
+    {
+      "stage": "S4",
+      "idType": "Inquiry list ID",
+      "value": "QRY-932"
+    },
+    {
+      "stage": "S5",
+      "idType": "Quote ID",
+      "value": "1686"
+    },
+    {
+      "stage": "S7",
+      "idType": "Booking ID",
+      "value": "B-932"
+    },
+    {
+      "stage": "S10",
+      "idType": "Trip/Duty ID (from notification, to be confirmed)",
+      "value": "TP-111"
+    }
+  ],
+  "s1": {
+    "matchMethod": "View Lead > Inquiry Information > Inquiry PNR exact match",
+    "duplicateCheck": "10 leads of the same client created 12/11/2026 opened; only LD-341 has MWAG650153 (list search does not find PNR)"
+  },
+  "vehicle": "KA21AB9876",
+  "finalStatus": "Trip Closed: Yes",
+  "invoiceNotification": "INV-101 Rs 4,725 (not opened - Finance out of scope)"
+}

@@ -53,6 +53,8 @@ What Claude runs (you can also run them yourself):
 | Variable | Needed for | Required? |
 |---|---|---|
 | `BANNI_QA_PHONE`, `BANNI_QA_PASSWORD` | Authenticated exploration/execution (you type them on the device) | Yes, before authenticated runs |
+| `SAAGANE_SUPERADMIN_USERNAME`, `SAAGANE_SUPERADMIN_PASSWORD`, `SAAGANE_ADMIN_USERNAME`, `SAAGANE_ADMIN_PASSWORD` | Saagane runs only (`npm run doctor -- --app saagane` checks them) | Yes, before authenticated Saagane runs |
+| `SAAGANE_ANDROID_APP_LIVE_URL` | Saagane build `bs://` id (build is normally picked in App Live) | Optional |
 | `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY` | Command-line build upload (`npm run upload:android/ios`) | Only for CLI uploads — the App Live web UI works without them |
 | `ANDROID_APP_LIVE_URL`, `IOS_APP_LIVE_URL` | Remembering the uploaded build's `bs://` id | Optional |
 | `BROWSERSTACK_APP` | App Automate / Appium only | Not required |

@@ -1,0 +1,5 @@
+node_modules/
+.env
+.auth/
+# raw exploration dumps can contain customer names/phone numbers/addresses
+exploration-logs/raw/

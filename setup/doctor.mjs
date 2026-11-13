@@ -1,17 +1,25 @@
 // Read-only environment check. Never modifies anything and never prints secret values.
 // Usage: npm run doctor            (human-readable)
 //        npm run doctor -- --json  (machine-readable, used by Claude Code)
+//        npm run doctor -- --app saagane [--json]   (Saagane checks; default app is Banni)
 // Exit code: 0 = no FAIL (WARN allowed), 1 = at least one FAIL.
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import os from 'node:os';
-import { ROOT, p, readJson, parseEnvFile, isSet, run, cmpVersion, satisfies } from './lib/common.mjs';
+import { ROOT, p, readJson, parseEnvFile, isSet, run, cmpVersion, satisfies, appArg, appInfo, appConfig, DEFAULT_APP } from './lib/common.mjs';
 
 const checks = [];
 const add = (group, name, status, detail = '', fix = '') => checks.push({ group, name, status, detail, fix });
 
 const project = readJson('config/project.json');
-const platforms = { android: readJson('config/android.json'), ios: readJson('config/ios.json') };
+const app = appArg();
+let meta;
+try { meta = appInfo(app); } catch (e) { console.error(`doctor: ${e.message}`); process.exit(2); }
+const isBanni = app === DEFAULT_APP;
+// Banni keeps its original config files; other apps load theirs from the registry (config/project.json -> apps).
+const platforms = isBanni
+    ? { android: readJson('config/android.json'), ios: readJson('config/ios.json') }
+    : Object.fromEntries(Object.keys(meta.configs).map((k) => [k, appConfig(app, k)]));
 
 // ---------- System ----------
 add('system', 'Operating system', 'INFO', `${os.type()} ${os.release()} (${process.platform}/${process.arch})`);
@@ -79,10 +87,23 @@ const missingDirs = project.requiredPaths.dirs.filter((d) => !existsSync(p(d)));
 add('structure', 'Required folders', missingDirs.length ? 'FAIL' : 'PASS',
     missingDirs.length ? `missing: ${missingDirs.join(', ')}` : `${project.requiredPaths.dirs.length} present`,
     missingDirs.length ? 'npm run setup' : '');
+if (!isBanni) {
+    const req = meta.requiredPaths || { files: [], dirs: [] };
+    const mf = req.files.filter((f) => !existsSync(p(f)));
+    add('structure', `${meta.name} files`, mf.length ? 'FAIL' : 'PASS',
+        mf.length ? `missing: ${mf.join(', ')}` : `${req.files.length} present`, mf.length ? 'Restore from Git (versioned project files)' : '');
+    const md = req.dirs.filter((d) => !existsSync(p(d)));
+    add('structure', `${meta.name} folders`, md.length ? 'FAIL' : 'PASS',
+        md.length ? `missing: ${md.join(', ')}` : `${req.dirs.length} present`, md.length ? `npm run setup -- --app ${app}` : '');
+}
 
 // ---------- Test-case inventories ----------
 for (const [name, cfg] of Object.entries(platforms)) {
     const tc = cfg.testCases;
+    if (!existsSync(p(tc.inventoryCsv)) && !isBanni && !tc.baselineRecorded) {
+        add('testcases', `${name} inventory`, 'INFO', `not created yet - explore ${meta.name} first (${tc.inventoryCsv})`);
+        continue;
+    }
     if (!existsSync(p(tc.inventoryCsv))) {
         add('testcases', `${name} inventory`, name === 'ios' ? 'INFO' : 'FAIL',
             name === 'ios' ? 'not created yet (expected until an IPA is available)' : `missing ${tc.inventoryCsv}`,
@@ -110,8 +131,9 @@ for (const [name, cfg] of Object.entries(platforms)) {
 for (const [name, cfg] of Object.entries(platforms)) {
     const qb = cfg.qaBuild;
     add('platform', `${name} QA build source`, qb.status === 'available' ? 'PASS' : 'INFO',
-        `${qb.source} - ${qb.status}${qb.currentBuild ? ` (${qb.currentBuild.file} v${qb.currentBuild.version})` : ''}`);
-    add('platform', `${name} production regression`, 'INFO', `${cfg.productionRegression.source} - ${cfg.productionRegression.enabled ? 'enabled' : 'future / disabled'}`);
+        `${qb.source} - ${qb.status}${qb.currentBuild ? ` (${qb.currentBuild.file} v${qb.currentBuild.version})` : isBanni ? '' : ' (latest build selected in App Live)'}`);
+    if (cfg.productionRegression) add('platform', `${name} production regression`, 'INFO', `${cfg.productionRegression.source} - ${cfg.productionRegression.enabled ? 'enabled' : 'future / disabled'}`);
+    if (!isBanni && cfg.roles) add('platform', `${name} roles`, 'INFO', `${cfg.roles.supported.join(', ')} (start with ${cfg.roles.initialRole})`);
 }
 
 // ---------- Configuration & secrets (names only, never values) ----------
@@ -124,15 +146,18 @@ if (!env) {
     const merged = (k) => process.env[k] ?? env[k];
     const source = (k) => (isSet(process.env[k]) ? 'system env' : '.env');
     const describe = (keys) => keys.map((k) => `${k} (${source(k)})`).join(', ');
-    const exec = project.env.requiredForExecution.filter((k) => !isSet(merged(k)));
+    // Banni: config/project.json -> env. Other apps: their own testAccountEnv / appLiveUrlEnv.
+    const execKeys = isBanni ? project.env.requiredForExecution : [...new Set(Object.values(platforms).flatMap((c) => c.testAccountEnv || []))];
+    const optKeys = isBanni ? project.env.optional : Object.values(platforms).map((c) => c.qaBuild?.appLiveUrlEnv).filter(Boolean);
+    const exec = execKeys.filter((k) => !isSet(merged(k)));
     add('config', 'Test account variables', exec.length ? 'WARN' : 'PASS',
-        exec.length ? `not set: ${exec.join(', ')} (needed before authenticated runs)` : `set: ${describe(project.env.requiredForExecution)}`,
+        exec.length ? `not set: ${exec.join(', ')} (needed before authenticated runs)` : `set: ${describe(execKeys)}`,
         exec.length ? 'Edit .env locally and add the values (do not paste them in chat)' : '');
     const api = project.env.requiredForApiUpload.filter((k) => !isSet(merged(k)));
     add('config', 'BrowserStack API variables', api.length ? 'WARN' : 'PASS',
         api.length ? `not set: ${api.join(', ')} (needed only for command-line uploads; App Live UI works without them)` : `set: ${describe(project.env.requiredForApiUpload)}`,
         api.length ? 'Edit .env locally: https://www.browserstack.com/accounts/profile/details' : '');
-    const opt = project.env.optional.filter((k) => isSet(merged(k)));
+    const opt = optKeys.filter((k) => isSet(merged(k)));
     add('config', 'Optional variables', 'INFO', opt.length ? `set: ${opt.join(', ')}` : 'none set');
 }
 
@@ -151,18 +176,19 @@ if (existsSync(p('.git'))) {
 
 // ---------- Manual prerequisites (verified by Claude Code in the session) ----------
 for (const m of project.prerequisites.manual) add('manual', m, 'MANUAL', 'verified interactively by Claude Code at the start of /qa-run');
+if (!isBanni && meta.buildSelection) add('manual', `${meta.name} build`, 'MANUAL', meta.buildSelection);
 
 // ---------- Output ----------
 const fails = checks.filter((c) => c.status === 'FAIL').length;
 const warns = checks.filter((c) => c.status === 'WARN').length;
-const summary = { root: ROOT, ready: fails === 0, fails, warns, checks };
+const summary = { root: ROOT, ...(isBanni ? {} : { app, appName: meta.name }), ready: fails === 0, fails, warns, checks };
 
 if (process.argv.includes('--json')) {
     console.log(JSON.stringify(summary, null, 2));
 } else {
     const icon = { PASS: '[ OK ]', WARN: '[WARN]', FAIL: '[FAIL]', INFO: '[INFO]', MANUAL: '[USER]' };
     let group = '';
-    console.log(`\nSiddaganga BrowserStack QA - environment doctor\n${ROOT}`);
+    console.log(`\nSiddaganga BrowserStack QA - environment doctor${isBanni ? '' : ` (${meta.name})`}\n${ROOT}`);
     for (const c of checks) {
         if (c.group !== group) { group = c.group; console.log(`\n${group.toUpperCase()}`); }
         console.log(`  ${icon[c.status]} ${c.name}${c.detail ? ' - ' + c.detail : ''}`);

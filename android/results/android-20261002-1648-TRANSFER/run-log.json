@@ -1,0 +1,1218 @@
+{
+  "runId": "android-20261002-1648-TRANSFER",
+  "platform": "android",
+  "scope": "Transfer module 100% retest on current QA build: Point To Point (incl. swap, Add Return/round trip) and By Hour (incl. multi-day) - form, validation, boundary, location picker, Trip Summary, vehicle list/filters/pricing, Vehicle Details & Transfer fare breakup, Confirm, inquiry submission, My Bookings, Inquiry Details, Pay Advance attempt, Cancel Trip/refund; all 44 Transfer-related inventory cases + dependent flows + gap cases",
+  "build": "Uploaded APK app-release_1stOct26.apk v1.1 (com.siddaganga)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-02T11:18:34.849Z",
+  "endedAt": "2026-10-02T14:03:25.729Z",
+  "credentials": [
+    {
+      "account": "QA test account (personal, mobile login)",
+      "method": "Entered manually on device by the user; values from .env - not seen or logged by Claude",
+      "usedFor": "All Transfer cases"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-02T11:18:35.145Z",
+      "text": "User approval in chat (2026-10-02): Confirm (submit inquiries), Cancel Trip (cleanup), Pay Advance attempt - pre-approved for this Transfer run. Claude does not enter card/UPI/bank details."
+    }
+  ],
+  "environmentNotes": [
+    "Test data: Inquiry 549 (Transfer P2P Majestic -> KIA, Sedan, 3 Oct 11:35 am, Rs8,000) created and cancelled (INV-68). Pay Advance attempted once each with Razorpay and Cashfree (gateway error); no payment details entered.",
+    "Test data: Inquiry 550 (Transfer By Hour 4 h, Majestic -> KIA, 33 Seater Deluxe Coach, 3 Oct 01:05 pm, Rs16,500 - stored as Local) created and cancelled (INV-69: one-day charge Rs9,500 + 20% = Rs12,800 retained, refund Rs3,700). Contrast with P2P 549 in the same 6-24 h slab: one-day charge Rs0 - one-day charge applied inconsistently (BUG-TRF-005).",
+    "Test data: round trip Majestic <-> KIA (Sedan) outward 4 Oct 01:24 pm + return 551 5 Oct 01:24 pm, Confirm Rs8,000 per leg, cards Rs16,000 each - cancelling 551 (INV-70) removed both legs.",
+    "Environment: App Live Throttle Network (Offline Mode / Turn off network simulation) restarts the device stream for ~15-20 s each time but keeps app state.",
+    "Test data: Inquiry 552 (Transfer P2P Majestic -> KIA, Sedan, 10 Oct 01:36 pm, Rs8,000) created and cancelled (INV-71, fully refundable). All Transfer inquiries created in this run (549, 550, 551 + outward twin, 552) are cancelled."
+  ],
+  "cases": [
+    {
+      "id": "TC_HOME_004",
+      "status": "Pass",
+      "actual": "Tapping Transfer highlights the Transfer tab and swaps the form to the Transfer layout (Point To Point / By Hour segment, From/To, Pickup and Drop Date & Time, Passengers).",
+      "endedAt": "2026-10-02T11:24:03.481Z"
+    },
+    {
+      "id": "TC_HOME_033",
+      "status": "Pass",
+      "actual": "Transfer tab: segment Point To Point (selected) / By Hour; checkboxes Point To Point Transfer (checked) and Add Return; From and To with swap icon; Pickup Date & Time, Drop Date & Time, Number of Passengers 1; Search Vehicles (You won't be charged yet!).",
+      "endedAt": "2026-10-02T11:24:03.483Z"
+    },
+    {
+      "id": "TC_HOME_055",
+      "status": "Pass",
+      "actual": "Search blocked. This field is required under From and To; Selected date and time has already passed. under Pickup time; Please select a different drop time. under Drop time. Messages improved vs build of 01-10 (previously Please select a later time.).",
+      "endedAt": "2026-10-02T11:24:03.483Z"
+    },
+    {
+      "id": "TC_LOC_017",
+      "status": "Pass",
+      "actual": "From picker: title From, subtitle Enter Pickup Location, Use Current Location button. To picker: title To, subtitle Enter Drop Location. Search returns Places suggestions.",
+      "endedAt": "2026-10-02T11:24:03.483Z"
+    },
+    {
+      "id": "TC_LOC_011",
+      "status": "Fail",
+      "actual": "Transfer To: selecting Kempegowda International Airport Bengaluru (BLR) fills the To field with Devanahalli, Be... (locality address) - airport name not shown. Known defect BUG-LOC-003 still reproducible on this build in the Transfer form.",
+      "evidence": [
+        "TC_LOC_011_1_drop-address-only.png"
+      ],
+      "bugs": [
+        "BUG-LOC-003"
+      ],
+      "endedAt": "2026-10-02T11:24:03.483Z"
+    },
+    {
+      "id": "TC_HOME_034",
+      "status": "Pass",
+      "actual": "From Majestic / To Devanahalli (KIA): swap interchanges values; tapping again restores the original order.",
+      "endedAt": "2026-10-02T11:24:03.483Z"
+    },
+    {
+      "id": "TC_HOME_056",
+      "status": "Fail",
+      "actual": "Pickup date moved to 03-10 (11:00 pm); Drop stays 02-10-2026 11:21 am (not adjusted). Only message: Selected date and time has already passed. under the drop time - no drop-must-be-after-pickup message. Search blocked. BUG-TRF-001 still present.",
+      "evidence": [
+        "TC_HOME_056_1_drop-not-adjusted.png"
+      ],
+      "bugs": [
+        "BUG-TRF-001"
+      ],
+      "endedAt": "2026-10-02T11:27:55.144Z"
+    },
+    {
+      "id": "TC_HOME_077",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Transfer - Point To Point",
+      "scenario": "P2P drop time earlier than pickup time on the same date",
+      "testType": "Negative",
+      "priority": "High",
+      "preconditions": "Logged in; Home > Transfer > Point To Point",
+      "steps": "1. From Majestic, To Kempegowda International Airport 2. Pickup 03-10 11:00 pm 3. Drop 03-10 11:21 am 4. Search Vehicles",
+      "testData": "Drop 11:21 am < pickup 11:00 pm, same day",
+      "expected": "Validation: drop must be after pickup; search blocked",
+      "status": "Fail",
+      "actual": "No error; Search Vehicles accepted and the Trip Summary opened (Transfer (Point to Point), 03 Oct 2026) for a trip whose drop is ~11.5 h before pickup (negative duration).",
+      "evidence": [
+        "TC_HOME_NEW1_1_drop-before-pickup-form.png",
+        "TC_HOME_NEW1_2_drop-before-pickup-accepted.png"
+      ],
+      "bugs": [
+        "BUG-TRF-015"
+      ],
+      "endedAt": "2026-10-02T11:27:55.146Z"
+    },
+    {
+      "id": "TC_TRIP_012",
+      "status": "Fail",
+      "actual": "Improved: a loader appears on Search Vehicles and Distance now shows > 30 KM for Majestic -> KIA (consistent with Long Transfer). Still failing: pickup time is not shown anywhere on the summary (Dates 03 Oct, 2026 only). New on this build: Review Inquiry & Select Vehicles - Vehicle Age Preference (Brand New 0-2 yrs / New 2-6 yrs / Any 5+ yrs).",
+      "evidence": [
+        "TC_TRIP_012_1_no-pickup-time-vehicle-age.png"
+      ],
+      "bugs": [
+        "BUG-TRF-007"
+      ],
+      "endedAt": "2026-10-02T11:27:55.146Z"
+    },
+    {
+      "id": "TC_TRIP_005",
+      "status": "Pass",
+      "actual": "Edit Trip Details on the Transfer P2P summary returns to the form with From Majestic, To Devanahalli (KIA), pickup 03-10 11:00 pm, drop 03-10 11:21 am and 1 passenger retained.",
+      "endedAt": "2026-10-02T11:32:16.950Z"
+    },
+    {
+      "id": "TC_HOME_057",
+      "status": "Pass",
+      "actual": "Drop 03-10 11:00 pm = pickup 03-10 11:00 pm -> Please select a different drop time. under the drop time; Search Vehicles blocked (validation part of BUG-TRF-002 fixed on this build). Residual observation: the drop pickers are still titled Return Date / Return Time on a one-way P2P transfer (BUG-TRF-002 title part still open).",
+      "evidence": [
+        "TC_HOME_057_1_drop-picker-titled-return-date.png"
+      ],
+      "notes": "BUG-TRF-002 partially fixed - title still wrong",
+      "endedAt": "2026-10-02T11:32:16.952Z"
+    },
+    {
+      "id": "TC_HOME_037",
+      "status": "Pass",
+      "actual": "Majestic -> Kempegowda International Airport (Devanahalli), 03-10-2026 11:35 am - 11:30 pm, 1 pax: loader then Trip Summary with badge Transfer (Point to Point), Distance > 30 KM, Dates 03 Oct 2026; Search Vehicles -> 20 vehicles; Transfer pricing applies (33 Seater Deluxe Coach Starts From Rs 14,500 = Transfer rate; Sedan Short Rs 6,500 / Long Rs 8,000).",
+      "endedAt": "2026-10-02T11:41:48.748Z"
+    },
+    {
+      "id": "TC_VLIST_004",
+      "status": "Fail",
+      "actual": "Chips single-select and update the count: Luxury -> 6 (all Luxury), Premium -> 7 (all Premium), Deluxe -> 0 vehicles found / No Vehicles Found although Delux-badged coaches (33/40 Seater Deluxe Coach, Sedan) are in the unfiltered list. Deselect restores 20. Known BUG-VLIST-001 still present. Observation: Clear selection button text on the empty state is very low contrast.",
+      "evidence": [
+        "TC_VLIST_004_1_deluxe-coaches-in-list.png",
+        "TC_VLIST_004_2_deluxe-chip-no-vehicles.png"
+      ],
+      "bugs": [
+        "BUG-VLIST-001"
+      ],
+      "endedAt": "2026-10-02T11:41:48.750Z"
+    },
+    {
+      "id": "TC_VDET_004",
+      "status": "Pass",
+      "actual": "Sedan Pricing card shows all three starting prices: Local Rs 4,000 (8hr/80km), Outstation Rs 9,600 /day + Rs 32/km, Transfer Rs 8,000 (City -> Airport). (Case data values are for the 33 Seater coach; Transfer list price for that coach Rs 14,500 matches.)",
+      "endedAt": "2026-10-02T11:41:48.750Z"
+    },
+    {
+      "id": "TC_VDET_008",
+      "status": "Pass",
+      "actual": "Transfer Trip tab - Transfer Pricing (Short and long transfer estimates): Short Transfer (< 30 km) incl. Driver, Fuel, Day Allowance Rs 6,500; Long Transfer (> 30 km) Rs 8,000; Toll & Parking Actuals; GST Additional; note Toll & parking are actuals. GST is additional.",
+      "evidence": [
+        "TC_VDET_008_1_transfer-tab.png"
+      ],
+      "endedAt": "2026-10-02T11:41:48.750Z"
+    },
+    {
+      "id": "TC_VDET_018",
+      "status": "Fail",
+      "actual": "Partially fixed: footer now shows Starting From Rs 8,000 (Transfer Long slab) instead of the Local price. Still failing: View Fare Breakup opens on the Local Trip tab, not Transfer Trip.",
+      "evidence": [
+        "TC_VDET_018_1_breakup-opens-local-tab.png"
+      ],
+      "bugs": [
+        "BUG-TRF-016"
+      ],
+      "endedAt": "2026-10-02T11:41:48.750Z"
+    },
+    {
+      "id": "TC_VDET_020",
+      "isNew": true,
+      "module": "Vehicle Details & Fare Breakup",
+      "feature": "Vehicle Details - specification tiles",
+      "scenario": "Specification tiles match the vehicle type (Sedan from a Transfer search)",
+      "testType": "UI/UX",
+      "priority": "Low",
+      "preconditions": "Transfer P2P search done; vehicle list filtered to Sedan",
+      "steps": "1. Open Sedan 2. Read Seats, Fuel, Transmission, Body Type tiles",
+      "testData": "Sedan (D SDN)",
+      "expected": "Tiles consistent with the vehicle (4 Seats, Body Type Sedan)",
+      "status": "Fail",
+      "actual": "4 Seats, Diesel, Automatic, Body Type Coach Bus - wrong body type for a Sedan.",
+      "evidence": [
+        "TC_VDET_NEW_1_sedan-body-type-coach-bus.png"
+      ],
+      "bugs": [
+        "BUG-TRF-017"
+      ],
+      "endedAt": "2026-10-02T11:41:59.148Z"
+    },
+    {
+      "id": "TC_CONF_013",
+      "status": "Fail",
+      "actual": "Confirm: Route Summary badge Transfer; Majestic -> Devanahalli; 3 Oct 2026; 1 Passenger; Vehicle Base Cost Rs 8,000 = Estimated Grand Total Rs 8,000 (Long Transfer, consistent with summary > 30 KM - improved). Still failing: the vehicle list card for the same search showed Starts From Rs 6,500 (Short slab), so total does not equal the list price (BUG-TRF-003 residual; Vehicle Details footer Rs 8,000 is correct). No bata line (not applicable).",
+      "evidence": [
+        "TC_CONF_013_1_confirm-long-slab-8000.png"
+      ],
+      "bugs": [
+        "BUG-TRF-003"
+      ],
+      "endedAt": "2026-10-02T11:45:14.517Z"
+    },
+    {
+      "id": "TC_CONF_005",
+      "status": "Pass",
+      "actual": "Single Confirm tap (stream live-checked) -> Inquiry Submitted Successfully! We are calculating the most accurate price..., Estimated Cost (Approx.) Rs 8,000, Track My Inquiry and Back to Home. Inquiry 549 created (P2P Majestic -> KIA, 3 Oct 11:35 am).",
+      "endedAt": "2026-10-02T11:45:14.519Z"
+    },
+    {
+      "id": "TC_BOOK_003",
+      "status": "Pass",
+      "actual": "Track My Inquiry -> My Bookings (Today); Week > Inquired 14: top card Transfer, inquired, route marquee Majestic... -> Devanahalli, 1 day, 4 seats, 1 pax, Sedan, Starts From Rs 8,000, View Details. Observation: card distance label < 30 KM contradicts the > 30 KM summary (see TC_BOOK_016).",
+      "endedAt": "2026-10-02T11:45:14.519Z"
+    },
+    {
+      "id": "TC_BOOK_016",
+      "isNew": true,
+      "module": "Ride - My Bookings",
+      "feature": "Inquired card - Transfer",
+      "scenario": "Transfer inquiry card and details show the same distance slab as the Trip Summary and the charged slab",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Transfer P2P inquiry submitted for a > 30 km route (Majestic -> KIA)",
+      "steps": "1. Track My Inquiry 2. Week > Inquired 3. Read the distance chip 4. View Details > Distance",
+      "testData": "Majestic -> Kempegowda International Airport (Long Transfer Rs 8,000)",
+      "expected": "Distance shows > 30 KM on the card and in Inquiry Details, matching the summary and the charged Long Transfer price",
+      "status": "Fail",
+      "actual": "Card chip < 30 KM and Inquiry Details Distance < 30 KM, while Trip Summary showed > 30 KM and the charged price is the Long Transfer rate Rs 8,000.",
+      "evidence": [
+        "TC_BOOK_016_1_card-distance-lt30km.png",
+        "TC_INQ_015_1_inquiry-549-details.png"
+      ],
+      "bugs": [
+        "BUG-TRF-018"
+      ],
+      "endedAt": "2026-10-02T11:45:14.520Z"
+    },
+    {
+      "id": "TC_INQ_015",
+      "status": "Pass",
+      "actual": "Inquiry 549: Transfer Trip, Majestic -> Devanahalli, Schedule 3 Oct 2026, Pickup 11:35 am, Expected arrival 11:30 pm, Total Amount Rs8000; Payment Information: Advance Received Rs0, Invoice Not generated yet, Payment amount 500, gateway Razorpay (selected) / Cashfree (new option), Pay Advance. Observations: Distance < 30 KM (TC_BOOK_016); amount formatted Rs8000 without separator.",
+      "evidence": [
+        "TC_INQ_015_1_inquiry-549-details.png"
+      ],
+      "endedAt": "2026-10-02T11:45:14.520Z"
+    },
+    {
+      "id": "TC_INQ_009",
+      "status": "Pass",
+      "actual": "Cancel Booking & Process Refund dialog for Inquiry 549 (opened by a tap that landed on Cancel Trip while the page was still scrolling) -> Back closes it; inquiry unchanged (Advance Rs0, Pay Advance still available). Note: the Inquiry Details page keeps momentum-scrolling after a scroll gesture, which moved Cancel Trip under the intended Pay Advance tap point (no data changed).",
+      "endedAt": "2026-10-02T11:49:06.647Z"
+    },
+    {
+      "id": "TC_INQ_004",
+      "status": "Fail",
+      "actual": "Inquiry 549 (Transfer P2P): Pay Advance Rs 500 with Razorpay -> Payment Error \"gateway\" is not allowed field; with Cashfree -> same error. No gateway opens, Advance Received stays Rs0. BUG-OUT-013 still reproducible in Transfer. No payment details entered.",
+      "evidence": [
+        "TC_INQ_004_1_razorpay-gateway-error.png",
+        "TC_INQ_004_2_cashfree-gateway-error.png"
+      ],
+      "bugs": [
+        "BUG-OUT-013"
+      ],
+      "endedAt": "2026-10-02T11:49:06.649Z"
+    },
+    {
+      "id": "TC_INQ_007",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Defect - blocking",
+      "dependency": "Working payment gateway (BUG-OUT-013)",
+      "actual": "Payment cancel/failure inside the gateway cannot be reached - Pay Advance fails with the gateway error for both Razorpay and Cashfree before any gateway opens.",
+      "bugs": [
+        "BUG-OUT-013"
+      ],
+      "endedAt": "2026-10-02T11:49:06.649Z"
+    },
+    {
+      "id": "TC_INQ_016",
+      "status": "Fail",
+      "actual": "Inquiry 549 (P2P, pickup 3 Oct 11:35 am, 23 h ahead): Refund Calculation - Trip cost Rs8,000, One day charge Rs0.00, Penalty 20%, Add one day charge Yes, Penalty retained Rs1,600, Refund amount Rs6,400, slab 6 hrs < T < 24 hrs. Slab and penalty % correct, but (a) Add one day charge Yes with Rs0.00 charge (BUG-TRF-005 still), (b) refund/penalty computed on the trip cost although Advance Received is Rs0 - user is shown a Rs6,400 refund and invoice INV-68 bills a Rs1,600 penalty for money never paid (BUG-OUT-014). Booking Cancelled (Inquiry #549) summary writes the slab as 6 hrs <= T < 24 hrs (inconsistent notation).",
+      "evidence": [
+        "TC_INQ_016_1_refund-on-unpaid-6-24h.png",
+        "TC_INQ_016_2_cancelled-inv68.png"
+      ],
+      "bugs": [
+        "BUG-TRF-005",
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-02T11:50:37.495Z"
+    },
+    {
+      "id": "TC_INQ_008",
+      "status": "Pass",
+      "actual": "Cancel Trip -> Cancel Booking & Process Refund -> Confirm Cancellation -> Booking Cancelled (Inquiry #549), Refund Summary + Cancellation Invoice INV-68, Close -> My Bookings; Week Inquired 14 -> 13 and the Transfer card is removed.",
+      "endedAt": "2026-10-02T11:50:37.496Z"
+    },
+    {
+      "id": "TC_HOME_036",
+      "status": "Pass",
+      "actual": "Transfer > By Hour: Pickup Location (Enter Pickup Location), Pickup Date & Time, Number of Passengers 1, Number of Hours 1, Additional Options (Multi-day trip, Different drop location), Search Vehicles.",
+      "endedAt": "2026-10-02T12:03:53.623Z"
+    },
+    {
+      "id": "TC_HOME_058",
+      "status": "Pass",
+      "actual": "Empty pickup, Hours 0, default (past) time -> search blocked: This field is required (Pickup Location), Selected date and time has already passed. (time), Enter at least 1 hour (Hours).",
+      "endedAt": "2026-10-02T12:03:53.625Z"
+    },
+    {
+      "id": "TC_HOME_078",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Transfer - By Hour",
+      "scenario": "Number of Hours accepts only whole positive numbers (minus sign and decimal point from the numeric keypad are rejected)",
+      "testType": "Validation",
+      "priority": "Medium",
+      "preconditions": "Home > Transfer > By Hour",
+      "steps": "1. Clear Number of Hours 2. Type - then 2 on the device keypad 3. Type . then 5",
+      "testData": "-2; 2.5",
+      "expected": "Negative and fractional hours cannot be entered or are rejected with a clear message",
+      "status": "Pass",
+      "actual": "Minus and decimal point are filtered out: -2 -> 2, then . 5 -> 25. Only digits are accepted (0 is caught by Enter at least 1 hour).",
+      "endedAt": "2026-10-02T12:03:53.625Z"
+    },
+    {
+      "id": "TC_HOME_059",
+      "status": "Fail",
+      "actual": "Pickup Majestic, 03-10-2026 11:51 am, Hours 25 -> accepted without validation; Trip Summary Transfer (By Hour) opens; vehicle list 33 Seater Deluxe Coach Starts From Rs 11,000 (same as on the 01-10 build). No maximum enforced and the price does not scale to 25 hours. BUG-TRF-006 still present.",
+      "evidence": [
+        "TC_HOME_059_1_25h-accepted-summary-no-hours.png",
+        "TC_HOME_059_2_25h-list-price-11000.png"
+      ],
+      "bugs": [
+        "BUG-TRF-006"
+      ],
+      "endedAt": "2026-10-02T12:03:53.625Z"
+    },
+    {
+      "id": "TC_TRIP_013",
+      "status": "Fail",
+      "actual": "25 h no drop: Route Majestic -> Majestic, Drop Location Majestic, Distance > 30 KM for a same-point trip. 4 h with drop KIA: Route Majestic -> Devanahalli, Drop Devanahalli, Distance > 30 KM (consistent with P2P). Both: badge Transfer (By Hour) correct but number of hours not shown anywhere (BUG-TRF-007); no-drop case shows a > 30 KM distance (should be hour-based / N/A).",
+      "evidence": [
+        "TC_HOME_059_1_25h-accepted-summary-no-hours.png",
+        "TC_TRIP_013_1_byhour-drop-kia-no-hours.png"
+      ],
+      "bugs": [
+        "BUG-TRF-007"
+      ],
+      "endedAt": "2026-10-02T13:16:48.019Z"
+    },
+    {
+      "id": "TC_HOME_060",
+      "status": "Pass",
+      "actual": "By Hour filled (Majestic, 02-10, 1 h) -> Point To Point shows empty From/To and default dates (no leakage); back to By Hour shows Majestic retained.",
+      "endedAt": "2026-10-02T13:16:48.013Z"
+    },
+    {
+      "id": "TC_CONF_004",
+      "status": "Pass",
+      "actual": "By Hour Confirm modal (33 Seater Deluxe Coach, Rs 16,500) -> Edit Inquiry closes the modal and returns to the Home By Hour form with Majestic, 03-10-2026 01:05 pm, 1 passenger, 4 hours retained.",
+      "endedAt": "2026-10-02T13:16:48.018Z"
+    },
+    {
+      "id": "TC_CONF_014",
+      "status": "Fail",
+      "actual": "By Hour 4 h (no drop): list Starts From Rs 11,000 (same as for 25 h); Vehicle Details footer Rs 16,500; Confirm badge Transfer, Vehicle Base Cost Rs 16,500 = Estimated Grand Total Rs 16,500 (the coach Outstation/Transfer day rate). Estimate does not depend on hours and does not equal the list price; badge says Transfer not Transfer (By Hour). Same with drop KIA (Rs 11,000 list, Rs 16,500 Confirm).",
+      "evidence": [
+        "TC_CONF_014_1_4h-list-price-11000.png",
+        "TC_CONF_014_2_confirm-16500.png"
+      ],
+      "bugs": [
+        "BUG-TRF-006",
+        "BUG-TRF-008"
+      ],
+      "endedAt": "2026-10-02T13:16:48.018Z"
+    },
+    {
+      "id": "TC_CONF_015",
+      "status": "Pass",
+      "actual": "Single Confirm tap (stream live-checked) -> Inquiry Submitted Successfully! Estimated Cost Rs 16,500; Inquiry 550 created (By Hour 4 h, Majestic -> KIA, 3 Oct 01:05 pm).",
+      "endedAt": "2026-10-02T13:16:48.019Z"
+    },
+    {
+      "id": "TC_BOOK_012",
+      "status": "Fail",
+      "actual": "Week > Inquired 14: By Hour inquiry 550 card shows badge Local, 1 day, 80 KM/Day, 35 seats, 1 pax, 33 Seater Deluxe Coach, Starts From Rs 16,500 - Transfer (By Hour) type lost, hours not shown. BUG-TRF-008 still present.",
+      "evidence": [
+        "TC_BOOK_012_1_byhour-card-local.png"
+      ],
+      "bugs": [
+        "BUG-TRF-008"
+      ],
+      "endedAt": "2026-10-02T13:16:48.019Z"
+    },
+    {
+      "id": "TC_INQ_017",
+      "status": "Fail",
+      "actual": "Inquiry 550: header Local Trip, Distance 80 KM/Day, Majestic -> Devanahalli; Schedule 3 Oct 2026, Pickup 01:05 pm, Expected arrival 05:05 pm (= pickup + 4 h, now correct - improved); Total Rs16500 (= Confirm). Still failing: type Local Trip instead of Transfer Trip (By Hour) - BUG-TRF-008.",
+      "evidence": [
+        "TC_INQ_017_1_inquiry-550-local-trip.png"
+      ],
+      "bugs": [
+        "BUG-TRF-008"
+      ],
+      "endedAt": "2026-10-02T13:16:48.019Z"
+    },
+    {
+      "id": "TC_HOME_064",
+      "status": "Pass",
+      "actual": "Multi-day trip toggle: Pickup Date field becomes Pickup Time only; inline October 2026 calendar (1 Oct disabled); tapping 5 and 7 highlights them and shows Selected Dates (2): Oct 5, 2026 x / Oct 7, 2026 x. Search -> summary Transfer (By Hour), Dates 5, 7 Oct 2026.",
+      "evidence": [
+        "TC_HOME_064_1_multiday-5-7-selected.png",
+        "TC_HOME_064_2_summary-dates-5-7.png"
+      ],
+      "endedAt": "2026-10-02T13:23:40.810Z"
+    },
+    {
+      "id": "TC_HOME_065",
+      "status": "Fail",
+      "actual": "Dates 5 and 7 Oct only (no today). Pickup Time cannot be set earlier than the current clock: selecting 1:30 AM (twice, with settle time) and 12:30 PM both snap back to 01:30 pm on Done; the field keeps 01:30 pm. Behaviour changed from 01-10 (error message) to silent revert, but the same root cause - time is validated against now instead of the first selected date. BUG-TRF-013 still present.",
+      "evidence": [
+        "TC_HOME_065_1_time-snaps-back-to-pm.png"
+      ],
+      "bugs": [
+        "BUG-TRF-013"
+      ],
+      "endedAt": "2026-10-02T13:23:40.814Z"
+    },
+    {
+      "id": "TC_HOME_027",
+      "status": "Pass",
+      "actual": "Transfer By Hour (Majestic, multi-day 5/7 Oct, 01:30 pm) -> Clear resets Pickup to empty, date/time to now (02-10-2026 01:24 pm), passengers 1, hours 1, multi-day off; trip type stays Transfer > By Hour (improved - 01-10 build reset to Local).",
+      "evidence": [
+        "TC_HOME_027_1_clear-keeps-transfer.png"
+      ],
+      "endedAt": "2026-10-02T13:29:15.354Z"
+    },
+    {
+      "id": "TC_HOME_035",
+      "status": "Pass",
+      "actual": "Ticking Add Return adds a Return Journey section (From, To, Return Pickup Date & Time, Return Drop Date & Time); Search -> Trip Summary has Outward / Return tabs with an Outward Trip and a Return Trip card (route, distance, date, pax, pickup/drop). Return leg now included in the summary (fixed vs 01-10).",
+      "endedAt": "2026-10-02T13:29:15.358Z"
+    },
+    {
+      "id": "TC_HOME_061",
+      "status": "Pass",
+      "actual": "Return From auto-filled with Devanahalli (KIA) and Return To with Majestic after choosing outbound Majestic -> KIA.",
+      "endedAt": "2026-10-02T13:29:15.359Z"
+    },
+    {
+      "id": "TC_HOME_062",
+      "status": "Fail",
+      "actual": "Outward 04-10 01:24 -> 01:30 pm; Return pickup/drop 03-10 01:24 -> 01:30 pm (before the outward trip) - accepted without validation; Trip Summary Outward 04 Oct 2026, Return Trip 03 Oct 2026. BUG-TRF-009 still present.",
+      "evidence": [
+        "TC_HOME_062_1_return-before-outward-form.png",
+        "TC_HOME_062_2_return-tab-03oct.png"
+      ],
+      "bugs": [
+        "BUG-TRF-009"
+      ],
+      "endedAt": "2026-10-02T13:29:15.359Z"
+    },
+    {
+      "id": "TC_CONF_016",
+      "status": "Fail",
+      "actual": "Improved: Confirm modal now has Leg 1 / Leg 2 chips; Leg 1 Majestic -> Devanahalli 4 Oct, Leg 2 Devanahalli -> Majestic 5 Oct (both legs and dates listed). Still failing: each leg shows Vehicle Base Cost Rs 8,000 = Estimated Grand Total Rs 8,000 - no combined total (expected Rs 16,000); vehicle list showed Sedan Starts From Rs 6,500; success screen Estimated Cost Rs 8,000 for the two-leg trip.",
+      "evidence": [
+        "TC_CONF_016_1_roundtrip-list-sedan-6500.png",
+        "TC_CONF_016_2_leg1-8000.png",
+        "TC_CONF_016_3_leg2-8000-no-combined.png",
+        "TC_CONF_016_4_submitted-8000.png"
+      ],
+      "bugs": [
+        "BUG-TRF-010"
+      ],
+      "endedAt": "2026-10-02T13:34:46.646Z"
+    },
+    {
+      "id": "TC_BOOK_013",
+      "status": "Fail",
+      "actual": "Inquired 13 -> 15: two unlinked Transfer cards (Majestic -> Devanahalli and Devanahalli -> Majestic), each Starts From Rs 16,000 (Rs 32,000 total) although Confirm/success showed Rs 8,000. Cards are not visibly linked as one round trip; both show < 30 KM. BUG-TRF-010 still present (amounts changed from 33,000 to 16,000).",
+      "evidence": [
+        "TC_BOOK_013_1_two-cards-16000-each.png"
+      ],
+      "bugs": [
+        "BUG-TRF-010",
+        "BUG-TRF-018"
+      ],
+      "endedAt": "2026-10-02T13:34:46.652Z"
+    },
+    {
+      "id": "TC_INQ_018",
+      "status": "Fail",
+      "actual": "Inquiry 551 (return leg): Transfer Trip Devanahalli -> Majestic, Distance < 30 KM, 5 Oct 2026, Pickup 01:24 pm, Expected arrival 01:30 pm (route/date/time correct). Total Amount Rs16000 vs Confirm leg estimate Rs 8,000 - amount inconsistent.",
+      "evidence": [
+        "TC_INQ_018_1_inquiry-551-16000.png"
+      ],
+      "bugs": [
+        "BUG-TRF-010",
+        "BUG-TRF-018"
+      ],
+      "endedAt": "2026-10-02T13:34:46.652Z"
+    },
+    {
+      "id": "TC_INQ_019",
+      "status": "Fail",
+      "actual": "Cancel Trip on return inquiry 551: dialog for Inquiry 551 only, Trip cost Rs8,000 (inquiry shows Rs16,000), slab 24 hrs < T < 3 days, penalty 20% Rs1,600, refund Rs6,400 (on Rs0 paid), no statement whether the outward leg is affected. Confirm -> Booking Cancelled (Inquiry #551), INV-70. My Bookings Week Inquired 15 -> 13: the outward Transfer card is removed too (silently cancelled, no invoice of its own). BUG-TRF-011 still present; refund-on-unpaid BUG-OUT-014.",
+      "evidence": [
+        "TC_INQ_019_1_cancel-dialog-551-8000.png",
+        "TC_INQ_019_2_cancelled-inv70.png",
+        "TC_INQ_019_3_both-legs-removed-15-to-13.png"
+      ],
+      "bugs": [
+        "BUG-TRF-011",
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-02T13:36:18.571Z"
+    },
+    {
+      "id": "TC_HOME_063",
+      "status": "Fail",
+      "actual": "From Majestic, To Majestic, 03-10 -> 04-10 01:36 pm -> accepted without validation; Trip Summary Transfer (Point to Point) Majestic -> Majestic, Distance < 30 KM, Dates 03-04 Oct 2026 (map draws a loop route). BUG-TRF-012 still present.",
+      "evidence": [
+        "TC_HOME_063_1_from-to-majestic-form.png",
+        "TC_HOME_063_2_same-location-accepted.png"
+      ],
+      "bugs": [
+        "BUG-TRF-012"
+      ],
+      "endedAt": "2026-10-02T13:41:53.729Z"
+    },
+    {
+      "id": "TC_TRIP_014",
+      "status": "Fail",
+      "actual": "App Live Throttle Network > Offline Mode (status bar shows no network) -> Search Vehicles on a valid P2P form: nothing happens - no loader, no summary, no error/offline message after 12 s. Network restored afterwards. BUG-TRF-014 still present.",
+      "evidence": [
+        "TC_TRIP_014_1_offline-no-feedback.png"
+      ],
+      "bugs": [
+        "BUG-TRF-014"
+      ],
+      "endedAt": "2026-10-02T13:41:53.734Z"
+    },
+    {
+      "id": "TC_HOME_026",
+      "status": "Pass",
+      "actual": "Transfer By Hour with Different drop location on and Drop Location empty -> Search blocked: This field is required under Drop Location (plus pickup/time errors). Earlier (By Hour 4 h) selecting KIA cleared the error and the summary showed Drop Devanahalli.",
+      "evidence": [
+        "TC_HOME_026_1_drop-required.png"
+      ],
+      "endedAt": "2026-10-02T13:43:25.687Z"
+    },
+    {
+      "id": "TC_INQ_022",
+      "status": "Pass",
+      "actual": "Transfer P2P inquiry 552 (Majestic -> KIA, Sedan, 10 Oct 01:36 pm, Rs8,000; list Rs6,500 / Confirm Rs8,000 again): Cancel Trip -> Trip cost Rs8,000, One day charge Rs0, Penalty 0%, Add one day charge No, Penalty retained Rs0, Refund Rs8,000, 7 days 23 hours before start, slab T > 7 days - fully refundable. Confirm -> Booking Cancelled (Inquiry #552), INV-71; Month Inquired 13 -> 12. Note: refund Rs8,000 on Rs0 paid (BUG-OUT-014); slab notation > in dialog vs >= in summary.",
+      "evidence": [
+        "TC_INQ_022_1_fully-refundable-slab.png",
+        "TC_INQ_022_2_cancelled-inv71.png"
+      ],
+      "endedAt": "2026-10-02T13:50:12.077Z"
+    },
+    {
+      "id": "TC_HOME_038",
+      "status": "Pass",
+      "actual": "Multi tab: Leg #1 Local with Local / Outstation / Transfer chips, leg fields (Pickup Location, Pickup Date & Time, Passengers, Hours), Add Next Stop and Search Vehicles. Choosing Transfer switches the leg to Leg #1 Transfer with Point To Point / By Hour segment.",
+      "endedAt": "2026-10-02T14:01:04.982Z"
+    },
+    {
+      "id": "TC_HOME_069",
+      "status": "Pass",
+      "actual": "Leg 1 Transfer > By Hour: Majestic, 05-10-2026 01:50 pm, Hours 0 -> Add Next Stop blocked with Enter at least 1 hour (leg not committed); Hours 3 -> leg committed as chip Leg 1 : Majestic ... -> Ma... and Leg #2 Transfer form opens (pre-filled with the same pickup/date/time).",
+      "evidence": [
+        "TC_HOME_069_1_leg-0h-blocked.png",
+        "TC_HOME_069_2_leg1-committed.png"
+      ],
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    },
+    {
+      "id": "TC_HOME_068",
+      "status": "Fail",
+      "actual": "Leg 1 Transfer By Hour 05-10 01:50 pm (3 h); Leg 2 Transfer By Hour dated 03-10 01:50 pm -> committed and Search accepted; summary Leg 1 05 Oct 2026, Leg 2 03 Oct 2026 (before Leg 1). No chronology validation (Leg 2 default also overlapped Leg 1). BUG-MLT-003 still present on this build. Observation: Multi summary shows Distance — for By Hour legs while single By Hour shows > 30 KM; hours not shown.",
+      "evidence": [
+        "TC_HOME_068_1_leg2-before-leg1-committed.png",
+        "TC_HOME_068_2_summary-leg2-03oct.png"
+      ],
+      "bugs": [
+        "BUG-MLT-003"
+      ],
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    },
+    {
+      "id": "TC_HOME_067",
+      "status": "Not Executed",
+      "blockCategory": "Out of scope - Multi module",
+      "dependency": "Multi module run (android-20261001-1739-MULTI)",
+      "actual": "Multi-leg mechanics case (open leg included on Search), not Transfer-specific; covered by the Multi module run. Not re-executed to avoid modifying Multi results.",
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    },
+    {
+      "id": "TC_HOME_073",
+      "status": "Not Executed",
+      "blockCategory": "Out of scope - Multi module",
+      "dependency": "Multi module run (android-20261001-1739-MULTI)",
+      "actual": "Multi-leg form stability case; not Transfer-specific. Covered by the Multi module run.",
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    },
+    {
+      "id": "TC_HOME_075",
+      "status": "Not Executed",
+      "blockCategory": "Out of scope - Multi module",
+      "dependency": "Multi module run (android-20261001-1739-MULTI)",
+      "actual": "Per-leg drop-before-pickup validation for multi legs; not Transfer-specific. Covered by the Multi module run.",
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    },
+    {
+      "id": "TC_VLIST_013",
+      "status": "Not Executed",
+      "blockCategory": "Out of scope - Multi module",
+      "dependency": "Multi module run (android-20261001-1739-MULTI)",
+      "actual": "Multi-leg list price across legs; belongs to the Multi module. Round-trip (two-leg Transfer) pricing covered here by TC_CONF_016/TC_BOOK_013.",
+      "endedAt": "2026-10-02T14:01:04.988Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-TRF-015",
+      "title": "P2P Transfer accepts a drop time earlier than the pickup time on the same date",
+      "severity": "High",
+      "priority": "High",
+      "module": "Home - Start Your Journey (Transfer P2P)",
+      "cases": [
+        "TC_HOME_077"
+      ],
+      "steps": [
+        "Home > Transfer > Point To Point",
+        "From Majestic, To Kempegowda International Airport",
+        "Pickup 03-10-2026 11:00 pm",
+        "Drop 03-10-2026 11:21 am",
+        "Search Vehicles"
+      ],
+      "expected": "Validation error on the drop time (drop must be after pickup); search blocked",
+      "actual": "No validation; Trip Summary opens and the user can continue to vehicles with a negative trip duration",
+      "errorInfo": "Validation only checks drop time against the current clock, not against the pickup time",
+      "evidence": [
+        "TC_HOME_NEW1_1_drop-before-pickup-form.png",
+        "TC_HOME_NEW1_2_drop-before-pickup-accepted.png"
+      ],
+      "environment": "Google Pixel 7 / Android 13, app-release_1stOct26.apk v1.1",
+      "status": "New",
+      "testCase": "TC_HOME_077",
+      "reproducibility": "Always"
+    },
+    {
+      "id": "BUG-TRF-016",
+      "title": "Vehicle Details from a Transfer search opens the fare breakup on the Local Trip tab",
+      "severity": "Low",
+      "priority": "Medium",
+      "module": "Vehicle Details & Fare Breakup",
+      "cases": [
+        "TC_VDET_018"
+      ],
+      "steps": [
+        "Transfer P2P search Majestic -> KIA",
+        "Filters > Sedan",
+        "Open Sedan",
+        "View Fare Breakup"
+      ],
+      "expected": "Breakup opens on the Transfer Trip tab (search context)",
+      "actual": "Opens on Local Trip tab (Local Package Pricing Rs 4,000). Footer is correct (Rs 8,000) - partial fix of the 01-10 finding.",
+      "evidence": [
+        "TC_VDET_018_1_breakup-opens-local-tab.png"
+      ],
+      "environment": "Google Pixel 7 / Android 13, app-release_1stOct26.apk v1.1",
+      "status": "New",
+      "notes": "Remaining part of the TC_VDET_018 finding of 01-10 (footer now fixed).",
+      "testCase": "TC_VDET_018",
+      "reproducibility": "Always"
+    },
+    {
+      "id": "BUG-TRF-017",
+      "title": "Sedan vehicle details show Body Type Coach Bus",
+      "severity": "Low",
+      "priority": "Low",
+      "module": "Vehicle Details & Fare Breakup",
+      "cases": [
+        "TC_VDET_020"
+      ],
+      "steps": [
+        "Vehicle list > Filters > Sedan > Apply",
+        "Open Sedan"
+      ],
+      "expected": "Body Type Sedan",
+      "actual": "Spec tile shows Coach Bus (Body Type) for the 4-seat Sedan (D SDN)",
+      "evidence": [
+        "TC_VDET_NEW_1_sedan-body-type-coach-bus.png"
+      ],
+      "environment": "Google Pixel 7 / Android 13, app-release_1stOct26.apk v1.1",
+      "status": "New",
+      "testCase": "TC_VDET_020",
+      "reproducibility": "Always"
+    },
+    {
+      "id": "BUG-TRF-018",
+      "title": "Transfer inquiry card and Inquiry Details show < 30 KM for a > 30 km route charged at the Long Transfer rate",
+      "severity": "Medium",
+      "priority": "Medium",
+      "module": "Ride - My Bookings / Inquiry Details",
+      "cases": [
+        "TC_BOOK_016"
+      ],
+      "steps": [
+        "Transfer P2P Majestic -> Kempegowda International Airport",
+        "Summary shows > 30 KM",
+        "Sedan > Book Now > Confirm (Rs 8,000)",
+        "Track My Inquiry > Week > Inquired",
+        "View Details"
+      ],
+      "expected": "Distance > 30 KM everywhere, consistent with the charged Long Transfer rate",
+      "actual": "Card and Inquiry Details (Inquiry 549) show < 30 KM",
+      "evidence": [
+        "TC_BOOK_016_1_card-distance-lt30km.png",
+        "TC_INQ_015_1_inquiry-549-details.png"
+      ],
+      "environment": "Google Pixel 7 / Android 13, app-release_1stOct26.apk v1.1",
+      "status": "New",
+      "testCase": "TC_BOOK_016",
+      "reproducibility": "Always"
+    },
+    {
+      "id": "BUG-TRF-001",
+      "title": "P2P: drop date not adjusted and unclear error when pickup date is moved after the drop date",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_056",
+      "steps": [
+        "Home > Transfer > Point To Point; fill From/To",
+        "Change Pickup date to 02-10 (drop remains 01-10)",
+        "Tap Search Vehicles"
+      ],
+      "expected": "Drop date follows pickup, or error 'Drop date & time must be after pickup date & time'",
+      "actual": "Retest android-20261002-1648-TRANSFER: Pickup moved to 03-10 11:00 pm; drop stays 02-10 11:21 am; only Selected date and time has already passed. under drop time.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_056_1_drop-not-adjusted.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-002",
+      "title": "P2P accepts drop date/time equal to pickup (zero duration); drop picker titled 'Return Date' for a one-way transfer",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_057",
+      "steps": [
+        "Home > Transfer > Point To Point (Add Return unticked)",
+        "Pickup 02-10 07:46 am, Drop 02-10 07:46 am",
+        "Search Vehicles"
+      ],
+      "expected": "Drop must be after pickup (or drop auto-derived for one-way); picker labelled 'Drop'",
+      "actual": "Retest android-20261002-1648-TRANSFER: Fixed: drop = pickup now blocked (Please select a different drop time.). Still open: one-way drop pickers titled Return Date / Return Time.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - partially fixed",
+      "evidence": [
+        "TC_HOME_057_1_drop-picker-titled-return-date.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-003",
+      "title": "Transfer slab inconsistent: summary '< 30 KM' and list Rs 6,500 (short) but Confirm charges Long Transfer Rs 8,000",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Trip Summary / Confirm",
+      "testCase": "TC_CONF_013",
+      "steps": [
+        "Transfer P2P Majestic -> Kempegowda International Airport",
+        "Read Distance on Trip Summary",
+        "Filters > Sedan: read Starts From",
+        "Open Sedan > Book Now: read Estimated Grand Total"
+      ],
+      "expected": "One slab applied consistently; distance reflects the real route (~35+ km -> long transfer)",
+      "actual": "Retest android-20261002-1648-TRANSFER: Fixed: summary now > 30 KM and Confirm Rs 8,000 consistent; details footer Rs 8,000. Still open: vehicle list Sedan Starts From Rs 6,500 (short slab) for the same > 30 km search; card/inquiry show < 30 KM (BUG-TRF-018).",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - partially fixed",
+      "evidence": [
+        "TC_CONF_013_1_confirm-long-slab-8000.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-004",
+      "title": "Transfer Search Vehicles gives no loading feedback (~8 s) before the Trip Summary opens",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_TRIP_012",
+      "steps": [
+        "Fill a valid Transfer form",
+        "Tap Search Vehicles"
+      ],
+      "expected": "Spinner/disabled button while the route is calculated",
+      "actual": "Retest android-20261002-1648-TRANSFER: Loader now shown on Search Vehicles before the Trip Summary opens.",
+      "errorInfo": "-",
+      "reproducibility": "Not reproduced",
+      "status": "Fixed - verified",
+      "evidence": [],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-005",
+      "title": "Cancellation dialog shows 'Add one day charge: Yes' with 'One day charge Rs0.00'",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Inquiry Details / Cancellation",
+      "testCase": "TC_INQ_016",
+      "steps": [
+        "Transfer inquiry with pickup < 24 h away (Inquiry 523)",
+        "Tap Cancel Trip"
+      ],
+      "expected": "Consistent breakdown - either a non-zero one-day charge or 'No'",
+      "actual": "Retest android-20261002-1648-TRANSFER: Inquiry 549 (6-24 h): Add one day charge Yes with One day charge Rs0.00; By Hour inquiry 550 in the same slab charged Rs9,500 one-day charge - applied inconsistently.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_INQ_016_1_refund-on-unpaid-6-24h.png",
+        "TC_INQ_016_3_byhour-550-one-day-charge-9500.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-006",
+      "title": "By Hour accepts more than 24 hours and the price ignores the number of hours",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_059, TC_CONF_014",
+      "steps": [
+        "Home > Transfer > By Hour, pickup Majestic, future date",
+        "Number of Hours = 25; Search Vehicles",
+        "Compare list/Confirm price with a 4-hour search"
+      ],
+      "expected": "Max hours enforced (Local: 'Maximum trip duration is 24 hours') and price scales with hours",
+      "actual": "Retest android-20261002-1648-TRANSFER: 25 h accepted; list Rs 11,000 for both 4 h and 25 h; Confirm Rs 16,500 regardless of hours.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_059_1_25h-accepted-summary-no-hours.png",
+        "TC_CONF_014_1_4h-list-price-11000.png",
+        "TC_CONF_014_2_confirm-16500.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-007",
+      "title": "Transfer Trip Summary does not show the number of hours (By Hour) or pickup time",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_TRIP_012, TC_TRIP_013",
+      "steps": [
+        "By Hour search with 4 hours",
+        "Review Trip Summary"
+      ],
+      "expected": "Hours and pickup time listed",
+      "actual": "Retest android-20261002-1648-TRANSFER: Transfer Trip Summary still shows neither pickup time nor number of hours.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_TRIP_012_1_no-pickup-time-vehicle-age.png",
+        "TC_TRIP_013_1_byhour-drop-kia-no-hours.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-008",
+      "title": "Transfer By Hour inquiry is labelled and saved as a 'Local' trip with the Outstation day rate",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Confirm / My Bookings / Inquiry Details",
+      "testCase": "TC_BOOK_012, TC_INQ_017, TC_CONF_014",
+      "steps": [
+        "Home > Transfer > By Hour; Majestic, 03-10 08:06 am, 4 hours, drop KIA",
+        "Search Vehicles > 33 Seater Deluxe Coach > Book Now",
+        "Note Route Summary badge and cost; Confirm",
+        "Open My Bookings > Inquired > View Details"
+      ],
+      "expected": "Trip type Transfer (By Hour) everywhere; hour-based Transfer price consistent with the list (Rs 11,000)",
+      "actual": "Retest android-20261002-1648-TRANSFER: By Hour inquiry 550 saved as Local Trip (card badge Local, 80 KM/Day, Rs 16,500); Confirm badge Transfer (not By Hour). Expected arrival now = pickup + hours (improved).",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_BOOK_012_1_byhour-card-local.png",
+        "TC_INQ_017_1_inquiry-550-local-trip.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-009",
+      "title": "Add Return: return date before the outward trip is accepted",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_062",
+      "steps": [
+        "Transfer > Point To Point, tick Add Return",
+        "Outward Majestic -> KIA on 03-10",
+        "Return pickup/drop 02-10",
+        "Search Vehicles"
+      ],
+      "expected": "Error: return must be after the outward trip",
+      "actual": "Retest android-20261002-1648-TRANSFER: Return 03-10 before outward 04-10 accepted; summary Return Trip 03 Oct.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_062_1_return-before-outward-form.png",
+        "TC_HOME_062_2_return-tab-03oct.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-010",
+      "title": "Round-trip Transfer: Confirm shows one leg at Rs 16,500 but creates two inquiries at Rs 33,000 each",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Confirm / My Bookings / Inquiry Details",
+      "testCase": "TC_CONF_016, TC_BOOK_013, TC_INQ_018",
+      "steps": [
+        "Transfer > P2P + Add Return: Majestic -> KIA 03-10, return 04-10",
+        "Search > 33 Seater Deluxe Coach (list Rs 14,500) > Book Now",
+        "Review Confirm (outward only, Rs 16,500); Confirm",
+        "My Bookings > Week > Inquired"
+      ],
+      "expected": "Confirm lists both legs with a combined estimate; saved inquiries match it",
+      "actual": "Retest android-20261002-1648-TRANSFER: Confirm now has Leg 1/Leg 2 chips but each shows Rs 8,000 and no combined total; success Rs 8,000; My Bookings two cards Rs 16,000 each; Inquiry 551 total Rs16000.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_CONF_016_2_leg1-8000.png",
+        "TC_CONF_016_3_leg2-8000-no-combined.png",
+        "TC_CONF_016_4_submitted-8000.png",
+        "TC_BOOK_013_1_two-cards-16000-each.png",
+        "TC_INQ_018_1_inquiry-551-16000.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-011",
+      "title": "Cancelling the return leg silently cancels the outward inquiry too; dialog uses Rs16,500 instead of the Rs33,000 inquiry total",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Inquiry Details / Cancellation",
+      "testCase": "TC_INQ_019",
+      "steps": [
+        "Create a round-trip Transfer (two inquiries)",
+        "Open the return inquiry (525) > Cancel Trip > Confirm Cancellation",
+        "Check My Bookings > Inquired"
+      ],
+      "expected": "User is told both legs will be cancelled (or only the selected leg is cancelled); amounts match the inquiry",
+      "actual": "Retest android-20261002-1648-TRANSFER: Cancelling return 551 removed both legs (Inquired 15 -> 13), one invoice INV-70 on Rs8,000; dialog does not say both legs are cancelled.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_INQ_019_1_cancel-dialog-551-8000.png",
+        "TC_INQ_019_2_cancelled-inv70.png",
+        "TC_INQ_019_3_both-legs-removed-15-to-13.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-012",
+      "title": "P2P Transfer allows From and To to be the same location",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_063",
+      "steps": [
+        "Transfer > Point To Point",
+        "From Majestic, To Majestic",
+        "Search Vehicles"
+      ],
+      "expected": "Error: pickup and drop must differ",
+      "actual": "Retest android-20261002-1648-TRANSFER: Majestic -> Majestic accepted; summary < 30 KM, 03-04 Oct.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_063_2_same-location-accepted.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-013",
+      "title": "Multi-day (By Hour) with only future dates still rejects a pickup time earlier than the current clock",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_065",
+      "steps": [
+        "Transfer > By Hour, Multi-day ON",
+        "Select only future dates (5, 7 Oct)",
+        "Pickup Time earlier than the device clock (e.g. 08:26 at 08:30)",
+        "Search Vehicles"
+      ],
+      "expected": "Accepted (no selected date is today)",
+      "actual": "Retest android-20261002-1648-TRANSFER: Multi-day 5/7 Oct: pickup time earlier than now (1:30 AM, 12:30 PM) silently reverts to 01:30 pm.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_065_1_time-snaps-back-to-pm.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-TRF-014",
+      "title": "Transfer Search Vehicles fails silently when offline",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_TRIP_014",
+      "steps": [
+        "Fill a valid Transfer (By Hour) form",
+        "Turn the device offline",
+        "Tap Search Vehicles"
+      ],
+      "expected": "'No internet connection' message with retry",
+      "actual": "Retest android-20261002-1648-TRANSFER: Offline: Search Vehicles gives no loader/error/summary after 12 s.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_TRIP_014_1_offline-no-feedback.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-OUT-013",
+      "title": "Pay Advance fails for both gateways with raw API error '\"gateway\" is not allowed field'",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Inquiry Details / Payments",
+      "testCase": "TC_INQ_004, TC_INQ_007",
+      "steps": [
+        "Open any inquiry (e.g. 520)",
+        "Keep amount 500, select Razorpay (or Cashfree)",
+        "Tap Pay Advance"
+      ],
+      "expected": "Gateway checkout opens; or, if payments are disabled in this build, a friendly 'Online payment is not available yet' message / hidden button",
+      "actual": "Retest android-20261002-1648-TRANSFER: Transfer inquiry 549: Razorpay and Cashfree both return Payment Error \"gateway\" is not allowed field.",
+      "errorInfo": "\"gateway\" is not allowed field",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_INQ_004_1_razorpay-gateway-error.png",
+        "TC_INQ_004_2_cashfree-gateway-error.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-OUT-014",
+      "title": "Cancelling an unpaid inquiry generates a refund of Rs16,650 and a cancellation invoice",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Inquiry Details / Cancellation",
+      "testCase": "TC_INQ_016, TC_INQ_019, TC_INQ_022",
+      "steps": [
+        "Create an Outstation inquiry (Inquiry 520, total Rs18,500); do not pay any advance (Advance Received Rs0)",
+        "Inquiry Details > Cancel Trip",
+        "Review Refund Calculation; Confirm Cancellation"
+      ],
+      "expected": "Refund is based on the amount actually paid (Rs0) - no refund and no refund invoice; or penalty only if a policy requires it",
+      "actual": "Retest android-20261002-1648-TRANSFER: Reproduced on Transfer: unpaid inquiries 549 (refund Rs6,400, penalty Rs1,600, INV-68), 550 (refund Rs3,700, INV-69), 551 (refund Rs6,400, INV-70), 552 (refund Rs8,000, INV-71) - refunds/penalties computed on trip cost with Advance Received Rs0.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_INQ_016_1_refund-on-unpaid-6-24h.png",
+        "TC_INQ_016_2_cancelled-inv68.png",
+        "TC_INQ_022_2_cancelled-inv71.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-VLIST-001",
+      "title": "Deluxe category chip returns 0 vehicles although Deluxe ('Delux') vehicles are listed",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Available Vehicles",
+      "testCase": "TC_VLIST_004",
+      "steps": [
+        "Note cards with the 'Delux' badge in the unfiltered list (e.g. 33 Seater Deluxe Coach)",
+        "Tap the 'Deluxe' category chip"
+      ],
+      "expected": "All Deluxe vehicles are listed (about 7 of 20: 20 - 6 Luxury - 7 Premium).",
+      "actual": "Retest android-20261002-1648-TRANSFER: Transfer list: Deluxe chip -> 0 vehicles although Delux coaches/Sedan listed.",
+      "errorInfo": "Likely value mismatch: vehicle class stored/badged as 'Delux' while the chip filters on 'Deluxe' (see also TC_VDET_002 badge spelling).",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_VLIST_004_1_deluxe-coaches-in-list.png",
+        "TC_VLIST_004_2_deluxe-chip-no-vehicles.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-LOC-003",
+      "title": "Selected drop place shows only the address (Devanahalli...) instead of the place name",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Location Picker",
+      "testCase": "TC_LOC_011",
+      "steps": [
+        "Open Select Drop Location",
+        "Search 'kempegowda international airport'",
+        "Tap 'Kempegowda International Airport Bengaluru (BLR)'"
+      ],
+      "expected": "Drop field shows a recognisable name, e.g. 'Kempegowda International Airport Bengaluru (BLR)'.",
+      "actual": "Retest android-20261002-1648-TRANSFER: Transfer To: airport selection shows Devanahalli, Be... (address only).",
+      "errorInfo": "Previously OBS-10. Pickup selections keep the name (e.g. 'Majestic, Bengaluru...').",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_LOC_011_1_drop-address-only.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    },
+    {
+      "id": "BUG-MLT-003",
+      "title": "Multi: no chronology/overlap validation between legs",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_068",
+      "steps": [
+        "Leg 1 04-10, Leg 2 06-07 Oct",
+        "Leg 3 pickup/drop 02-10",
+        "Search Vehicles"
+      ],
+      "expected": "Error: leg must start after previous leg ends",
+      "actual": "Retest android-20261002-1648-TRANSFER: Multi Transfer By Hour Leg 2 dated 03 Oct accepted after Leg 1 on 05 Oct.",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "status": "Open - still reproducible",
+      "evidence": [
+        "TC_HOME_068_1_leg2-before-leg1-committed.png",
+        "TC_HOME_068_2_summary-leg2-03oct.png"
+      ],
+      "notes": "Originally reported in an earlier run; re-tested on app-release_1stOct26.apk."
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "TC_INQ_022",
+    "current": "TC_HOME_038",
+    "next": "TC_HOME_069, TC_HOME_068",
+    "state": "My Bookings Month",
+    "at": "2026-10-02T13:50:12.815Z"
+  },
+  "recoveryEvents": [
+    {
+      "at": "2026-10-02T11:32:17.338Z",
+      "issue": "Claude in Chrome extension disconnected mid-batch; on reconnect the App Live tab was back on the Dashboard and the device session had ended",
+      "detection": "browser_batch error Browser extension is not connected; tab title App Live Dashboard; probe: no device stream",
+      "actions": [
+        "Recorded checkpoint",
+        "Starting new Pixel 7 / Android 13 session with app-release_1stOct26.apk",
+        "User to sign in again on the device"
+      ]
+    },
+    {
+      "at": "2026-10-02T12:03:53.998Z",
+      "issue": "Second App Live drop: We could not connect to the remote device due to network conditions (BrowserStack banner); tab returned to the dashboard",
+      "detection": "Scroll gesture returned the dashboard; tab title App Live Dashboard",
+      "actions": [
+        "Logged results and checkpoint",
+        "Start new Pixel 7 / Android 13 session; user to sign in again"
+      ]
+    },
+    {
+      "at": "2026-10-02T13:04:52.592Z",
+      "issue": "Third App Live loss: Your remote testing session is closed due to inactivity - user signed in, but the session idled out before the next device input",
+      "detection": "Red App Live banner; probe ok=false, layout changed (DevTools reopened)",
+      "actions": [
+        "Start new Pixel 7 / Android 13 session",
+        "User to sign in again; resume at By Hour block"
+      ]
+    }
+  ],
+  "partial": false
+}

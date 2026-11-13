@@ -1,0 +1,471 @@
+{
+  "id": "TC-07",
+  "started": "2026-11-12T08:05:37.804Z",
+  "steps": [
+    {
+      "label": "8hr-baseline",
+      "input": {
+        "label": "8hr-baseline",
+        "pickup": "Whitefield",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "pax": 1,
+        "hrs": 8,
+        "vehicle": "P16UB"
+      },
+      "pickupSuggest": {
+        "query": "Whitefield",
+        "suggestions": [
+          "Whitefield Bengaluru, Karnataka, India",
+          "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+          "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+          "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India",
+          "Whitefield Convention Centre & Hotel ITPL Main Road, Vijayanagar, EPIP Zone, Whitefield, TTMC, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Whitefield, Bengaluru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": false,
+        "differentDrop": false,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "selectedDates": "",
+        "pax": "1",
+        "hours": "24"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :20 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:24 Hours Passengers:1 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 24 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹11,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹11,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹13,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹4,500"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹7,800"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹5,300"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-results-summary.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 3,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 16 Seater Premium Urbania",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹7,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹40 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹800 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹800"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹800"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+            "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+            "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+            "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : 16 Seater Premium Urbania – 1",
+          "dates": "20 Nov, 2026",
+          "passenger": "1",
+          "pickup": "Whitefield, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹7,500"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹800"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹0"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹8,300"
+            }
+          ],
+          "buttons": [
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "P",
+            "G",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : 16 Seater Premium Urbania – 1",
+            "16 Seater Premium Urbania",
+            "16 Seater",
+            "Type: 16 Seater Premium Urbania",
+            "Luggage:",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Whitefield, Bengaluru, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "20 Nov, 2026",
+            "Passenger",
+            "1",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹7,500",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹800",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0",
+            "Estimated Grand Total",
+            "₹8,300",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-applied-fare.png"
+        ],
+        "submission": {
+          "ctaLabel": "Confirm & Submit Booking",
+          "urlBefore": "https://preprod.siddagangatravels.com/send-inquiry",
+          "urlAfter": "https://preprod.siddagangatravels.com/send-inquiry",
+          "messages": [
+            "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹8,300 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+          ],
+          "apiCalls": [
+            {
+              "method": "POST",
+              "url": "/user/save-inquiry",
+              "status": 201,
+              "body": "{\"encrypted\":true,\"iv\":\"eCkVJhn9jX4V+/za\",\"tag\":\"vwCqMHuDLP6zMwC5rIEKmQ==\",\"data\":\"kir5neLXFvJG9y8At1wBbwhn4ExQIv55lt+tVq5FGFn+XmVocJWgb/j1ChXGF7zmzU0DDl4BEMgEaQyuIIfgoxPRSYrFqiteZahwQxQcLDVgmUaj9QVYu2hX1zUmRt9p4emoAkOn27VG05Dwj1e1BmgtsuUmNrEY07Vvjzgw2C1r4Cfg1q24sT2TYvILQFewglnokBD+pWxGq02BJ5/D0lUtZkpjF8fmLmt5Ulm0ijNd396Zv3nvz+Fbk0jmz+/BM/u5lhpJC8GsIA==\"}"
+            },
+            {
+              "method": "POST",
+              "url": "/user/draft-inquiry/delete",
+              "status": 200,
+              "body": "{\"encrypted\":true,\"iv\":\"HAnDN/Pd7oGq+SEg\",\"tag\":\"Z6/n9vgUJ/Q9SVxbuCTbLA==\",\"data\":\"Ql8AA0XtIN2mCOZsuf0V0Qqk/bpQklA28YETvvWTR2Tag56cQTGby56v8294wPT5h5Qun+46T8RILS9vactsyq9glAMkJH1uFLIq/C1iFC5X4NIzM9Xr4WfalXoovHg0DdtwF9A1DVpNUo/XRPzfgyuaCw1PzrmFgZQMsD5rXDRlJI/Hew==\"}"
+            }
+          ],
+          "inquiryRef": null,
+          "paymentShown": false,
+          "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-8hr-baseline-submit-result.png",
+          "success": true
+        }
+      }
+    },
+    {
+      "label": "9hr-boundary",
+      "input": {
+        "label": "9hr-boundary",
+        "pickup": "Whitefield",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "pax": 1,
+        "hrs": 9,
+        "vehicle": "P16UB"
+      },
+      "pickupSuggest": {
+        "query": "Whitefield",
+        "suggestions": [
+          "Whitefield Bengaluru, Karnataka, India",
+          "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+          "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+          "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India",
+          "Whitefield Convention Centre & Hotel ITPL Main Road, Vijayanagar, EPIP Zone, Whitefield, TTMC, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Whitefield, Bengaluru, Karnataka, India"
+      },
+      "form": {
+        "multiDay": false,
+        "differentDrop": false,
+        "pickup": "Whitefield, Bengaluru, Karnataka, India",
+        "drop": "",
+        "date": "2026-11-20",
+        "time": "9:00 AM",
+        "selectedDates": "",
+        "pax": "1",
+        "hours": "9"
+      },
+      "formShot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-form.png",
+      "result": {
+        "navigated": true,
+        "summary": "Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :20 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:9 Hours Passengers:1 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India",
+        "found": "20 Buses Found | Local - 9 HR / 80 KM",
+        "page1": [
+          {
+            "vehicle": "33 Seater Deluxe Coach D35NA",
+            "seats": 35,
+            "startsFrom": "₹11,000"
+          },
+          {
+            "vehicle": "40 Seater Deluxe Coach D40NA",
+            "seats": 40,
+            "startsFrom": "₹11,500"
+          },
+          {
+            "vehicle": "49 Seater Deluxe Coach D49NA",
+            "seats": 49,
+            "startsFrom": "₹13,500"
+          },
+          {
+            "vehicle": "Sedan D SDN",
+            "seats": 4,
+            "startsFrom": "₹4,500"
+          },
+          {
+            "vehicle": "MPV's D MPV",
+            "seats": 7,
+            "startsFrom": "₹7,800"
+          },
+          {
+            "vehicle": "12 Seater Tempo Traveller D12TT",
+            "seats": 12,
+            "startsFrom": "₹5,300"
+          }
+        ],
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-results-summary.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-results-vehicles.png"
+        ]
+      },
+      "details": {
+        "onPage": 3,
+        "fareBreakup": {
+          "header": "View Vehicle Details | 16 Seater Premium Urbania",
+          "subtitle": "49-Seater Multi-Axle Volvo Coach | BS6",
+          "tags": [
+            "Corporate",
+            "VIP",
+            "Long-Distance Travel"
+          ],
+          "package": "Local Trip – 8 Hrs / 80 Kms",
+          "baseRate": {
+            "label": "Base Rate (8Hr/80Km) Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+            "value": "₹7,500"
+          },
+          "extraKm": {
+            "label": "Extra Km Charge",
+            "value": "₹40 / km"
+          },
+          "extraHour": {
+            "label": "Extra Hour Charge",
+            "value": "₹800 / hr"
+          },
+          "dayBata": {
+            "label": "Day Bata Cost (Before 10pm or After 6am)",
+            "value": "₹800"
+          },
+          "nightBata": {
+            "label": "Night Bata Cost (Before 6am or After 10pm)",
+            "value": "₹800"
+          },
+          "toll": {
+            "label": "Toll & Parking",
+            "value": "Actuals"
+          },
+          "gst": {
+            "label": "GST",
+            "value": "Additional"
+          },
+          "other": [],
+          "comfortRaw": [
+            "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+            "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+            "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+            "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-fare-breakup.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-vehicle-specs.png"
+        ]
+      },
+      "booking": {
+        "applied": {
+          "title": "Confirm Your Trip & Selected Vehicles",
+          "selected": "Selected Vehicles : 16 Seater Premium Urbania – 1",
+          "dates": "20 Nov, 2026",
+          "passenger": "1",
+          "pickup": "Whitefield, Bengaluru, Karnataka, India",
+          "drop": null,
+          "note": "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+          "cost": [
+            {
+              "label": "Vehicle Base Cost",
+              "value": "₹7,500"
+            },
+            {
+              "label": "Day Bata Cost (Before 10pm or After 6am)",
+              "value": "₹800"
+            },
+            {
+              "label": "Night Bata Cost (Before 6am or After 10pm)",
+              "value": "₹0"
+            },
+            {
+              "label": "Estimated Grand Total",
+              "value": "₹8,300"
+            }
+          ],
+          "buttons": [
+            "Confirm & Submit Booking"
+          ],
+          "hasGST": true,
+          "hasExtraHr": false,
+          "hasExtraKm": false,
+          "distance": null,
+          "raw": [
+            "Confirm Your Trip & Selected Vehicles",
+            "G",
+            "P",
+            "P",
+            "G",
+            "Customer Details:",
+            "Bikash N",
+            "<phone>",
+            "Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes.",
+            "Selected Vehicles : 16 Seater Premium Urbania – 1",
+            "16 Seater Premium Urbania",
+            "16 Seater",
+            "Type: 16 Seater Premium Urbania",
+            "Luggage:",
+            "Route Summary :",
+            "Local",
+            "From Garage",
+            "Garage",
+            "Pickup Location",
+            "Whitefield, Bengaluru, Karnataka, India",
+            "Back to Garage",
+            "Garage",
+            "Dates",
+            "20 Nov, 2026",
+            "Passenger",
+            "1",
+            "Estimated Trip Cost :",
+            "Vehicle Base Cost",
+            "₹7,500",
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹800",
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0",
+            "Estimated Grand Total",
+            "₹8,300",
+            "Confirm & Submit Booking"
+          ]
+        },
+        "shots": [
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-confirm-trip.png",
+          "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-applied-fare.png"
+        ],
+        "submission": {
+          "ctaLabel": "Confirm & Submit Booking",
+          "urlBefore": "https://preprod.siddagangatravels.com/send-inquiry",
+          "urlAfter": "https://preprod.siddagangatravels.com/send-inquiry",
+          "messages": [
+            "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹8,300 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+          ],
+          "apiCalls": [
+            {
+              "method": "POST",
+              "url": "/user/save-inquiry",
+              "status": 201,
+              "body": "{\"encrypted\":true,\"iv\":\"wz2pH65ePEKADVUQ\",\"tag\":\"uFEdC4h/QmLsxz4aEAT26A==\",\"data\":\"Vdwc1SgZY0B8ReTHjvcM7CklRcHzyOzBAGjKv5x0Oa9wyd45l+q7YbrMIjC6Bj2PnLeCYmHwBn/oexx6dhUo7IZCAbO0sBT+srfmMgS2yDhybveRJhx3D5QBkP0UWhqIgIfufFBPPEXZQfzrj7bGgw91ucvE6Zn3feju4eFSq8vOqP9oymDCtTXe7/A5sNvfIJZ8ixRprzxarIDdkyWswDg2x7Iz/ZrxeKuLRnUcMrKMNJbpWCI77nznr5EgMQ7pQ1UAlQu4vB/6Iw==\"}"
+            },
+            {
+              "method": "POST",
+              "url": "/user/draft-inquiry/delete",
+              "status": 200,
+              "body": "{\"encrypted\":true,\"iv\":\"26vQ50sozhnufG88\",\"tag\":\"dk2AeI4Sb2O82xJjxDrHhQ==\",\"data\":\"5f8x+RNH5VPu9yVrAVvdOwA7hKW6HKBuV56tdO4MfS6Iiw5Xw1T/8FDeC1vyeVXvlj9aSpM7Jd5TfkXjJz5EiucMnNzgPBS2xxFoHcrdbpx+wAzlWwD3wNSGJdWumFMYfGbeFxaZSqpa9QdlioXVsZivfqu+VKuKH8RUBCo+mC+VfPDdIg==\"}"
+            }
+          ],
+          "inquiryRef": null,
+          "paymentShown": false,
+          "shot": "screenshots/local/user-web-20261112-1317-LOCAL/TC-07-9hr-boundary-submit-result.png",
+          "success": true
+        }
+      }
+    }
+  ],
+  "finished": "2026-11-12T08:10:25.791Z"
+}

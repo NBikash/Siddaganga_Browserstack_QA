@@ -1,0 +1,1128 @@
+{
+  "runId": "android-20261001-1122-OUTSTATION",
+  "platform": "android",
+  "scope": "Outstation journey: HOME Outstation form (TC_HOME_028-032) + Outstation paths through LOC, TRIP, VLIST, VDET (TC_VDET_007), CONF, INQ incl. Confirm, Inquiry Details, Cancel Trip; gap exploration",
+  "build": "Uploaded APK app-release.apk v1.1 (com.siddaganga)",
+  "device": "Google Pixel 7",
+  "osVersion": "13",
+  "executedBy": "Claude Code (App Live via Claude in Chrome)",
+  "startedAt": "2026-10-01T05:52:59.617Z",
+  "endedAt": "2026-10-01T06:59:15.494Z",
+  "credentials": [
+    {
+      "account": "QA test account (personal, mobile login)",
+      "method": "Entered manually on device by the user; values from .env (BANNI_QA_PHONE / BANNI_QA_PASSWORD) - not seen or logged by Claude",
+      "usedFor": "All Outstation cases (Home, Trip Summary, Vehicles, Confirm, Inquiry, Cancel Trip)"
+    }
+  ],
+  "approvals": [
+    {
+      "at": "2026-10-01T05:52:59.871Z",
+      "text": "User approved (chat, 2026-10-01): complete Outstation flow incl. inquiry Confirm, Inquiry Details, Cancel Trip and other applicable actions; payment not integrated in build - attempt where possible and record Fail/Blocked. Claude will not enter card/UPI/bank details. New genuine Outstation cases pre-approved for CSV/XLSX."
+    }
+  ],
+  "environmentNotes": [
+    "Test data created and cleaned up: Outstation inquiries 520 (Majestic->Mysuru, 4-7 Oct), 521 (Majestic->Mysuru->Madikeri, drop Mangaluru, 4-6 Oct) and 522 (Majestic->Panaji, 6 Oct-5 Nov) were submitted with user approval and all cancelled (cancellation invoices INV-56, INV-57, INV-58). No payments were made; payment gateway returned an error for every attempt.",
+    "Environment: the Chrome window hosting App Live was minimised/covered three times early in the run (2 recovery events, fullscreen restore). Later the user docked the window at ~500px width on the right; the device stream (234x519) stayed fully usable, so coordinates were recomputed from the viewport probe before each step. App Live network throttling (Offline Mode) restarted the stream but kept the session and app state."
+  ],
+  "cases": [
+    {
+      "id": "TC_HOME_028",
+      "status": "Pass",
+      "startedAt": "2026-10-01T05:57:00Z",
+      "actual": "Outstation tab shows Pickup Location (Select Pickup Location), Pickup Date & Time (today 01-10-2026, current time 05:57 am), Destination > First Destination * (Search Destination 1 Location), + Add Another Destination, Drop Date & Time (empty dd/mm/yyyy and --:--), Number of Passengers (1), Additional Options > Different drop location toggle, Search Vehicles. No Number of Hours and no Multi-day trip toggle.",
+      "notes": "Only First Destination carries the * marker although Pickup and Drop date are also mandatory (minor UI inconsistency).",
+      "endedAt": "2026-10-01T06:04:22.903Z"
+    },
+    {
+      "id": "TC_HOME_045",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Search with all Outstation required fields empty",
+      "testType": "Negative",
+      "priority": "High",
+      "preconditions": "Logged in; Home > Outstation; form untouched",
+      "steps": "1. Leave Pickup, First Destination, Drop Date & Time empty 2. Tap Search Vehicles",
+      "testData": "-",
+      "expected": "Search blocked; inline required errors under Pickup Location, First Destination and Drop Date & Time",
+      "status": "Pass",
+      "actual": "Search blocked; inline red errors 'Pickup location is required', 'First destination is required' and 'This field is required' under Drop Date & Time; fields outlined red.",
+      "notes": "Drop date error uses generic wording 'This field is required' (others are field-specific); no separate highlight on drop time.",
+      "endedAt": "2026-10-01T06:04:22.906Z"
+    },
+    {
+      "id": "TC_HOME_029",
+      "status": "Pass",
+      "actual": "+ Add Another Destination adds 'Destination 2' (Search Destination 2 Location) with a trash icon; trash removes it. Fields added after a failed search immediately show 'Destination location is required'.",
+      "endedAt": "2026-10-01T06:04:22.907Z"
+    },
+    {
+      "id": "TC_HOME_046",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "First (mandatory) destination cannot be deleted",
+      "testType": "UI/UX",
+      "priority": "Medium",
+      "preconditions": "Home > Outstation with 2+ destinations",
+      "steps": "1. Add Destination 2 2. Delete Destination 2..N 3. Observe First Destination",
+      "testData": "-",
+      "expected": "Only additional destinations have a delete icon; First Destination always remains",
+      "status": "Pass",
+      "actual": "Trash icon shown only on Destination 2..N; First Destination has none and stays after deleting all others.",
+      "endedAt": "2026-10-01T06:04:22.907Z"
+    },
+    {
+      "id": "TC_HOME_030",
+      "status": "Fail",
+      "actual": "Added destinations up to Destination 11 with no limit, message or disabled state; each new field is numbered sequentially and the form stays usable (scrolls). No maximum is enforced.",
+      "bugs": [
+        "BUG-OUT-001"
+      ],
+      "notes": "Deleting from the top (Destination 2 repeatedly) renumbers the remaining fields correctly.",
+      "endedAt": "2026-10-01T06:04:22.907Z"
+    },
+    {
+      "id": "TC_LOC_015",
+      "isNew": true,
+      "module": "Location Picker",
+      "feature": "Destination Location screen",
+      "scenario": "Outstation destination picker header and subtitle text",
+      "testType": "UI/UX",
+      "priority": "Low",
+      "preconditions": "Home > Outstation",
+      "steps": "1. Tap First Destination 2. Read title and subtitle",
+      "testData": "-",
+      "expected": "Title 'First Destination' with a destination-specific subtitle (e.g. 'Select your destination')",
+      "status": "Fail",
+      "actual": "Title 'First Destination' but subtitle reads 'Select your pickup location to complete your inquiry' (refers to pickup). Same copy defect as the Drop Location screen (BUG-LOC-002).",
+      "evidence": [
+        "TC_LOC_015_1_destination-subtitle.png"
+      ],
+      "bugs": [
+        "BUG-OUT-002"
+      ],
+      "endedAt": "2026-10-01T06:15:38.197Z"
+    },
+    {
+      "id": "TC_LOC_016",
+      "isNew": true,
+      "module": "Location Picker",
+      "feature": "Destination Location screen",
+      "scenario": "Selected destination place name is shown in the destination field",
+      "testType": "Functional",
+      "priority": "Medium",
+      "preconditions": "Home > Outstation; First Destination picker open",
+      "steps": "1. Search 'mysuru palace' 2. Select 'Mysuru Palace' suggestion 3. Read First Destination field",
+      "testData": "mysuru palace",
+      "expected": "Field shows the selected place name (Mysuru Palace, Mysuru, Karnataka...)",
+      "status": "Fail",
+      "actual": "Suggestion list shows 'Mysuru Palace / Agrahara, Chamrajpura, Mysuru, Karnataka, India'; after selection the field shows only 'Agrahara, Chamrajpura, Mysuru, Karnatak...' - the place name is dropped. Same behaviour as Drop Location (BUG-LOC-003).",
+      "bugs": [
+        "BUG-OUT-003"
+      ],
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_047",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Outstation form data retained after switching bottom-nav tabs",
+      "testType": "Navigation",
+      "priority": "Medium",
+      "preconditions": "Home > Outstation partially filled (pickup, destinations)",
+      "steps": "1. Fill pickup and destination 2. Tap Ride tab 3. Tap Home tab",
+      "testData": "Majestic -> Mysuru Palace",
+      "expected": "Outstation tab still selected with all entered values",
+      "status": "Pass",
+      "actual": "After Ride (My Bookings) and back to Home, Outstation stayed selected with Pickup Majestic, Destination 1 (Mysuru address), empty Destination 2 and existing validation messages intact.",
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_048",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Same-day drop time earlier than pickup time",
+      "testType": "Negative",
+      "priority": "High",
+      "preconditions": "Home > Outstation, pickup and destination filled",
+      "steps": "1. Pickup 01-10 10:30 am 2. Drop 01-10 06:30 am 3. Search Vehicles",
+      "testData": "Same date, drop 4h before pickup",
+      "expected": "Validation error; search blocked",
+      "status": "Pass",
+      "actual": "Inline error 'Drop date & time must be after pickup date & time' under Drop Date & Time (shown live once the form was validated); Search Vehicles blocked.",
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_049",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Additional destination left empty blocks search",
+      "testType": "Validation",
+      "priority": "High",
+      "preconditions": "Home > Outstation, Destination 2 added but empty, other fields valid",
+      "steps": "1. Add Destination 2 and leave empty 2. Tap Search Vehicles",
+      "testData": "-",
+      "expected": "Search blocked with an error on the empty destination; form scrolls to it",
+      "status": "Pass",
+      "actual": "Search blocked; form scrolled up to 'Destination location is required' under Destination 2.",
+      "evidence": [
+        "TC_HOME_049_1_empty-destination2-blocked.png"
+      ],
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_031",
+      "status": "Pass",
+      "actual": "Pickup 04-10-2026 10:30 am, drop 01-10-2026 06:30 am -> 'Drop date & time must be after pickup date & time'; Search Vehicles blocked. Note: the Return Date wheel does not allow dates before today (September greyed/snaps back) but does allow dates between today and the pickup date (see TC_HOME_050). Changing the pickup date does not auto-adjust an earlier drop date.",
+      "evidence": [
+        "TC_HOME_031_1_drop-before-pickup.png"
+      ],
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_050",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Return date picker minimum follows the pickup date",
+      "testType": "Boundary",
+      "priority": "Low",
+      "preconditions": "Home > Outstation with pickup date in the future (04-10)",
+      "steps": "1. Set pickup date 04-10 2. Open Drop Date (Return Date)",
+      "testData": "Pickup 04-10, today 01-10",
+      "expected": "Return Date wheel opens at/after the pickup date and does not offer earlier dates",
+      "status": "Fail",
+      "actual": "Return Date opens on 01-10 (today) and dates 1-3 Oct are selectable; the mismatch is caught only by the Search validation. Sheet title 'Return Date' also differs from the field label 'Drop Date & Time'.",
+      "bugs": [
+        "BUG-OUT-004"
+      ],
+      "endedAt": "2026-10-01T06:15:38.200Z"
+    },
+    {
+      "id": "TC_HOME_032",
+      "status": "Fail",
+      "actual": "Majestic -> Mysuru Palace, 04-10-2026 10:30 am to 07-10-2026 06:30 am, 20 pax: Search opens Trip Summary 'Now you're ready to explore' with map route, 'Outstation Trip' badge, Trip Type Outstation Trip, Route, Dates 04-07 Oct 2026, Pickup/Drop Location, Passengers 20. Distance shows 1200 KM although the Bengaluru-Mysuru route is ~145 km one way (~290 km return) - the value equals 4 days x 300 km and is not a computed route distance.",
+      "evidence": [
+        "TC_HOME_032_1_summary-distance-1200km.png"
+      ],
+      "bugs": [
+        "BUG-OUT-005"
+      ],
+      "endedAt": "2026-10-01T06:23:16.693Z"
+    },
+    {
+      "id": "TC_TRIP_010",
+      "isNew": true,
+      "module": "Trip Summary & Vehicle Search",
+      "feature": "Trip Summary sheet",
+      "scenario": "Outstation summary shows pickup time, return date/time and correct drop for a round trip",
+      "testType": "UI/UX",
+      "priority": "Medium",
+      "preconditions": "Valid Outstation search (pickup 10:30 am, drop 07-10 06:30 am, no different drop)",
+      "steps": "1. Search Vehicles 2. Review Trip Summary",
+      "testData": "Majestic -> Mysuru, 4-7 Oct",
+      "expected": "Pickup time and return (drop) date/time visible; Drop Location reflects the return point (pickup) for a round trip",
+      "status": "Fail",
+      "actual": "Summary lists Dates 04-07 Oct 2026 only - no pickup time (10:30 am) and no return time (06:30 am). 'Drop Location' shows the destination (Mysuru) although no different drop location was chosen.",
+      "evidence": [
+        "TC_TRIP_010_1_summary-no-times.png"
+      ],
+      "bugs": [
+        "BUG-OUT-006"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_VLIST_011",
+      "isNew": true,
+      "module": "Vehicle Listing",
+      "feature": "Available Vehicles",
+      "scenario": "Outstation multi-day search - list price reflects trip type and duration",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Outstation search 4 days (4-7 Oct), 1200 KM, 20 pax",
+      "steps": "1. Search Vehicles from Trip Summary 2. Read 'Starts From' on cards",
+      "testData": "33 Seater Deluxe Coach",
+      "expected": "Starts From reflects the outstation estimate for 4 days and matches the price on details/confirm",
+      "status": "Fail",
+      "actual": "'20 vehicles found'; 33 Seater Deluxe Coach shows Starts From Rs 73,000 (40 Seater Deluxe Rs 79,000) - but Vehicle Details footer shows Rs 10,000 and the Confirm modal/inquiry total is Rs 18,500 for the same vehicle and trip.",
+      "bugs": [
+        "BUG-OUT-007"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_VDET_017",
+      "isNew": true,
+      "module": "Vehicle Details & Fare Breakup",
+      "feature": "Footer / Fare Breakup",
+      "scenario": "Vehicle Details opened from an Outstation search reflects the Outstation context",
+      "testType": "UI/UX",
+      "priority": "Medium",
+      "preconditions": "Vehicle Details opened from an Outstation search",
+      "steps": "1. Open a vehicle 2. Read footer price 3. Open View Fare Breakup",
+      "testData": "-",
+      "expected": "Footer price and default breakup tab match the searched trip type (Outstation)",
+      "status": "Fail",
+      "actual": "Footer shows 'Starting From Rs 10,000 / Rs 55/km' (Local package) and View Fare Breakup opens on the Local Trip tab; user must switch to Outstation Trip manually.",
+      "bugs": [
+        "BUG-OUT-007"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_VDET_007",
+      "status": "Fail",
+      "actual": "Outstation Trip tab 'Outstation Pricing - Daily minimum and distance-based estimate': Base Rate (Driver, Fuel, Day Allowance) Rs 16,500; Bata Cost (Before 6am or After 10pm) Rs 1,000; Bata Cost (Before 10pm or After 6am) Rs 1,000; Toll & Parking Actuals; GST Additional; note 'Toll & parking are actuals. GST is additional...'. No per-km line and no daily minimum km although the card says '+ Rs 55/km' (OBS-14 persists); second bata label describes daytime hours (as in TC_VDET_009).",
+      "evidence": [
+        "TC_VDET_007_1_outstation-breakup.png"
+      ],
+      "bugs": [
+        "BUG-OUT-008"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_CONF_011",
+      "isNew": true,
+      "module": "Confirm Trip & Inquiry Submission",
+      "feature": "Estimated cost",
+      "scenario": "Outstation multi-day estimated cost calculation",
+      "testType": "Business Flow",
+      "priority": "Critical",
+      "preconditions": "Outstation 4 days (4-7 Oct), 1200 KM, pickup 10:30 am; Confirm modal open",
+      "steps": "1. Book Now 2. Review Estimated Trip Cost",
+      "testData": "Rate Rs 16,500/day + Rs 55/km",
+      "expected": "Base cost x 4 days and/or km charge per the outstation rate; only applicable bata; total = sum of lines and equals list price",
+      "status": "Fail",
+      "actual": "Vehicle Base Cost Rs 16,500 (one day), Bata (before 6am/after 10pm) Rs 1,000, Bata (before 10pm/after 6am) Rs 1,000, Estimated Grand Total Rs 18,500. No x4 days, no km charge (1200 km x Rs 55 = Rs 66,000), night bata applied for a 10:30 am pickup. List card showed Rs 73,000.",
+      "evidence": [
+        "TC_CONF_011_1_outstation-4day-total-18500.png"
+      ],
+      "bugs": [
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_CONF_001",
+      "status": "Pass",
+      "actual": "Outstation Confirm Your Trip modal: route map, Customer Details (masked), Selected Vehicles '33 Seater Deluxe Coach - 1', Route Summary 'Outstation' with Pickup and Dropoff, Dates 4,5,6,7 Oct 2026, 20 Passengers, Estimated Trip Cost, note, Edit Inquiry and Confirm.",
+      "notes": "Re-executed for Outstation context (previous run covered Local).",
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_CONF_005",
+      "status": "Pass",
+      "actual": "Single Confirm tap (approved; stale-frame guard passed) -> 'Inquiry Submitted Successfully!' with 'We're calculating the most accurate price for your trip', Estimated Cost (Approx.) Rs 18,500, Track My Inquiry and Back to Home. Inquiry ID 520 created.",
+      "evidence": [
+        "TC_CONF_005_1_success-modal.png"
+      ],
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_CONF_008",
+      "status": "Pass",
+      "actual": "Track My Inquiry opens Ride > My Bookings (Today filter, Live tab).",
+      "endedAt": "2026-10-01T06:23:16.697Z"
+    },
+    {
+      "id": "TC_BOOK_002",
+      "status": "Pass",
+      "actual": "New inquiry (trip 4 Oct) absent from Today (Inquired 6 unchanged); Week > Inquired shows 12 with the new Outstation card on top.",
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_BOOK_003",
+      "status": "Pass",
+      "actual": "Inquired card: 'OutStation' badge, 'inquired' chip, rating 0.00, route Majestic -> Agrahara, Chamrajpura, Mysuru, 4 days, 1200 km, 35 seats, 20 pax, 33 Seater Deluxe Coach, Starts From Rs 18,500, View Details.",
+      "evidence": [
+        "TC_BOOK_003_1_outstation-card.png"
+      ],
+      "notes": "Badge casing 'OutStation' differs from 'Outstation' elsewhere.",
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_BOOK_004",
+      "status": "Pass",
+      "actual": "Card matches confirm modal: 4 days, 33 Seater Deluxe Coach, Rs 18,500, 20 pax.",
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_BOOK_005",
+      "status": "Fail",
+      "actual": "Status chip reads 'inquired' (lowercase) while the tab reads 'Inquired'; trip badge 'OutStation' (mixed case).",
+      "bugs": [
+        "BUG-OUT-010"
+      ],
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_BOOK_010",
+      "status": "Pass",
+      "actual": "View Details opens Inquiry Details with 'Inquiry ID: 520'.",
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_INQ_001",
+      "status": "Pass",
+      "actual": "Inquiry 520: 'OutStation Trip', Majestic -> Distance 1200 km -> Agrahara, Chamrajpura, Mysuru; Schedule Date 4,5,6,7 Oct 2026, Pickup 10:30 am, 'Expected arrival: 06:30 am'; Total Amount Rs18500; Payment Information (Advance Received Rs0, Invoice Not generated yet, Payment amount 500, gateway Razorpay / Cashfree, Pay Advance); Cancel Trip.",
+      "evidence": [
+        "TC_INQ_001_1_outstation-inquiry-520.png"
+      ],
+      "notes": "Total shown as 'Rs18500' without thousands separator.",
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_INQ_011",
+      "isNew": true,
+      "module": "Inquiry Details",
+      "feature": "Schedule",
+      "scenario": "Outstation inquiry schedule shows return date and time clearly",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Outstation inquiry 4-7 Oct, pickup 10:30 am, drop 07-10 06:30 am",
+      "steps": "1. Open Inquiry Details 2. Read Schedule",
+      "testData": "Inquiry 520",
+      "expected": "Schedule shows pickup date/time and return/drop date/time (e.g. 'Return: 07 Oct, 06:30 am')",
+      "status": "Fail",
+      "actual": "Schedule shows 'Expected arrival: 06:30 am' with no date - reads as arriving before the 10:30 am pickup; return date 07 Oct is not stated.",
+      "bugs": [
+        "BUG-OUT-011"
+      ],
+      "endedAt": "2026-10-01T06:23:16.698Z"
+    },
+    {
+      "id": "TC_INQ_003",
+      "status": "Pass",
+      "actual": "Inquiry 520 Payment Information: Advance Received Rs0, Invoice Status 'Not generated yet', Payment amount default 500, gateway Razorpay selected by default, Pay Advance button.",
+      "notes": "A second gateway option 'Cashfree' is now offered (not in the baseline expectation).",
+      "endedAt": "2026-10-01T06:27:11.032Z"
+    },
+    {
+      "id": "TC_INQ_005",
+      "status": "Fail",
+      "actual": "0 -> dialog 'Invalid Amount - Please enter a valid amount to pay.' (correct). 20000 (> total Rs18,500) is NOT rejected client-side - request is sent and the backend returns 'Payment Error - \"gateway\" is not allowed field'. No minimum/maximum rule communicated.",
+      "evidence": [
+        "TC_INQ_005_1_over-total-payment-error.png"
+      ],
+      "bugs": [
+        "BUG-OUT-012"
+      ],
+      "endedAt": "2026-10-01T06:27:11.035Z"
+    },
+    {
+      "id": "TC_INQ_006",
+      "status": "Pass",
+      "actual": "'500-' and 'abc' (typed via keyboard injection; the on-screen keypad is numeric) are accepted in the field but rejected on Pay Advance with 'Invalid Amount - Please enter a valid amount to pay.'",
+      "notes": "Field itself accepts '-' and letters; validation happens only on submit.",
+      "endedAt": "2026-10-01T06:27:11.036Z"
+    },
+    {
+      "id": "TC_INQ_004",
+      "status": "Fail",
+      "attempted": true,
+      "actual": "Pay Advance with valid amount 500 and Razorpay -> dialog 'Payment Error - \"gateway\" is not allowed field'; same with Cashfree. Payment gateway never opens; Advance Received stays Rs0. Payment is not integrated in this build (per user) and the raw backend validation message is shown to the user.",
+      "evidence": [
+        "TC_INQ_005_1_over-total-payment-error.png"
+      ],
+      "bugs": [
+        "BUG-OUT-013"
+      ],
+      "endedAt": "2026-10-01T06:27:11.036Z"
+    },
+    {
+      "id": "TC_INQ_007",
+      "status": "Blocked",
+      "attempted": true,
+      "blockCategory": "Feature not available in build",
+      "dependency": "Payment gateway integration (Razorpay/Cashfree)",
+      "actual": "Cannot reach the gateway to cancel or fail a payment - Pay Advance returns 'Payment Error - \"gateway\" is not allowed field' for both gateways.",
+      "endedAt": "2026-10-01T06:27:11.036Z"
+    },
+    {
+      "id": "TC_INQ_010",
+      "status": "Pass",
+      "actual": "Back arrow on Inquiry Details returns to My Bookings with Week filter and Inquired tab still selected (count 12).",
+      "endedAt": "2026-10-01T06:30:45.335Z"
+    },
+    {
+      "id": "TC_INQ_009",
+      "status": "Pass",
+      "actual": "Cancel Trip opens 'Cancel Booking & Process Refund' (Inquiry ID 520, refund calculation, optional reason, Back / Confirm Cancellation). Back closes the dialog; inquiry unchanged (status, Total Rs18500, Cancel Trip still available).",
+      "endedAt": "2026-10-01T06:30:45.338Z"
+    },
+    {
+      "id": "TC_INQ_008",
+      "status": "Pass",
+      "actual": "Approved. Reason entered, Confirm Cancellation (single tap, stale-frame guard passed) -> 'Booking Cancelled (Inquiry #520)' with Refund Summary and Cancellation Invoice INV-56; Close returns to My Bookings > Week > Inquired, count 12 -> 11 and the Outstation card removed.",
+      "evidence": [
+        "TC_INQ_008_1_cancel-dialog.png",
+        "TC_INQ_008_2_booking-cancelled-inv56.png"
+      ],
+      "notes": "There is no Cancelled tab/filter, so the cancelled inquiry and its invoice cannot be viewed afterwards (see TC_BOOK_011).",
+      "endedAt": "2026-10-01T06:30:45.338Z"
+    },
+    {
+      "id": "TC_INQ_012",
+      "isNew": true,
+      "module": "Inquiry Details",
+      "feature": "Cancel Trip",
+      "scenario": "Cancellation refund for an inquiry with no advance paid",
+      "testType": "Business Flow",
+      "priority": "Critical",
+      "preconditions": "Outstation inquiry with Advance Received Rs0 (no payment), trip > 3 days away",
+      "steps": "1. Open Inquiry Details 2. Tap Cancel Trip 3. Review Refund Calculation 4. Confirm Cancellation",
+      "testData": "Inquiry 520, trip cost Rs18,500, advance Rs0",
+      "expected": "Refund amount = amount actually paid (Rs0) minus penalty (no negative/positive refund); no refund invoice for an unpaid inquiry",
+      "status": "Fail",
+      "actual": "Refund Calculation: Trip cost Rs18,500, One day charge Rs9,500, Penalty 10%, Penalty retained Rs1,850, Refund amount Rs16,650 (3 days 4 hours before start, slab 3d<=T<7d). After confirm: Cancellation Invoice INV-56 with Penalty Rs1,850 and Refund Rs16,650 although nothing was paid. 'One day charge Rs9,500' matches neither the Rs16,500/day rate nor the trip cost.",
+      "evidence": [
+        "TC_INQ_008_1_cancel-dialog.png",
+        "TC_INQ_008_2_booking-cancelled-inv56.png"
+      ],
+      "bugs": [
+        "BUG-OUT-014"
+      ],
+      "endedAt": "2026-10-01T06:30:45.338Z"
+    },
+    {
+      "id": "TC_BOOK_011",
+      "isNew": true,
+      "module": "My Bookings",
+      "feature": "Tabs",
+      "scenario": "Cancelled inquiry remains viewable after cancellation",
+      "testType": "Functional",
+      "priority": "Medium",
+      "preconditions": "An inquiry was cancelled (Inquiry 520)",
+      "steps": "1. Cancel an inquiry 2. Look for it in My Bookings (Today/Week/Month, all tabs)",
+      "testData": "Inquiry 520",
+      "expected": "Cancelled inquiry visible under a Cancelled tab/filter (or with a Cancelled status) with its cancellation invoice",
+      "status": "Fail",
+      "actual": "Tabs are only Live / Upcoming / Completed / Inquired; the cancelled inquiry disappears from Inquired (12 -> 11) and is not shown anywhere, so the cancellation invoice INV-56 cannot be reopened.",
+      "bugs": [
+        "BUG-OUT-015"
+      ],
+      "endedAt": "2026-10-01T06:30:45.338Z"
+    },
+    {
+      "id": "TC_HOME_051",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "First destination identical to pickup location",
+      "testType": "Negative",
+      "priority": "Medium",
+      "preconditions": "Home > Outstation",
+      "steps": "1. Pickup = Majestic, Bengaluru 2. First Destination = Majestic, Bengaluru 3. Valid dates 4. Search Vehicles",
+      "testData": "Majestic -> Majestic, 04-06 Oct",
+      "expected": "Validation: destination must differ from pickup; search blocked",
+      "status": "Fail",
+      "actual": "Accepted without warning; Trip Summary 'Outstation Trip' Majestic -> Majestic, Distance 900 KM, Dates 04-06 Oct, map draws a loop route. A zero-distance outstation trip can proceed to vehicles and booking.",
+      "evidence": [
+        "TC_HOME_051_1_same-pickup-destination-accepted.png"
+      ],
+      "bugs": [
+        "BUG-OUT-016"
+      ],
+      "endedAt": "2026-10-01T06:44:38.362Z"
+    },
+    {
+      "id": "TC_TRIP_005",
+      "status": "Pass",
+      "actual": "Returned to the Outstation form with Pickup, First Destination, 04-10 06:31 am, 06-10 06:30 pm and 1 passenger intact.",
+      "endedAt": "2026-10-01T06:44:38.364Z",
+      "notes": "Re-executed in Outstation context (existing generic case; not added as new to avoid a duplicate)."
+    },
+    {
+      "id": "TC_HOME_052",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Deleting a middle filled destination keeps remaining destinations in order",
+      "testType": "Functional",
+      "priority": "Medium",
+      "preconditions": "Outstation with Destination 1 Mysuru, 2 Ooty, 3 Madikeri",
+      "steps": "1. Tap trash on Destination 2 (Ooty)",
+      "testData": "Mysuru, Ooty, Madikeri",
+      "expected": "Ooty removed; Madikeri becomes Destination 2 with its value intact",
+      "status": "Pass",
+      "actual": "Ooty removed; list shows First Destination Mysuru and Destination 2 Madikeri, Karnataka, India (value preserved, renumbered).",
+      "endedAt": "2026-10-01T06:44:38.364Z"
+    },
+    {
+      "id": "TC_HOME_053",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Multi-destination one-way Outstation with different drop location",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Logged in; Home > Outstation",
+      "steps": "1. Pickup Majestic 2. Destinations Mysuru, Madikeri 3. Different drop location ON, Drop Mangaluru 4. Dates 04-10 06:31 am to 06-10 06:30 pm 5. Search Vehicles",
+      "testData": "Majestic -> Mysuru -> Madikeri -> Mangaluru",
+      "expected": "Summary lists all stops in order with drop Mangaluru; map shows the multi-stop route; distance reflects the route",
+      "status": "Pass",
+      "actual": "Trip Summary route 'Majestic -> Mysuru -> Madikeri -> Mangaluru', map with all stop markers, Drop Location Mangaluru, Dates 04-06 Oct, 1 passenger. Distance 900 KM (= 3 days x 300; route ~400 km) - tracked under BUG-OUT-005.",
+      "evidence": [
+        "TC_HOME_053_1_multi-destination-drop-summary.png"
+      ],
+      "bugs": [
+        "BUG-OUT-005"
+      ],
+      "endedAt": "2026-10-01T06:44:38.364Z"
+    },
+    {
+      "id": "TC_HOME_026",
+      "status": "Pass",
+      "actual": "Drop Location field appears under Additional Options; Search shows 'Drop location is required' and is blocked. Drop Location picker subtitle again reads 'Select your pickup location...' (BUG-OUT-002 family).",
+      "endedAt": "2026-10-01T06:44:38.365Z",
+      "notes": "Re-executed in Outstation context (existing generic case; not added as new to avoid a duplicate)."
+    },
+    {
+      "id": "TC_VLIST_012",
+      "isNew": true,
+      "module": "Vehicle Listing",
+      "feature": "Available Vehicles",
+      "scenario": "Outstation list price changes with trip duration",
+      "testType": "Business Flow",
+      "priority": "Medium",
+      "preconditions": "Two Outstation searches of different length",
+      "steps": "1. Search 4-day trip, note price 2. Search 3-day trip, note price",
+      "testData": "33 Seater Deluxe Coach",
+      "expected": "Price scales with days and matches the Confirm estimate",
+      "status": "Fail",
+      "actual": "List: 4 days Rs 73,000, 3 days Rs 53,500 (scales) - but the Confirm modal shows Rs 18,500 for both, so list and confirm disagree.",
+      "bugs": [
+        "BUG-OUT-007",
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_CONF_012",
+      "isNew": true,
+      "module": "Confirm Trip & Inquiry Submission",
+      "feature": "Estimated cost",
+      "scenario": "Outstation estimate changes with trip duration and route",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Confirm modal for 3-day multi-stop trip and for 4-day trip",
+      "steps": "1. Compare Estimated Grand Total of a 4-day and a 3-day Outstation trip",
+      "testData": "4 days (1200 KM) vs 3 days (900 KM)",
+      "expected": "Different totals reflecting days/km",
+      "status": "Fail",
+      "actual": "Both show Vehicle Base Cost Rs 16,500 + two bata Rs 1,000 = Rs 18,500 regardless of days, km, stops or one-way drop.",
+      "bugs": [
+        "BUG-OUT-009"
+      ],
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_CONF_006",
+      "status": "Pass",
+      "actual": "Double-tap on Confirm (approved) shows one 'Inquiry Submitted Successfully!' modal; My Bookings Week > Inquired increased by exactly 1 (11 -> 12); only Inquiry 521 created (IDs 520 -> 521).",
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_CONF_009",
+      "status": "Pass",
+      "actual": "Back to Home closes the success modal and opens Home with the form reset (Outstation tab kept, pickup/destinations empty, single destination, date today, time now, passengers 1, Different drop location off).",
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_HOME_027",
+      "status": "Pass",
+      "actual": "Clear reset all values and removed Destination 2; it also switched the trip type back to Local (user has to re-select Outstation).",
+      "evidence": [
+        "TC_HOME_027_1_clear-resets-to-local.png"
+      ],
+      "notes": "Minor UX: Clear changes the selected trip type. Re-executed in Outstation context (existing generic case; not added as new to avoid a duplicate).",
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_INQ_013",
+      "isNew": true,
+      "module": "Inquiry Details",
+      "feature": "Route",
+      "scenario": "Inquiry Details lists all Outstation stops and the drop location",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Inquiry created for Majestic -> Mysuru -> Madikeri -> drop Mangaluru",
+      "steps": "1. My Bookings > Inquired > View Details",
+      "testData": "Inquiry 521",
+      "expected": "Route shows pickup, each destination in order, and drop",
+      "status": "Fail",
+      "actual": "Inquiry 521 shows only 'Majestic -> Distance 900 km -> Mangaluru'; intermediate destinations Mysuru and Madikeri are not shown (also absent from the booking card).",
+      "evidence": [
+        "TC_INQ_013_1_inquiry-521-stops-missing.png"
+      ],
+      "bugs": [
+        "BUG-OUT-017"
+      ],
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_INQ_014",
+      "isNew": true,
+      "module": "Inquiry Details",
+      "feature": "Cancel Trip",
+      "scenario": "Cancellation penalty slab under 3 days before trip",
+      "testType": "Business Flow",
+      "priority": "High",
+      "preconditions": "Inquiry with trip start 24h-3 days away (Inquiry 521, start 04-10 06:31 am)",
+      "steps": "1. Cancel Trip 2. Review refund calculation 3. Confirm with empty reason",
+      "testData": "Trip cost Rs18,500",
+      "expected": "Slab '24 hrs <= T < 3 days' applied with the policy penalty; reason optional; refund based on amount paid",
+      "status": "Pass",
+      "actual": "Hours before start 2 days 23 hours, slab '24 hrs <= T < 3 days', Penalty 20%, Add one day charge Yes, Penalty retained Rs13,200 (3,700 + 9,500), Refund Rs5,300; confirmed with empty reason -> 'Booking Cancelled (Inquiry #521)', invoice INV-57; Inquired 12 -> 11.",
+      "evidence": [
+        "TC_INQ_014_1_cancel-slab-under-3-days.png",
+        "TC_INQ_014_2_booking-cancelled-inv57.png"
+      ],
+      "notes": "Slab arithmetic is consistent; refund on an unpaid inquiry is tracked under BUG-OUT-014.",
+      "endedAt": "2026-10-01T06:44:38.365Z"
+    },
+    {
+      "id": "TC_HOME_054",
+      "isNew": true,
+      "module": "Home - Start Your Journey",
+      "feature": "Outstation",
+      "scenario": "Long-duration Outstation trip (31 days, interstate)",
+      "testType": "Boundary",
+      "priority": "Low",
+      "preconditions": "Home > Outstation",
+      "steps": "1. Pickup Majestic 2. Destination Panaji, Goa 3. Pickup 06-10-2026 06:41 am, Drop 05-11-2026 06:30 am 4. Search Vehicles",
+      "testData": "31-day trip",
+      "expected": "Either accepted with consistent summary/pricing or a maximum duration enforced with a message",
+      "status": "Pass",
+      "actual": "Accepted (no maximum duration). Trip Summary: Outstation Trip, Majestic -> Panaji, Distance 9300 KM (31 x 300), Passengers 1; list prices scale with duration (33 Seater Deluxe Coach Rs 5,71,500).",
+      "evidence": [
+        "TC_TRIP_011_1_cross-month-dates.png"
+      ],
+      "notes": "No upper limit on trip length - confirm with business whether one is required.",
+      "endedAt": "2026-10-01T06:48:36.580Z"
+    },
+    {
+      "id": "TC_TRIP_011",
+      "isNew": true,
+      "module": "Trip Summary & Vehicle Search",
+      "feature": "Trip Summary sheet",
+      "scenario": "Outstation date range spanning two months is displayed correctly",
+      "testType": "UI/UX",
+      "priority": "Medium",
+      "preconditions": "Outstation search 06-10-2026 to 05-11-2026",
+      "steps": "1. Search Vehicles 2. Read Dates on Trip Summary",
+      "testData": "06 Oct - 05 Nov 2026",
+      "expected": "'06 Oct - 05 Nov, 2026'",
+      "status": "Fail",
+      "actual": "Dates shows '06-05 Nov, 2026' - the start month is dropped, so the range reads backwards (6 to 5 November).",
+      "evidence": [
+        "TC_TRIP_011_1_cross-month-dates.png"
+      ],
+      "bugs": [
+        "BUG-OUT-018"
+      ],
+      "endedAt": "2026-10-01T06:48:36.582Z"
+    },
+    {
+      "id": "TC_CONF_007",
+      "status": "Pass",
+      "actual": "App Live Throttle Network > Offline Mode with the Confirm modal open (31-day Majestic -> Panaji trip). Confirm -> dialog \"Siddaganga Travels - No internet connection\"; modal stays open, no inquiry created. After Turn off network simulation, Confirm again -> Inquiry Submitted Successfully (Inquiry 522; IDs sequential 521 -> 522, so no partial inquiry from the offline attempt). Inquiry 522 then cancelled (INV-58).",
+      "evidence": [
+        "TC_CONF_007_1_offline-no-internet.png"
+      ],
+      "notes": "Estimated total for the 31-day trip was again Rs 18,500 (BUG-OUT-009).",
+      "endedAt": "2026-10-01T06:54:05.588Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-OUT-001",
+      "title": "Outstation: no maximum number of destinations enforced",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_030",
+      "steps": [
+        "Home > Outstation",
+        "Tap + Add Another Destination repeatedly"
+      ],
+      "expected": "A reasonable maximum (per spec) is enforced with a message or disabled button",
+      "actual": "11 destination fields could be added with no limit or message; unbounded multi-stop requests reach the search",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": []
+    },
+    {
+      "id": "BUG-OUT-002",
+      "title": "First Destination picker subtitle says 'Select your pickup location to complete your inquiry'",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Location Picker",
+      "testCase": "TC_LOC_015",
+      "steps": [
+        "Home > Outstation",
+        "Tap First Destination"
+      ],
+      "expected": "Destination-specific subtitle",
+      "actual": "Subtitle refers to pickup location (same copy as Drop Location screen, BUG-LOC-002 in run android-20260930-1058-LOCAL)",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "evidence": [
+        "TC_LOC_015_1_destination-subtitle.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-003",
+      "title": "Outstation destination field drops the selected place name and shows only the address",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Location Picker",
+      "testCase": "TC_LOC_016",
+      "steps": [
+        "Home > Outstation > First Destination",
+        "Search 'mysuru palace'",
+        "Select 'Mysuru Palace'"
+      ],
+      "expected": "Field shows 'Mysuru Palace, ...'",
+      "actual": "Field shows 'Agrahara, Chamrajpura, Mysuru, Karnataka, India' - the landmark name is lost (same root cause as BUG-LOC-003 for drop location)",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "evidence": []
+    },
+    {
+      "id": "BUG-OUT-004",
+      "title": "Return Date picker allows dates before the selected pickup date",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_050",
+      "steps": [
+        "Home > Outstation",
+        "Set pickup date 04-10-2026",
+        "Open Drop Date"
+      ],
+      "expected": "Picker minimum = pickup date",
+      "actual": "Picker opens at today (01-10) and allows 1-3 Oct; only the Search validation catches it",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "evidence": []
+    },
+    {
+      "id": "BUG-OUT-005",
+      "title": "Outstation Trip Summary 'Distance' shows 1200 KM for a ~145 km Bengaluru-Mysuru route",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_HOME_032",
+      "steps": [
+        "Home > Outstation",
+        "Pickup Majestic, Bengaluru; First Destination Mysuru Palace",
+        "Pickup 04-10-2026 10:30 am, Drop 07-10-2026 06:30 am, 20 pax",
+        "Search Vehicles"
+      ],
+      "expected": "Distance is the computed route distance (~145 km one way / ~290 km return), or clearly labelled as chargeable minimum km",
+      "actual": "Distance 1200 KM (= 4 days x 300 km); the same value is carried to the inquiry card and Inquiry Details",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_HOME_032_1_summary-distance-1200km.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-006",
+      "title": "Outstation Trip Summary omits pickup/return times and shows the destination as Drop Location for a round trip",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_TRIP_010",
+      "steps": [
+        "Valid Outstation search (pickup 10:30 am, drop 07-10 06:30 am, Different drop location off)",
+        "Review Trip Summary"
+      ],
+      "expected": "Pickup time and return date/time shown; Drop reflects the return point",
+      "actual": "Only 'Dates 04-07 Oct, 2026'; no times; Drop Location = Mysuru destination",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_TRIP_010_1_summary-no-times.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-007",
+      "title": "Outstation price inconsistent across screens: list Rs 73,000, details footer Rs 10,000, confirm/inquiry Rs 18,500",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Vehicle Listing / Vehicle Details",
+      "testCase": "TC_VLIST_011, TC_VDET_017",
+      "steps": [
+        "Outstation search 4-7 Oct, Majestic -> Mysuru",
+        "Note Starts From on 33 Seater Deluxe Coach card",
+        "Open the vehicle; read footer and breakup default tab",
+        "Book Now; read Estimated Grand Total"
+      ],
+      "expected": "One consistent outstation estimate across list, details and confirm; details opened from an Outstation search default to the Outstation context",
+      "actual": "List Rs 73,000; details footer 'Starting From Rs 10,000 / Rs 55/km' (Local) with breakup on Local tab; confirm modal and inquiry Rs 18,500",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": []
+    },
+    {
+      "id": "BUG-OUT-008",
+      "title": "Outstation fare breakup has no per-km / minimum-km line although the pricing card shows '+ Rs 55/km'",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Vehicle Details & Fare Breakup",
+      "testCase": "TC_VDET_007",
+      "steps": [
+        "Vehicle Details > View Fare Breakup",
+        "Outstation Trip tab"
+      ],
+      "expected": "Base rate per day, per-km charge and daily minimum km, bata, toll, GST",
+      "actual": "Only Base Rate Rs 16,500, two Bata lines Rs 1,000, Toll Actuals, GST Additional; no km component; second bata label describes daytime hours",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "evidence": [
+        "TC_VDET_007_1_outstation-breakup.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-009",
+      "title": "Outstation 4-day inquiry estimated at one day's base fare (Rs 18,500) - days and km not charged",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Confirm Trip & Inquiry Submission",
+      "testCase": "TC_CONF_011",
+      "steps": [
+        "Outstation search 04-10 10:30 am to 07-10 06:30 am (4 days, 1200 KM)",
+        "Select 33 Seater Deluxe Coach > Book Now",
+        "Review Estimated Trip Cost; Confirm"
+      ],
+      "expected": "Estimate = Rs 16,500 x 4 days and/or 1200 km x Rs 55 + applicable bata (approx. Rs 66,000-73,000+), consistent with the list price",
+      "actual": "Vehicle Base Cost Rs 16,500 + Bata Rs 1,000 + Bata Rs 1,000 = Rs 18,500; night bata applied for a daytime pickup; the under-quoted amount is saved on Inquiry 520 and shown on My Bookings",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_CONF_011_1_outstation-4day-total-18500.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-010",
+      "title": "Inconsistent casing: status chip 'inquired' and trip badge 'OutStation'",
+      "severity": "Low",
+      "priority": "P4",
+      "module": "My Bookings",
+      "testCase": "TC_BOOK_005",
+      "steps": [
+        "Ride > Week > Inquired"
+      ],
+      "expected": "'Inquired' and 'Outstation' as used elsewhere",
+      "actual": "'inquired' chip and 'OutStation' badge (also 'OutStation Trip' on Inquiry Details)",
+      "errorInfo": "-",
+      "reproducibility": "Always",
+      "evidence": [
+        "TC_BOOK_003_1_outstation-card.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-011",
+      "title": "Outstation Inquiry Details shows 'Expected arrival: 06:30 am' without the return date",
+      "severity": "Low",
+      "priority": "P3",
+      "module": "Inquiry Details",
+      "testCase": "TC_INQ_011",
+      "steps": [
+        "Open Outstation Inquiry 520 (4-7 Oct, pickup 10:30 am, drop 07-10 06:30 am)",
+        "Read Schedule"
+      ],
+      "expected": "Return/drop date and time stated (07 Oct, 06:30 am)",
+      "actual": "'Expected arrival: 06:30 am' only - appears earlier than the 10:30 am pickup",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_INQ_001_1_outstation-inquiry-520.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-012",
+      "title": "Advance payment amount above the inquiry total is not validated",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Inquiry Details",
+      "testCase": "TC_INQ_005",
+      "steps": [
+        "Open Inquiry 520 (total Rs18,500)",
+        "Payment amount 20000",
+        "Pay Advance"
+      ],
+      "expected": "Client-side rule: amount must be > 0 and <= total (or <= remaining balance) with a clear message",
+      "actual": "Request is sent; only the backend 'gateway' error appears. Amount 0 is correctly rejected.",
+      "errorInfo": "Dialog: Payment Error - \"gateway\" is not allowed field",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_INQ_005_1_over-total-payment-error.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-013",
+      "title": "Pay Advance fails for both gateways with raw API error '\"gateway\" is not allowed field'",
+      "severity": "High",
+      "priority": "P1",
+      "module": "Inquiry Details / Payments",
+      "testCase": "TC_INQ_004",
+      "steps": [
+        "Open any inquiry (e.g. 520)",
+        "Keep amount 500, select Razorpay (or Cashfree)",
+        "Tap Pay Advance"
+      ],
+      "expected": "Gateway checkout opens; or, if payments are disabled in this build, a friendly 'Online payment is not available yet' message / hidden button",
+      "actual": "Dialog 'Payment Error - \"gateway\" is not allowed field' (backend schema validation text) for both gateways; no checkout",
+      "errorInfo": "\"gateway\" is not allowed field",
+      "reproducibility": "Always (3/3)",
+      "evidence": [
+        "TC_INQ_005_1_over-total-payment-error.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-014",
+      "title": "Cancelling an unpaid inquiry generates a refund of Rs16,650 and a cancellation invoice",
+      "severity": "Critical",
+      "priority": "P1",
+      "module": "Inquiry Details / Cancellation",
+      "testCase": "TC_INQ_012",
+      "steps": [
+        "Create an Outstation inquiry (Inquiry 520, total Rs18,500); do not pay any advance (Advance Received Rs0)",
+        "Inquiry Details > Cancel Trip",
+        "Review Refund Calculation; Confirm Cancellation"
+      ],
+      "expected": "Refund is based on the amount actually paid (Rs0) - no refund and no refund invoice; or penalty only if a policy requires it",
+      "actual": "Refund amount Rs16,650 (trip cost Rs18,500 minus 10% penalty Rs1,850) and Cancellation Invoice INV-56 issued with Refund Rs16,650; 'One day charge Rs9,500' is unexplained",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_INQ_008_1_cancel-dialog.png",
+        "TC_INQ_008_2_booking-cancelled-inv56.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-015",
+      "title": "Cancelled inquiries disappear from My Bookings - no Cancelled tab/status to view them or their invoice",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "My Bookings",
+      "testCase": "TC_BOOK_011",
+      "steps": [
+        "Cancel an inquiry",
+        "Open Ride > My Bookings, check Today/Week/Month and all tabs"
+      ],
+      "expected": "Cancelled booking visible with status Cancelled and access to the cancellation invoice",
+      "actual": "Only Live/Upcoming/Completed/Inquired tabs; the cancelled inquiry is no longer listed anywhere",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": []
+    },
+    {
+      "id": "BUG-OUT-016",
+      "title": "Outstation allows the destination to be the same as the pickup location",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Home - Start Your Journey",
+      "testCase": "TC_HOME_051",
+      "steps": [
+        "Home > Outstation",
+        "Pickup Majestic, Bengaluru",
+        "First Destination Majestic, Bengaluru",
+        "Valid dates; Search Vehicles"
+      ],
+      "expected": "Validation error - destination must differ from pickup",
+      "actual": "Trip Summary opens for Majestic -> Majestic with Distance 900 KM and a loop route; the trip can be booked",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_HOME_051_1_same-pickup-destination-accepted.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-017",
+      "title": "Intermediate Outstation destinations are lost in Inquiry Details and booking card",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Inquiry Details",
+      "testCase": "TC_INQ_013",
+      "steps": [
+        "Create Outstation inquiry Majestic -> Mysuru -> Madikeri with drop Mangaluru",
+        "My Bookings > Inquired > View Details"
+      ],
+      "expected": "All stops shown in order",
+      "actual": "Only Majestic -> Mangaluru (900 km); Mysuru and Madikeri missing",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_INQ_013_1_inquiry-521-stops-missing.png"
+      ]
+    },
+    {
+      "id": "BUG-OUT-018",
+      "title": "Trip Summary shows a cross-month date range as \"06-05 Nov, 2026\"",
+      "severity": "Medium",
+      "priority": "P2",
+      "module": "Trip Summary & Vehicle Search",
+      "testCase": "TC_TRIP_011",
+      "steps": [
+        "Home > Outstation, Majestic -> Panaji",
+        "Pickup 06-10-2026, Drop 05-11-2026",
+        "Search Vehicles"
+      ],
+      "expected": "06 Oct - 05 Nov, 2026",
+      "actual": "06-05 Nov, 2026 (start month missing; reads as a backwards range)",
+      "errorInfo": "-",
+      "reproducibility": "Always (1/1)",
+      "evidence": [
+        "TC_TRIP_011_1_cross-month-dates.png"
+      ]
+    }
+  ],
+  "recoveryEvents": [
+    {
+      "at": "2026-10-01T06:00:06.677Z",
+      "issue": "Chrome window hosting the App Live tab was minimised (screenX -25600, outer 160x28); zoom captured the wrong region",
+      "detection": "Zoom returned App Live sidebar instead of device; viewport probe minimised=true",
+      "actions": [
+        "Stopped device input",
+        "Fullscreen restore: armed requestFullscreen on click + neutral-area click",
+        "Re-probe ok (screenX 7, outer 1522x850)"
+      ],
+      "outcome": "Recovered",
+      "affectedCase": "TC_HOME_030",
+      "durationSec": 40
+    },
+    {
+      "at": "2026-10-01T06:08:27.089Z",
+      "issue": "Chrome window hosting App Live minimised again (screenX -25600); viewport fell back to 1536x674 and one tap intended for Drop Date landed on the bottom-nav Ride tab",
+      "detection": "zoom failed: region exceeds viewport 1536x674; probe minimised=true",
+      "actions": [
+        "Stopped input",
+        "Fullscreen restore (requestFullscreen on click)",
+        "Probe ok: fullscreen, viewport 1536x808, device 267x593",
+        "Screenshot showed My Bookings (harmless navigation) - returned to Home"
+      ],
+      "outcome": "Recovered",
+      "affectedCase": "TC_HOME_031",
+      "durationSec": 60
+    }
+  ],
+  "checkpoint": {
+    "lastCompleted": "TC_INQ_014 (Inquiry 521 cancelled)",
+    "current": "-",
+    "next": "Remaining gaps: boundary long trip, Outstation offline search, Transfer/Multi not in scope",
+    "state": "My Bookings Week Inquired 11; test inquiries 520 and 521 both cancelled",
+    "at": "2026-10-01T06:44:39.023Z"
+  },
+  "partial": false
+}

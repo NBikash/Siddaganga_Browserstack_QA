@@ -1,0 +1,45 @@
+{
+  "pnr": "SOQS555799",
+  "mode": "functional",
+  "leadId": "LD-353",
+  "adminInquiryId": "944",
+  "laterIds": [
+    {
+      "stage": "Inquiry",
+      "idType": "Inquiry list ID",
+      "value": "QRY-944"
+    },
+    {
+      "stage": "Quote",
+      "idType": "Quote ID",
+      "value": "1701"
+    },
+    {
+      "stage": "Booking",
+      "idType": "Booking ID",
+      "value": "B-944"
+    },
+    {
+      "stage": "Trip Approval",
+      "idType": "Trip ID",
+      "value": "TP-112"
+    },
+    {
+      "stage": "Trip Summary",
+      "idType": "Invoice number shown",
+      "value": "INV-103"
+    },
+    {
+      "stage": "Trip Summary",
+      "idType": "Duty ID",
+      "value": "local-1701-1"
+    }
+  ],
+  "source": "User-Web user-web-20261112-1317-LOCAL TC-07 (Whitefield, 20/11/2026 9:00 AM, 1 pax, P16UB 16 Seater Premium Urbania, Rs 8,300; later of the two TC-07 submissions LD-352/LD-353)",
+  "requestedVehicle": "16 Seater Premium Urbania (Passenger Van, 16 seats) x1",
+  "inquiryUuid": "dfb79d89-4159-4d5e-b39b-4eb6ada31deb",
+  "vehicle": "AR 01 U 8228 (16 Seater Premium Urbania) - matches request",
+  "driver": "Test Driver",
+  "finalStatus": "TP-112 Trip Closed: Yes (Completed Trips)",
+  "lastStage": "Close Trip (Trip Closed Yes)"
+}
