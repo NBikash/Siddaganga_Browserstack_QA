@@ -1,0 +1,39 @@
+{
+  "id": "TC_NAV_005",
+  "module": "Navigation & Content",
+  "title": "Hero \"Explore Our Fleet\" and \"Explore All Fleets\" CTAs",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Home",
+  "steps": "Click each CTA",
+  "expected": "Navigates to the fleet listing showing vehicles",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Explore Our Fleet → fleet page",
+      "pass": true,
+      "detail": "/fleet-list"
+    },
+    {
+      "label": "Explore Our Fleet: vehicles listed",
+      "pass": true,
+      "detail": "3 Buses Found"
+    },
+    {
+      "label": "Explore All Fleets → fleet page",
+      "pass": true,
+      "detail": "/fleet-list"
+    },
+    {
+      "label": "Explore All Fleets: vehicles listed",
+      "pass": true,
+      "detail": "3 Buses Found"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_005-ExploreOurFleet.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_005-ExploreAllFleets.png"
+  ],
+  "durationSec": 31,
+  "executedAt": "2026-11-17T07:47:07.473Z"
+}

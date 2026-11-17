@@ -1,0 +1,85 @@
+{
+  "id": "TC_LOC_010",
+  "module": "Local",
+  "title": "Above-capacity: 50 pax requires multiple vehicles (ADD-006)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": {
+    "pickup": "Rajajinagar, Bengaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-23",
+      "dayDisabled": false,
+      "value": "2026-11-23"
+    },
+    "time": {
+      "requested": "8:00 AM",
+      "disabled": false,
+      "value": "8:00 AM"
+    },
+    "pax": "50",
+    "hrs": "8",
+    "integrity": []
+  },
+  "steps": "Search with 50 pax → Book This Vehicle on one small vehicle",
+  "expected": "App prevents a single vehicle that cannot seat 50 (capacity message / multi-vehicle selection)",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Search with 50 pax allowed",
+      "pass": true,
+      "detail": "20 Buses Found | Local - 8 HR / 80 KM"
+    },
+    {
+      "label": "Capacity shortfall flagged when selecting a 4-seat vehicle for 50 pax",
+      "pass": true,
+      "detail": "Passenger Capacity Not Complete! You need seats for 50 passengers, but your selected buses cover only 4 seats. Please add one or more buses to continue. Cancel Inquiry"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_010-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_010-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_010-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_010-applied-fare-r2.png"
+  ],
+  "fare": {
+    "applied": [],
+    "arithmetic": null,
+    "rule": null,
+    "verdict": "Inconclusive – fare rule not confirmed",
+    "notes": [
+      "No applied fare (review modal did not show cost lines)"
+    ]
+  },
+  "vehicle": {
+    "name": "Sedan",
+    "code": "D SDN",
+    "seats": 4,
+    "price": "₹4,500"
+  },
+  "found": "20 Buses Found | Local - 8 HR / 80 KM",
+  "summary": "You have Searched For : G P P G Map Data Terms Leg 1 Local Garage (Start) → Rajajinagar, Bengaluru, Karnataka, India → Rajajinagar, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :23 Nov, 2026 Pickup Address:Rajajinagar, Bengaluru, Karnataka, India Duration:8 Hours Passengers:50 Pax Drop Address:Rajajinagar, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 64,
+  "executedAt": "2026-11-17T08:33:31.499Z"
+}

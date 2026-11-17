@@ -1,0 +1,48 @@
+{
+  "id": "TC_SUP_001",
+  "module": "Customer Support",
+  "title": "Contact Us page: support request form fields",
+  "type": "Functional",
+  "priority": "High",
+  "data": "/contact-us",
+  "steps": "Open Contact Us → Raise a Support Request",
+  "expected": "Booking ID, Title, Request Type, Service Type, Date, Description; Raise Ticket button",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Field \"Booking ID\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field \"Title\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field \"Request Type\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field \"Service Type\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field \"Date\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field \"Description\"",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_001.png"
+  ],
+  "durationSec": 13,
+  "executedAt": "2026-11-17T08:08:56.371Z"
+}

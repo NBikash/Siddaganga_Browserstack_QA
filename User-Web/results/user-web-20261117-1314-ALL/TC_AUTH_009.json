@@ -1,0 +1,29 @@
+{
+  "id": "TC_AUTH_009",
+  "module": "Authentication & Profile",
+  "title": "Logged-out user can search, booking requires login",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Fresh session; Local Whitefield D+3",
+  "steps": "Search as guest → Book This Vehicle",
+  "expected": "Search works; booking prompts login (no anonymous inquiry)",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Guest search handled (results or login prompt)",
+      "pass": true,
+      "detail": "https://preprod.siddagangatravels.com/login"
+    },
+    {
+      "label": "Booking requires login",
+      "pass": true,
+      "detail": "Login requested"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_009-results-summary.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_009-results-vehicles.png"
+  ],
+  "durationSec": 211,
+  "executedAt": "2026-11-17T08:03:55.263Z"
+}

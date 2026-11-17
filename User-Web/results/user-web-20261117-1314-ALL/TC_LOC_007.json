@@ -1,0 +1,29 @@
+{
+  "id": "TC_LOC_007",
+  "module": "Local",
+  "title": "Different drop ON without drop location",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Whitefield; drop blank",
+  "steps": "Drop toggle ON → pickup only → Book Now!",
+  "expected": "Drop location required message; no navigation",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Form is not submitted",
+      "pass": true,
+      "detail": "stayed on form"
+    },
+    {
+      "label": "Message \"Drop location is required\" shown",
+      "pass": true,
+      "detail": "[\"Selected time: 10:00 AM\",\"Drop location is required\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_007-validation-r2.png"
+  ],
+  "actual": "Selected time: 10:00 AM | Drop location is required",
+  "durationSec": 41,
+  "executedAt": "2026-11-17T08:29:52.041Z"
+}

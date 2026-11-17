@@ -1,0 +1,569 @@
+{
+  "runId": "local-full-20261116-2207",
+  "environment": "Preprod",
+  "url": "https://preprod.siddagangatravels.com/",
+  "startTime": "2026-11-16T16:37:41.688Z",
+  "browser": "Chromium",
+  "testCases": [
+    {
+      "id": "USER-LOCAL-TC-01",
+      "title": "Normal Local Trip (CFG-1)",
+      "config": "CFG-1",
+      "multiDay": false,
+      "differentDrop": false,
+      "data": {
+        "pickup": "Bangalore",
+        "date": "2026-11-17",
+        "time": "10:00",
+        "passengers": "2",
+        "hours": "4"
+      },
+      "expected": "Form submits successfully, proceeds to vehicle/booking",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "10:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "2"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "4 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-01-form-filled.png",
+        "USER-LOCAL-TC-01-result.png"
+      ],
+      "startTime": "2026-11-16T16:38:02.384Z",
+      "endTime": "2026-11-16T16:38:12.166Z"
+    },
+    {
+      "id": "USER-LOCAL-TC-02",
+      "title": "Multi-day Local Trip (CFG-2)",
+      "config": "CFG-2",
+      "multiDay": true,
+      "differentDrop": false,
+      "data": {
+        "pickup": "Bangalore",
+        "date": "2026-11-17",
+        "endDate": "2026-11-18",
+        "time": "09:00",
+        "passengers": "3",
+        "hours": "8"
+      },
+      "expected": "Multi-day fields appear, form accepts date range",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Multi-day toggle",
+          "status": "warn",
+          "note": "Toggle not found"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select end date",
+          "status": "warn",
+          "note": "End date field not found"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "09:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "3"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "8 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-02-form-filled.png",
+        "USER-LOCAL-TC-02-result.png"
+      ],
+      "startTime": "2026-11-16T16:38:12.166Z",
+      "endTime": "2026-11-16T16:38:26.735Z"
+    },
+    {
+      "id": "USER-LOCAL-TC-03",
+      "title": "Different Drop Location (CFG-3)",
+      "config": "CFG-3",
+      "multiDay": false,
+      "differentDrop": true,
+      "data": {
+        "pickup": "Bangalore",
+        "drop": "Electronic City",
+        "date": "2026-11-17",
+        "time": "14:00",
+        "passengers": "2",
+        "hours": "4"
+      },
+      "expected": "Drop location field appears, form accepts different drop",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Different Drop toggle",
+          "status": "warn",
+          "note": "Toggle not found"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Enter drop location",
+          "status": "warn",
+          "note": "Electronic City"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "14:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "2"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "4 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-03-form-filled.png",
+        "USER-LOCAL-TC-03-result.png"
+      ],
+      "startTime": "2026-11-16T16:38:26.735Z",
+      "endTime": "2026-11-16T16:38:41.299Z"
+    },
+    {
+      "id": "USER-LOCAL-TC-04",
+      "title": "Multi-day + Different Drop (CFG-4)",
+      "config": "CFG-4",
+      "multiDay": true,
+      "differentDrop": true,
+      "data": {
+        "pickup": "Bangalore",
+        "drop": "Whitefield",
+        "date": "2026-11-17",
+        "endDate": "2026-11-18",
+        "time": "08:00",
+        "passengers": "4",
+        "hours": "8"
+      },
+      "expected": "Both multi-day and drop location fields work together",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Multi-day toggle",
+          "status": "warn",
+          "note": "Toggle not found"
+        },
+        {
+          "name": "Enable Different Drop toggle",
+          "status": "warn",
+          "note": "Toggle not found"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Enter drop location",
+          "status": "warn",
+          "note": "Whitefield"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select end date",
+          "status": "warn",
+          "note": "End date field not found"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "08:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "4"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "8 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-04-form-filled.png",
+        "USER-LOCAL-TC-04-result.png"
+      ],
+      "startTime": "2026-11-16T16:38:41.299Z",
+      "endTime": "2026-11-16T16:38:53.433Z"
+    },
+    {
+      "id": "USER-LOCAL-TC-05",
+      "title": "Edge Case: Maximum Passengers",
+      "config": "CFG-1",
+      "multiDay": false,
+      "differentDrop": false,
+      "data": {
+        "pickup": "Bangalore",
+        "date": "2026-11-17",
+        "time": "11:00",
+        "passengers": "10",
+        "hours": "8"
+      },
+      "expected": "Handles high passenger count correctly",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "11:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "10"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "8 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-05-form-filled.png",
+        "USER-LOCAL-TC-05-result.png"
+      ],
+      "startTime": "2026-11-16T16:38:53.433Z",
+      "endTime": "2026-11-16T16:39:07.518Z"
+    },
+    {
+      "id": "USER-LOCAL-TC-06",
+      "title": "Edge Case: Minimum Hours Package",
+      "config": "CFG-1",
+      "multiDay": false,
+      "differentDrop": false,
+      "data": {
+        "pickup": "Bangalore",
+        "date": "2026-11-17",
+        "time": "10:00",
+        "passengers": "1",
+        "hours": "2"
+      },
+      "expected": "Minimum package selection works",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Bangalore"
+        },
+        {
+          "name": "Select date",
+          "status": "warn",
+          "note": "2026-11-17"
+        },
+        {
+          "name": "Select time",
+          "status": "warn",
+          "note": "10:00"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "1"
+        },
+        {
+          "name": "Select hours/package",
+          "status": "warn",
+          "note": "2 hours"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Verify progression",
+          "status": "warn",
+          "note": "Could not confirm next step"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "USER-LOCAL-TC-06-form-filled.png",
+        "USER-LOCAL-TC-06-result.png"
+      ],
+      "startTime": "2026-11-16T16:39:07.518Z",
+      "endTime": "2026-11-16T16:39:20.532Z"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "pass": 6,
+    "fail": 0,
+    "blocked": 0
+  },
+  "configurations": {
+    "CFG-1": {
+      "status": "pass",
+      "testCases": [
+        "USER-LOCAL-TC-01",
+        "USER-LOCAL-TC-05",
+        "USER-LOCAL-TC-06"
+      ]
+    },
+    "CFG-2": {
+      "status": "pass",
+      "testCases": [
+        "USER-LOCAL-TC-02"
+      ]
+    },
+    "CFG-3": {
+      "status": "pass",
+      "testCases": [
+        "USER-LOCAL-TC-03"
+      ]
+    },
+    "CFG-4": {
+      "status": "pass",
+      "testCases": [
+        "USER-LOCAL-TC-04"
+      ]
+    }
+  },
+  "exploration": {
+    "tabs": [
+      "LocalOutstationTransferMulti-LegMulti-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With UsPoint To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Enter Number of PassengersTotal PassengersSave As DraftNext",
+      "Local",
+      "Outstation",
+      "Transfer",
+      "Multi-Leg",
+      "Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With UsPoint To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Enter Number of PassengersTotal PassengersSave As DraftNext",
+      "Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With Us",
+      "Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With Us",
+      "Point To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Point To PointBy Hour",
+      "Point To Point",
+      "By Hour",
+      "Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.",
+      "Enter Number of PassengersTotal PassengersSave As DraftNext",
+      "Enter Number of PassengersTotal PassengersSave As DraftNext",
+      "ComfortSafetyConveniencePushback & Comfortable SeatsCurtains for PrivacyReading LightsGPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained DriversCharging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC",
+      "ComfortSafetyConvenience",
+      "Comfort",
+      "Safety",
+      "Convenience",
+      "Pushback & Comfortable SeatsCurtains for PrivacyReading LightsGPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained DriversCharging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC",
+      "Pushback & Comfortable SeatsCurtains for PrivacyReading Lights",
+      "GPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained Drivers",
+      "Charging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC"
+    ],
+    "toggles": [
+      "Multi-day Trip",
+      "Multi-day Trip",
+      "Drop at different location",
+      "Drop at different location",
+      "Multi-day Trip",
+      "Multi-day Trip",
+      "Drop at different location",
+      "Drop at different location",
+      "Add Return",
+      "Add Return",
+      "Multi-day Trip",
+      "Multi-day Trip",
+      "Drop at different location",
+      "Drop at different location"
+    ],
+    "fields": [
+      {
+        "type": "text",
+        "name": "",
+        "placeholder": "Search pickup location"
+      },
+      {
+        "type": "number",
+        "name": "",
+        "placeholder": "Enter number of passengers"
+      },
+      {
+        "type": "number",
+        "name": "",
+        "placeholder": "Enter Number of Hours"
+      }
+    ],
+    "buttons": [
+      "Get Your Quote",
+      "Explore Our Fleet",
+      "Save As Draft",
+      "Book Now!",
+      "All",
+      "Local",
+      "Outstation",
+      "Transfer",
+      "Dynamic",
+      "Luxury",
+      "Premium",
+      "Deluxe",
+      "Volvo Bus India",
+      "Force India",
+      "Mercedes-Benz India Private Limited",
+      "Explore Now",
+      "Explore Now",
+      "Explore Now",
+      "Explore Now",
+      "Explore Now",
+      "Explore Now",
+      "Explore All Fleets",
+      "Explore All Services"
+    ],
+    "timestamp": "2026-11-16T16:38:02.274Z"
+  },
+  "screenshots": [
+    "00-after-login.png",
+    "00-local-form-explored.png",
+    "USER-LOCAL-TC-01-form-filled.png",
+    "USER-LOCAL-TC-01-result.png",
+    "USER-LOCAL-TC-02-form-filled.png",
+    "USER-LOCAL-TC-02-result.png",
+    "USER-LOCAL-TC-03-form-filled.png",
+    "USER-LOCAL-TC-03-result.png",
+    "USER-LOCAL-TC-04-form-filled.png",
+    "USER-LOCAL-TC-04-result.png",
+    "USER-LOCAL-TC-05-form-filled.png",
+    "USER-LOCAL-TC-05-result.png",
+    "USER-LOCAL-TC-06-form-filled.png",
+    "USER-LOCAL-TC-06-result.png"
+  ],
+  "endTime": "2026-11-16T16:39:20.532Z"
+}

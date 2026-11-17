@@ -1,0 +1,29 @@
+{
+  "id": "TC_LOC_002",
+  "module": "Local",
+  "title": "Mandatory pickup location validation",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Pickup blank",
+  "steps": "Local → leave Pickup blank → Book Now!",
+  "expected": "\"Pickup location is required\" shown; no navigation",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Form is not submitted",
+      "pass": true,
+      "detail": "stayed on form"
+    },
+    {
+      "label": "Message \"Pickup location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_002-validation-r2.png"
+  ],
+  "actual": "Pickup location is required",
+  "durationSec": 37,
+  "executedAt": "2026-11-17T08:26:13.863Z"
+}

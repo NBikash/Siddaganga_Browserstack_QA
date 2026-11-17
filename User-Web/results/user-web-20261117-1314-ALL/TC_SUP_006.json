@@ -1,0 +1,33 @@
+{
+  "id": "TC_SUP_006",
+  "module": "Customer Support",
+  "title": "FAQ accordion on Contact Us",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "FAQ categories",
+  "steps": "Click a category and a question",
+  "expected": "Answer expands; categories switch",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Question expands on click",
+      "pass": true,
+      "detail": "aria-expanded false → true"
+    },
+    {
+      "label": "Accordion behaviour (observation)",
+      "pass": true,
+      "detail": "first question aria-expanded=false after opening another"
+    },
+    {
+      "label": "Category switch changes questions",
+      "pass": true,
+      "detail": "How is the trip fare calculated? | Are there any hidden charges?"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_006-r2.png"
+  ],
+  "durationSec": 12,
+  "executedAt": "2026-11-17T08:23:34.917Z"
+}

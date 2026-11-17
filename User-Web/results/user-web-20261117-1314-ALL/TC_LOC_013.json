@@ -1,0 +1,21 @@
+{
+  "id": "TC_LOC_013",
+  "module": "Local",
+  "title": "Past time today is rejected",
+  "type": "Negative",
+  "priority": "Medium",
+  "data": "Today, time 2 hours ago",
+  "steps": "Pick today and a time earlier than now → Book Now!",
+  "expected": "Past time disabled in picker or validation shown",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Past time not accepted",
+      "pass": true,
+      "detail": "{\"t\":{\"requested\":\"12:00 PM\",\"disabled\":true,\"value\":\"2:05 PM\"}}"
+    }
+  ],
+  "evidence": [],
+  "durationSec": 16,
+  "executedAt": "2026-11-17T08:35:19.504Z"
+}

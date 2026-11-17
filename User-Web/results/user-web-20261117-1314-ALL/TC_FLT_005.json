@@ -1,0 +1,23 @@
+{
+  "id": "TC_FLT_005",
+  "module": "Fleet",
+  "title": "Home \"Explore Our Fleets\" category tabs",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "Tabs All/Dynamic/Luxury/Premium/Deluxe",
+  "steps": "Click each tab",
+  "expected": "Cards update per tab",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Fleet cards shown",
+      "pass": true,
+      "detail": "{\"Luxury\":\"45 Seater Luxury BharatBenz,49 Seater Luxury 9600 Volvo,45 Seater Luxury 9600 Volvo,45 Seater Luxury Volvo,9 Seater Luxury Urbania,12 Seater Luxury Urbania\",\"Premium\":\"45 Seater Luxury BharatBenz,49 Seater Luxury 9600 Volvo,45 Seater Luxur"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_005.png"
+  ],
+  "durationSec": 114,
+  "executedAt": "2026-11-17T08:08:43.829Z"
+}

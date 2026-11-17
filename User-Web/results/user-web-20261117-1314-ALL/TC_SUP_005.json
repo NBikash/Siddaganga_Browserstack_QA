@@ -1,0 +1,23 @@
+{
+  "id": "TC_SUP_005",
+  "module": "Customer Support",
+  "title": "My Support History",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "—",
+  "steps": "Click My Support History",
+  "expected": "List of past tickets or empty state",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "History view shown",
+      "pass": true,
+      "detail": "Dashboard Customer Support Get in touch with Siddaganga for bookings, inquiries, or support. Our team is ready to help you with reliable travel soluti"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_005-r2.png"
+  ],
+  "durationSec": 13,
+  "executedAt": "2026-11-17T08:23:23.036Z"
+}

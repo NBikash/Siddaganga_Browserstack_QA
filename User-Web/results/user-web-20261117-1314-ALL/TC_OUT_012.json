@@ -1,0 +1,143 @@
+{
+  "id": "TC_OUT_012",
+  "module": "Outstation",
+  "title": "Above 49 passengers on Outstation (60 pax)",
+  "type": "Boundary",
+  "priority": "Medium",
+  "data": {
+    "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+    "dests": [
+      "Nandi Hills, Karnataka, India"
+    ],
+    "date": {
+      "requested": "2026-11-27",
+      "dayDisabled": false,
+      "value": "2026-11-27"
+    },
+    "time": {
+      "requested": "7:00 AM",
+      "disabled": false,
+      "value": "7:00 AM"
+    },
+    "dropDate": {
+      "requested": "2026-11-27",
+      "dayDisabled": false,
+      "value": "2026-11-27"
+    },
+    "dropTime": {
+      "requested": "9:00 PM",
+      "disabled": false,
+      "value": "9:00 PM"
+    },
+    "pax": "60",
+    "integrity": []
+  },
+  "steps": "Search → select 49 Seater Luxury 9600 Volvo",
+  "expected": "Multi-vehicle requirement communicated (capacity not complete)",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Search allowed for 60 pax",
+      "pass": true,
+      "detail": "20 Buses Found | Outstation - 0 KM"
+    },
+    {
+      "label": "49 Seater Luxury 9600 Volvo offered",
+      "pass": true,
+      "detail": "L49NV"
+    },
+    {
+      "label": "Selecting one 49-seat vehicle for 60 pax is flagged",
+      "pass": true,
+      "detail": "Passenger Capacity Not Complete! You need seats for 60 passengers, but your selected buses cover only 49 seats. Please add one or more buses to continue. Cancel Inquiry"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_012-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_012-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_012-fare-breakup.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_012-review.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_012-applied-fare.png"
+  ],
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | 49 Seater Luxury 9600 Volvo",
+      "pricingBlock": [
+        "Outstation Trip Pricing",
+        "Outstation Trip - Minimum Kms per Day",
+        "Standard outstation rental package",
+        "Base Rate (Minimum Kms per Day)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹60,000",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹1,750",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹1,750",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "340 hp · 1600 Nm · 30% gradability",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+        "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+        "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+        "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})",
+        "Proceed To Booking"
+      ],
+      "baseRate": "Base Rate (Minimum Kms per Day) = ₹60,000",
+      "extraKm": null,
+      "extraHour": null,
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹1,750",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹1,750",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [],
+    "arithmetic": null,
+    "rule": null,
+    "verdict": "Inconclusive – fare rule not confirmed",
+    "notes": [
+      "No applied fare (review modal did not show cost lines)"
+    ]
+  },
+  "vehicle": {
+    "name": "49 Seater Luxury 9600 Volvo",
+    "code": "L49NV",
+    "seats": 49,
+    "price": "₹61,750"
+  },
+  "found": "20 Buses Found | Outstation - 0 KM",
+  "summary": "You have Searched For : G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:300 KM Dates :27 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:1 Day Passengers:60 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 81,
+  "executedAt": "2026-11-17T08:48:51.335Z"
+}

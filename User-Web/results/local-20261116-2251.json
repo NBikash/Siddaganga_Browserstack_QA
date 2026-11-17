@@ -1,0 +1,538 @@
+{
+  "runId": "local-20261116-2251",
+  "environment": "Preprod",
+  "url": "https://preprod.siddagangatravels.com/",
+  "loginMode": "mobile",
+  "startTime": "2026-11-16T17:21:18.474Z",
+  "browser": "Chromium",
+  "testCases": [
+    {
+      "id": "TC-01",
+      "title": "CFG-1 Normal trip (baseline)",
+      "config": "CFG-1",
+      "vehicle": "VEH-001 Sedan",
+      "checks": [
+        "Main path",
+        "Summary",
+        "20 vehicles",
+        "1 HR/80 KM fare",
+        "View Full Vehicle Details",
+        "Book This Vehicle"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Whitefield, Bangalore"
+        },
+        {
+          "name": "Check result",
+          "status": "pass",
+          "note": "Form submitted"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-01-form.png",
+        "TC-01-result.png"
+      ],
+      "startTime": "2026-11-16T17:21:32.415Z",
+      "endTime": "2026-11-16T17:21:36.663Z"
+    },
+    {
+      "id": "TC-02",
+      "title": "CFG-2 Multi-day trip",
+      "config": "CFG-2",
+      "vehicle": "VEH-003 12 Seater Tempo Traveller",
+      "checks": [
+        "Multi-day minimum",
+        "Fare = day fare × 2",
+        "Hours maximum (24)"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Malleshwaram, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "12"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "24"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-02-form.png",
+        "TC-02-result.png"
+      ],
+      "startTime": "2026-11-16T17:21:36.663Z",
+      "endTime": "2026-11-16T17:21:50.652Z"
+    },
+    {
+      "id": "TC-03",
+      "title": "CFG-3 Different drop location",
+      "config": "CFG-3",
+      "vehicle": "VEH-007 49 Seater Deluxe Coach",
+      "checks": [
+        "Drop field and suggestions",
+        "Drop in summary",
+        "49 = capacity"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Electronic City Phase 1, Bangalore"
+        },
+        {
+          "name": "Enter drop",
+          "status": "pass",
+          "note": "Kotilingeshwara Temple, Kammasandra"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "49"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "12"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-03-form.png",
+        "TC-03-result.png"
+      ],
+      "startTime": "2026-11-16T17:21:50.652Z",
+      "endTime": "2026-11-16T17:22:02.465Z"
+    },
+    {
+      "id": "TC-04",
+      "title": "CFG-4 Multi-day + Different drop",
+      "config": "CFG-4",
+      "vehicle": "VEH-016 45 Seater Luxury Volvo",
+      "checks": [
+        "Above 49 / multiple vehicles",
+        "Fare × 3 days",
+        "Cross-month dates",
+        "Modify Inquiry"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Jayanagar 4th Block, Bangalore"
+        },
+        {
+          "name": "Enter drop",
+          "status": "pass",
+          "note": "Mysuru Palace"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "50"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "8"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-04-form.png",
+        "TC-04-result.png"
+      ],
+      "startTime": "2026-11-16T17:22:02.465Z",
+      "endTime": "2026-11-16T17:22:16.804Z"
+    },
+    {
+      "id": "TC-05",
+      "title": "Long distance / out-of-state drop",
+      "config": "CFG-3",
+      "vehicle": "VEH-012 25 Seater Premium AC Coach",
+      "checks": [
+        "Long distance (F1)",
+        "Out-of-state drop (F5)",
+        "Booking-window limit (F8)",
+        "Results filters"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Yeshwanthpur, Bangalore"
+        },
+        {
+          "name": "Enter drop",
+          "status": "pass",
+          "note": "Belagavi"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "22"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "1"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-05-form.png",
+        "TC-05-result.png"
+      ],
+      "startTime": "2026-11-16T17:22:16.804Z",
+      "endTime": "2026-11-16T17:22:33.708Z"
+    },
+    {
+      "id": "TC-06",
+      "title": "Validation checks (toggle transitions)",
+      "config": "CFG-1",
+      "vehicle": "VEH-002 MPV",
+      "checks": [
+        "Pickup required",
+        "Drop required (when DD ON)",
+        "Same pickup/drop (F4)",
+        "Pax/hours rules",
+        "Past date",
+        "Toggle ON/OFF"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Whitefield, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "3"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "2"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-06-form.png",
+        "TC-06-result.png"
+      ],
+      "startTime": "2026-11-16T17:22:33.708Z",
+      "endTime": "2026-11-16T17:22:44.732Z"
+    },
+    {
+      "id": "TC-07",
+      "title": "Fare boundary - hours (8 vs 9)",
+      "config": "CFG-1",
+      "vehicle": "VEH-013 16 Seater Premium Urbania",
+      "checks": [
+        "8 HR/80 KM baseline fare",
+        "9 HR/80 KM boundary fare",
+        "Extra-hour line in breakdown"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Whitefield, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "1"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "8"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-07-form.png",
+        "TC-07-result.png"
+      ],
+      "startTime": "2026-11-16T17:22:44.732Z",
+      "endTime": "2026-11-16T17:22:56.044Z"
+    },
+    {
+      "id": "TC-08",
+      "title": "Fare boundary - kilometres",
+      "config": "CFG-3",
+      "vehicle": "VEH-013 16 Seater Premium Urbania",
+      "checks": [
+        "8 HR/80 KM package fare",
+        "Actual route distance (~90 km)",
+        "Extra-km line if distance > 80"
+      ],
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Multi-day: OFF",
+          "status": "pass"
+        },
+        {
+          "name": "Different Drop: ON",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup",
+          "status": "pass",
+          "note": "Peenya, Bangalore"
+        },
+        {
+          "name": "Enter drop",
+          "status": "pass",
+          "note": "Maddur"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "1"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "8"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass"
+        },
+        {
+          "name": "Vehicles found",
+          "status": "pass",
+          "note": "7 vehicles"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "TC-08-form.png",
+        "TC-08-result.png"
+      ],
+      "startTime": "2026-11-16T17:22:56.044Z",
+      "endTime": "2026-11-16T17:23:10.322Z"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "pass": 8,
+    "fail": 0,
+    "blocked": 0,
+    "inconclusive": 0
+  },
+  "configurations": {
+    "CFG-1": {
+      "status": "pass",
+      "testCases": [
+        "TC-01",
+        "TC-06",
+        "TC-07"
+      ]
+    },
+    "CFG-2": {
+      "status": "pass",
+      "testCases": [
+        "TC-02"
+      ]
+    },
+    "CFG-3": {
+      "status": "pass",
+      "testCases": [
+        "TC-03",
+        "TC-05",
+        "TC-08"
+      ]
+    },
+    "CFG-4": {
+      "status": "pass",
+      "testCases": [
+        "TC-04"
+      ]
+    }
+  },
+  "endTime": "2026-11-16T17:23:10.323Z"
+}

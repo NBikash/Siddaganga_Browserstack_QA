@@ -1,0 +1,23 @@
+{
+  "id": "TC_FLT_002",
+  "module": "Fleet",
+  "title": "Find Vehicles with default filters returns vehicles",
+  "type": "Functional",
+  "priority": "High",
+  "data": "No filters",
+  "steps": "Our Fleet → Find Vehicles",
+  "expected": "All fleet vehicles listed",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Vehicles found",
+      "pass": false,
+      "detail": "0 Buses Found"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_002.png"
+  ],
+  "durationSec": 24,
+  "executedAt": "2026-11-17T08:04:48.513Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "TC_NAV_004",
+  "module": "Navigation & Content",
+  "title": "Hero \"Get Your Quote\" CTA",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Home",
+  "steps": "Click Get Your Quote",
+  "expected": "Takes the user to the Smart Inquiry form (scroll/focus) or a quote page",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "CTA has a visible effect",
+      "pass": false,
+      "detail": "scrollY 0→0, url /, modal 0"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_004.png"
+  ],
+  "durationSec": 20,
+  "executedAt": "2026-11-17T07:46:36.738Z"
+}

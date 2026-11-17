@@ -1,0 +1,339 @@
+[
+ {
+  "id": "DEF-01",
+  "severity": "High",
+  "module": "Local (fare)",
+  "title": "Extra hours are not charged in the estimate",
+  "steps": "Local, Malleshwaram, Sedan, 2 pax; search with 8 hrs and with 10 hrs (all else identical)",
+  "expected": "10 hrs = 8Hr/80Km package + 2 × Extra Hour Charge (₹400/hr) = ₹5,300",
+  "actual": "Both estimates ₹4,500; the extra-hour charge from the Fare Breakup is not applied",
+  "cases": [
+   "TC_LOC_014"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-applied-fare.png",
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-fare-breakup.png"
+  ]
+ },
+ {
+  "id": "DEF-02",
+  "severity": "High",
+  "module": "Outstation",
+  "title": "Final drop is the last destination instead of the pickup when 'Drop at different location' is OFF",
+  "steps": "Outstation, Whitefield → Mysuru, Different drop OFF, search",
+  "expected": "Drop Address = Whitefield (round trip back to pickup, per test data)",
+  "actual": "Drop Address = Mysuru (trip ends at the destination)",
+  "cases": [
+   "TC_OUT_002"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-results-summary-r3.png"
+  ]
+ },
+ {
+  "id": "DEF-03",
+  "severity": "High",
+  "module": "Results / Vehicles",
+  "title": "SUV listed with 0 seats and can never be booked",
+  "steps": "Any search → SUV (LSUV) card → Book This Vehicle with 5 pax",
+  "expected": "SUV shows its seating capacity and can be booked",
+  "actual": "Card shows 0 Seater; selection always triggers 'Passenger Capacity Not Complete!'",
+  "cases": [
+   "TC_LOC_012",
+   "TC_RES_001"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_012-review.png"
+  ]
+ },
+ {
+  "id": "DEF-04",
+  "severity": "High",
+  "module": "Transfer P2P",
+  "title": "Passengers capped at 20 (requirement 1–49)",
+  "steps": "Transfer → Point To Point, enter 21 or 49 passengers",
+  "expected": "1–49 accepted (ADD-005)",
+  "actual": "Field max=20; 21 and 49 silently changed to 20 and searched as 20 Pax",
+  "cases": [
+   "TC_TRF_006"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p49-results-summary.png"
+  ]
+ },
+ {
+  "id": "DEF-05",
+  "severity": "High",
+  "module": "Navigation & Content",
+  "title": "Eight footer pages have no content",
+  "steps": "Footer → Offers, Schedules, Refund Status, Agent Registration, Careers, Confirm Phone Booking, Testimonials, FAQ",
+  "expected": "Each page shows its content",
+  "actual": "Only a title such as 'Offers Page' is rendered; also linked from the Sitemap",
+  "cases": [
+   "TC_NAV_006",
+   "TC_NAV_007",
+   "TC_NAV_008",
+   "TC_NAV_009",
+   "TC_NAV_010",
+   "TC_NAV_011",
+   "TC_NAV_012",
+   "TC_NAV_013",
+   "TC_NAV_015"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_006-r2.png",
+   "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_013-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-06",
+  "severity": "High",
+  "module": "Fleet",
+  "title": "Fleet Finder returns 0 vehicles",
+  "steps": "Our Fleet → Find Vehicles (no filters, or Category = Luxury)",
+  "expected": "Fleet vehicles listed",
+  "actual": "'0 Buses Found'",
+  "cases": [
+   "TC_FLT_002",
+   "TC_FLT_003"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_002.png",
+   "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_003.png"
+  ]
+ },
+ {
+  "id": "DEF-07",
+  "severity": "Medium",
+  "module": "Fleet",
+  "title": "Fleet list: Premium and Deluxe categories show 0 vehicles",
+  "steps": "/fleet-list → click Premium, Deluxe",
+  "expected": "Premium/Deluxe vehicles (offered in booking results) are listed",
+  "actual": "Only 3 Luxury Volvos ever shown; Premium and Deluxe show '0 Buses Found'",
+  "cases": [
+   "TC_FLT_004"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_004-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-08",
+  "severity": "Medium",
+  "module": "Transfer P2P",
+  "title": "Drop/return-drop time not recalculated when pickup changes, blocking search",
+  "steps": "P2P: pickup D+3 9:00 AM, then change pickup time to 6:00 PM (or set a later return pickup date)",
+  "expected": "Drop date/time follows the new pickup",
+  "actual": "Drop stays at 4:28 PM, giving 'Drop time must be after pickup time' / 'Return drop date cannot be before return pickup date' until edited manually",
+  "cases": [
+   "TC_TRF_012",
+   "TC_TRF_005",
+   "TC_TRF_008"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_012-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-09",
+  "severity": "Medium",
+  "module": "Local",
+  "title": "Multi-day trip: today is forced into Selected Dates and cannot be removed",
+  "steps": "Local → Multi-day ON → add D+5, D+6 → × on today / click today",
+  "expected": "Any date can be removed (future-only multi-day trips possible)",
+  "actual": "× works for other dates but not today; today stays selected and morning pickup times are disabled",
+  "cases": [
+   "TC_LOC_021"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_021.png"
+  ]
+ },
+ {
+  "id": "DEF-10",
+  "severity": "Medium",
+  "module": "Local",
+  "title": "Long-distance 'Local' trip accepted as 80 km package",
+  "steps": "Local, Drop ON, Whitefield → Mangaluru, 12 hrs",
+  "expected": "Rejected or re-priced on real distance (~350 km)",
+  "actual": "'Local – 12 HR / 80 KM', Distance 80 KM",
+  "cases": [
+   "TC_LOC_018"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-results-summary.png"
+  ]
+ },
+ {
+  "id": "DEF-11",
+  "severity": "Medium",
+  "module": "Outstation / Transfer",
+  "title": "Distance shown incorrectly or vaguely",
+  "steps": "Outstation Whitefield → Mysuru; Transfer Electronic City → Mysuru; Transfer Whitefield → Whitefield",
+  "expected": "Real route distance shown consistently",
+  "actual": "Outstation header '0 KM' while summary shows 600 KM; transfers only show '> 30 KM' (even for same From/To)",
+  "cases": [
+   "TC_OUT_002",
+   "TC_TRF_004",
+   "TC_TRF_010"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-results-summary-r3.png",
+   "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_004-results-summary-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-12",
+  "severity": "Medium",
+  "module": "Transfer P2P",
+  "title": "Identical From and To accepted",
+  "steps": "P2P From = To = Whitefield → Book Now!",
+  "expected": "Validation: pickup and drop cannot be the same",
+  "actual": "Search accepted, 20 vehicles shown, '> 30 KM'",
+  "cases": [
+   "TC_TRF_010"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_010-results-summary.png"
+  ]
+ },
+ {
+  "id": "DEF-13",
+  "severity": "Medium",
+  "module": "Results",
+  "title": "Search results lost on page refresh",
+  "steps": "Run any search → reload /send-inquiry",
+  "expected": "Results restored, or user returned to the form",
+  "actual": "'0 Buses Found' with an empty search",
+  "cases": [
+   "TC_RES_007"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_RES_007-reload-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-14",
+  "severity": "Medium",
+  "module": "Customer Support",
+  "title": "Agent-only fields shown on the customer support form",
+  "steps": "Contact Us → Raise a Support Request",
+  "expected": "Customer form has no internal workflow fields",
+  "actual": "Assign To, Priority and Status are shown to customers",
+  "cases": [
+   "TC_SUP_002"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_002.png"
+  ]
+ },
+ {
+  "id": "DEF-15",
+  "severity": "Medium",
+  "module": "Authentication & Profile",
+  "title": "Mobile number (login ID) editable on My Profile",
+  "steps": "Profile → My Profile → inspect Mobile Number",
+  "expected": "Login identifier is read-only or changed only via OTP verification",
+  "actual": "Field is enabled and editable",
+  "cases": [
+   "TC_AUTH_003"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_003.png"
+  ]
+ },
+ {
+  "id": "DEF-16",
+  "severity": "Medium",
+  "module": "Navigation & Content",
+  "title": "Home: 'Get Your Quote' does nothing; Popular Routes empty",
+  "steps": "Home → click Get Your Quote; scroll to Popular Routes",
+  "expected": "CTA takes user to the inquiry form; routes listed",
+  "actual": "No scroll/navigation/modal; 'No popular routes found'",
+  "cases": [
+   "TC_NAV_004",
+   "TC_NAV_003"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_004.png",
+   "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_003.png"
+  ]
+ },
+ {
+  "id": "DEF-17",
+  "severity": "Low",
+  "module": "Results & Vehicle Details",
+  "title": "Vehicle details: comfort metrics shown as raw JSON, empty spec fields",
+  "steps": "Any vehicle → View Full Vehicle Details",
+  "expected": "Readable values",
+  "actual": "'Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})'; Suspension/Safety/Transmission blank",
+  "cases": [
+   "TC_RES_006"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_RES_006-fare-breakup.png"
+  ]
+ },
+ {
+  "id": "DEF-18",
+  "severity": "Low",
+  "module": "Results",
+  "title": "'Seat pitch priority' has no visible effect",
+  "steps": "Results → Comfort Priority → Seat pitch priority",
+  "expected": "Results reorder/filter",
+  "actual": "Order unchanged",
+  "cases": [
+   "TC_RES_004"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_RES_004-seatpitch-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-19",
+  "severity": "Low",
+  "module": "Local",
+  "title": "Multi-day trip accepted with a single date",
+  "steps": "Local → Multi-day ON → keep only today → Book Now!",
+  "expected": "At least 2 dates required",
+  "actual": "Accepted as a 1-day trip",
+  "cases": [
+   "TC_LOC_016"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_016-results-summary-r2.png"
+  ]
+ },
+ {
+  "id": "DEF-20",
+  "severity": "Low",
+  "module": "Transfer By Hour",
+  "title": "Hours field accepts 25 without a message",
+  "steps": "By Hour → Number of Hours = 25",
+  "expected": "Rejected/flagged at entry (max 24)",
+  "actual": "25 retained with no message (Local blocks 25 on submit)",
+  "cases": [
+   "TC_TBH_004"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_004.png"
+  ]
+ },
+ {
+  "id": "DEF-21",
+  "severity": "Low",
+  "module": "Navigation & Content",
+  "title": "Content inconsistencies: social links, support email, founding year",
+  "steps": "Footer social icons; header/footer emails; Home vs About",
+  "expected": "Company profiles, one support email, one founding year",
+  "actual": "Icons open facebook.com/, instagram.com/ etc. (no profile); two different emails; Home 'since 1997' vs About 'since 2005'",
+  "cases": [
+   "TC_NAV_017",
+   "TC_NAV_018",
+   "TC_SVC_002"
+  ],
+  "evidence": [
+   "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_017-r2.png"
+  ]
+ }
+]

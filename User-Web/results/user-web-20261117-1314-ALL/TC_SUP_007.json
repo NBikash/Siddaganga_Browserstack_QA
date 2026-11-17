@@ -1,0 +1,16 @@
+{
+  "id": "TC_SUP_007",
+  "module": "Customer Support",
+  "title": "Submit a support ticket",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Valid form",
+  "steps": "Fill → Raise Ticket",
+  "expected": "Ticket created",
+  "status": "Blocked",
+  "actual": "Blocked (approval not given): support tickets are on the requires-approval list.",
+  "checks": [],
+  "evidence": [],
+  "durationSec": 0,
+  "executedAt": "2026-11-17T08:10:36.412Z"
+}

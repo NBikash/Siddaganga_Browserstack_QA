@@ -1,0 +1,24 @@
+{
+  "id": "TC_OUT_007",
+  "module": "Outstation",
+  "title": "Drop date/time before pickup is rejected",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Pickup D+5 10:00 AM, drop D+4 10:00 AM",
+  "steps": "Set drop earlier than pickup → Book Now!",
+  "expected": "\"Drop time must be after pickup time\"",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Earlier drop date not accepted",
+      "pass": true,
+      "detail": "{\"d\":{\"requested\":\"2026-11-21\",\"dayDisabled\":true,\"value\":\"2026-11-22\"},\"nav\":true}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_007-results-summary.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_007-results-vehicles.png"
+  ],
+  "durationSec": 26,
+  "executedAt": "2026-11-17T08:44:13.492Z"
+}

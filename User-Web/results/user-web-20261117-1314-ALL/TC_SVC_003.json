@@ -1,0 +1,26 @@
+{
+  "id": "TC_SVC_003",
+  "module": "Services & About",
+  "title": "\"Request Custom Quote\" and \"Explore All Services\" CTAs",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "About page",
+  "steps": "Click each CTA",
+  "expected": "Navigates to quote form / services",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Explore All Services has an effect",
+      "pass": true,
+      "detail": "{\"url\":\"/services\",\"modal\":0,\"moved\":true}"
+    },
+    {
+      "label": "Request Custom Quote has an effect",
+      "pass": true,
+      "detail": "{\"url\":\"/about-us\",\"modal\":0,\"moved\":true}"
+    }
+  ],
+  "evidence": [],
+  "durationSec": 37,
+  "executedAt": "2026-11-17T08:12:13.061Z"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "TC_FLT_004",
+  "module": "Fleet",
+  "title": "Fleet list category/brand chips filter",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/fleet-list chips Luxury, Premium, Deluxe",
+  "steps": "Click each chip",
+  "expected": "Each category lists its vehicles (Luxury, Premium and Deluxe vehicles all exist in booking results)",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Luxury category lists vehicles (booking results offer Luxury vehicles)",
+      "pass": true,
+      "detail": "3 Buses Found"
+    },
+    {
+      "label": "Premium category lists vehicles (booking results offer Premium vehicles)",
+      "pass": false,
+      "detail": "0 Buses Found"
+    },
+    {
+      "label": "Deluxe category lists vehicles (booking results offer Deluxe vehicles)",
+      "pass": false,
+      "detail": "0 Buses Found"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_004-r2.png"
+  ],
+  "actual": "{\"Luxury\":\"3 Buses Found\",\"Premium\":\"0 Buses Found\",\"Deluxe\":\"0 Buses Found\"}",
+  "durationSec": 18,
+  "executedAt": "2026-11-17T08:49:56.619Z"
+}

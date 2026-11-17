@@ -1,0 +1,39 @@
+{
+  "id": "TC_AUTH_007",
+  "module": "Authentication & Profile",
+  "title": "Login validation: empty and malformed credentials",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Empty; mobile \"12345\"; email \"abc@\"",
+  "steps": "Submit with each (no real account used)",
+  "expected": "Inline validation for each; no login",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Empty submit validated",
+      "pass": true,
+      "detail": "[\"Mobile number must be exactly 10 digits\",\"Password is required\"]"
+    },
+    {
+      "label": "5-digit mobile rejected",
+      "pass": true,
+      "detail": "[\"Mobile number must be exactly 10 digits\",\"Password must be at least 6 characters\"]"
+    },
+    {
+      "label": "Malformed email rejected",
+      "pass": true,
+      "detail": "[\"Invalid email format\",\"Password must be at least 6 characters\"]"
+    },
+    {
+      "label": "Still on login page",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_007.png"
+  ],
+  "actual": "{\"empty\":[\"Mobile number must be exactly 10 digits\",\"Password is required\"],\"shortMobile\":[\"Mobile number must be exactly 10 digits\",\"Password must be at least 6 characters\"],\"badEmail\":[\"Invalid email format\",\"Password must be at least 6 characters\"]}",
+  "durationSec": 14,
+  "executedAt": "2026-11-17T08:00:14.694Z"
+}

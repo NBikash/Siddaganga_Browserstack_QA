@@ -1,0 +1,38 @@
+{
+  "id": "TC_AUTH_006",
+  "module": "Authentication & Profile",
+  "title": "Login page UI and modes (logged out)",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Fresh session",
+  "steps": "Open /login",
+  "expected": "Personal Login; Mobile Number / Email Address modes; password; Log In button",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "\"Personal Login\" option",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Mobile Number\" option",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Email Address\" option",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Password field",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_006.png"
+  ],
+  "durationSec": 14,
+  "executedAt": "2026-11-17T08:00:00.203Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_012",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Testimonials\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/testimonials",
+  "steps": "Footer → Testimonials",
+  "expected": "Testimonials page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /testimonials",
+      "pass": true,
+      "detail": "/testimonials"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "27 chars: \"Dashboard Testimonials Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_012-r2.png"
+  ],
+  "durationSec": 50,
+  "executedAt": "2026-11-17T08:20:07.614Z"
+}

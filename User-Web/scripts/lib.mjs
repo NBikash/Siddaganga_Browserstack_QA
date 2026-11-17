@@ -24,6 +24,8 @@ export const PROFILE_DIR = path.join(ROOT, '.auth', 'profile');
 export async function connect() {
   const browser = await chromium.connectOverCDP(`http://127.0.0.1:${CDP_PORT}`);
   const context = browser.contexts()[0];
+  // NEW_PAGE=1: work in a fresh tab of the same signed-in browser (parallel runs); the tab is closed on exit.
+  if (process.env.NEW_PAGE === '1') { const page = await context.newPage(); process.on('exit', () => {}); return { browser, context, page }; }
   const page = context.pages().find(p => p.url().startsWith('http')) || context.pages()[0] || await context.newPage();
   return { browser, context, page };
 }

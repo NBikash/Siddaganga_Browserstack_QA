@@ -1,0 +1,38 @@
+{
+  "id": "TC_LOC_015",
+  "module": "Local",
+  "title": "Toggle transitions: Different-drop ON→OFF→ON and Multi-day ON→OFF",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Drop \"Ramanagara\"",
+  "steps": "Turn drop ON, enter drop, turn OFF, turn ON; Multi-day ON then OFF",
+  "expected": "Drop field hides when OFF; Multi-day OFF restores single date/time fields",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Drop field hidden when toggle OFF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Drop value after OFF→ON (observation)",
+      "pass": true,
+      "detail": "cleared"
+    },
+    {
+      "label": "Multi-day ON shows date selector",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Multi-day OFF restores Pickup Date & Time",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_015-toggles-r2.png"
+  ],
+  "durationSec": 18,
+  "executedAt": "2026-11-17T08:36:58.216Z"
+}

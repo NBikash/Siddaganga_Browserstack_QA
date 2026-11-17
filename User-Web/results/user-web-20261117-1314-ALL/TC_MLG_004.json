@@ -1,0 +1,28 @@
+{
+  "id": "TC_MLG_004",
+  "module": "Multi-Leg",
+  "title": "Skip Local / Skip Outstation navigation",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "4 pax",
+  "steps": "Next → Skip Local → Skip Outstation",
+  "expected": "Each skip advances to the next leg category",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Skip Local → Outstation stage",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Skip Outstation → Transfer stage",
+      "pass": true,
+      "detail": " | + Add Another Leg | Save As Draft | Save! | Skip Transfer | Book Now!"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_MLG_004-r2.png"
+  ],
+  "durationSec": 19,
+  "executedAt": "2026-11-17T08:45:25.457Z"
+}

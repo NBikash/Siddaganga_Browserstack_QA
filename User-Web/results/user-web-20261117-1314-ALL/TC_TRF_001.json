@@ -1,0 +1,34 @@
+{
+  "id": "TC_TRF_001",
+  "module": "Transfer P2P",
+  "title": "Mandatory From/To validation",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Blank",
+  "steps": "Transfer → Point To Point → Book Now!",
+  "expected": "Pickup and Drop location required",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Form is not submitted",
+      "pass": true,
+      "detail": "stayed on form"
+    },
+    {
+      "label": "Message \"Pickup location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Drop location is required\"]"
+    },
+    {
+      "label": "Message \"Drop location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Drop location is required\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_001-validation-r2.png"
+  ],
+  "actual": "Pickup location is required | Drop location is required",
+  "durationSec": 37,
+  "executedAt": "2026-11-17T08:30:30.730Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "TC_AUTH_008",
+  "module": "Authentication & Profile",
+  "title": "Protected /profile when logged out",
+  "type": "Security",
+  "priority": "High",
+  "data": "Fresh session",
+  "steps": "Open /profile without login",
+  "expected": "Redirected to login; no profile data shown",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Profile not accessible",
+      "pass": true,
+      "detail": "/login"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_008.png"
+  ],
+  "durationSec": 9,
+  "executedAt": "2026-11-17T08:00:23.997Z"
+}

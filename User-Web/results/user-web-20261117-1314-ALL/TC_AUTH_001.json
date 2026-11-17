@@ -1,0 +1,28 @@
+{
+  "id": "TC_AUTH_001",
+  "module": "Authentication & Profile",
+  "title": "Logged-in header shows profile menu and notifications",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Signed-in session",
+  "steps": "Open home",
+  "expected": "Profile name/avatar and notification count visible; \"Log In\" hidden",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Profile menu visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Log In\" not shown",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_001.png"
+  ],
+  "durationSec": 29,
+  "executedAt": "2026-11-17T07:58:37.940Z"
+}

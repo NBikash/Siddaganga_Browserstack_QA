@@ -1,0 +1,34 @@
+{
+  "id": "TC_OUT_001",
+  "module": "Outstation",
+  "title": "Mandatory fields validation (empty submit)",
+  "type": "Negative",
+  "priority": "High",
+  "data": "All blank",
+  "steps": "Outstation → Book Now!",
+  "expected": "Pickup required, Destination required; drop time validated",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Form is not submitted",
+      "pass": true,
+      "detail": "stayed on form"
+    },
+    {
+      "label": "Message \"Pickup location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Destination location is required\",\"Drop time must be after pickup time\"]"
+    },
+    {
+      "label": "Message \"Destination location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Destination location is required\",\"Drop time must be after pickup time\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_001-validation-r2.png"
+  ],
+  "actual": "Pickup location is required | Destination location is required | Drop time must be after pickup time",
+  "durationSec": 32,
+  "executedAt": "2026-11-17T08:39:46.628Z"
+}

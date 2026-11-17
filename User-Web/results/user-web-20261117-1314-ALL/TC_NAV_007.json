@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_007",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Schedules\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/schedules",
+  "steps": "Footer → Schedules",
+  "expected": "Schedules page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /schedules",
+      "pass": true,
+      "detail": "/schedules"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "24 chars: \"Dashboard Schedules Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_007-r2.png"
+  ],
+  "durationSec": 50,
+  "executedAt": "2026-11-17T08:15:44.671Z"
+}

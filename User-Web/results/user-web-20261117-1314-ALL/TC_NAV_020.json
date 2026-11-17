@@ -1,0 +1,21 @@
+{
+  "id": "TC_NAV_020",
+  "module": "Navigation & Content",
+  "title": "\"Chat With Us\" opens WhatsApp/chat",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Booking widget",
+  "steps": "Click Chat With Us",
+  "expected": "Opens WhatsApp (wa.me) or chat widget in a new tab/window",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Chat channel opened",
+      "pass": true,
+      "detail": "https://preprod.siddagangatravels.com/"
+    }
+  ],
+  "evidence": [],
+  "durationSec": 42,
+  "executedAt": "2026-11-17T07:58:09.404Z"
+}

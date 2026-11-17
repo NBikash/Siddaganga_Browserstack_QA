@@ -1,0 +1,183 @@
+{
+  "id": "TC_OUT_004",
+  "module": "Outstation",
+  "title": "3 destinations, default drop (16 Seater Premium Urbania)",
+  "type": "Functional",
+  "priority": "High",
+  "data": {
+    "pickup": "Whitefield, Bengaluru, Karnataka, India",
+    "dests": [
+      "Mysuru, Karnataka, India",
+      "Srirangapatna, Karnataka, India",
+      "Mandya, Karnataka, India"
+    ],
+    "date": {
+      "requested": "2026-11-26",
+      "dayDisabled": false,
+      "value": "2026-11-26"
+    },
+    "time": {
+      "requested": "6:00 AM",
+      "disabled": false,
+      "value": "6:00 AM"
+    },
+    "dropDate": {
+      "requested": "2026-11-28",
+      "dayDisabled": false,
+      "value": "2026-11-28"
+    },
+    "dropTime": {
+      "requested": "8:00 PM",
+      "disabled": false,
+      "value": "8:00 PM"
+    },
+    "pax": "14",
+    "integrity": []
+  },
+  "steps": "Add destinations → search → review",
+  "expected": "All destinations in route summary in order; 3 days; fare consistent",
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | 16 Seater Premium Urbania",
+      "pricingBlock": [
+        "Outstation Trip Pricing",
+        "Outstation Trip - Minimum Kms per Day",
+        "Standard outstation rental package",
+        "Base Rate (Minimum Kms per Day)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹12,000",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹800",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹800",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "115 hp · 350 Nm · 25% gradability",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+        "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+        "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+        "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+        "Proceed To Booking"
+      ],
+      "baseRate": "Base Rate (Minimum Kms per Day) = ₹12,000",
+      "extraKm": null,
+      "extraHour": null,
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹800",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹800",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹36,000",
+      "Day Bata Cost (Before 10pm or After 6am) = ₹2,400",
+      "Night Bata Cost (Before 6am or After 10pm) = ₹1,600",
+      "State Tax = ₹0",
+      "Estimated Grand Total = ₹40,000"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹36000 + Day Bata Cost ₹2400 + Night Bata Cost ₹1600 + State Tax ₹0 = ₹40000",
+      "shown": 40000,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹12000 × 3 days",
+      "expected": 36000,
+      "applied": 36000,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": true,
+      "detail": "/send-inquiry"
+    },
+    {
+      "label": "Vehicles listed",
+      "pass": true,
+      "detail": "20 Buses Found | Outstation - 0 KM"
+    },
+    {
+      "label": "Summary shows 14 Pax",
+      "pass": true,
+      "detail": "Passengers:14 "
+    },
+    {
+      "label": "Vehicle 16 Seater Premium Urbania offered",
+      "pass": true,
+      "detail": "16 Seater Premium Urbania P16UB (16 seats)"
+    },
+    {
+      "label": "Fare Breakup shown in vehicle details",
+      "pass": true,
+      "detail": "Outstation Trip Pricing / Outstation Trip - Minimum Kms per Day / Standard outstation rental package"
+    },
+    {
+      "label": "Review modal \"Confirm Your Trip & Selected Vehicles\" opens",
+      "pass": true,
+      "detail": "Confirm Your Trip & Selected Vehicles"
+    },
+    {
+      "label": "Applied fare components add up to Grand Total",
+      "pass": true,
+      "detail": "Vehicle Base Cost ₹36000 + Day Bata Cost ₹2400 + Night Bata Cost ₹1600 + State Tax ₹0 = ₹40000 vs shown ₹40000"
+    },
+    {
+      "label": "Route lists destinations in entered order",
+      "pass": true,
+      "detail": "indices 127,154,188"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_004-results-summary-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_004-results-vehicles-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_004-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_004-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_004-applied-fare-r2.png"
+  ],
+  "vehicle": {
+    "name": "16 Seater Premium Urbania",
+    "code": "P16UB",
+    "seats": 16,
+    "price": "₹40,000"
+  },
+  "found": "20 Buses Found | Outstation - 0 KM",
+  "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Srirangapatna, Karnataka, India → Mandya, Karnataka, India → Garage (Return) Distance:900 KM Dates :26-27-28 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:3 Days Passengers:14 Pax Drop Address:Mandya, Karnataka, India ",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 64,
+  "executedAt": "2026-11-17T08:54:02.577Z"
+}

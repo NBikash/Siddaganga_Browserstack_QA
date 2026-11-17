@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_010",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Careers\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/career",
+  "steps": "Footer → Careers",
+  "expected": "Careers page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /career",
+      "pass": true,
+      "detail": "/career"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "22 chars: \"Dashboard Careers Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_010-r2.png"
+  ],
+  "durationSec": 54,
+  "executedAt": "2026-11-17T08:18:25.568Z"
+}

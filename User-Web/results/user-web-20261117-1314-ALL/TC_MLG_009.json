@@ -1,0 +1,16 @@
+{
+  "id": "TC_MLG_009",
+  "module": "Multi-Leg",
+  "title": "Confirm & Submit Booking (Multi-Leg)",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": "Review modal",
+  "steps": "Click Confirm & Submit",
+  "expected": "Inquiry created",
+  "status": "Blocked",
+  "actual": "Blocked (approval not given): irreversible submission.",
+  "checks": [],
+  "evidence": [],
+  "durationSec": 0,
+  "executedAt": "2026-11-17T08:48:04.207Z"
+}

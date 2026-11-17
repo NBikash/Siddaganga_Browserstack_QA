@@ -1,0 +1,35 @@
+{
+  "id": "TC_NAV_014",
+  "module": "Navigation & Content",
+  "title": "Privacy Policy, Terms & Conditions and Sitemap content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/privacy, /terms, /sitemap",
+  "steps": "Open each page",
+  "expected": "Legal text and sitemap headings present",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "/privacy has content",
+      "pass": true,
+      "detail": "18772 chars"
+    },
+    {
+      "label": "/terms has content",
+      "pass": true,
+      "detail": "10147 chars"
+    },
+    {
+      "label": "/sitemap has content",
+      "pass": true,
+      "detail": "450 chars"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_014-privacy-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_014-terms-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_014-sitemap-r2.png"
+  ],
+  "durationSec": 25,
+  "executedAt": "2026-11-17T08:21:23.650Z"
+}

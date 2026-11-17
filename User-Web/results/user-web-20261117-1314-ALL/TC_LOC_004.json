@@ -1,0 +1,169 @@
+{
+  "id": "TC_LOC_004",
+  "module": "Local",
+  "title": "CFG-2 Multi-day trip (2 dates) with fare verification (12 Seater Tempo Traveller)",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": {
+    "pickup": "Hebbal, Bengaluru, Karnataka, India",
+    "mdDates": "Nov 17, 2026, Nov 22, 2026",
+    "time": {
+      "requested": "5:00 PM",
+      "disabled": false,
+      "value": "5:00 PM"
+    },
+    "pax": "10",
+    "hrs": "8",
+    "integrity": []
+  },
+  "steps": "Multi-day ON → select dates → fill → search → details → review",
+  "expected": "Summary lists selected dates; base cost = package rate × number of days",
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | 12 Seater Tempo Traveller",
+      "pricingBlock": [
+        "Local Trip Pricing",
+        "Local Trip – 8 Hrs / 80 Kms",
+        "Standard local rental package",
+        "Base Rate (8Hr/80Km)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹4,500",
+        "Extra Km Charge",
+        "₹25 / km",
+        "Extra Hour Charge",
+        "₹500 / hr",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹800",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹800",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "115 hp · 350 Nm · 22% gradability",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})"
+      ],
+      "baseRate": "Base Rate (8Hr/80Km) = ₹4,500",
+      "extraKm": "Extra Km Charge = ₹25 / km",
+      "extraHour": "Extra Hour Charge = ₹500 / hr",
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹800",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹800",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹9,000",
+      "Day Bata Cost (Before 10pm or After 6am) = ₹1,600",
+      "Night Bata Cost (Before 6am or After 10pm) = ₹1,600",
+      "Estimated Grand Total = ₹12,200"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹9000 + Day Bata Cost ₹1600 + Night Bata Cost ₹1600 = ₹12200",
+      "shown": 12200,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹4500 × 2 days",
+      "expected": 9000,
+      "applied": 9000,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Two dates in Selected Dates (today + D+5)",
+      "pass": true,
+      "detail": "Nov 17, 2026, Nov 22, 2026"
+    },
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": true,
+      "detail": "/send-inquiry"
+    },
+    {
+      "label": "Vehicles listed",
+      "pass": true,
+      "detail": "20 Buses Found | Local - 8 HR / 80 KM"
+    },
+    {
+      "label": "Summary shows 10 Pax",
+      "pass": true,
+      "detail": "Passengers:10 "
+    },
+    {
+      "label": "Vehicle 12 Seater Tempo Traveller offered",
+      "pass": true,
+      "detail": "12 Seater Tempo Traveller D12TT (12 seats)"
+    },
+    {
+      "label": "Fare Breakup shown in vehicle details",
+      "pass": true,
+      "detail": "Local Trip Pricing / Local Trip – 8 Hrs / 80 Kms / Standard local rental package"
+    },
+    {
+      "label": "Review modal \"Confirm Your Trip & Selected Vehicles\" opens",
+      "pass": true,
+      "detail": "Confirm Your Trip & Selected Vehicles"
+    },
+    {
+      "label": "Applied fare components add up to Grand Total",
+      "pass": true,
+      "detail": "Vehicle Base Cost ₹9000 + Day Bata Cost ₹1600 + Night Bata Cost ₹1600 = ₹12200 vs shown ₹12200"
+    },
+    {
+      "label": "Summary reflects 2 travel days",
+      "pass": true,
+      "detail": "Dates :17,22 Nov, 2026 Pickup"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_004-results-summary-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_004-results-vehicles-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_004-fare-breakup-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_004-review-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_004-applied-fare-r3.png"
+  ],
+  "vehicle": {
+    "name": "12 Seater Tempo Traveller",
+    "code": "D12TT",
+    "seats": 12,
+    "price": "₹12,200"
+  },
+  "found": "20 Buses Found | Local - 8 HR / 80 KM",
+  "summary": "You have Searched For : G P P G Map Data Terms Leg 1 Local Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hebbal, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :17,22 Nov, 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:2 Days Passengers:10 Pax Drop Address:Hebbal, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Br",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 42,
+  "executedAt": "2026-11-17T08:53:21.020Z"
+}

@@ -1,0 +1,256 @@
+{
+  "runId": "happy-path-20261116-2322",
+  "category": "Happy Path",
+  "environment": "Preprod",
+  "url": "https://preprod.siddagangatravels.com/",
+  "startTime": "2026-11-16T17:52:57.244Z",
+  "testCases": [
+    {
+      "id": "LOCAL-UC-01",
+      "title": "Basic local trip within city",
+      "config": "CFG-1",
+      "data": {
+        "pickup": "Koramangala, Bangalore",
+        "passengers": "2",
+        "hours": "4",
+        "date": "tomorrow",
+        "time": "10:00"
+      },
+      "expected": "Vehicle results displayed with pricing",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Koramangala, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "2"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "4"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass",
+          "note": "7 vehicles found"
+        },
+        {
+          "name": "Vehicle results displayed",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "LOCAL-UC-01-form-filled.png",
+        "LOCAL-UC-01-result.png"
+      ],
+      "startTime": "2026-11-16T17:53:10.534Z",
+      "endTime": "2026-11-16T17:54:28.780Z"
+    },
+    {
+      "id": "LOCAL-UC-02",
+      "title": "Multi-day local trip (2 consecutive days)",
+      "config": "CFG-2",
+      "data": {
+        "pickup": "MG Road, Bangalore",
+        "passengers": "4",
+        "hours": "8"
+      },
+      "expected": "Multi-day pricing shown (fare × 2)",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Multi-day",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "MG Road, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "4"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "8"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass",
+          "note": "7 vehicles found"
+        },
+        {
+          "name": "Vehicle results displayed",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "LOCAL-UC-02-form-filled.png",
+        "LOCAL-UC-02-result.png"
+      ],
+      "startTime": "2026-11-16T17:54:28.780Z",
+      "endTime": "2026-11-16T17:55:46.727Z"
+    },
+    {
+      "id": "LOCAL-UC-03",
+      "title": "Local trip with different drop location",
+      "config": "CFG-3",
+      "data": {
+        "pickup": "Indiranagar, Bangalore",
+        "drop": "Electronic City, Bangalore",
+        "passengers": "3",
+        "hours": "6",
+        "date": "tomorrow",
+        "time": "10:00"
+      },
+      "expected": "Route shows pickup → drop, distance calculated",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Different Drop",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Indiranagar, Bangalore"
+        },
+        {
+          "name": "Enter drop location",
+          "status": "pass",
+          "note": "Electronic City, Bangalore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "3"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "6"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass",
+          "note": "7 vehicles found"
+        },
+        {
+          "name": "Vehicle results displayed",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "LOCAL-UC-03-form-filled.png",
+        "LOCAL-UC-03-result.png"
+      ],
+      "startTime": "2026-11-16T17:55:46.727Z",
+      "endTime": "2026-11-16T17:57:07.856Z"
+    },
+    {
+      "id": "LOCAL-UC-04",
+      "title": "Multi-day with different drop (full combo)",
+      "config": "CFG-4",
+      "data": {
+        "pickup": "Whitefield, Bangalore",
+        "drop": "Mysore",
+        "passengers": "10",
+        "hours": "8"
+      },
+      "expected": "Multi-day + different drop pricing",
+      "steps": [
+        {
+          "name": "Navigate to Local",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Multi-day",
+          "status": "pass"
+        },
+        {
+          "name": "Enable Different Drop",
+          "status": "pass"
+        },
+        {
+          "name": "Enter pickup location",
+          "status": "pass",
+          "note": "Whitefield, Bangalore"
+        },
+        {
+          "name": "Enter drop location",
+          "status": "pass",
+          "note": "Mysore"
+        },
+        {
+          "name": "Enter passengers",
+          "status": "pass",
+          "note": "10"
+        },
+        {
+          "name": "Enter hours",
+          "status": "pass",
+          "note": "8"
+        },
+        {
+          "name": "Click Book Now",
+          "status": "pass"
+        },
+        {
+          "name": "Results page loaded",
+          "status": "pass",
+          "note": "7 vehicles found"
+        },
+        {
+          "name": "Vehicle results displayed",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "screenshots": [
+        "LOCAL-UC-04-form-filled.png",
+        "LOCAL-UC-04-result.png"
+      ],
+      "startTime": "2026-11-16T17:57:07.856Z",
+      "endTime": "2026-11-16T17:58:29.967Z"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "pass": 4,
+    "fail": 0,
+    "blocked": 0
+  },
+  "endTime": "2026-11-16T17:58:29.967Z"
+}

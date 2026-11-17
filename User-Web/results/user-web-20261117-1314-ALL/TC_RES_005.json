@@ -1,0 +1,28 @@
+{
+  "id": "TC_RES_005",
+  "module": "Results & Vehicle Details",
+  "title": "Modify Inquiry returns to form with values retained",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Local Whitefield 3 pax 4 hrs",
+  "steps": "Search → Modify Inquiry",
+  "expected": "Inquiry form shown with previous values",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Pickup retained",
+      "pass": true,
+      "detail": "[\"on\",\"on\",\"on\",\"on\",\"on\",\"Whitefield, Bengaluru, Karnataka, India\",\"2026-11-20\",\"10:00 AM\"]"
+    },
+    {
+      "label": "Pax and hours retained",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_005-r2.png"
+  ],
+  "durationSec": 27,
+  "executedAt": "2026-11-17T08:51:00.262Z"
+}

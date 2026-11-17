@@ -1,0 +1,16 @@
+{
+  "id": "TC_LOC_020",
+  "module": "Local",
+  "title": "Confirm & Submit Booking (Local inquiry submission)",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": "Review modal from TC_LOC_003",
+  "steps": "Click \"Confirm & Submit Booking\"",
+  "expected": "Inquiry created; reference shown",
+  "status": "Blocked",
+  "actual": "Blocked (approval not given): irreversible inquiry submission. Executed up to the review modal in TC_LOC_003–006.",
+  "checks": [],
+  "evidence": [],
+  "durationSec": 0,
+  "executedAt": "2026-11-17T08:39:14.594Z"
+}

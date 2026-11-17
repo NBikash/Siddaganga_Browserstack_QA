@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_008",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Refund Status\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/refund-status",
+  "steps": "Footer → Refund Status",
+  "expected": "Refund Status page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /refund-status",
+      "pass": true,
+      "detail": "/refund-status"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "28 chars: \"Dashboard Refund Status Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_008-r2.png"
+  ],
+  "durationSec": 53,
+  "executedAt": "2026-11-17T08:16:37.533Z"
+}

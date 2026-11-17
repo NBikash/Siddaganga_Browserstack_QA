@@ -1,0 +1,181 @@
+{
+  "id": "TC_OUT_009",
+  "module": "Outstation",
+  "title": "Same-day outstation (pickup and drop on the same date)",
+  "type": "Edge",
+  "priority": "Medium",
+  "data": {
+    "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+    "dests": [
+      "Kolar, Karnataka, India"
+    ],
+    "date": {
+      "requested": "2026-11-23",
+      "dayDisabled": false,
+      "value": "2026-11-23"
+    },
+    "time": {
+      "requested": "6:00 AM",
+      "disabled": false,
+      "value": "6:00 AM"
+    },
+    "dropDate": {
+      "requested": "2026-11-23",
+      "dayDisabled": false,
+      "value": "2026-11-23"
+    },
+    "dropTime": {
+      "requested": "10:00 PM",
+      "disabled": false,
+      "value": "10:00 PM"
+    },
+    "pax": "4",
+    "integrity": []
+  },
+  "steps": "Fill → search → review",
+  "expected": "Accepted as 1 day; fare = 1 × day rate",
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | Sedan",
+      "pricingBlock": [
+        "Outstation Trip Pricing",
+        "Outstation Trip - Minimum Kms per Day",
+        "Standard outstation rental package",
+        "Base Rate (Minimum Kms per Day)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹9,600",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹500",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹500",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "89 hp · 113 Nm",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+        "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+        "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+        "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+        "Proceed To Booking"
+      ],
+      "baseRate": "Base Rate (Minimum Kms per Day) = ₹9,600",
+      "extraKm": null,
+      "extraHour": null,
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹500",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹9,600",
+      "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+      "Night Bata Cost (Before 6am or After 10pm) = ₹0",
+      "State Tax = ₹0",
+      "Estimated Grand Total = ₹10,100"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹9600 + Day Bata Cost ₹500 + Night Bata Cost ₹0 + State Tax ₹0 = ₹10100",
+      "shown": 10100,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹9600 × 1 day",
+      "expected": 9600,
+      "applied": 9600,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": true,
+      "detail": "/send-inquiry"
+    },
+    {
+      "label": "Vehicles listed",
+      "pass": true,
+      "detail": "20 Buses Found | Outstation - 0 KM"
+    },
+    {
+      "label": "Summary shows 4 Pax",
+      "pass": true,
+      "detail": "Passengers:4 "
+    },
+    {
+      "label": "Vehicle Sedan offered",
+      "pass": true,
+      "detail": "Sedan D SDN (4 seats)"
+    },
+    {
+      "label": "Fare Breakup shown in vehicle details",
+      "pass": true,
+      "detail": "Outstation Trip Pricing / Outstation Trip - Minimum Kms per Day / Standard outstation rental package"
+    },
+    {
+      "label": "Review modal \"Confirm Your Trip & Selected Vehicles\" opens",
+      "pass": true,
+      "detail": "Confirm Your Trip & Selected Vehicles"
+    },
+    {
+      "label": "Applied fare components add up to Grand Total",
+      "pass": true,
+      "detail": "Vehicle Base Cost ₹9600 + Day Bata Cost ₹500 + Night Bata Cost ₹0 + State Tax ₹0 = ₹10100 vs shown ₹10100"
+    },
+    {
+      "label": "Duration 1 Day",
+      "pass": true,
+      "detail": "Duration:1 "
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_009-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_009-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_009-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_009-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_009-applied-fare-r2.png"
+  ],
+  "vehicle": {
+    "name": "Sedan",
+    "code": "D SDN",
+    "seats": 4,
+    "price": "₹10,100"
+  },
+  "found": "20 Buses Found | Outstation - 0 KM",
+  "summary": "You have Searched For : G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:300 KM Dates :23 Nov- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Ve",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 47,
+  "executedAt": "2026-11-17T08:45:49.935Z"
+}

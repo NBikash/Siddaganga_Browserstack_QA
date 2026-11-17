@@ -1,0 +1,225 @@
+{
+  "id": "TC_OUT_010",
+  "module": "Outstation",
+  "title": "Fare boundary: additional day on the same vehicle (2 vs 3 days, MPV)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": {
+    "baseline": {
+      "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+      "dests": [
+        "Hassan, Karnataka, India"
+      ],
+      "date": {
+        "requested": "2026-12-07",
+        "dayDisabled": false,
+        "value": "2026-12-07"
+      },
+      "time": {
+        "requested": "7:00 AM",
+        "disabled": false,
+        "value": "7:00 AM"
+      },
+      "dropDate": {
+        "requested": "2026-12-08",
+        "dayDisabled": false,
+        "value": "2026-12-08"
+      },
+      "dropTime": {
+        "requested": "7:00 PM",
+        "disabled": false,
+        "value": "7:00 PM"
+      },
+      "pax": "5",
+      "integrity": []
+    },
+    "boundary": {
+      "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+      "dests": [
+        "Hassan, Karnataka, India"
+      ],
+      "date": {
+        "requested": "2026-12-07",
+        "dayDisabled": false,
+        "value": "2026-12-07"
+      },
+      "time": {
+        "requested": "7:00 AM",
+        "disabled": false,
+        "value": "7:00 AM"
+      },
+      "dropDate": {
+        "requested": "2026-12-09",
+        "dayDisabled": false,
+        "value": "2026-12-09"
+      },
+      "dropTime": {
+        "requested": "7:00 PM",
+        "disabled": false,
+        "value": "7:00 PM"
+      },
+      "pax": "5",
+      "integrity": []
+    }
+  },
+  "steps": "Two searches identical except drop date; compare applied fare",
+  "expected": "Difference = 1 × per-day base rate + 1 × Day Bata + 1 × Night Bata (extra overnight)",
+  "fare": {
+    "baseline": {
+      "breakup": {
+        "heading": "View Vehicle Details | MPV's",
+        "pricingBlock": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹15,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹800",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking"
+        ],
+        "baseRate": "Base Rate (Minimum Kms per Day) = ₹15,000",
+        "extraKm": null,
+        "extraHour": null,
+        "perKm": null,
+        "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹800",
+        "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹800",
+        "toll": "Toll & Parking = Actuals",
+        "permit": null,
+        "gst": "GST = Additional"
+      },
+      "applied": [
+        "Vehicle Base Cost = ₹30,000",
+        "Day Bata Cost (Before 10pm or After 6am) = ₹1,600",
+        "Night Bata Cost (Before 6am or After 10pm) = ₹800",
+        "State Tax = ₹0",
+        "Estimated Grand Total = ₹32,400"
+      ],
+      "arithmetic": {
+        "expr": "Vehicle Base Cost ₹30000 + Day Bata Cost ₹1600 + Night Bata Cost ₹800 + State Tax ₹0 = ₹32400",
+        "shown": 32400,
+        "ok": true
+      },
+      "rule": {
+        "rule": "Base = Base Rate ₹15000 × 2 days",
+        "expected": 30000,
+        "applied": 30000,
+        "ok": true
+      },
+      "verdict": "Pass",
+      "notes": []
+    },
+    "boundary": {
+      "breakup": {
+        "heading": "View Vehicle Details | MPV's",
+        "pricingBlock": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹15,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹800",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking"
+        ],
+        "baseRate": "Base Rate (Minimum Kms per Day) = ₹15,000",
+        "extraKm": null,
+        "extraHour": null,
+        "perKm": null,
+        "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹800",
+        "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹800",
+        "toll": "Toll & Parking = Actuals",
+        "permit": null,
+        "gst": "GST = Additional"
+      },
+      "applied": [
+        "Vehicle Base Cost = ₹45,000",
+        "Day Bata Cost (Before 10pm or After 6am) = ₹2,400",
+        "Night Bata Cost (Before 6am or After 10pm) = ₹1,600",
+        "State Tax = ₹0",
+        "Estimated Grand Total = ₹49,000"
+      ],
+      "arithmetic": {
+        "expr": "Vehicle Base Cost ₹45000 + Day Bata Cost ₹2400 + Night Bata Cost ₹1600 + State Tax ₹0 = ₹49000",
+        "shown": 49000,
+        "ok": true
+      },
+      "rule": {
+        "rule": "Base = Base Rate ₹15000 × 3 days",
+        "expected": 45000,
+        "applied": 45000,
+        "ok": true
+      },
+      "verdict": "Pass",
+      "notes": []
+    },
+    "rule": "Δ = Base Rate ₹15000 + Day Bata ₹800 + Night Bata ₹800 (one more day and one more overnight)",
+    "expected": 16600,
+    "actualDelta": 16600,
+    "verdict": "Pass"
+  },
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "One extra day adds one day rate + one day bata + one night bata",
+      "pass": true,
+      "detail": "2d ₹32400, 3d ₹49000, Δ ₹16600, expected ₹16600"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-2d-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-2d-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-2d-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-2d-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-2d-applied-fare-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-3d-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-3d-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-3d-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-3d-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_010-3d-applied-fare-r2.png"
+  ],
+  "vehicle": {
+    "name": "MPV's",
+    "code": "D MPV",
+    "seats": 7,
+    "price": "₹32,400"
+  },
+  "durationSec": 89,
+  "executedAt": "2026-11-17T08:47:19.151Z"
+}

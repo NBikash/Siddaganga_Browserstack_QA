@@ -1,0 +1,22 @@
+{
+  "id": "TC_NAV_015",
+  "module": "Navigation & Content",
+  "title": "All Sitemap links resolve to real pages",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/sitemap",
+  "steps": "Visit every link on the sitemap",
+  "expected": "No link lands on \"page not found\" or an empty page",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "All 25 sitemap links have content",
+      "pass": false,
+      "detail": "/offers (empty), /schedules (empty), /refund-status (empty), /agent-registration (empty), /career (empty), /confirm-phone-booking (empty), /testimonials (empty), /faq (empty)"
+    }
+  ],
+  "evidence": [],
+  "actual": "25 links; failing: /offers (empty), /schedules (empty), /refund-status (empty), /agent-registration (empty), /career (empty), /confirm-phone-booking (empty), /testimonials (empty), /faq (empty)",
+  "durationSec": 271,
+  "executedAt": "2026-11-17T08:29:53.900Z"
+}

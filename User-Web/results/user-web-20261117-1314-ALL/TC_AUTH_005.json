@@ -1,0 +1,21 @@
+{
+  "id": "TC_AUTH_005",
+  "module": "Authentication & Profile",
+  "title": "/login while signed in redirects to home",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "/login",
+  "steps": "Open /login while authenticated",
+  "expected": "Redirect to home",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Redirected away from /login",
+      "pass": true,
+      "detail": "/"
+    }
+  ],
+  "evidence": [],
+  "durationSec": 13,
+  "executedAt": "2026-11-17T07:59:46.398Z"
+}

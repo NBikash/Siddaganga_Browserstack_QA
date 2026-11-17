@@ -1,0 +1,33 @@
+{
+  "id": "TC_LOC_021",
+  "module": "Local",
+  "title": "Multi-day: pre-selected today can be removed from Selected Dates",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Multi-day ON; D+5, D+6 added",
+  "steps": "Multi-day ON → add D+5, D+6 → click × on D+5 chip → click × on today chip / click today in calendar",
+  "expected": "Each date chip, including today, can be removed so a future-only multi-day trip can be booked",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "× removes a future date",
+      "pass": true,
+      "detail": "Nov 17, 2026, Nov 22, 2026, Nov 23, 2026 → Nov 17, 2026, Nov 23, 2026"
+    },
+    {
+      "label": "× removes today",
+      "pass": false,
+      "detail": "after × on today: Nov 17, 2026, Nov 23, 2026"
+    },
+    {
+      "label": "Morning pickup time selectable for future-only trip",
+      "pass": false,
+      "detail": "{\"requested\":\"9:00 AM\",\"disabled\":true,\"value\":\"2:07 PM\"}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_021.png"
+  ],
+  "durationSec": 15,
+  "executedAt": "2026-11-17T08:37:36.422Z"
+}

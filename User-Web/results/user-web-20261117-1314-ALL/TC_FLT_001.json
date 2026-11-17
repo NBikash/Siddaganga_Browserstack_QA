@@ -1,0 +1,33 @@
+{
+  "id": "TC_FLT_001",
+  "module": "Fleet",
+  "title": "Our Fleet page filters",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/ourfleet",
+  "steps": "Open Our Fleet",
+  "expected": "Category, manufacturer, vehicle type, seat type, AC/Non AC, luggage, capacity slider shown",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "4 dropdown filters",
+      "pass": true,
+      "detail": "4"
+    },
+    {
+      "label": "Capacity slider",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Find Vehicles button",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_001.png"
+  ],
+  "durationSec": 12,
+  "executedAt": "2026-11-17T08:04:24.305Z"
+}

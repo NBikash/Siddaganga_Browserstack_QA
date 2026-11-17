@@ -1,0 +1,21 @@
+{
+  "id": "TC_TBH_005",
+  "module": "Transfer By Hour",
+  "title": "By Hour with different drop (TRF-HR-010 Banashankari → KIA, Sedan)",
+  "type": "Functional",
+  "priority": "High",
+  "data": "D+6 4:00 AM; 6 hrs; 3 pax",
+  "steps": "Drop ON → fill → search → review",
+  "expected": "Drop shown in summary",
+  "fare": true,
+  "status": "Blocked",
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_005-error-r3.png"
+  ],
+  "checks": [],
+  "durationSec": 46,
+  "executedAt": "2026-11-17T08:54:07.395Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict. Last error: TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "triaged": true
+}

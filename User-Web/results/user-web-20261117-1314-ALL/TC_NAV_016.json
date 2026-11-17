@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_016",
+  "module": "Navigation & Content",
+  "title": "Unknown URL shows a 404 page",
+  "type": "Negative",
+  "priority": "Low",
+  "data": "/does-not-exist-qa",
+  "steps": "Open an unknown route",
+  "expected": "\"Sorry, page not found!\" with a way back home",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "404 message shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Link back to home",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_016.png"
+  ],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T07:56:50.629Z"
+}

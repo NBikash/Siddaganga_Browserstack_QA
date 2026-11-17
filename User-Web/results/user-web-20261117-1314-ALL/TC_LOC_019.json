@@ -1,0 +1,16 @@
+{
+  "id": "TC_LOC_019",
+  "module": "Local",
+  "title": "Save As Draft (Local)",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Valid Local form",
+  "steps": "Fill → Save As Draft",
+  "expected": "Draft saved confirmation",
+  "status": "Blocked",
+  "actual": "Blocked (approval not given): Save As Draft creates a record in Preprod and is on the requires-approval list",
+  "checks": [],
+  "evidence": [],
+  "durationSec": 0,
+  "executedAt": "2026-11-17T08:39:14.594Z"
+}

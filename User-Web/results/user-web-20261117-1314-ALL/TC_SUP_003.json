@@ -1,0 +1,23 @@
+{
+  "id": "TC_SUP_003",
+  "module": "Customer Support",
+  "title": "Raise Ticket with empty form shows validation",
+  "type": "Negative",
+  "priority": "High",
+  "data": "All blank",
+  "steps": "Click Raise Ticket submit with blank fields",
+  "expected": "Required-field messages; no ticket created",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Validation shown",
+      "pass": true,
+      "detail": "[\"Request Type, Service Type, Date and Description are required\"] invalid=0"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_003.png"
+  ],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T08:09:23.999Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "TC_NAV_003",
+  "module": "Navigation & Content",
+  "title": "Popular Routes section shows routes",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Home",
+  "steps": "Scroll to \"Popular Routes People Book Most\"",
+  "expected": "Route cards listed (or section hidden when no data)",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Routes are displayed (no empty-state message on the home page)",
+      "pass": false,
+      "detail": "\"No popular routes found\" shown under the heading"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_003.png"
+  ],
+  "durationSec": 14,
+  "executedAt": "2026-11-17T07:46:16.279Z"
+}

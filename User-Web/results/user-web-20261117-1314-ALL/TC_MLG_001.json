@@ -1,0 +1,28 @@
+{
+  "id": "TC_MLG_001",
+  "module": "Multi-Leg",
+  "title": "Total Passengers is mandatory",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Blank",
+  "steps": "Multi-Leg → Next with empty passengers",
+  "expected": "\"This field is required\"; stays on step 1",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Required message",
+      "pass": true,
+      "detail": "[\"This field is required\"]"
+    },
+    {
+      "label": "Stays on passenger step",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_MLG_001-r2.png"
+  ],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T08:44:05.127Z"
+}

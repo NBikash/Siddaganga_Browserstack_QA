@@ -1,0 +1,29 @@
+{
+  "id": "TC_TRF_012",
+  "module": "Transfer P2P",
+  "title": "Drop date/time auto-calculation follows pickup changes",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Pickup D+3 9:00 AM, then 6:00 PM",
+  "steps": "Set pickup 9:00 AM → read Drop; change pickup time to 6:00 PM → read Drop",
+  "expected": "Drop date/time auto-derived after pickup and recalculated when the pickup time changes",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Drop date/time auto-set after pickup (9:00 AM)",
+      "pass": true,
+      "detail": "[\"2026-11-20\",\"9:00 AM\",\"2026-11-20\",\"4:28 PM\"]"
+    },
+    {
+      "label": "Drop date/time recalculated when pickup time changes to 6:00 PM",
+      "pass": false,
+      "detail": "[\"2026-11-20\",\"6:00 PM\",\"2026-11-20\",\"4:28 PM\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_012-r3.png"
+  ],
+  "actual": "[\"2026-11-20\",\"9:00 AM\",\"2026-11-20\",\"4:28 PM\"] → [\"2026-11-20\",\"6:00 PM\",\"2026-11-20\",\"4:28 PM\"]",
+  "durationSec": 27,
+  "executedAt": "2026-11-17T08:59:07.188Z"
+}

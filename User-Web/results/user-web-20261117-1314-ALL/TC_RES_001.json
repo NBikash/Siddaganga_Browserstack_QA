@@ -1,0 +1,73 @@
+{
+  "id": "TC_RES_001",
+  "module": "Results & Vehicle Details",
+  "title": "All vehicles listed with pagination; compare with master vehicle list",
+  "type": "Functional",
+  "priority": "High",
+  "data": {
+    "pickup": "Koramangala, Bengaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-20",
+      "dayDisabled": false,
+      "value": "2026-11-20"
+    },
+    "time": {
+      "requested": "10:00 AM",
+      "disabled": false,
+      "value": "10:00 AM"
+    },
+    "pax": "1",
+    "hrs": "4",
+    "integrity": []
+  },
+  "steps": "Search → walk all result pages",
+  "expected": "20 vehicles from ADDITIONAL_TEST_INFO available; pagination works; each card has name, seats, Starts From, actions",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "≥ 20 vehicles across pages",
+      "pass": true,
+      "detail": "20 (20 Buses Found | Local - 4 HR / 80 KM)"
+    },
+    {
+      "label": "Every card shows seats and Starts From price",
+      "pass": false,
+      "detail": ""
+    },
+    {
+      "label": "Every card has View Details + Book actions",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_001-results-summary-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_001-results-vehicles-r3.png"
+  ],
+  "found": "20 Buses Found | Local - 4 HR / 80 KM",
+  "summary": "You have Searched For : G P P G Map Data Terms Leg 1 Local Garage (Start) → Koramangala, Bengaluru, Karnataka, India → Koramangala, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :20 Nov, 2026 Pickup Address:Koramangala, Bengaluru, Karnataka, India Duration:4 Hours Passengers:1 Pax Drop Address:Koramangala, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle ",
+  "allVehicles": [
+    "33|Seater Deluxe Coach D35NA|35|₹11,000|p1",
+    "40|Seater Deluxe Coach D40NA|40|₹11,500|p1",
+    "49|Seater Deluxe Coach D49NA|49|₹13,500|p1",
+    "Sedan|D SDN|4|₹4,500|p1",
+    "MPV's|D MPV|7|₹7,800|p1",
+    "12|Seater Tempo Traveller D12TT|12|₹5,300|p1",
+    "45|Seater Premium AC Coach L45P|45|₹14,500|p2",
+    "40|Seater Premium AC Coach P40AC|40|₹13,500|p2",
+    "35|Seater Premium AC Coach P35AC|35|₹12,500|p2",
+    "28|Seater Premium AC Coach P28AC|28|₹11,500|p2",
+    "25|Seater Premium AC Coach P25AC|25|₹10,500|p2",
+    "21|Seater Premium AC Coach P21AC|21|₹9,500|p2",
+    "16|Seater Premium Urbania P16UB|16|₹8,300|p3",
+    "12|Seater Luxury Urbania L12AC|12|₹9,300|p3",
+    "9|Seater Luxury Urbania L9UB|9|₹10,500|p3",
+    "45|Seater Luxury Volvo L45V|45|₹17,000|p3",
+    "45|Seater Luxury 9600 Volvo L45NV|45|₹22,000|p3",
+    "49|Seater Luxury 9600 Volvo L49NV|49|₹24,250|p3",
+    "SUV|LSUV|0|₹19,500|p4",
+    "45|Seater Luxury BharatBenz 45LBB|45|₹16,000|p4"
+  ],
+  "durationSec": 31,
+  "executedAt": "2026-11-17T08:58:51.775Z"
+}

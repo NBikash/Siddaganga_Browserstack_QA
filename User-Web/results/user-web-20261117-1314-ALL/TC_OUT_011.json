@@ -1,0 +1,25 @@
+{
+  "id": "TC_OUT_011",
+  "module": "Outstation",
+  "title": "Multi-day toggle on Outstation tab",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "Toggle Multi-day",
+  "steps": "Toggle Multi-day Trip ON",
+  "expected": "Toggle changes the form (e.g. date selector) or is not offered for Outstation",
+  "status": "Blocked",
+  "checks": [
+    {
+      "label": "Multi-day toggle has a visible effect on Outstation",
+      "pass": false,
+      "detail": "No change in fields after toggling – toggle appears non-functional"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_011-r2.png"
+  ],
+  "durationSec": 12,
+  "executedAt": "2026-11-17T08:47:30.741Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict.",
+  "triaged": true
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TC_RES_007",
+  "module": "Results & Vehicle Details",
+  "title": "Browser Back from results and page refresh",
+  "type": "Edge",
+  "priority": "Medium",
+  "data": "Local search",
+  "steps": "Search → reload results page; then Back",
+  "expected": "Reload keeps results or redirects gracefully; Back returns to home without errors",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Results survive reload",
+      "pass": false,
+      "detail": "0 Buses Found "
+    },
+    {
+      "label": "Back navigation without error",
+      "pass": true,
+      "detail": "https://preprod.siddagangatravels.com/"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_007-reload-r2.png"
+  ],
+  "durationSec": 34,
+  "executedAt": "2026-11-17T09:00:52.651Z"
+}

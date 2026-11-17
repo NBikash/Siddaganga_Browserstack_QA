@@ -1,0 +1,24 @@
+{
+  "id": "TC_FLT_003",
+  "module": "Fleet",
+  "title": "Find Vehicles filtered by Category = Luxury",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Category Luxury",
+  "steps": "Select Luxury → Find Vehicles",
+  "expected": "Only luxury vehicles listed (Volvo/Urbania/BharatBenz)",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Luxury vehicles found",
+      "pass": false,
+      "detail": "0 Buses Found"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_FLT_003.png"
+  ],
+  "actual": "0 Buses Found; ",
+  "durationSec": 15,
+  "executedAt": "2026-11-17T08:05:03.271Z"
+}

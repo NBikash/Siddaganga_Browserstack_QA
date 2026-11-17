@@ -1,0 +1,33 @@
+{
+  "id": "TC_TBH_007",
+  "module": "Transfer By Hour",
+  "title": "By Hour vs Local pricing for identical input",
+  "type": "Edge",
+  "priority": "Low",
+  "data": "Hebbal; D+8 9:00 AM; 4 hrs; 2 pax; Sedan",
+  "steps": "Run same input on Local and on Transfer→By Hour; compare",
+  "expected": "Category-specific pricing (document if identical – possible duplicate product)",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Comparison recorded",
+      "pass": true,
+      "detail": "Local: 20 Buses Found | Local - 4 HR / 80 KM → ₹4500; By Hour: 20 Buses Found | Transfer - < 30 KM → ₹8000"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-local-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-local-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-local-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-local-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-local-applied-fare-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-byhour-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-byhour-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-byhour-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-byhour-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_007-byhour-applied-fare-r2.png"
+  ],
+  "notes": "Different",
+  "durationSec": 77,
+  "executedAt": "2026-11-17T08:43:54.277Z"
+}

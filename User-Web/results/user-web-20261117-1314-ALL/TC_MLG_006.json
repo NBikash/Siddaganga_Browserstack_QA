@@ -1,0 +1,23 @@
+{
+  "id": "TC_MLG_006",
+  "module": "Multi-Leg",
+  "title": "Book Now with an incomplete leg",
+  "type": "Negative",
+  "priority": "High",
+  "data": "4 pax, leg blank",
+  "steps": "Next → Book Now!",
+  "expected": "Field errors + toast \"Please fill all required fields correctly\"",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Required-field errors shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Please fill all required fields correctly\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_MLG_006-r2.png"
+  ],
+  "durationSec": 18,
+  "executedAt": "2026-11-17T08:46:29.863Z"
+}

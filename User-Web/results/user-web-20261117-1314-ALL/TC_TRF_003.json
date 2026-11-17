@@ -1,0 +1,23 @@
+{
+  "id": "TC_TRF_003",
+  "module": "Transfer P2P",
+  "title": "Swap From/To button",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "From Hebbal, To Nandi Hills",
+  "steps": "Enter both → click swap icon",
+  "expected": "Values exchanged",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "From and To swapped",
+      "pass": true,
+      "detail": "Hebbal, Bengaluru, K,Nandi Hills, Karnata → Nandi Hills, Karnata,Hebbal, Bengaluru, K"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_003-r2.png"
+  ],
+  "durationSec": 19,
+  "executedAt": "2026-11-17T08:31:45.874Z"
+}

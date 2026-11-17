@@ -1,0 +1,29 @@
+{
+  "id": "TC_NAV_019",
+  "module": "Navigation & Content",
+  "title": "Mobile viewport (390×844): home and inquiry usable",
+  "type": "Compatibility",
+  "priority": "Medium",
+  "data": "iPhone-size viewport",
+  "steps": "Resize to 390×844 → open home → open nav toggle → Local tab",
+  "expected": "No horizontal scroll; hamburger menu works; inquiry form fits",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "No horizontal overflow",
+      "pass": true,
+      "detail": "-15px wider than viewport"
+    },
+    {
+      "label": "Hamburger menu opens",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_019-menu.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_019-inquiry.png"
+  ],
+  "durationSec": 13,
+  "executedAt": "2026-11-17T07:57:27.144Z"
+}

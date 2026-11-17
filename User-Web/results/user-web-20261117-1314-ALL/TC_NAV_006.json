@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_006",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Offers\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/offers",
+  "steps": "Footer → Offers",
+  "expected": "Offers page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /offers",
+      "pass": true,
+      "detail": "/offers"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "21 chars: \"Dashboard Offers Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_006-r2.png"
+  ],
+  "durationSec": 53,
+  "executedAt": "2026-11-17T08:14:54.440Z"
+}

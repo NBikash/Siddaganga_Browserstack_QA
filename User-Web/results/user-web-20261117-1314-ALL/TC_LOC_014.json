@@ -1,0 +1,199 @@
+{
+  "id": "TC_LOC_014",
+  "module": "Local",
+  "title": "Fare boundary: extra hours on the same vehicle (8 vs 10 hrs, Sedan)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": {
+    "baseline": {
+      "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+      "date": {
+        "requested": "2026-11-25",
+        "dayDisabled": false,
+        "value": "2026-11-25"
+      },
+      "time": {
+        "requested": "9:00 AM",
+        "disabled": false,
+        "value": "9:00 AM"
+      },
+      "pax": "2",
+      "hrs": "8",
+      "integrity": []
+    },
+    "boundary": {
+      "pickup": "Malleshwaram, Bengaluru, Karnataka, India",
+      "date": {
+        "requested": "2026-11-25",
+        "dayDisabled": false,
+        "value": "2026-11-25"
+      },
+      "time": {
+        "requested": "9:00 AM",
+        "disabled": false,
+        "value": "9:00 AM"
+      },
+      "pax": "2",
+      "hrs": "10",
+      "integrity": []
+    }
+  },
+  "steps": "Run both searches with identical data except hours; compare applied fare",
+  "expected": "Difference = 2 × Extra Hour Charge from the Fare Breakup",
+  "fare": {
+    "baseline": {
+      "breakup": {
+        "heading": "View Vehicle Details | Sedan",
+        "pricingBlock": [
+          "Local Trip Pricing",
+          "Local Trip – 8 Hrs / 80 Kms",
+          "Standard local rental package",
+          "Base Rate (8Hr/80Km)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹4,000",
+          "Extra Km Charge",
+          "₹32 / km",
+          "Extra Hour Charge",
+          "₹400 / hr",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹500",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "89 hp · 113 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})"
+        ],
+        "baseRate": "Base Rate (8Hr/80Km) = ₹4,000",
+        "extraKm": "Extra Km Charge = ₹32 / km",
+        "extraHour": "Extra Hour Charge = ₹400 / hr",
+        "perKm": null,
+        "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+        "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹500",
+        "toll": "Toll & Parking = Actuals",
+        "permit": null,
+        "gst": "GST = Additional"
+      },
+      "applied": [
+        "Vehicle Base Cost = ₹4,000",
+        "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+        "Night Bata Cost (Before 6am or After 10pm) = ₹0",
+        "Estimated Grand Total = ₹4,500"
+      ],
+      "arithmetic": {
+        "expr": "Vehicle Base Cost ₹4000 + Day Bata Cost ₹500 + Night Bata Cost ₹0 = ₹4500",
+        "shown": 4500,
+        "ok": true
+      },
+      "rule": {
+        "rule": "Base = Base Rate ₹4000 × 1 day",
+        "expected": 4000,
+        "applied": 4000,
+        "ok": true
+      },
+      "verdict": "Pass",
+      "notes": []
+    },
+    "boundary": {
+      "breakup": {
+        "heading": "View Vehicle Details | Sedan",
+        "pricingBlock": [
+          "Local Trip Pricing",
+          "Local Trip – 8 Hrs / 80 Kms",
+          "Standard local rental package",
+          "Base Rate (8Hr/80Km)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹4,000",
+          "Extra Km Charge",
+          "₹32 / km",
+          "Extra Hour Charge",
+          "₹400 / hr",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹500",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "89 hp · 113 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})"
+        ],
+        "baseRate": "Base Rate (8Hr/80Km) = ₹4,000",
+        "extraKm": "Extra Km Charge = ₹32 / km",
+        "extraHour": "Extra Hour Charge = ₹400 / hr",
+        "perKm": null,
+        "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+        "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹500",
+        "toll": "Toll & Parking = Actuals",
+        "permit": null,
+        "gst": "GST = Additional"
+      },
+      "applied": [
+        "Vehicle Base Cost = ₹4,000",
+        "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+        "Night Bata Cost (Before 6am or After 10pm) = ₹0",
+        "Estimated Grand Total = ₹4,500"
+      ],
+      "arithmetic": {
+        "expr": "Vehicle Base Cost ₹4000 + Day Bata Cost ₹500 + Night Bata Cost ₹0 = ₹4500",
+        "shown": 4500,
+        "ok": true
+      },
+      "rule": {
+        "rule": "Base = Base Rate ₹4000 × 1 day",
+        "expected": 4000,
+        "applied": 4000,
+        "ok": true
+      },
+      "verdict": "Pass",
+      "notes": []
+    },
+    "rule": "Δ = 2 × Extra Hour ₹400",
+    "expected": 800,
+    "actualDelta": 0,
+    "verdict": "Fail"
+  },
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Extra-hour charge applied for 2 extra hours",
+      "pass": false,
+      "detail": "8h ₹4500, 10h ₹4500, Δ ₹0, expected ₹800"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-8h-results-summary.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-8h-results-vehicles.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-8h-fare-breakup.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-8h-review.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-8h-applied-fare.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-results-summary.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-results-vehicles.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-fare-breakup.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-review.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_014-10h-applied-fare.png"
+  ],
+  "vehicle": {
+    "name": "Sedan",
+    "code": "D SDN",
+    "seats": 4,
+    "price": "₹4,500"
+  },
+  "durationSec": 81,
+  "executedAt": "2026-11-17T08:36:40.655Z"
+}

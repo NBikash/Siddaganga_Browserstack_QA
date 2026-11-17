@@ -1,0 +1,23 @@
+{
+  "id": "TC_SUP_002",
+  "module": "Customer Support",
+  "title": "Internal-only fields are not exposed to customers",
+  "type": "Security",
+  "priority": "High",
+  "data": "Support form",
+  "steps": "Inspect form",
+  "expected": "Customer form must not offer Assign To / Priority / Status (agent-side fields)",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "No agent-side fields on customer form",
+      "pass": false,
+      "detail": "Assign To, Priority, Status"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_002.png"
+  ],
+  "durationSec": 16,
+  "executedAt": "2026-11-17T08:09:12.756Z"
+}

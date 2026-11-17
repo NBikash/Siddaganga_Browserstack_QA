@@ -1,0 +1,23 @@
+{
+  "id": "TC_SUP_004",
+  "module": "Customer Support",
+  "title": "Support form type tabs (Raise Ticket / Feedback / Complaint / Cancel Request)",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "—",
+  "steps": "Click each type",
+  "expected": "Form adapts to the chosen type",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "All 4 types clickable",
+      "pass": true,
+      "detail": "{\"Submit Feedback\":\"Title *|Request Type *|Service Type *|Date *|Assign To|Priority|Status|Description *\",\"Submit Complaint\":\"Title *|Request Type *|Service Type *|Date *|Assign To|Priority|Status|Description *\",\"Cancel Request\":\"Title *|Request Type *|Service Type *|Date *|Assign To|Priority|Status"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SUP_004.png"
+  ],
+  "durationSec": 16,
+  "executedAt": "2026-11-17T08:09:40.253Z"
+}

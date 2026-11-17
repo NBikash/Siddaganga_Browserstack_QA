@@ -1,0 +1,166 @@
+{
+  "id": "TC_TBH_003",
+  "module": "Transfer By Hour",
+  "title": "By Hour – maximum 24 hours (45 Seater Premium AC Coach)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": {
+    "pickup": "Peenya, Bengaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-22",
+      "dayDisabled": false,
+      "value": "2026-11-22"
+    },
+    "time": {
+      "requested": "6:00 AM",
+      "disabled": false,
+      "value": "6:00 AM"
+    },
+    "pax": "42",
+    "hrs": "24",
+    "integrity": []
+  },
+  "steps": "Fill → search → review",
+  "expected": "24 hours accepted; extra hours priced",
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | 45 Seater Premium AC Coach",
+      "pricingBlock": [
+        "Transfer Trip Pricing",
+        "Transfer Trip - Inside City",
+        "Standard transfer rental package",
+        "Base Rate (Inside City)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)(< 30 km)",
+        "₹18,500",
+        "Late Allowance",
+        "₹1,000",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "200 hp · 700 Nm · 25% gradability",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+        "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+        "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+        "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+        "Proceed To Booking",
+        "Confirm availability & lock pricing"
+      ],
+      "baseRate": "Base Rate (Inside City) = ₹18,500",
+      "extraKm": null,
+      "extraHour": null,
+      "perKm": null,
+      "dayBata": null,
+      "nightBata": null,
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹18,500",
+      "Late Allowance Cost = ₹2,000",
+      "Estimated Grand Total = ₹20,500"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹18500 + Late Allowance Cost ₹2000 = ₹20500",
+      "shown": 20500,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹18500 × 1 package",
+      "expected": 18500,
+      "applied": 18500,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": true,
+      "detail": "/send-inquiry"
+    },
+    {
+      "label": "Vehicles listed",
+      "pass": true,
+      "detail": "20 Buses Found | Transfer - < 30 KM"
+    },
+    {
+      "label": "Summary shows 42 Pax",
+      "pass": true,
+      "detail": "Passengers:42 "
+    },
+    {
+      "label": "Vehicle 45 Seater Premium AC Coach offered",
+      "pass": true,
+      "detail": "45 Seater Premium AC Coach L45P (45 seats)"
+    },
+    {
+      "label": "Fare Breakup shown in vehicle details",
+      "pass": true,
+      "detail": "Transfer Trip Pricing / Transfer Trip - Inside City / Standard transfer rental package"
+    },
+    {
+      "label": "Review modal \"Confirm Your Trip & Selected Vehicles\" opens",
+      "pass": true,
+      "detail": "Confirm Your Trip & Selected Vehicles"
+    },
+    {
+      "label": "Applied fare components add up to Grand Total",
+      "pass": true,
+      "detail": "Vehicle Base Cost ₹18500 + Late Allowance Cost ₹2000 = ₹20500 vs shown ₹20500"
+    },
+    {
+      "label": "Summary Duration 24 Hours",
+      "pass": true,
+      "detail": "Duration:24 "
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_003-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_003-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_003-fare-breakup.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_003-review.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_003-applied-fare.png"
+  ],
+  "vehicle": {
+    "name": "45 Seater Premium AC Coach",
+    "code": "L45P",
+    "seats": 45,
+    "price": "₹19,500"
+  },
+  "found": "20 Buses Found | Transfer - < 30 KM",
+  "summary": "You have Searched For : G P P G Map Data Terms Leg 1 Transfer Garage (Start) → Peenya, Bengaluru, Karnataka, India → Peenya, Bengaluru, Karnataka, India → Garage (Return) Distance:< 30 KM Dates :22 Nov, 2026 Pickup Address:Peenya, Bengaluru, Karnataka, India Duration:24 Hours Passengers:42 Pax Drop Address:Peenya, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preferenc",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 46,
+  "executedAt": "2026-11-17T08:40:35.626Z"
+}

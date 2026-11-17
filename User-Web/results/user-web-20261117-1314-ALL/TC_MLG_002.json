@@ -1,0 +1,32 @@
+{
+  "id": "TC_MLG_002",
+  "module": "Multi-Leg",
+  "title": "Total Passengers input sanitisation (0, -1, 2.5, 200)",
+  "type": "Boundary",
+  "priority": "Medium",
+  "data": "0 / -1 / 2.5 / 200",
+  "steps": "Type each value",
+  "expected": "Non-positive and decimals rejected/normalised; upper bound handled",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Zero/negative not kept",
+      "pass": true,
+      "detail": "{\"0\":\"1\",\"200\":\"200\",\"-1\":\"1\",\"2.5\":\"2\"}"
+    },
+    {
+      "label": "Decimal not kept",
+      "pass": true,
+      "detail": "2"
+    },
+    {
+      "label": "Upper bound (observation)",
+      "pass": true,
+      "detail": "200 → 200 (no maximum enforced)"
+    }
+  ],
+  "evidence": [],
+  "actual": "{\"0\":\"1\",\"200\":\"200\",\"-1\":\"1\",\"2.5\":\"2\"}",
+  "durationSec": 40,
+  "executedAt": "2026-11-17T08:44:45.314Z"
+}

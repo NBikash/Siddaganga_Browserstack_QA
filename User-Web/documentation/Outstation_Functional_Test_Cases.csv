@@ -1,0 +1,142 @@
+Test Case ID,Title,Category,Config,Priority,Preconditions,Test Data,Steps,Expected Result,Related Bug
+OUT-UC-01,Single destination round-trip (default drop),Happy Path,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: Majestic; Dest: Mysuru; Pickup: Tomorrow 09:00; Drop: +2 days 18:00; Pax: 4; Diff Drop: OFF","1. Enter pickup location
+2. Enter destination
+3. Set pickup date/time
+4. Set drop date/time
+5. Enter passengers
+6. Click Search Vehicles","Vehicle results displayed; Route: Bangalore → Mysuru → Bangalore; Distance ~290 km; Per-day + per-km pricing shown",
+OUT-UC-02,Single destination one-way with different drop,Happy Path,CFG-2,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Mysuru; Drop: Mysuru; Pickup: Tomorrow 08:00; Drop: Tomorrow 16:00; Pax: 2; Diff Drop: ON","1. Enter pickup
+2. Enter destination
+3. Enable Different Drop toggle
+4. Enter drop location
+5. Set same-day dates
+6. Search","Route: Bangalore → Mysuru (one-way); Drop = Mysuru; Single-day pricing",
+OUT-UC-03,Multi-destination round-trip (2 stops),Happy Path,CFG-3,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: Mysuru; Dest2: Ooty; Pickup: Tomorrow 06:00; Drop: +3 days 20:00; Pax: 6; Diff Drop: OFF","1. Enter pickup
+2. Enter first destination
+3. Click '+ Add Another Destination'
+4. Enter second destination
+5. Set 3-day range
+6. Search","Route: Bangalore → Mysuru → Ooty → Bangalore; All destinations in summary; 3-day pricing",
+OUT-UC-04,Multi-destination one-way (3 stops with different drop),Happy Path,CFG-4,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: Mysuru; Dest2: Madikeri; Dest3: Mangaluru; Drop: Mangaluru; Pax: 10","1. Enter pickup and 3 destinations
+2. Enable Different Drop
+3. Enter Mangaluru as drop
+4. Set 4-day range
+5. Search","Route: Bangalore → Mysuru → Madikeri → Mangaluru; Drop = Mangaluru; 4-day pricing",
+OUT-UC-05,Maximum destinations (5 stops) with different drop,Happy Path,CFG-4,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1-5: Mysuru → Hassan → Chikmagalur → Shimoga → Goa; Drop: Goa; Pax: 20","1. Add all 5 destinations sequentially
+2. Enable Different Drop
+3. Set 6-day range
+4. Search","All 5 destinations in sequence; Extended route calculation; Multi-day pricing",
+OUT-UC-06,Minimum passengers (1),Boundary - Passengers,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Mysuru; Pax: 1","1. Fill form with 1 passenger
+2. Search","All vehicles shown including Sedan/SUV; Pax count = 1 in summary",
+OUT-UC-07,Medium group (25 passengers),Boundary - Passengers,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Mysuru; Pax: 25","1. Fill form with 25 passengers
+2. Search","25+ seater coaches shown (28 Seater Premium AC Coach)",
+OUT-UC-08,Maximum single-vehicle (49 passengers),Boundary - Passengers,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Coorg; Pax: 49","1. Fill form with 49 passengers
+2. Search","49 Seater vehicles shown (Deluxe Coach, Volvo)",
+OUT-UC-09,Above single-vehicle capacity (100+ passengers),Boundary - Passengers,CFG-1,P3,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Goa; Pax: 120","1. Fill form with 120 passengers
+2. Search","Multiple vehicle suggestion or error message",
+OUT-UC-10,Single destination only (minimum),Boundary - Destinations,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: Mysuru only","1. Enter single destination only
+2. Verify no Remove icon shown
+3. Search","Form accepts; No Remove icon for Dest 1; Route calculated",
+OUT-UC-11,Two destinations,Boundary - Destinations,CFG-3,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: Mysuru; Dest2: Coorg","1. Add second destination
+2. Verify Remove icon appears for Dest 2
+3. Search","Both destinations in order; Remove icon available",
+OUT-UC-12,Three destinations,Boundary - Destinations,CFG-3,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: Mysuru; Dest2: Madikeri; Dest3: Hassan","1. Add three destinations
+2. Search","Sequential route: Mysuru → Madikeri → Hassan; All 3 in summary",
+OUT-UC-13,Four destinations,Boundary - Destinations,CFG-3,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1-4: Mysuru → Coorg → Mangaluru → Goa","1. Add four destinations
+2. Search","Four-stop route calculated correctly",
+OUT-UC-14,Beyond 5 destinations (if supported),Boundary - Destinations,CFG-3,P3,User logged in; 5 destinations already added,"Attempt to add 6th destination","1. Add 5 destinations
+2. Try to add 6th","Either accepts 6th OR shows max limit reached",
+OUT-UC-15,Same-day outstation trip,Date/Time,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: Today 06:00; Drop: Today 22:00; Dest: Mysuru","1. Set pickup today morning
+2. Set drop today evening
+3. Search","Same-day trip accepted; Single-day pricing",
+OUT-UC-16,Multi-day trip (3 days),Date/Time,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: Tomorrow 08:00; Drop: +3 days 18:00; Dest: Ooty","1. Set 3-day date range
+2. Search","3-day pricing (Base × 3 + per-km)",BUG-OUT-006
+OUT-UC-17,Drop date earlier than pickup date (rejected),Date/Time,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Day After Tomorrow; Drop: Tomorrow","1. Set pickup date
+2. Try to set drop date before pickup","Error OR date picker prevents selection",
+OUT-UC-18,Drop time earlier than pickup time (same date),Date/Time,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Tomorrow 10:00; Drop: Tomorrow 08:00","1. Set same-day dates
+2. Set drop time before pickup time
+3. Search","Error: 'Drop date & time must be after pickup date & time'",
+OUT-UC-19,Drop time equals pickup time (rejected),Date/Time,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Tomorrow 09:00; Drop: Tomorrow 09:00","1. Set exact same date and time
+2. Search","Error: Drop must be after pickup",
+OUT-UC-20,Past pickup date attempt,Date/Time,CFG-1,P2,User logged in; on Home > Outstation,"Pickup Date: Yesterday","1. Try to select past date in picker","Date picker prevents past date selection",
+OUT-UC-21,Far future booking (90 days ahead),Date/Time,CFG-1,P3,User logged in; on Home > Outstation,"Pickup: +90 days","1. Set pickup 90 days in future
+2. Search","Future date accepted; Verify no upper limit",
+OUT-UC-22,Long trip duration (14 days),Date/Time,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Tomorrow; Drop: +14 days; Dest: Goa","1. Set 14-day range
+2. Search","14-day pricing calculated (Base × 14 + per-km)",
+OUT-UC-23,Airport pickup for outstation,Location,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Kempegowda International Airport; Dest: Tirupati","1. Enter airport as pickup
+2. Enter outstation destination
+3. Search","Airport recognized; Outstation route calculated",
+OUT-UC-24,Interstate destination (Karnataka to Tamil Nadu),Location,CFG-2,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Chennai; Diff Drop: ON; Drop: Chennai","1. Enter interstate destination
+2. Enable Different Drop
+3. Search","Interstate route accepted; State tax may apply",
+OUT-UC-25,Long distance destination (500+ km),Location,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Goa (~550 km)","1. Enter long-distance destination
+2. Search","Long-distance pricing; Extended route shown",
+OUT-UC-26,Destination same as pickup location,Location,CFG-1,P2,User logged in; on Home > Outstation,"Pickup: Majestic; Dest1: Majestic","1. Enter same location for pickup and destination
+2. Search","Error: 'Destination cannot be the same as pickup location'",
+OUT-UC-27,Duplicate destinations (Dest 1 = Dest 2),Location,CFG-3,P2,User logged in; Dest1 already filled,"Pickup: Bangalore; Dest1: Mysuru; Dest2: Mysuru","1. Add second destination
+2. Enter same location as first destination
+3. Search","Error or warning about duplicate destination",
+OUT-UC-28,International destination attempt,Location,CFG-1,P3,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Dubai","1. Try to enter international destination","Error: International destinations not supported OR autocomplete doesn't show",
+OUT-UC-29,Empty pickup location,Validation,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: (empty); Other fields: filled","1. Leave pickup empty
+2. Click Search","Error: 'Pickup location is required'",
+OUT-UC-30,Empty first destination,Validation,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest1: (empty)","1. Fill pickup only
+2. Leave destination empty
+3. Click Search","Error: 'First destination is required'",
+OUT-UC-31,Empty drop date/time,Validation,CFG-1,P1,User logged in; on Home > Outstation,"Pickup: Bangalore; Dest: Mysuru; Drop: (empty)","1. Fill pickup, destination, pickup date
+2. Leave drop date empty
+3. Search","Error: 'This field is required'",
+OUT-UC-32,Empty different drop location (toggle ON),Validation,CFG-2,P1,User logged in; on Home > Outstation,"Diff Drop: ON; Drop Location: (empty)","1. Enable Different Drop toggle
+2. Leave drop location empty
+3. Search","Error: 'Drop location is required'",
+OUT-UC-33,Zero passengers,Validation,CFG-1,P2,User logged in; on Home > Outstation,"Pax: 0","1. Enter 0 in passengers field
+2. Search","Error: 'Enter at least 1 passenger'",
+OUT-UC-34,Negative passengers (-5),Validation,CFG-1,P2,User logged in; on Home > Outstation,"Pax: -5","1. Enter -5 in passengers field
+2. Search","Error OR stripped to positive value (5)",
+OUT-UC-35,Decimal passengers (1.5),Validation,CFG-1,P2,User logged in; on Home > Outstation,"Pax: 1.5","1. Enter 1.5 in passengers field
+2. Search","Rounded/truncated OR error",BUG-UI-OS-001
+OUT-UC-36,Empty passengers field,Validation,CFG-1,P2,User logged in; on Home > Outstation,"Pax: (empty/cleared)","1. Clear passengers field
+2. Search","Field highlighted red; Search blocked",
+OUT-UC-37,Added destination left empty,Validation,CFG-3,P2,User logged in; on Home > Outstation,"Dest1: Mysuru; Dest2: (empty)","1. Click '+ Add Another Destination'
+2. Leave Dest 2 empty
+3. Search","Error: 'Destination location is required'",
+OUT-UC-38,Special characters in location search,Validation,CFG-1,P3,User logged in; on Home > Outstation,"Dest: ""Mysuru's Palace Area""","1. Search for location with apostrophe","Autocomplete handles correctly; Location found",
+OUT-UC-39,Enable Different Drop toggle,Toggle,CFG-2,P2,User logged in; form partially filled,"Diff Drop: OFF → ON","1. Fill pickup and destination
+2. Enable 'Different drop location' toggle","Drop location field appears; Field is required",BUG-UI-OS-002
+OUT-UC-40,Disable Different Drop toggle after filling,Toggle,CFG-2 → CFG-1,P2,User logged in; Diff Drop enabled with value,"Diff Drop: ON → OFF; Drop value: Mangaluru","1. With Diff Drop ON and value filled
+2. Disable toggle","Drop field hidden; Value cleared; Reverts to round-trip",
+OUT-UC-41,Toggle state persists after tab switch,Toggle,CFG-2,P2,User logged in; form filled with Diff Drop ON,"Navigate Ride → Home","1. Fill outstation form with Diff Drop ON
+2. Navigate to Ride tab
+3. Return to Home","All form values including toggle state preserved",
+OUT-UC-42,Sedan for small group outstation,Vehicle,CFG-1,P2,User logged in; on Home > Outstation,"Pax: 3; Dest: Mysuru; Vehicle: Sedan (VEH-001)","1. Search with 3 passengers
+2. Find Sedan in results","Sedan available with outstation pricing",
+OUT-UC-43,Tempo Traveller for group tour,Vehicle,CFG-3,P2,User logged in; on Home > Outstation,"Pax: 12; Dest1: Mysuru; Dest2: Coorg; Vehicle: Tempo Traveller (VEH-003)","1. Search with 12 passengers
+2. Find Tempo Traveller","Tempo Traveller shown; Capacity matches",
+OUT-UC-44,Luxury Volvo for corporate outstation,Vehicle,CFG-4,P2,User logged in; on Home > Outstation,"Pax: 40; Dest: Goa; Vehicle: 45 Seater Luxury Volvo (VEH-016)","1. Search with 40 passengers for long distance
+2. Find Luxury Volvo","Luxury bus with per-day + per-km pricing",
+OUT-UC-45,Premium Urbania for premium tour,Vehicle,CFG-1,P2,User logged in; on Home > Outstation,"Pax: 15; Dest: Ooty; Vehicle: 16 Seater Premium Urbania (VEH-013)","1. Search with 15 passengers
+2. Find Premium Urbania","Premium vehicle shown with appropriate pricing",
+OUT-UC-46,Verify fare breakup components,Fare Verification,CFG-1,P1,User logged in; vehicle results shown,"3-day trip; Dest: Mysuru; 290 km","1. Click on vehicle card
+2. Open Vehicle Details
+3. Click View Fare Breakup
+4. Verify components","Base Rate (per day), Day Bata, Night Bata, Toll & Parking, GST listed; Total matches",BUG-OUT-008
+OUT-UC-47,Multi-day fare calculation,Fare Verification,CFG-1,P1,User logged in; 3-day trip searched,"3 days; Base: Rs 52,500/day","1. View fare breakup
+2. Calculate: Base × 3 + extras
+3. Compare with Confirm screen total","Base: Rs 1,57,500; Plus bata, tax; Totals match",BUG-OUT-007
+OUT-UC-48,Per-km charge verification,Fare Verification,CFG-1,P2,User logged in; long trip searched,"500+ km trip","1. View fare breakup
+2. Find per-km charge line","Per-km charge visible (e.g., Rs 105/km)",BUG-OUT-008
+OUT-UC-49,State tax for interstate trips,Fare Verification,CFG-2,P2,User logged in; interstate trip searched,"Bangalore → Chennai","1. Search interstate trip
+2. View fare breakup","State tax line item visible",BUG-OUT-009
+OUT-UC-50,Remove middle destination from 3-stop route,Edge Case,CFG-3,P3,User logged in; 3 destinations added,"Dest1: Mysuru; Dest2: Hassan; Dest3: Coorg","1. Add 3 destinations
+2. Click Remove on Hassan (middle)
+3. Verify order","Remaining: Mysuru, Coorg in correct order",
+OUT-UC-51,Double-tap Search Vehicles,Edge Case,CFG-1,P3,User logged in; form filled,"Rapid double-tap","1. Fill valid form
+2. Rapidly tap Search twice","Single search initiated; No duplicate results",
+OUT-UC-52,Edit Trip Details after vehicle search,Edge Case,CFG-1,P3,User logged in; vehicle results shown,"Edit and re-search","1. View vehicle results
+2. Click 'Edit Trip Details'
+3. Modify destination
+4. Re-search","Form shows previous values; Re-search updates route/distance",
+OUT-UC-53,Unicode/Kannada location name,Edge Case,CFG-1,P3,User logged in; on Home > Outstation,"Dest: ಮೈಸೂರು","1. Type Kannada text in destination","Autocomplete handles OR suggests English equivalent",
+OUT-UC-54,Very long route name,Edge Case,CFG-3,P3,User logged in; on Home > Outstation,"Dest: ""Kempegowda International Airport Terminal 2 Domestic Arrivals""","1. Enter very long location name
+2. Submit","UI handles without layout breaking",
+OUT-UC-55,Browser refresh with form data,Edge Case,CFG-1,P3,User logged in; form completely filled,"Press F5/Refresh","1. Fill outstation form
+2. Press F5/Refresh browser","Form data persisted (draft) OR cleared with notification",

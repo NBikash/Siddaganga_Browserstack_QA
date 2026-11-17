@@ -1,0 +1,23 @@
+{
+  "id": "TC_TRF_009",
+  "module": "Transfer P2P+Return",
+  "title": "Return date earlier than onward date",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Onward D+6, return D+5",
+  "steps": "Add Return → set return pickup before onward",
+  "expected": "Rejected with message",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Earlier return not accepted",
+      "pass": true,
+      "detail": "{\"d\":{\"requested\":\"2026-11-22\",\"dayDisabled\":true,\"value\":\"2026-11-18\"},\"nav\":false,\"msgs\":[\"Selected time: 8:00 AM\",\"Return pickup cannot be before drop date\"]}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_009-validation-r2.png"
+  ],
+  "durationSec": 56,
+  "executedAt": "2026-11-17T08:58:39.951Z"
+}

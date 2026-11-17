@@ -1,0 +1,39 @@
+{
+  "id": "TC_AUTH_011",
+  "module": "Authentication & Profile",
+  "title": "Notification bell",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Header bell with count",
+  "steps": "Click the bell / count badge",
+  "expected": "Notification list opens; count matches items",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Bell control present",
+      "pass": true,
+      "detail": "badge 5"
+    },
+    {
+      "label": "Clicking the bell opens the Notifications list",
+      "pass": true,
+      "detail": "opened"
+    },
+    {
+      "label": "\"Mark all as read\" available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Badge count matches unread items listed",
+      "pass": true,
+      "detail": "badge 5, items 5"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_011-r2.png"
+  ],
+  "notes": "Notification content (payments/inquiries) not recorded – personal data.",
+  "durationSec": 14,
+  "executedAt": "2026-11-17T08:23:09.575Z"
+}

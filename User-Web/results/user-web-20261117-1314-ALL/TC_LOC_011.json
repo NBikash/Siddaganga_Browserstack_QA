@@ -1,0 +1,23 @@
+{
+  "id": "TC_LOC_011",
+  "module": "Local",
+  "title": "Past dates are disabled in the date picker",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Yesterday",
+  "steps": "Open Pickup Date picker → inspect yesterday",
+  "expected": "Yesterday disabled / not selectable",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Yesterday not selectable",
+      "pass": true,
+      "detail": "{\"requested\":\"2026-11-16\",\"dayDisabled\":true,\"value\":\"2026-11-17\"}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_011-date.png"
+  ],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T08:33:42.888Z"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "TC_SVC_002",
+  "module": "Services & About",
+  "title": "About Us page sections",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "/about-us",
+  "steps": "Open About Us",
+  "expected": "Journey timeline, vision, mission, founder note, services",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "\"Our Journey\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"The Vision\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"The Mission\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Founder\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Types of Services\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Founding year consistent between Home and About",
+      "pass": false,
+      "detail": "Home says \"since 1997\"; About says \"since 2005\""
+    }
+  ],
+  "evidence": [],
+  "durationSec": 28,
+  "executedAt": "2026-11-17T08:11:35.955Z"
+}

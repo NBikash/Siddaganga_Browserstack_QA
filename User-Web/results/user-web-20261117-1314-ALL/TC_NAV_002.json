@@ -1,0 +1,43 @@
+{
+  "id": "TC_NAV_002",
+  "module": "Navigation & Content",
+  "title": "Header menu links navigate correctly",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Home, Services, Our Fleet, About Us, Contact Us",
+  "steps": "Click each header link",
+  "expected": "Each opens its page (URL + heading); active link highlighted",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Services → /services",
+      "pass": true,
+      "detail": "/services"
+    },
+    {
+      "label": "Our Fleet → /ourfleet",
+      "pass": true,
+      "detail": "/ourfleet"
+    },
+    {
+      "label": "About Us → /about-us",
+      "pass": true,
+      "detail": "/about-us"
+    },
+    {
+      "label": "Contact Us → /contact-us",
+      "pass": true,
+      "detail": "/contact-us"
+    },
+    {
+      "label": "Home → /",
+      "pass": true,
+      "detail": "/"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_002.png"
+  ],
+  "durationSec": 86,
+  "executedAt": "2026-11-17T07:46:02.019Z"
+}

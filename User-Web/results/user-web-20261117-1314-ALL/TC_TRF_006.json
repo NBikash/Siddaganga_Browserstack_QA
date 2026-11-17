@@ -1,0 +1,39 @@
+{
+  "id": "TC_TRF_006",
+  "module": "Transfer P2P",
+  "title": "Passenger limit: field max=20 vs requirement 1–49 (ADD-005)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": "Passengers 20 / 21 / 49",
+  "steps": "Enter 20, 21 and 49 → Book Now!",
+  "expected": "1–49 accepted (ADD-005); >49 → multiple vehicles",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "20 accepted",
+      "pass": true,
+      "detail": "{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"}"
+    },
+    {
+      "label": "21 accepted (within 1–49)",
+      "pass": false,
+      "detail": "{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"}"
+    },
+    {
+      "label": "49 accepted (within 1–49)",
+      "pass": false,
+      "detail": "{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p20-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p20-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p21-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p21-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p49-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_006-p49-results-vehicles-r2.png"
+  ],
+  "actual": "{\"20\":{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"},\"21\":{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"},\"49\":{\"field\":\"20\",\"navigated\":true,\"msgs\":[],\"pax\":\"Passengers:20 \"}}",
+  "durationSec": 91,
+  "executedAt": "2026-11-17T08:34:50.247Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_011",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Confirm Phone Booking\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/confirm-phone-booking",
+  "steps": "Footer → Confirm Phone Booking",
+  "expected": "Confirm Phone Booking page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /confirm-phone-booking",
+      "pass": true,
+      "detail": "/confirm-phone-booking"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "36 chars: \"Dashboard Confirm Phone Booking Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_011-r2.png"
+  ],
+  "durationSec": 52,
+  "executedAt": "2026-11-17T08:19:17.235Z"
+}

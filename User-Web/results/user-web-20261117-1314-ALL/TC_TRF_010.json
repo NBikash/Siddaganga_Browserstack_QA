@@ -1,0 +1,41 @@
+{
+  "id": "TC_TRF_010",
+  "module": "Transfer P2P",
+  "title": "Same From and To location",
+  "type": "Negative",
+  "priority": "Medium",
+  "data": {
+    "pickup": "Whitefield, Bengaluru, Karnataka, India",
+    "drop": "Whitefield, Bengaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-20",
+      "dayDisabled": false,
+      "value": "2026-11-20"
+    },
+    "time": {
+      "requested": "9:00 AM",
+      "disabled": false,
+      "value": "9:00 AM"
+    },
+    "pax": "2",
+    "integrity": []
+  },
+  "steps": "Enter identical From/To → Book Now!",
+  "expected": "Validation: pickup and drop cannot be the same",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Identical From/To rejected",
+      "pass": false,
+      "detail": "Accepted: 20 Buses Found | Transfer - > 30 KM"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_010-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_010-results-vehicles-r2.png"
+  ],
+  "found": "20 Buses Found | Transfer - > 30 KM",
+  "summary": "You have Searched For : G P P G Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :20 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle A",
+  "durationSec": 28,
+  "executedAt": "2026-11-17T08:37:15.007Z"
+}

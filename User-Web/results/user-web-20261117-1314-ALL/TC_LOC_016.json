@@ -1,0 +1,24 @@
+{
+  "id": "TC_LOC_016",
+  "module": "Local",
+  "title": "Multi-day ON with only one date (today) selected",
+  "type": "Negative",
+  "priority": "Medium",
+  "data": "Multi-day ON; no extra date",
+  "steps": "Multi-day ON → keep only the pre-selected date → Book Now!",
+  "expected": "Validation: a multi-day trip needs at least 2 dates (or switch to single-day)",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Single date flagged for a multi-day trip",
+      "pass": false,
+      "detail": "Accepted: 20 Buses Found | Local - 4 HR / 80 KM; Dates :17 Nov, 2026 Pickup"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_016-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_016-results-vehicles-r2.png"
+  ],
+  "durationSec": 23,
+  "executedAt": "2026-11-17T08:37:21.704Z"
+}

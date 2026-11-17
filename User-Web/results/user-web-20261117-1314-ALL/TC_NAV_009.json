@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_009",
+  "module": "Navigation & Content",
+  "title": "Footer link \"Agent Registration\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/agent-registration",
+  "steps": "Footer → Agent Registration",
+  "expected": "Agent Registration page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /agent-registration",
+      "pass": true,
+      "detail": "/agent-registration"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "33 chars: \"Dashboard Agent Registration Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_009-r2.png"
+  ],
+  "durationSec": 54,
+  "executedAt": "2026-11-17T08:17:31.489Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TC_RES_004",
+  "module": "Results & Vehicle Details",
+  "title": "Comfort Priority and Clear Preferences",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Seat pitch priority",
+  "steps": "Click \"Seat pitch priority\" → note order → Clear Preferences",
+  "expected": "Order changes per priority; Clear resets",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Seat-pitch priority reorders/filters results",
+      "pass": false,
+      "detail": "before Seater Deluxe Coach D35NA,Seater Deluxe Coach D40NA,Seater D | after Seater Deluxe Coach D35NA,Seater Deluxe Coach D40NA,Seater D"
+    },
+    {
+      "label": "Clear Preferences restores default order",
+      "pass": true,
+      "detail": "Seater Deluxe Coach D35NA,Seater Deluxe Coach D40NA,Seater D"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_004-seatpitch-r3.png"
+  ],
+  "durationSec": 31,
+  "executedAt": "2026-11-17T09:00:18.642Z"
+}

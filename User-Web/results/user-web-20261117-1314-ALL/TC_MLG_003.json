@@ -1,0 +1,45 @@
+{
+  "id": "TC_MLG_003",
+  "module": "Multi-Leg",
+  "title": "Leg type selector and Local leg Save!",
+  "type": "Functional",
+  "priority": "High",
+  "data": "6 pax; Local leg Hebbal D+24 9:00 AM 4 hrs",
+  "steps": "Next → Local leg → fill → Save!",
+  "expected": "Toast \"Local leg added!\"; wizard advances to Outstation stage",
+  "status": "Blocked",
+  "checks": [
+    {
+      "label": "Leg type \"Local\" selector",
+      "pass": false,
+      "detail": ""
+    },
+    {
+      "label": "Leg type \"Outstation\" selector",
+      "pass": false,
+      "detail": ""
+    },
+    {
+      "label": "Leg type \"Transfer\" selector",
+      "pass": false,
+      "detail": ""
+    },
+    {
+      "label": "Toast \"Local leg added!\"",
+      "pass": true,
+      "detail": "[\"Local leg added!\"]"
+    },
+    {
+      "label": "Advances to Outstation stage",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_MLG_003-r3.png"
+  ],
+  "durationSec": 21,
+  "executedAt": "2026-11-17T08:55:14.620Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict.",
+  "triaged": true
+}

@@ -1,0 +1,20 @@
+{
+  "id": "TC_RES_003",
+  "module": "Results & Vehicle Details",
+  "title": "Vehicle Preferences: Vehicle Age filter",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Local search; select \"Brand New (0-2 years)\"",
+  "steps": "Click each age option",
+  "expected": "Result list updates according to filter; \"Any\" restores",
+  "status": "Blocked",
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_003-error-r3.png"
+  ],
+  "checks": [],
+  "durationSec": 56,
+  "executedAt": "2026-11-17T08:59:47.903Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict. Last error: TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "triaged": true
+}

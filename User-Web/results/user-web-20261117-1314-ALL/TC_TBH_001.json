@@ -1,0 +1,29 @@
+{
+  "id": "TC_TBH_001",
+  "module": "Transfer By Hour",
+  "title": "Mandatory pickup validation",
+  "type": "Negative",
+  "priority": "High",
+  "data": "Blank",
+  "steps": "Transfer → By Hour → Book Now!",
+  "expected": "Pickup required",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Form is not submitted",
+      "pass": true,
+      "detail": "stayed on form"
+    },
+    {
+      "label": "Message \"Pickup location is required\" shown",
+      "pass": true,
+      "detail": "[\"Pickup location is required\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_001-validation-r2.png"
+  ],
+  "actual": "Pickup location is required",
+  "durationSec": 39,
+  "executedAt": "2026-11-17T08:39:05.706Z"
+}

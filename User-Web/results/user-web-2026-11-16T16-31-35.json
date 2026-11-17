@@ -1,0 +1,56 @@
+{
+  "runId": "user-web-2026-11-16T16-31-35",
+  "testCase": "USER-LOCAL-QUICK-01",
+  "title": "Basic Local Trip Search",
+  "environment": "Preprod",
+  "startTime": "2026-11-16T16:31:35.512Z",
+  "steps": [
+    {
+      "name": "Navigate to Preprod",
+      "status": "pass",
+      "details": "HTTP 200",
+      "timestamp": "2026-11-16T16:31:44.663Z"
+    },
+    {
+      "name": "Submit login",
+      "status": "pass",
+      "details": "Login form submitted",
+      "timestamp": "2026-11-16T16:32:03.534Z"
+    },
+    {
+      "name": "Navigate to Local",
+      "status": "warn",
+      "details": "Local link not found - may already be on booking page",
+      "timestamp": "2026-11-16T16:32:03.606Z"
+    },
+    {
+      "name": "Enter pickup location",
+      "status": "pass",
+      "details": "Bangalore",
+      "timestamp": "2026-11-16T16:32:05.322Z"
+    },
+    {
+      "name": "Click search",
+      "status": "pass",
+      "details": "Search initiated",
+      "timestamp": "2026-11-16T16:32:08.749Z"
+    },
+    {
+      "name": "Vehicle results displayed",
+      "status": "warn",
+      "details": "Could not verify results",
+      "timestamp": "2026-11-16T16:32:08.836Z"
+    }
+  ],
+  "status": "inconclusive",
+  "screenshots": [
+    "01-homepage.png",
+    "02-login-filled.png",
+    "03-after-login.png",
+    "04-local-page.png",
+    "05-form-filled.png",
+    "06-search-results.png",
+    "07-final-state.png"
+  ],
+  "endTime": "2026-11-16T16:32:08.897Z"
+}

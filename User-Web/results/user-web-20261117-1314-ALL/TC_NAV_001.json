@@ -1,0 +1,73 @@
+{
+  "id": "TC_NAV_001",
+  "module": "Navigation & Content",
+  "title": "Home page loads with all key sections",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": "URL /",
+  "steps": "Open home page",
+  "expected": "Hero, Smart Inquiry (4 tabs), Fleets, Amenities, Why Travel With, About and footer render; HTTP 200",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "HTTP 200",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "label": "Section \"Smart Inquiry\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Local\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Outstation\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Transfer\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Multi-Leg\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Explore\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Amenities\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"Why Travel With\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Section \"About Siddaganga\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Console errors (observation)",
+      "pass": true,
+      "detail": "none"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_001-home.png"
+  ],
+  "durationSec": 13,
+  "executedAt": "2026-11-17T07:44:36.069Z"
+}

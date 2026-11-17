@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_013",
+  "module": "Navigation & Content",
+  "title": "Footer link \"FAQ\" opens a page with content",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/faq",
+  "steps": "Footer → FAQ",
+  "expected": "FAQ page shows its own heading and content",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /faq",
+      "pass": true,
+      "detail": "/faq"
+    },
+    {
+      "label": "Page has its own content (beyond header/footer)",
+      "pass": false,
+      "detail": "18 chars: \"Dashboard FAQ Page\""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_013-r2.png"
+  ],
+  "durationSec": 51,
+  "executedAt": "2026-11-17T08:20:58.190Z"
+}

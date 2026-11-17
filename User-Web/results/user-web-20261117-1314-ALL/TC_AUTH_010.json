@@ -1,0 +1,16 @@
+{
+  "id": "TC_AUTH_010",
+  "module": "Authentication & Profile",
+  "title": "Logout",
+  "type": "Functional",
+  "priority": "High",
+  "data": "—",
+  "steps": "Profile → Logout",
+  "expected": "Session ended; Log In shown",
+  "status": "Blocked",
+  "actual": "Blocked (approval not given): logout is on the requires-approval list and would end the test session.",
+  "checks": [],
+  "evidence": [],
+  "durationSec": 0,
+  "executedAt": "2026-11-17T08:03:55.264Z"
+}

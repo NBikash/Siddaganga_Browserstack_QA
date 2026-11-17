@@ -1,0 +1,136 @@
+{
+  "id": "TC_LOC_018",
+  "module": "Local",
+  "title": "Long-distance drop within Local (LOC-021 Whitefield → Mangaluru)",
+  "type": "Edge",
+  "priority": "Medium",
+  "data": {
+    "pickup": "Whitefield, Bengaluru, Karnataka, India",
+    "drop": "Mangaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-22",
+      "dayDisabled": false,
+      "value": "2026-11-22"
+    },
+    "time": {
+      "requested": "6:00 AM",
+      "disabled": false,
+      "value": "6:00 AM"
+    },
+    "pax": "4",
+    "hrs": "12",
+    "integrity": []
+  },
+  "steps": "Drop ON → far drop → search",
+  "expected": "App either converts/rejects a 350 km \"local\" trip or shows realistic distance; not a silent 80 km local package",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Distance reflects the far drop (not the fixed 80 KM package)",
+      "pass": false,
+      "detail": "Distance: 80 ; 20 Buses Found | Local - 12 HR / 80 KM"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-results-summary.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-results-vehicles.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-fare-breakup.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-review.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_018-applied-fare.png"
+  ],
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | Sedan",
+      "pricingBlock": [
+        "Local Trip Pricing",
+        "Local Trip – 8 Hrs / 80 Kms",
+        "Standard local rental package",
+        "Base Rate (8Hr/80Km)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹4,000",
+        "Extra Km Charge",
+        "₹32 / km",
+        "Extra Hour Charge",
+        "₹400 / hr",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹500",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹500",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "89 hp · 113 Nm",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})"
+      ],
+      "baseRate": "Base Rate (8Hr/80Km) = ₹4,000",
+      "extraKm": "Extra Km Charge = ₹32 / km",
+      "extraHour": "Extra Hour Charge = ₹400 / hr",
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹500",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹4,000",
+      "Day Bata Cost (Before 10pm or After 6am) = ₹500",
+      "Night Bata Cost (Before 6am or After 10pm) = ₹0",
+      "Estimated Grand Total = ₹4,500"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹4000 + Day Bata Cost ₹500 + Night Bata Cost ₹0 = ₹4500",
+      "shown": 4500,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹4000 × 1 day",
+      "expected": 4000,
+      "applied": 4000,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "vehicle": {
+    "name": "Sedan",
+    "code": "D SDN",
+    "seats": 4,
+    "price": "₹4,500"
+  },
+  "found": "20 Buses Found | Local - 12 HR / 80 KM",
+  "summary": "You have Searched For : G P D G Map Data Terms Leg 1 Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :22 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:12 Hours Passengers:4 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 47,
+  "executedAt": "2026-11-17T08:39:14.593Z",
+  "actual": "Manual triage: Local trip Whitefield → Mangaluru (~350 km) accepted as \"Local – 12 HR / 80 KM\" with Distance 80 KM. Automated check passed only because of a regex gap.",
+  "triaged": true
+}

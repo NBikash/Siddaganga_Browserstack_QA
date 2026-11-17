@@ -1,0 +1,69 @@
+{
+  "id": "TC_RES_002",
+  "module": "Results & Vehicle Details",
+  "title": "Search summary reflects entered data",
+  "type": "Functional",
+  "priority": "High",
+  "data": {
+    "pickup": "Indiranagar, Bengaluru, Karnataka, India",
+    "dests": [
+      "Mangaluru, Karnataka, India",
+      "Udupi, Karnataka, India"
+    ],
+    "date": {
+      "requested": "2026-12-03",
+      "dayDisabled": false,
+      "value": "2026-12-03"
+    },
+    "time": {
+      "requested": "6:00 AM",
+      "disabled": false,
+      "value": "6:00 AM"
+    },
+    "dropDate": {
+      "requested": "2026-12-05",
+      "dayDisabled": false,
+      "value": "2026-12-05"
+    },
+    "dropTime": {
+      "requested": "9:00 PM",
+      "disabled": false,
+      "value": "9:00 PM"
+    },
+    "pax": "6",
+    "integrity": []
+  },
+  "steps": "Search → read \"You have Searched For\"",
+  "expected": "Pickup, destinations, dates, duration, pax match input",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Pickup",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Both destinations",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Pax",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Duration 3 Days",
+      "pass": true,
+      "detail": "Duration:3 "
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_002-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_002-results-vehicles-r2.png"
+  ],
+  "found": "20 Buses Found | Outstation - 0 KM",
+  "summary": "You have Searched For : G P D D G Map Data Terms Leg 1 Outstation Garage (Start) → Indiranagar, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Udupi, Karnataka, India → Garage (Return) Distance:900 KM Dates :3-4-5 Dec- 2026 Pickup Address:Indiranagar, Bengaluru, Karnataka, India Duration:3 Days Passengers:6 Pax Drop Address:Udupi, Karnataka, India Modify Inquiry Vehicle Preferences Ve",
+  "durationSec": 33,
+  "executedAt": "2026-11-17T08:49:08.774Z"
+}

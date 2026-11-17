@@ -1,0 +1,41 @@
+{
+  "id": "TC_LOC_017",
+  "module": "Local",
+  "title": "Pickup outside service city (Chennai) for a Local trip",
+  "type": "Negative",
+  "priority": "Medium",
+  "data": {
+    "pickup": "Chennai Central, Tamil Nadu",
+    "date": {
+      "requested": "2026-11-20",
+      "dayDisabled": false,
+      "value": "2026-11-20"
+    },
+    "time": {
+      "requested": "10:00 AM",
+      "disabled": false,
+      "value": "10:00 AM"
+    },
+    "pax": "2",
+    "hrs": "4",
+    "integrity": []
+  },
+  "steps": "Local → pickup Chennai → search",
+  "expected": "Local trip rejected or clear message (Local is Bengaluru-only per test data)",
+  "status": "Inconclusive",
+  "checks": [
+    {
+      "label": "Out-of-city pickup flagged",
+      "pass": true,
+      "detail": "[\"Pickup location is required\",\"Selected time: 10:00 AM\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_017-validation-r2.png"
+  ],
+  "summary": "",
+  "durationSec": 51,
+  "executedAt": "2026-11-17T08:38:27.310Z",
+  "actual": "Manual triage: the out-of-city pickup suggestion was not selected by automation (message \"Pickup location is required\"), so whether Local accepts a Chennai pickup was not verified.",
+  "triaged": true
+}

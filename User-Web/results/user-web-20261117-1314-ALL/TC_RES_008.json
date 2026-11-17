@@ -1,0 +1,28 @@
+{
+  "id": "TC_RES_008",
+  "module": "Results & Vehicle Details",
+  "title": "Direct access to /send-inquiry without a search",
+  "type": "Edge",
+  "priority": "Low",
+  "data": "URL /send-inquiry",
+  "steps": "Open URL directly",
+  "expected": "Graceful redirect or empty state with guidance",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "No undefined/NaN placeholders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Behaviour (observation)",
+      "pass": true,
+      "detail": "/send-inquiry: 0 Buses Found "
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_RES_008.png"
+  ],
+  "durationSec": 7,
+  "executedAt": "2026-11-17T08:52:15.555Z"
+}

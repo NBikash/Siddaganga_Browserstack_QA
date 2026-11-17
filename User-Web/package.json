@@ -1,0 +1,26 @@
+{
+  "name": "user-web",
+  "version": "1.0.0",
+  "description": "User-Web (Siddaganga Travels Preprod) Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/local-test-runner.js",
+    "test:local": "node tests/local-test-runner.js",
+    "test:login": "node tests/login-manual.js",
+    "test:quick": "node tests/local-quick-test.js"
+  },
+  "keywords": [
+    "qa",
+    "testing",
+    "playwright"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "playwright": "^1.65.1"
+  }
+}

@@ -1,0 +1,21 @@
+import * as ui from '../allmod/ui.mjs';
+import fs from 'node:fs';
+export default async ({ page, shot }) => {
+  const out = {}; const net = [];
+  page.on('request', r => { if (!['GET', 'OPTIONS'].includes(r.method())) net.push(`${r.method()} ${r.url().split('?')[0].replace(/.*\/api\/v1/, '')}`); });
+  await ui.open(page, 'Multi-Leg');
+  await page.locator('xpath=//*[normalize-space(text())="Total Passengers"]/following::input[1]').fill('6');
+  await page.getByRole('button', { name: 'Next' }).click(); await page.waitForTimeout(1500);
+  const P = ui.pane(page);
+  out.paxDisabled = await P.locator('input[placeholder="Enter number of passengers"]').first().isDisabled().catch(() => null);
+  out.leg1 = await ui.place(page, 'Search pickup location', 'Hebbal', 'Bengaluru');
+  out.d1 = await ui.setDate(page, '2026-11-24', 0); out.t1 = await ui.setTime(page, '9:00 AM', 0);
+  out.h1 = await ui.num(page, 'Enter Number of Hours', 4);
+  await P.getByRole('button', { name: 'Save!' }).click(); await page.waitForTimeout(2000);
+  out.afterSave = { msgs: await ui.msgs(page), text: ui.norm(await P.innerText()).slice(0, 500), shot: await shot('explore/multileg-after-save') };
+  await P.getByRole('button', { name: '+ Add Another Leg' }).click().catch(e => out.addErr = String(e).slice(0, 80)); await page.waitForTimeout(1500);
+  out.afterAdd = { text: ui.norm(await P.innerText()).slice(0, 700), shot: await shot('explore/multileg-leg2', { fullPage: false }) };
+  out.buttonsNow = (await P.locator('button').allInnerTexts()).map(ui.norm).filter(Boolean);
+  out.net = net;
+  return out;
+};

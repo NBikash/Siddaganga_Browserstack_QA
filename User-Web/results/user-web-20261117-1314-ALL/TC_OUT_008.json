@@ -1,0 +1,21 @@
+{
+  "id": "TC_OUT_008",
+  "module": "Outstation",
+  "title": "Interstate single destination with different drop (OUT-014 Domlur → Hyderabad, drop KIA)",
+  "type": "Functional",
+  "priority": "High",
+  "data": "Domlur → Hyderabad, drop Kempegowda Airport; D+15 5:00 AM → D+17 10:00 PM; 25 pax; 25 Seater Premium AC Coach (VEH-012)",
+  "steps": "Fill → search → review",
+  "expected": "Interstate trip priced; State Tax / permit component shown or flagged",
+  "fare": true,
+  "status": "Blocked",
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_008-error-r3.png"
+  ],
+  "checks": [],
+  "durationSec": 49,
+  "executedAt": "2026-11-17T08:55:57.477Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict. Last error: TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "triaged": true
+}

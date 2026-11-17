@@ -1,0 +1,24 @@
+{
+  "id": "TC_AUTH_004",
+  "module": "Authentication & Profile",
+  "title": "My Profile validation: invalid email (not saved)",
+  "type": "Negative",
+  "priority": "Medium",
+  "data": "Email \"abc@\"",
+  "steps": "Type invalid email → Submit (profile API blocked by guard, value restored)",
+  "expected": "Client-side email validation message",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Invalid email flagged",
+      "pass": true,
+      "detail": "[] native: Please enter a part following '@'. 'abc@' is incomplete."
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_004.png"
+  ],
+  "notes": "Profile update API blocked; original value restored; nothing saved.",
+  "durationSec": 12,
+  "executedAt": "2026-11-17T07:59:33.089Z"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "TC_LOC_008",
+  "module": "Local",
+  "title": "Hours boundary: 0, 24 (max) and 25 (above max)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": "Hours = 0 / 24 / 25",
+  "steps": "Enter each value in Number of Hours → Book Now!",
+  "expected": "24 accepted; 0 and 25 rejected or clamped to 1..24 with a message",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "24 hours accepted",
+      "pass": true,
+      "detail": "{\"field\":\"24\",\"navigated\":true,\"found\":\"20 Buses Found | Local - 24 HR / 80 KM\",\"msgs\":[],\"summary\":\"Duration:24 \"}"
+    },
+    {
+      "label": "0 hours rejected/clamped",
+      "pass": true,
+      "detail": "{\"field\":\"0\",\"navigated\":false,\"msgs\":[\"Selected time: 10:00 AM\"]}"
+    },
+    {
+      "label": "25 hours rejected/clamped",
+      "pass": true,
+      "detail": "{\"field\":\"25\",\"navigated\":false,\"msgs\":[\"Selected time: 10:00 AM\"]}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_008-h0-validation-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_008-h24-results-summary-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_008-h24-results-vehicles-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_008-h25-validation-r2.png"
+  ],
+  "actual": "{\"0\":{\"field\":\"0\",\"navigated\":false,\"msgs\":[\"Selected time: 10:00 AM\"]},\"24\":{\"field\":\"24\",\"navigated\":true,\"found\":\"20 Buses Found | Local - 24 HR / 80 KM\",\"msgs\":[],\"summary\":\"Duration:24 \"},\"25\":{\"field\":\"25\",\"navigated\":false,\"msgs\":[\"Selected time: 10:00 AM\"]}}",
+  "durationSec": 112,
+  "executedAt": "2026-11-17T08:31:44.312Z"
+}

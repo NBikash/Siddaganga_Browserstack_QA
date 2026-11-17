@@ -1,0 +1,28 @@
+{
+  "id": "TC_NAV_017",
+  "module": "Navigation & Content",
+  "title": "Footer social media icons link to profiles",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "Facebook, Instagram, X, LinkedIn, YouTube icons",
+  "steps": "Inspect each footer social icon",
+  "expected": "Each icon opens Siddaganga's profile on that platform",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Five social icons present",
+      "pass": true,
+      "detail": "5: https://www.facebook.com/ https://www.instagram.com/ https://twitter.com/ https://www.linkedin.com/ https://www.youtube.com/"
+    },
+    {
+      "label": "Icons link to Siddaganga's own profiles (not platform home pages)",
+      "pass": false,
+      "detail": "https://www.facebook.com/ https://www.instagram.com/ https://twitter.com/ https://www.linkedin.com/ https://www.youtube.com/"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_NAV_017-r2.png"
+  ],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T08:22:56.051Z"
+}

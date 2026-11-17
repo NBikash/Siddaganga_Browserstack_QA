@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Path Test Report - happy-path-20261116-2322</title>
+  <style>
+    :root { --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; --bg: #f8fafc; --card: #fff; --text: #1e293b; --border: #e2e8f0; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --border: #334155; } }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.6; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; margin: 1.5rem 0 1rem; }
+    .meta { font-size: 0.875rem; opacity: 0.8; margin-bottom: 1.5rem; }
+    .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat { background: var(--card); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+    .stat-value { font-size: 2.5rem; font-weight: 700; }
+    .stat-label { font-size: 0.75rem; text-transform: uppercase; opacity: 0.7; }
+    .pass { color: var(--pass); }
+    .fail { color: var(--fail); }
+    .card { background: var(--card); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+    .tc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .tc-title { font-size: 1.1rem; font-weight: 600; }
+    .tc-id { font-size: 0.875rem; opacity: 0.7; }
+    .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .badge.pass { background: #dcfce7; color: #166534; }
+    .badge.fail { background: #fee2e2; color: #991b1b; }
+    .config-info { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; }
+    .config-tag { background: var(--bg); padding: 0.25rem 0.5rem; border-radius: 4px; }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem; margin: 1rem 0; }
+    .data-item { background: var(--bg); padding: 0.5rem; border-radius: 4px; font-size: 0.875rem; }
+    .data-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.6; }
+    .steps { margin-top: 1rem; }
+    .step { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+    .step:last-child { border-bottom: none; }
+    .step-icon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; }
+    .step-icon.pass { background: var(--pass); }
+    .step-icon.fail { background: var(--fail); }
+    .step-icon.warn { background: var(--warn); }
+    .step-note { opacity: 0.7; margin-left: auto; }
+    .screenshots { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.875rem; }
+    .expected { background: #f0fdf4; padding: 0.75rem; border-radius: 8px; margin-top: 1rem; font-size: 0.875rem; border-left: 4px solid var(--pass); }
+    @media (prefers-color-scheme: dark) { .expected { background: #14532d20; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Happy Path Test Report</h1>
+    <p class="meta">
+      <strong>Run ID:</strong> happy-path-20261116-2322 |
+      <strong>Category:</strong> Happy Path |
+      <strong>Environment:</strong> Preprod<br>
+      <strong>Time:</strong> 2026-11-16T17:52:57.244Z → 2026-11-16T17:58:29.967Z
+    </p>
+
+    <div class="summary">
+      <div class="stat">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Total Tests</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value pass">4</div>
+        <div class="stat-label">Passed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value fail">0</div>
+        <div class="stat-label">Failed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100.0%</div>
+        <div class="stat-label">Pass Rate</div>
+      </div>
+    </div>
+
+    <h2>Test Cases</h2>
+    
+      <div class="card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">LOCAL-UC-01</span>
+            <span class="tc-title">Basic local trip within city</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+
+        <div class="config-info">
+          <span class="config-tag"><strong>Config:</strong> CFG-1</span>
+          <span class="config-tag"><strong>Multi-day:</strong> OFF</span>
+          <span class="config-tag"><strong>Diff Drop:</strong> OFF</span>
+        </div>
+
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Koramangala, Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>2</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>4</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>tomorrow</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>10:00</div>
+            </div>
+          
+        </div>
+
+        <div class="expected">
+          <strong>Expected:</strong> Vehicle results displayed with pricing
+        </div>
+
+        <div class="steps">
+          <strong>Execution Steps:</strong>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Koramangala, Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">2</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter hours</span>
+              <span class="step-note">4</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Results page loaded</span>
+              <span class="step-note">7 vehicles found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Vehicle results displayed</span>
+              
+            </div>
+          
+        </div>
+
+        <div class="screenshots">
+          <strong>📸 Screenshots:</strong> LOCAL-UC-01-form-filled.png, LOCAL-UC-01-result.png
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">LOCAL-UC-02</span>
+            <span class="tc-title">Multi-day local trip (2 consecutive days)</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+
+        <div class="config-info">
+          <span class="config-tag"><strong>Config:</strong> CFG-2</span>
+          <span class="config-tag"><strong>Multi-day:</strong> ON</span>
+          <span class="config-tag"><strong>Diff Drop:</strong> OFF</span>
+        </div>
+
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>MG Road, Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>4</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>8</div>
+            </div>
+          
+        </div>
+
+        <div class="expected">
+          <strong>Expected:</strong> Multi-day pricing shown (fare × 2)
+        </div>
+
+        <div class="steps">
+          <strong>Execution Steps:</strong>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enable Multi-day</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">MG Road, Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">4</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter hours</span>
+              <span class="step-note">8</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Results page loaded</span>
+              <span class="step-note">7 vehicles found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Vehicle results displayed</span>
+              
+            </div>
+          
+        </div>
+
+        <div class="screenshots">
+          <strong>📸 Screenshots:</strong> LOCAL-UC-02-form-filled.png, LOCAL-UC-02-result.png
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">LOCAL-UC-03</span>
+            <span class="tc-title">Local trip with different drop location</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+
+        <div class="config-info">
+          <span class="config-tag"><strong>Config:</strong> CFG-3</span>
+          <span class="config-tag"><strong>Multi-day:</strong> OFF</span>
+          <span class="config-tag"><strong>Diff Drop:</strong> ON</span>
+        </div>
+
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Indiranagar, Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">drop</div>
+              <div>Electronic City, Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>3</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>6</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>tomorrow</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>10:00</div>
+            </div>
+          
+        </div>
+
+        <div class="expected">
+          <strong>Expected:</strong> Route shows pickup → drop, distance calculated
+        </div>
+
+        <div class="steps">
+          <strong>Execution Steps:</strong>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enable Different Drop</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Indiranagar, Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter drop location</span>
+              <span class="step-note">Electronic City, Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">3</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter hours</span>
+              <span class="step-note">6</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Results page loaded</span>
+              <span class="step-note">7 vehicles found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Vehicle results displayed</span>
+              
+            </div>
+          
+        </div>
+
+        <div class="screenshots">
+          <strong>📸 Screenshots:</strong> LOCAL-UC-03-form-filled.png, LOCAL-UC-03-result.png
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">LOCAL-UC-04</span>
+            <span class="tc-title">Multi-day with different drop (full combo)</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+
+        <div class="config-info">
+          <span class="config-tag"><strong>Config:</strong> CFG-4</span>
+          <span class="config-tag"><strong>Multi-day:</strong> ON</span>
+          <span class="config-tag"><strong>Diff Drop:</strong> ON</span>
+        </div>
+
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Whitefield, Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">drop</div>
+              <div>Mysore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>10</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>8</div>
+            </div>
+          
+        </div>
+
+        <div class="expected">
+          <strong>Expected:</strong> Multi-day + different drop pricing
+        </div>
+
+        <div class="steps">
+          <strong>Execution Steps:</strong>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enable Multi-day</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enable Different Drop</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Whitefield, Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter drop location</span>
+              <span class="step-note">Mysore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">10</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter hours</span>
+              <span class="step-note">8</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Results page loaded</span>
+              <span class="step-note">7 vehicles found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Vehicle results displayed</span>
+              
+            </div>
+          
+        </div>
+
+        <div class="screenshots">
+          <strong>📸 Screenshots:</strong> LOCAL-UC-04-form-filled.png, LOCAL-UC-04-result.png
+        </div>
+      </div>
+    
+
+    <footer style="margin-top:2rem;text-align:center;font-size:0.75rem;opacity:0.5;">
+      Generated 2026-11-16T17:58:29.967Z | Local Module Happy Path Tests
+    </footer>
+  </div>
+</body>
+</html>

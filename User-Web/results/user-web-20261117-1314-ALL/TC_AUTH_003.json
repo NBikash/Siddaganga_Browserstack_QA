@@ -1,0 +1,53 @@
+{
+  "id": "TC_AUTH_003",
+  "module": "Authentication & Profile",
+  "title": "My Profile page fields",
+  "type": "Functional",
+  "priority": "High",
+  "data": "—",
+  "steps": "Profile → My Profile",
+  "expected": "Name, email, mobile, address, GST invoice option, photo update and Submit shown; mobile (login ID) read-only",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Navigates to /profile",
+      "pass": true,
+      "detail": "/profile"
+    },
+    {
+      "label": "Field userName",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field email",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field mobileNumber",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field address",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Field isGSTInvoice",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Mobile number (login ID) is read-only",
+      "pass": false,
+      "detail": "{\"disabled\":false}"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_003.png"
+  ],
+  "durationSec": 17,
+  "executedAt": "2026-11-17T07:59:20.895Z"
+}

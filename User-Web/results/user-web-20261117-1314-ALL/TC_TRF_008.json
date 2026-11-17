@@ -1,0 +1,57 @@
+{
+  "id": "TC_TRF_008",
+  "module": "Transfer P2P+Return",
+  "title": "Return transfer end-to-end (28 Seater Premium AC Coach)",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": {
+    "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+    "drop": "Mysuru, Karnataka, India",
+    "retFrom": "Mysuru, Karnataka, India",
+    "retTo": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+    "date": {
+      "requested": "2026-11-26",
+      "dayDisabled": false,
+      "value": "2026-11-26"
+    },
+    "time": {
+      "requested": "7:00 AM",
+      "disabled": false,
+      "value": "7:00 AM"
+    },
+    "retDate": {
+      "requested": "2026-11-27",
+      "dayDisabled": false,
+      "value": "2026-11-27"
+    },
+    "pax": "20",
+    "returnFields": [
+      "Mysuru, Karnataka, India",
+      "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    ],
+    "integrity": []
+  },
+  "steps": "Add Return ON → fill return → search → review",
+  "expected": "Both legs in summary/review; fare covers two transfers",
+  "status": "Blocked",
+  "checks": [
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": false,
+      "detail": "[\"Selected time: 7:00 AM\",\"Return drop date cannot be before return pickup date\"]"
+    },
+    {
+      "label": "Return leg shown in summary/review",
+      "pass": false,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_008-validation-r3.png"
+  ],
+  "summary": "",
+  "durationSec": 58,
+  "executedAt": "2026-11-17T08:57:44.166Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict.",
+  "triaged": true
+}

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Module Test Report - local-full-20261116-2216</title>
+  <style>
+    :root { --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; --blocked: #6b7280; --bg: #f8fafc; --card: #fff; --text: #1e293b; --border: #e2e8f0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --border: #334155; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; margin: 1.5rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1rem; margin: 1rem 0 0.5rem; }
+    .meta { font-size: 0.875rem; opacity: 0.8; margin-bottom: 1.5rem; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat { background: var(--card); padding: 1.25rem; border-radius: 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+    .stat-value { font-size: 2.5rem; font-weight: 700; }
+    .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; margin-top: 0.25rem; }
+    .pass { color: var(--pass); }
+    .fail { color: var(--fail); }
+    .warn { color: var(--warn); }
+    .blocked { color: var(--blocked); }
+    .card { background: var(--card); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+    .config-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .config-table th, .config-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .config-table th { font-weight: 600; background: var(--bg); }
+    .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .badge.pass { background: #dcfce7; color: #166534; }
+    .badge.fail { background: #fee2e2; color: #991b1b; }
+    .badge.warn { background: #fef3c7; color: #92400e; }
+    .badge.blocked { background: #f3f4f6; color: #374151; }
+    .badge.pending { background: #e0e7ff; color: #3730a3; }
+    .tc-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .tc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .tc-title { font-weight: 600; }
+    .tc-id { font-size: 0.875rem; opacity: 0.7; }
+    .tc-config { font-size: 0.75rem; background: var(--bg); padding: 0.25rem 0.5rem; border-radius: 4px; }
+    .steps { font-size: 0.875rem; }
+    .step { display: flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0; }
+    .step-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.625rem; color: white; flex-shrink: 0; }
+    .step-icon.pass { background: var(--pass); }
+    .step-icon.fail { background: var(--fail); }
+    .step-icon.warn { background: var(--warn); }
+    .step-note { opacity: 0.7; font-size: 0.8rem; }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem; margin: 0.75rem 0; font-size: 0.875rem; }
+    .data-item { background: var(--bg); padding: 0.5rem; border-radius: 4px; }
+    .data-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.6; }
+    .toggle-state { font-size: 0.75rem; margin-left: 0.5rem; }
+    .toggle-on { color: var(--pass); }
+    .toggle-off { color: var(--blocked); }
+    .screenshots { font-size: 0.875rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin: 0.5rem 0; }
+    .progress-fill { height: 100%; background: var(--pass); transition: width 0.3s; }
+    code { background: var(--bg); padding: 0.125rem 0.375rem; border-radius: 4px; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚗 Local Module Test Report</h1>
+    <p class="meta">
+      <strong>Run ID:</strong> local-full-20261116-2216 &nbsp;|&nbsp;
+      <strong>Environment:</strong> Preprod &nbsp;|&nbsp;
+      <strong>Browser:</strong> Chromium<br>
+      <strong>URL:</strong> <code>https://preprod.siddagangatravels.com/</code><br>
+      <strong>Time:</strong> 2026-11-16T16:46:24.703Z → 2026-11-16T16:48:33.024Z
+    </p>
+
+    <div class="summary-grid">
+      <div class="stat">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Total Tests</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value pass">6</div>
+        <div class="stat-label">Passed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value fail">0</div>
+        <div class="stat-label">Failed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value blocked">0</div>
+        <div class="stat-label">Blocked</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100.0%</div>
+        <div class="stat-label">Pass Rate</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Mandatory Configuration Coverage</h2>
+      <p style="font-size:0.875rem;opacity:0.8;margin-bottom:1rem;">All four Local trip configurations must be tested.</p>
+      <table class="config-table">
+        <thead>
+          <tr>
+            <th>Config</th>
+            <th>Multi-day</th>
+            <th>Different Drop</th>
+            <th>Test Cases</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CFG-1</strong> Normal Trip</td>
+            <td><span class="toggle-off">OFF</span></td>
+            <td><span class="toggle-off">OFF</span></td>
+            <td>USER-LOCAL-TC-01, USER-LOCAL-TC-05, USER-LOCAL-TC-06</td>
+            <td><span class="badge pass">pass</span></td>
+          </tr>
+          <tr>
+            <td><strong>CFG-2</strong> Multi-day Trip</td>
+            <td><span class="toggle-on">ON</span></td>
+            <td><span class="toggle-off">OFF</span></td>
+            <td>USER-LOCAL-TC-02</td>
+            <td><span class="badge pass">pass</span></td>
+          </tr>
+          <tr>
+            <td><strong>CFG-3</strong> Different Drop</td>
+            <td><span class="toggle-off">OFF</span></td>
+            <td><span class="toggle-on">ON</span></td>
+            <td>USER-LOCAL-TC-03</td>
+            <td><span class="badge pass">pass</span></td>
+          </tr>
+          <tr>
+            <td><strong>CFG-4</strong> Multi-day + Different Drop</td>
+            <td><span class="toggle-on">ON</span></td>
+            <td><span class="toggle-on">ON</span></td>
+            <td>USER-LOCAL-TC-04</td>
+            <td><span class="badge pass">pass</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Test Cases (6)</h2>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-01</span>
+            <span class="tc-title">Normal Local Trip (CFG-1)</span>
+            <span class="tc-config">CFG-1</span>
+            <span class="toggle-state toggle-off">Multi-day: OFF</span>
+            <span class="toggle-state toggle-off">Diff Drop: OFF</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>10:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>2</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>4</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">10:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">2</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">4 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-01-form-filled.png, USER-LOCAL-TC-01-result.png
+          </div>
+        
+        
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-02</span>
+            <span class="tc-title">Multi-day Local Trip (CFG-2)</span>
+            <span class="tc-config">CFG-2</span>
+            <span class="toggle-state toggle-on">Multi-day: ON</span>
+            <span class="toggle-state toggle-off">Diff Drop: OFF</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">endDate</div>
+              <div>2026-11-18</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>09:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>3</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>8</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enable Multi-day toggle</span>
+              <span class="step-note">Toggle not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select end date</span>
+              <span class="step-note">End date field not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">09:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">3</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">8 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-02-form-filled.png, USER-LOCAL-TC-02-result.png
+          </div>
+        
+        
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-03</span>
+            <span class="tc-title">Different Drop Location (CFG-3)</span>
+            <span class="tc-config">CFG-3</span>
+            <span class="toggle-state toggle-off">Multi-day: OFF</span>
+            <span class="toggle-state toggle-on">Diff Drop: ON</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">drop</div>
+              <div>Electronic City</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>14:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>2</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>4</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enable Different Drop toggle</span>
+              <span class="step-note">Toggle not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enter drop location</span>
+              <span class="step-note">Electronic City</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">14:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">2</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">4 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-03-form-filled.png, USER-LOCAL-TC-03-result.png
+          </div>
+        
+        
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-04</span>
+            <span class="tc-title">Multi-day + Different Drop (CFG-4)</span>
+            <span class="tc-config">CFG-4</span>
+            <span class="toggle-state toggle-on">Multi-day: ON</span>
+            <span class="toggle-state toggle-on">Diff Drop: ON</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">drop</div>
+              <div>Whitefield</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">endDate</div>
+              <div>2026-11-18</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>08:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>4</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>8</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enable Multi-day toggle</span>
+              <span class="step-note">Toggle not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enable Different Drop toggle</span>
+              <span class="step-note">Toggle not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Enter drop location</span>
+              <span class="step-note">Whitefield</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select end date</span>
+              <span class="step-note">End date field not found</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">08:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">4</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">8 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-04-form-filled.png, USER-LOCAL-TC-04-result.png
+          </div>
+        
+        
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-05</span>
+            <span class="tc-title">Edge Case: Maximum Passengers</span>
+            <span class="tc-config">CFG-1</span>
+            <span class="toggle-state toggle-off">Multi-day: OFF</span>
+            <span class="toggle-state toggle-off">Diff Drop: OFF</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>11:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>10</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>8</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">11:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">10</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">8 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-05-form-filled.png, USER-LOCAL-TC-05-result.png
+          </div>
+        
+        
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header">
+          <div>
+            <span class="tc-id">USER-LOCAL-TC-06</span>
+            <span class="tc-title">Edge Case: Minimum Hours Package</span>
+            <span class="tc-config">CFG-1</span>
+            <span class="toggle-state toggle-off">Multi-day: OFF</span>
+            <span class="toggle-state toggle-off">Diff Drop: OFF</span>
+          </div>
+          <span class="badge pass">pass</span>
+        </div>
+        <div class="data-grid">
+          
+            <div class="data-item">
+              <div class="data-label">pickup</div>
+              <div>Bangalore</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">date</div>
+              <div>2026-11-17</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">time</div>
+              <div>10:00</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">passengers</div>
+              <div>1</div>
+            </div>
+          
+            <div class="data-item">
+              <div class="data-label">hours</div>
+              <div>2</div>
+            </div>
+          
+        </div>
+        <h3>Steps</h3>
+        <div class="steps">
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Navigate to Local</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter pickup location</span>
+              <span class="step-note">Bangalore</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select date</span>
+              <span class="step-note">2026-11-17</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select time</span>
+              <span class="step-note">10:00</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Enter passengers</span>
+              <span class="step-note">1</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Select hours/package</span>
+              <span class="step-note">2 hours</span>
+            </div>
+          
+            <div class="step">
+              <span class="step-icon pass">✓</span>
+              <span>Click Book Now</span>
+              
+            </div>
+          
+            <div class="step">
+              <span class="step-icon warn">!</span>
+              <span>Verify progression</span>
+              <span class="step-note">Could not confirm next step</span>
+            </div>
+          
+        </div>
+        
+          <div class="screenshots">
+            <strong>Screenshots:</strong> USER-LOCAL-TC-06-form-filled.png, USER-LOCAL-TC-06-result.png
+          </div>
+        
+        
+      </div>
+    
+
+    <div class="card">
+      <h2>Form Exploration</h2>
+      <p style="font-size:0.875rem;margin-bottom:1rem;">Fields and controls discovered during exploration:</p>
+      <div class="data-grid">
+        <div class="data-item">
+          <div class="data-label">Tabs</div>
+          <div>LocalOutstationTransferMulti-LegMulti-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With UsPoint To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Enter Number of PassengersTotal PassengersSave As DraftNext, Local, Outstation, Transfer, Multi-Leg, Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With UsPoint To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey.Enter Number of PassengersTotal PassengersSave As DraftNext, Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Multi-day TripDrop at different locationPickup LocationPickup location is requiredPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With Us, Multi-day TripDrop at different locationPickup LocationPickup Date & TimeDestinationsFirst Destination *+Add Another DestinationDrop Date & TimePassengersSave As DraftBook Now!Chat With Us, Point To PointBy HourPoint To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Point To PointBy Hour, Point To Point, By Hour, Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey.Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey., Point To Point TransferAdd ReturnFromToPickup Date & TimeDrop Date & TimePassengersSave As DraftBook Now!Chat With UsOne Click. Every Journey., Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Multi-day TripDrop at different locationPickup LocationPickup Date & TimePassengersNumber of HoursSave As DraftBook Now!Chat With UsOne Click. Every Journey., Enter Number of PassengersTotal PassengersSave As DraftNext, Enter Number of PassengersTotal PassengersSave As DraftNext, ComfortSafetyConveniencePushback & Comfortable SeatsCurtains for PrivacyReading LightsGPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained DriversCharging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC, ComfortSafetyConvenience, Comfort, Safety, Convenience, Pushback & Comfortable SeatsCurtains for PrivacyReading LightsGPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained DriversCharging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC, Pushback & Comfortable SeatsCurtains for PrivacyReading Lights, GPS Tracking on Every VehicleFire Extinguisher & First-Aid KitEmergency Exit & Trained Drivers, Charging Points at Every SeatGenerous Luggage SpaceClimate-Controlled AC</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Toggles</div>
+          <div>Multi-day Trip, Multi-day Trip, Drop at different location, Drop at different location, Multi-day Trip, Multi-day Trip, Drop at different location, Drop at different location, Add Return, Add Return, Multi-day Trip, Multi-day Trip, Drop at different location, Drop at different location</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Buttons</div>
+          <div>Get Your Quote, Explore Our Fleet, Save As Draft, Book Now!, All, Local, Outstation, Transfer, Dynamic, Luxury, Premium, Deluxe, Volvo Bus India, Force India, Mercedes-Benz India Private Limited, Explore Now, Explore Now, Explore Now, Explore Now, Explore Now, Explore Now, Explore All Fleets, Explore All Services</div>
+        </div>
+      </div>
+      <h3>Input Fields (3)</h3>
+      <ul style="font-size:0.875rem;margin-left:1.5rem;">
+        <li><code>Search pickup location</code> (text)</li><li><code>Enter number of passengers</code> (number)</li><li><code>Enter Number of Hours</code> (number)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>All Screenshots (14)</h2>
+      <p style="font-size:0.875rem;">Location: <code>screenshots/local/local-full-20261116-2216/</code></p>
+      <ul style="font-size:0.875rem;margin-left:1.5rem;columns:2;">
+        <li>00-after-login.png</li><li>00-local-form-explored.png</li><li>USER-LOCAL-TC-01-form-filled.png</li><li>USER-LOCAL-TC-01-result.png</li><li>USER-LOCAL-TC-02-form-filled.png</li><li>USER-LOCAL-TC-02-result.png</li><li>USER-LOCAL-TC-03-form-filled.png</li><li>USER-LOCAL-TC-03-result.png</li><li>USER-LOCAL-TC-04-form-filled.png</li><li>USER-LOCAL-TC-04-result.png</li><li>USER-LOCAL-TC-05-form-filled.png</li><li>USER-LOCAL-TC-05-result.png</li><li>USER-LOCAL-TC-06-form-filled.png</li><li>USER-LOCAL-TC-06-result.png</li>
+      </ul>
+    </div>
+
+    <footer style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.75rem;opacity:0.6;text-align:center;">
+      Generated by User-Web Local Test Suite | 2026-11-16T16:48:33.025Z
+    </footer>
+  </div>
+</body>
+</html>

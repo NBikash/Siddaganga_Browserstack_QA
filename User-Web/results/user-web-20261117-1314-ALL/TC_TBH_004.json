@@ -1,0 +1,28 @@
+{
+  "id": "TC_TBH_004",
+  "module": "Transfer By Hour",
+  "title": "Every hour value 1–24 accepted by the field (ADD-004)",
+  "type": "Boundary",
+  "priority": "Medium",
+  "data": "Hours 1..24 and 25",
+  "steps": "Type each value into Number of Hours",
+  "expected": "Values 1–24 retained without error; 25 rejected/clamped",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "All 1–24 retained",
+      "pass": true,
+      "detail": "all retained"
+    },
+    {
+      "label": "25 rejected or flagged",
+      "pass": false,
+      "detail": "field=25 msgs=[]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TBH_004-r2.png"
+  ],
+  "durationSec": 30,
+  "executedAt": "2026-11-17T08:41:05.420Z"
+}

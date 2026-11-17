@@ -1,0 +1,26 @@
+{
+  "id": "TC_NAV_018",
+  "module": "Navigation & Content",
+  "title": "Contact details consistency (header, footer, Contact page)",
+  "type": "Functional",
+  "priority": "Low",
+  "data": "Phone and email links",
+  "steps": "Compare tel:/mailto: links across pages",
+  "expected": "Valid tel:/mailto: links; one consistent support email",
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "tel: link present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "One consistent support email",
+      "pass": false,
+      "detail": "2 different emails used"
+    }
+  ],
+  "evidence": [],
+  "durationSec": 11,
+  "executedAt": "2026-11-17T07:57:13.735Z"
+}

@@ -1,0 +1,191 @@
+{
+  "id": "TC_OUT_002",
+  "module": "Outstation",
+  "title": "Single destination, default drop: final drop = pickup (21 Seater Premium AC Coach)",
+  "type": "Functional",
+  "priority": "Critical",
+  "data": {
+    "pickup": "Whitefield, Bengaluru, Karnataka, India",
+    "dests": [
+      "Mysuru, Karnataka, India"
+    ],
+    "date": {
+      "requested": "2026-11-20",
+      "dayDisabled": false,
+      "value": "2026-11-20"
+    },
+    "time": {
+      "requested": "9:00 AM",
+      "disabled": false,
+      "value": "9:00 AM"
+    },
+    "dropDate": {
+      "requested": "2026-11-21",
+      "dayDisabled": false,
+      "value": "2026-11-21"
+    },
+    "dropTime": {
+      "requested": "8:00 PM",
+      "disabled": false,
+      "value": "8:00 PM"
+    },
+    "pax": "15",
+    "integrity": []
+  },
+  "steps": "Fill → search → details → review",
+  "expected": "Expected Final Drop = Whitefield (workbook); results header km = summary distance; base = per-day rate × 2 days",
+  "fare": {
+    "breakup": {
+      "heading": "View Vehicle Details | 21 Seater Premium AC Coach",
+      "pricingBlock": [
+        "Outstation Trip Pricing",
+        "Outstation Trip - Minimum Kms per Day",
+        "Standard outstation rental package",
+        "Base Rate (Minimum Kms per Day)",
+        "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+        "₹12,600",
+        "Day Bata Cost (Before 10pm or After 6am)",
+        "₹1,000",
+        "Night Bata Cost (Before 6am or After 10pm)",
+        "₹1,000",
+        "Toll & Parking",
+        "Actuals",
+        "GST",
+        "Additional",
+        "Vehicle Technical Specifications :",
+        "Engine Performance :",
+        "125 hp · 400 Nm · 22% gradability",
+        "Suspension :",
+        "Safety Features :",
+        "Transmission :",
+        "Vehicle Comfort Metrics",
+        "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+        "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+        "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+        "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+        "Proceed To Booking"
+      ],
+      "baseRate": "Base Rate (Minimum Kms per Day) = ₹12,600",
+      "extraKm": null,
+      "extraHour": null,
+      "perKm": null,
+      "dayBata": "Day Bata Cost (Before 10pm or After 6am) = ₹1,000",
+      "nightBata": "Night Bata Cost (Before 6am or After 10pm) = ₹1,000",
+      "toll": "Toll & Parking = Actuals",
+      "permit": null,
+      "gst": "GST = Additional"
+    },
+    "applied": [
+      "Vehicle Base Cost = ₹25,200",
+      "Day Bata Cost (Before 10pm or After 6am) = ₹2,000",
+      "Night Bata Cost (Before 6am or After 10pm) = ₹1,000",
+      "State Tax = ₹0",
+      "Estimated Grand Total = ₹28,200"
+    ],
+    "arithmetic": {
+      "expr": "Vehicle Base Cost ₹25200 + Day Bata Cost ₹2000 + Night Bata Cost ₹1000 + State Tax ₹0 = ₹28200",
+      "shown": 28200,
+      "ok": true
+    },
+    "rule": {
+      "rule": "Base = Base Rate ₹12600 × 2 days",
+      "expected": 25200,
+      "applied": 25200,
+      "ok": true
+    },
+    "verdict": "Pass",
+    "notes": []
+  },
+  "status": "Fail",
+  "checks": [
+    {
+      "label": "Search navigates to results (/send-inquiry)",
+      "pass": true,
+      "detail": "/send-inquiry"
+    },
+    {
+      "label": "Vehicles listed",
+      "pass": true,
+      "detail": "20 Buses Found | Outstation - 0 KM"
+    },
+    {
+      "label": "Summary shows 15 Pax",
+      "pass": true,
+      "detail": "Passengers:15 "
+    },
+    {
+      "label": "Vehicle 21 Seater Premium AC Coach offered",
+      "pass": true,
+      "detail": "21 Seater Premium AC Coach P21AC (21 seats)"
+    },
+    {
+      "label": "Fare Breakup shown in vehicle details",
+      "pass": true,
+      "detail": "Outstation Trip Pricing / Outstation Trip - Minimum Kms per Day / Standard outstation rental package"
+    },
+    {
+      "label": "Review modal \"Confirm Your Trip & Selected Vehicles\" opens",
+      "pass": true,
+      "detail": "Confirm Your Trip & Selected Vehicles"
+    },
+    {
+      "label": "Applied fare components add up to Grand Total",
+      "pass": true,
+      "detail": "Vehicle Base Cost ₹25200 + Day Bata Cost ₹2000 + Night Bata Cost ₹1000 + State Tax ₹0 = ₹28200 vs shown ₹28200"
+    },
+    {
+      "label": "Final drop defaults to pickup (Whitefield) when Different Drop is OFF",
+      "pass": false,
+      "detail": "Drop Address: Mysuru, Karnataka, India "
+    },
+    {
+      "label": "Results header distance matches summary distance",
+      "pass": false,
+      "detail": "header \"0 KM\" vs summary \"600 KM\""
+    },
+    {
+      "label": "Duration 2 Days",
+      "pass": true,
+      "detail": "Duration:2 "
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-results-summary-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-results-vehicles-r3.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-fare-breakup-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-review-r2.png",
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_002-applied-fare-r2.png"
+  ],
+  "vehicle": {
+    "name": "21 Seater Premium AC Coach",
+    "code": "P21AC",
+    "seats": 21,
+    "price": "₹28,200"
+  },
+  "found": "20 Buses Found | Outstation - 0 KM",
+  "summary": "You have Searched For : G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:600 KM Dates :20-21 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:2 Days Passengers:15 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New ",
+  "allVehicles": [
+    "33 Seater Deluxe Coach|D35NA|35",
+    "40 Seater Deluxe Coach|D40NA|40",
+    "49 Seater Deluxe Coach|D49NA|49",
+    "Sedan|D SDN|4",
+    "MPV's|D MPV|7",
+    "12 Seater Tempo Traveller|D12TT|12",
+    "45 Seater Premium AC Coach|L45P|45",
+    "40 Seater Premium AC Coach|P40AC|40",
+    "35 Seater Premium AC Coach|P35AC|35",
+    "28 Seater Premium AC Coach|P28AC|28",
+    "25 Seater Premium AC Coach|P25AC|25",
+    "21 Seater Premium AC Coach|P21AC|21",
+    "16 Seater Premium Urbania|P16UB|16",
+    "12 Seater Luxury Urbania|L12AC|12",
+    "9 Seater Luxury Urbania|L9UB|9",
+    "45 Seater Luxury Volvo|L45V|45",
+    "45 Seater Luxury 9600 Volvo|L45NV|45",
+    "49 Seater Luxury 9600 Volvo|L49NV|49",
+    "SUV|LSUV|0",
+    "45 Seater Luxury BharatBenz|45LBB|45"
+  ],
+  "durationSec": 50,
+  "executedAt": "2026-11-17T08:52:06.610Z"
+}

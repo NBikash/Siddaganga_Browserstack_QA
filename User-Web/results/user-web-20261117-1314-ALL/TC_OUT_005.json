@@ -1,0 +1,21 @@
+{
+  "id": "TC_OUT_005",
+  "module": "Outstation",
+  "title": "5 destinations + different drop; destination limit (45 Seater Luxury Volvo)",
+  "type": "Boundary",
+  "priority": "High",
+  "data": "OUT-027 HSR Layout → Ramanagara → Channapatna → Mysuru → Srirangapatna → Mandya, drop Electronic City; D+12 6:00 AM → D+14 9:00 PM; 40 pax; VEH-016",
+  "steps": "Add 5 destinations, check whether a 6th can be added → search → review",
+  "expected": "5 destinations accepted; limit behaviour recorded; fare consistent",
+  "fare": true,
+  "status": "Blocked",
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_005-error-r3.png"
+  ],
+  "checks": [],
+  "durationSec": 66,
+  "executedAt": "2026-11-17T08:55:08.126Z",
+  "actual": "Blocked (re-run pending): automation harness issue fixed after this run (toggle/label binding, filter selector); case to be re-executed. Not a product verdict. Last error: TimeoutError: locator.click: Timeout 30000ms exceeded.",
+  "triaged": true
+}

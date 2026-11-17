@@ -1,0 +1,28 @@
+{
+  "id": "TC_MLG_005",
+  "module": "Multi-Leg",
+  "title": "Add Another Leg and delete a leg",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "4 pax",
+  "steps": "+ Add Another Leg → delete icon on Leg 2",
+  "expected": "Leg 2 added then removed",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Leg added",
+      "pass": true,
+      "detail": "1 → 2"
+    },
+    {
+      "label": "Leg deleted",
+      "pass": true,
+      "detail": "2 → 1"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_MLG_005-r3.png"
+  ],
+  "durationSec": 15,
+  "executedAt": "2026-11-17T08:55:29.320Z"
+}

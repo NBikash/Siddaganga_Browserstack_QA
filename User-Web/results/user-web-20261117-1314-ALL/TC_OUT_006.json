@@ -1,0 +1,28 @@
+{
+  "id": "TC_OUT_006",
+  "module": "Outstation",
+  "title": "Add and remove a destination",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "Destinations Hassan, Belur → remove Belur",
+  "steps": "+ Add Another Destination → remove the 2nd",
+  "expected": "Second destination field added then removed",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Second destination field added",
+      "pass": true,
+      "detail": "2"
+    },
+    {
+      "label": "Destination removed via its delete control",
+      "pass": true,
+      "detail": "count 2 → 1"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_OUT_006-r2.png"
+  ],
+  "durationSec": 14,
+  "executedAt": "2026-11-17T08:43:47.275Z"
+}

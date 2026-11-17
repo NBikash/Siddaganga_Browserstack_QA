@@ -1,0 +1,28 @@
+{
+  "id": "TC_AUTH_002",
+  "module": "Authentication & Profile",
+  "title": "Profile dropdown items",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "—",
+  "steps": "Click profile name",
+  "expected": "My Profile and Logout listed",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "\"My Profile\" listed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Logout\" listed",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_AUTH_002.png"
+  ],
+  "durationSec": 26,
+  "executedAt": "2026-11-17T07:59:04.315Z"
+}

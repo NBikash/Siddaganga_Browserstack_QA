@@ -1,0 +1,28 @@
+{
+  "id": "TC_TRF_007",
+  "module": "Transfer P2P",
+  "title": "Add Return reveals return fields pre-filled in reverse",
+  "type": "Functional",
+  "priority": "High",
+  "data": "TRF-RET-003 Hebbal ⇄ Nandi Hills",
+  "steps": "Fill From/To → Add Return ON",
+  "expected": "From (Return) = To, To (Return) = From (per workbook); return dates after onward",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Return From/To fields shown",
+      "pass": true,
+      "detail": "2"
+    },
+    {
+      "label": "Return route pre-filled in reverse",
+      "pass": true,
+      "detail": "[\"Nandi Hills, Karnataka, I\",\"Hebbal, Bengaluru, Karnat\"]"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_TRF_007-r2.png"
+  ],
+  "durationSec": 21,
+  "executedAt": "2026-11-17T08:35:11.617Z"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "TC_LOC_001",
+  "module": "Local",
+  "title": "Local tab shows all fields with correct defaults",
+  "type": "Functional",
+  "priority": "High",
+  "data": "—",
+  "steps": "Open home → Smart Inquiry → Local",
+  "expected": "Multi-day & Different-drop toggles OFF; Pickup Location, Pickup Date (today), Time, Passengers=1, Hours=1 (max 24), Save As Draft, Book Now!, Chat With Us visible",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Pickup date defaults to today",
+      "pass": true,
+      "detail": "2026-11-17"
+    },
+    {
+      "label": "Passengers default 1",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "label": "\"Multi-day Trip\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Drop at different location\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Pickup Location\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Pickup Date & Time\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Passengers\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Number of Hours\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Save As Draft\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Book Now!\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "\"Chat With Us\" present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "label": "Both toggles OFF by default",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_LOC_001-form-r2.png"
+  ],
+  "durationSec": 14,
+  "executedAt": "2026-11-17T08:25:36.537Z"
+}

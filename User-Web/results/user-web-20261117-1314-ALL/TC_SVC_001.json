@@ -1,0 +1,23 @@
+{
+  "id": "TC_SVC_001",
+  "module": "Services & About",
+  "title": "Services page category tabs",
+  "type": "Functional",
+  "priority": "Medium",
+  "data": "/services",
+  "steps": "Click each category tab",
+  "expected": "Service list changes per category",
+  "status": "Pass",
+  "checks": [
+    {
+      "label": "Content changes across tabs",
+      "pass": true,
+      "detail": "{\"Events & Group Movements\":\"Get Your Quote,Explore Our Fleet,Political / Public Gatherings,Tour Group Movements\",\"PREMIUM & VIP\":\"Get Your Quote,Explore Our Fleet,Luxury Coaches,Armed / Security-Coordinated Movement\",\"COMMUNITY & SPECIAL\":\"Get Your Quote,Explore Our Fleet,Senior Citizen Group Trave"
+    }
+  ],
+  "evidence": [
+    "screenshots/all/user-web-20261117-1314-ALL/TC_SVC_001.png"
+  ],
+  "durationSec": 32,
+  "executedAt": "2026-11-17T08:11:08.031Z"
+}
