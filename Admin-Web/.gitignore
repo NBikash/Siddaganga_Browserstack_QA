@@ -3,3 +3,6 @@ node_modules/
 .auth/
 # raw exploration dumps can contain customer names/phone numbers from dropdowns
 exploration-logs/raw/
+Siddaganga_Browserstack_QA/Admin-Web/reports/
+Siddaganga_Browserstack_QA/Admin-Web/results/
+Siddaganga_Browserstack_QA/Admin-Web/screenshots/
