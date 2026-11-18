@@ -3,3 +3,6 @@ node_modules/
 .auth/
 # raw exploration dumps can contain customer names/phone numbers/addresses
 exploration-logs/raw/
+User-Web/reports/
+Siddaganga_Browserstack_QA/User-Web/screenshots/
+Siddaganga_Browserstack_QA/User-Web/results/
