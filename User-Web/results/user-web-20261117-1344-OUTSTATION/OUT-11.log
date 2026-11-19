@@ -1,0 +1,53 @@
+[
+  {
+    "label": "1-blank-pickup",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": [
+        "Selected time: 9:00 AM",
+        "Selected time: 8:00 PM"
+      ]
+    }
+  },
+  {
+    "label": "2-blank-dest",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Destination location is required"
+      ],
+      "toasts": [
+        "Selected time: 9:00 AM",
+        "Selected time: 8:00 PM"
+      ]
+    }
+  },
+  {
+    "label": "3-dest-eq-pickup",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days"
+  },
+  {
+    "label": "4-free-text",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Destination location is required"
+      ],
+      "toasts": [
+        "Selected time: 9:00 AM",
+        "Selected time: 8:00 PM"
+      ]
+    }
+  },
+  {
+    "label": "5-toggle-off",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days"
+  }
+]

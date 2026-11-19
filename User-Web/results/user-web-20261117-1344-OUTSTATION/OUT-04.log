@@ -1,0 +1,25 @@
+[
+  {
+    "label": "build"
+  },
+  {
+    "label": "search-D1",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  },
+  {
+    "label": "modify-add-mandya-D2",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day"
+  },
+  {
+    "label": "modify-remove-mandya-D3",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹17,500",
+    "popup": null
+  }
+]

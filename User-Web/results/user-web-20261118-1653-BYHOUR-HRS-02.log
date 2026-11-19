@@ -1,0 +1,22 @@
+[
+  {
+    "label": "search",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "4 Hours"
+  },
+  {
+    "label": "confirm-for-submit",
+    "total": "₹20,000",
+    "popup": null
+  },
+  {
+    "label": "submit",
+    "sub": [
+      "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹20,000 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+    ]
+  },
+  {
+    "label": "my-inquiries"
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "QRY-194": {
+    "inq": "QRY-194",
+    "viewQuote": {
+      "rowText": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+      "dialog": {
+        "text": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel",
+        "buttons": [
+          "Leg 1",
+          "Combined Quotes",
+          "Detailed Quotes",
+          "Cancel"
+        ]
+      },
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-view-quote.png"
+    },
+    "edit": {
+      "rowText": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+      "menu": [
+        "View Quote",
+        "Edit",
+        "Send To Booking",
+        "Record Advance",
+        "Send Quote",
+        "Send Proforma Invoice",
+        "Download Proforma Invoice",
+        "Send Bus Images",
+        "Cancel Inquiry",
+        "Delete"
+      ],
+      "url": "/dashboard/inquiry-management/update-inquiry/bea778b7-45c7-4e33-952e-628413f54388"
+    },
+    "form": {
+      "bookingType": "outStation",
+      "checkbox#1": "checked",
+      "checkbox#2": "unchecked",
+      "checkbox#3": "checked",
+      "checkbox#4": "unchecked",
+      "text#8": "5%",
+      "tripMonth": "November",
+      "Select or type a new description": "",
+      "text#11": "24/11/2026",
+      "text#12": "25/11/2026",
+      "HH : MM  AM/PM": "12:00 AM",
+      "HH : MM  AM/PM#14": "12:00 AM",
+      "tripDuration": "2",
+      "pax": "20",
+      "checkbox#17": "unchecked",
+      "totalKms": "600.00",
+      "minimumPerDay": "300.00",
+      "perKm": "52.00",
+      "extraKms": "0.00",
+      "driver": "1000.00",
+      "dayBataDays": "2.00",
+      "number#24": "1000.00",
+      "noOfDays": "1.00",
+      "toll": "0.00",
+      "totalStateTax": "0.00",
+      "extra": "0.00",
+      "fixedCost": "0",
+      "Apply fixed cost": "unchecked",
+      "totalApproxCost": "34200.00",
+      "checkbox#32": "unchecked"
+    },
+    "formText": "Update Inquiry Update Quote Cancel Select Booking Type Outstation Client Information OTC (One Time Customer) Contracted Customer Domestic International Search or Enter Client Name Enter Primary Email Address (Optional) Enter Primary Contact Number GST Value Change Trip Details Select Month November Trip Description Select Start Date & Time Select End Date & Time Select Arrival Time Select Arrival Time Select Departure Time Select Departure Time no of Trip days Enter Number of Pax's Date/Day Wise Category Assignment Reset Selection OutStation Single Date SelectionRange Selection Previous Month Next Month November 2026 SuMoTuWeThFrSa 1234567 891011121314 15161718192021 22232425262728 293012345 Save Assignment + Add New Journey Outstation 24/11/2026 - 25/11/2026 Vehicle Type: 28 Seater Premium AC Coach 1 Amenities: NAME QTY No amenities Destination Whitefield, Bengaluru, Karnataka, India Mysuru, Karnataka, India Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY TOTAL KMS MINIMUM KM PER DAY PER KM EXTRA KM DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING STATE TAX ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 28 Seater Premium AC Coach 1 ​ ​ ​ ​ ​ 2000.00 ​ ​ 1000.00 ​ ​ ​ ​ ​ ​ Proforma Invoice Only Advance Payment Advance Payment History No advance recorded yet Record Advance Send Customer Inquiry Form Preview Quote Summary",
+    "costs": {
+      "totalKms": "600.00",
+      "minimumPerDay": "300.00",
+      "perKm": "52.00",
+      "extraKms": "0.00",
+      "driver": "1000.00",
+      "dayBataDays": "2.00",
+      "noOfDays": "1.00",
+      "toll": "0.00",
+      "totalStateTax": "0.00",
+      "extra": "0.00",
+      "fixedCost": "0",
+      "totalApproxCost": "34200.00"
+    },
+    "shotForm": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-update-quote-form.png",
+    "dd": {
+      "Booking Type": {
+        "value": "Outstation",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Local",
+          "Outstation",
+          "Transfer",
+          "Dynamic"
+        ]
+      },
+      "Month": {
+        "value": "November",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      "Trip Description": {
+        "value": "",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ]
+      },
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-trip-description-options.png"
+    },
+    "time": {
+      "count": 2,
+      "values": [
+        {
+          "v": "12:00 AM",
+          "ro": true,
+          "dis": false
+        },
+        {
+          "v": "12:00 AM",
+          "ro": true,
+          "dis": false
+        }
+      ],
+      "pickerOpened": 2,
+      "afterType": "12:00 AM",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-time-fields.png"
+    },
+    "preview": {
+      "text": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel",
+      "buttons": [
+        "Leg 1",
+        "Combined Quotes",
+        "Detailed Quotes",
+        "Cancel"
+      ],
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-preview-quote-summary.png"
+    }
+  }
+}

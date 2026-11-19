@@ -1,9 +1,9 @@
 """Builds the Admin Web use-case repository from read-only exploration data.
 
 Inputs : exploration-logs/raw/route-scan.json, exploration-logs/raw/inspect/*.json,
-         documentation/source/manual_cases.py (hand-written workflow / module-specific cases)
-Outputs: documentation/Admin_Web_Use_Cases.xlsx, documentation/Admin_Web_Use_Cases.md,
-         documentation/Coverage_Matrix.xlsx, documentation/coverage-stats.json
+         scripts/doc_sources/manual_cases.py (hand-written workflow / module-specific cases)
+Outputs: documentation/05_Superseded_Catalogues_2026-10-30/use-case-catalogue/Admin_Web_Use_Cases.xlsx | .md, Coverage_Matrix.xlsx, coverage-stats.json;
+         documentation/03_Reference/Module_Inventory.md, Navigation_Inventory.md
 
 Nothing here talks to the application. Run: python scripts/build_docs.py
 """
@@ -19,8 +19,9 @@ from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "exploration-logs" / "raw"
-DOC = ROOT / "documentation"
-sys.path.insert(0, str(DOC / "source"))
+DOC = ROOT / "documentation" / "05_Superseded_Catalogues_2026-10-30" / "use-case-catalogue"
+REF = ROOT / "documentation" / "03_Reference"
+sys.path.insert(0, str(ROOT / "scripts" / "doc_sources"))
 from screen_meta import SCREENS, MODULES  # noqa: E402
 from manual_cases import MANUAL_CASES, SCREEN_NOTES  # noqa: E402
 
@@ -648,7 +649,7 @@ def style_sheet(ws, widths):
 
 def write_outputs(b, screen_status):
     cases = b.cases
-    DOC.mkdir(exist_ok=True)
+    DOC.mkdir(parents=True, exist_ok=True)
     # ---- Use case workbook
     wb = Workbook()
     ws = wb.active
@@ -803,7 +804,7 @@ def write_inventories(screen_status, cases):
             access = meta.get("route", "") + (" › " + " › ".join(meta["click"]) if meta.get("click") else "")
             md.append(f"| {meta['screen']} | {meta.get('submodule', '')} | `{access}` | {'<br>'.join(acts) or '—'} | {screen_status.get(key, 'Not explored')} | {n_cases[(m, meta['screen'])]} |")
         md.append("")
-    (DOC / "Module_Inventory.md").write_text("\n".join(md), encoding="utf-8")
+    (REF / "Module_Inventory.md").write_text("\n".join(md), encoding="utf-8")
 
     rs = json.loads((RAW / "route-scan.json").read_text(encoding="utf-8"))
     sub = json.loads((RAW / "subnav-scan.json").read_text(encoding="utf-8"))
@@ -856,7 +857,7 @@ def write_inventories(screen_status, cases):
             continue
         seen.add(line)
         out.append(line)
-    (DOC / "Navigation_Inventory.md").write_text("\n".join(out), encoding="utf-8")
+    (REF / "Navigation_Inventory.md").write_text("\n".join(out), encoding="utf-8")
 
 
 if __name__ == "__main__":

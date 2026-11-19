@@ -1,0 +1,144 @@
+{
+  "UMNF499106": {
+    "lead": "LD-414",
+    "inquiry": "QRY-194",
+    "sentAt": "19 Nov 2026 16:02:49",
+    "shots": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-after-update-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-menu-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-update-quote-prefilled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-QRY-194-inquiry-list.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-QRY-194-reopen.png"
+    ],
+    "listRowAfter": "Revised quotation",
+    "leadMenuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "toasts": [
+      "Inquiry details successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht",
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht"
+    ],
+    "url": "/dashboard/inquiry-management/update-inquiry/bea778b7-45c7-4e33-952e-628413f54388?leadSecretId=d20f40bf-f06e-4285-a6f3-21143f1a5dd3",
+    "rowBefore": "1 LD-414 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+    "menuBefore": [
+      "View Lead",
+      "Send To Inquiry",
+      "Assign",
+      "Delete"
+    ],
+    "inquiryRows": []
+  },
+  "LJWN815154": {
+    "lead": "LD-431",
+    "inquiry": "QRY-211",
+    "sentAt": "19 Nov 2026 16:08:08",
+    "shots": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-LJWN815154-LD-431-after-update-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-LJWN815154-LD-431-menu-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-LJWN815154-LD-431-update-quote-prefilled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-LJWN815154-QRY-211-inquiry-list.png"
+    ],
+    "listRowAfter": "Revised quotation",
+    "leadMenuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "note": "Sent once; step stopped after the save (lead re-search / menu overlap), so toasts and API calls were not written to JSON. Evidence: screenshots, list row and lead menu."
+  },
+  "NCCC102640": {
+    "lead": "LD-415",
+    "inquiry": "QRY-195",
+    "sentAt": "19 Nov 2026 16:10:48",
+    "shots": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-NCCC102640-LD-415-after-update-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-NCCC102640-LD-415-menu-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-NCCC102640-LD-415-update-quote-prefilled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-NCCC102640-QRY-195-inquiry-list.png"
+    ],
+    "listRowAfter": "Revised quotation",
+    "leadMenuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "note": "Sent once; step stopped after the save (lead re-search / menu overlap), so toasts and API calls were not written to JSON. Evidence: screenshots, list row and lead menu."
+  },
+  "ORZS120376": {
+    "lead": "LD-433",
+    "inquiry": "QRY-213",
+    "sentAt": "19 Nov 2026 16:16:45",
+    "shots": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-ORZS120376-LD-433-after-update-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-ORZS120376-LD-433-menu-before-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-ORZS120376-LD-433-menu-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-ORZS120376-LD-433-update-quote-prefilled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-ORZS120376-QRY-213-inquiry-list.png"
+    ],
+    "listRowAfter": "Revised quotation",
+    "leadMenuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "note": "Sent once; step stopped after the save (lead re-search / menu overlap), so toasts and API calls were not written to JSON. Evidence: screenshots, list row and lead menu."
+  },
+  "YOIT928679": {
+    "lead": "LD-435",
+    "inquiry": "QRY-215",
+    "sentAt": "19 Nov 2026 16:19:27",
+    "shots": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-after-update-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-menu-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-update-quote-prefilled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-QRY-215-inquiry-list.png"
+    ],
+    "listRowAfter": "Revised quotation",
+    "leadMenuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "toasts": [
+      "Inquiry details successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht",
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht"
+    ],
+    "url": "/dashboard/inquiry-management/update-inquiry/2537e664-fb3e-4635-95c9-e630475dd1c5?leadSecretId=e5c355ab-62a9-4051-8fc8-d8f77039a160",
+    "rowBefore": "1 LD-435 Bikash N N/A N/A 19/11/2026 Unassigned Open",
+    "menuBefore": [
+      "View Lead",
+      "Send To Inquiry",
+      "Assign",
+      "Delete"
+    ],
+    "inquiryRows": [
+      "215 | QRY-215 | Bikash N | National | 12 Seater Luxury Urbania, 35 Seater Premium AC Coach, 12 Seater Tempo Traveller | — | <phone> | 26/11/2026 | View Quote | Revised quotation | Record Advance |"
+    ]
+  }
+}

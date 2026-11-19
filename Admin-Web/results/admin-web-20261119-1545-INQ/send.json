@@ -1,0 +1,338 @@
+{
+  "UMNF499106": {
+    "lead": "LD-414",
+    "pnr": "UMNF499106",
+    "rowBefore": "1 LD-414 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+    "menuBefore": [
+      "View Lead",
+      "Send To Inquiry",
+      "Assign",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-menu-before.png",
+    "url": "/dashboard/inquiry-management/update-inquiry/bea778b7-45c7-4e33-952e-628413f54388?leadSecretId=d20f40bf-f06e-4285-a6f3-21143f1a5dd3",
+    "formBefore": {
+      "fields": {
+        "bookingType": {
+          "v": ""
+        },
+        "checkbox#1": {
+          "v": "checked"
+        },
+        "checkbox#2": {
+          "v": "unchecked"
+        },
+        "checkbox#3": {
+          "v": "unchecked"
+        },
+        "checkbox#4": {
+          "v": "unchecked"
+        },
+        "text#8": {
+          "v": "0%",
+          "ro": true
+        },
+        "tripMonth": {
+          "v": ""
+        },
+        "Select or type a new description": {
+          "v": ""
+        },
+        "text#11": {
+          "v": ""
+        },
+        "text#12": {
+          "v": ""
+        },
+        "HH : MM  AM/PM": {
+          "v": "",
+          "ro": true
+        },
+        "HH : MM  AM/PM#14": {
+          "v": "",
+          "ro": true
+        },
+        "tripDuration": {
+          "v": ""
+        },
+        "pax": {
+          "v": ""
+        },
+        "checkbox#17": {
+          "v": "unchecked"
+        }
+      },
+      "text": "Update Inquiry Update Quote Cancel Select Booking Type ​ Client Information OTP (One Time Customer) Contracted Customer Domestic International Search or Enter Client Name Enter Primary Email Address (Optional) Enter Primary Contact Number GST Value Change Trip Details Select Month ​ Trip Description Select Start Date & Time Select End Date & Time Select Arrival Time Select Arrival Time Select Departure Time Select Departure Time no of Trip days Enter Number of Pax's Proforma Invoice Only Advance Payment Advance Payment History No advance recorded yet Record Advance Send Customer Inquiry Form Preview Quote Summary"
+    },
+    "shotForm": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-update-quote-prefilled.png",
+    "toasts": [
+      "Inquiry details successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht",
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht"
+    ],
+    "urlAfter": "/dashboard/inquiry-management/update-inquiry/bea778b7-45c7-4e33-952e-628413f54388?leadSecretId=d20f40bf-f06e-4285-a6f3-21143f1a5dd3",
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-LD-414-after-update-quote.png",
+    "inquiryRows": [],
+    "shotList": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-UMNF499106-QRY-194-inquiry-list.png",
+    "rowAfter": "1 LD-414 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+    "menuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ]
+  },
+  "ORZS120376": {
+    "lead": "LD-433",
+    "pnr": "ORZS120376"
+  },
+  "YOIT928679": {
+    "lead": "LD-435",
+    "pnr": "YOIT928679",
+    "rowBefore": "1 LD-435 Bikash N N/A N/A 19/11/2026 Unassigned Open",
+    "menuBefore": [
+      "View Lead",
+      "Send To Inquiry",
+      "Assign",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-menu-before.png",
+    "url": "/dashboard/inquiry-management/update-inquiry/2537e664-fb3e-4635-95c9-e630475dd1c5?leadSecretId=e5c355ab-62a9-4051-8fc8-d8f77039a160",
+    "formBefore": {
+      "fields": {
+        "bookingType": {
+          "v": "dynamic"
+        },
+        "checkbox#1": {
+          "v": "checked"
+        },
+        "checkbox#2": {
+          "v": "checked"
+        },
+        "checkbox#3": {
+          "v": "checked"
+        },
+        "checkbox#4": {
+          "v": "checked"
+        },
+        "checkbox#5": {
+          "v": "checked"
+        },
+        "checkbox#6": {
+          "v": "unchecked"
+        },
+        "checkbox#7": {
+          "v": "checked"
+        },
+        "checkbox#8": {
+          "v": "unchecked"
+        },
+        "text#12": {
+          "v": "5%",
+          "ro": true
+        },
+        "tripMonth": {
+          "v": "November"
+        },
+        "Select or type a new description": {
+          "v": ""
+        },
+        "text#15": {
+          "v": "26/11/2026"
+        },
+        "text#16": {
+          "v": "29/11/2026"
+        },
+        "HH : MM  AM/PM": {
+          "v": "12:00 AM",
+          "ro": true
+        },
+        "HH : MM  AM/PM#18": {
+          "v": "12:00 AM",
+          "ro": true
+        },
+        "tripDuration": {
+          "v": "4"
+        },
+        "pax": {
+          "v": "10"
+        },
+        "checkbox#21": {
+          "v": "unchecked"
+        },
+        "number#22": {
+          "v": "8500.00"
+        },
+        "number#23": {
+          "v": "0.00"
+        },
+        "number#24": {
+          "v": "40.00"
+        },
+        "number#25": {
+          "v": "0.00"
+        },
+        "number#26": {
+          "v": "800.00"
+        },
+        "number#27": {
+          "v": "800.00"
+        },
+        "localDayBataDays": {
+          "v": "1.00"
+        },
+        "number#29": {
+          "v": "800.00"
+        },
+        "localNightBataDays": {
+          "v": "0.00"
+        },
+        "localToll": {
+          "v": "0.00"
+        },
+        "extra": {
+          "v": "0.00"
+        },
+        "fixedCost": {
+          "v": "0",
+          "ro": true
+        },
+        "Apply fixed cost": {
+          "v": "unchecked"
+        },
+        "totalApproxCost": {
+          "v": "9300.00",
+          "ro": true
+        },
+        "checkbox#36": {
+          "v": "unchecked"
+        },
+        "totalKms": {
+          "v": "600.00"
+        },
+        "minimumPerDay": {
+          "v": "300.00"
+        },
+        "perKm": {
+          "v": "55.00"
+        },
+        "extraKms": {
+          "v": "0.00"
+        },
+        "driver": {
+          "v": "1000.00"
+        },
+        "dayBataDays": {
+          "v": "2.00"
+        },
+        "number#43": {
+          "v": "1000.00"
+        },
+        "noOfDays": {
+          "v": "1.00"
+        },
+        "toll": {
+          "v": "0.00"
+        },
+        "totalStateTax": {
+          "v": "0.00",
+          "ro": true
+        },
+        "extra#47": {
+          "v": "0.00"
+        },
+        "fixedCost#48": {
+          "v": "0",
+          "ro": true
+        },
+        "Apply fixed cost#49": {
+          "v": "unchecked"
+        },
+        "totalApproxCost#50": {
+          "v": "36000.00",
+          "ro": true
+        },
+        "checkbox#51": {
+          "v": "unchecked"
+        },
+        "insideCity": {
+          "v": "",
+          "ro": true
+        },
+        "outsideCity": {
+          "v": "9000.00"
+        },
+        "nightAllow": {
+          "v": "800.00"
+        },
+        "nightBataDays": {
+          "v": "0.00"
+        },
+        "lateAllowance": {
+          "v": "0.00",
+          "ro": true
+        },
+        "transferToll": {
+          "v": "0.00"
+        },
+        "extra#58": {
+          "v": "0.00"
+        },
+        "fixedCost#59": {
+          "v": "0",
+          "ro": true
+        },
+        "Apply fixed cost#60": {
+          "v": "unchecked"
+        },
+        "totalApproxCost#61": {
+          "v": "9000.00",
+          "ro": true
+        },
+        "checkbox#62": {
+          "v": "unchecked"
+        }
+      },
+      "text": "Update Inquiry Update Quote Cancel Select Booking Type Dynamic Choose Dynamic Inquiry Combinations Local Outstation Transfer All Client Information OTP (One Time Customer) Contracted Customer Domestic International Search or Enter Client Name Enter Primary Email Address (Optional) Enter Primary Contact Number GST Value Change Trip Details Select Month November Trip Description Select Start Date & Time Select End Date & Time Select Arrival Time Select Arrival Time Select Departure Time Select Departure Time no of Trip days Enter Number of Pax's Date/Day Wise Category Assignment Reset Selection Local Previous Month Next Month November 2026 SuMoTuWeThFrSa 1234567 891011121314 15161718192021 22232425262728 293012345 OutStation Single Date SelectionRange Selection Previous Month Next Month November 2026 SuMoTuWeThFrSa 1234567 891011121314 15161718192021 22232425262728 293012345 Transfer Previous Month Next Month November 2026 SuMoTuWeThFrSa 1234567 891011121314 15161718192021 22232425262728 293012345 Save Assignment + Add New Journey Local 26/11/2026 Vehicle Type: 12 Seater Luxury Urbania 1 Amenities: NAME QTY No amenities Pickup Location: 4th Block, Jayanagar, Bengaluru, Karnataka, India Drop Location: 4th Block, Jayanagar, Bengaluru, Karnataka, India Pickup Time: 12:00 AM Drop Time: 12:00 AM Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY 8 HR/ 80 KM ADDITIONAL KM'S EXTRA KM ADDITIONAL HR'S EXTRA HOUR DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 12 Seater Luxury Urbania 1 ​ ​ ​ ​ ​ ​ 800.00 ​ ​ 0.00 ​ ​ ​ ​ ​ Outstation 27/11/2026 - 28/11/2026 Vehicle Type: 35 Seater Premium AC Coach 1 Amenities: NAME QTY No amenities Destination Whitefield, Bengaluru, Karnataka, India Mysuru, Karnataka, India Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY TOTAL KMS MINIMUM KM PER DAY PER KM EXTRA KM DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING STATE TAX ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 35 Seater Premium AC Coach 1 ​ ​ ​ ​ ​ 2000.00 ​ ​ 1000.00 ​ ​ ​ ​ ​ ​ Transfer 29/11/2026 Vehicle Type: 12 Seater Tempo Traveller (AC) 1 Amenities: NAME QTY No amenities Pickup Location: Whitefield, Bengaluru, Karnataka, India Drop Location: Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Pickup Time: 12:00 AM Drop Time: 12:00 AM Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY INSIDE CITY OUTSIDE CITY NIGHT ALLOW. NIGHT BATA DAYS LATE ALLOW. TOLL & PARKING ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 12 Seater Tempo Traveller (AC) 1 ​ ​ ​ 0.00 ​ ​ ​ ​ ​ ​ Proforma Invoice Only Advance Payment Advance Payment History No advance recorded yet Record Advance Send Customer Inquiry Form Preview Quote Summary"
+    },
+    "shotForm": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-update-quote-prefilled.png",
+    "toasts": [
+      "Inquiry details successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht",
+      "❌ Failed to load secrets from AWS: Error: Credential is missing at credentialDefaultProvider (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:75100) at r (https://dari-preprod.siddagangatravels.com/_next/static/chunks/7643.9726d77b68b49790.js:10:6258) at ht"
+    ],
+    "urlAfter": "/dashboard/inquiry-management/update-inquiry/2537e664-fb3e-4635-95c9-e630475dd1c5?leadSecretId=e5c355ab-62a9-4051-8fc8-d8f77039a160",
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-LD-435-after-update-quote.png",
+    "inquiryRows": [
+      "215 | QRY-215 | Bikash N | National | 12 Seater Luxury Urbania, 35 Seater Premium AC Coach, 12 Seater Tempo Traveller | — | <phone> | 26/11/2026 | View Quote | Revised quotation | Record Advance |"
+    ],
+    "shotList": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/S2I-YOIT928679-QRY-215-inquiry-list.png",
+    "rowAfter": "1 LD-435 Bikash N N/A N/A 19/11/2026 Unassigned Open",
+    "menuAfter": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ]
+  }
+}

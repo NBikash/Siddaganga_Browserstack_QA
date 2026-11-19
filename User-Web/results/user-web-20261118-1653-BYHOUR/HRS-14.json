@@ -1,0 +1,315 @@
+{
+  "id": "HRS-14",
+  "started": "2026-11-18T13:56:02.190Z",
+  "steps": [
+    {
+      "label": "A-Whitefield",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Whitefield",
+          "suggestions": [
+            "Whitefield Bengaluru, Karnataka, India",
+            "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+            "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+            "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Whitefield, Bengaluru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :10 Dec, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:6 Hours Passengers:5 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "5",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-A-results.png",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "6 Hours",
+        "datesTxt": "10 Dec, 2026"
+      }
+    },
+    {
+      "label": "B-Mysuru",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Mysuru",
+          "suggestions": [
+            "Mysuru Karnataka, India",
+            "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+            "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+            "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+          ],
+          "chosen": "Mysuru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Mysuru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :10 Dec, 2026 Pickup Address:Mysuru, Karnataka, India Duration:6 Hours Passengers:5 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "5",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Mysuru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-B-results.png",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "6 Hours",
+        "datesTxt": "10 Dec, 2026"
+      }
+    },
+    {
+      "label": "C-Chennai",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Chennai",
+          "suggestions": [
+            "Chennai Tamil Nadu, India",
+            "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+            "Chennai Central Tamil Nadu",
+            "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+          ],
+          "chosen": "Chennai, Tamil Nadu, India"
+        }
+      ],
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": [
+            "Selected time: 9:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-10"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "5"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "6"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-C-validation.png",
+        "hoursInput": {
+          "v": "6",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "Chennai, Tamil Nadu, India",
+          "drop": null,
+          "dt": [
+            "2026-12-10",
+            "9:00 AM"
+          ],
+          "pax": "5",
+          "hours": "6",
+          "toggles": [
+            false,
+            false
+          ],
+          "chips": []
+        }
+      }
+    },
+    {
+      "label": "D-Koramangala-Chennai",
+      "fill": {
+        "dd": true,
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Koramangala",
+            "suggestions": [
+              "Koramangala Bengaluru, Karnataka, India",
+              "Koramangala Police Station 20th Main Road, 6th Block, Koramangala, Bengaluru, Karnataka, India",
+              "Koramangala 1st Block, HSR Layout 5th Sector Bengaluru, Karnataka, India",
+              "Koramangala Indoor Stadium Park KHB Games Village, Koramangala, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Koramangala, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Chennai",
+            "suggestions": [
+              "Chennai Tamil Nadu, India",
+              "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+              "Chennai Central Tamil Nadu",
+              "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+            ],
+            "chosen": "Chennai, Tamil Nadu, India"
+          }
+        ],
+        "date": {
+          "iso": "2026-12-10",
+          "disabled": false,
+          "value": "2026-12-10"
+        },
+        "time": {
+          "label": "9:00 AM",
+          "disabled": false
+        },
+        "state": {
+          "pickup": "Koramangala, Bengaluru, Karnataka, India",
+          "drop": "Chennai, Tamil Nadu, India",
+          "dt": [
+            "2026-12-10",
+            "9:00 AM"
+          ],
+          "pax": "5",
+          "hours": "6",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-D-form.png",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Selected time: 9:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Koramangala, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-10"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "5"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "6"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-D-validation.png",
+        "hoursInput": {
+          "v": "6",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "Koramangala, Bengaluru, Karnataka, India",
+          "drop": "Chennai, Tamil Nadu, India",
+          "dt": [
+            "2026-12-10",
+            "9:00 AM"
+          ],
+          "pax": "5",
+          "hours": "6",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "card": null
+    }
+  ],
+  "finished": "2026-11-18T14:02:51.578Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

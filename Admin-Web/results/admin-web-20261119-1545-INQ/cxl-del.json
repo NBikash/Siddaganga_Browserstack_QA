@@ -1,0 +1,414 @@
+{
+  "CXL-dismiss-QRY-135": {
+    "inq": "QRY-135",
+    "lead": "LD-352",
+    "action": "Cancel Inquiry",
+    "mode": "dismiss",
+    "kpiBefore": "Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "rowBefore": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1700 Local 16 Seater Premium Urbania ₹8300.00 Combined Quotes Detailed Quotes Cancel",
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-view-quote-before.png",
+    "leadBefore": {
+      "found": true,
+      "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "WPKT544822",
+      "inquiryId": "QRY-135",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-lead-LD-352.png"
+    },
+    "rowAtAction": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuBefore": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-menu.png",
+    "dialog": {
+      "text": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Back Confirm Cancellation",
+      "buttons": [
+        "Back",
+        "Confirm Cancellation"
+      ],
+      "inputs": 0
+    },
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-dialog.png",
+    "dismissWith": "Escape",
+    "dialogsAfter": 0,
+    "net": [
+      "POST /api/v1/admin/cancellation-refund/calculate 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /api/v1/admin/lead-target/details 200"
+    ],
+    "console": [],
+    "rowAfter": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuAfter": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-row-after.png",
+    "qaListAfter": [
+      "QRY-135",
+      "QRY-130",
+      "QRY-129",
+      "QRY-194",
+      "QRY-213",
+      "QRY-215",
+      "QRY-211",
+      "QRY-228",
+      "QRY-128",
+      "QRY-134"
+    ],
+    "kpiAfter": "Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "leadAfter": {
+      "found": true,
+      "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "WPKT544822",
+      "inquiryId": "QRY-135",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-lead-LD-352-r2.png"
+    }
+  },
+  "CXL-confirm-QRY-135": {
+    "inq": "QRY-135",
+    "lead": "LD-352",
+    "action": "Cancel Inquiry",
+    "mode": "confirm",
+    "rowBefore": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1700 Local 16 Seater Premium Urbania ₹8300.00 Combined Quotes Detailed Quotes Cancel",
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-view-quote-before-r2.png",
+    "leadBefore": {
+      "found": true,
+      "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "WPKT544822",
+      "inquiryId": "QRY-135",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-lead-LD-352-r2.png"
+    },
+    "rowAtAction": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuBefore": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-menu-r2.png",
+    "dialog": {
+      "text": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Refund Calculation Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.6 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No Wave off penalty (admin override) Cancellation reason (optional) Cancellation reason (optional) Back Confirm Cancellation",
+      "buttons": [
+        "Back",
+        "Confirm Cancellation"
+      ],
+      "inputs": 2
+    },
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-r2.png",
+    "dialogFull": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Refund Calculation Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.6 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No Wave off penalty (admin override) Cancellation reason (optional) Cancellation reason (optional) Back Confirm Cancellation",
+    "checkboxes": [
+      false
+    ],
+    "reason": true,
+    "shotDialogFilled": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-before-confirm.png",
+    "confirmWith": "Confirm Cancellation",
+    "toasts": [],
+    "net": [
+      "POST /api/v1/admin/cancellation-refund/calculate 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /api/v1/admin/lead-target/details 200"
+    ],
+    "console": [],
+    "rowAfter": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuAfter": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-row-after.png",
+    "qaListAfter": [
+      "QRY-135",
+      "QRY-130",
+      "QRY-129",
+      "QRY-194",
+      "QRY-213",
+      "QRY-215",
+      "QRY-211",
+      "QRY-228",
+      "QRY-128",
+      "QRY-134"
+    ],
+    "kpiAfter": "Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "leadAfter": {
+      "found": true,
+      "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "WPKT544822",
+      "inquiryId": "QRY-135",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-lead-LD-352-r3.png"
+    }
+  },
+  "CXL-confirm-QRY-135-retry": {
+    "dialog": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Refund Calculation Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.5 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No Wave off penalty (admin override) Cancellation reason (optional) Cancellation reason (optional) Back Confirm Cancellation",
+    "btn": {
+      "count": 1,
+      "disabled": false,
+      "type": "button"
+    },
+    "toasts": [
+      "Inquiry journey cancelled successfully!",
+      "Inquiry Cancelled (Inquiry ID QRY-135)"
+    ],
+    "dialogsAfter": 1,
+    "dialogAfterText": "Inquiry Cancelled QRY-135 — Bikash N Inquiry Cancelled (Inquiry ID QRY-135) Cancellation Details Status Cancelled Inquiry ID QRY-135 Refund Summary Trip cost ₹8,300 One day charge ₹7,500 Penalty slab 6 hrs ≤ T < 24 hrs Penalty % 20% Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.5 hrs Penalty waived by admin No Cancellation Invoice Invoice no. INV-106 Invoice type cancelled Trip cost ₹8,300 Penalty amount ₹8,300 Refund amount ₹0 Previous invoice removed No Cancellation Invoice Trip cost: ₹8,300.00 Penalty slab: 6 hrs ≤ T < 24 hrs Penalty applied: ₹8,300.00 Refund amount: ₹",
+    "requests": [
+      "POST /api/v1/admin/cancellation/cancel-inquiry-journey",
+      "  ← 200 /api/v1/admin/cancellation/cancel-inquiry-journey",
+      "GET /api/v1/admin/inquiry/list",
+      "GET /api/v1/admin/notification"
+    ],
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-after-click.png"
+  },
+  "DEL-dismiss-QRY-130": {
+    "inq": "QRY-130",
+    "lead": "LD-347",
+    "action": "Delete",
+    "mode": "dismiss",
+    "kpiBefore": "Total Inquiries 188 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "rowBefore": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1695 Local 16 Seater Premium Urbania ₹9100.00 Combined Quotes Detailed Quotes Cancel",
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-view-quote-before.png",
+    "leadBefore": {
+      "found": true,
+      "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "XMGZ467530",
+      "inquiryId": "QRY-130",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-lead-LD-347.png"
+    },
+    "rowAtAction": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuBefore": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-menu.png",
+    "dialog": {
+      "text": "Delete Inquiry Are you sure you want to delete this inquiry? Yes No",
+      "buttons": [
+        "Yes",
+        "No"
+      ],
+      "inputs": 0
+    },
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-dialog.png",
+    "dismissWith": "No",
+    "dialogsAfter": 0,
+    "net": [
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /api/v1/admin/lead-target/details 200"
+    ],
+    "console": [],
+    "rowAfter": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuAfter": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-row-after.png",
+    "qaListAfter": [
+      "QRY-130",
+      "QRY-129",
+      "QRY-194",
+      "QRY-213",
+      "QRY-215",
+      "QRY-211",
+      "QRY-228",
+      "QRY-128",
+      "QRY-134"
+    ],
+    "leadAfter": {
+      "found": true,
+      "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "XMGZ467530",
+      "inquiryId": "QRY-130",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-lead-LD-347-r2.png"
+    }
+  },
+  "DEL-confirm-QRY-130": {
+    "inq": "QRY-130",
+    "lead": "LD-347",
+    "action": "Delete",
+    "mode": "confirm",
+    "kpiBefore": "Total Inquiries 188 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "rowBefore": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1695 Local 16 Seater Premium Urbania ₹9100.00 Combined Quotes Detailed Quotes Cancel",
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-view-quote-before.png",
+    "leadBefore": {
+      "found": true,
+      "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "XMGZ467530",
+      "inquiryId": "QRY-130",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347.png"
+    },
+    "rowAtAction": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+    "menuBefore": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-menu.png",
+    "dialog": {
+      "text": "Delete Inquiry Are you sure you want to delete this inquiry? Yes No",
+      "buttons": [
+        "Yes",
+        "No"
+      ],
+      "inputs": 0
+    },
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-dialog.png",
+    "dialogFull": "Delete Inquiry Are you sure you want to delete this inquiry? Yes No",
+    "checkboxes": [],
+    "shotDialogFilled": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-dialog-before-confirm.png",
+    "confirmWith": "Yes",
+    "toasts": [
+      "Inquiry deleted successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/inquiry/delete 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /api/v1/admin/lead-target/details 200"
+    ],
+    "console": [],
+    "rowAfter": "not listed: rows for QRY-130: 0",
+    "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-list-after.png",
+    "qaListAfter": [
+      "QRY-129",
+      "QRY-194",
+      "QRY-213",
+      "QRY-215",
+      "QRY-211",
+      "QRY-228",
+      "QRY-128",
+      "QRY-134"
+    ],
+    "kpiAfter": "Total Inquiries 187 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "leadAfter": {
+      "found": true,
+      "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+      "menu": [
+        "View Lead",
+        "Assign",
+        "Delete"
+      ],
+      "pnr": "XMGZ467530",
+      "inquiryId": "QRY-130",
+      "status": "Revised quotation",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347-r2.png"
+    }
+  }
+}

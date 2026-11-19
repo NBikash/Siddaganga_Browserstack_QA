@@ -1,0 +1,66 @@
+{
+  "action": "Send Proforma Invoice",
+  "mode": "send",
+  "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+  "rowContactIsTestAccount": true,
+  "menu": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "dialog": {
+    "text": "Send Proforma Invoice Customer Name Mobile Number (optional) Send Via WhatsApp Email Send Now Cancel",
+    "buttons": [
+      "Send Now",
+      "Cancel"
+    ],
+    "fields": [
+      "text",
+      "text",
+      "checkbox",
+      "checkbox"
+    ]
+  },
+  "recipientPhones": 1,
+  "recipientEmails": 0,
+  "phonesAreTestAccount": true,
+  "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-dialog.png",
+  "channelsBefore": [
+    {
+      "label": "WhatsApp",
+      "checked": true
+    },
+    {
+      "label": "Email",
+      "checked": true
+    }
+  ],
+  "channelsUsed": [
+    {
+      "label": "WhatsApp",
+      "checked": true
+    },
+    {
+      "label": "Email",
+      "checked": true
+    }
+  ],
+  "shotFilled": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-filled.png",
+  "sentWith": "Send Now",
+  "toasts": [
+    "Proforma invoice sent to customer successfully!"
+  ],
+  "dialogsAfter": 0,
+  "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-after.png",
+  "net": [
+    "POST /api/v1/admin/inquiry/send-proforma-invoice 200"
+  ],
+  "console": []
+}

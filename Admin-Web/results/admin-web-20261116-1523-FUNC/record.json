@@ -1,0 +1,66 @@
+{
+  "pnrs": [
+    "DEUH653857",
+    "HQEF339510",
+    "IAJA754847",
+    "XMGZ467530",
+    "FXZB482309",
+    "WPKT544822",
+    "YIAC324313",
+    "DDEV675048",
+    "ITYG806764",
+    "PGDO412043"
+  ],
+  "records": {
+    "DDEV675048": {
+      "leadId": "LD-397",
+      "inquiryId": "987",
+      "start": "15/11/2026",
+      "vehicle": "33 Seater Deluxe Coach (Midi Coach, 35) x1",
+      "journey": "Outstation"
+    },
+    "WPKT544822": {
+      "leadId": "LD-352",
+      "inquiryId": "943",
+      "start": "20/11/2026",
+      "vehicle": "16 Seater Premium Urbania (Passenger Van, 16) x1",
+      "journey": "Local"
+    },
+    "PGDO412043": {
+      "leadId": "LD-351",
+      "inquiryId": "942",
+      "start": "12/11/2026",
+      "vehicle": "MPV (7) x1",
+      "journey": "Local"
+    },
+    "XMGZ467530": {
+      "leadId": "LD-347",
+      "inquiryId": "938",
+      "start": "20/11/2026",
+      "vehicle": "16 Seater Premium Urbania (Passenger Van, 16) x1",
+      "journey": "Local"
+    },
+    "IAJA754847": {
+      "leadId": "LD-346",
+      "inquiryId": "937",
+      "start": "20/11/2026",
+      "end": "21/11/2026",
+      "vehicle": "16 Seater Premium Urbania (Passenger Van, 16) x1",
+      "journey": "Local"
+    },
+    "HQEF339510": {
+      "leadId": "LD-345",
+      "inquiryId": "936",
+      "start": "15/11/2028",
+      "vehicle": "25 Seater Premium AC Coach (Mini Coach, 25) x1",
+      "journey": "Local"
+    }
+  },
+  "notFound": {
+    "DEUH653857": "not on any lead of client Bikash N",
+    "FXZB482309": "same",
+    "YIAC324313": "same",
+    "ITYG806764": "same"
+  },
+  "matchMethod": "Search Lead Info = Bikash, View Lead → Inquiry PNR exact match"
+}

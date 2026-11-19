@@ -1,0 +1,907 @@
+{
+  "id": "P2P-03",
+  "started": "2026-11-18T06:10:31.417Z",
+  "steps": [
+    {
+      "label": "run-A",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "MG Road",
+            "suggestions": [
+              "MG Road Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India",
+              "M G Road Halsurpete, Nagarathpete, Bengaluru, Karnataka, India",
+              "M G ROAD-TRINITY Mahatma Gandhi Road, Yellappa Chetty Layout, Sivanchetti Gardens, Bengaluru, Karnataka, India",
+              "MG Road Ward No. 18, Tumkur, Tumakur, Karnataka, India"
+            ],
+            "chosen": "MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Domlur",
+            "suggestions": [
+              "Domlur Bengaluru, Karnataka, India",
+              "Domlur Flyover Domlur I Stage, ISRO Colony, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Club 4th Main Road, 2nd Stage, Stage 2, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Water Tank Domlur I Stage, Domlur Village, Domlur, Bengaluru, Karnataka"
+            ],
+            "chosen": "Domlur, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-26",
+            "disabled": false,
+            "value": "2026-11-26"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India",
+          "to": "Domlur, Bengaluru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-26",
+            "11:00 AM",
+            "2026-11-26",
+            "1:40 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India → Domlur, Bengaluru, Karnataka, India → Garage (Return) Distance:< 30 KM Dates :26 Nov- 2026 Pickup Address:MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Domlur, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Fo",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Domlur, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India → Domlur, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹14,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹15,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹6,500",
+          "MPV's D MPV 7 ₹10,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹7,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-results.png",
+        "header": "Transfer - < 30 KM",
+        "band": "< 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Inside City",
+          "Standard transfer rental package",
+          "Base Rate (Inside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(< 30 km)",
+          "₹10,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : MPV's – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Domlur, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "26 Nov, 2026",
+        "passenger": "1",
+        "dropoff": "Domlur, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹10,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹10,500"
+          ]
+        ],
+        "total": "₹10,500",
+        "buttons": [
+          "2 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Domlur, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 2 km per 54 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 2
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-A-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : MPV's – 1 MPV's 7 Seater Type: MPV's Luggage: Car Boot (400–500 L) Route Summary : Transfer From Garage Garage Pickup Location MG Road, Yellappa Chetty Layout, Ashok Nagar, Bengaluru, Karnataka, India Dropoff Location Domlur, Bengaluru, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 1 Estimated Trip Cost : Vehicle Base Cost ₹10,500 Estimated Grand Total ₹10,500 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-B",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Koramangala",
+            "suggestions": [
+              "Koramangala Bengaluru, Karnataka, India",
+              "Koramangala Police Station 20th Main Road, 6th Block, Koramangala, Bengaluru, Karnataka, India",
+              "Koramangala 1st Block, HSR Layout 5th Sector Bengaluru, Karnataka, India",
+              "Koramangala Indoor Stadium Park KHB Games Village, Koramangala, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Koramangala, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "HSR Layout",
+            "suggestions": [
+              "HSR Layout Bengaluru, Karnataka, India",
+              "HSR Layout Police Station 27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+              "HSR layout Sector 2, 1st Stage, BTM 1st Stage Bengaluru, Karnataka, India",
+              "HSR Layout 5th Sector Bengaluru, Karnataka, India"
+            ],
+            "chosen": "HSR Layout, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-26",
+            "disabled": false,
+            "value": "2026-11-26"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Koramangala, Bengaluru, Karnataka, India",
+          "to": "HSR Layout, Bengaluru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-26",
+            "11:00 AM",
+            "2026-11-26",
+            "1:41 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Koramangala, Bengaluru, Karnataka, India → HSR Layout, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :26 Nov- 2026 Pickup Address:Koramangala, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:HSR Layout, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "HSR Layout, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Koramangala, Bengaluru, Karnataka, India → HSR Layout, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-results.png",
+        "header": "Transfer - < 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : MPV's – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Koramangala, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "HSR Layout, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "26 Nov, 2026",
+        "passenger": "1",
+        "dropoff": "HSR Layout, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹12,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹12,500"
+          ]
+        ],
+        "total": "₹12,500",
+        "buttons": [
+          "2 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Koramangala, Bengaluru, Karnataka, India",
+                "HSR Layout, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 2 km per 54 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 2
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-B-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : MPV's – 1 MPV's 7 Seater Type: MPV's Luggage: Car Boot (400–500 L) Route Summary : Transfer From Garage Garage Pickup Location Koramangala, Bengaluru, Karnataka, India Dropoff Location HSR Layout, Bengaluru, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 1 Estimated Trip Cost : Vehicle Base Cost ₹12,500 Estimated Grand Total ₹12,500 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-C",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Hebbal",
+            "suggestions": [
+              "Hebbal Bengaluru, Karnataka, India",
+              "Hebbal Flyover Subramani Nagar, Bayanna Layout, Hebbal, Bengaluru, Karnataka, India",
+              "Hebbal Kempapura Bengaluru, Karnataka, India",
+              "Hebbal Lake Hebbal Kempapura, Bengaluru, Karnataka"
+            ],
+            "chosen": "Hebbal, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Nandi Hills",
+            "suggestions": [
+              "Nandi Hills Karnataka, India",
+              "Nandi Hills Karnataka Nandi Hills, Karnataka, India",
+              "Nandi Hills Sunrise View point Nandi Hills, Karnataka, India",
+              "Nandi hills Manivartapete, Sultanpete, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Nandi Hills, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-26",
+            "disabled": false,
+            "value": "2026-11-26"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Hebbal, Bengaluru, Karnataka, India",
+          "to": "Nandi Hills, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-26",
+            "11:00 AM",
+            "2026-11-26",
+            "1:42 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :26 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : MPV's – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Hebbal, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Nandi Hills, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "26 Nov, 2026",
+        "passenger": "1",
+        "dropoff": "Nandi Hills, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹12,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹12,500"
+          ]
+        ],
+        "total": "₹12,500",
+        "buttons": [
+          "5 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Hebbal, Bengaluru, Karnataka, India",
+                "Nandi Hills, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 5 km per 67 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 5
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-C-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : MPV's – 1 MPV's 7 Seater Type: MPV's Luggage: Car Boot (400–500 L) Route Summary : Transfer From Garage Garage Pickup Location Hebbal, Bengaluru, Karnataka, India Dropoff Location Nandi Hills, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 1 Estimated Trip Cost : Vehicle Base Cost ₹12,500 Estimated Grand Total ₹12,500 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-D",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Kempegowda International Airport",
+            "suggestions": [
+              "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Terminal-2 Gangamuthanahalli, Karnataka",
+              "Kempegowda International Airport Gangamuthanahalli, Karnataka, India"
+            ],
+            "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-26",
+            "disabled": false,
+            "value": "2026-11-26"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Whitefield, Bengaluru, Karnataka, India",
+          "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-26",
+            "11:00 AM",
+            "2026-11-26",
+            "1:44 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :26 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Ja",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : MPV's – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Whitefield, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "26 Nov, 2026",
+        "passenger": "1",
+        "dropoff": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹12,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹12,500"
+          ]
+        ],
+        "total": "₹12,500",
+        "buttons": [
+          "5 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Whitefield, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 5 km per 67 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-D-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : MPV's – 1 MPV's 7 Seater Type: MPV's Luggage: Car Boot (400–500 L) Route Summary : Transfer From Garage Garage Pickup Location Whitefield, Bengaluru, Karnataka, India Dropoff Location Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 1 Estimated Trip Cost : Vehicle Base Cost ₹12,500 Estimated Grand Total ₹12,500 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-E",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-26",
+            "disabled": false,
+            "value": "2026-11-26"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Whitefield, Bengaluru, Karnataka, India",
+          "to": "Whitefield, Bengaluru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-26",
+            "11:00 AM",
+            "2026-11-26",
+            "1:45 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :26 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : MPV's – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Whitefield, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "26 Nov, 2026",
+        "passenger": "1",
+        "dropoff": null,
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹12,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹12,500"
+          ]
+        ],
+        "total": "₹12,500",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Whitefield, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 2
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-03-E-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : MPV's – 1 MPV's 7 Seater Type: MPV's Luggage: Car Boot (400–500 L) Route Summary : Transfer From Garage Garage Pickup Location Whitefield, Bengaluru, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 1 Estimated Trip Cost : Vehicle Base Cost ₹12,500 Estimated Grand Total ₹12,500 Confirm & Submit Booking"
+      }
+    }
+  ],
+  "finished": "2026-11-18T06:17:00.458Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

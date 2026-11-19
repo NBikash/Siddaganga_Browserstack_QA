@@ -1,0 +1,229 @@
+{
+  "id": "HRS-03",
+  "started": "2026-11-18T11:30:24.395Z",
+  "steps": [
+    {
+      "label": "hours-0",
+      "typed": "0",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "0",
+          "valid": false,
+          "msg": "Value must be greater than or equal to 1."
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-0-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-1",
+      "typed": "1",
+      "res": {
+        "navigated": true,
+        "hoursTxt": "1 Hour",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-1-results.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-24",
+      "typed": "24",
+      "res": {
+        "navigated": true,
+        "hoursTxt": "24 Hours",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-24-results.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-25",
+      "typed": "25",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "25",
+          "valid": false,
+          "msg": "Value must be less than or equal to 24."
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-25-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours--1",
+      "typed": "-1",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "-1",
+          "valid": false,
+          "msg": "Value must be greater than or equal to 1."
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03--1-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-blank",
+      "typed": "",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+          ],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "",
+          "valid": true,
+          "msg": ""
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-blank-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-1.5",
+      "typed": "1",
+      "res": {
+        "navigated": true,
+        "hoursTxt": "1 Hour",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-1_5-results.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-abc",
+      "typed": "",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+          ],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "",
+          "valid": true,
+          "msg": ""
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-abc-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    },
+    {
+      "label": "hours-100",
+      "typed": "100",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": [
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "hoursInput": {
+          "v": "100",
+          "valid": false,
+          "msg": "Value must be less than or equal to 24."
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-100-validation.png"
+      },
+      "pickup": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+    }
+  ],
+  "finished": "2026-11-18T11:42:31.745Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

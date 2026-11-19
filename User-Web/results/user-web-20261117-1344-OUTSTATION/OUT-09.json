@@ -1,0 +1,930 @@
+{
+  "id": "OUT-09",
+  "started": "2026-11-17T09:21:19.015Z",
+  "steps": [
+    {
+      "label": "A",
+      "fill": {
+        "toggles": {},
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Sarjapur Road",
+            "suggestions": [
+              "Sarjapur Road Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Kasavanahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Fire Station Sarjapur - Marathahalli Road, Bellandur, Bengaluru, Karnataka, India",
+              "Sarjapur Road Shushruti Nagar, Byraveshwara Industrial Estate, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Kolar",
+            "suggestions": [
+              "Kolar Karnataka, India",
+              "Kolar Gold Fields Karnataka, India",
+              "Kolar Clock Tower Dargah Shahi Mohallah, Kolar, Karnataka, India",
+              "Kolar Kempegowda, Majestic, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Kolar, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "8:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "9:30 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Kolar, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "9:30 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "25"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -157,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Kolar, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 6
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:300 KM Dates :17 Dec- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:25 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "25",
+        "drop": "Kolar, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹10,100",
+          "MPV's D MPV 7 ₹15,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-results.png"
+      },
+      "details": {
+        "vehicle": "D40NA",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹18,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "125 hp · 450 Nm · 21% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-fare-breakup.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 40 Seater Deluxe Coach – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kolar, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "17 Dec, 2026",
+        "passenger": "25",
+        "dropoff": "Kolar, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹18,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹1,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹19,000"
+          ]
+        ],
+        "total": "₹19,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+                "Kolar, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 10 km per 67 pixels"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 9
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-A-confirm-cost.png"
+      }
+    },
+    {
+      "label": "B",
+      "fill": {
+        "toggles": {},
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Sarjapur Road",
+            "suggestions": [
+              "Sarjapur Road Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Kasavanahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Fire Station Sarjapur - Marathahalli Road, Bellandur, Bengaluru, Karnataka, India",
+              "Sarjapur Road Shushruti Nagar, Byraveshwara Industrial Estate, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Kolar",
+            "suggestions": [
+              "Kolar Karnataka, India",
+              "Kolar Gold Fields Karnataka, India",
+              "Kolar Clock Tower Dargah Shahi Mohallah, Kolar, Karnataka, India",
+              "Kolar Kempegowda, Majestic, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Kolar, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "8:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "10:30 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Kolar, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "10:30 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "25"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -103,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Kolar, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 6
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:300 KM Dates :17 Dec- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:25 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "25",
+        "drop": "Kolar, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹18,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹20,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹18,500",
+          "Sedan D SDN 4 ₹10,600",
+          "MPV's D MPV 7 ₹16,600",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,100"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 40 Seater Deluxe Coach – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kolar, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "17 Dec, 2026",
+        "passenger": "25",
+        "dropoff": "Kolar, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹18,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹1,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹1,000"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹20,000"
+          ]
+        ],
+        "total": "₹20,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+                "Kolar, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 9
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-B-confirm-cost.png"
+      }
+    },
+    {
+      "label": "C",
+      "fill": {
+        "toggles": {},
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Sarjapur Road",
+            "suggestions": [
+              "Sarjapur Road Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Kasavanahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Fire Station Sarjapur - Marathahalli Road, Bellandur, Bengaluru, Karnataka, India",
+              "Sarjapur Road Shushruti Nagar, Byraveshwara Industrial Estate, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Kolar",
+            "suggestions": [
+              "Kolar Karnataka, India",
+              "Kolar Gold Fields Karnataka, India",
+              "Kolar Clock Tower Dargah Shahi Mohallah, Kolar, Karnataka, India",
+              "Kolar Kempegowda, Majestic, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Kolar, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "11:30 PM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-18",
+            "disabled": false,
+            "value": "2026-12-18"
+          },
+          {
+            "label": "4:00 AM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "11:30 PM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Kolar, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-18"
+          },
+          {
+            "ph": "text",
+            "v": "4:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "25"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              139,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Kolar, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 6
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:600 KM Dates :17-18 Dec- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:2 Days Passengers:25 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "25",
+        "drop": "Kolar, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹34,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹37,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹34,000",
+          "Sedan D SDN 4 ₹19,700",
+          "MPV's D MPV 7 ₹30,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹15,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 40 Seater Deluxe Coach – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kolar, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "17,18 Dec, 2026",
+        "passenger": "25",
+        "dropoff": "Kolar, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹36,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹2,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹1,000"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹37,000"
+          ]
+        ],
+        "total": "₹37,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+                "Kolar, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 9
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-C-confirm-cost.png"
+      }
+    },
+    {
+      "label": "D",
+      "fill": {
+        "toggles": {},
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Sarjapur Road",
+            "suggestions": [
+              "Sarjapur Road Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Kasavanahalli, Bengaluru, Karnataka, India",
+              "Sarjapur Road Fire Station Sarjapur - Marathahalli Road, Bellandur, Bengaluru, Karnataka, India",
+              "Sarjapur Road Shushruti Nagar, Byraveshwara Industrial Estate, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Kolar",
+            "suggestions": [
+              "Kolar Karnataka, India",
+              "Kolar Gold Fields Karnataka, India",
+              "Kolar Clock Tower Dargah Shahi Mohallah, Kolar, Karnataka, India",
+              "Kolar Kempegowda, Majestic, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Kolar, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "5:30 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-17",
+            "disabled": false,
+            "value": "2026-12-17"
+          },
+          {
+            "label": "6:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "5:30 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Kolar, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-17"
+          },
+          {
+            "ph": "text",
+            "v": "6:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "25"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -39,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+              "Kolar, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 6
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:300 KM Dates :17 Dec- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:25 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "25",
+        "drop": "Kolar, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹10,100",
+          "MPV's D MPV 7 ₹15,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 40 Seater Deluxe Coach – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kolar, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "17 Dec, 2026",
+        "passenger": "25",
+        "dropoff": "Kolar, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹18,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹1,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹19,000"
+          ]
+        ],
+        "total": "₹19,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+                "Kolar, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 9
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-09-D-confirm-cost.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T09:29:35.518Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

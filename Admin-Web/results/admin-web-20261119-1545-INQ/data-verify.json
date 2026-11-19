@@ -1,0 +1,103 @@
+{
+  "method": "Search Lead Info = QA client 'Bikash N'; View Lead on that client's rows only; Inquiry PNR exact match",
+  "pnrs": {
+    "ZLPS490392": {
+      "lead": "LD-436",
+      "inquiryId": "QRY-216",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ZLPS490392-LD-436-view-lead-r2.png"
+    },
+    "YOIT928679": {
+      "lead": "LD-435",
+      "inquiryId": "QRY-215",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-YOIT928679-LD-435-view-lead.png"
+    },
+    "ORZS120376": {
+      "lead": "LD-433",
+      "inquiryId": "QRY-213",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ORZS120376-LD-433-view-lead-r2.png"
+    },
+    "LJWN815154": {
+      "lead": "LD-431",
+      "inquiryId": "QRY-211",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-LJWN815154-LD-431-view-lead-r2.png"
+    },
+    "SIVM916255": {
+      "lead": "LD-428",
+      "inquiryId": "QRY-208",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-SIVM916255-LD-428-view-lead-r2.png"
+    },
+    "BGVS613665": {
+      "lead": "LD-416",
+      "inquiryId": "QRY-196",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-BGVS613665-LD-416-view-lead-r2.png"
+    },
+    "NCCC102640": {
+      "lead": "LD-415",
+      "inquiryId": "QRY-195",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-NCCC102640-LD-415-view-lead-r2.png"
+    },
+    "UMNF499106": {
+      "lead": "LD-414",
+      "inquiryId": "QRY-194",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-UMNF499106-LD-414-view-lead.png"
+    }
+  },
+  "findings": [
+    {
+      "id": "DV-01",
+      "pnrs": [
+        "LJWN815154"
+      ],
+      "title": "Passengers 10 in Admin vs 20 in User-Web (My Inquiries); Trip Days 2 vs 3-day trip (27–29 Nov)"
+    },
+    {
+      "id": "DV-02",
+      "pnrs": [
+        "NCCC102640",
+        "BGVS613665"
+      ],
+      "title": "Intermediate destinations (Chikkamagaluru, Belur; Kotilingeshwara Temple) not shown in Admin View Lead; only pickup and drop"
+    },
+    {
+      "id": "DV-03",
+      "pnrs": [
+        "ZLPS490392",
+        "YOIT928679",
+        "ORZS120376",
+        "LJWN815154",
+        "SIVM916255",
+        "BGVS613665",
+        "NCCC102640",
+        "UMNF499106"
+      ],
+      "title": "Pickup/Drop time 12:00 AM for every journey (submitted times lost) – recurrence of User-Web timing defect"
+    },
+    {
+      "id": "DV-04",
+      "pnrs": [
+        "ORZS120376"
+      ],
+      "title": "By Hour inquiry shown as Journey Type Transfer without hours"
+    },
+    {
+      "id": "DV-OK",
+      "pnrs": [
+        "ZLPS490392",
+        "YOIT928679",
+        "ORZS120376",
+        "LJWN815154",
+        "SIVM916255",
+        "BGVS613665",
+        "NCCC102640",
+        "UMNF499106"
+      ],
+      "title": "Match: PNR, pax (except LJWN815154), dates, pickup/drop endpoints, journey count/type (Multi-Leg 3 journeys), vehicle, per-journey costing"
+    }
+  ],
+  "idRelabel": {
+    "WPKT544822 / LD-352": "QRY-943 → QRY-135",
+    "XMGZ467530 / LD-347": "QRY-938 → QRY-130",
+    "IAJA754847 / LD-346": "QRY-937 → QRY-129",
+    "HQEF339510 / LD-345": "QRY-936 → QRY-128"
+  }
+}

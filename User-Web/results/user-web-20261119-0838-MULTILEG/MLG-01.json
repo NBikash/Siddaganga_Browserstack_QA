@@ -1,0 +1,107 @@
+{
+  "id": "MLG-01",
+  "started": "2026-11-19T03:30:21.245Z",
+  "steps": [
+    {
+      "label": "1-inventory",
+      "ctl": [
+        "H4 Enter Number of Passengers",
+        "LABEL Total Passengers",
+        "INPUT:number  min=1",
+        "BUTTON:button Save As Draft",
+        "BUTTON:submit Next"
+      ],
+      "maps": 1,
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-step1.png"
+    },
+    {
+      "label": "2-blank",
+      "typed": "",
+      "after": "",
+      "step2": false,
+      "msgs": [
+        "Enter Number of Passengers Total Passengers This field is required Save As Draft Next"
+      ],
+      "text": "Enter Number of Passengers Total Passengers This field is required Save As Draft Next",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-blank.png"
+    },
+    {
+      "label": "3-value-0",
+      "typed": "1",
+      "after": "1",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!",
+      "leg1pax": "1",
+      "valid": null,
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-v0.png"
+    },
+    {
+      "label": "3-value--2",
+      "typed": "1",
+      "after": "1",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!",
+      "leg1pax": "1",
+      "valid": null,
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-v-2.png"
+    },
+    {
+      "label": "3-value-2.5",
+      "typed": "2",
+      "after": "2",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!",
+      "leg1pax": "2",
+      "valid": null,
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-v2_5.png"
+    },
+    {
+      "label": "3-value-1000",
+      "typed": "1000",
+      "after": "1000",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!",
+      "leg1pax": "1000",
+      "valid": null,
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-v1000.png"
+    },
+    {
+      "label": "4-twelve",
+      "typed": "12",
+      "after": "12",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!",
+      "tab": "Local",
+      "legs": {
+        "header": [
+          "Trip Leg #1"
+        ],
+        "badges": [],
+        "innerLegs": [
+          "Leg 1"
+        ],
+        "step1": false
+      },
+      "leg1pax": "12",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-step2.png"
+    },
+    {
+      "label": "5-trash",
+      "text": "Enter Number of Passengers Total Passengers Save As Draft Next",
+      "step1Back": true,
+      "total": "12",
+      "toasts": [],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-01-after-trash.png"
+    }
+  ],
+  "finished": "2026-11-19T03:34:01.803Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

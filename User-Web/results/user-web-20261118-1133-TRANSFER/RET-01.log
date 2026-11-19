@@ -1,0 +1,14 @@
+[
+  {
+    "label": "1-tick"
+  },
+  {
+    "label": "2-untick-retick"
+  },
+  {
+    "label": "3-fill-untick-search",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  }
+]

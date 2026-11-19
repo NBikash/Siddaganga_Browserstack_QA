@@ -1,8 +1,8 @@
 """Scenario & Use Case document (4 columns: Scenario ID, Module, Use Case Title, Scenario Steps) for every module and
 screen explored so far, including partially explored modules.
 
-Sources (read-only): documentation/source/{manual_cases,interim_cases,screen_meta}.py, exploration-logs/raw/route-scan.json,
-exploration-logs/raw/inspect/*.json. Writes only documentation/scenarios/.
+Sources (read-only): scripts/doc_sources/{manual_cases,interim_cases,screen_meta}.py, exploration-logs/raw/route-scan.json,
+exploration-logs/raw/inspect/*.json. Writes only documentation/05_Superseded_Catalogues_2026-10-30/scenario-catalogue/.
 Run: python scripts/build_scenarios.py
 """
 import json
@@ -20,7 +20,7 @@ from manual_cases import MANUAL_CASES  # noqa: E402
 from interim_cases import INTERIM_CASES  # noqa: E402
 from screen_meta import SCREENS, MODULES  # noqa: E402
 
-OUT = bd.ROOT / "documentation" / "scenarios"
+OUT = bd.ROOT / "documentation" / "05_Superseded_Catalogues_2026-10-30" / "scenario-catalogue"
 INSPECT = bd.RAW / "inspect"
 
 # Saved views whose captured content is not the intended view (kept as raw data, excluded from the document)

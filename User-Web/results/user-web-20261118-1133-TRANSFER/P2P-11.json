@@ -1,0 +1,364 @@
+{
+  "id": "P2P-11",
+  "started": "2026-11-18T07:30:43.334Z",
+  "steps": [
+    {
+      "label": "transfer-A",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Whitefield",
+          "suggestions": [
+            "Whitefield Bengaluru, Karnataka, India",
+            "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+            "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+            "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "Search drop location",
+          "query": "Kempegowda International Airport",
+          "suggestions": [
+            "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+            "Kempegowda International Airport Bengaluru, Karnataka, India",
+            "Kempegowda International Airport Terminal-2 Gangamuthanahalli, Karnataka",
+            "Kempegowda International Airport Gangamuthanahalli, Karnataka, India"
+          ],
+          "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Ja",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-A-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "transfer-B",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Belagavi",
+          "suggestions": [
+            "Belagavi Karnataka, India",
+            "Belagavi Airport Bagalkote - Belagavi Road, Sambra, Karnataka, India",
+            "Belagavi Bus Stand Raviwar Peth, Belagavi Cantonment, Karnataka, India",
+            "Belagavi Railway Station [BGM] Shastri Nagar, Shahapur, Belagavi Cantonment, Karnataka, India"
+          ],
+          "chosen": "Belagavi, Karnataka, India"
+        },
+        {
+          "ph": "Search drop location",
+          "query": "Whitefield",
+          "suggestions": [
+            "Whitefield Bengaluru, Karnataka, India",
+            "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+            "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+            "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Whitefield, Bengaluru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Belagavi, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Belagavi, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Belagavi, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-B-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "transfer-C",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Chennai",
+          "suggestions": [
+            "Chennai Tamil Nadu, India",
+            "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+            "Chennai Central Tamil Nadu",
+            "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+          ],
+          "chosen": "Chennai, Tamil Nadu, India"
+        },
+        {
+          "ph": "Search drop location",
+          "query": "Bengaluru International Airport",
+          "suggestions": [
+            "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+            "International Airport Road Byatarayanapura, Sri Venkateshpura Layout, Sampigehalli, Bengaluru, Karnataka, India",
+            "Bangalore international airport area planning authority Devanahalli Town, Karnataka, India",
+            "Terminal 1 Karnataka"
+          ],
+          "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → Chennai, Tamil Nadu, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Chennai, Tamil Nadu, India Duration:1 Day Passengers:4 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limi",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Chennai, Tamil Nadu, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-C-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "transfer-D",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Kochi",
+          "suggestions": [
+            "Kochi Keralam, India",
+            "Kochi International Airport (COK) Keralam, India",
+            "Kochi Marriott Hotel N. H. 47, Edappally, Kochi, Keralam, India",
+            "Kochi Kurry Klub Avalahalii, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Kochi, Keralam, India"
+        },
+        {
+          "ph": "Search drop location",
+          "query": "Mysuru",
+          "suggestions": [
+            "Mysuru Karnataka, India",
+            "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+            "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+            "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+          ],
+          "chosen": "Mysuru, Karnataka, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Kochi, Keralam, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Kochi, Keralam, India Duration:1 Day Passengers:4 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Kochi, Keralam, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-D-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "transfer-E",
+      "places": [
+        {
+          "ph": "Search pickup location",
+          "query": "Malleshwaram",
+          "suggestions": [
+            "Malleshwaram Bengaluru, Karnataka, India",
+            "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+            "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+            "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "Search drop location",
+          "query": "Chennai",
+          "suggestions": [
+            "Chennai Tamil Nadu, India",
+            "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+            "Chennai Central Tamil Nadu",
+            "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+          ],
+          "chosen": "Chennai, Tamil Nadu, India"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:Chennai, Tamil Nadu, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "Chennai, Tamil Nadu, India",
+        "route": "Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-E-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "local-Whitefield",
+      "place": {
+        "ph": "Search pickup location",
+        "query": "Whitefield",
+        "suggestions": [
+          "Whitefield Bengaluru, Karnataka, India",
+          "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+          "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+          "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Whitefield, Bengaluru, Karnataka, India"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "summary": ": Map Data Terms Leg 1 Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :18 Nov, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Whitefield, Benga",
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-local-Whitefield-results.png"
+      }
+    },
+    {
+      "label": "local-Mysuru",
+      "place": {
+        "ph": "Search pickup location",
+        "query": "Mysuru",
+        "suggestions": [
+          "Mysuru Karnataka, India",
+          "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+          "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+        ],
+        "chosen": "Mysuru, Karnataka, India"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "summary": ": Map Data Terms Leg 1 Local Garage (Start) → Mysuru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:80 KM Dates :18 Nov, 2026 Pickup Address:Mysuru, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Ve",
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-local-Mysuru-results.png"
+      }
+    },
+    {
+      "label": "local-Belagavi",
+      "error": "Error: page.waitForTimeout: Target page, context or browser has been closed",
+      "errorShot": null
+    },
+    {
+      "label": "local-Chennai",
+      "error": "Error: page.waitForTimeout: Target page, context or browser has been closed",
+      "errorShot": null
+    },
+    {
+      "label": "local-Kochi",
+      "error": "Error: page.waitForTimeout: Target page, context or browser has been closed",
+      "errorShot": null
+    }
+  ],
+  "finished": "2026-11-18T07:44:33.627Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

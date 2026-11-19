@@ -1,0 +1,152 @@
+{
+  "search": "Bikash",
+  "showing": "Showing 1 to 5 of 21 entries",
+  "leads": {
+    "LD-436": {
+      "pnr": "ZLPS490392",
+      "inquiryId": "QRY-216",
+      "status": "New quotation",
+      "created": "19/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-436 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR ZLPS490392 Inquiry ID QRY-216 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month January Passengers (PAX) 18 Trip Days 3 Start Date 03/01/2027 End Date 05/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 03/01/2027 End Date 05/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Koramangala, Bengaluru, Karnataka, India Drop Location Hassan, Karnataka, India Journey Type Outstation Trip Days 3 Amenities - Vehicle 1 Vehicle Name 21 Seater Premium AC Coach Vehicle Type Mini Coach Seats 21 No. of Vehicles 1 Total Costing ₹42,800 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ZLPS490392-LD-436-view-lead-r2.png"
+    },
+    "LD-435": {
+      "pnr": "YOIT928679",
+      "inquiryId": "QRY-215",
+      "status": "New quotation",
+      "created": "19/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-435 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR YOIT928679 Inquiry ID QRY-215 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 10 Trip Days 4 Start Date 26/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 26/11/2026 End Date 26/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location 4th Block, Jayanagar, Bengaluru, Karnataka, India Drop Location 4th Block, Jayanagar, Bengaluru, Karnataka, India Journey Type Local Trip Days 1 Amenities - Vehicle 1 Vehicle Name 12 Seater Luxury Urbania Vehicle Type Passenger Van Seats 12 No. of Vehicles 1 Total Costing ₹9,300 Journey 2 Start Date 27/11/2026 End Date 28/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Mysuru, Karnataka, India Journey Type Outstation Trip Days 2 Amenities - Vehicle 1 Vehicle Name 35 Seater Premium AC Coach Vehicle Type Midi Coach Seats 35 No. of Vehicles 1 Total Costing ₹36,000 Journey 3 Start Date 29/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 12 Seater Tempo Traveller Vehicle Type Passenger Van Seats 12 No. of Vehicles 1 Total Costing ₹9,000 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-YOIT928679-LD-435-view-lead.png"
+    },
+    "LD-433": {
+      "pnr": "ORZS120376",
+      "inquiryId": "QRY-213",
+      "status": "New quotation",
+      "created": "18/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-433 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR ORZS120376 Inquiry ID QRY-213 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 40 Trip Days 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Whitefield, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 40 Seater Premium AC Coach Vehicle Type Full-Size Coach Seats 40 No. of Vehicles 1 Total Costing ₹20,000 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ORZS120376-LD-433-view-lead-r2.png"
+    },
+    "LD-431": {
+      "pnr": "LJWN815154",
+      "inquiryId": "QRY-211",
+      "status": "New quotation",
+      "created": "18/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-431 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR LJWN815154 Inquiry ID QRY-211 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 10 Trip Days 2 Start Date 27/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 27/11/2026 End Date 27/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Drop Location Mysuru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 35 Seater Premium AC Coach Vehicle Type Midi Coach Seats 35 No. of Vehicles 1 Total Costing ₹18,500 Journey 2 Start Date 29/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Mysuru, Karnataka, India Drop Location Phase 1, Electronic City, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 35 Seater Premium AC Coach Vehicle Type Midi Coach Seats 35 No. of Vehicles 1 Total Costing ₹18,500 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-LJWN815154-LD-431-view-lead-r2.png"
+    },
+    "LD-428": {
+      "pnr": "SIVM916255",
+      "inquiryId": "QRY-208",
+      "status": "New quotation",
+      "created": "18/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-428 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR SIVM916255 Inquiry ID QRY-208 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 9 Trip Days 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 9 Seater Luxury Urbania Vehicle Type Luxury Van Seats 9 No. of Vehicles 1 Total Costing ₹17,500 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-SIVM916255-LD-428-view-lead-r2.png"
+    },
+    "LD-416": {
+      "pnr": "BGVS613665",
+      "inquiryId": "QRY-196",
+      "status": "New quotation",
+      "created": "17/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-416 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR BGVS613665 Inquiry ID QRY-196 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month January Passengers (PAX) 4 Trip Days 1 Start Date 01/01/2027 End Date 01/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 01/01/2027 End Date 01/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Marathahalli, Bengaluru, Karnataka, India Drop Location K R Puram, Bengaluru, Karnataka, India Journey Type Outstation Trip Days 1 Amenities - Vehicle 1 Vehicle Name Sedan Vehicle Type Sedan Seats 4 No. of Vehicles 1 Total Costing ₹10,100 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-BGVS613665-LD-416-view-lead-r2.png"
+    },
+    "LD-415": {
+      "pnr": "NCCC102640",
+      "inquiryId": "QRY-195",
+      "status": "New quotation",
+      "created": "17/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-415 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR NCCC102640 Inquiry ID QRY-195 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month January Passengers (PAX) 14 Trip Days 3 Start Date 11/01/2027 End Date 13/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 11/01/2027 End Date 13/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Koramangala, Bengaluru, Karnataka, India Drop Location Hassan, Karnataka, India Journey Type Outstation Trip Days 3 Amenities - Vehicle 1 Vehicle Name 16 Seater Premium Urbania Vehicle Type Passenger Van Seats 16 No. of Vehicles 1 Total Costing ₹40,000 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-NCCC102640-LD-415-view-lead-r2.png"
+    },
+    "LD-414": {
+      "pnr": "UMNF499106",
+      "inquiryId": "QRY-194",
+      "status": "New quotation",
+      "created": "17/11/2026",
+      "details": "Lead Details Lead Information Lead ID LD-414 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR UMNF499106 Inquiry ID QRY-194 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 20 Trip Days 2 Start Date 24/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 24/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Mysuru, Karnataka, India Journey Type Outstation Trip Days 2 Amenities - Vehicle 1 Vehicle Name 28 Seater Premium AC Coach Vehicle Type Midi Coach Seats 28 No. of Vehicles 1 Total Costing ₹34,200 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-UMNF499106-LD-414-view-lead.png"
+    },
+    "LD-396": {
+      "pnr": "YIAC324313",
+      "inquiryId": "QRY-178",
+      "status": "New quotation",
+      "created": "15/11/2026"
+    },
+    "LD-353": {
+      "pnr": "SOQS555799",
+      "inquiryId": "QRY-136",
+      "status": "Confirm",
+      "created": "12/11/2026"
+    },
+    "LD-352": {
+      "pnr": "WPKT544822",
+      "inquiryId": "QRY-135",
+      "status": "Revised quotation",
+      "created": "12/11/2026"
+    },
+    "LD-349": {
+      "pnr": "FXZB482309",
+      "inquiryId": "QRY-132",
+      "status": "New quotation",
+      "created": "12/11/2026"
+    },
+    "LD-347": {
+      "pnr": "XMGZ467530",
+      "inquiryId": "QRY-130",
+      "status": "Revised quotation",
+      "created": "12/11/2026"
+    },
+    "LD-346": {
+      "pnr": "IAJA754847",
+      "inquiryId": "QRY-129",
+      "status": "Revised quotation",
+      "created": "12/11/2026"
+    },
+    "LD-345": {
+      "pnr": "HQEF339510",
+      "inquiryId": "QRY-128",
+      "status": "Revised quotation",
+      "created": "12/11/2026"
+    },
+    "LD-343": {
+      "pnr": "DEUH653857",
+      "inquiryId": "QRY-126",
+      "status": "New quotation",
+      "created": "12/11/2026"
+    },
+    "LD-342": {
+      "pnr": "ITYG806764",
+      "inquiryId": "QRY-125",
+      "status": "New quotation",
+      "created": "12/11/2026"
+    },
+    "LD-341": {
+      "pnr": "MWAG650153",
+      "inquiryId": "QRY-124",
+      "status": "Confirm",
+      "created": "12/11/2026"
+    },
+    "LD-311": {
+      "pnr": "KCVR914550",
+      "inquiryId": "QRY-95",
+      "status": "New quotation",
+      "created": "10/11/2026"
+    },
+    "LD-290": {
+      "pnr": "KGJA293529",
+      "inquiryId": "QRY-882",
+      "status": "Cancelled",
+      "created": "10/11/2026"
+    },
+    "LD-277": {
+      "pnr": "CTPE643678",
+      "inquiryId": "QRY-65",
+      "status": "Confirm",
+      "created": "07/11/2026"
+    }
+  },
+  "missing": [],
+  "other": {
+    "rowsSkipped": 0
+  }
+}

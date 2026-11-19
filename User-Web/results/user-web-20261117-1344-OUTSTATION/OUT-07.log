@@ -1,0 +1,34 @@
+[
+  {
+    "label": "A",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days",
+    "total": "₹25,600",
+    "popup": null
+  },
+  {
+    "label": "B",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days",
+    "total": "₹26,400",
+    "popup": null
+  },
+  {
+    "label": "C",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days",
+    "total": "₹40,000",
+    "popup": null
+  },
+  {
+    "label": "D-multiday",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days",
+    "total": "₹26,400",
+    "popup": null
+  }
+]

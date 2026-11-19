@@ -1,0 +1,75 @@
+{
+  "id": "MLG-17",
+  "started": "2026-11-19T05:28:13.677Z",
+  "steps": [
+    {
+      "label": "1-step1-button",
+      "buttons": [
+        "Save As Draft",
+        "Next"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-17-step1.png"
+    },
+    {
+      "label": "2-save-draft",
+      "s1": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-17-l1-saved.png"
+      },
+      "s2": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-17-l2-saved.png"
+      },
+      "toasts": [
+        "Draft saved successfully!"
+      ],
+      "modal": [],
+      "calls": [
+        "allowed(approved) POST /user/draft-inquiry/save"
+      ],
+      "draftCalls": 1,
+      "url": "https://preprod.siddagangatravels.com/",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-17-after-draft.png"
+    }
+  ],
+  "finished": "2026-11-19T05:30:05.220Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save"
+  ]
+}

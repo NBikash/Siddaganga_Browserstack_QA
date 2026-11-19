@@ -1,0 +1,22 @@
+[
+  {
+    "label": "search",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "confirm-for-submit",
+    "total": "₹18,500",
+    "popup": null
+  },
+  {
+    "label": "submit",
+    "sub": [
+      "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹37,000 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+    ]
+  },
+  {
+    "label": "my-inquiries"
+  }
+]

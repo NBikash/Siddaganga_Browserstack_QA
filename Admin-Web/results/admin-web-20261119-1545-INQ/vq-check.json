@@ -1,0 +1,52 @@
+{
+  "after-C": {
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuote": {
+      "text": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel",
+      "buttons": [
+        "Leg 1",
+        "Combined Quotes",
+        "Detailed Quotes",
+        "Cancel"
+      ]
+    },
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-C-view-quote-r2.png",
+    "costs": {
+      "totalKms": "600.00",
+      "minimumPerDay": "300.00",
+      "perKm": "52.00",
+      "extraKms": "50.00",
+      "driver": "1000.00",
+      "dayBataDays": "2.00",
+      "noOfDays": "1.00",
+      "toll": "500.00",
+      "totalStateTax": "0.00",
+      "extra": "250.00",
+      "fixedCost": "0",
+      "totalApproxCost": "34200.00"
+    },
+    "preview": {
+      "text": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel",
+      "buttons": [
+        "Leg 1",
+        "Combined Quotes",
+        "Detailed Quotes",
+        "Cancel"
+      ]
+    },
+    "shotPV": "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-C-preview.png"
+  },
+  "after-D": {
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "viewQuote": {
+      "text": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel",
+      "buttons": [
+        "Leg 1",
+        "Combined Quotes",
+        "Detailed Quotes",
+        "Cancel"
+      ]
+    },
+    "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-D-view-quote-r2.png"
+  }
+}

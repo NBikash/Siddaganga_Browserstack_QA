@@ -1,0 +1,265 @@
+{
+  "id": "P2P-09",
+  "started": "2026-11-18T07:22:45.237Z",
+  "steps": [
+    {
+      "label": "1-swap",
+      "before": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-30",
+          "9:00 AM",
+          "2026-11-30",
+          "2:52 PM"
+        ],
+        "pax": "10"
+      },
+      "swapped": {
+        "from": "Mangaluru, Karnataka, India",
+        "to": "Marathahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-30",
+          "9:00 AM",
+          "2026-11-30",
+          "2:52 PM"
+        ],
+        "pax": "10"
+      },
+      "back": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-30",
+          "9:00 AM",
+          "2026-11-30",
+          "2:52 PM"
+        ],
+        "pax": "10"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-swapped-r2.png"
+    },
+    {
+      "label": "2-search",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :30 Nov- 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:10 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "10",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-first-results-r2.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "3-modify",
+      "pre": {
+        "title": "Modify Leg 1",
+        "toggles": {
+          "md": null,
+          "dd": null
+        },
+        "fields": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "2:52 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "10"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modify-prefill-r2.png"
+      },
+      "change": {
+        "ph": "Search drop location",
+        "query": "Udupi",
+        "suggestions": [
+          "Udupi Karnataka, India",
+          "Udupi Garden Park 17th Main Road, Tavarekere, Aicobo Nagar, 1st Stage, BTM 1st Stage, Bengaluru, Karnataka, India",
+          "UDUPI GARDEN Stage 2, BTM, Bengaluru, Karnataka, India",
+          "Udupi Upachar Silk Board Flyover, Venkatapura, Santhosapuram, Sector 6, HSR Layout, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Udupi, Karnataka, India"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Udupi, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :30 Nov- 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:10 Pax Drop Address:Udupi, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "10",
+        "drop": "Udupi, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Udupi, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modified-results-r2.png"
+      }
+    },
+    {
+      "label": "4-new-route",
+      "details": {
+        "vehicle": "P16UB",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "115 hp · 350 Nm · 25% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modified-fare-breakup-r2.png"
+      },
+      "confirm": {
+        "cta": "Send Inquiry",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 16 Seater Premium Urbania – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Marathahalli, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Udupi, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "30 Nov, 2026",
+        "passenger": "10",
+        "dropoff": "Udupi, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹12,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹12,500"
+          ]
+        ],
+        "total": "₹12,500",
+        "buttons": [
+          "Confirm & Submit Inquiry"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Marathahalli, Bengaluru, Karnataka, India",
+                "Udupi, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 2
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modified-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modified-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-09-modified-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 16 Seater Premium Urbania – 1 16 Seater Premium Urbania 16 Seater Type: 16 Seater Premium Urbania Luggage: Route Summary : Transfer From Garage Garage Pickup Location Marathahalli, Bengaluru, Karnataka, India Dropoff Location Udupi, Karnataka, India Back to Garage Garage Dates 30 Nov, 2026 Passenger 10 Estimated Trip Cost : Vehicle Base Cost ₹12,500 Estimated Grand Total ₹12,500 Confirm & Submit Inquiry"
+      },
+      "summary": "You have Searched For : Map Data Terms Leg 1 ✓ Transfer Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Udupi, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :30 Nov- 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:10 Pax Drop Address:Udupi, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 year"
+    }
+  ],
+  "finished": "2026-11-18T07:27:03.425Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

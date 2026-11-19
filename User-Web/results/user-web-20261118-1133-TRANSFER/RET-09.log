@@ -1,0 +1,26 @@
+[
+  {
+    "label": "1-tick"
+  },
+  {
+    "label": "2-change-outward"
+  },
+  {
+    "label": "3-swap"
+  },
+  {
+    "label": "4-untick-change-retick"
+  },
+  {
+    "label": "5-return-dates"
+  },
+  {
+    "label": "6-manual-return-edit"
+  },
+  {
+    "label": "7-search-then-untick",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  }
+]

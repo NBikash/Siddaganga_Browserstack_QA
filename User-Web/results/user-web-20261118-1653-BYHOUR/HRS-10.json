@@ -1,0 +1,237 @@
+{
+  "id": "HRS-10",
+  "started": "2026-11-18T13:33:04.772Z",
+  "steps": [
+    {
+      "label": "1-pax25-P25AC",
+      "fill": {
+        "dd": false,
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Jayanagar 4th Block",
+            "suggestions": [
+              "4th Block, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4th Block East, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4th Block, Jayanagar, Bengaluru, Karnataka",
+              "4th Block East, Pattabhirama Nagar, Jayanagar Bengaluru, Karnataka, India"
+            ],
+            "chosen": "4th Block, Jayanagar, Bengaluru, Karnataka, India"
+          }
+        ],
+        "date": {
+          "iso": "2026-12-07",
+          "disabled": false,
+          "value": "2026-12-07"
+        },
+        "time": {
+          "label": "9:00 AM",
+          "disabled": false
+        },
+        "state": {
+          "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+          "drop": null,
+          "dt": [
+            "2026-12-07",
+            "9:00 AM"
+          ],
+          "pax": "25",
+          "hours": "6",
+          "toggles": [
+            false,
+            false
+          ],
+          "chips": []
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return) Distance:< 30 KM Dates :7 Dec, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:6 Hours Passengers:25 Pax Drop Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Sho",
+        "pax": "25",
+        "drop": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹14,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹15,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹6,500",
+          "MPV's D MPV 7 ₹10,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹7,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-results.png",
+        "header": "20 Buses Found | Transfer - < 30 KM",
+        "band": "< 30 KM",
+        "hoursTxt": "6 Hours",
+        "datesTxt": "7 Dec, 2026"
+      },
+      "card": null,
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 25 Seater Premium AC Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "7 Dec, 2026",
+        "passenger": "25",
+        "dropoff": null,
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹14,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹14,000"
+          ]
+        ],
+        "total": "₹14,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater Type: 25 Seater Premium AC Coach Luggage: Route Summary : Transfer From Garage Garage Pickup Location 4th Block, Jayanagar, Bengaluru, Karnataka, India Back to Garage Garage Dates 7 Dec, 2026 Passenger 25 Estimated Trip Cost : Vehicle Base Cost ₹14,000 Estimated Grand Total ₹14,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "2-pax60-multi",
+      "state": {
+        "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "drop": null,
+        "dt": [
+          "2026-12-07",
+          "9:00 AM"
+        ],
+        "pax": "60",
+        "hours": "6",
+        "toggles": [
+          false,
+          false
+        ],
+        "chips": []
+      },
+      "paxAttr": {
+        "v": "60",
+        "max": ""
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return) Distance:< 30 KM Dates :7 Dec, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:6 Hours Passengers:60 Pax Drop Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Sho",
+        "pax": "60",
+        "drop": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹14,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹15,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹6,500",
+          "MPV's D MPV 7 ₹10,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹7,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-results.png",
+        "header": "20 Buses Found | Transfer - < 30 KM",
+        "band": "< 30 KM",
+        "hoursTxt": "6 Hours",
+        "datesTxt": "7 Dec, 2026"
+      },
+      "first": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 60 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 60 passengers, but your selected buses cover only 45 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-L45V-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-L45V-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 60 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry"
+      },
+      "second": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 60 passengers, but your selected buses cover only 25 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 60 passengers, but your selected buses cover only 25 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-plus-P25AC-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-plus-P25AC-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 60 passengers, but your selected buses cover only 25 seats. Please add one or more buses to continue. Cancel Inquiry"
+      }
+    }
+  ],
+  "finished": "2026-11-18T13:39:16.222Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

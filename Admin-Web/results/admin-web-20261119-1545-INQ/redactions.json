@@ -1,0 +1,545 @@
+[
+ {
+  "file": "comms/COMM-Send-Bus-Images-inspect-no-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Proforma-Invoice-inspect-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Proforma-Invoice-send-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Proforma-Invoice-send-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Proforma-Invoice-send-filled.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Quote-inspect-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Quote-send-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ],
+   [
+    540,
+    505,
+    1240,
+    560
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Quote-send-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "comms/COMM-Send-Quote-send-filled.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CONV-QRY-129-after-convert.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CONV-QRY-129-choose-trip.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CONV-QRY-129-confirm.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CONV-QRY-129-qa-list-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CONV-QRY-129-view-quote-before.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-QRY-135-qa-list-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-after-click.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog-before-confirm.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog-full.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog-r2.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-menu-r2.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-menu.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-result-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-row-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-view-quote-before-r2.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-view-quote-before.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-dismiss-QRY-135-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-dismiss-QRY-135-menu.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-dismiss-QRY-135-row-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-dismiss-QRY-135-view-quote-before.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-confirm-QRY-130-dialog-before-confirm.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-confirm-QRY-130-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-confirm-QRY-130-list-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-confirm-QRY-130-menu.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-confirm-QRY-130-view-quote-before.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-dismiss-QRY-130-dialog.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-dismiss-QRY-130-menu.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-dismiss-QRY-130-row-after.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/DEL-dismiss-QRY-130-view-quote-before.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ]
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-after-click.png",
+  "boxes": [
+   [
+    1000,
+    600,
+    1150,
+    1398
+   ]
+  ],
+  "reason": "full-page mask misaligned; contact column"
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog-full.png",
+  "boxes": [
+   [
+    1000,
+    600,
+    1150,
+    1464
+   ]
+  ],
+  "reason": "full-page mask misaligned; contact column"
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-result-dialog.png",
+  "boxes": [
+   [
+    1000,
+    600,
+    1150,
+    1379
+   ]
+  ],
+  "reason": "full-page mask misaligned; contact column"
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-after-click.png",
+  "boxes": [
+   [
+    735,
+    900,
+    865,
+    1398
+   ]
+  ],
+  "reason": "contact column (scrolled table)"
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-dialog-full.png",
+  "boxes": [
+   [
+    735,
+    900,
+    865,
+    1464
+   ]
+  ],
+  "reason": "contact column (scrolled table)"
+ },
+ {
+  "file": "inquiry/CXL-confirm-QRY-135-result-dialog.png",
+  "boxes": [
+   [
+    735,
+    900,
+    865,
+    1379
+   ]
+  ],
+  "reason": "contact column (scrolled table)"
+ },
+ {
+  "file": "inquiry/INQ-001-client-filter-r2.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ],
+  "reason": "client filter"
+ },
+ {
+  "file": "inquiry/INQ-001-client-filter-r3.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ],
+  "reason": "client filter"
+ },
+ {
+  "file": "inquiry/INQ-001-client-filter.png",
+  "boxes": [
+   [
+    1150,
+    440,
+    1505,
+    522
+   ]
+  ],
+  "reason": "client filter"
+ }
+]

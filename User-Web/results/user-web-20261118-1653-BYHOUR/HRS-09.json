@@ -1,0 +1,269 @@
+{
+  "id": "HRS-09",
+  "started": "2026-11-18T13:25:52.156Z",
+  "steps": [
+    {
+      "label": "1-blank-pickup",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": ""
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "6:55 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "4"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-1-validation.png",
+        "hoursInput": {
+          "v": "4",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "",
+          "drop": null,
+          "dt": [
+            "2026-11-18",
+            "6:55 PM"
+          ],
+          "pax": "1",
+          "hours": "4",
+          "toggles": [
+            false,
+            false
+          ],
+          "chips": []
+        }
+      }
+    },
+    {
+      "label": "2-drop-blank",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Hebbal, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "6:56 PM"
+          },
+          {
+            "ph": "Search drop location",
+            "v": ""
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "4"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-2-validation.png",
+        "hoursInput": {
+          "v": "4",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "Hebbal, Bengaluru, Karnataka, India",
+          "drop": "",
+          "dt": [
+            "2026-11-18",
+            "6:56 PM"
+          ],
+          "pax": "1",
+          "hours": "4",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      }
+    },
+    {
+      "label": "3-drop-eq-pickup",
+      "state": {
+        "pickup": "Hebbal, Bengaluru, Karnataka, India",
+        "drop": "Hebbal, Bengaluru, Karnataka, India",
+        "dt": [
+          "2026-11-22",
+          "10:00 AM"
+        ],
+        "pax": "1",
+        "hours": "4",
+        "toggles": [
+          false,
+          true
+        ],
+        "chips": []
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hebbal, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :22 Nov, 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:4 Hours Passengers:1 Pax Drop Address:Hebbal, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "1",
+        "drop": "Hebbal, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hebbal, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-3-results.png",
+        "header": "20 Buses Found | Transfer - < 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "4 Hours",
+        "datesTxt": "22 Nov, 2026"
+      }
+    },
+    {
+      "label": "4a-past-date",
+      "pickerDay": {
+        "iso": "2026-11-17",
+        "disabled": true,
+        "value": "2026-11-18"
+      },
+      "afterType": "2026-11-18",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - < 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hebbal, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :18 Nov, 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:4 Hours Passengers:1 Pax Drop Address:Hebbal, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "1",
+        "drop": "Hebbal, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hebbal, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹21,000",
+          "Sedan D SDN 4 ₹8,500",
+          "MPV's D MPV 7 ₹13,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-4a-results.png",
+        "header": "20 Buses Found | Transfer - < 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "4 Hours",
+        "datesTxt": "18 Nov, 2026"
+      }
+    },
+    {
+      "label": "4b-past-slot",
+      "slots": {
+        "n": 48,
+        "disabled": 39,
+        "lastDisabled": "7:00 PM"
+      },
+      "tried": {
+        "label": "9:00 AM",
+        "disabled": true
+      },
+      "state": {
+        "pickup": "Hebbal, Bengaluru, Karnataka, India",
+        "drop": null,
+        "dt": [
+          "2026-11-18",
+          "7:01 PM"
+        ],
+        "pax": "1",
+        "hours": "4",
+        "toggles": [
+          false,
+          false
+        ],
+        "chips": []
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-4b-slots.png"
+    },
+    {
+      "label": "4c-idle",
+      "skipped": "Not executed: requires leaving the form idle until the default slot has passed (up to 30 min); same date component as P2P-07 / OUT-10."
+    }
+  ],
+  "finished": "2026-11-18T13:32:48.267Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "CAL": {
+    "stage": "CAL",
+    "url": "/dashboard/inquiry-management/update-inquiry/48f3a9cd-513a-44b4-bc82-5d33e3659ce6",
+    "before": {
+      "trips": [],
+      "journeys": [],
+      "dateLines": [
+        "11/01/2027 - 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      }
+    },
+    "shotBefore": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-before-r3.png",
+    "cellCount": 42,
+    "afterPick": [
+      "11",
+      "12",
+      "13"
+    ],
+    "shotPicked": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-range-picked-r2.png",
+    "toasts": [],
+    "afterSave": {
+      "trips": [
+        "Trip-1"
+      ],
+      "journeys": [
+        "Journey A: Outstation"
+      ],
+      "dateLines": [
+        "11/01/2027, 12/01/2027, 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ]
+    },
+    "shotSaved": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-save-assignment-r2.png",
+    "costsBeforeQuote": {
+      "totalKms": "900.00",
+      "minimumPerDay": "300.00",
+      "perKm": "40.00",
+      "extraKms": "",
+      "driver": "800.00",
+      "dayBataDays": "3.00",
+      "noOfDays": "2.00",
+      "toll": "",
+      "totalStateTax": "0.00",
+      "extra": "",
+      "fixedCost": "0",
+      "totalApproxCost": "40000.00"
+    },
+    "toastsQuote": [
+      "Data updated successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/pricing-inquiry 200",
+      "POST /api/v1/admin/pricing-inquiry 200",
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [],
+    "afterReopen": {
+      "trips": [],
+      "journeys": [],
+      "dateLines": [
+        "11/01/2027 - 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      }
+    },
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-reopen-refresh-r2.png"
+  },
+  "JRN": {
+    "stage": "JRN",
+    "url": "/dashboard/inquiry-management/update-inquiry/48f3a9cd-513a-44b4-bc82-5d33e3659ce6",
+    "before": {
+      "trips": [],
+      "journeys": [],
+      "dateLines": [
+        "11/01/2027 - 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      }
+    },
+    "shotBefore": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-before-r2.png",
+    "formBefore": [
+      "journeyID=Journey-B : Journey A: Outstation",
+      "noOfTripDays=3",
+      "?=",
+      "Search or select vehicle=",
+      "amenities="
+    ],
+    "dest_Koramangala": "Koramangala Bengaluru, Karnataka, India",
+    "dest_Hassan": "Hassan Karnataka, India",
+    "vehicleOptions": [
+      "12 Seater Tempo Traveller"
+    ],
+    "vehicle": "12 Seater Tempo Traveller",
+    "formFilled": "Update new journey Journey ID No Of Trip Days Destinations Koramangala, Bengaluru, Karnataka, India Hassan, Karnataka, India Add Vehicle 12 Seater Tempo Traveller AC/Non-AC Selection 12 Seater Tempo Traveller AC Non-AC Add Amenity ​ Update Cancel",
+    "shotForm": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-journey-form-filled.png",
+    "toastsUpdate": [
+      "Data calculate successfully !"
+    ],
+    "afterJourney": {
+      "trips": [
+        "Trip-1",
+        "Trip-2"
+      ],
+      "journeys": [
+        "Journey A: Outstation",
+        "Journey A: Outstation"
+      ],
+      "dateLines": [
+        "11/01/2027, 12/01/2027, 13/01/2027",
+        "11/01/2027 - 13/01/2027"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      },
+      "text": "Trip-2 Journey A: Outstation 11/01/2027 - 13/01/2027 Vehicle Type: 12 Seater Tempo Traveller (NAC) 1 Amenities: NAME QTY No amenities Destination Koramangala, Bengaluru, Karnataka, India Hassan, Karnataka, India Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY TOTAL KMS MINIMUM KM PER DAY PER KM EXTRA KM DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING STATE TAX ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 12 Seater Tempo Traveller (NAC) 1 ​ ​ ​ ​ ​ 2400.00 ​ ​ 0.00 ​ ​ ​ ​ ​ ​ Proforma Invoice Only Advance Payment Advance Payment History No advance recorded yet Record Advance Send Customer Inquiry Form Preview Quote Summary"
+    },
+    "shotAdded": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-after-update-journey.png",
+    "toastsQuote": [
+      "New Inquiry Alert\nNew inquiry NCCC102640 from Bikash N has been received. Please check it in the total inquiries list.\nClick to view all notifications"
+    ],
+    "net": [
+      "POST /api/v1/admin/pricing-inquiry 200",
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/update-fcm-token 200",
+      "POST /api/v1/admin/inquiry/details 200"
+    ],
+    "console": [],
+    "afterReopen": {
+      "trips": [
+        "Trip-1",
+        "Trip-2"
+      ],
+      "journeys": [
+        "Journey A: Outstation",
+        "Journey A: Outstation"
+      ],
+      "dateLines": [
+        "11/01/2027, 12/01/2027, 13/01/2027",
+        "11/01/2027, 12/01/2027, 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      },
+      "trip2": "Trip-2 Journey A: Outstation 11/01/2027, 12/01/2027, 13/01/2027 Vehicle Type: 12 Seater Tempo Traveller (NAC) 1 Amenities: NAME QTY No amenities Destination Koramangala, Bengaluru, Karnataka, India Hassan, Karnataka, India Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY TOTAL KMS MINIMUM KM PER DAY PER KM EXTRA KM DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING STATE TAX ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 12 Seater Tempo Traveller (NAC) 1 ​ ​ ​ ​ ​ 2400.00 ​ ​ 0.00 ​ ​ ​ ​ ​ ​ Proforma Invoice Only Advance Payment Advance Payment History Record Advance Send Customer Inquiry Form Preview Quote Summary"
+    },
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-after-reopen-refresh.png",
+    "preview": {
+      "text": "Quotation Summary Combined Quotes Detailed Quotes Cancel",
+      "buttons": [
+        "Combined Quotes",
+        "Detailed Quotes",
+        "Cancel"
+      ]
+    },
+    "shotPreview": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-preview.png"
+  },
+  "READ": {
+    "trips": [
+      {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      },
+      {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "0.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "0.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "2400.00"
+      }
+    ],
+    "shotTrip2": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-trip2-costs.png",
+    "vqErr": "Error: rows for QRY-195: 0"
+  }
+}

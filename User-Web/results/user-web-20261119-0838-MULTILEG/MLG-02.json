@@ -1,0 +1,568 @@
+{
+  "id": "MLG-02",
+  "started": "2026-11-19T05:31:36.909Z",
+  "steps": [
+    {
+      "label": "1-step1",
+      "typed": "10",
+      "after": "10",
+      "step2": true,
+      "msgs": [],
+      "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!"
+    },
+    {
+      "label": "2-local",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "idx": 0,
+            "query": "Jayanagar 4th Block",
+            "suggestions": [
+              "4th Block, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4th Block East, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4th Block, Jayanagar, Bengaluru, Karnataka",
+              "4th Block East, Pattabhirama Nagar, Jayanagar Bengaluru, Karnataka, India"
+            ],
+            "chosen": "4th Block, Jayanagar, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dd": false,
+        "date": {
+          "iso": "2026-11-26",
+          "disabled": false,
+          "value": "2026-11-26"
+        },
+        "time": {
+          "label": "9:00 AM",
+          "disabled": false,
+          "value": "9:00 AM"
+        },
+        "hours": "8",
+        "state": [
+          "checkbox=false",
+          "checkbox=false",
+          "Search pickup location=4th Block, Jayanagar, Bengaluru, Karnataka, India",
+          "text=2026-11-26",
+          "text=9:00 AM",
+          "Enter number of passengers=10",
+          "Enter Number of Hours=8"
+        ]
+      },
+      "save": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-l1-saved.png"
+      }
+    },
+    {
+      "label": "3-outstation",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "idx": 0,
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "idx": 0,
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dd": false,
+        "d0": {
+          "iso": "2026-11-27",
+          "disabled": false,
+          "value": "2026-11-27"
+        },
+        "t0": {
+          "label": "7:00 AM",
+          "disabled": false,
+          "value": "7:00 AM"
+        },
+        "d1": {
+          "iso": "2026-11-28",
+          "disabled": false,
+          "value": "2026-11-28"
+        },
+        "t1": {
+          "label": "8:00 PM",
+          "disabled": false,
+          "value": "8:00 PM"
+        },
+        "state": [
+          "checkbox=false",
+          "checkbox=false",
+          "Search pickup location=Whitefield, Bengaluru, Karnataka, India",
+          "text=2026-11-27",
+          "text=7:00 AM",
+          "Search destination 1 location=Mysuru, Karnataka, India",
+          "text=2026-11-28",
+          "text=8:00 PM",
+          "Enter number of passengers=10"
+        ]
+      },
+      "save": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-l2-saved.png"
+      }
+    },
+    {
+      "label": "4-transfer-booknow",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "idx": 0,
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "idx": 0,
+            "query": "Kempegowda International Airport",
+            "suggestions": [
+              "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Terminal-2 Gangamuthanahalli, Karnataka",
+              "Kempegowda International Airport Gangamuthanahalli, Karnataka, India"
+            ],
+            "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          }
+        ],
+        "d0": {
+          "iso": "2026-11-29",
+          "disabled": false,
+          "value": "2026-11-29"
+        },
+        "t0": {
+          "label": "10:00 AM",
+          "disabled": false,
+          "value": "10:00 AM"
+        },
+        "state": [
+          "radio=on",
+          "Search pickup location=Whitefield, Bengaluru, Karnataka, India",
+          "Search drop location=Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "text=2026-11-29",
+          "text=10:00 AM",
+          "text=2026-11-29",
+          "text=1:02 PM",
+          "Enter number of passengers=10"
+        ]
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-l3-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "header": "20 Buses Found | Local - 8 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2",
+          "Leg 3"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Local Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :26 Nov, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:8 Hours Passengers:10 Pax Drop Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher Indi",
+        "distance": "80 KM",
+        "pax": "10",
+        "drop": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-results.png"
+      }
+    },
+    {
+      "label": "5-leg1",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "header": "20 Buses Found | Local - 8 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2",
+          "Leg 3"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Local Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :26 Nov, 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:8 Hours Passengers:10 Pax Drop Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher Indi",
+        "distance": "80 KM",
+        "pax": "10",
+        "drop": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg1-results.png"
+      },
+      "details": {
+        "vehicle": "L12AC",
+        "pricing": [
+          "Local Trip Pricing",
+          "Outstation Trip Pricing",
+          "Transfer Trip Pricing",
+          "Local Trip – 8 Hrs / 80 Kms",
+          "Standard local rental package",
+          "Base Rate (8Hr/80Km)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹8,500",
+          "Extra Km Charge",
+          "₹40 / km",
+          "Extra Hour Charge",
+          "₹800 / hr",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹800",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "115 hp · 350 Nm · 25% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg1-fare-breakup.png"
+      },
+      "select": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 1. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]",
+          "Leg 3"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg1-after-select.png"
+      }
+    },
+    {
+      "label": "5-leg2",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]",
+          "Leg 3"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Leg 3 Multi-leg-Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:600 KM Dates :27-28 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:2 Days Passengers:10 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited A",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "10",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg2-results.png"
+      },
+      "details": {
+        "vehicle": "P35AC",
+        "pricing": [
+          "Local Trip Pricing",
+          "Outstation Trip Pricing",
+          "Transfer Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹16,500",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "160 hp · 550 Nm · 23% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg2-fare-breakup.png"
+      },
+      "select": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 2. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓",
+          "Leg 3 [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg2-after-select.png"
+      }
+    },
+    {
+      "label": "5-leg3",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+        "labels": [
+          "Multi-leg-Transfer"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓",
+          "Leg 3 [active]"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 ✓ Leg 2 ✓ Leg 3 Multi-leg-Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:10 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxu",
+        "duration": "1 Day",
+        "pax": "10",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg3-results.png"
+      },
+      "details": {
+        "vehicle": "D12TT",
+        "pricing": [
+          "Local Trip Pricing",
+          "Outstation Trip Pricing",
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹9,000",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "115 hp · 350 Nm · 22% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg3-fare-breakup.png"
+      },
+      "select": {
+        "modal": "Confirm Your Trip & Selected Vehicles Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Leg 3 Selected Vehicles : 12 Seater Luxury Urbania – 1 12 Seater Luxury Urbania 12 Seater Type: 12 Seater Luxury Urbania Luggage: Route Summary : Multi-Leg (Local + Outstation + Transfer) From Garage Garage Pickup Location 4th Block, Jayanagar, Bengaluru, Karnataka, India Back to Garage Garage Dates 26 Nov, 2026 Passenger 10 Estimated Trip Cost : Vehicle Base Cost ₹8,500 Day Bata Cost (Before 10pm or After 6am) ₹800 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹9,300 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓",
+          "Leg 3 ✓ [active]",
+          "Leg 1 [active]",
+          "Leg 2",
+          "Leg 3"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-leg3-after-select.png"
+      }
+    },
+    {
+      "label": "6-confirm",
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 3,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "12 Seater Luxury Urbania – 1 12 Seater Luxury Urbania 12 Seater",
+            "routeSummary": "Multi-Leg (Local + Outstation + Transfer)",
+            "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India",
+            "dropoff": null,
+            "dates": "26 Nov, 2026",
+            "passenger": "10",
+            "cost": "Vehicle Base Cost ₹8,500 Day Bata Cost (Before 10pm or After 6am) ₹800 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹9,300",
+            "total": "₹9,300",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "35 Seater Premium AC Coach – 1 35 Seater Premium AC Coach 35 Seater",
+            "routeSummary": "Multi-Leg (Local + Outstation + Transfer)",
+            "pickup": "Whitefield, Bengaluru, Karnataka, India",
+            "dropoff": "Mysuru, Karnataka, India",
+            "dates": "27,28 Nov, 2026",
+            "passenger": "10",
+            "cost": "Vehicle Base Cost ₹33,000 Day Bata Cost (Before 10pm or After 6am) ₹2,000 Night Bata Cost (Before 6am or After 10pm) ₹1,000 State Tax ₹0 Estimated Grand Total ₹36,000",
+            "total": "₹36,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-confirm-leg2.png"
+          },
+          {
+            "leg": 3,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Local + Outstation + Transfer)",
+            "pickup": "Whitefield, Bengaluru, Karnataka, India",
+            "dropoff": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+            "dates": "29 Nov, 2026",
+            "passenger": "10",
+            "cost": "Vehicle Base Cost ₹9,000 Estimated Grand Total ₹9,000",
+            "total": "₹9,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-confirm-leg3.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "5 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Leg 3",
+          "Confirm & Submit Booking"
+        ]
+      }
+    },
+    {
+      "label": "7-submit",
+      "submit": {
+        "messages": [
+          "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹54,300 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+        ],
+        "calls": [
+          "allowed(approved) POST /user/save-inquiry",
+          "allowed(approved) POST /user/draft-inquiry/delete"
+        ],
+        "saveCalls": 1,
+        "estimate": "₹54,300",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-submit-result.png"
+      }
+    },
+    {
+      "label": "8-my-inquiries",
+      "total": "1-10 of 18",
+      "top": [
+        "1 YOIT928679 Local Bengaluru → Bengaluru 26 Nov 2026 - 29 Nov 2026 12 Seater Luxury Urbania (12) 10 26/11/26 7d left New quotation",
+        "2 ORZS120376 Transfer Bengaluru → Bengaluru 25 Nov 2026 - 25 Nov 2026 40 Seater Premium AC Coach (40) 40 25/11/26 6d left New quotation",
+        "3 LJWN815154 Transfer Bengaluru → Mysuru 27 Nov 2026 - 29 Nov 2026 35 Seater Premium AC Coach (35) 20 27/11/26 8d left New quotation",
+        "4 SIVM916255 Transfer Bengaluru → Bengaluru 25 Nov 2026 - 25 Nov 2026 9 Seater Luxury Urbania (9) 9 25/11/26 6d left New quotation"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-02-post-my-inquiries.png"
+    }
+  ],
+  "finished": "2026-11-19T05:38:34.629Z",
+  "loads": [],
+  "net": [
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/save-inquiry",
+    "allowed(approved) POST /user/draft-inquiry/delete"
+  ]
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "label": "pax[blank]",
+    "nav": false,
+    "val": {
+      "inline": [
+        "passengers must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+      ],
+      "toasts": [
+        "Selected time: 7:00 AM",
+        "Selected time: 8:00 PM"
+      ]
+    }
+  },
+  {
+    "label": "pax[0]",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  },
+  {
+    "label": "pax[-2]",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  },
+  {
+    "label": "pax[2.5]",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  },
+  {
+    "label": "pax13",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  },
+  {
+    "label": "pax55",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days"
+  }
+]

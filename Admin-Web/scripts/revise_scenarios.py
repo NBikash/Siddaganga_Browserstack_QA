@@ -4,7 +4,7 @@
   2. duplicate (Module, Use Case Title) pairs disambiguated with the screen name.
 
 Scenario IDs, order, action steps and the four columns are preserved. The existing documents are only read; output goes to
-documentation/scenarios/review/. Before changing anything the script rebuilds every row from the same sources and asserts it
+documentation/05_Superseded_Catalogues_2026-10-30/scenario-catalogue-review/. Before changing anything the script rebuilds every row from the same sources and asserts it
 matches the current documents exactly.
 Run: python scripts/revise_scenarios.py
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 
-import build_scenarios as bs  # also puts documentation/source on sys.path via build_docs
+import build_scenarios as bs  # also puts scripts/doc_sources on sys.path via build_docs
 import build_docs as bd
 from manual_cases import MANUAL_CASES
 from interim_cases import INTERIM_CASES
@@ -34,10 +34,10 @@ def generated_observed(c):
             or f.endswith(" display") or f.endswith("– open/layout") or f.endswith("– cancel") or f.endswith("– prefill")
             or (f == "Empty state" and c["type"] == "UI"))
 
-SRC_DIR = bd.ROOT / "documentation" / "scenarios"
+SRC_DIR = bd.ROOT / "documentation" / "05_Superseded_Catalogues_2026-10-30" / "scenario-catalogue"
 SRC_X = SRC_DIR / "Admin_Web_Scenarios_and_Use_Cases.xlsx"
 SRC_M = SRC_DIR / "Admin_Web_Scenarios_and_Use_Cases.md"
-OUT = SRC_DIR / "review"
+OUT = bd.ROOT / "documentation" / "05_Superseded_Catalogues_2026-10-30" / "scenario-catalogue-review"
 OUT_X = OUT / "Admin_Web_Scenarios_and_Use_Cases_REVIEW.xlsx"
 OUT_M = OUT / "Admin_Web_Scenarios_and_Use_Cases_REVIEW.md"
 TBC = " (to be confirmed)"

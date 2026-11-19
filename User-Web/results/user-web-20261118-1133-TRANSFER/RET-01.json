@@ -1,0 +1,181 @@
+{
+  "id": "RET-01",
+  "started": "2026-11-18T08:27:35.049Z",
+  "steps": [
+    {
+      "label": "1-tick",
+      "outward": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM"
+        ],
+        "pax": "6"
+      },
+      "ret": true,
+      "afterTick": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rto": "Whitefield, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM",
+          "2026-11-24",
+          "3:57 PM",
+          "2026-11-25",
+          "3:57 PM"
+        ],
+        "pax": "6"
+      },
+      "fields": [
+        "radio",
+        "checkbox",
+        "Search pickup location",
+        "Search drop location",
+        "text",
+        "text",
+        "text",
+        "text",
+        "Search return pickup location",
+        "Search return drop location",
+        "text",
+        "text",
+        "text",
+        "text",
+        "Enter number of passengers"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-01-1-ticked.png"
+    },
+    {
+      "label": "2-untick-retick",
+      "off": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM"
+        ],
+        "pax": "6"
+      },
+      "on": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rto": "Whitefield, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM",
+          "2026-11-24",
+          "3:57 PM",
+          "2026-11-25",
+          "3:57 PM"
+        ],
+        "pax": "6"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-01-2-unticked.png"
+    },
+    {
+      "label": "3-fill-untick-search",
+      "filled": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rto": "Whitefield, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM",
+          "2026-11-23",
+          "8:00 PM",
+          "2026-11-23",
+          "10:00 PM"
+        ],
+        "pax": "6"
+      },
+      "off": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "8:00 AM",
+          "2026-11-23",
+          "3:57 PM"
+        ],
+        "pax": "6"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:6 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Ja",
+        "duration": "1 Day",
+        "pax": "6",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-01-3-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    }
+  ],
+  "finished": "2026-11-18T08:29:39.148Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

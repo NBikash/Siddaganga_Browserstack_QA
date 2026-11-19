@@ -1,0 +1,637 @@
+{
+  "id": "OUT-10",
+  "started": "2026-11-17T09:29:46.237Z",
+  "steps": [
+    {
+      "label": "1-untouched",
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "2:59 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "2:59 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop time must be after pickup time"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-17"
+          },
+          {
+            "ph": "text",
+            "v": "2:59 PM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-17"
+          },
+          {
+            "ph": "text",
+            "v": "2:59 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-1-validation.png"
+      }
+    },
+    {
+      "label": "2-drop-before-pickup",
+      "dropPick": {
+        "iso": "2026-11-21",
+        "disabled": true,
+        "value": "2026-11-22"
+      },
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "10:30 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "3:00 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:340 KM Dates :22 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "340 KM",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹19,700",
+          "40 Seater Deluxe Coach D40NA 40 ₹21,400",
+          "49 Seater Deluxe Coach D49NA 49 ₹19,700",
+          "Sedan D SDN 4 ₹11,380",
+          "MPV's D MPV 7 ₹17,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-2-results.png"
+      }
+    },
+    {
+      "label": "3-earlier-time",
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "10:30 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "6:30 AM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop time must be after pickup time"
+          ],
+          "toasts": [
+            "Selected time: 10:30 AM",
+            "Selected time: 6:30 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-22"
+          },
+          {
+            "ph": "text",
+            "v": "10:30 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-22"
+          },
+          {
+            "ph": "text",
+            "v": "6:30 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-3-validation.png"
+      }
+    },
+    {
+      "label": "4-equal",
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "10:30 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "10:30 AM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop time must be after pickup time"
+          ],
+          "toasts": [
+            "Selected time: 10:30 AM",
+            "Selected time: 10:30 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-22"
+          },
+          {
+            "ph": "text",
+            "v": "10:30 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-22"
+          },
+          {
+            "ph": "text",
+            "v": "10:30 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-4-validation.png"
+      }
+    },
+    {
+      "label": "5-past-date",
+      "pickerDisabled": true,
+      "typedValue": "2026-11-17",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-5-past-typed.png"
+    },
+    {
+      "label": "6-past-slot",
+      "slots": {
+        "n": 48,
+        "disabled": 31,
+        "firstEnabled": "3:30 PM"
+      },
+      "before": "3:06 PM",
+      "afterClickFirst": "3:06 PM",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-6-past-slot.png"
+    },
+    {
+      "label": "7-idle-default",
+      "formBefore": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "3:08 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "8:00 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:600 KM Dates :17-18 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:2 Days Passengers:2 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "2",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-7-results.png"
+      }
+    },
+    {
+      "label": "8-pickup-after-drop",
+      "before": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-22"
+        },
+        {
+          "ph": "text",
+          "v": "9:00 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-23"
+        },
+        {
+          "ph": "text",
+          "v": "8:00 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "after": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-25"
+        },
+        {
+          "ph": "text",
+          "v": "9:00 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-25"
+        },
+        {
+          "ph": "text",
+          "v": "8:00 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:346 KM Dates :25 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "346 KM",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹20,030",
+          "40 Seater Deluxe Coach D40NA 40 ₹21,760",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,030",
+          "Sedan D SDN 4 ₹11,572",
+          "MPV's D MPV 7 ₹18,100",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,450"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-8-results.png"
+      }
+    },
+    {
+      "label": "9-drop-picker-min",
+      "picker": {
+        "month": "November 2026",
+        "firstEnabled": "22",
+        "disabledCount": 21
+      },
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-9-drop-picker.png"
+    },
+    {
+      "label": "10-earliest-valid",
+      "pickT": "3:30 PM",
+      "dropT": "4:00 PM",
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "3:30 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": "Mysuru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "4:00 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "2"
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:346 KM Dates :17 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "346 KM",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹20,030",
+          "40 Seater Deluxe Coach D40NA 40 ₹21,760",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,030",
+          "Sedan D SDN 4 ₹11,572",
+          "MPV's D MPV 7 ₹18,100",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,450"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-10-10-results.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T09:44:39.970Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "action": "Send Bus Images",
+  "mode": "inspect",
+  "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+  "rowContactIsTestAccount": true,
+  "menu": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "dialog": null,
+  "toasts": [
+    "Failed to generate bus images PDF"
+  ],
+  "shotNoDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Bus-Images-inspect-no-dialog.png",
+  "net": [
+    "POST /api/v1/admin/inquiry/send-bus-images-whatsapp 400"
+  ],
+  "console": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ]
+}

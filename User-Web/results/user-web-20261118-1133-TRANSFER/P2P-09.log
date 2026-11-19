@@ -1,0 +1,20 @@
+[
+  {
+    "label": "1-swap"
+  },
+  {
+    "label": "2-search",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "3-modify",
+    "nav": true
+  },
+  {
+    "label": "4-new-route",
+    "total": "₹12,500",
+    "popup": null
+  }
+]

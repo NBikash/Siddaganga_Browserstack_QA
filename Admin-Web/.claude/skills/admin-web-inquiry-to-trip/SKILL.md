@@ -7,9 +7,9 @@ description: Admin-Web QA for an inquiry submitted from User-Web, from Lead → 
 
 Read these files in full before doing anything:
 
-- **`Admin-Web/documentation/workflows/Inquiry_to_Trip_Closure.md`**: stages S0–S23, record identity, observed
+- **`Admin-Web/documentation/02_Workflows_and_Test_Plans/Inquiry_to_Trip_Closure.md`**: stages S0–S23, record identity, observed
   real flow, stop rules, limitations.
-- **`Admin-Web/documentation/workflows/Admin_Functional_QA_Coverage.md`**: module-wise use cases, action
+- **`Admin-Web/documentation/02_Workflows_and_Test_Plans/Admin_Functional_QA_Coverage.md`**: module-wise use cases, action
   classification (safe / edit / transition / approval-needed / excluded), vehicle-matching rules, report structure.
 
 This skill sets the gate, the rules and the execution order.

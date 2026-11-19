@@ -1,0 +1,318 @@
+{
+  "id": "OUT-12",
+  "started": "2026-11-17T09:59:35.922Z",
+  "steps": [
+    {
+      "label": "pax[blank]",
+      "entered": "",
+      "fieldValue": "",
+      "validity": {
+        "valid": true,
+        "msg": ""
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "passengers must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+          ],
+          "toasts": [
+            "Selected time: 7:00 AM",
+            "Selected time: 8:00 PM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Hebbal, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-22"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Hassan, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "v": "Belur, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 3 location",
+            "v": "Halebidu, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-24"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": ""
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax-blank-validation.png"
+      }
+    },
+    {
+      "label": "pax[0]",
+      "entered": "0",
+      "fieldValue": "1",
+      "validity": {
+        "valid": true,
+        "msg": ""
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return) Distance:900 KM Dates :22-23-24 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:3 Days Passengers:1 Pax Drop Address:Halebidu, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show A",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "1",
+        "drop": "Halebidu, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax-0-results.png"
+      }
+    },
+    {
+      "label": "pax[-2]",
+      "entered": "-2",
+      "fieldValue": "1",
+      "validity": {
+        "valid": true,
+        "msg": ""
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return) Distance:900 KM Dates :22-23-24 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:3 Days Passengers:1 Pax Drop Address:Halebidu, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show A",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "1",
+        "drop": "Halebidu, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax--2-results.png"
+      }
+    },
+    {
+      "label": "pax[2.5]",
+      "entered": "2.5",
+      "fieldValue": "2",
+      "validity": {
+        "valid": true,
+        "msg": ""
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return) Distance:900 KM Dates :22-23-24 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:3 Days Passengers:2 Pax Drop Address:Halebidu, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show A",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "2",
+        "drop": "Halebidu, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax-2.5-results.png"
+      }
+    },
+    {
+      "label": "pax13",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return) Distance:900 KM Dates :22-23-24 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:3 Days Passengers:13 Pax Drop Address:Halebidu, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "13",
+        "drop": "Halebidu, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax13-results.png"
+      },
+      "capacity": {
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 13 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 13 passengers, but your selected buses cover only 12 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax13-D12TT-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax13-D12TT-confirm-cost.png"
+      }
+    },
+    {
+      "label": "pax55",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return) Distance:900 KM Dates :22-23-24 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:3 Days Passengers:55 Pax Drop Address:Halebidu, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "55",
+        "drop": "Halebidu, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Belur, Karnataka, India → Halebidu, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax55-results.png"
+      },
+      "first": {
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 55 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 55 passengers, but your selected buses cover only 45 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax55-45LBB-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax55-45LBB-confirm-cost.png"
+      },
+      "second": {
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 55 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 55 passengers, but your selected buses cover only 12 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax55-plus-D12TT-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-12-pax55-plus-D12TT-confirm-cost.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T10:13:33.252Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

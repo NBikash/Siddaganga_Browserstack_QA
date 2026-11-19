@@ -1,0 +1,17 @@
+[
+  {
+    "label": "1-chips"
+  },
+  {
+    "label": "2-zero-dates",
+    "nav": true
+  },
+  {
+    "label": "3-4-search-fare",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "6 Hours",
+    "total": "₹86,000",
+    "popup": null
+  }
+]

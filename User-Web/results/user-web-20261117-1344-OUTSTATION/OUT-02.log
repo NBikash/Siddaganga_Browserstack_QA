@@ -1,0 +1,19 @@
+[
+  {
+    "label": "search",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days",
+    "total": "₹34,200",
+    "popup": null
+  },
+  {
+    "label": "submit"
+  },
+  {
+    "label": "track-my-booking"
+  },
+  {
+    "label": "my-inquiries"
+  }
+]

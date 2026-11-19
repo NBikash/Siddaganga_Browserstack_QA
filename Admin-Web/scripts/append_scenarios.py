@@ -6,7 +6,7 @@
 - A candidate is new when (module, title, first step) is not already present; a candidate whose title already exists for a
   different screen gets " – <screen>" appended. New rows get the next free ID in their module.
 - "(to be confirmed)" is applied with the same rule as revise_scenarios.py.
-- The previous review files are archived to review/archive/<timestamp>/ before writing.
+- The previous review files are archived to documentation/90_Archive/scenario-catalogue-review/<timestamp>/ before writing.
 Run: python scripts/append_scenarios.py
 """
 import json
@@ -115,7 +115,7 @@ def main():
         print(json.dumps({"added": 0, "rows": len(final)}))
         return
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    arch = rv.OUT / "archive" / stamp
+    arch = bd.ROOT / "documentation" / "90_Archive" / "scenario-catalogue-review" / stamp
     arch.mkdir(parents=True, exist_ok=True)
     for p in (rv.OUT_X, rv.OUT_M):
         shutil.copy2(p, arch / p.name)

@@ -1,0 +1,360 @@
+{
+  "id": "MLG-05",
+  "started": "2026-11-19T04:06:16.391Z",
+  "steps": [
+    {
+      "label": "1-2-three-legs",
+      "a": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "text=2026-12-01",
+        "text=7:00 AM",
+        "Search destination 1 location=Mysuru, Karnataka, India",
+        "Search destination 2 location=Srirangapatna, Karnataka, India",
+        "text=2026-12-02",
+        "text=7:00 PM",
+        "Enter number of passengers=25"
+      ],
+      "b": [
+        {
+          "ph": "Search pickup location",
+          "idx": 1,
+          "query": "Sarjapur Road",
+          "suggestions": [
+            "Sarjapur Road Kaikondrahalli, Bengaluru, Karnataka, India",
+            "Sarjapur Road Kasavanahalli, Bengaluru, Karnataka, India",
+            "Sarjapur Road Fire Station Sarjapur - Marathahalli Road, Bellandur, Bengaluru, Karnataka, India",
+            "Sarjapur Road Shushruti Nagar, Byraveshwara Industrial Estate, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "idx": 1,
+          "query": "Kolar",
+          "suggestions": [
+            "Kolar Karnataka, India",
+            "Kolar Gold Fields Karnataka, India",
+            "Kolar Clock Tower Dargah Shahi Mohallah, Kolar, Karnataka, India",
+            "Kolar Kempegowda, Majestic, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Kolar, Karnataka, India"
+        }
+      ],
+      "c": [
+        {
+          "ph": "Search pickup location",
+          "idx": 2,
+          "query": "Electronic City Phase 1",
+          "suggestions": [
+            "Phase 1, Electronic City Bengaluru, Karnataka, India",
+            "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+            "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+            "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+          ],
+          "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "idx": 2,
+          "query": "Nandi Hills",
+          "suggestions": [
+            "Nandi Hills Karnataka, India",
+            "Nandi Hills Karnataka Nandi Hills, Karnataka, India",
+            "Nandi Hills Sunrise View point Nandi Hills, Karnataka, India",
+            "Nandi hills Manivartapete, Sultanpete, Bengaluru, Karnataka, India"
+          ],
+          "chosen": "Nandi Hills, Karnataka, India"
+        }
+      ],
+      "headers": [
+        {
+          "t": "Leg 1",
+          "remove": true
+        },
+        {
+          "t": "Leg 2",
+          "remove": true
+        },
+        {
+          "t": "Leg 3",
+          "remove": true
+        }
+      ],
+      "pax": [
+        "25",
+        "25",
+        "25"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-three-legs-r2.png"
+    },
+    {
+      "label": "3-remove-C",
+      "headers": [
+        "Leg 1",
+        "Leg 2"
+      ],
+      "form": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=4th Block, Jayanagar, Bengaluru, Karnataka, India",
+        "text=2026-12-01",
+        "text=7:00 AM",
+        "Search destination 1 location=Mysuru, Karnataka, India",
+        "Search destination 2 location=Srirangapatna, Karnataka, India",
+        "text=2026-12-02",
+        "text=7:00 PM",
+        "Enter number of passengers=25",
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+        "text=2026-12-03",
+        "text=8:00 AM",
+        "Search destination 1 location=Kolar, Karnataka, India",
+        "text=2026-12-03",
+        "text=9:00 PM",
+        "Enter number of passengers=25"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-after-remove-C.png"
+    },
+    {
+      "label": "4-save",
+      "save": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-saved-r2.png"
+      }
+    },
+    {
+      "label": "5-results",
+      "skip": {
+        "toasts": [
+          "Outstation leg added!",
+          "Transfer leg skipped. Click Book Now when you are ready to continue."
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "blocked": {
+        "navigated": false,
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-booknow-blocked-r2.png"
+      },
+      "tabAtBlock": "Transfer",
+      "workaround": "Book Now! blocked; opened saved leg badge 2 (Leg 2 Outstation) and pressed Book Now! again",
+      "res": {
+        "navigated": false,
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-workaround-booknow-blocked-r2.png",
+        "toasts": [],
+        "msgs": [
+          "*",
+          "Destination location is required"
+        ]
+      },
+      "savedLegs": [
+        "Leg 1 Outstation",
+        "Leg 2 Outstation"
+      ],
+      "legs": [],
+      "confirm": {
+        "open": false
+      }
+    },
+    {
+      "label": "5b-alt-unsaved-booknow",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Srirangapatna, Karnataka, India → Garage (Return) Distance:600 KM Dates :1-2 Dec- 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:2 Days Passengers:25 Pax Drop Address:Srirangapatna, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "25",
+        "drop": "Srirangapatna, Karnataka, India",
+        "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Srirangapatna, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-results.png"
+      },
+      "legs": [
+        {
+          "res": {
+            "navigated": true,
+            "found": "20 Buses Found | Outstation - 0 KM",
+            "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+            "labels": [
+              "Multi-leg-Outstation"
+            ],
+            "legTabs": [
+              "Leg 1 [active]",
+              "Leg 2"
+            ],
+            "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Srirangapatna, Karnataka, India → Garage (Return) Distance:600 KM Dates :1-2 Dec- 2026 Pickup Address:4th Block, Jayanagar, Bengaluru, Karnataka, India Duration:2 Days Passengers:25 Pax Drop Address:Srirangapatna, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler",
+            "distance": "600 KM",
+            "duration": "2 Days",
+            "pax": "25",
+            "drop": "Srirangapatna, Karnataka, India",
+            "route": "Garage (Start) → 4th Block, Jayanagar, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Srirangapatna, Karnataka, India → Garage (Return)",
+            "page1": [
+              "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+              "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+              "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+              "Sedan D SDN 4 ₹20,700",
+              "MPV's D MPV 7 ₹32,400",
+              "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+            ],
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-leg1-results.png"
+          },
+          "select": {
+            "modal": null,
+            "isConfirm": false,
+            "toasts": [
+              "Vehicle selected for Leg 1. Please select vehicles for other legs."
+            ],
+            "legTabs": [
+              "Leg 1 ✓",
+              "Leg 2 [active]"
+            ],
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-leg1-after-select.png"
+          }
+        },
+        {
+          "res": {
+            "navigated": true,
+            "found": "20 Buses Found | Outstation - 0 KM",
+            "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹17,500 4.5 33 Seater De",
+            "labels": [
+              "Multi-leg-Outstation"
+            ],
+            "legTabs": [
+              "Leg 1 ✓",
+              "Leg 2 [active]"
+            ],
+            "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Outstation Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return) Distance:300 KM Dates :3 Dec- 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:25 Pax Drop Address:Kolar, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation H",
+            "distance": "300 KM",
+            "duration": "1 Day",
+            "pax": "25",
+            "drop": "Kolar, Karnataka, India",
+            "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Kolar, Karnataka, India → Garage (Return)",
+            "page1": [
+              "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+              "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+              "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+              "Sedan D SDN 4 ₹10,100",
+              "MPV's D MPV 7 ₹15,800",
+              "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+            ],
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-leg2-results.png"
+          },
+          "select": {
+            "modal": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 40 Seater Deluxe Coach – 1 40 Seater Deluxe Coach 40 Seater Type: 40 Seater Deluxe Coach Luggage: Rear Boot + Overhead Racks (2–4 m³) Route Summary : Multi-Leg (Outstation + Outstation) From Garage Garage Pickup Location 4th Block, Jayanagar, Bengaluru, Karnataka, India Mysuru, Karnataka, India Dropoff Location Srirangapatna, Karnataka, India Back to Garage Garage Dates 1,2 Dec, 2026 Passenger 25 Estimated Trip Cost : Vehicle Base Cost ₹36,000 Day Bata Cost (Before 10pm or After 6am) ₹2,000 Night Bata Cost (Before 6am or After 10pm) ₹1,000 State Tax ₹0 Estimated Grand Total ₹39,000 Confirm & Submit Booking",
+            "isConfirm": true,
+            "toasts": [],
+            "legTabs": [
+              "Leg 1 ✓",
+              "Leg 2 ✓ [active]",
+              "Leg 1 [active]",
+              "Leg 2"
+            ],
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-leg2-after-select.png"
+          }
+        }
+      ],
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "40 Seater Deluxe Coach – 1 40 Seater Deluxe Coach 40 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Outstation)",
+            "pickup": "4th Block, Jayanagar, Bengaluru, Karnataka, India Mysuru, Karnataka, India",
+            "dropoff": "Srirangapatna, Karnataka, India",
+            "dates": "1,2 Dec, 2026",
+            "passenger": "25",
+            "cost": "Vehicle Base Cost ₹36,000 Day Bata Cost (Before 10pm or After 6am) ₹2,000 Night Bata Cost (Before 6am or After 10pm) ₹1,000 State Tax ₹0 Estimated Grand Total ₹39,000",
+            "total": "₹39,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "40 Seater Deluxe Coach – 1 40 Seater Deluxe Coach 40 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Outstation)",
+            "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+            "dropoff": "Kolar, Karnataka, India",
+            "dates": "3 Dec, 2026",
+            "passenger": "25",
+            "cost": "Vehicle Base Cost ₹18,000 Day Bata Cost (Before 10pm or After 6am) ₹1,000 Night Bata Cost (Before 6am or After 10pm) ₹0 State Tax ₹0 Estimated Grand Total ₹19,000",
+            "total": "₹19,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-05-alt-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "10 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    }
+  ],
+  "finished": "2026-11-19T04:10:38.558Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

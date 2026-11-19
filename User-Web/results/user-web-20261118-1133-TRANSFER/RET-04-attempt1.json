@@ -1,0 +1,306 @@
+{
+  "id": "RET-04",
+  "started": "2026-11-18T08:56:06.760Z",
+  "steps": [
+    {
+      "label": "A",
+      "state": {
+        "from": "K R Puram, Bengaluru, Karnataka, India",
+        "to": "Belagavi, Karnataka, India",
+        "rfrom": "Belagavi, Karnataka, India",
+        "rto": "Whitefield, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-12-02",
+          "6:30 AM",
+          "2026-12-02",
+          "4:26 PM",
+          "2026-12-04",
+          "9:00 AM",
+          "2026-11-20",
+          "4:26 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Return drop date cannot be before return pickup date"
+          ],
+          "toasts": [
+            "Selected time: 6:30 AM",
+            "Selected time: 9:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "K R Puram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Belagavi, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "6:30 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "4:26 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": "Belagavi, Karnataka, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-04"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-20"
+          },
+          {
+            "ph": "text",
+            "v": "4:26 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "20"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-A-validation.png"
+      }
+    },
+    {
+      "label": "B",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Malleshwaram",
+            "suggestions": [
+              "Malleshwaram Bengaluru, Karnataka, India",
+              "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Chennai",
+            "suggestions": [
+              "Chennai Tamil Nadu, India",
+              "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+              "Chennai Central Tamil Nadu",
+              "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+            ],
+            "chosen": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Search return pickup location",
+            "query": "Chennai",
+            "suggestions": [
+              "Chennai Tamil Nadu, India",
+              "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+              "Chennai Central Tamil Nadu",
+              "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+            ],
+            "chosen": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "query": "Bengaluru International Airport",
+            "suggestions": [
+              "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+              "International Airport Road Byatarayanapura, Sri Venkateshpura Layout, Sampigehalli, Bengaluru, Karnataka, India",
+              "Bangalore international airport area planning authority Devanahalli Town, Karnataka, India",
+              "Terminal 1 Karnataka"
+            ],
+            "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-02",
+            "disabled": false,
+            "value": "2026-12-02"
+          },
+          {
+            "label": "6:30 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-04",
+            "disabled": false,
+            "value": "2026-12-04"
+          },
+          {
+            "label": "9:00 AM",
+            "disabled": false
+          }
+        ],
+        "ret": true,
+        "state": {
+          "from": "Malleshwaram, Bengaluru, Karnataka, India",
+          "to": "Chennai, Tamil Nadu, India",
+          "rfrom": "Chennai, Tamil Nadu, India",
+          "rto": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "ret": true,
+          "dt": [
+            "2026-12-02",
+            "6:30 AM",
+            "2026-12-02",
+            "4:28 PM",
+            "2026-12-04",
+            "9:00 AM",
+            "2026-11-20",
+            "4:28 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-form.png",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Return drop date cannot be before return pickup date"
+          ],
+          "toasts": [
+            "Selected time: 6:30 AM",
+            "Selected time: 9:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Malleshwaram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "6:30 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "4:28 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "v": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-04"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-20"
+          },
+          {
+            "ph": "text",
+            "v": "4:28 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "20"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-validation.png"
+      }
+    }
+  ],
+  "finished": "2026-11-18T09:00:03.617Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,1620 @@
+{
+ "meta": {
+  "environment": "User App Preprod (preprod.siddagangatravels.com), Chrome via Playwright over CDP, 1440×900, Personal Login (mobile)",
+  "subtitle": "Run user-web-20261118-1653-BYHOUR · 18 Nov 2026 · 14 Transfer By Hours use cases (USER-HRS-TC-01…14, workbook v3.2) · 1 inquiry submitted (HRS-02)",
+  "table": {
+   "Run ID": "user-web-20261118-1653-BYHOUR",
+   "Environment": "User App Preprod (preprod.siddagangatravels.com), Chrome via Playwright over CDP, 1440×900, Personal Login (mobile)",
+   "Scope": "Transfer – By Hours HRS-01 … HRS-14 from User_Web_Outstation_Transfer_Use_Cases.xlsx v3.2. Point To Point and With Return: separate report user-web-20261118-1133-TRANSFER.",
+   "Results": "Fail 7, Inconclusive 3, Partial 1, Pass 3",
+   "Submissions": "HRS-02 → ORZS120376 (the only By Hours case whose workbook flow requires a submission; user instruction: submit wherever required)",
+   "Not performed": "HRS-04 hours 3, 5–7, 9–11, 13–15, 17–22 (representative set agreed with the user); HRS-09 step 4 idle; HRS-13 Confirm after Modify (automation could not locate the card)",
+   "Safety": "Network guard: payment/cancel always blocked; save-inquiry allowed only during the approved HRS-02 submit; automatic draft saves blocked"
+  },
+  "highlights": [
+   "By Hour price ignores the number of hours (1 h = 24 h); priced as a Transfer distance band (Q-15).",
+   "Multi-day: today is always added and cannot be removed; Late Allowance is charged per calendar day of the span (₹14,000 / ₹27,000 on daytime trips).",
+   "By Hour rejects Munnar, Panaji and Chennai with 'location is required' although Point To Point accepts them.",
+   "Submitted inquiry ORZS120376 is stored as 'Transfer' without the hours; timings 00:00.",
+   "Second vehicle replaces the first (60 passengers).",
+   "Hours validation: browser-only messages; blank shows a raw NaN error.",
+   "Persistence (tab switching, Modify hours, remove date, drop OFF) works; Multi-day OFF resets the trip to today."
+  ]
+ },
+ "cases": [
+  {
+   "id": "HRS-01",
+   "title": "By Hours form inventory, defaults and differences from Local",
+   "status": "Pass",
+   "objective": "Verify By Hour fields, toggles and limits against the Local form.",
+   "data": {
+    "Data": "Blank form; Local form for comparison"
+   },
+   "journey": [
+    "Open Transfer → By Hour; record fields",
+    "Different drop ON; Multi-day ON",
+    "Open Local; compare"
+   ],
+   "expected": [
+    "Fields: Multi-day, Different drop, Pickup, Pickup Date & Time, Passengers, Number of Hours (1–24)",
+    "Multi-day replaces the date with date selection; drop ON adds a drop field",
+    "Differences from Local recorded"
+   ],
+   "actual": [
+    "Fields: Multi-day Trip, Drop at different location, Pickup Location, Pickup Date & Time, Passengers (min 1, no max), Number of Hours (min 1, max 24, default 1), Save As Draft, Book Now! ✔",
+    "Drop ON adds 'Drop Location' ✔; Multi-day ON: 'Pickup Time' + 'Select Travel Dates' inline calendar with chips; today (Nov 18) pre-selected",
+    "Local form has the same field set and limits (hours 1–24, passengers no max)"
+   ],
+   "statusReason": "All fields as documented; By Hour and Local forms are identical in structure (pricing differs, HRS-12).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-form.png",
+     "caption": "By Hour form"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-toggles-on.png",
+     "caption": "Toggles ON"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-local-form.png",
+     "caption": "Local form"
+    }
+   ],
+   "cfg": "Form",
+   "keyData": "—",
+   "vehicle": "—",
+   "fare": [],
+   "issues": []
+  },
+  {
+   "id": "HRS-02",
+   "title": "By Hours end-to-end: fare, submission and My Inquiries",
+   "status": "Fail",
+   "objective": "Main path with fare verification, submission and post-submission verification.",
+   "data": {
+    "Pickup": "Whitefield (TRF-HR-001), drop OFF",
+    "Pickup date/time": "25 Nov 2026 10:00 AM",
+    "Hours": "4",
+    "Passengers": "40 (= capacity)",
+    "Vehicle": "VEH-009 40 Seater Premium AC Coach (P40AC)",
+    "PNR": "ORZS120376"
+   },
+   "journey": [
+    "Search → results",
+    "Fare Breakup P40AC",
+    "Book This Vehicle → Confirm",
+    "Confirm & Submit (approved)",
+    "Dashboard → My Inquiries → Edit Inquiry"
+   ],
+   "expected": [
+    "Results show 4 hours; pricing model per Q-15",
+    "Confirm total = popup = details",
+    "Inquiry shows By Hour type and hours"
+   ],
+   "actual": [
+    "Summary: Duration '4 Hours', Distance '> 30 KM', drop = Whitefield; header 'Transfer - > 30 KM'",
+    "Breakup 'Transfer Trip - Outside City': Base ₹20,000, Late Allowance ₹1,000, Toll Actuals, GST Additional (no hourly line)",
+    "Confirm: Pickup Location only; Vehicle Base Cost ₹20,000 = Grand Total; no hours shown; 40 pax on 40-seater accepted",
+    "Popup 'Inquiry Submitted Successfully!' ₹20,000; exactly one save-inquiry call",
+    "My Inquiries: ORZS120376, Transfer, Bengaluru → Bengaluru, 25 Nov 2026, 40 Seater Premium AC Coach (40), 40, New quotation",
+    "Details: Booking Type Transfer, no hours, Timings 00:00 / 00:00 ✘"
+   ],
+   "statusReason": "Inquiry created with a consistent amount, but the hours and the pickup time are lost (HRS-02-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-main-results.png",
+     "caption": "Results: 4 Hours"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-main-fare-breakup.png",
+     "caption": "Fare Breakup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-main-confirm-cost.png",
+     "caption": "Confirm"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-main-submit-result.png",
+     "caption": "Success popup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-post-my-inquiries.png",
+     "caption": "My Inquiries"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-post-ORZS120376-edit-form.png",
+     "caption": "Details"
+    }
+   ],
+   "cfg": "Main path",
+   "keyData": "Whitefield, 4 h, 40 pax",
+   "vehicle": "P40AC",
+   "fare": [
+    {
+     "vehicle": "40 Seater Premium AC Coach (P40AC)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹20,000 (> 30 km)",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,000",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "Vehicle Base Cost",
+       "₹20,000"
+      ],
+      [
+       "Estimated Grand Total",
+       "₹20,000"
+      ]
+     ],
+     "arithmetic": "20,000 + 0 (daytime) = 20,000 ✔ = popup = details ₹20,000.00",
+     "comparison": [
+      "Applied = displayed band base",
+      "No hour-based component exists in the breakup"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-15 By Hour pricing model (priced as a distance band, not by hours)"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-02-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-03",
+   "title": "Number of Hours validation: equivalence classes and 1/24 boundaries",
+   "status": "Fail",
+   "objective": "Hours field validation.",
+   "data": {
+    "Pickup": "Electronic City Phase 1 (TRF-HR-002)",
+    "Values": "0, 1, 24, 25, −1, blank, 1.5, 'abc', 100"
+   },
+   "journey": [
+    "Enter each value; Book Now!"
+   ],
+   "expected": [
+    "1 and 24 accepted",
+    "0, −1, 25, 100 blocked with an in-app message",
+    "Blank / 'abc' clear message, not NaN",
+    "1.5 handled consistently"
+   ],
+   "actual": [
+    "1 → 'Duration: 1 Hour' ✔; 24 → '24 Hours' ✔",
+    "0, −1, 25, 100: search blocked by the browser min/max bubble only, no in-app message",
+    "Blank: raw 'numberOfHours must be a `number` type … NaN' ✘",
+    "'abc': letters cannot be typed (field stays blank → same NaN message)",
+    "1.5: the decimal point is not accepted; value becomes 1 → '1 Hour' (consistent)"
+   ],
+   "statusReason": "Boundaries enforced, but blank shows a raw schema error (HRS-03-Issue-01) and out-of-range values get no in-app message (HRS-03-Issue-02).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-1-results.png",
+     "caption": "1 hour"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-24-results.png",
+     "caption": "24 hours"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-0-validation.png",
+     "caption": "0"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-25-validation.png",
+     "caption": "25"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-blank-validation.png",
+     "caption": "Blank: NaN"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-1_5-results.png",
+     "caption": "1.5 → 1"
+    }
+   ],
+   "cfg": "Hours",
+   "keyData": "9 values",
+   "vehicle": "—",
+   "fare": [],
+   "issues": [
+    "HRS-03-Issue-01",
+    "HRS-03-Issue-02"
+   ]
+  },
+  {
+   "id": "HRS-04",
+   "title": "Fare for hour values 1–24 on one vehicle (representative set)",
+   "status": "Inconclusive",
+   "objective": "How the fare changes with hours.",
+   "data": {
+    "Pickup": "Peenya (TRF-HR-013), drop OFF",
+    "Date": "2 Dec 2026 6:00 AM",
+    "Passengers": "10",
+    "Vehicle": "VEH-011 28 Seater Premium AC Coach (P28AC)",
+    "Hours": "1, 2, 4, 8, 12, 16, 23, 24 (representative set agreed with the user; 3, 5–7, 9–11, 13–15, 17–22 not priced)"
+   },
+   "journey": [
+    "Search for each hour value",
+    "Fare Breakup at 1 and 24 h",
+    "Confirm at 1, 4, 8, 12, 16, 24 h"
+   ],
+   "expected": [
+    "Trend evaluated against Q-15",
+    "Late Allowance analysed separately"
+   ],
+   "actual": [
+    "Duration shown correctly (1 Hour … 24 Hours) ✔",
+    "Breakup (1 h and 24 h): Base (Outside City) ₹15,000, Late Allowance ₹1,000 – no hourly line",
+    "Confirm 1/4/8/12/16 h: ₹15,000 each",
+    "Confirm 24 h: ₹15,000 + Late Allowance ₹2,000 = ₹17,000"
+   ],
+   "statusReason": "Hours have no effect on the price; whether that is intended is Q-15 (HRS-04-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h1-fare-breakup-r2.png",
+     "caption": "Breakup 1 h"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h1-confirm-cost-r2.png",
+     "caption": "1 h"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h8-confirm-cost.png",
+     "caption": "8 h"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h16-confirm-cost.png",
+     "caption": "16 h"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h24-confirm-cost.png",
+     "caption": "24 h"
+    }
+   ],
+   "cfg": "Fare × hours",
+   "keyData": "1–24 h",
+   "vehicle": "P28AC",
+   "fare": [
+    {
+     "vehicle": "28 Seater Premium AC Coach (P28AC)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹15,000",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,000",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "1, 4, 8, 12, 16 h",
+       "₹15,000"
+      ],
+      [
+       "24 h",
+       "₹15,000 + ₹2,000 = ₹17,000"
+      ]
+     ],
+     "arithmetic": "Base constant; 24 h ends 06:00 next day → Late Allowance 2 × ₹1,000",
+     "comparison": [
+      "Same vehicle and inputs; only hours changed"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-15 hourly pricing",
+      "Q-09 late window"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-04-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-05",
+   "title": "Distance band for By Hour: no drop vs short drop vs long drop",
+   "status": "Inconclusive",
+   "objective": "Band and base per drop.",
+   "data": {
+    "Pickup": "MG Road (TRF-HR-020)",
+    "Hours": "8",
+    "Date": "3 Dec 2026 9:00 AM",
+    "Passengers": "12",
+    "Vehicle": "VEH-014 12 Seater Luxury Urbania (L12AC)",
+    "Runs": [
+     "A drop OFF",
+     "B drop Domlur",
+     "C drop Mysuru (TRF-HR-009)"
+    ]
+   },
+   "journey": [
+    "Run A, B, C; breakup and Confirm each"
+   ],
+   "expected": [
+    "Band and base consistent per run",
+    "B Inside City, C Outside City (unless Q-15 says otherwise)"
+   ],
+   "actual": [
+    "A: '< 30 KM', ₹10,500; drop shown = MG Road ✔",
+    "B: '< 30 KM', ₹10,500 ✔",
+    "C: '> 30 KM', ₹12,500 ✔",
+    "Header, summary, breakup and Confirm agree in each run"
+   ],
+   "statusReason": "Consistent banding; By Hour pricing model unconfirmed (Q-15). (Whitefield with no drop is '> 30 KM' in HRS-02 – pickup-dependent, Q-10.)",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-05-A-fare-breakup.png",
+     "caption": "A"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-05-B-confirm-cost.png",
+     "caption": "B"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-05-C-fare-breakup.png",
+     "caption": "C Mysuru"
+    }
+   ],
+   "cfg": "Band",
+   "keyData": "MG Road, 3 drops",
+   "vehicle": "L12AC",
+   "fare": [
+    {
+     "vehicle": "12 Seater Luxury Urbania (L12AC)",
+     "breakup": [
+      [
+       "Base Rate (Inside City)",
+       "₹10,500",
+       "A, B"
+      ],
+      [
+       "Base Rate (Outside City)",
+       "₹12,500",
+       "C"
+      ],
+      [
+       "Late Allowance",
+       "₹800",
+       "No"
+      ]
+     ],
+     "applied": [
+      [
+       "A",
+       "₹10,500"
+      ],
+      [
+       "B",
+       "₹10,500"
+      ],
+      [
+       "C",
+       "₹12,500"
+      ]
+     ],
+     "arithmetic": "Each = its displayed band rate ✔",
+     "comparison": [
+      "Only the drop changed"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-15",
+      "Q-10"
+     ]
+    }
+   ],
+   "issues": []
+  },
+  {
+   "id": "HRS-06",
+   "title": "Different drop far away vs hours: feasibility",
+   "status": "Fail",
+   "objective": "Feasibility of far drops against booked hours.",
+   "data": {
+    "Vehicle": "VEH-018 49 Seater Luxury 9600 Volvo (L49NV)",
+    "Passengers": "30",
+    "Date": "4 Dec 2026 6:00 AM",
+    "Runs": [
+     "A KR Puram → Hyderabad, 4 h",
+     "B same, 24 h",
+     "C Whitefield → Munnar, 2 h",
+     "D Thanisandra → Goa (Panaji), 24 h"
+    ]
+   },
+   "journey": [
+    "Run A–D; breakup in A; Confirm each",
+    "Control: P2P Whitefield → Munnar"
+   ],
+   "expected": [
+    "Infeasible combinations blocked, warned or priced with extra km/hours (Q-16)",
+    "Interstate per Q-06"
+   ],
+   "actual": [
+    "A: Hyderabad in 4 h accepted, ₹35,000 – no warning (Q-16)",
+    "B: 24 h ₹35,000 + Late Allowance ₹3,500 = ₹38,500",
+    "C: Munnar drop rejected 'Drop location is required' although selected ✘",
+    "D: Panaji drop rejected the same way ✘",
+    "Control: P2P accepts Whitefield → Munnar"
+   ],
+   "statusReason": "Far drops are either silently priced at the flat band (A) or wrongly rejected (C, D – HRS-06-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-confirm-cost.png",
+     "caption": "A 4 h ₹35,000"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-B-confirm-cost.png",
+     "caption": "B 24 h ₹38,500"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-C-validation-r2.png",
+     "caption": "C Munnar rejected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-D-validation-r3.png",
+     "caption": "D Panaji rejected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-probe-p2p-munnar-results.png",
+     "caption": "P2P control"
+    }
+   ],
+   "cfg": "Feasibility",
+   "keyData": "Hyderabad, Munnar, Goa",
+   "vehicle": "L49NV",
+   "fare": [
+    {
+     "vehicle": "49 Seater Luxury 9600 Volvo (L49NV)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹35,000",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,750",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "A 4 h",
+       "₹35,000"
+      ],
+      [
+       "B 24 h",
+       "₹35,000 + ₹3,500 = ₹38,500"
+      ]
+     ],
+     "arithmetic": "B: 35,000 + 1,750 × 2 = 38,500 ✔",
+     "comparison": [
+      "Distance/hours feasibility not considered"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-16",
+      "Q-06"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-04-Issue-01",
+    "HRS-06-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-07",
+   "title": "Multi-day By Hours: date selection, zero dates, fare per day",
+   "status": "Fail",
+   "objective": "Multi-day chips, validation and fare.",
+   "data": {
+    "Pickup": "Marathahalli (TRF-HR-005), drop OFF",
+    "Dates": "21 Nov, 23 Nov, 1 Dec 2026 (today 18 Nov forced in)",
+    "Time / hours": "8:00 AM, 6 h",
+    "Passengers": "35",
+    "Vehicle": "VEH-006 40 Seater Deluxe Coach (D40NA)"
+   },
+   "journey": [
+    "Multi-day ON; select dates; record chips",
+    "Remove every chip; Book Now!",
+    "Re-select; search; breakup; Confirm"
+   ],
+   "expected": [
+    "Chips for selected dates; cross-month works",
+    "Zero dates blocked",
+    "Fare per date (Q-17)",
+    "Future dates with an earlier clock time accepted"
+   ],
+   "actual": [
+    "Chip 'Nov 18, 2026' pre-selected on toggle; 21, 23 Nov and 1 Dec added ✔ (cross-month ✔)",
+    "Removing all chips leaves today; search runs ✘",
+    "Summary: '18,21,23 Nov, 2026 | 1 Dec, 2026', 6 Hours",
+    "Breakup ₹18,000 base, Late Allowance ₹1,000",
+    "Confirm: Base ₹72,000 (4 dates) + Late Allowance ₹14,000 = ₹86,000 ✘"
+   ],
+   "statusReason": "Today forced in (HRS-07-Issue-01) and Late Allowance per calendar day (HRS-07-Issue-02).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-1-chips.png",
+     "caption": "Chips"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-2-zero-results.png",
+     "caption": "Zero dates not possible"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-main-results.png",
+     "caption": "Summary"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-main-confirm-cost.png",
+     "caption": "Confirm ₹86,000"
+    }
+   ],
+   "cfg": "Multi-day",
+   "keyData": "4 dates incl. forced today",
+   "vehicle": "D40NA",
+   "fare": [
+    {
+     "vehicle": "40 Seater Deluxe Coach (D40NA)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹18,000 per date",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,000",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "Vehicle Base Cost",
+       "₹72,000"
+      ],
+      [
+       "Late Allowance Cost",
+       "₹14,000"
+      ],
+      [
+       "Estimated Grand Total",
+       "₹86,000"
+      ]
+     ],
+     "arithmetic": "Base 18,000 × 4 dates = 72,000 ✔; Late Allowance 1,000 × 14 calendar days = 14,000 ✘ (daytime trips)",
+     "comparison": [
+      "Today counted although removed"
+     ],
+     "verdict": "Fail",
+     "clarify": [
+      "Q-17 multi-day pricing"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-07-Issue-01",
+    "HRS-07-Issue-02"
+   ]
+  },
+  {
+   "id": "HRS-08",
+   "title": "Late Allowance and cross-midnight hourly bookings",
+   "status": "Partial",
+   "objective": "Late Allowance by start time.",
+   "data": {
+    "Pickup": "HSR Layout (TRF-HR-007), drop OFF",
+    "Date": "6 Dec 2026",
+    "Passengers": "30",
+    "Vehicle": "VEH-005 33 Seater Deluxe Coach (D35NA)",
+    "Runs": [
+     "A 10:00 × 4 h",
+     "B 19:00 × 4 h (ends 23:00)",
+     "C 23:00 × 2 h (ends 01:00)",
+     "D 04:00 × 2 h"
+    ]
+   },
+   "journey": [
+    "Run A–D changing only the start time"
+   ],
+   "expected": [
+    "Late Allowance for B, C, D only; C shows next-day end",
+    "Base identical"
+   ],
+   "actual": [
+    "A: ₹16,500 ✔",
+    "B: ₹16,500 + ₹1,000 = ₹17,500 ✔",
+    "C: ₹16,500 + ₹2,000 = ₹18,500 (base not doubled ✔); Confirm shows only '6 Dec' ✘",
+    "D: ₹16,500, no Late Allowance (Q-09)",
+    "Base identical in all runs ✔"
+   ],
+   "statusReason": "B and C behave as expected; D and the missing end date need clarification (HRS-08-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-A-confirm-cost.png",
+     "caption": "A"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-B-confirm-cost.png",
+     "caption": "B"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-C-confirm-cost.png",
+     "caption": "C"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-D-confirm-cost.png",
+     "caption": "D"
+    }
+   ],
+   "cfg": "Late window",
+   "keyData": "4 start times",
+   "vehicle": "D35NA",
+   "fare": [
+    {
+     "vehicle": "33 Seater Deluxe Coach (D35NA)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹16,500",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,000",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "A",
+       "₹16,500"
+      ],
+      [
+       "B",
+       "₹17,500"
+      ],
+      [
+       "C",
+       "₹18,500"
+      ],
+      [
+       "D",
+       "₹16,500"
+      ]
+     ],
+     "arithmetic": "B 16,500 + 1,000; C 16,500 + 2 × 1,000",
+     "comparison": [
+      "D (04:00) has none"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-09"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-08-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-09",
+   "title": "Location and date validation for By Hours",
+   "status": "Pass",
+   "objective": "Required fields and date validation.",
+   "data": {
+    "Pickup": "Hebbal (TRF-HR-003)",
+    "Drop test": "Hebbal (same as pickup)"
+   },
+   "journey": [
+    "Blank pickup",
+    "Different drop ON, drop blank",
+    "Drop = pickup",
+    "Past date (picker + typed); today's past slot",
+    "Idle until default time is past (not executed)"
+   ],
+   "expected": [
+    "Required errors",
+    "Drop = pickup per Q-21",
+    "Past date/time blocked"
+   ],
+   "actual": [
+    "'Pickup location is required' ✔",
+    "'Drop location is required' ✔",
+    "Hebbal → Hebbal accepted (Q-21)",
+    "17 Nov disabled; typed date reverted to today ✔",
+    "39 of 48 slots disabled up to 7:00 PM; 9:00 AM disabled ✔",
+    "Idle step not executed (same component as P2P-07 / OUT-10)"
+   ],
+   "statusReason": "All executed validations work.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-1-validation.png",
+     "caption": "Blank pickup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-2-validation.png",
+     "caption": "Blank drop"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-3-results.png",
+     "caption": "Drop = pickup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-4b-slots.png",
+     "caption": "Past slots"
+    }
+   ],
+   "cfg": "Validation",
+   "keyData": "Hebbal",
+   "vehicle": "—",
+   "fare": [],
+   "issues": [
+    "HRS-09-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-10",
+   "title": "Passengers vs capacity and multiple vehicles",
+   "status": "Fail",
+   "objective": "Capacity and multi-vehicle on By Hour.",
+   "data": {
+    "Pickup": "Jayanagar 4th Block (TRF-HR-004)",
+    "Date / hours": "7 Dec 2026 9:00 AM, 6 h",
+    "Passengers": "25, then 60",
+    "Vehicles": "VEH-012 P25AC, VEH-016 L45V"
+   },
+   "journey": [
+    "25 → P25AC → Confirm",
+    "60 → L45V → popup → add P25AC"
+   ],
+   "expected": [
+    "25 accepted",
+    "60 accepted (no By Hour maximum)",
+    "Both vehicles held"
+   ],
+   "actual": [
+    "25 on 25-seater: Confirm ₹14,000 ✔",
+    "60 accepted in the field (no max) ✔",
+    "L45V: 'cover only 45 seats' ✔; adding P25AC: 'cover only 25 seats' – replaced ✘"
+   ],
+   "statusReason": "Multi-vehicle defect (HRS-10-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax25-confirm-cost.png",
+     "caption": "25 pax"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-L45V-confirm.png",
+     "caption": "45 seats"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-plus-P25AC-confirm.png",
+     "caption": "Replaced: 25"
+    }
+   ],
+   "cfg": "Capacity",
+   "keyData": "25 / 60 pax",
+   "vehicle": "P25AC, L45V",
+   "fare": [],
+   "issues": [
+    "HRS-10-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-11",
+   "title": "Mode switching and Modify Inquiry: values kept, hours change",
+   "status": "Pass",
+   "objective": "Persistence across tabs and Modify.",
+   "data": {
+    "Route": "Sarjapur Road → Coorg (Madikeri) (TRF-HR-018), different drop ON",
+    "Date / hours": "9 Dec 2026 7:00 AM, 10 h → 12 h",
+    "Passengers": "8",
+    "Vehicle": "VEH-002 MPV's (D MPV, 7 seats)"
+   },
+   "journey": [
+    "Fill; switch to P2P and back; to Local and back",
+    "Book Now!",
+    "Modify Inquiry: check pre-fill; hours 10 → 12; Save",
+    "Breakup and Confirm"
+   ],
+   "expected": [
+    "No By Hour value leaks into P2P or Local",
+    "Modify keeps every value; 12-hour result re-priced"
+   ],
+   "actual": [
+    "By Hour values kept after both switches; P2P and Local forms untouched ✔",
+    "Results: Duration 10 Hours ✔",
+    "Modify Leg 1 pre-fill correct ✔; after Save: Duration 12 Hours ✔",
+    "Breakup ₹12,500 (unchanged – HRS-04-Issue-01)",
+    "Confirm: capacity popup (8 passengers on a 7-seat MPV – workbook data)"
+   ],
+   "statusReason": "Persistence works; price independent of hours (Q-15).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-after-switch.png",
+     "caption": "After switching"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modify-prefill.png",
+     "caption": "Modify pre-fill"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-results.png",
+     "caption": "12 Hours"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-fare-breakup.png",
+     "caption": "Breakup ₹12,500"
+    }
+   ],
+   "cfg": "Persistence",
+   "keyData": "Sarjapur → Coorg",
+   "vehicle": "D MPV",
+   "fare": [],
+   "issues": [
+    "HRS-04-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-12",
+   "title": "Local vs Transfer By Hours with identical inputs",
+   "status": "Inconclusive",
+   "objective": "Pricing differentiation between Local and By Hour.",
+   "data": {
+    "Inputs": "Whitefield, drop OFF, 8 Dec 2026 9:00 AM, 8 hours, 10 passengers",
+    "Vehicle": "VEH-013 16 Seater Premium Urbania (P16UB)"
+   },
+   "journey": [
+    "Local: search, breakup, Confirm",
+    "By Hour: same"
+   ],
+   "expected": [
+    "Both recorded side by side; model per Q-15"
+   ],
+   "actual": [
+    "Local: 'Local - 8 HR / 80 KM'; Base (8Hr/80Km) ₹7,500, Extra Km ₹40/km, Extra Hour ₹800/hr, Day Bata ₹800 → Confirm ₹8,300 (matches the Local run baseline)",
+    "By Hour: 'Transfer - > 30 KM'; Base (Outside City) ₹12,500, Late Allowance ₹800 → Confirm ₹12,500"
+   ],
+   "statusReason": "Products are priced differently (₹8,300 vs ₹12,500); which model By Hour must use is Q-15.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-12-local-fare-breakup.png",
+     "caption": "Local breakup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-12-local-confirm-cost.png",
+     "caption": "Local ₹8,300"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-12-byhour-fare-breakup.png",
+     "caption": "By Hour breakup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-12-byhour-confirm-cost.png",
+     "caption": "By Hour ₹12,500"
+    }
+   ],
+   "cfg": "Local vs By Hour",
+   "keyData": "Whitefield 8 h",
+   "vehicle": "P16UB",
+   "fare": [
+    {
+     "vehicle": "16 Seater Premium Urbania (P16UB)",
+     "breakup": [
+      [
+       "Local Base (8Hr/80Km)",
+       "₹7,500",
+       "Local"
+      ],
+      [
+       "Local Day Bata",
+       "₹800",
+       "Local"
+      ],
+      [
+       "By Hour Base (Outside City)",
+       "₹12,500",
+       "By Hour"
+      ]
+     ],
+     "applied": [
+      [
+       "Local",
+       "₹8,300"
+      ],
+      [
+       "By Hour",
+       "₹12,500"
+      ]
+     ],
+     "arithmetic": "Local 7,500 + 800 = 8,300 ✔; By Hour 12,500 ✔",
+     "comparison": [
+      "Same inputs, different products"
+     ],
+     "verdict": "Inconclusive – fare rule not confirmed",
+     "clarify": [
+      "Q-15"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-04-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-13",
+   "title": "Multi-day By Hour with Different Drop: dates, time, drop and summary",
+   "status": "Fail",
+   "objective": "Combined multi-day + different drop path (no submission).",
+   "data": {
+    "Pickup / drop": "Indiranagar → Mysuru (TRF-HR-009)",
+    "Dates": "12, 13, 14 Dec 2026 (today forced in)",
+    "Time / hours": "7:00 AM requested, 8 h",
+    "Passengers": "18",
+    "Vehicle": "VEH-004 21 Seater Premium AC Coach (P21AC)"
+   },
+   "journey": [
+    "Multi-day + drop ON; select dates; time; Book Now!",
+    "Breakup; Confirm (no submit)",
+    "Modify: remove 13 Dec; Save",
+    "Modify: Different drop OFF; Save; then Multi-day OFF; Save"
+   ],
+   "expected": [
+    "Same dates, time, hours, pickup, drop on form, summary and Confirm",
+    "Drop day shown clearly (Q-33)",
+    "Date removal and toggles update everything"
+   ],
+   "actual": [
+    "Dates '18 Nov, 2026 | 12,13,14 Dec, 2026' – today forced in ✘",
+    "07:00 not selectable (today's past slot) → pickup time stayed 7:19 PM ✘",
+    "Summary and Confirm: drop Mysuru, 8 Hours, 18 Pax ✔; which day the drop applies to is not shown (Q-33)",
+    "Confirm: Base ₹56,000 (4 × ₹14,000) + Late Allowance ₹27,000 (27 days) = ₹83,000 ✘",
+    "Remove 13 Dec → '18 Nov | 12,14 Dec' ✔",
+    "Drop OFF → drop = Indiranagar ✔",
+    "Multi-day OFF → '18 Nov, 2026' (today) ✘"
+   ],
+   "statusReason": "The combined path reproduces the multi-day defects and resets to today when Multi-day is turned off.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-main-results.png",
+     "caption": "Summary"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-main-fare-breakup.png",
+     "caption": "Breakup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-main-confirm-cost.png",
+     "caption": "Confirm ₹83,000"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-two-dates-results.png",
+     "caption": "After removing 13 Dec"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-dd-off-results.png",
+     "caption": "Drop OFF"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-md-off-results.png",
+     "caption": "Multi-day OFF → today"
+    }
+   ],
+   "cfg": "Multi-day + drop",
+   "keyData": "Indiranagar → Mysuru",
+   "vehicle": "P21AC",
+   "fare": [
+    {
+     "vehicle": "21 Seater Premium AC Coach (P21AC)",
+     "breakup": [
+      [
+       "Base Rate (Outside City / Inside City band)",
+       "₹14,000 per date",
+       "Yes – per day"
+      ],
+      [
+       "Late Allowance",
+       "₹1,000",
+       "Only for late trips (window not displayed, Q-09)"
+      ],
+      [
+       "Toll & Parking",
+       "Actuals",
+       "Not in estimate"
+      ],
+      [
+       "GST",
+       "Additional",
+       "Not in estimate"
+      ]
+     ],
+     "applied": [
+      [
+       "Vehicle Base Cost",
+       "₹56,000"
+      ],
+      [
+       "Late Allowance Cost",
+       "₹27,000"
+      ],
+      [
+       "Estimated Grand Total",
+       "₹83,000"
+      ]
+     ],
+     "arithmetic": "14,000 × 4 = 56,000; 1,000 × 27 days = 27,000",
+     "comparison": [
+      "Late Allowance per calendar day of the span"
+     ],
+     "verdict": "Fail",
+     "clarify": [
+      "Q-17",
+      "Q-33"
+     ]
+    }
+   ],
+   "issues": [
+    "HRS-07-Issue-01",
+    "HRS-07-Issue-02",
+    "HRS-13-Issue-01"
+   ]
+  },
+  {
+   "id": "HRS-14",
+   "title": "By Hour pickup-location scope beyond Karnataka and interstate drop",
+   "status": "Fail",
+   "objective": "Compare By Hour location scope with Point To Point.",
+   "data": {
+    "Runs": [
+     "A Whitefield, drop OFF",
+     "B Mysuru pickup, drop OFF",
+     "C Chennai pickup, drop OFF",
+     "D Koramangala → Chennai (drop ON)"
+    ],
+    "Date / hours": "10 Dec 2026 9:00 AM, 6 h, 5 passengers"
+   },
+   "journey": [
+    "Run A–D",
+    "Compare with P2P-11 (Transfer P2P accepts Chennai and Kochi)"
+   ],
+   "expected": [
+    "Same scope as P2P including Chennai",
+    "Interstate drop accepted"
+   ],
+   "actual": [
+    "A Whitefield ✔ results",
+    "B Mysuru ✔ results",
+    "C Chennai pickup: 'Pickup location is required' although selected ✘",
+    "D Chennai drop: 'Drop location is required' although selected ✘"
+   ],
+   "statusReason": "By Hour does not accept out-of-state places that P2P accepts, and the messages are misleading (HRS-06-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-A-results.png",
+     "caption": "A"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-B-results.png",
+     "caption": "B Mysuru"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-C-validation.png",
+     "caption": "C Chennai pickup"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-D-validation.png",
+     "caption": "D Chennai drop"
+    }
+   ],
+   "cfg": "Location scope",
+   "keyData": "Bengaluru / Karnataka / outside",
+   "vehicle": "—",
+   "fare": [],
+   "issues": [
+    "HRS-06-Issue-01"
+   ]
+  }
+ ],
+ "issues": [
+  {
+   "id": "HRS-02-Issue-01",
+   "case": "HRS-02",
+   "type": "Defect",
+   "severity": "High",
+   "category": "Data",
+   "title": "Submitted By Hour inquiry stores no hours and timings 00:00 / 00:00; it is saved as a plain 'Transfer'",
+   "where": "Dashboard → My Inquiries → Edit Inquiry (inquiry details)",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Pickup Whitefield, drop OFF, 25 Nov 2026 10:00 AM, 4 hours, 40 passengers, 40 Seater Premium AC Coach → Confirm & Submit.",
+    "Dashboard → My Inquiries → ORZS120376 → Edit Inquiry."
+   ],
+   "expected": "Inquiry shows the By Hour type, 4 hours and 10:00 AM pickup (Q-30).",
+   "actual": "Type 'Transfer'; Booking Type 'Transfer'; 'Timings: Arrival: 00:00 | Departure: 00:00'; drop = pickup Whitefield; no field or text with the 4 hours. Confirm screen also shows no hours. Same timing defect as the P2P/Return run (P2P-02-Issue-01).",
+   "impact": "Admin cannot see how many hours the customer booked or when the vehicle is needed.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-main-confirm.png",
+     "caption": "Confirm: no hours"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-post-my-inquiries.png",
+     "caption": "My Inquiries: Transfer"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-02-post-ORZS120376-edit-form.png",
+     "caption": "Details: no hours, 00:00"
+    }
+   ]
+  },
+  {
+   "id": "HRS-03-Issue-01",
+   "case": "HRS-03",
+   "type": "Defect",
+   "severity": "Low",
+   "category": "Validation",
+   "title": "Blank Number of Hours shows a raw schema error ('numberOfHours must be a `number` type … NaN')",
+   "where": "By Hour form → Number of Hours",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Pickup Electronic City Phase 1; clear Number of Hours (or type letters); Book Now!."
+   ],
+   "expected": "Friendly message such as 'Number of hours is required'.",
+   "actual": "'numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`).' Recurrence of Local TC-06-Issue-01.",
+   "impact": "Unprofessional message.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-blank-validation.png",
+     "caption": "Blank hours"
+    }
+   ]
+  },
+  {
+   "id": "HRS-03-Issue-02",
+   "case": "HRS-03",
+   "type": "Inconsistency",
+   "severity": "Low",
+   "category": "Validation",
+   "title": "Hours 0, −1, 25 and 100 blocked only by the browser tooltip; no in-app message",
+   "where": "By Hour form → Number of Hours",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Enter 0 (then −1, 25, 100) in Number of Hours; Book Now!."
+   ],
+   "expected": "In-app message (e.g. 'Maximum 24 hours allowed').",
+   "actual": "Nothing happens on the page; only the browser bubble 'Value must be greater than or equal to 1' / 'less than or equal to 24' (min=1, max=24).",
+   "impact": "Easy to miss, wording depends on the browser.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-0-validation.png",
+     "caption": "0 hours"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-03-25-validation.png",
+     "caption": "25 hours"
+    }
+   ]
+  },
+  {
+   "id": "HRS-04-Issue-01",
+   "case": "HRS-04",
+   "alsoIn": [
+    "HRS-06",
+    "HRS-11",
+    "HRS-12"
+   ],
+   "type": "Clarification",
+   "severity": "",
+   "category": "Fare",
+   "title": "By Hour fare does not depend on the number of hours (1 h = 24 h = ₹15,000 base)",
+   "where": "Fare Breakup / Confirm",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Peenya, drop OFF, 2 Dec 2026 6:00 AM, 10 passengers, 28 Seater Premium AC Coach.",
+    "Repeat with hours 1, 2, 4, 8, 12, 16, 23, 24."
+   ],
+   "expected": "Per Q-15 (the workbook expects hourly pricing; Local uses packages + extra hour).",
+   "actual": "Vehicle Base Cost ₹15,000 for every value; only 24 h adds Late Allowance ₹2,000 (ends 06:00 next day). The breakup shows a distance band, no hourly or km line. Same in HRS-06 (Hyderabad 4 h vs 24 h base ₹35,000) and HRS-11 (10 h → 12 h unchanged).",
+   "impact": "If By Hour is meant to be priced by hours, every quote is wrong (same pattern as Local TC-07-Issue-01).",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h1-confirm-cost-r2.png",
+     "caption": "1 h: ₹15,000"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h12-confirm-cost.png",
+     "caption": "12 h: ₹15,000"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-04-h24-confirm-cost.png",
+     "caption": "24 h: ₹15,000 + ₹2,000"
+    }
+   ]
+  },
+  {
+   "id": "HRS-06-Issue-01",
+   "case": "HRS-06",
+   "alsoIn": [
+    "HRS-14"
+   ],
+   "type": "Defect",
+   "severity": "Medium",
+   "category": "Validation",
+   "title": "By Hour rejects some out-of-state places (Munnar, Panaji, Chennai) with 'Drop/Pickup location is required' while Point To Point accepts them",
+   "where": "Transfer → By Hour → Pickup / Drop Location",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Drop at different location ON; Pickup Whitefield; Drop: choose 'Munnar, Keralam, India' from the suggestions; Hours 2 → Book Now!.",
+    "Repeat with drop 'Panaji, Goa, India' or pickup 'Chennai, Tamil Nadu, India'.",
+    "Compare: Transfer → Point To Point, Whitefield → Munnar."
+   ],
+   "expected": "Same location scope as Point To Point (T-10), or a clear message that the place is outside the service area.",
+   "actual": "The selected place stays in the field but 'Drop location is required' (Munnar – both suggestions, Panaji, Chennai) or 'Pickup location is required' (Chennai). Hyderabad (Telangana) and Mysuru are accepted. Point To Point accepts Whitefield → Munnar.",
+   "impact": "Customers cannot book By Hour trips to or from several destinations and are told the field is empty.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-C-validation-r2.png",
+     "caption": "Munnar drop rejected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-D-validation-r3.png",
+     "caption": "Panaji drop rejected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-probe-p2p-munnar-results.png",
+     "caption": "P2P accepts Munnar"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-C-validation.png",
+     "caption": "Chennai pickup rejected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-14-D-validation.png",
+     "caption": "Chennai drop rejected"
+    }
+   ]
+  },
+  {
+   "id": "HRS-07-Issue-01",
+   "case": "HRS-07",
+   "alsoIn": [
+    "HRS-13"
+   ],
+   "type": "Defect",
+   "severity": "High",
+   "category": "Functional",
+   "title": "Multi-day: today is always selected and cannot be removed (past time accepted, zero dates impossible)",
+   "where": "By Hour → Multi-day Trip → Select Travel Dates (chips)",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Turn Multi-day Trip ON (chip 'Nov 18, 2026' appears).",
+    "Select 21 Nov, 23 Nov, 1 Dec; then remove every chip with ×.",
+    "Book Now!."
+   ],
+   "expected": "Only the dates the user selects; zero dates blocks the search (H-05).",
+   "actual": "'Nov 18, 2026' (today) remains after removing all chips and is always included; the search ran for today at 08:00 (already past). In HRS-13 the 07:00 slot was disabled because today is included, so the pickup time stayed at the current time (7:19 PM). Recurrence of Local TC-06-Issue-04.",
+   "impact": "Every multi-day By Hour quote includes an unwanted day, often in the past.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-1-chips.png",
+     "caption": "Today pre-selected"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-2-zero-results.png",
+     "caption": "All chips removed: search still runs with today"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-main-results.png",
+     "caption": "HRS-13: today included"
+    }
+   ]
+  },
+  {
+   "id": "HRS-07-Issue-02",
+   "case": "HRS-07",
+   "alsoIn": [
+    "HRS-13"
+   ],
+   "type": "Defect",
+   "severity": "High",
+   "category": "Fare",
+   "title": "Multi-day Late Allowance is charged for every calendar day in the span, not per selected date",
+   "where": "Confirm Your Trip → Estimated Trip Cost",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Marathahalli, Multi-day ON: 18 (forced), 21, 23 Nov and 1 Dec 2026; 8:00 AM; 6 hours; 35 pax; 40 Seater Deluxe Coach → Book This Vehicle."
+   ],
+   "expected": "Base and allowances per selected date (4 dates); no Late Allowance for an 08:00–14:00 trip.",
+   "actual": "Vehicle Base Cost ₹72,000 (= ₹18,000 × 4 dates) but Late Allowance Cost ₹14,000 (= ₹1,000 × 14 calendar days 18 Nov–1 Dec); total ₹86,000. HRS-13: base ₹56,000 (4 × ₹14,000), Late Allowance ₹27,000 (27 days 18 Nov–14 Dec), total ₹83,000.",
+   "impact": "Large over-charge on multi-day quotes.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-07-main-confirm-cost.png",
+     "caption": "HRS-07: ₹72,000 + ₹14,000"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-main-confirm-cost.png",
+     "caption": "HRS-13: ₹56,000 + ₹27,000"
+    }
+   ]
+  },
+  {
+   "id": "HRS-08-Issue-01",
+   "case": "HRS-08",
+   "type": "Clarification",
+   "severity": "",
+   "category": "Fare",
+   "title": "No Late Allowance for a 04:00–06:00 trip; cross-midnight end not shown",
+   "where": "Confirm → Estimated Trip Cost",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "HSR Layout, 6 Dec 2026; run 4:00 AM × 2 h and 11:00 PM × 2 h; 33 Seater Deluxe Coach."
+   ],
+   "expected": "Late Allowance for night trips (Q-09); end date-time shown for a cross-midnight trip.",
+   "actual": "04:00 start: ₹16,500, no Late Allowance. 23:00 × 2 h: ₹16,500 + ₹2,000 (base not doubled); Confirm shows only '6 Dec, 2026'.",
+   "impact": "Rule to confirm.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-D-confirm-cost.png",
+     "caption": "04:00: no Late Allowance"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-08-C-confirm-cost.png",
+     "caption": "23:00: Late ₹2,000"
+    }
+   ]
+  },
+  {
+   "id": "HRS-13-Issue-01",
+   "case": "HRS-13",
+   "type": "Inconsistency",
+   "severity": "Medium",
+   "category": "Functional",
+   "title": "Turning Multi-day OFF in Modify resets the trip to today instead of a selected date",
+   "where": "Results → Modify Inquiry (Modify Leg 1)",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Multi-day search with dates 12 and 14 Dec (today forced in).",
+    "Modify Inquiry → Multi-day Trip OFF → Save!."
+   ],
+   "expected": "One of the selected dates (e.g. 12 Dec) or a prompt to choose a date.",
+   "actual": "Summary 'Dates: 18 Nov, 2026' (today).",
+   "impact": "Trip silently moved to today.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-13-md-off-results.png",
+     "caption": "After Multi-day OFF: 18 Nov"
+    }
+   ]
+  },
+  {
+   "id": "HRS-10-Issue-01",
+   "case": "HRS-10",
+   "type": "Defect",
+   "severity": "High",
+   "category": "Functional",
+   "title": "Second vehicle replaces the first (By Hour, 60 passengers)",
+   "where": "Results → 'Passenger Capacity Not Complete!'",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Jayanagar 4th Block, 7 Dec 9:00 AM, 6 h, 60 passengers → Book This Vehicle on 45 Seater Luxury Volvo ('45 seats').",
+    "Book This Vehicle on 25 Seater Premium AC Coach."
+   ],
+   "expected": "45 + 25 = 70 seats; Confirm lists both.",
+   "actual": "'cover only 25 seats' – replaced. Same defect as Transfer P2P-08-Issue-03 / Local TC-04-Issue-01.",
+   "impact": "Groups above one vehicle cannot submit.",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-L45V-confirm.png",
+     "caption": "45 seats"
+    },
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-10-pax60-plus-P25AC-confirm.png",
+     "caption": "Replaced: 25"
+    }
+   ]
+  },
+  {
+   "id": "HRS-09-Issue-01",
+   "case": "HRS-09",
+   "type": "Clarification",
+   "severity": "",
+   "category": "Validation",
+   "title": "Drop equal to pickup (Hebbal → Hebbal) accepted with Different drop ON",
+   "where": "By Hour form",
+   "steps": [
+    "Log in to User App Preprod (Personal Login → Mobile Number).",
+    "Home → Smart Inquiry → Transfer → By Hour.",
+    "Different drop ON; pickup and drop Hebbal → Book Now!."
+   ],
+   "expected": "Per Q-21.",
+   "actual": "Search runs.",
+   "impact": "—",
+   "evidence": [
+    {
+     "path": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-09-3-results.png",
+     "caption": "Drop = pickup accepted"
+    }
+   ]
+  }
+ ],
+ "fareSummary": [
+  [
+   "HRS-02",
+   "P40AC",
+   "Whitefield, 4 h",
+   "₹20,000 (> 30 km)",
+   "₹20,000 = popup",
+   "Inconclusive"
+  ],
+  [
+   "HRS-04",
+   "P28AC",
+   "1–24 h",
+   "₹15,000 flat",
+   "₹15,000 (24 h: +₹2,000)",
+   "Inconclusive"
+  ],
+  [
+   "HRS-05",
+   "L12AC",
+   "No / short / long drop",
+   "₹10,500 / ₹12,500",
+   "= band",
+   "Inconclusive"
+  ],
+  [
+   "HRS-06",
+   "L49NV",
+   "Hyderabad 4 h / 24 h",
+   "₹35,000",
+   "₹35,000 / ₹38,500",
+   "Inconclusive"
+  ],
+  [
+   "HRS-07",
+   "D40NA",
+   "4 dates (incl. forced today)",
+   "₹18,000 per date",
+   "₹72,000 + Late ₹14,000",
+   "Fail"
+  ],
+  [
+   "HRS-08",
+   "D35NA",
+   "4 start times",
+   "₹16,500 + Late ₹1,000",
+   "₹16,500–₹18,500",
+   "Inconclusive"
+  ],
+  [
+   "HRS-12",
+   "P16UB",
+   "Local vs By Hour 8 h",
+   "₹7,500 pkg vs ₹12,500 band",
+   "₹8,300 vs ₹12,500",
+   "Inconclusive"
+  ],
+  [
+   "HRS-13",
+   "P21AC",
+   "4 dates + drop",
+   "₹14,000 per date",
+   "₹56,000 + Late ₹27,000",
+   "Fail"
+  ]
+ ],
+ "clarifications": [
+  "Q-15 By Hour pricing model: distance band vs hours; Local uses 8 Hr/80 Km packages.",
+  "Q-16 far drop vs booked hours (Hyderabad in 4 h priced ₹35,000).",
+  "Q-17 multi-day pricing: per selected date or per calendar span (Late Allowance uses the span).",
+  "Q-09 late window: 04:00 start has no Late Allowance.",
+  "Q-33 multi-day + different drop: which day the drop applies to.",
+  "Q-11 / T-10 By Hour location scope vs Point To Point.",
+  "Q-21 drop equal to pickup accepted.",
+  "Q-30 inquiry details: By Hour type and hours are not stored/shown."
+ ],
+ "scope": [
+  "Executed: all 14 By Hours use cases of the v3.2 workbook; results graded per case (Pass/Fail/Partial/Inconclusive).",
+  "Fare verdicts follow .claude/shared/fare-verification.md; amounts depending on unconfirmed rules are 'Inconclusive', never assumed.",
+  "HRS-04 priced a representative hour set (1, 2, 4, 8, 12, 16, 23, 24) instead of all 24 values, by user decision, to limit run time on a memory-constrained machine.",
+  "Environment: the machine ran low on memory; the test browser was stopped once and HRS-04 was re-run from the start.",
+  "Redesigned Preprod home page (since 18 Nov ~15:20): an overlay intermittently swallows clicks on tabs and toggles; the automation uses DOM clicks and one retry. The HRS-06 Munnar/Goa rejection was confirmed independently (the P2P control accepts the same place).",
+  "Workbook data note: HRS-11 uses 8 passengers on a 7-seat MPV (capacity popup expected).",
+  "Evidence: screenshots mask phone numbers, e-mail and the account name. Local, Outstation and Transfer P2P/Return reports untouched."
+ ],
+ "pnrs": [
+  {
+   "pnr": "ORZS120376",
+   "case": "HRS-02",
+   "route": "Whitefield (By Hour, drop OFF → drop = Whitefield)",
+   "dates": "25 Nov 2026 (pickup 10:00 AM, 4 hours)",
+   "vehicle": "40 Seater Premium AC Coach",
+   "pax": 40,
+   "estimate": "₹20,000",
+   "status": "New quotation (validity 25/11/26)",
+   "notes": "By Hour main path; stored as 'Transfer' without hours; timings 00:00"
+  }
+ ],
+ "pnrNotes": [
+  "PNR = Inquiry ID in Dashboard → My Inquiries ('New quotation').",
+  "Stored without hours and with timings 00:00 (HRS-02-Issue-01) – check in Admin-Web.",
+  "Earlier Transfer PNRs (separate report): SIVM916255 (P2P), LJWN815154 (With Return)."
+ ]
+}

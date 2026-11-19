@@ -1,0 +1,715 @@
+{
+  "id": "P2P-05",
+  "started": "2026-11-18T06:41:53.133Z",
+  "steps": [
+    {
+      "label": "run-A",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "2:00 PM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "5:00 PM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "to": "Mysuru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-27",
+            "2:00 PM",
+            "2026-11-27",
+            "5:00 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-form-r2.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :27 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-results-r2.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "P25AC",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹16,000",
+          "Late Allowance",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "140 hp · 450 Nm · 22% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-fare-breakup-r2.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 25 Seater Premium AC Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Mysuru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "27 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Mysuru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹16,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹16,000"
+          ]
+        ],
+        "total": "₹16,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+                "Mysuru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-confirm-map-r2.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-confirm-r2.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-A-confirm-cost-r2.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater Type: 25 Seater Premium AC Coach Luggage: Route Summary : Transfer From Garage Garage Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Dropoff Location Mysuru, Karnataka, India Back to Garage Garage Dates 27 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹16,000 Estimated Grand Total ₹16,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-B",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "8:30 PM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "11:30 PM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "to": "Mysuru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-27",
+            "8:30 PM",
+            "2026-11-27",
+            "11:30 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-B-form-r2.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :27 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹21,000",
+          "Sedan D SDN 4 ₹8,500",
+          "MPV's D MPV 7 ₹13,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-B-results-r2.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 25 Seater Premium AC Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Mysuru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "27 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Mysuru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹16,000"
+          ],
+          [
+            "Late Allowance Cost",
+            "₹1,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹17,000"
+          ]
+        ],
+        "total": "₹17,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+                "Mysuru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-B-confirm-map-r2.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-B-confirm-r2.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-B-confirm-cost-r2.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater Type: 25 Seater Premium AC Coach Luggage: Route Summary : Transfer From Garage Garage Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Dropoff Location Mysuru, Karnataka, India Back to Garage Garage Dates 27 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹16,000 Late Allowance Cost ₹1,000 Estimated Grand Total ₹17,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-C",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "11:30 PM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "2:30 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "to": "Mysuru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-27",
+            "11:30 PM",
+            "2026-11-28",
+            "2:30 AM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-form-r2.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :27-28 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:2 Days Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "2 Days",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹34,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹37,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹41,000",
+          "Sedan D SDN 4 ₹16,500",
+          "MPV's D MPV 7 ₹25,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹18,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-results-r2.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "2 Days"
+      },
+      "details": {
+        "vehicle": "P25AC",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹16,000",
+          "Late Allowance",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "140 hp · 450 Nm · 22% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 25 Seater Premium AC Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Mysuru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "27,28 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Mysuru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹32,000"
+          ],
+          [
+            "Late Allowance Cost",
+            "₹2,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹34,000"
+          ]
+        ],
+        "total": "₹34,000",
+        "buttons": [
+          "20 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+                "Mysuru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 20 km per 67 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-C-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater Type: 25 Seater Premium AC Coach Luggage: Route Summary : Transfer From Garage Garage Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Dropoff Location Mysuru, Karnataka, India Back to Garage Garage Dates 27,28 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹32,000 Late Allowance Cost ₹2,000 Estimated Grand Total ₹34,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-D",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "5:30 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "8:30 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "to": "Mysuru, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-27",
+            "5:30 AM",
+            "2026-11-27",
+            "8:30 AM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-D-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :27 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-D-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 25 Seater Premium AC Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Mysuru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "27 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Mysuru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹16,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹16,000"
+          ]
+        ],
+        "total": "₹16,000",
+        "buttons": [
+          "20 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+                "Mysuru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 20 km per 67 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-D-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-D-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-05-D-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater Type: 25 Seater Premium AC Coach Luggage: Route Summary : Transfer From Garage Garage Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Dropoff Location Mysuru, Karnataka, India Back to Garage Garage Dates 27 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹16,000 Estimated Grand Total ₹16,000 Confirm & Submit Booking"
+      }
+    }
+  ],
+  "finished": "2026-11-18T06:48:31.007Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

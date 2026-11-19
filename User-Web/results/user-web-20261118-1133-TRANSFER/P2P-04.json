@@ -1,0 +1,716 @@
+{
+  "id": "P2P-04",
+  "started": "2026-11-18T06:17:01.749Z",
+  "steps": [
+    {
+      "label": "run-A",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Rajajinagar",
+            "suggestions": [
+              "Rajajinagar Bengaluru, Karnataka, India",
+              "Rajajinagara RTO 12th Main Road, 2nd Block, Rajajinagar, Bengaluru, Karnataka, India",
+              "Rajajinagara Metro Parking Area 1st Block, 2nd Stage, Rajajinagar, Bengaluru, Karnataka, India",
+              "Rajajinagar West of Chord Road 2nd Stage, 2nd Stage, Rajajinagar, Arisinakunte, Karnataka, India"
+            ],
+            "chosen": "Rajajinagar, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Hubballi",
+            "suggestions": [
+              "Hubballi Karnataka, India",
+              "Hubballi Airport Gokul Road, Hubballi, Karnataka, India",
+              "Hubballi Junction 25th Cross Road, Siddanna Layout, Banashankari 2nd Stage, Banashankari, Bengaluru, Karnataka, India",
+              "Hubballi Bus Stand (Hosur) Kallur Layout, Hubballi, Karnataka, India"
+            ],
+            "chosen": "Hubballi, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "6:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Rajajinagar, Bengaluru, Karnataka, India",
+          "to": "Hubballi, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-28",
+            "6:00 AM",
+            "2026-11-28",
+            "1:47 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Rajajinagar, Bengaluru, Karnataka, India → Hubballi, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Rajajinagar, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Hubballi, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Hubballi, Karnataka, India",
+        "route": "Garage (Start) → Rajajinagar, Bengaluru, Karnataka, India → Hubballi, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "L45V",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹24,000",
+          "Late Allowance",
+          "₹1,500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "330 hp · 1200 Nm · 28% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness (N/A)",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury Volvo – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Rajajinagar, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Hubballi, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "28 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Hubballi, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹24,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹24,000"
+          ]
+        ],
+        "total": "₹24,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Rajajinagar, Bengaluru, Karnataka, India",
+                "Hubballi, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 5
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-A-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater Type: 45 Seater Luxury Volvo Luggage: Route Summary : Transfer From Garage Garage Pickup Location Rajajinagar, Bengaluru, Karnataka, India Dropoff Location Hubballi, Karnataka, India Back to Garage Garage Dates 28 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹24,000 Estimated Grand Total ₹24,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-B",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Domlur",
+            "suggestions": [
+              "Domlur Bengaluru, Karnataka, India",
+              "Domlur Flyover Domlur I Stage, ISRO Colony, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Club 4th Main Road, 2nd Stage, Stage 2, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Water Tank Domlur I Stage, Domlur Village, Domlur, Bengaluru, Karnataka"
+            ],
+            "chosen": "Domlur, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Kochi",
+            "suggestions": [
+              "Kochi Keralam, India",
+              "Kochi International Airport (COK) Keralam, India",
+              "Kochi Marriott Hotel N. H. 47, Edappally, Kochi, Keralam, India",
+              "Kochi Kurry Klub Avalahalii, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Kochi, Keralam, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "6:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Domlur, Bengaluru, Karnataka, India",
+          "to": "Kochi, Keralam, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-28",
+            "6:00 AM",
+            "2026-11-28",
+            "1:49 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Domlur, Bengaluru, Karnataka, India → Kochi, Keralam, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Domlur, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Kochi, Keralam, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Kochi, Keralam, India",
+        "route": "Garage (Start) → Domlur, Bengaluru, Karnataka, India → Kochi, Keralam, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "L45V",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹24,000",
+          "Late Allowance",
+          "₹1,500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "330 hp · 1200 Nm · 28% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness (N/A)",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury Volvo – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Domlur, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Kochi, Keralam, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "28 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Kochi, Keralam, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹24,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹24,000"
+          ]
+        ],
+        "total": "₹24,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Domlur, Bengaluru, Karnataka, India",
+                "Kochi, Keralam, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 5
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-B-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater Type: 45 Seater Luxury Volvo Luggage: Route Summary : Transfer From Garage Garage Pickup Location Domlur, Bengaluru, Karnataka, India Dropoff Location Kochi, Keralam, India Back to Garage Garage Dates 28 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹24,000 Estimated Grand Total ₹24,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-C-infeasible",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Jayanagar",
+            "suggestions": [
+              "Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4 Block, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar Shopping Complex Jaya Nagar 1st Block, 4th Block, Jayanagar, Bengaluru, Karnataka, India",
+              "Jayanagar Metro Parking Rashtriya Vidyalaya Road, Jayanagar 3rd Block, Jayanagar, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Jayanagar, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Delhi",
+            "suggestions": [
+              "Delhi India",
+              "Delhi Public School Bengaluru South Kanakapura Main Road, Mango Garden Layout, Konanakunte, Bengaluru, Karnataka, India",
+              "Delhi Public School, Bangalore East Kodati Sulikunte Road, Sulikunte, Sulikunte Colony, Karnataka, India",
+              "Delhi Public School Bangalore North Bagalur Post, Jala Hobli, North, Sathnur Village, Sathanur, Karnataka, India"
+            ],
+            "chosen": "Delhi, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "6:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "10:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Jayanagar, Bengaluru, Karnataka, India",
+          "to": "Delhi, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-28",
+            "6:00 AM",
+            "2026-11-28",
+            "10:00 AM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Jayanagar, Bengaluru, Karnataka, India → Delhi, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Jayanagar, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Delhi, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Delhi, India",
+        "route": "Garage (Start) → Jayanagar, Bengaluru, Karnataka, India → Delhi, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "L45V",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹24,000",
+          "Late Allowance",
+          "₹1,500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "330 hp · 1200 Nm · 28% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness (N/A)",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury Volvo – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Jayanagar, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Delhi, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "28 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Delhi, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹24,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹24,000"
+          ]
+        ],
+        "total": "₹24,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Jayanagar, Bengaluru, Karnataka, India",
+                "Delhi, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C1-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater Type: 45 Seater Luxury Volvo Luggage: Route Summary : Transfer From Garage Garage Pickup Location Jayanagar, Bengaluru, Karnataka, India Dropoff Location Delhi, India Back to Garage Garage Dates 28 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹24,000 Estimated Grand Total ₹24,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "run-C-feasible",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Jayanagar",
+            "suggestions": [
+              "Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar 4 Block, Jayanagar Bengaluru, Karnataka, India",
+              "Jayanagar Shopping Complex Jaya Nagar 1st Block, 4th Block, Jayanagar, Bengaluru, Karnataka, India",
+              "Jayanagar Metro Parking Rashtriya Vidyalaya Road, Jayanagar 3rd Block, Jayanagar, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Jayanagar, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Delhi",
+            "suggestions": [
+              "Delhi India",
+              "Delhi Public School Bengaluru South Kanakapura Main Road, Mango Garden Layout, Konanakunte, Bengaluru, Karnataka, India",
+              "Delhi Public School, Bangalore East Kodati Sulikunte Road, Sulikunte, Sulikunte Colony, Karnataka, India",
+              "Delhi Public School Bangalore North Bagalur Post, Jala Hobli, North, Sathnur Village, Sathanur, Karnataka, India"
+            ],
+            "chosen": "Delhi, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-28",
+            "disabled": false,
+            "value": "2026-11-28"
+          },
+          {
+            "label": "6:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-30",
+            "disabled": false,
+            "value": "2026-11-30"
+          },
+          {
+            "label": "6:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Jayanagar, Bengaluru, Karnataka, India",
+          "to": "Delhi, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-28",
+            "6:00 AM",
+            "2026-11-30",
+            "6:00 AM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C2-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Jayanagar, Bengaluru, Karnataka, India → Delhi, India → Garage (Return) Distance:> 30 KM Dates :28-29-30 Nov- 2026 Pickup Address:Jayanagar, Bengaluru, Karnataka, India Duration:3 Days Passengers:20 Pax Drop Address:Delhi, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "3 Days",
+        "pax": "20",
+        "drop": "Delhi, India",
+        "route": "Garage (Start) → Jayanagar, Bengaluru, Karnataka, India → Delhi, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹51,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹56,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹62,000",
+          "Sedan D SDN 4 ₹25,000",
+          "MPV's D MPV 7 ₹39,100",
+          "12 Seater Tempo Traveller D12TT 12 ₹28,600"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C2-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "3 Days"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury Volvo – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Jayanagar, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Delhi, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "28,29,30 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Delhi, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹72,000"
+          ],
+          [
+            "Late Allowance Cost",
+            "₹4,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹76,500"
+          ]
+        ],
+        "total": "₹76,500",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Jayanagar, Bengaluru, Karnataka, India",
+                "Delhi, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C2-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C2-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-04-C2-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater Type: 45 Seater Luxury Volvo Luggage: Route Summary : Transfer From Garage Garage Pickup Location Jayanagar, Bengaluru, Karnataka, India Dropoff Location Delhi, India Back to Garage Garage Dates 28,29,30 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹72,000 Late Allowance Cost ₹4,500 Estimated Grand Total ₹76,500 Confirm & Submit Booking"
+      }
+    }
+  ],
+  "finished": "2026-11-18T06:25:34.035Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

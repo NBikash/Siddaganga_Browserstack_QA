@@ -1,0 +1,102 @@
+{
+  "run": "admin-web-20261119-1545-INQ",
+  "module": "02 Inquiry Management",
+  "env": "Preprod, Superadmin",
+  "date": "19 Nov 2026",
+  "scope": "02 Inquiry Management – 24 Functional-category use cases of the master inventory (AW-INQ-001, 004, 005, 011–015, 017–019, 026–038)",
+  "qaClient": "Bikash N (User-Web test account); only this client's records were opened after the user's 19 Nov reminder",
+  "pnrs": {
+    "UMNF499106": {
+      "source": "User-Web OUT-02 (17 Nov)",
+      "lead": "LD-414",
+      "inquiry": "QRY-194",
+      "use": "Sent To Inquiry 19 Nov; quote cases 004,005,011–014,017–019; comms 032–035"
+    },
+    "NCCC102640": {
+      "source": "User-Web OUT-17 (17 Nov)",
+      "lead": "LD-415",
+      "inquiry": "QRY-195 → listed as QRY-228",
+      "use": "Sent To Inquiry 19 Nov; 015, 038"
+    },
+    "LJWN815154": {
+      "source": "User-Web RET-02 (18 Nov)",
+      "lead": "LD-431",
+      "inquiry": "QRY-211",
+      "use": "Sent To Inquiry 19 Nov; data verification"
+    },
+    "ORZS120376": {
+      "source": "User-Web HRS-02 (18 Nov)",
+      "lead": "LD-433",
+      "inquiry": "QRY-213",
+      "use": "Sent To Inquiry 19 Nov; data verification"
+    },
+    "YOIT928679": {
+      "source": "User-Web MLG-02 (19 Nov)",
+      "lead": "LD-435",
+      "inquiry": "QRY-215",
+      "use": "Sent To Inquiry 19 Nov; data verification"
+    },
+    "SIVM916255": {
+      "source": "User-Web P2P-02",
+      "lead": "LD-428",
+      "inquiry": "QRY-208 (lead only)",
+      "use": "data verification only"
+    },
+    "BGVS613665": {
+      "source": "User-Web OUT-15",
+      "lead": "LD-416",
+      "inquiry": "QRY-196 (lead only)",
+      "use": "data verification only"
+    },
+    "ZLPS490392": {
+      "source": "User-Web MLG-18",
+      "lead": "LD-436",
+      "inquiry": "QRY-216 (lead only)",
+      "use": "data verification only"
+    },
+    "WPKT544822": {
+      "source": "User-Web LOCAL 12 Nov",
+      "lead": "LD-352",
+      "inquiry": "QRY-135 (was QRY-943)",
+      "use": "027/028 – cancelled"
+    },
+    "XMGZ467530": {
+      "source": "User-Web LOCAL 12 Nov",
+      "lead": "LD-347",
+      "inquiry": "QRY-130 (was QRY-938)",
+      "use": "029/030 – deleted"
+    },
+    "IAJA754847": {
+      "source": "User-Web LOCAL 12 Nov",
+      "lead": "LD-346",
+      "inquiry": "QRY-129 (was QRY-937)",
+      "use": "031 – converted to booking B-129"
+    }
+  },
+  "excluded": {
+    "MWAG650153": "user instruction",
+    "SOQS555799": "trip closed 13 Nov",
+    "PGDO412043": "lead deleted (orphan QRY-134)",
+    "DDEV675048": "lead deleted"
+  },
+  "dataChanges": [
+    "Send To Inquiry (Update Quote unchanged): LD-414, LD-415, LD-431, LD-433, LD-435 → QRY-194, 195, 211, 213, 215 (Revised quotation)",
+    "QRY-194: Trip Description \"QA INQ functional test UMNF499106 (19 Nov 2026)\"; Arrival 09:00 AM / Departure 08:00 PM (User-Web submitted times); GST 0% then back to 5%; extra km/toll/extras and fixed cost changed and restored (total ₹34,200)",
+    "QRY-195: category assignment saved (11–13 Jan, unchanged); Trip-2 added (12 Seater Tempo Traveller NAC, Koramangala → Hassan) – kept; inquiry now listed as QRY-228",
+    "QRY-135 cancelled (cancellation invoice INV-106, penalty ₹8,300, refund ₹0)",
+    "QRY-130 deleted (lead LD-347 still references it)",
+    "QRY-129 converted into booking B-129 (Pre-Bookings, Rs. 8,300)",
+    "Sent to the test account: quote follow-up (WhatsApp), proforma invoice (WhatsApp + Email); bus images send failed (400)",
+    "Downloaded proforma PI-B-1003 (results/…/downloads)"
+  ],
+  "idRelabel": {
+    "WPKT544822 / LD-352": "QRY-943 → QRY-135",
+    "XMGZ467530 / LD-347": "QRY-938 → QRY-130",
+    "IAJA754847 / LD-346": "QRY-937 → QRY-129",
+    "HQEF339510 / LD-345": "QRY-936 → QRY-128"
+  },
+  "notes": [
+    "Run opened other clients' leads during the first PNR scan; redacted from results (user reminder). Later screenshots had the test mobile in the Client filter / dialog inputs; 42 images redacted in place (redactions.json).",
+    "Preprod was intermittently slow; several steps were retried. Every retry was checked against screenshots and record state so that no approved action ran twice."
+  ]
+}

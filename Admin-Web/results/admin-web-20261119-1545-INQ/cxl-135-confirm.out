@@ -1,0 +1,104 @@
+{
+  "inq": "QRY-135",
+  "lead": "LD-352",
+  "action": "Cancel Inquiry",
+  "mode": "confirm",
+  "rowBefore": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1700 Local 16 Seater Premium Urbania ₹8300.00 Combined Quotes Detailed Quotes Cancel",
+  "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-view-quote-before-r2.png",
+  "leadBefore": {
+    "found": true,
+    "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+    "menu": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "pnr": "WPKT544822",
+    "inquiryId": "QRY-135",
+    "status": "Revised quotation",
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-lead-LD-352-r2.png"
+  },
+  "rowAtAction": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "menuBefore": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-menu-r2.png",
+  "dialog": {
+    "text": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Refund Calculation Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.6 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No Wave off penalty (admin override) Cancellation reason (optional) Cancellation reason (optional) Back Confirm Cancellation",
+    "buttons": [
+      "Back",
+      "Confirm Cancellation"
+    ],
+    "inputs": 2
+  },
+  "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-r2.png",
+  "dialogFull": "Cancel Inquiry & Process Refund QRY-135 — Bikash N Refund Calculation Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.6 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No Wave off penalty (admin override) Cancellation reason (optional) Cancellation reason (optional) Back Confirm Cancellation",
+  "checkboxes": [
+    false
+  ],
+  "reason": true,
+  "shotDialogFilled": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-before-confirm.png",
+  "confirmWith": "Confirm Cancellation",
+  "toasts": [],
+  "net": [
+    "POST /api/v1/admin/cancellation-refund/calculate 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /api/v1/admin/lead-target/details 200"
+  ],
+  "console": [],
+  "rowAfter": "135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "menuAfter": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-row-after.png",
+  "qaListAfter": [
+    "QRY-135",
+    "QRY-130",
+    "QRY-129",
+    "QRY-194",
+    "QRY-213",
+    "QRY-215",
+    "QRY-211",
+    "QRY-228",
+    "QRY-128",
+    "QRY-134"
+  ],
+  "kpiAfter": "Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+  "leadAfter": {
+    "found": true,
+    "row": "1 LD-352 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+    "menu": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "pnr": "WPKT544822",
+    "inquiryId": "QRY-135",
+    "status": "Revised quotation",
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-lead-LD-352-r3.png"
+  }
+}

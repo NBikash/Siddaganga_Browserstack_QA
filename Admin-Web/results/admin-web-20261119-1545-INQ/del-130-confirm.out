@@ -1,0 +1,94 @@
+{
+  "inq": "QRY-130",
+  "lead": "LD-347",
+  "action": "Delete",
+  "mode": "confirm",
+  "kpiBefore": "Total Inquiries 188 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+  "rowBefore": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "viewQuoteBefore": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1695 Local 16 Seater Premium Urbania ₹9100.00 Combined Quotes Detailed Quotes Cancel",
+  "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-view-quote-before.png",
+  "leadBefore": {
+    "found": true,
+    "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+    "menu": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "pnr": "XMGZ467530",
+    "inquiryId": "QRY-130",
+    "status": "Revised quotation",
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347.png"
+  },
+  "rowAtAction": "130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "menuBefore": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "shotMenu": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-menu.png",
+  "dialog": {
+    "text": "Delete Inquiry Are you sure you want to delete this inquiry? Yes No",
+    "buttons": [
+      "Yes",
+      "No"
+    ],
+    "inputs": 0
+  },
+  "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-dialog.png",
+  "dialogFull": "Delete Inquiry Are you sure you want to delete this inquiry? Yes No",
+  "checkboxes": [],
+  "shotDialogFilled": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-dialog-before-confirm.png",
+  "confirmWith": "Yes",
+  "toasts": [
+    "Inquiry deleted successfully !"
+  ],
+  "net": [
+    "POST /api/v1/admin/inquiry/delete 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /api/v1/admin/lead-target/details 200"
+  ],
+  "console": [],
+  "rowAfter": "not listed: rows for QRY-130: 0",
+  "shotRowAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-list-after.png",
+  "qaListAfter": [
+    "QRY-129",
+    "QRY-194",
+    "QRY-213",
+    "QRY-215",
+    "QRY-211",
+    "QRY-228",
+    "QRY-128",
+    "QRY-134"
+  ],
+  "kpiAfter": "Total Inquiries 187 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+  "leadAfter": {
+    "found": true,
+    "row": "1 LD-347 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+    "menu": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ],
+    "pnr": "XMGZ467530",
+    "inquiryId": "QRY-130",
+    "status": "Revised quotation",
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347-r2.png"
+  }
+}

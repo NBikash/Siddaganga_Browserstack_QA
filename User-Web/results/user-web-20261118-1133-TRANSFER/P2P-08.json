@@ -1,0 +1,464 @@
+{
+  "id": "P2P-08",
+  "started": "2026-11-18T07:03:04.678Z",
+  "steps": [
+    {
+      "label": "1-pax20-D49NA",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Yelahanka",
+            "suggestions": [
+              "Yelahanka Bengaluru, Karnataka, India",
+              "Yelahanka Railway Junction Yelahanka, Bengaluru, Karnataka",
+              "Yelahanka New Town Bengaluru, Karnataka, India",
+              "Yelahanka old town Kamakshiamma Layout, Yelahanka, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Yelahanka, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Hassan",
+            "suggestions": [
+              "Hassan Karnataka, India",
+              "Hasanamba Temple Ammeer Mohalla, Hassan, Karnataka, India",
+              "Hassan KSRTC Bus Stand Channapatna Housing Board Colony, Hassan, Karnataka, India",
+              "Hassan Jayanagar, Kalasipalyam New Extension, Kalasipalya, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Hassan, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-29",
+            "disabled": false,
+            "value": "2026-11-29"
+          },
+          {
+            "label": "8:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Yelahanka, Bengaluru, Karnataka, India",
+          "to": "Hassan, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-29",
+            "8:00 AM",
+            "2026-11-29",
+            "2:33 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax20-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax20-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 49 Seater Deluxe Coach – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Yelahanka, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Hassan, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "29 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Hassan, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹20,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹20,000"
+          ]
+        ],
+        "total": "₹20,000",
+        "buttons": [
+          "20 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Yelahanka, Bengaluru, Karnataka, India",
+                "Hassan, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 20 km per 33 pixels"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 2
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax20-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax20-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax20-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 49 Seater Deluxe Coach – 1 49 Seater Deluxe Coach 49 Seater Type: 49 Seater Deluxe Coach Luggage: Rear Boot + Overhead Racks (2–4 m³) Route Summary : Transfer From Garage Garage Pickup Location Yelahanka, Bengaluru, Karnataka, India Dropoff Location Hassan, Karnataka, India Back to Garage Garage Dates 29 Nov, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹20,000 Estimated Grand Total ₹20,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "2-pax21",
+      "attr": {
+        "v": "20",
+        "max": "20",
+        "valid": true,
+        "msg": ""
+      },
+      "fillState": {
+        "from": "Yelahanka, Bengaluru, Karnataka, India",
+        "to": "Hassan, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-29",
+          "8:00 AM",
+          "2026-11-29",
+          "2:34 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax21-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "2-pax49",
+      "attr": {
+        "v": "20",
+        "max": "20",
+        "valid": true,
+        "msg": ""
+      },
+      "fillState": {
+        "from": "Yelahanka, Bengaluru, Karnataka, India",
+        "to": "Hassan, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-29",
+          "8:00 AM",
+          "2026-11-29",
+          "2:35 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax49-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "3-pax1-SUV",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Yelahanka",
+            "suggestions": [
+              "Yelahanka Bengaluru, Karnataka, India",
+              "Yelahanka Railway Junction Yelahanka, Bengaluru, Karnataka",
+              "Yelahanka New Town Bengaluru, Karnataka, India",
+              "Yelahanka old town Kamakshiamma Layout, Yelahanka, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Yelahanka, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Hassan",
+            "suggestions": [
+              "Hassan Karnataka, India",
+              "Hasanamba Temple Ammeer Mohalla, Hassan, Karnataka, India",
+              "Hassan KSRTC Bus Stand Channapatna Housing Board Colony, Hassan, Karnataka, India",
+              "Hassan Jayanagar, Kalasipalyam New Extension, Kalasipalya, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Hassan, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-29",
+            "disabled": false,
+            "value": "2026-11-29"
+          },
+          {
+            "label": "8:00 AM",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "from": "Yelahanka, Bengaluru, Karnataka, India",
+          "to": "Hassan, Karnataka, India",
+          "rfrom": null,
+          "rto": null,
+          "ret": false,
+          "dt": [
+            "2026-11-29",
+            "8:00 AM",
+            "2026-11-29",
+            "2:36 PM"
+          ],
+          "pax": "1"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax1-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax1-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 1 passengers, but your selected buses cover only 0 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 1 passengers, but your selected buses cover only 0 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax1-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax1-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 1 passengers, but your selected buses cover only 0 seats. Please add one or more buses to continue. Cancel Inquiry"
+      }
+    },
+    {
+      "label": "4-pax15-multi",
+      "state": {
+        "from": "Yelahanka, Bengaluru, Karnataka, India",
+        "to": "Hassan, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-29",
+          "8:00 AM",
+          "2026-11-29",
+          "2:37 PM"
+        ],
+        "pax": "15"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :29 Nov- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:15 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "15",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax15-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "first": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 15 passengers, but your selected buses cover only 7 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 15 passengers, but your selected buses cover only 7 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax15-DMPV-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax15-DMPV-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 15 passengers, but your selected buses cover only 7 seats. Please add one or more buses to continue. Cancel Inquiry"
+      },
+      "second": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 15 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 15 passengers, but your selected buses cover only 9 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax15-plus-L9UB-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-08-pax15-plus-L9UB-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 15 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry"
+      }
+    }
+  ],
+  "finished": "2026-11-18T07:09:52.222Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

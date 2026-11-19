@@ -1,0 +1,12 @@
+{
+  "lead": "LD-351",
+  "before": {
+    "rowText": "1 LD-351 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+    "menu": [
+      "View Lead",
+      "Assign",
+      "Delete"
+    ]
+  },
+  "blocked": "Send To Inquiry not in menu"
+}

@@ -1,0 +1,464 @@
+{
+  "id": "RET-07",
+  "started": "2026-11-18T10:01:26.856Z",
+  "steps": [
+    {
+      "label": "1-blank-return-from",
+      "state": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": "",
+        "rto": "Marathahalli, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-11-28",
+          "8:00 AM",
+          "2026-11-28",
+          "5:31 PM",
+          "2026-11-30",
+          "8:00 AM",
+          "2026-11-30",
+          "11:00 AM"
+        ],
+        "pax": "5"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Return pickup location is required"
+          ],
+          "toasts": [
+            "Selected time: 8:00 AM",
+            "Selected time: 8:00 AM",
+            "Selected time: 11:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "5:31 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": ""
+          },
+          {
+            "ph": "Search return drop location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "11:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "5"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-07-1-validation-r2.png"
+      }
+    },
+    {
+      "label": "2-blank-return-to",
+      "state": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": "Mangaluru, Karnataka, India",
+        "rto": "",
+        "ret": true,
+        "dt": [
+          "2026-11-28",
+          "8:00 AM",
+          "2026-11-28",
+          "5:33 PM",
+          "2026-11-30",
+          "8:00 AM",
+          "2026-11-30",
+          "11:00 AM"
+        ],
+        "pax": "5"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Return drop location is required"
+          ],
+          "toasts": [
+            "Selected time: 8:00 AM",
+            "Selected time: 8:00 AM",
+            "Selected time: 11:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "5:33 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "v": ""
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "11:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "5"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-07-2-validation-r2.png"
+      }
+    },
+    {
+      "label": "3-return-from-eq-to",
+      "state": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": "Mangaluru, Karnataka, India",
+        "rto": "Mangaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-11-28",
+          "8:00 AM",
+          "2026-11-28",
+          "5:35 PM",
+          "2026-11-30",
+          "8:00 AM",
+          "2026-11-30",
+          "11:00 AM"
+        ],
+        "pax": "5"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Transfer Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:5 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "5",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-07-3-results-r2.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "4-clear-return-date",
+      "value": "2026-11-30",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Return pickup date is required"
+          ],
+          "toasts": [
+            "Selected time: 8:00 AM",
+            "Selected time: 8:00 AM",
+            "Selected time: 11:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-28"
+          },
+          {
+            "ph": "text",
+            "v": "5:37 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": ""
+          },
+          {
+            "ph": "text",
+            "v": "8:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "11:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "5"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-07-4-validation-r2.png"
+      }
+    },
+    {
+      "label": "5-untick",
+      "state": {
+        "from": "Marathahalli, Bengaluru, Karnataka, India",
+        "to": "Mangaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-28",
+          "8:00 AM",
+          "2026-11-28",
+          "5:39 PM"
+        ],
+        "pax": "5"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :28 Nov- 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:5 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "5",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-07-5-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    }
+  ],
+  "finished": "2026-11-18T10:11:36.397Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

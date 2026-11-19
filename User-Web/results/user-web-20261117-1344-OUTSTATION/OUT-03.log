@@ -1,0 +1,24 @@
+[
+  {
+    "label": "drop-blank",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": [
+        "Selected time: 6:30 AM",
+        "Selected time: 9:30 PM"
+      ]
+    }
+  },
+  {
+    "label": "map-and-toggle"
+  },
+  {
+    "label": "search",
+    "nav": true,
+    "total": "₹22,462",
+    "popup": null
+  }
+]

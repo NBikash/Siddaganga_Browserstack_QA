@@ -1,0 +1,83 @@
+{
+  "lea003": {
+    "LD-346": {
+      "n": 1,
+      "first": [
+        "1 LD-346 Bikash N N/A N/A 12/11/2026 Unassigned Open"
+      ],
+      "showing": "Showing 1 to 1 of 1 entries",
+      "noData": false
+    },
+    "shotId": "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-003-search-lead-id.png",
+    "LD-34": {
+      "n": 5,
+      "first": [
+        "1 LD-349 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+        "2 LD-348 Daya S N/A N/A 12/11/2026 Unassigned Open"
+      ],
+      "showing": "Showing 1 to 5 of 10 entries",
+      "noData": false
+    },
+    "Bikash": {
+      "n": 5,
+      "first": [
+        "1 LD-397 Bikash N N/A N/A 15/11/2026 Unassigned Open",
+        "2 LD-396 Bikash N N/A N/A 15/11/2026 Unassigned Open"
+      ],
+      "showing": "Showing 1 to 5 of 15 entries",
+      "noData": false
+    },
+    "IAJA754847": {
+      "n": 1,
+      "first": [
+        "No data available"
+      ],
+      "showing": "Showing 0 to 0 of 0 entries",
+      "noData": true
+    },
+    "zzzz-no-match": {
+      "n": 1,
+      "first": [
+        "No data available"
+      ],
+      "showing": "Showing 0 to 0 of 0 entries",
+      "noData": true
+    },
+    "shot": "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-003-search-no-match.png"
+  },
+  "lea004": {
+    "before": "Showing 1 to 5 of 194 entries",
+    "label": "All Status",
+    "options": [
+      "All Status",
+      "Active",
+      "Closed",
+      "Open"
+    ],
+    "shotOptions": "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-004-status-options.png",
+    "open": {
+      "showing": "Showing 1 to 5 of 193 entries",
+      "statuses": [
+        "Open"
+      ]
+    },
+    "shotOpen": "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-004-filter-open.png",
+    "resetBtn": 1,
+    "afterReset": {
+      "label": "All Status",
+      "showing": "Showing 1 to 5 of 194 entries"
+    }
+  },
+  "lea005": {
+    "dateInputs": 0,
+    "rppCount": 0,
+    "paginationText": [
+      "Showing 1 to 5 of 194 entries"
+    ],
+    "page2": {
+      "showing": "Showing 6 to 10 of 194 entries",
+      "first": "6 LD-405 Daya S N/A N/A 15/11/2026 Unassigned Open"
+    },
+    "shot": "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-005-pagination.png"
+  }
+}

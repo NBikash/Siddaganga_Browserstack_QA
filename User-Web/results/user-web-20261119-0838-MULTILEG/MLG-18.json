@@ -1,0 +1,205 @@
+{
+  "id": "MLG-18",
+  "started": "2026-11-19T05:40:22.990Z",
+  "steps": [
+    {
+      "label": "1-build",
+      "fill": [
+        "checkbox=false",
+        "checkbox=true",
+        "Search pickup location=Koramangala, Bengaluru, Karnataka, India",
+        "text=2027-01-03",
+        "text=7:00 AM",
+        "Search destination 1 location=Chikkamagaluru, Karnataka, India",
+        "Search destination 2 location=Belur, Karnataka, India",
+        "Search drop location=Hassan, Karnataka, India",
+        "text=2027-01-05",
+        "text=7:00 PM",
+        "Enter number of passengers=18"
+      ],
+      "save": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-saved.png"
+      },
+      "skip": {
+        "toasts": [
+          "Outstation leg added!",
+          "Transfer leg skipped. Click Book Now when you are ready to continue."
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "blocked": {
+        "navigated": false,
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-booknow-blocked.png"
+      },
+      "tabAtBlock": "Transfer",
+      "workaround": "Book Now! blocked; opened saved leg badge 1 (Leg 1 Outstation) and pressed Book Now! again",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹54,500 4.5 33 Seater De",
+        "labels": [],
+        "legTabs": [
+          "Leg 1 [active]"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Outstation Garage (Start) → Koramangala, Bengaluru, Karnataka, India → Chikkamagaluru, Karnataka, India → Belur, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:900 KM Dates :3-4-5 Jan- 2027 Pickup Address:Koramangala, Bengaluru, Karnataka, India Duration:3 Days Passengers:18 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force",
+        "distance": "900 KM",
+        "duration": "3 Days",
+        "pax": "18",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Koramangala, Bengaluru, Karnataka, India → Chikkamagaluru, Karnataka, India → Belur, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹54,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹59,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹54,500",
+          "Sedan D SDN 4 ₹31,300",
+          "MPV's D MPV 7 ₹49,000",
+          "12 Seater Tempo Traveller D12TT 12 ₹26,500"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-workaround-results.png"
+      },
+      "savedLegs": [
+        "Leg 1 Outstation"
+      ]
+    },
+    {
+      "label": "2-3-confirm",
+      "details": {
+        "vehicle": "P21AC",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹12,600",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "125 hp · 400 Nm · 22% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-fare-breakup.png"
+      },
+      "select": {
+        "modal": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 21 Seater Premium AC Coach – 1 21 Seater Premium AC Coach 21 Seater Type: 21 Seater Premium AC Coach Luggage: Route Summary : Outstation From Garage Garage Pickup Location Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India → Belur, Karnataka, India Dropoff Location Hassan, Karnataka, India Back to Garage Garage Dates 3,4,5 Jan, 2027 Passenger 18 Estimated Trip Cost : Vehicle Base Cost ₹37,800 Day Bata Cost (Before 10pm or After 6am) ₹3,000 Night Bata Cost (Before 6am or After 10pm) ₹2,000 State Tax ₹0 Estimated Grand Total ₹42,800 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 0,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "21 Seater Premium AC Coach – 1 21 Seater Premium AC Coach 21 Seater",
+            "routeSummary": "Outstation",
+            "pickup": "Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India → Belur, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "3,4,5 Jan, 2027",
+            "passenger": "18",
+            "cost": "Vehicle Base Cost ₹37,800 Day Bata Cost (Before 10pm or After 6am) ₹3,000 Night Bata Cost (Before 6am or After 10pm) ₹2,000 State Tax ₹0 Estimated Grand Total ₹42,800",
+            "total": "₹42,800",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-confirm-leg1.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "20 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ]
+      }
+    },
+    {
+      "label": "3-submit",
+      "submit": {
+        "messages": [
+          "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹42,800 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+        ],
+        "calls": [
+          "allowed(approved) POST /user/save-inquiry",
+          "allowed(approved) POST /user/draft-inquiry/delete"
+        ],
+        "saveCalls": 1,
+        "estimate": "₹42,800",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-submit-result.png"
+      }
+    },
+    {
+      "label": "4-my-inquiries",
+      "total": "1-10 of 19",
+      "top": [
+        "1 ZLPS490392 Outstation Bengaluru → Hassan 03 Jan 2027 - 05 Jan 2027 21 Seater Premium AC Coach (21) 18 03/01/27 45d left New quotation",
+        "2 YOIT928679 Local Bengaluru → Bengaluru 26 Nov 2026 - 29 Nov 2026 12 Seater Luxury Urbania (12) 10 26/11/26 7d left New quotation",
+        "3 ORZS120376 Transfer Bengaluru → Bengaluru 25 Nov 2026 - 25 Nov 2026 40 Seater Premium AC Coach (40) 40 25/11/26 6d left New quotation",
+        "4 LJWN815154 Transfer Bengaluru → Mysuru 27 Nov 2026 - 29 Nov 2026 35 Seater Premium AC Coach (35) 20 27/11/26 8d left New quotation"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-post-my-inquiries.png"
+    }
+  ],
+  "finished": "2026-11-19T05:44:07.736Z",
+  "loads": [],
+  "net": [
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/save-inquiry",
+    "allowed(approved) POST /user/draft-inquiry/delete"
+  ]
+}

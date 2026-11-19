@@ -1,0 +1,255 @@
+{
+  "base": {
+    "showing": "Showing 1 to 5 of 21 entries",
+    "kpi": "Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "headers": [
+      "SR. NO.",
+      "INQUIRY ID",
+      "CLIENT NAME",
+      "CLIENT TYPE",
+      "VEHICLE NAME",
+      "EMAIL ADDRESS",
+      "CONTACT NUMBER",
+      "INQUIRY START DATE",
+      "QUOTE SUMMARY",
+      "STATUS",
+      "ADVANCE",
+      "ACTIONS"
+    ],
+    "rows": 5,
+    "qa": 5,
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-list-default-r3.png"
+  },
+  "search": {
+    "194": {
+      "showing": "Showing 1 to 5 of 21 entries",
+      "rows": 5,
+      "qa": 5,
+      "qaRows": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ]
+    },
+    "QRY-194": {
+      "showing": "Showing 0 to 0 of 0 entries",
+      "rows": 0,
+      "qa": 0,
+      "qaRows": []
+    },
+    "Bikash": {
+      "showing": "Showing 1 to 5 of 10 entries",
+      "rows": 5,
+      "qa": 5,
+      "qaRows": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ]
+    },
+    "Bikash N": {
+      "showing": "Showing 1 to 5 of 10 entries",
+      "rows": 5,
+      "qa": 5,
+      "qaRows": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ]
+    },
+    "zzzz-no-match": {
+      "showing": "Showing 0 to 0 of 0 entries",
+      "rows": 0,
+      "qa": 0,
+      "qaRows": []
+    },
+    "shotId": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-search-QRY-194-r3.png",
+    "emptyState": "No data available",
+    "shotEmpty": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-search-no-match-r3.png"
+  },
+  "page": {
+    "p1": [
+      "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+      "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+      "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+      "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+      "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+    ],
+    "showing1": "Showing 1 to 5 of 10 entries",
+    "p2": [
+      "QRY-215 | 12 Seater Luxury Urbania, 35 Seater Premium AC Coach, 12 Seater Tempo Traveller | 26/11/2026 | Revised quotation",
+      "QRY-211 | 35 Seater Premium AC Coach | 27/11/2026 | Revised quotation",
+      "QRY-195 | 16 Seater Premium Urbania | 11/01/2027 | Revised quotation",
+      "QRY-128 | 25 Seater Premium AC Coach | 15/11/2028 | Revised quotation",
+      "QRY-134 | MPV's | 12/11/2026 | Revised quotation"
+    ],
+    "showing2": "Showing 6 to 10 of 10 entries",
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-pagination-page2-r3.png"
+  },
+  "date": {
+    "picker": 1,
+    "month": "November 2026",
+    "result": {
+      "showing": "Showing 1 to 1 of 1 entries",
+      "dates": [
+        "24/11/2026"
+      ],
+      "qaRows": [
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation"
+      ],
+      "others": 0
+    },
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-start-date-24-11-r3.png"
+  },
+  "reset1": {
+    "showing": "Showing 1 to 5 of 21 entries",
+    "dateValue": "",
+    "search": ""
+  },
+  "clientType": {
+    "options": [
+      "Client Type",
+      "All",
+      "Corporate",
+      "National",
+      "International"
+    ],
+    "national": {
+      "showing": "Showing 1 to 5 of 21 entries",
+      "types": [
+        "National"
+      ]
+    }
+  },
+  "client": {
+    "options": 1,
+    "result": {
+      "showing": "Showing 1 to 5 of 10 entries",
+      "allQa": true,
+      "qaRows": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ]
+    },
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-client-filter-r3.png"
+  },
+  "reset2": {
+    "showing": "Showing 1 to 5 of 21 entries",
+    "client": ""
+  },
+  "status": {
+    "comboboxes": [
+      "Client Type",
+      "",
+      "Select Status",
+      "05"
+    ],
+    "options": [
+      "All",
+      "New quotation",
+      "Pending",
+      "Revised quotation"
+    ],
+    "shotOptions": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-options-r6.png",
+    "All": {
+      "showing": "Showing 1 to 5 of 21 entries",
+      "statusesOnPage1": [
+        "Revised quotation"
+      ],
+      "noData": false,
+      "qaRowsPage1": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ],
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-All-r2.png"
+    },
+    "New quotation": {
+      "showing": "Showing 0 to 0 of 0 entries",
+      "statusesOnPage1": [],
+      "noData": true,
+      "qaRowsPage1": [],
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-New-quotation-r2.png"
+    },
+    "Pending": {
+      "showing": "Showing 0 to 0 of 0 entries",
+      "statusesOnPage1": [],
+      "noData": true,
+      "qaRowsPage1": [],
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-Pending-r2.png"
+    },
+    "Revised quotation": {
+      "showing": "Showing 1 to 5 of 20 entries",
+      "statusesOnPage1": [
+        "Revised quotation"
+      ],
+      "noData": false,
+      "qaRowsPage1": [
+        "QRY-135 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-130 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-129 | 16 Seater Premium Urbania | 20/11/2026 | Revised quotation",
+        "QRY-194 | 28 Seater Premium AC Coach | 24/11/2026 | Revised quotation",
+        "QRY-213 | 40 Seater Premium AC Coach | 25/11/2026 | Revised quotation"
+      ],
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-Revised-quotation-r2.png"
+    },
+    "afterReset": "Showing 1 to 5 of 21 entries"
+  },
+  "sort": {
+    "default": [
+      "QRY-135 16 Seater Premium Urbania 20/11/2026",
+      "QRY-130 16 Seater Premium Urbania 20/11/2026",
+      "QRY-129 16 Seater Premium Urbania 20/11/2026",
+      "QRY-194 28 Seater Premium AC Coach 24/11/2026",
+      "QRY-213 40 Seater Premium AC Coach 25/11/2026"
+    ],
+    "INQUIRY ID": {
+      "sortLabel": 0,
+      "icons": 0,
+      "cursor": "auto",
+      "afterClick": [
+        "QRY-135",
+        "QRY-130",
+        "QRY-129",
+        "QRY-194",
+        "QRY-213"
+      ]
+    },
+    "INQUIRY START DATE": {
+      "sortLabel": 0,
+      "icons": 0,
+      "cursor": "auto",
+      "afterClick": [
+        "QRY-135",
+        "QRY-130",
+        "QRY-129",
+        "QRY-194",
+        "QRY-213"
+      ]
+    },
+    "CLIENT NAME": {
+      "sortLabel": 0,
+      "icons": 0,
+      "cursor": "auto",
+      "afterClick": [
+        "QRY-135",
+        "QRY-130",
+        "QRY-129",
+        "QRY-194",
+        "QRY-213"
+      ]
+    },
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-036-after-header-clicks.png"
+  }
+}

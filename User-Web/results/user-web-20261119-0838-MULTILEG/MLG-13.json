@@ -1,0 +1,272 @@
+{
+  "id": "MLG-13",
+  "started": "2026-11-19T05:04:38.204Z",
+  "steps": [
+    {
+      "label": "1-destinations",
+      "fill": [
+        "checkbox=false",
+        "checkbox=true",
+        "Search pickup location=Electronic City, Bengaluru, Karnataka, India",
+        "text=2026-12-25",
+        "text=7:00 AM",
+        "Search destination 1 location=Nandi Hills, Karnataka, India",
+        "Search destination 2 location=Chikkaballapur, Karnataka, India",
+        "Search destination 3 location=Kolar, Karnataka, India",
+        "Search drop location=Whitefield, Bengaluru, Karnataka, India",
+        "text=2026-12-26",
+        "text=8:00 PM",
+        "Enter number of passengers=40"
+      ],
+      "places": [
+        "Electronic City, Bengaluru, Karnataka, India",
+        "Nandi Hills, Karnataka, India",
+        "Chikkaballapur, Karnataka, India",
+        "Kolar, Karnataka, India",
+        "Whitefield, Bengaluru, Karnataka, India"
+      ],
+      "map": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -567,
+              374,
+              800
+            ],
+            "labels": [
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [],
+            "imgMarkers": 0,
+            "paths": 4
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-1-map.png"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-1-form.png"
+    },
+    {
+      "label": "2-remove-dest2",
+      "afterRemove": [
+        "checkbox=false",
+        "checkbox=true",
+        "Search pickup location=Electronic City, Bengaluru, Karnataka, India",
+        "text=2026-12-25",
+        "text=7:00 AM",
+        "Search destination 1 location=Nandi Hills, Karnataka, India",
+        "Search destination 2 location=Kolar, Karnataka, India",
+        "Search drop location=Whitefield, Bengaluru, Karnataka, India",
+        "text=2026-12-26",
+        "text=8:00 PM",
+        "Enter number of passengers=40"
+      ],
+      "shotA": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-2-after-remove.png",
+      "destCount": 3,
+      "place": {
+        "ph": "Search destination 3 location",
+        "idx": 0,
+        "query": "Chikkaballapur",
+        "suggestions": [
+          "Chikkaballapur Karnataka, India",
+          "Chikkaballapura Karnataka, India",
+          "Chikkaballapur railway station Railway Station Road, Chikkaballapur, Karnataka, India",
+          "Chikkaballapur Road Chikkaballapur, Karnataka, India"
+        ],
+        "chosen": "Chikkaballapur, Karnataka, India"
+      },
+      "final": [
+        "checkbox=false",
+        "checkbox=true",
+        "Search pickup location=Electronic City, Bengaluru, Karnataka, India",
+        "text=2026-12-25",
+        "text=7:00 AM",
+        "Search destination 1 location=Nandi Hills, Karnataka, India",
+        "Search destination 2 location=Kolar, Karnataka, India",
+        "Search destination 3 location=Chikkaballapur, Karnataka, India",
+        "Search drop location=Whitefield, Bengaluru, Karnataka, India",
+        "text=2026-12-26",
+        "text=8:00 PM",
+        "Enter number of passengers=40"
+      ],
+      "map": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -486,
+              374,
+              800
+            ],
+            "labels": [
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 67 pixels"
+            ],
+            "letters": [],
+            "imgMarkers": 0,
+            "paths": 4
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-2-map.png"
+      }
+    },
+    {
+      "label": "3-results-fare",
+      "save": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-saved.png"
+      },
+      "skip": {
+        "toasts": [
+          "Outstation leg added!",
+          "Transfer leg skipped. Click Book Now when you are ready to continue."
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "blocked": {
+        "navigated": false,
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-booknow-blocked.png"
+      },
+      "tabAtBlock": "Transfer",
+      "workaround": "Book Now! blocked; opened saved leg badge 1 (Leg 1 Outstation) and pressed Book Now! again",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [],
+        "legTabs": [
+          "Leg 1 [active]"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Outstation Garage (Start) → Electronic City, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Kolar, Karnataka, India → Chikkaballapur, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:600 KM Dates :25-26 Dec- 2026 Pickup Address:Electronic City, Bengaluru, Karnataka, India Duration:2 Days Passengers:40 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Vo",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "40",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Electronic City, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Kolar, Karnataka, India → Chikkaballapur, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-workaround-results.png"
+      },
+      "savedLegs": [
+        "Leg 1 Outstation"
+      ],
+      "details": {
+        "vehicle": "P40AC",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹18,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "180 hp · 700 Nm · 24% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-fare-breakup.png"
+      },
+      "select": {
+        "modal": "Confirm Your Trip & Selected Vehicles Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 40 Seater Premium AC Coach – 1 40 Seater Premium AC Coach 40 Seater Type: 40 Seater Premium AC Coach Luggage: Standard Belly Bay (4–6 m³) + Overhead Racks Route Summary : Outstation From Garage Garage Pickup Location Electronic City, Bengaluru, Karnataka, India Nandi Hills, Karnataka, India → Kolar, Karnataka, India → Chikkaballapur, Karnataka, India Dropoff Location Whitefield, Bengaluru, Karnataka, India Back to Garage Garage Dates 25,26 Dec, 2026 Passenger 40 Estimated Trip Cost : Vehicle Base Cost ₹36,000 Day Bata Cost (Before 10pm or After 6am) ₹2,000 Night Bata Cost (Before 6am or After 10pm) ₹1,000 State Tax ₹0 Estimated Grand Total ₹39,000 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Cu",
+        "legCount": 0,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "40 Seater Premium AC Coach – 1 40 Seater Premium AC Coach 40 Seater",
+            "routeSummary": "Outstation",
+            "pickup": "Electronic City, Bengaluru, Karnataka, India Nandi Hills, Karnataka, India → Kolar, Karnataka, India → Chikkaballapur, Karnataka, India",
+            "dropoff": "Whitefield, Bengaluru, Karnataka, India",
+            "dates": "25,26 Dec, 2026",
+            "passenger": "40",
+            "cost": "Vehicle Base Cost ₹36,000 Day Bata Cost (Before 10pm or After 6am) ₹2,000 Night Bata Cost (Before 6am or After 10pm) ₹1,000 State Tax ₹0 Estimated Grand Total ₹39,000",
+            "total": "₹39,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-13-confirm-leg1.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Confirm & Submit Booking"
+        ]
+      }
+    }
+  ],
+  "finished": "2026-11-19T05:08:49.198Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

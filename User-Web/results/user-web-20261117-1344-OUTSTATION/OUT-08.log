@@ -1,0 +1,26 @@
+[
+  {
+    "label": "A-NandiHills",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹17,500",
+    "popup": null
+  },
+  {
+    "label": "B-Mysuru",
+    "nav": true,
+    "dist": "346 KM",
+    "dur": "1 Day",
+    "total": "₹20,030",
+    "popup": null
+  },
+  {
+    "label": "C-Madikeri",
+    "nav": true,
+    "dist": "553 KM",
+    "dur": "1 Day",
+    "total": "₹31,415",
+    "popup": null
+  }
+]

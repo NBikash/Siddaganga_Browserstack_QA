@@ -1,0 +1,10 @@
+[
+  {
+    "label": "run-B",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - < 30 KM",
+    "total": "₹12,500",
+    "popup": null
+  }
+]

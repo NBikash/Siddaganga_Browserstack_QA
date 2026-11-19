@@ -1,0 +1,289 @@
+{
+  "id": "OUT-06",
+  "started": "2026-11-17T08:36:21.915Z",
+  "steps": [
+    {
+      "label": "main",
+      "fill": {
+        "toggles": {
+          "dd": true
+        },
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Domlur",
+            "suggestions": [
+              "Domlur Bengaluru, Karnataka, India",
+              "Domlur Flyover Domlur I Stage, ISRO Colony, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Club 4th Main Road, 2nd Stage, Stage 2, Domlur, Bengaluru, Karnataka, India",
+              "Domlur Water Tank Domlur I Stage, Domlur Village, Domlur, Bengaluru, Karnataka"
+            ],
+            "chosen": "Domlur, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Hyderabad",
+            "suggestions": [
+              "Hyderabad Telangana, India",
+              "Hyderabadi Handi Biryani 1st Main Road, Marathahalli, Bengaluru, Karnataka, India",
+              "Hyderabad Biryani Hotel Sampige Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Hyderabadi Spice 3rd Cross Road, Indra Nagar, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India"
+            ],
+            "chosen": "Hyderabad, Telangana, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Kempegowda International Airport",
+            "suggestions": [
+              "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Bengaluru, Karnataka, India",
+              "Kempegowda International Airport Terminal-2 Gangamuthanahalli, Karnataka",
+              "Kempegowda International Airport Gangamuthanahalli, Karnataka, India"
+            ],
+            "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-02",
+            "disabled": false,
+            "value": "2026-12-02"
+          },
+          {
+            "label": "7:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-05",
+            "disabled": false,
+            "value": "2026-12-05"
+          },
+          {
+            "label": "6:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Domlur, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Hyderabad, Telangana, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-05"
+          },
+          {
+            "ph": "text",
+            "v": "6:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "49"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -41,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Domlur, Bengaluru, Karnataka, India",
+              "Hyderabad, Telangana, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 50 km per 42 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 8
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D G Leg 1 Outstation Garage (Start) → Domlur, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:1200 KM Dates :2-3-4-5 Dec- 2026 Pickup Address:Domlur, Bengaluru, Karnataka, India Duration:4 Days Passengers:49 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloska",
+        "distance": "1200 KM",
+        "duration": "4 Days",
+        "pax": "49",
+        "drop": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloska",
+        "route": "Garage (Start) → Domlur, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹1,06,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹1,15,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹1,14,000",
+          "Sedan D SDN 4 ₹61,900",
+          "MPV's D MPV 7 ₹85,600",
+          "12 Seater Tempo Traveller D12TT 12 ₹57,600"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-results.png"
+      },
+      "details": {
+        "vehicle": "L49NV",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹60,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,750",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,750",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "340 hp · 1600 Nm · 30% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-fare-breakup.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 49 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Domlur, Bengaluru, Karnataka, India",
+          "Hyderabad, Telangana, India",
+          "Dropoff Location",
+          "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "2,3,4,5 Dec, 2026",
+        "passenger": "49",
+        "dropoff": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹2,40,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹7,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹5,250"
+          ],
+          [
+            "State Tax",
+            "₹45,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹2,97,250"
+          ]
+        ],
+        "total": "₹2,97,250",
+        "buttons": [
+          "50 km Click to toggle between metric and imperial units",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Domlur, Bengaluru, Karnataka, India",
+                "Hyderabad, Telangana, India",
+                "Garage (Return)",
+                "Undo last edit",
+                "Map Data",
+                "Map Scale: 50 km per 42 pixels"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 8
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-06-main-confirm-cost.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T08:37:23.731Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

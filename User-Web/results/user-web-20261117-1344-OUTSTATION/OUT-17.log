@@ -1,0 +1,16 @@
+[
+  {
+    "label": "search",
+    "nav": true,
+    "dist": "900 KM",
+    "dur": "3 Days",
+    "total": "₹40,000",
+    "popup": null
+  },
+  {
+    "label": "submit"
+  },
+  {
+    "label": "my-inquiries"
+  }
+]

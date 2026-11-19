@@ -1,0 +1,364 @@
+{
+  "id": "MLG-03",
+  "started": "2026-11-19T03:46:56.912Z",
+  "steps": [
+    {
+      "label": "1-2-save-local-skip-out",
+      "save": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-A-l1-saved-r2.png"
+      },
+      "skip": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-A-after-skip-out-r2.png"
+    },
+    {
+      "label": "3a-transfer-default-drop",
+      "form": [
+        "radio=on",
+        "Search pickup location=Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "Search drop location=Mysuru, Karnataka, India",
+        "text=2026-11-28",
+        "text=4:00 PM",
+        "text=2026-11-28",
+        "text=11:17 AM",
+        "Enter number of passengers=4"
+      ],
+      "msgs": {
+        "inline": [
+          "Drop time must be after pickup time"
+        ],
+        "toasts": [
+          "Selected time: 4:00 PM",
+          "Please fill all required fields correctly"
+        ]
+      },
+      "legs": {
+        "header": [
+          "Trip Leg #2"
+        ],
+        "badges": [
+          "Leg 1 Local"
+        ],
+        "innerLegs": [
+          "Leg 1"
+        ],
+        "step1": false
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-A-default-drop.png"
+    },
+    {
+      "label": "3b-save-transfer",
+      "form": [
+        "radio=on",
+        "Search pickup location=Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "Search drop location=Mysuru, Karnataka, India",
+        "text=2026-11-28",
+        "text=4:00 PM",
+        "text=2026-11-28",
+        "text=8:00 PM",
+        "Enter number of passengers=4"
+      ],
+      "save": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-A-l2-saved-r2.png"
+      },
+      "formAfter": [
+        "radio=on",
+        "Search pickup location=Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "Search drop location=Mysuru, Karnataka, India",
+        "text=2026-11-28",
+        "text=4:00 PM",
+        "text=2026-11-28",
+        "text=8:00 PM",
+        "Enter number of passengers=4"
+      ]
+    },
+    {
+      "label": "4-booknow-blank-open-form",
+      "tab": null,
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "header": "20 Buses Found | Local - 4 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Multi-leg-Local Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :28 Nov, 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Ei",
+        "distance": "80 KM",
+        "pax": "4",
+        "drop": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-A-results.png"
+      },
+      "lsuv": "LSUV not on page 1"
+    },
+    {
+      "label": "5-skip-transfer",
+      "save": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-B-l1-saved-r2.png"
+      },
+      "skipOut": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "skipTr": {
+        "toasts": [
+          "Transfer leg skipped. Click Book Now when you are ready to continue."
+        ],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        }
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-B-after-skip-tr-r2.png",
+      "res": {
+        "navigated": false,
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-B-booknow-blocked-r2.png",
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ]
+      }
+    },
+    {
+      "label": "5b-restore-after-reload",
+      "pendingBefore": "{\"isBooking\":false,\"journeyData\":[{\"type\":1,\"journey\":[{\"type\":1,\"noOfTripDays\":1,\"pax\":4,\"dates\":[\"2026-11-28\"],\"startDate\":\"2026-11-28\",\"endDate\":\"2026-11-28\",\"depatureTime\":\"2026-11-28T10:00:00+05:30\",\"arrivalTime\":\"2026-11-28T14:00:00+05:30\",\"numberOfHours\":4,\"locations\":[{\"address\":\"Phase 1, El",
+      "step1": {
+        "typed": "4",
+        "after": "4",
+        "step2": true,
+        "msgs": [],
+        "text": "Trip Leg Trip Leg #1 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Passengers Number of Hours + Add Another Leg Save As Draft Save! Skip Local Book Now!"
+      },
+      "legs": {
+        "header": [
+          "Trip Leg #1"
+        ],
+        "badges": [],
+        "innerLegs": [
+          "Leg 1"
+        ],
+        "step1": false
+      },
+      "tab": "Local",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-B-restored-after-reload.png"
+    },
+    {
+      "label": "6-unsaved-filled-local",
+      "fill": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "text=2026-11-28",
+        "text=10:00 AM",
+        "Enter number of passengers=4",
+        "Enter Number of Hours=4"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-C-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "header": "20 Buses Found | Local - 4 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [],
+        "legTabs": [
+          "Leg 1 [active]"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Local Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :28 Nov, 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daiml",
+        "distance": "80 KM",
+        "pax": "4",
+        "drop": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-C-results.png"
+      }
+    },
+    {
+      "label": "6b-saved-plus-filled-transfer",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "header": "20 Buses Found | Local - 4 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Multi-leg-Local Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :28 Nov, 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Ei",
+        "distance": "80 KM",
+        "pax": "4",
+        "drop": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Phase 1, Electronic City, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-D-results.png"
+      },
+      "lsuv": null,
+      "lsuvDetails": {
+        "vehicle": "LSUV",
+        "pricing": [
+          "Local Trip Pricing",
+          "Transfer Trip Pricing",
+          "Local Trip – 8 Hrs / 80 Kms",
+          "Standard local rental package",
+          "Base Rate (8Hr/80Km)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹18,500",
+          "Extra Km Charge",
+          "₹220 / km",
+          "Extra Hour Charge",
+          "₹1,800 / hr",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "N/A",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch (N/A)",
+          "Recliner Degree (N/A)",
+          "Acoustic Insulation (N/A)",
+          "Vertical Smoothness (N/A)"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-03-D-LSUV-fare-breakup.png"
+      }
+    }
+  ],
+  "retries": [
+    "6b-saved-plus-filled-transfer: TimeoutError: locator.click: Timeout 30000ms exceeded."
+  ],
+  "finished": "2026-11-19T03:57:29.761Z",
+  "loads": [],
+  "net": [
+    "allowed POST /user/pricing",
+    "allowed POST /user/pricing",
+    "allowed POST /user/pricing"
+  ]
+}

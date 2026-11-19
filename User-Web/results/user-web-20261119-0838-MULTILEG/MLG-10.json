@@ -1,0 +1,253 @@
+{
+  "id": "MLG-10",
+  "started": "2026-11-19T04:32:36.587Z",
+  "steps": [
+    {
+      "label": "1-local-scope",
+      "A": {
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": [
+            "Selected time: 9:00 AM",
+            "Please fill all required fields correctly"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-A-chennai.png"
+      },
+      "B": {
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Selected time: 9:00 AM",
+            "Drop location is required"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-B-kochi.png"
+      },
+      "C": {
+        "place": {
+          "ph": "Search drop location",
+          "idx": 0,
+          "query": "Mysuru Palace",
+          "suggestions": [
+            "Mysore Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+            "Palace View Dasara Exhibition Road, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+            "Mysore Palace parking entrance Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+            "Mysore Palace Entrance Agrahara Circle, Agrahara, Chamrajpura, Mysuru, Karnataka, India"
+          ],
+          "chosen": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India"
+        },
+        "save": {
+          "toasts": [
+            "Local leg added!"
+          ],
+          "msgs": [
+            "*"
+          ],
+          "tabAfter": "Outstation",
+          "legs": {
+            "header": [
+              "Trip Leg #2"
+            ],
+            "badges": [
+              "Leg 1 Local"
+            ],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          },
+          "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-C-mysuru-palace-saved.png"
+        }
+      }
+    },
+    {
+      "label": "2-out-trf",
+      "s1": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-out-hyd-saved.png"
+      },
+      "s2": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #4"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation",
+            "Leg 3 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-trf-che-saved.png"
+      }
+    },
+    {
+      "label": "3-results",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "header": "20 Buses Found | Local - 4 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2",
+          "Leg 3"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return) Distance:80 KM Dates :16 Dec, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:4 Hours Passengers:5 Pax Drop Address:Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher",
+        "distance": "80 KM",
+        "pax": "5",
+        "drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-10-results.png"
+      },
+      "legs": [
+        {
+          "navigated": true,
+          "found": "20 Buses Found | Local - 4 HR / 80 KM",
+          "header": "20 Buses Found | Local - 4 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+          "labels": [
+            "Multi-leg-Local"
+          ],
+          "legTabs": [
+            "Leg 1 [active]",
+            "Leg 2",
+            "Leg 3"
+          ],
+          "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return) Distance:80 KM Dates :16 Dec, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:4 Hours Passengers:5 Pax Drop Address:Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher",
+          "distance": "80 KM",
+          "pax": "5",
+          "drop": "Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+          "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysore Palace, Agrahara, Chamrajpura, Mysuru, Karnataka, India → Garage (Return)",
+          "page1": [
+            "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+            "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+            "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+            "Sedan D SDN 4 ₹4,500",
+            "MPV's D MPV 7 ₹7,800",
+            "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/leg1-results-r2.png"
+        },
+        {
+          "navigated": true,
+          "found": "20 Buses Found | Outstation - 0 KM",
+          "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹1,02,460 4.5 33 Seater ",
+          "labels": [
+            "Multi-leg-Outstation"
+          ],
+          "legTabs": [
+            "Leg 1",
+            "Leg 2 [active]",
+            "Leg 3"
+          ],
+          "summary": ": Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Outstation Garage (Start) → Domlur, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Garage (Return) Distance:1172 KM Dates :17-18-19 Dec- 2026 Pickup Address:Domlur, Bengaluru, Karnataka, India Duration:3 Days Passengers:5 Pax Drop Address:Hyderabad, Telangana, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Au",
+          "distance": "1172 KM",
+          "duration": "3 Days",
+          "pax": "5",
+          "drop": "Hyderabad, Telangana, India",
+          "route": "Garage (Start) → Domlur, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Garage (Return)",
+          "page1": [
+            "33 Seater Deluxe Coach D35NA 35 ₹1,02,460",
+            "40 Seater Deluxe Coach D40NA 40 ₹1,11,320",
+            "49 Seater Deluxe Coach D49NA 49 ₹1,10,460",
+            "Sedan D SDN 4 ₹60,004",
+            "MPV's D MPV 7 ₹82,600",
+            "12 Seater Tempo Traveller D12TT 12 ₹55,300"
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/leg2-results-r3.png"
+        },
+        {
+          "navigated": true,
+          "found": "20 Buses Found | Transfer - > 30 KM",
+          "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+          "labels": [
+            "Multi-leg-Transfer"
+          ],
+          "legTabs": [
+            "Leg 1",
+            "Leg 2",
+            "Leg 3 [active]"
+          ],
+          "summary": ": Map Data Terms Leg 1 Leg 2 Leg 3 Multi-leg-Transfer Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return) Distance:> 30 KM Dates :20 Dec- 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:1 Day Passengers:5 Pax Drop Address:Chennai, Tamil Nadu, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited A",
+          "duration": "1 Day",
+          "pax": "5",
+          "drop": "Chennai, Tamil Nadu, India",
+          "route": "Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return)",
+          "page1": [
+            "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+            "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+            "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+            "Sedan D SDN 4 ₹8,000",
+            "MPV's D MPV 7 ₹12,500",
+            "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/leg3-results.png"
+        }
+      ]
+    }
+  ],
+  "finished": "2026-11-19T04:35:36.339Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

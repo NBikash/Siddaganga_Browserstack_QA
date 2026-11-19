@@ -1,0 +1,593 @@
+[
+  {
+    "ts": "2026-11-19T11:15:14.406Z",
+    "id": "AW-INQ-001",
+    "module": "Inquiry Management",
+    "title": "Search Inquiry Info by Inquiry ID / name; date and client filters; Reset Filter; pagination",
+    "pnr": "UMNF499106 (QRY-194) and the QA client inquiry list",
+    "objective": "Search and filters return the matching inquiries; Reset restores the list; pagination moves pages",
+    "pre": "Superadmin, Preprod. QA client \"Bikash N\" inquiries only (10 rows after the 19 Nov Send To Inquiry of 5 User-Web PNRs).",
+    "steps": [
+      "Total Inquiries list (default)",
+      "Search \"QRY-194\", \"194\", \"Bikash\", \"Bikash N\", \"zzzz-no-match\"",
+      "Search \"Bikash\" → Next page",
+      "Start Date filter = 24/11/2026",
+      "Reset Filter",
+      "Client Type = National",
+      "Client filter: select QA client",
+      "Reset Filter"
+    ],
+    "expected": "Inquiry ID search returns exactly that inquiry; name search returns the client's inquiries; date/client filters narrow the list; empty state for no match; Reset restores all; pagination shows the next rows",
+    "actual": "ID search FAILS: \"QRY-194\" → Showing 0 to 0 of 0 entries (QRY-194 is listed under the client search); \"194\" → Showing 1 to 5 of 21 entries (no filtering). Earlier probe: \"QRY-937\" returned QRY-129 (old internal ID). Name: \"Bikash\" → Showing 1 to 5 of 10 entries, all QA rows. No match → \"No data available\". Pagination: Showing 1 to 5 of 10 entries → Showing 6 to 10 of 10 entries. Start date 24/11/2026 → Showing 1 to 1 of 1 entries (QRY-194, date 24/11/2026). Client Type options All/Corporate/National/International; National → types National. Client filter (QA client) → Showing 1 to 5 of 10 entries, all rows QA client. Reset → Showing 1 to 5 of 21 entries, fields cleared. Rows per page 05 → 20 during a search → \"Showing 0 to 0 of 0 entries\" (INQ-ISS-15).",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-01",
+      "INQ-ISS-15"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-search-QRY-194-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-search-no-match-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-pagination-page2-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-start-date-24-11-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-client-filter-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-list-default-r3.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.417Z",
+    "id": "AW-INQ-026",
+    "module": "Inquiry Management",
+    "title": "Filter Inquiry Management by Status dropdown",
+    "pnr": "QA client inquiry list (QRY-194, 195, 211, 213, 215 …)",
+    "objective": "Status filter shows only inquiries with the selected status",
+    "pre": "Superadmin, Preprod. QA client \"Bikash N\" inquiries only (10 rows after the 19 Nov Send To Inquiry of 5 User-Web PNRs).",
+    "steps": [
+      "Open Select Status",
+      "Select each option (All, New quotation, Pending, Revised quotation) after Reset",
+      "Reset Filter"
+    ],
+    "expected": "Each option lists only inquiries with that status; Reset restores",
+    "actual": "Options: All, New quotation, Pending, Revised quotation. All → Showing 1 to 5 of 21 entries; New quotation → Showing 0 to 0 of 0 entries; Pending → Showing 0 to 0 of 0 entries; Revised quotation → Showing 1 to 5 of 20 entries, page statuses Revised quotation, QA rows listed. Reset → Showing 1 to 5 of 21 entries. Note: no Cancelled/Confirm option (see AW-INQ-028).",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-options-r6.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-Revised-quotation-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-026-status-New-quotation-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.419Z",
+    "id": "AW-INQ-036",
+    "module": "Inquiry Management",
+    "title": "Default sort order and column sorting on the inquiry list",
+    "pnr": "QA client inquiry list",
+    "objective": "Documented default order; sortable headers",
+    "pre": "Superadmin, Preprod. QA client \"Bikash N\" inquiries only (10 rows after the 19 Nov Send To Inquiry of 5 User-Web PNRs). Expected default order and sortable columns are not documented (Open Questions B8).",
+    "steps": [
+      "Search \"Bikash\"; note default order",
+      "Click INQUIRY ID, INQUIRY START DATE, CLIENT NAME headers"
+    ],
+    "expected": "Sortable columns (sort control, order changes)",
+    "actual": "Default order: QRY-135 16 Seater Premium Urbania 20/11/2026; QRY-130 16 Seater Premium Urbania 20/11/2026; QRY-129 16 Seater Premium Urbania 20/11/2026; QRY-194 28 Seater Premium AC Coach 24/11/2026; QRY-213 40 Seater Premium AC Coach 25/11/2026 (neither ID nor date order: QRY-134 12/11/2026 is last). Headers have no sort label/icon (cursor auto); clicking changes nothing.",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-02"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-036-after-header-clicks.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.745Z",
+    "id": "AW-INQ-004",
+    "module": "Inquiry Management",
+    "title": "View Quote: content and values vs Update Quote form",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "View Quote shows the same quote as the form",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Total Inquiries → search \"Bikash\" → QRY-194 row → View Quote",
+      "Read the dialog",
+      "Row menu → Edit → read form costs"
+    ],
+    "expected": "Same quote ID, trip type, vehicle and total as the form",
+    "actual": "View Quote \"Quotation Summary\": 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel. Form: Booking Type Outstation, 28 Seater Premium AC Coach, Total Approx Cost 34200.00 (600 km × 52 + driver 1000 × 2 + night 1000 = 34,200). Consistent.",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-view-quote.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-update-quote-form.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.753Z",
+    "id": "AW-INQ-018",
+    "module": "Inquiry Management",
+    "title": "Preview Quote Summary: content and values vs form",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Preview shows the form values",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Update Quote form → Preview Quote Summary",
+      "Compare with form and View Quote"
+    ],
+    "expected": "Quote ID, trip type, vehicle, costing equal to the form",
+    "actual": "Preview: 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel; buttons Leg 1, Combined Quotes, Detailed Quotes, Cancel. Same as form and View Quote. (Combined/Detailed Quotes are downloads: see AW-INQ-034.)",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-preview-quote-summary.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.754Z",
+    "id": "AW-INQ-014",
+    "module": "Inquiry Management",
+    "title": "Booking Type / Month / Trip Description dropdowns",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Option lists are complete; a new description can be typed",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Open Select Booking Type",
+      "Open Select Month",
+      "Open Trip Description (cleared, then refilled, not saved)"
+    ],
+    "expected": "Booking types Local/Outstation/Transfer/(Dynamic); 12 months; Trip Description accepts free text",
+    "actual": "Booking Type (Outstation): Local, Outstation, Transfer, Dynamic. Month (November): 12 months January–December. Trip Description is free text with suggestions; suggestions come from OTHER inquiries, including one with contact details (INQ-ISS-09).",
+    "status": "Pass",
+    "issues": [
+      "INQ-ISS-09"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-booking-type-options.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-trip-description-options-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.756Z",
+    "id": "AW-INQ-019",
+    "module": "Inquiry Management",
+    "title": "Arrival/Departure time fields (12:00 AM): editable?",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "The wrong 12:00 AM times can be corrected",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…). User-Web submission: 24 Nov 9:00 AM → 25 Nov 8:00 PM; Admin showed 12:00 AM / 12:00 AM.",
+    "steps": [
+      "Edit form → click Select Arrival Time → picker Hour 09, Min 00, AM",
+      "Select Departure Time → 08, 00, PM",
+      "Update Quote",
+      "Re-open the form and refresh"
+    ],
+    "expected": "Times can be set and are kept after save",
+    "actual": "Fields are not typeable (read-only input) but open an Hour/Min/AM-PM picker (changed since 13 Nov, when they were not editable). Set 09:00 AM / 08:00 PM; toast \"Data updated successfully !\", update-inquiry 200; after re-open + refresh: 09:00 AM / 08:00 PM. The original 12:00 AM still comes from User-Web (INQ-ISS-06).",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-before-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-edited-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-after-reopen-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.757Z",
+    "id": "AW-INQ-005",
+    "module": "Inquiry Management",
+    "title": "Edit inquiry: Trip Description saved, re-opened, refreshed → persisted",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Edited non-financial field is saved",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Row menu → Edit",
+      "Trip Description = \"QA INQ functional test UMNF499106 (19 Nov 2026)\" (Tab, not Enter)",
+      "Update Quote",
+      "Re-open via URL and refresh"
+    ],
+    "expected": "Description kept after re-open and refresh; costs unchanged",
+    "actual": "Before: \"\". Saved: toast \"Data updated successfully !\", POST update-inquiry 200. After re-open + refresh: \"QA INQ functional test UMNF499106 (19 Nov 2026)\", total 34200.00 (unchanged).",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-before-r3.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-edited-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-A-after-reopen-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.759Z",
+    "id": "AW-INQ-013",
+    "module": "Inquiry Management",
+    "title": "GST \"Change\" control: options; change and revert",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "GST can be changed and reverted",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Edit form → GST Value → Change",
+      "Open GST Value select; choose 0% → Save",
+      "Change → 5% → Save",
+      "Reload the form (no Update Quote)"
+    ],
+    "expected": "Options listed; chosen GST applied; revert restores 5%",
+    "actual": "Dialog \"Change GST Value\" (select). Options: 0%, 5%, 18%. 0% → Save: toast \"Customer info updated successfully.\" and GST field 0% (saved at once, without Update Quote). Reverted to 5% the same way; after reload GST 5%. Total Approx Cost stayed 34200.00 at 0% and 5% (GST not part of the total).",
+    "status": "Pass",
+    "issues": [
+      "INQ-ISS-10"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-B-gst-dialog-changed.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-B-gst-changed-applied.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.847Z",
+    "id": "AW-INQ-011",
+    "module": "Inquiry Management",
+    "title": "Cost recalculation when extra km / toll / extras change",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Total Approx Cost recomputes",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Edit form → Vehicle Costs: Extra KM 0 → 50",
+      "Toll & Parking 0 → 500",
+      "Any Extra's 0 → 250",
+      "Read Total Approx Cost (live)",
+      "Update Quote",
+      "Re-open + refresh"
+    ],
+    "expected": "Total = 34,200 + 50 × 52 + 500 + 250 = 37,550",
+    "actual": "Live total after Extra KM 50: 34200.00; after toll/extras: 34200.00. Saved (\"Data updated successfully !\"); after re-open: extra km 50.00, toll 500.00, extras 250.00, total 34200.00. Total never recalculated (recurrence of 13 Nov ISS-06).",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-08"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-before.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-costs-changed-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-after-reopen-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.849Z",
+    "id": "AW-INQ-017",
+    "module": "Inquiry Management",
+    "title": "Update Quote with edited values → re-open → persisted; list and View Quote show the new value",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Saved values persist and are reflected in list and View Quote",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "After AW-INQ-011 save: re-open + refresh the form",
+      "Total Inquiries row",
+      "View Quote",
+      "Preview Quote Summary"
+    ],
+    "expected": "Edited values persisted; View Quote/Preview show the updated quote",
+    "actual": "Persisted: extra km 50.00, toll 500.00, extras 250.00; description and times (AW-INQ-005/019) persisted. Not reflected: View Quote 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel; Preview 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel (₹500 toll, ₹250 extras and 50 extra km missing). List row has no amount column.",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-08"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-C-view-quote-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-C-preview.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.850Z",
+    "id": "AW-INQ-012",
+    "module": "Inquiry Management",
+    "title": "Apply Final Quote checkbox and Fixed Cost field",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781)",
+    "objective": "Fixed Cost enabled only when applied; applied fixed cost becomes the final quote",
+    "pre": "Superadmin, Preprod. QRY-194 created 19 Nov from User-Web PNR UMNF499106 (Outstation, 24–25 Nov 2026, 20 pax, 28 Seater Premium AC Coach, ₹34,200). Form opened via row menu → Edit (/update-inquiry/bea778b7-…).",
+    "steps": [
+      "Edit form → Fixed Cost (disabled?)",
+      "Tick \"Apply fixed cost\"",
+      "Fixed Cost = 36000",
+      "Update Quote",
+      "Re-open; View Quote"
+    ],
+    "expected": "Field enabled after tick; final quote / total = 36,000 after save and in View Quote",
+    "actual": "Fixed Cost disabled before tick: true; after tick: disabled false. Live total with 36000: 34200.00. Saved (\"Data updated successfully !\"); after re-open fixed cost 36000.00, total 34200.00; View Quote 1781 OutStation 28 Seater Premium AC Coach ₹34200.00 Combined Quotes Detailed Quotes Cancel. Fixed cost never applied. Restored afterwards (stage E: fixed cost 0, unticked, extra km/toll/extras 0, total 34200.00).",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-11"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-D-fixed-cost-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-D-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-D-view-quote-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-E-after-reopen-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.053Z",
+    "id": "AW-INQ-015",
+    "module": "Inquiry Management",
+    "title": "Date/Day-wise Category Assignment calendar: Range selection, Save Assignment",
+    "pnr": "NCCC102640 (LD-415 → QRY-195; listed as QRY-228 after the journey save)",
+    "objective": "Selected dates are assigned to the category and kept after saving",
+    "pre": "Superadmin, Preprod. Inquiry from User-Web NCCC102640: Outstation Koramangala → Chikkamagaluru → Belur → Hassan, 11–13 Jan 2027, 14 pax, 16 Seater Premium Urbania, ₹40,000 (900 km × 40 + driver 800 × 3 + night 800 × 2). Form /update-inquiry/48f3a9cd-…",
+    "steps": [
+      "Open the QRY-195 form",
+      "Range Selection → 11 Jan → 13 Jan",
+      "Save Assignment (run 1: then reload without Update Quote)",
+      "Run 2: Save Assignment → Update Quote → re-open + refresh"
+    ],
+    "expected": "Assignment applied to 11–13 Jan (Outstation) and kept after Update Quote",
+    "actual": "Calendar January 2027 with 11–13 highlighted; buttons Reset Selection, Single Date Selection, Range Selection, Previous Month, Next Month, Save Assignment, + Add New Journey. Save Assignment: no toast, POST pricing-inquiry 200; section rebuilt as \"Trip-1 / Journey A: Outstation\" dated 11/01/2027, 12/01/2027, 13/01/2027. Without Update Quote the assignment is not kept (run 1 after reload: 11/01/2027 - 13/01/2027). Run 2 with Update Quote (update-inquiry 200): after re-open + refresh highlighted 11, 12, 13, total 40000.00. The saved assignment equals the original 11–13 Jan, so no visible change was expected.",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-range-picked-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-save-assignment-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-reopen-refresh-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.054Z",
+    "id": "AW-INQ-038",
+    "module": "Inquiry Management",
+    "title": "Add a valid additional journey; legs and total update",
+    "pnr": "NCCC102640 (LD-415 → QRY-195; listed as QRY-228 after the journey save)",
+    "objective": "A second journey/trip is added with correct pricing and appears in the quote",
+    "pre": "Superadmin, Preprod. Inquiry from User-Web NCCC102640: Outstation Koramangala → Chikkamagaluru → Belur → Hassan, 11–13 Jan 2027, 14 pax, 16 Seater Premium Urbania, ₹40,000 (900 km × 40 + driver 800 × 3 + night 800 × 2). Form /update-inquiry/48f3a9cd-…",
+    "steps": [
+      "Open the QRY-195 form",
+      "+ Add New Journey → Trip-2 / Journey A: Outstation → Add information",
+      "Destinations Koramangala Bengaluru, Karnataka, India and Hassan Karnataka, India; vehicle 12 Seater Tempo Traveller (Non-AC)",
+      "Update (journey dialog)",
+      "Update Quote",
+      "Re-open + refresh; Preview Quote Summary; Inquiry list; Lead LD-415 View Lead"
+    ],
+    "expected": "Trip-2 saved with a correct price; Preview lists both trips; inquiry keeps its ID; list/lead show the inquiry consistently; no \"new inquiry\" notification",
+    "actual": "Journey dialog → toast \"Data calculate successfully !\"; Update Quote → toast \"New Inquiry Alert – New inquiry NCCC102640 from Bikash N has been received. Please check it in the total inquiries list.\". After re-open: Trip-1 + Trip-2 kept; Trip-2 12 Seater Tempo Traveller (NAC) Koramangala → Hassan, 11–13 Jan. Trip-2 costs: total km 900.00, per km 0.00, night days 0.00 → Total Approx Cost 2400.00 (Trip-1 40000.00). Preview Quote Summary lists NO quote (\"Quotation Summary Combined Quotes Detailed Quotes Cancel\"). Inquiry list: QRY-195 replaced by QRY-228 (vehicle \"12 Seater Tempo Traveller\" only); its Edit opens the same form (true). Lead LD-415 still shows QRY-195 with 16 Seater Premium Urbania. Not reverted (no delete-journey test approved; record kept for review).",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-12",
+      "INQ-ISS-13",
+      "INQ-ISS-14"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-journey-form-filled.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-after-update-journey.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-preview.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-trip2-costs.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-LD-415-view-lead-after-trip2-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.072Z",
+    "id": "AW-INQ-027",
+    "module": "Inquiry Management",
+    "title": "Cancel Inquiry: dismiss the confirmation; inquiry unchanged",
+    "pnr": "WPKT544822 (LD-352 → QRY-135, was QRY-943)",
+    "objective": "Dismissing the cancel dialog changes nothing",
+    "pre": "Superadmin, Preprod. QA client inquiry sent to Inquiry on 16 Nov from a User-Web PNR; no advance recorded. Original: 135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance; View Quote 1700 Local 16 Seater Premium Urbania ₹8300.00 Combined Quotes Detailed Quotes Cancel; lead status Revised quotation.",
+    "steps": [
+      "QRY-135 row menu → Cancel Inquiry",
+      "Read the dialog",
+      "Close it (Escape; the dialog offers Back / Confirm Cancellation)",
+      "Re-check list row, menu and lead LD-352"
+    ],
+    "expected": "Inquiry, menu and lead unchanged",
+    "actual": "Dialog \"Cancel Inquiry & Process Refund QRY-135 — Bikash N Back Confirm Cancellation\" (refund calculated on open: POST cancellation-refund/calculate 200). Closed; no cancel call. Row after: 135 QRY-135 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance; lead LD-352 QRY-135 Revised quotation.",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-row-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-dismiss-QRY-135-lead-LD-352-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.075Z",
+    "id": "AW-INQ-028",
+    "module": "Inquiry Management",
+    "title": "Cancel Inquiry: confirm; status changes, inquiry leaves active lists and KPIs, Send To Booking no longer offered",
+    "pnr": "WPKT544822 (LD-352 → QRY-135)",
+    "objective": "Confirmed cancellation is applied consistently",
+    "pre": "Superadmin, Preprod. QA client inquiry sent to Inquiry on 16 Nov from a User-Web PNR; no advance recorded. KPI before: Total Inquiries 189 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0.",
+    "steps": [
+      "QRY-135 row menu → Cancel Inquiry",
+      "Wait for the refund calculation; penalty waiver left unticked",
+      "Confirm Cancellation",
+      "Close the result dialog",
+      "Inquiry list (QA client), Status filter, KPI cards, Lead LD-352"
+    ],
+    "expected": "Inquiry cancelled; not offered for booking; lead shows cancelled; KPIs updated",
+    "actual": "Calculation: Trip cost ₹8,300 One day charge ₹7,500 Penalty % 20% Add one day charge Yes Penalty retained ₹8,300 Refund amount ₹0 Hours before trip start 11.6 hrs Scheduled trip start 20/11/2026, 5:30:00 am Penalty waived No. First confirm click had no effect (no request); second: POST cancellation/cancel-inquiry-journey 200, toasts \"Inquiry journey cancelled successfully!\" / \"Inquiry Cancelled (Inquiry ID QRY-135)\"; result dialog: Status Cancelled, cancellation invoice INV-106 (penalty ₹8,300, refund ₹0). After: QRY-135 no longer in the inquiry list (Send To Booking unreachable); Status filter has no Cancelled option (All/New quotation/Pending/Revised quotation); lead LD-352 shows QRY-135 status Cancelled, lead status Open; Total Inquiries 189 → 188 (shared environment).",
+    "status": "Pass",
+    "issues": [
+      "INQ-ISS-16",
+      "INQ-ISS-17"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-before-confirm.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-after-click.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-result-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-QRY-135-qa-list-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-QRY-135-lead-LD-352-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.078Z",
+    "id": "AW-INQ-029",
+    "module": "Inquiry Management",
+    "title": "Delete inquiry: dismiss the confirmation; inquiry unchanged",
+    "pnr": "XMGZ467530 (LD-347 → QRY-130, was QRY-938)",
+    "objective": "Dismissing the delete dialog changes nothing",
+    "pre": "Superadmin, Preprod. QA client inquiry sent to Inquiry on 16 Nov from a User-Web PNR; no advance recorded. Original: 130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance; View Quote 1695 Local 16 Seater Premium Urbania ₹9100.00 Combined Quotes Detailed Quotes Cancel.",
+    "steps": [
+      "QRY-130 row menu → Delete",
+      "Dialog → No",
+      "Re-check list row and lead LD-347"
+    ],
+    "expected": "Inquiry unchanged",
+    "actual": "Dialog \"Delete Inquiry Are you sure you want to delete this inquiry? Yes No\"; dismissed with No; no delete call. Row after: 130 QRY-130 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance; lead QRY-130 Revised quotation.",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-dismiss-QRY-130-row-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.080Z",
+    "id": "AW-INQ-030",
+    "module": "Inquiry Management",
+    "title": "Delete inquiry: confirm; removed from list, KPI totals and linked lead updated",
+    "pnr": "XMGZ467530 (LD-347 → QRY-130)",
+    "objective": "Deleted inquiry removed everywhere consistently",
+    "pre": "Superadmin, Preprod. QA client inquiry sent to Inquiry on 16 Nov from a User-Web PNR; no advance recorded. KPI before: Total Inquiries 188 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0.",
+    "steps": [
+      "QRY-130 row menu → Delete → Yes",
+      "Inquiry list (QA client)",
+      "KPI cards",
+      "Lead LD-347 → View Lead"
+    ],
+    "expected": "Removed from list; Total Inquiries −1; lead no longer shows an active inquiry (or shows it deleted)",
+    "actual": "Toast \"Inquiry deleted successfully !\", POST inquiry/delete 200. List: not listed: rows for QRY-130: 0. KPI: Total Inquiries 188 → Total Inquiries 187. Lead LD-347 still shows Inquiry ID QRY-130, status \"Revised quotation\" (stale link to a deleted inquiry); lead menu View Lead/Assign/Delete.",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-18"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-list-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.083Z",
+    "id": "AW-INQ-031",
+    "module": "Inquiry Management",
+    "title": "Cancel or delete an inquiry that has already been converted to a booking",
+    "pnr": "IAJA754847 (LD-346 → QRY-129, was QRY-937)",
+    "objective": "A converted inquiry cannot be cancelled/deleted from Inquiry Management (or the booking stays consistent)",
+    "pre": "Superadmin, Preprod. QA client inquiry sent to Inquiry on 16 Nov from a User-Web PNR; no advance recorded. Original: 129 QRY-129 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance; menu View Quote/Edit/Send To Booking/Record Advance/Send Quote/Send Proforma Invoice/Download Proforma Invoice/Send Bus Images/Cancel Inquiry/Delete.",
+    "steps": [
+      "QRY-129 row menu → Send To Booking",
+      "Choose Trip(s): 1694 Leg 1 Local 16 Seater Premium Urbania ₹8300.00 (pre-selected)",
+      "Convert into Booking → Yes",
+      "Look for QRY-129 in Inquiry Management (QA client, all rows) to open Cancel Inquiry / Delete",
+      "Pre-Bookings; Lead LD-346"
+    ],
+    "expected": "Cancel/Delete of the converted inquiry blocked or not offered; booking intact",
+    "actual": "Converted: toast \"Status updated successfully!\", POST inquiry/send-trip-to-booking 200; booking 129 | B-129 | Bikash N | National | 1 | Local | 20 Nov 2026 | 21 Nov 2026 | Rs. 8,300 | Record Advance | |. QRY-129 is no longer listed in Inquiry Management (7 QA inquiries left), so Cancel Inquiry / Delete cannot be reached for a converted inquiry. Lead LD-346: QRY-129 status Approved. KPI after: Total Inquiries 186 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0 (Conversion Rate still 0).",
+    "status": "Pass",
+    "issues": [
+      "INQ-ISS-19"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-choose-trip.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-confirm.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-after-convert.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-pre-bookings.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-qa-list-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-lead-LD-346-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.171Z",
+    "id": "AW-INQ-032",
+    "module": "Inquiry Management",
+    "title": "Send Quote to the customer: channel and content match the saved quote",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781, ₹34,200)",
+    "objective": "Quote is sent to the customer test account",
+    "pre": "Superadmin, Preprod. QRY-194 after the AW-INQ-005/019 edits (costs restored to ₹34,200). Recipient check: the contact number in the row/dialog was compared in-process with the User-Web test account login (match recorded as true/false only; number masked in evidence).",
+    "steps": [
+      "QRY-194 row menu → Send Quote",
+      "Dialog: Customer Name, Mobile Number (optional), Quote Validity Date (pre-filled 26/11/2026)",
+      "Verify recipient = test account",
+      "Send Now",
+      "Second attempt (first one sent no request)"
+    ],
+    "expected": "Quote sent to the test account; success message; content = saved quote",
+    "actual": "Recipient = test account: true. Attempt 1: Send Now → button turned to a spinner, no API request within 13 s, no toast (nothing sent). Attempt 2: POST inquiry/send-quote-follow-up-whatsapp 200 in ~1 s, toast \"Quote follow-up sent on WhatsApp successfully!\". Channel: WhatsApp (dialog has no channel choice). Message content could not be viewed in Admin; receipt on the test phone to be confirmed by the team.",
+    "status": "Pass",
+    "issues": [
+      "INQ-ISS-20"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-retry-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.180Z",
+    "id": "AW-INQ-033",
+    "module": "Inquiry Management",
+    "title": "Send Proforma Invoice: recipient and content",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781, ₹34,200)",
+    "objective": "Proforma invoice sent to the customer test account",
+    "pre": "Superadmin, Preprod. QRY-194 after the AW-INQ-005/019 edits (costs restored to ₹34,200). Recipient check: the contact number in the row/dialog was compared in-process with the User-Web test account login (match recorded as true/false only; number masked in evidence).",
+    "steps": [
+      "QRY-194 row menu → Send Proforma Invoice",
+      "Dialog: Customer Name, Mobile Number; Send Via WhatsApp ☑, Email ☑",
+      "Verify recipient = test account",
+      "Send Now"
+    ],
+    "expected": "Proforma sent; success message",
+    "actual": "Recipient = test account: true. Both channels pre-ticked (no email address on the inquiry). POST inquiry/send-proforma-invoice 200, toast \"Proforma invoice sent to customer successfully!\". Content as in the downloaded proforma (AW-INQ-034). Receipt on WhatsApp/email to be confirmed on the test account.",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-dialog.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-filled.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.182Z",
+    "id": "AW-INQ-034",
+    "module": "Inquiry Management",
+    "title": "Download Proforma Invoice: amounts, GST and IDs match the quote",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781, ₹34,200)",
+    "objective": "Downloaded proforma matches the saved quote",
+    "pre": "Superadmin, Preprod. QRY-194 after the AW-INQ-005/019 edits (costs restored to ₹34,200). Recipient check: the contact number in the row/dialog was compared in-process with the User-Web test account login (match recorded as true/false only; number masked in evidence).",
+    "steps": [
+      "QRY-194 row menu → Download Proforma Invoice",
+      "Open the PDF (PI-B-1003_proforma.pdf)",
+      "Compare with the quote (1781, ₹34,200, GST 5%)"
+    ],
+    "expected": "Amounts = quote; GST shown consistently; IDs refer to the inquiry/quote",
+    "actual": "Downloaded results/admin-web-20261119-1545-INQ/downloads/QRY-194-PI-B-1003_proforma.pdf (50317 bytes; APIs invoice/document-details, proforma-breakdown-preview 200). PI No. PI-B-1003, date 19/11/2026; Trip Description and dates 24–25/11/2026 Whitefield → Mysuru, 28 Seater Premium AC Coach, 600 km: Base 600 × 52 = 31,200 + Driver Bata 1,000 × 2 + Night Bata 1,000 × 1 = Sub Total / Total Rs. 34,200.00 (matches the quote). BUT amount in words \"Thirty Five Thousand Nine Hundred Ten\" (= 34,200 + 5% GST 1,710) while no GST line is shown and the total is 34,200; and it shows \"Booking ID B-194\" although the inquiry is not converted to a booking.",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-21"
+    ],
+    "evidence": [
+      "results/admin-web-20261119-1545-INQ/downloads/QRY-194-PI-B-1003_proforma.pdf"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.183Z",
+    "id": "AW-INQ-035",
+    "module": "Inquiry Management",
+    "title": "Send Bus Images to the customer for the quoted vehicle type",
+    "pnr": "UMNF499106 (LD-414 → QRY-194, quote 1781, ₹34,200)",
+    "objective": "Bus images of the 28 Seater Premium AC Coach are sent to the test account",
+    "pre": "Superadmin, Preprod. QRY-194 after the AW-INQ-005/019 edits (costs restored to ₹34,200). Recipient check: the contact number in the row/dialog was compared in-process with the User-Web test account login (match recorded as true/false only; number masked in evidence).",
+    "steps": [
+      "Verify row contact = test account",
+      "QRY-194 row menu → Send Bus Images"
+    ],
+    "expected": "Confirmation, then images sent; success message",
+    "actual": "Row contact = test account: true. No confirmation dialog: the menu click sends at once. POST inquiry/send-bus-images-whatsapp 400; toast \"Failed to generate bus images PDF\"; console \"Failed to load resource: 400\". Nothing sent.",
+    "status": "Fail",
+    "issues": [
+      "INQ-ISS-22"
+    ],
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Bus-Images-inspect-no-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.184Z",
+    "id": "AW-INQ-037",
+    "module": "Inquiry Management",
+    "title": "Create an inquiry with valid data via + Add inquiry (Generate Quote)",
+    "pnr": "— (none: would need a new non-User-Web inquiry)",
+    "objective": "Admin-created inquiry is saved and listed",
+    "pre": "Approval condition: run only if it can use approved User-Web test data without creating an artificial PNR.",
+    "steps": [
+      "Not executed"
+    ],
+    "expected": "Inquiry created from Admin with valid data",
+    "actual": "+ Add inquiry creates a new inquiry/PNR entered in Admin, not one submitted through User-Web. Using an existing User-Web PNR is not possible on this form, so the case would violate the \"no artificial PNRs / no unrelated records\" rule. Blocked pending a decision (e.g. approve one Admin-created QA inquiry with a cleanup agreement). Form was inspected on 13 Nov (IM-06).",
+    "status": "Blocked",
+    "evidence": []
+  }
+]

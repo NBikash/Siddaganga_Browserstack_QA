@@ -1,0 +1,67 @@
+{
+  "addButtons": 1,
+  "dialog": 1,
+  "text": "Update new journey Journey ID No Of Trip Days Destinations Add Vehicle Add Amenity ​ Update Cancel",
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "name": "journeyID",
+      "ph": "Enter Journey ID",
+      "label": "",
+      "type": "text",
+      "text": "",
+      "value": "Journey-B : Journey A: Outstation"
+    },
+    {
+      "tag": "INPUT",
+      "name": "noOfTripDays",
+      "ph": "Enter No Of Trip Days",
+      "label": "",
+      "type": "number",
+      "text": "",
+      "value": "3"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "ph": "",
+      "label": "",
+      "type": "text",
+      "text": "",
+      "value": ""
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "ph": "Search or select vehicle",
+      "label": "",
+      "type": "text",
+      "text": "",
+      "value": ""
+    },
+    {
+      "tag": "DIV",
+      "name": "",
+      "ph": "",
+      "label": "",
+      "type": "",
+      "text": "​",
+      "value": ""
+    },
+    {
+      "tag": "INPUT",
+      "name": "amenities",
+      "ph": "",
+      "label": "",
+      "type": "text",
+      "text": "",
+      "value": ""
+    }
+  ],
+  "buttons": [
+    "Update",
+    "Cancel"
+  ],
+  "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-195-journey-add-information-form.png",
+  "trip2AfterReload": false
+}

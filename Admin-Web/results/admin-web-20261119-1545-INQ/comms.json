@@ -1,0 +1,262 @@
+{
+  "COMM-Send-Quote-inspect": {
+    "action": "Send Quote",
+    "mode": "inspect",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "dialog": {
+      "text": "Send Quote Customer Name Mobile Number (optional) Quote Validity Date Send Now Cancel",
+      "buttons": [
+        "Send Now",
+        "Cancel"
+      ],
+      "fields": [
+        "text",
+        "text",
+        "date"
+      ]
+    },
+    "recipientPhones": 1,
+    "recipientEmails": 0,
+    "phonesAreTestAccount": true,
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-inspect-dialog.png",
+    "net": [],
+    "console": []
+  },
+  "COMM-Send-Proforma-Invoice-inspect": {
+    "action": "Send Proforma Invoice",
+    "mode": "inspect",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "dialog": {
+      "text": "Send Proforma Invoice Customer Name Mobile Number (optional) Send Via WhatsApp Email Send Now Cancel",
+      "buttons": [
+        "Send Now",
+        "Cancel"
+      ],
+      "fields": [
+        "text",
+        "text",
+        "checkbox",
+        "checkbox"
+      ]
+    },
+    "recipientPhones": 1,
+    "recipientEmails": 0,
+    "phonesAreTestAccount": true,
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-inspect-dialog.png",
+    "net": [],
+    "console": []
+  },
+  "COMM-Send-Bus-Images-inspect": {
+    "action": "Send Bus Images",
+    "mode": "inspect",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "dialog": null,
+    "toasts": [
+      "Failed to generate bus images PDF"
+    ],
+    "shotNoDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Bus-Images-inspect-no-dialog.png",
+    "net": [
+      "POST /api/v1/admin/inquiry/send-bus-images-whatsapp 400"
+    ],
+    "console": [
+      "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+    ]
+  },
+  "COMM-Send-Quote-send": {
+    "action": "Send Quote",
+    "mode": "send",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "dialog": {
+      "text": "Send Quote Customer Name Mobile Number (optional) Quote Validity Date Send Now Cancel",
+      "buttons": [
+        "Send Now",
+        "Cancel"
+      ],
+      "fields": [
+        "text",
+        "text",
+        "date"
+      ]
+    },
+    "recipientPhones": 1,
+    "recipientEmails": 0,
+    "phonesAreTestAccount": true,
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-dialog.png",
+    "channelsBefore": [],
+    "channelsUsed": [],
+    "shotFilled": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-filled.png",
+    "sentWith": "Send Now",
+    "toasts": [],
+    "dialogsAfter": 1,
+    "dialogAfter": "Send Quote Customer Name Mobile Number (optional) Quote Validity Date Cancel",
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-after.png",
+    "net": [],
+    "console": []
+  },
+  "COMM-Send-Proforma-Invoice-send": {
+    "action": "Send Proforma Invoice",
+    "mode": "send",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "dialog": {
+      "text": "Send Proforma Invoice Customer Name Mobile Number (optional) Send Via WhatsApp Email Send Now Cancel",
+      "buttons": [
+        "Send Now",
+        "Cancel"
+      ],
+      "fields": [
+        "text",
+        "text",
+        "checkbox",
+        "checkbox"
+      ]
+    },
+    "recipientPhones": 1,
+    "recipientEmails": 0,
+    "phonesAreTestAccount": true,
+    "shotDialog": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-dialog.png",
+    "channelsBefore": [
+      {
+        "label": "WhatsApp",
+        "checked": true
+      },
+      {
+        "label": "Email",
+        "checked": true
+      }
+    ],
+    "channelsUsed": [
+      {
+        "label": "WhatsApp",
+        "checked": true
+      },
+      {
+        "label": "Email",
+        "checked": true
+      }
+    ],
+    "shotFilled": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-filled.png",
+    "sentWith": "Send Now",
+    "toasts": [
+      "Proforma invoice sent to customer successfully!"
+    ],
+    "dialogsAfter": 0,
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Proforma-Invoice-send-after.png",
+    "net": [
+      "POST /api/v1/admin/inquiry/send-proforma-invoice 200"
+    ],
+    "console": []
+  },
+  "COMM-Send-Quote-retry": {
+    "recipientIsTestAccount": true,
+    "validity": "2026-11-26",
+    "buttonsAfterClick": [
+      "",
+      "",
+      "Cancel"
+    ],
+    "toasts": [
+      "Quote follow-up sent on WhatsApp successfully!"
+    ],
+    "dialogOpen": 0,
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-retry-after.png",
+    "requests": [
+      "724 → POST /api/v1/admin/inquiry/send-quote-follow-up-whatsapp",
+      "725 ← 200 /api/v1/admin/inquiry/send-quote-follow-up-whatsapp",
+      "725 → GET /api/v1/admin/inquiry/list",
+      "726 ← 200 /api/v1/admin/inquiry/list"
+    ]
+  },
+  "COMM-Download-Proforma-Invoice-send": {
+    "action": "Download Proforma Invoice",
+    "mode": "send",
+    "row": "194 QRY-194 Bikash N National 28 Seater Premium AC Coach — <phone> 24/11/2026 View Quote Revised quotation Record Advance",
+    "rowContactIsTestAccount": true,
+    "menu": [
+      "View Quote",
+      "Edit",
+      "Send To Booking",
+      "Record Advance",
+      "Send Quote",
+      "Send Proforma Invoice",
+      "Download Proforma Invoice",
+      "Send Bus Images",
+      "Cancel Inquiry",
+      "Delete"
+    ],
+    "file": "results/admin-web-20261119-1545-INQ/downloads/QRY-194-PI-B-1003_proforma.pdf",
+    "size": 50317,
+    "toasts": [],
+    "newTabs": [],
+    "net": [
+      "POST /api/v1/admin/invoice/document-details 200",
+      "POST /api/v1/admin/invoice/proforma-breakdown-preview 200",
+      "POST /api/v1/admin/invoice/proforma-breakdown-preview 200"
+    ],
+    "console": []
+  }
+}

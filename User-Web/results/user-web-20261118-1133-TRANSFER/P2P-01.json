@@ -1,0 +1,189 @@
+{
+  "id": "P2P-01",
+  "started": "2026-11-18T06:06:37.328Z",
+  "steps": [
+    {
+      "label": "1-2-inventory",
+      "ctl": [
+        "A Point To Point",
+        "A By Hour",
+        "LABEL Point To Point Transfer",
+        "INPUT:radio on",
+        "INPUT:checkbox on",
+        "LABEL Add Return",
+        "LABEL From",
+        "INPUT:text Search pickup location",
+        "BUTTON:button jsx-d858f6d68ac70b6a swap-icon-link",
+        "LABEL To",
+        "INPUT:text Search drop location",
+        "LABEL Pickup Date & Time",
+        "INPUT:text 2026-11-18",
+        "INPUT:text 11:36 AM",
+        "LABEL Drop Date & Time",
+        "INPUT:text 2026-11-18",
+        "INPUT:text 1:36 PM",
+        "LABEL Passengers",
+        "INPUT:number Enter number of passengers",
+        "BUTTON:button Save As Draft",
+        "BUTTON:submit Book Now!"
+      ],
+      "pax": {
+        "min": "1",
+        "max": "20",
+        "v": "1",
+        "required": false
+      },
+      "picker": {
+        "month": "November 2026",
+        "disabled": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+      },
+      "slots": {
+        "n": 48,
+        "first": "12:00 AM",
+        "second": "12:30 AM",
+        "disabled": 24
+      },
+      "state": {
+        "from": "",
+        "to": "",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "11:36 AM",
+          "2026-11-18",
+          "1:36 PM"
+        ],
+        "pax": "1"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-01-form.png"
+    },
+    {
+      "label": "3-4-switching",
+      "filled": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "11:37 AM",
+          "2026-11-18",
+          "1:37 PM"
+        ],
+        "pax": "5"
+      },
+      "byHour": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "11:37 AM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        },
+        {
+          "ph": "Enter Number of Hours",
+          "v": "1"
+        }
+      ],
+      "back1": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "11:37 AM",
+          "2026-11-18",
+          "1:37 PM"
+        ],
+        "pax": "5"
+      },
+      "outstation": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "11:37 AM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "11:37 AM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "back2": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "11:37 AM",
+          "2026-11-18",
+          "1:37 PM"
+        ],
+        "pax": "5"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-01-by-hour.png",
+      "shot2": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-01-after-switch.png"
+    }
+  ],
+  "finished": "2026-11-18T06:07:47.008Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "id": "MLG-04",
+  "started": "2026-11-19T03:39:21.255Z",
+  "steps": [
+    {
+      "label": "1-no-legs",
+      "skips": [
+        {
+          "toasts": [],
+          "tabAfter": "Outstation",
+          "legs": {
+            "header": [
+              "Trip Leg #1"
+            ],
+            "badges": [],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          }
+        },
+        {
+          "toasts": [],
+          "tabAfter": "Transfer",
+          "legs": {
+            "header": [
+              "Trip Leg #1"
+            ],
+            "badges": [],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          }
+        },
+        {
+          "toasts": [
+            "Transfer leg skipped. Click Book Now when you are ready to continue."
+          ],
+          "tabAfter": "Transfer",
+          "legs": {
+            "header": [
+              "Trip Leg #1"
+            ],
+            "badges": [],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          }
+        }
+      ],
+      "res": {
+        "navigated": false,
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-1-booknow-blocked.png",
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ]
+      },
+      "url": "https://preprod.siddagangatravels.com/"
+    },
+    {
+      "label": "2-blank-forms",
+      "Local": {
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": [
+            "Please fill all required fields correctly"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Local",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-2-Local.png"
+      },
+      "Outstation": {
+        "msgs": {
+          "inline": [
+            "Pickup location is required",
+            "*",
+            "Destination location is required",
+            "Drop time must be after pickup time"
+          ],
+          "toasts": [
+            "Please fill all required fields correctly",
+            "Drop time must be after pickup time"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Outstation",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-2-Outstation.png"
+      },
+      "Transfer": {
+        "msgs": {
+          "inline": [
+            "Pickup location is required",
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Drop time must be after pickup time",
+            "Please fill all required fields correctly"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Transfer",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-2-Transfer.png"
+      }
+    },
+    {
+      "label": "3-unresolved-text",
+      "Local": {
+        "typed": "Xyzabc123",
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": [
+            "Please fill all required fields correctly"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Local",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-3-Local.png"
+      },
+      "Outstation": {
+        "typed": "Xyzabc123",
+        "msgs": {
+          "inline": [
+            "*",
+            "Destination location is required",
+            "Drop time must be after pickup time"
+          ],
+          "toasts": [
+            "Drop time must be after pickup time"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Outstation",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-3-Outstation.png"
+      },
+      "Transfer": {
+        "typed": "Xyzabc123",
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Please fill all required fields correctly"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #1"
+          ],
+          "badges": [],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tabAfter": "Transfer",
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-04-3-Transfer.png"
+      }
+    }
+  ],
+  "finished": "2026-11-19T03:43:26.906Z",
+  "loads": [],
+  "net": []
+}

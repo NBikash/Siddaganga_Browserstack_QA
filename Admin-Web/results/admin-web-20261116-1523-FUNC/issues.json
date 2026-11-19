@@ -1,0 +1,76 @@
+[
+  {
+    "ts": "2026-11-16T11:57:50.414Z",
+    "id": "F2-LM-01",
+    "module": "Lead Management",
+    "screen": "Lead list",
+    "title": "Lead list columns cannot be sorted",
+    "steps": [
+      "Open Lead Management",
+      "Click LEAD ID / CREATED DATE / CLIENT NAME headers"
+    ],
+    "expected": "Column sorts",
+    "actual": "No sort control; order unchanged",
+    "severity": "Low",
+    "classification": "UX (clarification)",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-026-after-header-clicks.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.416Z",
+    "id": "F2-LM-02",
+    "module": "Lead Management",
+    "screen": "Assign dialog",
+    "title": "Assign shows \"No sales employees found\"",
+    "steps": [
+      "LD-346 menu > Assign"
+    ],
+    "expected": "Employee list",
+    "actual": "No employees; assignment impossible in Preprod",
+    "severity": "Medium",
+    "classification": "Test data / environment",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-009-assign-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.422Z",
+    "id": "F2-LM-04",
+    "module": "Lead Management",
+    "screen": "Send To Inquiry / Update Quote",
+    "title": "Toast text \"Inquiry details successfully !\" is incomplete",
+    "steps": [
+      "Lead menu > Send To Inquiry",
+      "Update Quote"
+    ],
+    "expected": "Grammatical message",
+    "actual": "\"Inquiry details successfully !\"",
+    "severity": "Low",
+    "classification": "Content",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-010-LD-346-after-update-quote.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T12:02:35.251Z",
+    "id": "F2-LM-05",
+    "module": "Lead Management",
+    "screen": "Delete lead",
+    "title": "A lead already sent to Inquiry can be deleted, leaving its inquiry without a lead",
+    "steps": [
+      "Send lead LD-351 to Inquiry (QRY-942 created)",
+      "Lead row menu > Delete > Delete Lead",
+      "Search LD-351 (gone)",
+      "Search QRY-942 in Inquiry Management (still listed)"
+    ],
+    "expected": "Delete blocked or warned for leads with a linked inquiry",
+    "actual": "Deleted without warning; QRY-942 remains orphaned",
+    "severity": "Medium",
+    "classification": "Functional / Data inconsistency (business rule to confirm)",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-027-LD-351-delete-dialog.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/delconfirm-LD-351-search-after-refresh.png"
+    ]
+  }
+]

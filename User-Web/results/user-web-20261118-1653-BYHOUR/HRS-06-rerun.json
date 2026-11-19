@@ -1,0 +1,455 @@
+{
+  "id": "HRS-06",
+  "started": "2026-11-18T13:00:25.134Z",
+  "steps": [
+    {
+      "label": "A-Hyderabad-4h",
+      "fill": {
+        "dd": true,
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "KR Puram",
+            "suggestions": [
+              "K R Puram Bengaluru, Karnataka, India",
+              "K R Puram Railway Station Dooravani Nagar, Bengaluru, Karnataka",
+              "KR Puram Metro Parking National Highway 44, Chinappa Colony, Dooravani Nagar, Bengaluru, Karnataka, India",
+              "KR Puram Lake Krishnarajapuram, Bengaluru, Karnataka"
+            ],
+            "chosen": "K R Puram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Hyderabad",
+            "suggestions": [
+              "Hyderabad Telangana, India",
+              "Hyderabadi Handi Biryani 1st Main Road, Marathahalli, Bengaluru, Karnataka, India",
+              "Hyderabad Biryani Hotel Sampige Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Hyderabadi Spice 3rd Cross Road, Indra Nagar, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India"
+            ],
+            "chosen": "Hyderabad, Telangana, India"
+          }
+        ],
+        "date": {
+          "iso": "2026-12-04",
+          "disabled": false,
+          "value": "2026-12-04"
+        },
+        "time": {
+          "label": "6:00 AM",
+          "disabled": false
+        },
+        "state": {
+          "pickup": "K R Puram, Bengaluru, Karnataka, India",
+          "drop": "Hyderabad, Telangana, India",
+          "dt": [
+            "2026-12-04",
+            "6:00 AM"
+          ],
+          "pax": "30",
+          "hours": "4",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → K R Puram, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Garage (Return) Distance:> 30 KM Dates :4 Dec, 2026 Pickup Address:K R Puram, Bengaluru, Karnataka, India Duration:4 Hours Passengers:30 Pax Drop Address:Hyderabad, Telangana, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "30",
+        "drop": "Hyderabad, Telangana, India",
+        "route": "Garage (Start) → K R Puram, Bengaluru, Karnataka, India → Hyderabad, Telangana, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-results.png",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "4 Hours",
+        "datesTxt": "4 Dec, 2026"
+      },
+      "card": null,
+      "details": {
+        "vehicle": "L49NV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹35,000",
+          "Late Allowance",
+          "₹1,750",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "340 hp · 1600 Nm · 30% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 49 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Transfer",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "K R Puram, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Hyderabad, Telangana, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "4 Dec, 2026",
+        "passenger": "30",
+        "dropoff": "Hyderabad, Telangana, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹35,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹35,000"
+          ]
+        ],
+        "total": "₹35,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "K R Puram, Bengaluru, Karnataka, India",
+                "Hyderabad, Telangana, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 3
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-A-confirm-cost.png",
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : 49 Seater Luxury 9600 Volvo – 1 49 Seater Luxury 9600 Volvo 49 Seater Type: 49 Seater Luxury 9600 Volvo Luggage: Route Summary : Transfer From Garage Garage Pickup Location K R Puram, Bengaluru, Karnataka, India Dropoff Location Hyderabad, Telangana, India Back to Garage Garage Dates 4 Dec, 2026 Passenger 30 Estimated Trip Cost : Vehicle Base Cost ₹35,000 Estimated Grand Total ₹35,000 Confirm & Submit Booking"
+      }
+    },
+    {
+      "label": "C-Munnar-2h",
+      "fill": {
+        "dd": true,
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Munnar",
+            "suggestions": [
+              "Munnar Keralam, India",
+              "Munnar Moolakadai, Munnar, Kannan Devan Hills, Keralam",
+              "Munnar Tourist Places Estate, Munnar, Keralam, India",
+              "Munnar Hill Station Eravikulam National Park Rd, Moolakadai, Kannan Devan Hills, Keralam, India"
+            ],
+            "chosen": "Munnar, Keralam, India"
+          }
+        ],
+        "date": {
+          "iso": "2026-12-04",
+          "disabled": false,
+          "value": "2026-12-04"
+        },
+        "time": {
+          "label": "6:00 AM",
+          "disabled": false
+        },
+        "state": {
+          "pickup": "Whitefield, Bengaluru, Karnataka, India",
+          "drop": "Munnar, Keralam, India",
+          "dt": [
+            "2026-12-04",
+            "6:00 AM"
+          ],
+          "pax": "30",
+          "hours": "2",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-C-form-r2.png",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Selected time: 6:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-04"
+          },
+          {
+            "ph": "text",
+            "v": "6:00 AM"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Munnar, Keralam, India"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-C-validation-r2.png",
+        "hoursInput": {
+          "v": "2",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "Whitefield, Bengaluru, Karnataka, India",
+          "drop": "Munnar, Keralam, India",
+          "dt": [
+            "2026-12-04",
+            "6:00 AM"
+          ],
+          "pax": "30",
+          "hours": "2",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "card": null
+    },
+    {
+      "label": "D-Goa-24h",
+      "fill": {
+        "dd": true,
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Thanisandra",
+            "suggestions": [
+              "Thanisandra Bengaluru, Karnataka, India",
+              "Thanisandra Main Road Sinthan Nagar, P&T Layout, Manayata Tech Park, Bengaluru, Karnataka, India",
+              "Thanisandra BBMP Office Thanisandra Main Road, Sinthan Nagar, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka, India",
+              "Thanisandra CAR Parade ground Sri Balaji Krupa Layout, Thanisandra, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Panaji Goa",
+            "suggestions": [
+              "Panaji Goa, India",
+              "Panaji, Goa Kerant, Caranzalem, Panaji, Goa, India",
+              "Goa Science Centre & Planetarium Marine Highway, Miramar, Panaji, Goa, India",
+              "Miramar Panaji, Goa, India"
+            ],
+            "chosen": "Panaji, Goa, India"
+          }
+        ],
+        "date": {
+          "iso": "2026-12-04",
+          "disabled": false,
+          "value": "2026-12-04"
+        },
+        "time": {
+          "label": "6:00 AM",
+          "disabled": false
+        },
+        "state": {
+          "pickup": "Thanisandra, Bengaluru, Karnataka, India",
+          "drop": "Panaji, Goa, India",
+          "dt": [
+            "2026-12-04",
+            "6:00 AM"
+          ],
+          "pax": "30",
+          "hours": "24",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-D-form-r3.png",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": [
+            "Selected time: 6:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-04"
+          },
+          {
+            "ph": "text",
+            "v": "6:00 AM"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "24"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-06-D-validation-r3.png",
+        "hoursInput": {
+          "v": "24",
+          "valid": true,
+          "msg": ""
+        },
+        "stateAtReject": {
+          "pickup": "Thanisandra, Bengaluru, Karnataka, India",
+          "drop": "Panaji, Goa, India",
+          "dt": [
+            "2026-12-04",
+            "6:00 AM"
+          ],
+          "pax": "30",
+          "hours": "24",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "card": null
+    }
+  ],
+  "finished": "2026-11-18T13:05:48.548Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

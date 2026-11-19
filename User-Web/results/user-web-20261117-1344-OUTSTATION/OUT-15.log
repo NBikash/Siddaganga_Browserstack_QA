@@ -1,0 +1,33 @@
+[
+  {
+    "label": "1-zero-match-filter",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day"
+  },
+  {
+    "label": "2-no-availability"
+  },
+  {
+    "label": "3-offline-book-now"
+  },
+  {
+    "label": "4-offline-submit",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹10,100",
+    "popup": null
+  },
+  {
+    "label": "5-count-before"
+  },
+  {
+    "label": "5-double-click-submit",
+    "total": "₹10,100",
+    "popup": null
+  },
+  {
+    "label": "6-count-after-and-details"
+  }
+]

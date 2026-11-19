@@ -1,0 +1,40 @@
+[
+  {
+    "label": "1-blank-pickup",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "2-drop-blank",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "3-drop-eq-pickup",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - < 30 KM",
+    "hrs": "4 Hours"
+  },
+  {
+    "label": "4a-past-date",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - < 30 KM",
+    "hrs": "4 Hours"
+  },
+  {
+    "label": "4b-past-slot"
+  },
+  {
+    "label": "4c-idle"
+  }
+]

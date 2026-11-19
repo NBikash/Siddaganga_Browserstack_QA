@@ -1,0 +1,46 @@
+{
+  "rowBefore": "129 QRY-129 Bikash N National 16 Seater Premium Urbania — <phone> 20/11/2026 View Quote Revised quotation Record Advance",
+  "viewQuote": "Quotation Summary Choose the Quotations You'd Like to Proceed With: Trip 1 Leg 1 QUOTE ID TRIP TYPE VEHICLE TYPE COSTING 1694 Local 16 Seater Premium Urbania ₹8300.00 Combined Quotes Detailed Quotes Cancel",
+  "shotVQ": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-view-quote-before.png",
+  "menuBefore": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "chooseTrip": "Choose Trip(s) Choose the quotations you'd like to proceed with (you can select multiple trips): Trip 1 Leg 1 QUOTE ID LEG TRIP TYPE VEHICLE TYPE COSTING 1694 Leg 1 Local 16 Seater Premium Urbania ₹8300.00 Convert into Booking Cancel",
+  "boxes": [
+    true
+  ],
+  "shotChoose": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-choose-trip.png",
+  "confirmText": "Convert Into Booking Are you sure you want to convert this inquiry into a booking? Yes No",
+  "shotConfirm": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-confirm.png",
+  "toasts": [
+    "Status updated successfully!"
+  ],
+  "urlAfter": "/dashboard/inquiry-management/total-inquiries",
+  "net": [
+    "POST /api/v1/admin/inquiry/details 200",
+    "POST /api/v1/admin/inquiry/send-trip-to-booking 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200",
+    "POST /public/api/v1/crypto/session 200",
+    "POST /api/v1/admin/update-fcm-token 200"
+  ],
+  "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-after-convert.png",
+  "rowAfter": "not listed: rows for QRY-129: 0",
+  "preBookings": [
+    "129 | B-129 | Bikash N | National | 1 | Local | 20 Nov 2026 | 21 Nov 2026 | Rs. 8,300 | Record Advance | |"
+  ],
+  "shotPB": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-pre-bookings.png"
+}

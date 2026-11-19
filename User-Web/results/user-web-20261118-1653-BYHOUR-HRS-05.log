@@ -1,0 +1,22 @@
+[
+  {
+    "label": "A-no-drop",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - < 30 KM",
+    "hrs": "8 Hours",
+    "total": "₹10,500",
+    "popup": null
+  },
+  {
+    "label": "B-drop-Domlur",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - < 30 KM",
+    "hrs": "8 Hours",
+    "total": "₹10,500",
+    "popup": null
+  },
+  {
+    "label": "C-drop-Mysuru",
+    "err": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  }
+]

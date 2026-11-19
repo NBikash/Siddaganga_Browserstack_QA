@@ -1,0 +1,623 @@
+{
+  "id": "MLG-11",
+  "started": "2026-11-19T04:38:11.050Z",
+  "steps": [
+    {
+      "label": "1a-out-drop-before-pickup",
+      "fill": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=Yelahanka, Bengaluru, Karnataka, India",
+        "text=2026-12-19",
+        "text=7:00 AM",
+        "Search destination 1 location=Hassan, Karnataka, India",
+        "text=2026-11-19",
+        "text=8:00 PM",
+        "Enter number of passengers=8"
+      ],
+      "d1": {
+        "iso": "2026-12-18",
+        "disabled": true,
+        "value": "2026-11-19"
+      },
+      "msgs": {
+        "inline": [
+          "*",
+          "Drop date cannot be before pickup date"
+        ],
+        "toasts": [
+          "Selected time: 7:00 AM",
+          "Selected time: 8:00 PM",
+          "Drop date cannot be before pickup date"
+        ]
+      },
+      "legs": {
+        "header": [
+          "Trip Leg #1"
+        ],
+        "badges": [],
+        "innerLegs": [
+          "Leg 1"
+        ],
+        "step1": false
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-1a.png"
+    },
+    {
+      "label": "1b-trf-drop-time-before",
+      "fill": [
+        "radio=on",
+        "Search pickup location=Yelahanka, Bengaluru, Karnataka, India",
+        "Search drop location=Hassan, Karnataka, India",
+        "text=2026-12-20",
+        "text=10:00 AM",
+        "text=2026-12-20",
+        "text=10:30 AM",
+        "Enter number of passengers=8"
+      ],
+      "t1": {
+        "label": "8:00 AM",
+        "disabled": true,
+        "value": "10:30 AM"
+      },
+      "msgs": {
+        "inline": [],
+        "toasts": [
+          "Selected time: 7:00 AM",
+          "Selected time: 8:00 PM",
+          "Transfer leg added!"
+        ]
+      },
+      "legs": {
+        "header": [
+          "Trip Leg #2"
+        ],
+        "badges": [
+          "Leg 1 Transfer"
+        ],
+        "innerLegs": [],
+        "step1": false
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-1b.png"
+    },
+    {
+      "label": "1c-local-yesterday",
+      "typed": "2026-11-19",
+      "picked": {
+        "iso": "2026-11-18",
+        "disabled": true,
+        "value": "2026-11-19"
+      },
+      "msgs": {
+        "inline": [
+          "*",
+          "Drop date cannot be before pickup date"
+        ],
+        "toasts": [
+          "Selected time: 7:00 AM",
+          "Selected time: 8:00 PM",
+          "Local leg added!"
+        ]
+      },
+      "legs": {
+        "header": [
+          "Trip Leg #3"
+        ],
+        "badges": [
+          "Leg 1 Transfer",
+          "Leg 2 Local"
+        ],
+        "innerLegs": [
+          "Leg 1"
+        ],
+        "step1": false
+      },
+      "form": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=Yelahanka, Bengaluru, Karnataka, India",
+        "text=2026-12-19",
+        "text=7:00 AM",
+        "Search destination 1 location=Hassan, Karnataka, India",
+        "text=2026-11-19",
+        "text=8:00 PM",
+        "Enter number of passengers=8"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-1c.png"
+    },
+    {
+      "label": "2-3-leg2-A",
+      "s1": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-l1-saved.png"
+      },
+      "s2": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-l2-saved.png"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :19-20 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India M",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-results.png"
+      },
+      "leg1": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 1. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-leg1-after-select.png"
+      },
+      "leg2res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+        "labels": [
+          "Multi-leg-Transfer"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :20 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Merc",
+        "duration": "1 Day",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-leg2-results.png"
+      },
+      "leg2": {
+        "modal": "Confirm Your Trip & Selected Vehicles Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater Type: 12 Seater Tempo Traveller Luggage: Rear Luggage Space (1–2 m³) Route Summary : Multi-Leg (Outstation + Transfer) From Garage Garage Pickup Location Yelahanka, Bengaluru, Karnataka, India Dropoff Location Hassan, Karnataka, India Back to Garage Garage Dates 19,20 Dec, 2026 Passenger 8 Estimated Trip Cost : Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓ [active]",
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-leg2-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "19,20 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400",
+            "total": "₹17,400",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "20 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹9,000 Estimated Grand Total ₹9,000",
+            "total": "₹9,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-A-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "20 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    },
+    {
+      "label": "2-3-leg2-B",
+      "s1": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-l1-saved.png"
+      },
+      "s2": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-l2-saved.png"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :19-20 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India M",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-results.png"
+      },
+      "leg1": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 1. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-leg1-after-select.png"
+      },
+      "leg2res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+        "labels": [
+          "Multi-leg-Transfer"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :18 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Merc",
+        "duration": "1 Day",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-leg2-results.png"
+      },
+      "leg2": {
+        "modal": "Confirm Your Trip & Selected Vehicles Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater Type: 12 Seater Tempo Traveller Luggage: Rear Luggage Space (1–2 m³) Route Summary : Multi-Leg (Outstation + Transfer) From Garage Garage Pickup Location Yelahanka, Bengaluru, Karnataka, India Dropoff Location Hassan, Karnataka, India Back to Garage Garage Dates 19,20 Dec, 2026 Passenger 8 Estimated Trip Cost : Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓ [active]",
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-leg2-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "19,20 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400",
+            "total": "₹17,400",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "18 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹9,000 Estimated Grand Total ₹9,000",
+            "total": "₹9,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-B-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "20 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    },
+    {
+      "label": "2-3-leg2-C",
+      "s1": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-l1-saved.png"
+      },
+      "s2": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-l2-saved.png"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :19-20 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India M",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-results.png"
+      },
+      "leg1": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 1. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-leg1-after-select.png"
+      },
+      "leg2res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+        "labels": [
+          "Multi-leg-Transfer"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :21 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:8 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Merc",
+        "duration": "1 Day",
+        "pax": "8",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-leg2-results.png"
+      },
+      "leg2": {
+        "modal": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater Type: 12 Seater Tempo Traveller Luggage: Rear Luggage Space (1–2 m³) Route Summary : Multi-Leg (Outstation + Transfer) From Garage Garage Pickup Location Yelahanka, Bengaluru, Karnataka, India Dropoff Location Hassan, Karnataka, India Back to Garage Garage Dates 19,20 Dec, 2026 Passenger 8 Estimated Trip Cost : Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓ [active]",
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-leg2-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "19,20 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹15,000 Day Bata Cost (Before 10pm or After 6am) ₹1,600 Night Bata Cost (Before 6am or After 10pm) ₹800 State Tax ₹0 Estimated Grand Total ₹17,400",
+            "total": "₹17,400",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "12 Seater Tempo Traveller – 1 12 Seater Tempo Traveller 12 Seater",
+            "routeSummary": "Multi-Leg (Outstation + Transfer)",
+            "pickup": "Yelahanka, Bengaluru, Karnataka, India",
+            "dropoff": "Hassan, Karnataka, India",
+            "dates": "21 Dec, 2026",
+            "passenger": "8",
+            "cost": "Vehicle Base Cost ₹9,000 Estimated Grand Total ₹9,000",
+            "total": "₹9,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-11-C-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "20 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    }
+  ],
+  "finished": "2026-11-19T04:47:02.205Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

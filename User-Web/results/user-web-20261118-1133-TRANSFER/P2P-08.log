@@ -1,0 +1,35 @@
+[
+  {
+    "label": "1-pax20-D49NA",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "total": "₹20,000",
+    "popup": null
+  },
+  {
+    "label": "2-pax21",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "2-pax49",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "3-pax1-SUV",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "popup": "Passenger Capacity Not Complete! You need seats for 1 passengers, but your selected buses cover only 0 seats. Please add one or more buses to continue. Cancel Inquiry"
+  },
+  {
+    "label": "4-pax15-multi",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  }
+]

@@ -1,7 +1,7 @@
 """Interim scenario document for the 4 fully explored modules (Authentication, Global Navigation & Header,
 Dashboard, Lead Management) + the exploration status of all 17 modules.
 
-Reads only documentation/source/*.py (hand-written from exploration data). Writes only documentation/interim/.
+Reads only scripts/doc_sources/*.py (hand-written from exploration data). Writes only documentation/05_Superseded_Catalogues_2026-10-30/interim/.
 Run: python scripts/build_interim.py
 """
 import re
@@ -14,8 +14,8 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "documentation" / "source"
-OUT = ROOT / "documentation" / "interim"
+SRC = ROOT / "scripts" / "doc_sources"
+OUT = ROOT / "documentation" / "05_Superseded_Catalogues_2026-10-30" / "interim"
 sys.path.insert(0, str(SRC))
 from manual_cases import MANUAL_CASES  # noqa: E402
 from interim_cases import INTERIM_CASES  # noqa: E402

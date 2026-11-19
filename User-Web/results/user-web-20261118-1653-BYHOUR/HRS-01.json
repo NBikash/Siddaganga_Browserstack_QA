@@ -1,0 +1,111 @@
+{
+  "id": "HRS-01",
+  "started": "2026-11-18T11:26:15.314Z",
+  "steps": [
+    {
+      "label": "1-inventory",
+      "ctl": [
+        "INPUT:checkbox on",
+        "LABEL Multi-day Trip",
+        "INPUT:checkbox on",
+        "LABEL Drop at different location",
+        "LABEL Pickup Location",
+        "INPUT:text Search pickup location",
+        "LABEL Pickup Date & Time",
+        "INPUT:text 2026-11-18",
+        "INPUT:text 4:56 PM",
+        "LABEL Passengers",
+        "INPUT:number Enter number of passengers",
+        "LABEL Number of Hours",
+        "INPUT:number Enter Number of Hours",
+        "BUTTON:button Save As Draft",
+        "BUTTON:submit Book Now!"
+      ],
+      "hours": {
+        "min": "1",
+        "max": "24",
+        "v": "1"
+      },
+      "pax": {
+        "min": "1",
+        "max": "",
+        "v": "1"
+      },
+      "dd": [
+        "checkbox",
+        "checkbox",
+        "Search pickup location",
+        "text",
+        "text",
+        "Search drop location",
+        "Enter number of passengers",
+        "Enter Number of Hours"
+      ],
+      "md": {
+        "fields": [
+          "checkbox",
+          "checkbox",
+          "Search pickup location",
+          "text",
+          "Search drop location",
+          "Enter number of passengers",
+          "Enter Number of Hours"
+        ],
+        "labels": [
+          "Multi-day Trip",
+          "Drop at different location",
+          "Pickup Location",
+          "Pickup Time",
+          "Drop Location",
+          "Select Travel Dates",
+          "Passengers",
+          "Number of Hours"
+        ],
+        "chips": [
+          "Nov 18, 2026"
+        ]
+      },
+      "shots": [
+        "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-form.png",
+        "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-toggles-on.png"
+      ]
+    },
+    {
+      "label": "2-compare-local",
+      "ctl": [
+        "INPUT:checkbox ",
+        "LABEL Multi-day Trip",
+        "INPUT:checkbox ",
+        "LABEL Drop at different location",
+        "LABEL Pickup Location",
+        "INPUT:text Search pickup location",
+        "LABEL Pickup Date & Time",
+        "INPUT:text ",
+        "INPUT:text ",
+        "LABEL Passengers",
+        "INPUT:number Enter number of passengers",
+        "LABEL Number of Hours",
+        "INPUT:number Enter Number of Hours"
+      ],
+      "hours": {
+        "min": "1",
+        "max": "24",
+        "v": "1"
+      },
+      "pax": {
+        "min": "1",
+        "max": "",
+        "v": "1"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-01-local-form.png"
+    }
+  ],
+  "finished": "2026-11-18T11:26:57.098Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "id": "OUT-01",
+  "started": "2026-11-17T08:19:05.010Z",
+  "steps": [
+    {
+      "label": "local-prefill",
+      "local": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "3"
+        },
+        {
+          "ph": "Enter Number of Hours",
+          "v": "2"
+        }
+      ]
+    },
+    {
+      "label": "outstation-inventory",
+      "text": "Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Destinations First Destination * + Add Another Destination Drop Date & Time Passengers Save As Draft Book Now! Chat With Us",
+      "fields": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "buttons": [
+        "+ Add Another Destination",
+        "Save As Draft",
+        "Book Now!"
+      ],
+      "paxAttr": {
+        "min": "1",
+        "max": "",
+        "v": "1"
+      },
+      "hoursFieldOnOutstation": 0,
+      "picker": {
+        "month": "November 2026",
+        "disabled": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+        "selected": "17"
+      },
+      "slots": {
+        "n": 48,
+        "first": "12:00 AM",
+        "last": "11:30 PM",
+        "disabled": 28
+      },
+      "ddFields": [
+        "checkbox",
+        "checkbox",
+        "Search pickup location",
+        "text",
+        "text",
+        "Search destination 1 location",
+        "Search drop location",
+        "text",
+        "text",
+        "Enter number of passengers"
+      ],
+      "mdChanged": false,
+      "mdTextDiff": 0,
+      "mdFields": "checkbox|checkbox|Search pickup location|text|text|Search destination 1 location|text|text|Enter number of passengers",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-01-form.png",
+      "mdShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-01-multiday-on.png"
+    },
+    {
+      "label": "tab-switch",
+      "outBefore": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "localAfter": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "3"
+        },
+        {
+          "ph": "Enter Number of Hours",
+          "v": "2"
+        }
+      ],
+      "outAfter": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": "Whitefield, Bengaluru, Karnataka, India"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "1:49 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-01-after-tab-switch.png"
+    }
+  ],
+  "finished": "2026-11-17T08:19:39.728Z",
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

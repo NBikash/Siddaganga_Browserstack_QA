@@ -1,0 +1,101 @@
+{
+  "id": "MLG-12",
+  "started": "2026-11-19T04:51:19.831Z",
+  "steps": [
+    {
+      "label": "2-multiday",
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.",
+      "errorShot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-12-2-multiday-error-r4.png"
+    },
+    {
+      "label": "3-results",
+      "tab": "Outstation",
+      "skips": [
+        {
+          "toasts": [],
+          "tabAfter": "Transfer",
+          "legs": {
+            "header": [
+              "Trip Leg #2"
+            ],
+            "badges": [
+              "Leg 1 Local"
+            ],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          }
+        },
+        {
+          "toasts": [
+            "Transfer leg skipped. Click Book Now when you are ready to continue."
+          ],
+          "tabAfter": "Transfer",
+          "legs": {
+            "header": [
+              "Trip Leg #2"
+            ],
+            "badges": [
+              "Leg 1 Local"
+            ],
+            "innerLegs": [
+              "Leg 1"
+            ],
+            "step1": false
+          }
+        }
+      ],
+      "blocked": {
+        "navigated": false,
+        "toasts": [],
+        "msgs": [
+          "Pickup location is required",
+          "Drop location is required"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-12-booknow-blocked.png"
+      },
+      "tabAtBlock": "Transfer",
+      "workaround": "Book Now! blocked; opened saved leg badge 1 (Leg 1 Local) and pressed Book Now! again",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 1 HR / 80 KM",
+        "header": "20 Buses Found | Local - 1 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [],
+        "legTabs": [
+          "Leg 1 [active]"
+        ],
+        "summary": ": Map Data Terms Leg 1 Local Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Shivanasamudra Falls, Cauvery Beat, Karnataka, India → Garage (Return) Distance:80 KM Dates :19 Nov, 2026 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Hour Passengers:14 Pax Drop Address:Shivanasamudra Falls, Cauvery Beat, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation",
+        "distance": "80 KM",
+        "pax": "14",
+        "drop": "Shivanasamudra Falls, Cauvery Beat, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Shivanasamudra Falls, Cauvery Beat, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-12-workaround-results.png"
+      },
+      "savedLegs": [
+        "Leg 1 Local"
+      ]
+    }
+  ],
+  "retries": [
+    "2-multiday: TimeoutError: locator.click: Timeout 30000ms exceeded."
+  ],
+  "finished": "2026-11-19T05:01:44.059Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

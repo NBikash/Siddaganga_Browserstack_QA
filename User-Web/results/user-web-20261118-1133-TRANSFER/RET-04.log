@@ -1,0 +1,16 @@
+[
+  {
+    "label": "A",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "B",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "total": "₹23,000",
+    "popup": null
+  }
+]

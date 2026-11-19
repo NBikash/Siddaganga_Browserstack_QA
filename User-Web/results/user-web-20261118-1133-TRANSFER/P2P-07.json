@@ -1,0 +1,660 @@
+{
+  "id": "P2P-07",
+  "started": "2026-11-18T06:51:55.734Z",
+  "steps": [
+    {
+      "label": "1-past-date",
+      "pickerDay": {
+        "iso": "2026-11-17",
+        "disabled": true,
+        "value": "2026-11-18"
+      },
+      "afterType": "2026-11-18",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :18 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-1-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "2-today-past-slot",
+      "slots": {
+        "n": 48,
+        "disabled": 25,
+        "lastDisabled": "12:00 PM",
+        "firstEnabled": "12:30 PM"
+      },
+      "tried": {
+        "label": "9:00 AM",
+        "disabled": true
+      },
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "12:23 PM",
+          "2026-11-18",
+          "2:23 PM"
+        ],
+        "pax": "2"
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-2-slots.png"
+    },
+    {
+      "label": "3-drop-date-before-pickup",
+      "pickerDay": {
+        "iso": "2026-11-22",
+        "disabled": true,
+        "value": "2026-11-23"
+      },
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-23",
+          "2:24 PM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-3-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "4-same-day-earlier",
+      "set": [
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "9:30 AM",
+          "disabled": true
+        }
+      ],
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-23",
+          "2:25 PM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-4-same-day-earlier-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "5-same-day-equal",
+      "set": [
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        }
+      ],
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-23",
+          "10:00 AM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop time must be after pickup time"
+          ],
+          "toasts": [
+            "Selected time: 10:00 AM",
+            "Selected time: 10:00 AM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Hebbal, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Nandi Hills, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-23"
+          },
+          {
+            "ph": "text",
+            "v": "10:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-23"
+          },
+          {
+            "ph": "text",
+            "v": "10:00 AM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-5-same-day-equal-validation.png"
+      }
+    },
+    {
+      "label": "6a-same-day-later",
+      "set": [
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:30 AM",
+          "disabled": false
+        }
+      ],
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-23",
+          "10:30 AM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-6a-same-day-later-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "6b-same-day-default",
+      "set": [
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "12:00 PM",
+          "disabled": false
+        }
+      ],
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-23",
+          "12:00 PM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-6b-same-day-default-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "7-next-day-earlier-clock",
+      "set": [
+        {
+          "iso": "2026-11-23",
+          "disabled": false,
+          "value": "2026-11-23"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2026-11-24",
+          "disabled": false,
+          "value": "2026-11-24"
+        },
+        {
+          "label": "8:00 AM",
+          "disabled": false
+        }
+      ],
+      "state": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-24",
+          "8:00 AM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :23-24 Nov- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:2 Days Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "2 Days",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹34,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹37,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹41,000",
+          "Sedan D SDN 4 ₹16,500",
+          "MPV's D MPV 7 ₹25,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹18,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-7-next-day-earlier-clock-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "2 Days"
+      }
+    },
+    {
+      "label": "8-pickup-after-drop",
+      "before": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-23",
+          "10:00 AM",
+          "2026-11-24",
+          "12:00 PM"
+        ],
+        "pax": "2"
+      },
+      "after": {
+        "from": "Hebbal, Bengaluru, Karnataka, India",
+        "to": "Nandi Hills, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-25",
+          "10:00 AM",
+          "2026-11-24",
+          "12:00 PM"
+        ],
+        "pax": "2"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop date cannot be before pickup date"
+          ],
+          "toasts": [
+            "Selected time: 10:00 AM",
+            "Selected time: 12:00 PM"
+          ]
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Hebbal, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Nandi Hills, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-25"
+          },
+          {
+            "ph": "text",
+            "v": "10:00 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-24"
+          },
+          {
+            "ph": "text",
+            "v": "12:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "2"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-8-validation.png"
+      }
+    },
+    {
+      "label": "9-idle",
+      "skipped": "Not executed: requires leaving the form idle until the default time slot has passed (up to 30 min); covered by the same component in OUT-10 run 9."
+    },
+    {
+      "label": "10-far-future",
+      "set": [
+        {
+          "iso": "2028-11-15",
+          "disabled": false,
+          "value": "2028-11-15"
+        },
+        {
+          "label": "10:00 AM",
+          "disabled": false
+        },
+        {
+          "iso": "2028-11-15",
+          "disabled": false,
+          "value": "2028-11-15"
+        },
+        {
+          "label": "12:00 PM",
+          "disabled": false
+        }
+      ],
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :15 Nov- 2028 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:2 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "2",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-07-10-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    }
+  ],
+  "finished": "2026-11-18T07:03:03.490Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

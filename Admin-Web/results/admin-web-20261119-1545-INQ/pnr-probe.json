@@ -1,0 +1,49 @@
+{
+  "nullLeads": {
+    "LD-414": {
+      "rt": "1 LD-414 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+      "d": "Lead Details Lead Information Lead ID LD-414 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR UMNF499106 Inquiry ID QRY-194 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 20 Trip Days 2 Start Date 24/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 24/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Mysuru, Karnataka, India Journey Type Outstation Trip Days 2 Amenities - Vehicle 1 Vehicle Name 28 Seater Prem"
+    }
+  },
+  "search": {
+    "LD-411": [
+      "1 | LD-411 | QA Test Lead | Prospecting | ₹1,000 | 16/11/2026 | Unassigned | Open |"
+    ],
+    "LD-412": [
+      "No data available"
+    ]
+  },
+  "inq": {
+    "UMNF499106": {
+      "showing": "Showing 0 to 0 of 0 entries",
+      "rows": []
+    },
+    "BGVS613665": {
+      "showing": "Showing 1 to 5 of 16 entries",
+      "rows": [
+        "135 | QRY-135 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "130 | QRY-130 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "129 | QRY-129 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "128 | QRY-128 | Bikash N | National | 25 Seater Premium AC Coach | — | <phone> | 15/11/2028 | View Quote | Revised quotation | Record Advance |"
+      ]
+    },
+    "YOIT928679": {
+      "showing": "Showing 1 to 5 of 16 entries",
+      "rows": [
+        "135 | QRY-135 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "130 | QRY-130 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "129 | QRY-129 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |",
+        "128 | QRY-128 | Bikash N | National | 25 Seater Premium AC Coach | — | <phone> | 15/11/2028 | View Quote | Revised quotation | Record Advance |"
+      ]
+    },
+    "QRY-937": {
+      "showing": "Showing 1 to 1 of 1 entries",
+      "rows": [
+        "129 | QRY-129 | Bikash N | National | 16 Seater Premium Urbania | — | <phone> | 20/11/2026 | View Quote | Revised quotation | Record Advance |"
+      ]
+    }
+  },
+  "inqPh": "Search Inquiry Info",
+  "inqShowing": "Showing 1 to 5 of 16 entries",
+  "note": "Redacted 19 Nov 2026: rows of other clients removed."
+}

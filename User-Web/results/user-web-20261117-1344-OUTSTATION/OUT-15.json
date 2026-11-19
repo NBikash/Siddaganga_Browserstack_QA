@@ -1,0 +1,395 @@
+{
+  "id": "OUT-15",
+  "started": "2026-11-17T10:55:17.069Z",
+  "steps": [
+    {
+      "label": "1-zero-match-filter",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D G Map Data Terms Leg 1 Outstation Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India → K R Puram, Bengaluru, Karnataka, India → Garage (Return) Distance:300 KM Dates :1 Jan- 2027 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:K R Puram, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jagu",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "K R Puram, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India → K R Puram, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹10,100",
+          "MPV's D MPV 7 ₹15,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-main-results.png"
+      },
+      "steps": [
+        {
+          "i": 0,
+          "found": "20 Buses Found | Outstation - 0 KM"
+        },
+        {
+          "i": 1,
+          "found": "20 Buses Found | Outstation - 0 KM"
+        },
+        {
+          "i": 2,
+          "found": "20 Buses Found | Outstation - 0 KM"
+        }
+      ],
+      "emptyText": null,
+      "zeroShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-filter-state.png",
+      "hasClear": true,
+      "afterClear": "20 Buses Found | Outstation - 0 KM"
+    },
+    {
+      "label": "2-no-availability",
+      "skipped": "Admin-Web no-availability setup not approved (documented as conditional)."
+    },
+    {
+      "label": "3-offline-book-now",
+      "url": "chrome-error://chromewebdata/",
+      "msgs": {
+        "inline": [],
+        "toasts": []
+      },
+      "body": "Press space to play Try: Checking the network cables, modem, and router Reconnecting to Wi-Fi Running Windows Network Diagnostics ERR_INTERNET_DISCONNECTED",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-offline-book-now.png"
+    },
+    {
+      "label": "4-offline-submit",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D G Map Data Terms Leg 1 Outstation Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India → K R Puram, Bengaluru, Karnataka, India → Garage (Return) Distance:300 KM Dates :1 Jan- 2027 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:K R Puram, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jagu",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "4",
+        "drop": "K R Puram, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India → K R Puram, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹10,100",
+          "MPV's D MPV 7 ₹15,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-pre-submit-results.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : Sedan – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Marathahalli, Bengaluru, Karnataka, India",
+          "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India",
+          "Dropoff Location",
+          "K R Puram, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "1 Jan, 2027",
+        "passenger": "4",
+        "dropoff": "K R Puram, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹9,600"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹10,100"
+          ]
+        ],
+        "total": "₹10,100",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Marathahalli, Bengaluru, Karnataka, India",
+                "K R Puram, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 7
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-confirm-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-confirm-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-confirm-confirm-cost.png"
+      },
+      "offlineMessages": [
+        "",
+        "Network Error",
+        "Confirm Your Trip & Selected Vehicles G P D D G Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Selected Vehicles : Sedan – 1 Sedan 4 Seater Type: Sedan Luggage: Car Boot (400–500 L) Route Summary : Outstation From Garage Garage Pickup Location Marathahalli, Bengaluru, Karnataka, India Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India Dropoff Location K R Puram, Bengaluru, Karnataka, India Back to Garage Garage Dates 1 Jan, 2027 Passenger 4 Estimated Trip Cost : Vehicle Base Cost ₹9,600 Day Bata Cost (Before 10pm or After 6am) ₹500 Night Bata Cost (Before 6am or After 10pm) ₹0 State Tax ₹0 Estimated Grand Total ₹10,100 Confirm & Submit Booking"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-offline-submit.png"
+    },
+    {
+      "label": "5-count-before",
+      "total": "1-10 of 13",
+      "top": [
+        "1 NCCC102640 Outstation Bengaluru → Hassan 11 Jan 2027 - 13 Jan 2027 16 Seater Premium Urbania (16) 14 11/01/27 55d left New quotation",
+        "2 UMNF499106 Outstation Bengaluru → Mysuru 24 Nov 2026 - 25 Nov 2026 28 Seater Premium AC Coach (28) 20 24/11/26 7d left New quotation"
+      ]
+    },
+    {
+      "label": "5-double-click-submit",
+      "distance": "300 KM",
+      "summary": "You have Searched For : G P D D G Map Data Terms Leg 1 Outstation Garage (Start) → Marathahalli, Bengaluru, Karnataka, India → Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India → K R Puram, Bengaluru, Karnataka, India → Garage (Return) Distance:300 KM Dates :1 Jan- 2027 Pickup Address:Marathahalli, Bengaluru, Karnataka, India Duration:1 Day Passengers:4 Pax Drop Address:K R Puram, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jagu",
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : Sedan – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Marathahalli, Bengaluru, Karnataka, India",
+          "Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India",
+          "Dropoff Location",
+          "K R Puram, Bengaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "1 Jan, 2027",
+        "passenger": "4",
+        "dropoff": "K R Puram, Bengaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹9,600"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹0"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹10,100"
+          ]
+        ],
+        "total": "₹10,100",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Marathahalli, Bengaluru, Karnataka, India",
+                "K R Puram, Bengaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 7
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-submit-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-submit-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-submit-confirm-cost.png"
+      },
+      "submit": {
+        "messages": [
+          "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹10,100 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+        ],
+        "calls": [
+          "allowed(approved) POST /user/save-inquiry"
+        ],
+        "saveCalls": 1,
+        "estimate": "₹10,100",
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-submit-submit-result.png"
+      }
+    },
+    {
+      "label": "6-count-after-and-details",
+      "totalBefore": "1-10 of 13",
+      "totalAfter": "1-10 of 14",
+      "top": [
+        "1 BGVS613665 Outstation Bengaluru → Bengaluru 01 Jan 2027 - 01 Jan 2027 Sedan (4) 4 01/01/27 45d left New quotation",
+        "2 NCCC102640 Outstation Bengaluru → Hassan 11 Jan 2027 - 13 Jan 2027 16 Seater Premium Urbania (16) 14 11/01/27 55d left New quotation",
+        "3 UMNF499106 Outstation Bengaluru → Mysuru 24 Nov 2026 - 25 Nov 2026 28 Seater Premium AC Coach (28) 20 24/11/26 7d left New quotation"
+      ],
+      "matching": [
+        "BGVS613665",
+        "NCCC102640"
+      ],
+      "row": {
+        "sr": 1,
+        "id": "BGVS613665",
+        "type": "Outstation",
+        "route": "Bengaluru → Bengaluru",
+        "dates": "01 Jan 2027 - 01 Jan 2027",
+        "vehicle": "Sedan (4)",
+        "pax": 4,
+        "validity": "01/01/27",
+        "status": "45d left New quotation"
+      },
+      "details": {
+        "url": "https://preprod.siddagangatravels.com/dashboard/inquiry-management/update-inquiry/<id>",
+        "text": "Edit Inquiry - BGVS613665 Update inquiry details, trip setup, and journey assignments. Back To Dashboard Update Inquiry Basic Details Booking Type * Select Booking Type Local Outstation Transfer Dynamic Trip Month Select Month January February March April May June July August September October November December Start Date End Date Arrival Time Departure Time Trip Duration (Days) Number of Passengers Journey Details Outstation Journey 1 Day ▼ Dates: 1/1/2027 - 1/1/2027 (1 day) Timings: Arrival: 00:00 | Departure: 00:00 Destinations: Marathahalli, Bengaluru, Karnataka, India Kotilingeshwara temple, KGF Taluk, Kammasandra, Bethamangala, Kolar, Karnataka, India K R Puram, Bengaluru, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz Add Bus Refresh Pricing Vehicles & Pricing: Vehicle Type 2 Quantity Total Cost Action Sedan - 1 + ₹10,100.00 Remove Total Journey Cost: ₹10,100.00 Back To Dashboard Update Inquiry ",
+        "inputs": [
+          {
+            "name": "bookingType",
+            "type": "select-one",
+            "v": "Outstation",
+            "dis": false
+          },
+          {
+            "name": "tripMonth",
+            "type": "select-one",
+            "v": "January",
+            "dis": false
+          },
+          {
+            "ph": "Select start date",
+            "name": "",
+            "type": "text",
+            "v": "01/01/2027",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select end date",
+            "name": "",
+            "type": "text",
+            "v": "01/01/2027",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select arrival time",
+            "name": "arrivalTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select departure time",
+            "name": "departureTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter trip duration",
+            "name": "tripDuration",
+            "type": "number",
+            "v": "1",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter number of passengers",
+            "name": "pax",
+            "type": "number",
+            "v": "4",
+            "dis": false,
+            "ro": false
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-15-BGVS613665-edit-form.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T11:04:03.759Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/save-inquiry",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/save-inquiry",
+    "allowed POST /user/get-inquiry-details"
+  ]
+}

@@ -1,0 +1,398 @@
+# Curated report content for the Transfer (P2P + With Return) execution run. Writes results/<RUN>/report-data.json
+# for scripts/build-report-tr.mjs (same structure as the Outstation report-data).
+# Evidence paths are taken from the saved step results (so -r2 re-run names are always correct).
+# Usage: python -X utf8 steps/exec/tr-report-data.py <RUN_ID>
+import json, sys, os, glob
+RUN = sys.argv[1]
+SD = f"screenshots/exec-ot/{RUN}"
+def S(name):
+    """Latest existing screenshot for a base name (handles -r2/-r3 re-run suffixes)."""
+    c = sorted(glob.glob(f"{SD}/{name}.png") + glob.glob(f"{SD}/{name}-r*.png"), key=os.path.getmtime)
+    return (c[-1] if c else f"{SD}/{name}.png").replace("\\", "/")
+E = lambda f, c: {"path": S(f), "caption": c}
+def J(tc):
+    try: return json.load(open(f"results/{RUN}/{tc}.json", encoding="utf-8"))
+    except Exception: return None
+def step(tc, label):
+    d = J(tc); return next((s for s in (d or {}).get("steps", []) if s["label"] == label), {}) if d else {}
+def P(path, cap):
+    return {"path": path, "caption": cap} if path else None
+ENV = "User App Preprod (preprod.siddagangatravels.com), Chrome via Playwright over CDP, 1440×900, Personal Login (mobile)"
+PRE = ["Log in to User App Preprod (Personal Login → Mobile Number).", "Home → Smart Inquiry → Transfer → Point To Point."]
+PRER = PRE + ["Tick Add Return."]
+TB = lambda base, late: [["Base Rate (Outside City / Inside City band)", base, "Yes – per day"], ["Late Allowance", late, "Only for late trips (window not displayed, Q-09)"], ["Toll & Parking", "Actuals", "Not in estimate"], ["GST", "Additional", "Not in estimate"]]
+
+issues = []
+def I(**k): issues.append(k)
+
+# ------------------------------------------------------------------ issues (P2P)
+I(id="P2P-02-Issue-01", case="P2P-02", alsoIn=["RET-02"], type="Defect", severity="High", category="Data",
+  title="Submitted Transfer inquiries store timings 00:00 / 00:00 instead of the selected pickup and drop times",
+  where="Dashboard → My Inquiries → Edit Inquiry (inquiry details)",
+  steps=PRE + ["Whitefield → Kempegowda International Airport, pickup 25 Nov 2026 10:00 AM, 9 passengers, 9 Seater Luxury Urbania → Confirm & Submit.", "Dashboard → My Inquiries → SIVM916255 → Edit Inquiry."],
+  expected="Arrival/Departure times reflect the selected pickup (10:00 AM) and drop time.",
+  actual="'Timings: Arrival: 00:00 | Departure: 00:00'; Arrival Time and Departure Time fields 00:00. Same for both legs of LJWN815154 (RET-02). Recurrence of OUT-02-Issue-01 (Outstation run).",
+  impact="Operations/Admin may quote or dispatch the transfer at the wrong time (airport transfers are time-critical).",
+  evidence=[E("P2P-02-post-SIVM916255-edit-form", "SIVM916255 details: 00:00"), E("RET-02-post-LJWN815154-edit-form", "LJWN815154 details: 00:00 on both legs")])
+I(id="P2P-02-Issue-02", case="P2P-02", alsoIn=["P2P-03", "P2P-04", "P2P-08", "RET-01"], type="Defect", severity="High", category="Functional",
+  title="Drop Date & Time does not follow the pickup: it keeps the page-load time + 2 h after the pickup time is changed",
+  where="Transfer → Point To Point form → Drop Date & Time",
+  steps=PRE + ["Open the form at about 11:38 AM (drop defaults to 1:38 PM).", "Set Pickup to 25 Nov 2026 10:00 AM; leave Drop untouched.", "Book Now! → Confirm & Submit."],
+  expected="Drop defaults to pickup + 2 hours (12:00 PM) and moves with the pickup (T-05).",
+  actual="Drop date follows the pickup date but the drop time stays at 1:38 PM (page-load time + 2 h). The inquiry was submitted with a 10:00 AM → 1:38 PM transfer. Same in every run (e.g. pickup 11:00 AM → drop 1:40 PM; pickup 6:00 AM → drop 1:47 PM).",
+  impact="Every transfer where the user changes only the pickup time is submitted with an arbitrary drop time; it can also make the trip span midnight and double the fare (see P2P-05-Issue-01).",
+  evidence=[E("P2P-02-form", "Pickup 10:00 AM, drop 1:38 PM")])
+I(id="P2P-02-Issue-03", case="P2P-02", type="Inconsistency", severity="Low", category="UI",
+  title="Confirm screen and results summary show no pickup or drop time; summary shows 'Duration: 1 Day' for a short transfer",
+  where="Results summary; Confirm Your Trip & Selected Vehicles",
+  steps=PRE + ["Search Whitefield → KIA, 25 Nov 10:00 AM.", "Book This Vehicle → Confirm."],
+  expected="Pickup and drop date-time visible before submission.", actual="Only 'Dates 25 Nov, 2026' is shown; Duration '1 Day' (Q-12).",
+  impact="User cannot check the time that will be stored before submitting.", evidence=[E("P2P-02-main-confirm", "Confirm: date only"), E("P2P-02-main-results", "Summary: Duration 1 Day")])
+I(id="P2P-03-Issue-01", case="P2P-03", type="Clarification", severity="", category="Fare",
+  title="Same location (Whitefield → Whitefield) and short urban pairs priced at the Outside City band (> 30 KM)",
+  where="Results summary / Fare Breakup", steps=PRE + ["Search Whitefield → Whitefield, 26 Nov 11:00 AM, 1 pax; MPV's."],
+  expected="Band per Q-10 / Q-21 (garage legs?).", actual="'> 30 KM', ₹12,500 – same as Whitefield → KIA. Koramangala → HSR Layout also '> 30 KM'; only MG Road → Domlur was '< 30 KM' (₹10,500).",
+  impact="Short or zero-distance transfers may be over-priced if garage legs are not meant to count.", evidence=[E("P2P-03-E-results", "Whitefield → Whitefield: > 30 KM"), E("P2P-03-A-fare-breakup", "MG Road → Domlur: < 30 km ₹10,500")])
+I(id="P2P-04-Issue-01", case="P2P-04", type="Defect", severity="Medium", category="Validation",
+  title="Physically impossible drop time accepted and priced: Bengaluru → Delhi with a 4-hour drop window",
+  where="Point To Point form → Drop Date & Time", steps=PRE + ["Jayanagar → Delhi, pickup 28 Nov 6:00 AM, drop 28 Nov 10:00 AM, 20 pax → Book Now!.", "Book This Vehicle on 45 Seater Luxury Volvo."],
+  expected="Infeasible drop rejected or warned (Q-12); never silently priced.", actual="Accepted; priced at the same flat ₹24,000 as Rajajinagar → Hubballi and Domlur → Kochi. With a drop 2 days later the fare becomes ₹72,000 + Late Allowance ₹4,500 = ₹76,500 – the fare depends only on calendar days.",
+  impact="Unrealistic quotes for long transfers.", evidence=[E("P2P-04-C1-confirm-cost", "Delhi in 4 h: ₹24,000"), E("P2P-04-C2-confirm-cost", "Delhi over 3 days: ₹76,500")])
+I(id="P2P-04-Issue-02", case="P2P-04", alsoIn=["RET-04"], type="Clarification", severity="", category="Fare",
+  title="Outside City band is one flat amount for any distance; interstate transfers show no State Tax / permit line",
+  where="Fare Breakup / Confirm", steps=PRE + ["Rajajinagar → Hubballi; Domlur → Kochi; Jayanagar → Delhi; same vehicle, same date."],
+  expected="Per Q-10 / Q-06 / Q-11.", actual="All three ₹24,000; no State Tax line on Transfer Confirm (Outstation shows one).",
+  impact="Pricing rule for long and interstate transfers undefined.", evidence=[E("P2P-04-A-confirm-cost", "Hubballi"), E("P2P-04-B-confirm-cost", "Kochi (Kerala)")])
+I(id="P2P-05-Issue-01", case="P2P-05", alsoIn=["P2P-07"], type="Defect", severity="High", category="Fare",
+  title="A 3-hour transfer crossing midnight is charged as 2 days (base and Late Allowance doubled)",
+  where="Confirm Your Trip → Estimated Trip Cost",
+  steps=PRE + ["Electronic City Phase 1 → Mysuru, pickup 27 Nov 2026 11:30 PM, drop 28 Nov 2026 2:30 AM, 20 pax.", "Book This Vehicle on 25 Seater Premium AC Coach."],
+  expected="One transfer: Base ₹16,000 + Late Allowance ₹1,000 = ₹17,000 (same as the 8:30 PM run).",
+  actual="Dates '27,28 Nov, 2026', Duration 2 Days; Vehicle Base Cost ₹32,000 + Late Allowance Cost ₹2,000 = ₹34,000. A next-day drop 22 h later (P2P-07 step 7) also shows 2 Days.",
+  impact="Night transfers (airport runs) are quoted at double price.", evidence=[E("P2P-05-C-confirm-cost", "23:30 → 02:30: ₹34,000"), E("P2P-05-B-confirm-cost", "20:30 → 23:30: ₹17,000")])
+I(id="P2P-05-Issue-02", case="P2P-05", type="Clarification", severity="", category="Fare",
+  title="No Late Allowance for a 05:30 pickup; late window not displayed",
+  where="Confirm → Estimated Trip Cost", steps=PRE + ["Electronic City Phase 1 → Mysuru, 27 Nov 5:30 AM → 8:30 AM, P25AC."],
+  expected="Per Q-09 (Outstation labels night as before 6 am / after 10 pm).", actual="₹16,000, no Late Allowance (same as the 2:00 PM run).",
+  impact="Rule to confirm.", evidence=[E("P2P-05-D-confirm-cost", "05:30 start: no Late Allowance")])
+I(id="P2P-06-Issue-01", case="P2P-06", type="Clarification", severity="", category="Validation",
+  title="From = To (Whitefield → Whitefield) accepted and priced", where="Point To Point form",
+  steps=PRE + ["From Whitefield, To Whitefield → Book Now!."], expected="Per Q-21.", actual="Search runs; '> 30 KM' band.",
+  impact="Meaningless transfers can be quoted.", evidence=[E("P2P-06-3-results", "From = To accepted")])
+I(id="P2P-08-Issue-01", case="P2P-08", alsoIn=["RET-04"], type="Defect", severity="Medium", category="Validation",
+  title="Passengers above 20 are silently changed to 20 (no message)", where="Point To Point form → Passengers",
+  steps=PRE + ["Yelahanka → Hassan; type 21 (then 49) in Passengers; Book Now!."], expected="A clear message states the maximum (Q-26).",
+  actual="Field value becomes 20 (HTML max=20), search runs with 20 Pax; no message. RET-02 (35) and RET-04 (40) were also clamped to 20.",
+  impact="Groups above 20 are quoted for the wrong number of people without noticing.", evidence=[E("P2P-08-pax21-results", "21 → 20 Pax"), E("P2P-08-pax49-results", "49 → 20 Pax")])
+I(id="P2P-08-Issue-02", case="P2P-08", type="Defect", severity="Medium", category="Data",
+  title="SUV reports 0 seats: 'cover only 0 seats' for 1 passenger", where="Results → Book This Vehicle (SUV)",
+  steps=PRE + ["Yelahanka → Hassan, 1 passenger → Book This Vehicle on SUV (LSUV)."], expected="SUV seats ≥ 1; Confirm opens.",
+  actual="'Passenger Capacity Not Complete! … your selected buses cover only 0 seats.' Recurrence of Local TC-01-Issue-03.", impact="SUV cannot be booked.",
+  evidence=[E("P2P-08-pax1-confirm", "SUV 0 seats")])
+I(id="P2P-08-Issue-03", case="P2P-08", alsoIn=["RET-08"], type="Defect", severity="High", category="Functional",
+  title="Second vehicle replaces the first instead of being added (multi-vehicle booking impossible)",
+  where="Results → 'Passenger Capacity Not Complete!' → Book This Vehicle on another card",
+  steps=PRE + ["Yelahanka → Hassan, 15 passengers → Book This Vehicle on MPV's → popup 'cover only 7 seats'; close.", "Book This Vehicle on 9 Seater Luxury Urbania."],
+  expected="Seats 7 + 9 = 16 ≥ 15; Confirm lists both vehicles.", actual="Popup 'cover only 9 seats' – the MPV was replaced. Recurrence of Local TC-04-Issue-01 / OUT-12-Issue-01.",
+  impact="Any group larger than one vehicle cannot submit a Transfer inquiry.", evidence=[E("P2P-08-pax15-DMPV-confirm", "7 seats"), E("P2P-08-pax15-plus-L9UB-confirm", "Replaced: 9 seats")])
+I(id="P2P-10-Issue-01", case="P2P-10", type="Inconsistency", severity="Low", category="UX",
+  title="Swap with one location empty does nothing (no feedback, button stays enabled)", where="Point To Point form → Swap",
+  steps=PRE + ["From Jayanagar 4th Block, To cleared → click Swap."], expected="Blank moves to From, or Swap disabled.", actual="Nothing changes; Book Now! then shows 'Drop location is required'.",
+  impact="Minor confusion.", evidence=[E("P2P-10-6-validation", "After swap: To still blank")])
+I(id="P2P-11-Issue-01", case="P2P-11", type="Inconsistency", severity="Medium", category="Validation",
+  title="Local rejects an out-of-state pickup with the misleading message 'Pickup location is required'",
+  where="Home → Local → Pickup Location", steps=["Home → Smart Inquiry → Local.", "Pickup Location: choose 'Chennai, Tamil Nadu, India' (or Kochi) from the suggestions; Hours 4; Book Now!."],
+  expected="A message explaining that Local pickups must be in Karnataka.", actual="The chosen place stays in the field but 'Pickup location is required' is shown. Transfer accepts the same pickups.",
+  impact="User does not understand why the search is blocked.", evidence=[E("P2P-11-local-Chennai-validation", "Local: Chennai pickup")])
+I(id="P2P-02-Issue-04", case="P2P-02", alsoIn=["RET-02"], type="Suggestion", severity="", category="UI",
+  title="My Inquiries route column shows only cities ('Bengaluru → Bengaluru' for Whitefield → Airport)", where="Dashboard → My Inquiries",
+  steps=["Dashboard → My Inquiries."], expected="Route identifies the transfer (pickup → drop).", actual="'Bengaluru → Bengaluru' for SIVM916255.",
+  impact="Hard to tell inquiries apart.", evidence=[E("P2P-02-post-my-inquiries", "My Inquiries")])
+
+# ------------------------------------------------------------------ cases
+def C(id_, title, status, objective, data, journey, expected, actual, reason, evidence, cfg, key, veh, fare=None):
+    return dict(id=id_, title=title, status=status, objective=objective, data=data, journey=journey, expected=expected, actual=actual,
+                statusReason=reason, evidence=[e for e in evidence if e], cfg=cfg, keyData=key, vehicle=veh, fare=fare or [])
+def F(veh, br, app, arith, comp, verdict, clar=None):
+    return dict(vehicle=veh, breakup=br, applied=app, arithmetic=arith, comparison=comp, verdict=verdict, clarify=clar or [])
+cases = []
+cases += [
+ C("P2P-01", "P2P form inventory, defaults and sub-type switching", "Pass", "Verify Transfer → Point To Point fields, defaults and tab isolation.",
+   {"Data": "TRF-PTP-001 Whitefield → Kempegowda International Airport (BLR), 5 passengers (switching)"},
+   ["Open Transfer tab; record controls", "Inspect date picker, time slots, Passengers limits", "Fill P2P; switch to By Hour and back; to Outstation and back"],
+   ["Fields From, Swap, To, Pickup/Drop Date & Time, Passengers (1–20); Add Return; drop = pickup + 2 h", "Each sub-type keeps its own data"],
+   ["Sub-tabs Point To Point / By Hour; 'Point To Point Transfer' radio; Add Return switch; From, Swap, To, Pickup Date & Time, Drop Date & Time, Passengers (min 1, max 20), Save As Draft, Book Now!",
+    "Dates before today disabled; 48 half-hour slots, past ones disabled; default pickup time = current minute (11:36 AM), drop = +2 h",
+    "By Hour shows its own blank form; P2P values (Whitefield → KIA, 5 pax) kept after By Hour and Outstation switches; Outstation form blank"],
+   "All documented checks match. (The drop not following later pickup changes is reported under P2P-02-Issue-02.)",
+   [E("P2P-01-form", "Form"), E("P2P-01-by-hour", "By Hour tab"), E("P2P-01-after-switch", "Back on P2P: values kept")], "Form", "Whitefield → KIA", "—"),
+ C("P2P-02", "Airport transfer end-to-end: fare, submission and My Inquiries", "Fail", "Main path with fare verification, submission and post-submission verification.",
+   {"Route": "Whitefield → Kempegowda International Airport (BLR) (TRF-PTP-001)", "Pickup": "25 Nov 2026 10:00 AM (drop left at default: 1:38 PM)", "Passengers": "9 (= capacity)", "Vehicle": "VEH-015 9 Seater Luxury Urbania (L9UB)", "PNR": "SIVM916255"},
+   ["Search → results", "Fare Breakup L9UB", "Book This Vehicle → Confirm", "Confirm & Submit (approved)", "Dashboard → My Inquiries → Edit Inquiry (details)"],
+   ["Transfer > 30 KM band; Base = breakup; no Late Allowance by day", "Confirm total = popup = details", "Details match the submitted data"],
+   ["'20 Buses Found | Transfer - > 30 KM'; summary Distance '> 30 KM', Duration '1 Day', 9 Pax", "Breakup 'Transfer Trip - Outside City': Base ₹17,500, Late Allowance ₹1,000, Toll & Parking Actuals, GST Additional",
+    "Confirm: Vehicle Base Cost ₹17,500 = Estimated Grand Total; no times shown; 9 pax on 9-seater accepted (no popup)", "Popup 'Inquiry Submitted Successfully!' ₹17,500; exactly one save-inquiry call",
+    "My Inquiries row 1: SIVM916255, Transfer, Bengaluru → Bengaluru, 25 Nov 2026, 9 Seater Luxury Urbania (9), 9, New quotation",
+    "Details: pickup, drop, date, pax, vehicle, ₹17,500.00 match; Timings 00:00 / 00:00 (mismatch); drop time submitted as 1:38 PM"],
+   "Inquiry created and fare consistent, but stored timings are wrong and the drop time was not derived from the pickup (P2P-02-Issue-01/02).",
+   [E("P2P-02-main-results", "Results"), E("P2P-02-main-fare-breakup", "Fare Breakup"), E("P2P-02-main-confirm-cost", "Confirm cost"), E("P2P-02-main-submit-result", "Success popup"), E("P2P-02-post-my-inquiries", "My Inquiries"), E("P2P-02-post-SIVM916255-edit-form", "Inquiry details")],
+   "Main path", "Whitefield → KIA, 9 pax", "L9UB",
+   [F("9 Seater Luxury Urbania (L9UB)", TB("₹17,500 (> 30 km)", "₹1,000"), [["Vehicle Base Cost", "₹17,500"], ["Estimated Grand Total", "₹17,500"]],
+      "17,500 (base) + 0 (daytime, no Late Allowance) = 17,500 ✔ = popup ₹17,500 = details ₹17,500.00", ["Applied base equals the displayed band rate", "Late Allowance correctly not applied for a 10:00 AM trip"], "Pass", ["Band measurement (Q-10)"])]),
+]
+cases += [
+ C("P2P-03", "Distance band: Inside City (< 30 km) vs Outside City (> 30 km) on the same vehicle", "Fail", "Band label and base rate consistency per route.",
+   {"Vehicle": "VEH-002 MPV's (D MPV, 7)", "Pickup": "26 Nov 2026 11:00 AM, 1 passenger", "Runs": ["A MG Road → Domlur", "B Koramangala → HSR Layout", "C Hebbal → Nandi Hills (TRF-PTP-003)", "D Whitefield → KIA (TRF-PTP-001)", "E Whitefield → Whitefield"]},
+   ["Run A–E: search, Fare Breakup, Confirm", "Compare band on summary, breakup and Confirm"],
+   ["Same band and base on every screen per run", "Short urban pairs Inside City; airport/intercity Outside City", "E per Q-10/Q-21"],
+   ["A: '< 30 KM' everywhere; breakup (< 30 km) ₹10,500; Confirm ₹10,500 ✔", "B: summary 'Distance: > 30 KM', breakup (> 30 km) ₹12,500, Confirm ₹12,500 – but the vehicle-list badge says 'Transfer - < 30 KM' ✘ (reproduced in an isolated re-run)", "C, D: '> 30 KM', ₹12,500 ✔", "E (same location): '> 30 KM', ₹12,500", "Late Allowance ₹800 shown, not applied (11:00 AM) ✔"],
+   "Run B shows two different bands on the same results page (P2P-03-Issue-02). The band rules themselves remain unconfirmed (Q-10).",
+   [E("P2P-03-A-fare-breakup", "A: < 30 km ₹10,500"), E("P2P-03-B-header-vs-summary", "B: summary > 30 KM vs badge < 30 KM"), E("P2P-03-B-confirm-cost", "B Confirm ₹12,500"), E("P2P-03-E-results", "E: same location > 30 KM")],
+   "Band", "5 routes, D MPV", "D MPV",
+   [F("MPV's (D MPV)", [["Base Rate (Inside City)", "₹10,500", "A only"], ["Base Rate (Outside City)", "₹12,500", "B–E"], ["Late Allowance", "₹800", "No (daytime)"], ["Toll & Parking / GST", "Actuals / Additional", "Not in estimate"]],
+      [["A Vehicle Base Cost", "₹10,500"], ["B–E Vehicle Base Cost", "₹12,500"]], "A: 10,500 ✔; B–E: 12,500 ✔ (each = its displayed band rate)", ["Same vehicle, only the route changed", "Distance shown only as a band"], "Inconclusive – fare rule not confirmed", ["Q-10 threshold and measurement", "Q-21 same location"])]),
+ C("P2P-04", "Long-distance and interstate transfer; distance vs drop-time feasibility", "Fail", "Long-route pricing and infeasible drop handling.",
+   {"Vehicle": "VEH-016 45 Seater Luxury Volvo (L45V)", "Passengers": "30 entered → clamped to 20", "Pickup": "28 Nov 2026 6:00 AM", "Runs": ["A Rajajinagar → Hubballi", "B Domlur → Kochi", "C1 Jayanagar → Delhi, drop 28 Nov 10:00 AM", "C2 same, drop 30 Nov 6:00 AM"]},
+   ["Run A, B, C1 with breakup and Confirm", "Run C2 with Confirm"], ["Consistent long-slab rule (Q-10)", "Interstate charges per Q-06", "Infeasible drop rejected or warned, never silently priced"],
+   ["A, B, C1: '> 30 KM', base ₹24,000 each; Late Allowance ₹1,500 shown, not applied", "No State Tax / permit line for Kerala or Delhi", "C1 (Delhi in 4 h) accepted and priced ₹24,000", "C2: Duration 3 Days; ₹72,000 + Late Allowance ₹4,500 = ₹76,500"],
+   "Infeasible drop silently priced (P2P-04-Issue-01); long/interstate rule needs confirmation.",
+   [E("P2P-04-A-confirm-cost", "A Hubballi"), E("P2P-04-B-confirm-cost", "B Kochi"), E("P2P-04-C1-confirm-cost", "C1 Delhi 4 h"), E("P2P-04-C2-confirm-cost", "C2 Delhi 3 days")],
+   "Long / interstate", "Hubballi, Kochi, Delhi", "L45V",
+   [F("45 Seater Luxury Volvo (L45V)", TB("₹24,000", "₹1,500"), [["A/B/C1 Vehicle Base Cost", "₹24,000"], ["C2 Vehicle Base Cost", "₹72,000"], ["C2 Late Allowance Cost", "₹4,500"], ["C2 Estimated Grand Total", "₹76,500"]],
+      "C2: 24,000 × 3 days = 72,000; 1,500 × 3 = 4,500; 72,000 + 4,500 = 76,500 ✔", ["Flat band irrespective of distance", "Calendar days multiply the base"], "Inconclusive – fare rule not confirmed", ["Q-10/Q-11 long transfers", "Q-06 interstate", "Q-12 drop time"])]),
+ C("P2P-05", "Night transfer: Late Allowance boundaries", "Fail", "Late Allowance by start time, same vehicle and route.",
+   {"Route": "Electronic City Phase 1 → Mysuru (TRF-PTP-002)", "Vehicle": "VEH-012 25 Seater Premium AC Coach (P25AC)", "Passengers": "20", "Runs": ["A 27 Nov 2:00 PM → 5:00 PM", "B 8:30 PM → 11:30 PM", "C 11:30 PM → 28 Nov 2:30 AM", "D 5:30 AM → 8:30 AM"]},
+   ["Run A–D changing only times; breakup in A and C; Confirm each"], ["Late Allowance only for late trips (B, C, D)", "Base identical in all runs"],
+   ["A: ₹16,000, no Late Allowance ✔", "B: ₹16,000 + Late Allowance ₹1,000 = ₹17,000 ✔", "C: dates 27–28 Nov, 2 Days: ₹32,000 + ₹2,000 = ₹34,000 ✘", "D: ₹16,000, no Late Allowance (Q-09)"],
+   "Overnight transfer doubled (P2P-05-Issue-01).", [E("P2P-05-A-fare-breakup", "Breakup"), E("P2P-05-A-confirm-cost", "A"), E("P2P-05-B-confirm-cost", "B"), E("P2P-05-C-confirm-cost", "C doubled"), E("P2P-05-D-confirm-cost", "D 05:30")],
+   "Late window", "4 start times", "P25AC",
+   [F("25 Seater Premium AC Coach (P25AC)", TB("₹16,000", "₹1,000"), [["A", "₹16,000"], ["B", "₹17,000"], ["C", "₹34,000"], ["D", "₹16,000"]],
+      "B: 16,000 + 1,000 = 17,000 ✔; C: 16,000×2 + 1,000×2 = 34,000 (2 days for a 3-hour trip)", ["C should equal B (one transfer with Late Allowance)"], "Fail", ["Q-09 late window (05:30)"])]),
+ C("P2P-06", "Location validation: blank From/To, From = To, unselected text", "Pass", "Required-field and location validation.",
+   {"Data": "Whitefield (TRF-PTP-001); free text 'Xyzabc123'"}, ["Blank From → Book Now!", "Blank To → Book Now!", "From = To = Whitefield", "'Xyzabc123' typed in To without a suggestion"],
+   ["Required errors", "From = To per Q-21", "Unresolved text never searches"],
+   ["'Pickup location is required' ✔", "'Drop location is required' ✔", "From = To accepted, '> 30 KM' (Q-21)", "Unresolved text: 'Drop location is required', no search ✔"],
+   "All validations behave as documented; From = To remains a business question.", [E("P2P-06-1-validation", "Blank From"), E("P2P-06-2-validation", "Blank To"), E("P2P-06-3-results", "From = To"), E("P2P-06-4-validation", "Unresolved text")],
+   "Validation", "Whitefield", "—"),
+ C("P2P-07", "Date/time validation: date-level and same-day time-level rules", "Pass", "Pickup/drop date-time rules.",
+   {"Route": "Hebbal → Nandi Hills (TRF-PTP-003), 2 passengers", "Pickup": "23 Nov 2026 10:00 AM for steps 3–8"},
+   ["1 past date (picker + typed)", "2 today's past slot", "3 drop date before pickup", "4–6 same-day earlier / equal / later drop", "7 next-day drop, earlier clock time", "8 pickup moved after drop", "9 idle (not executed)", "10 15 Nov 2028"],
+   ["Past date/time blocked", "Drop before pickup blocked; equal handled", "Next-day earlier clock time accepted", "Clear error when pickup passes drop"],
+   ["1: 17 Nov disabled; typed date reverted to today ✔", "2: 25 of 48 slots disabled up to 12:00 PM; 9:00 AM disabled ✔", "3: 22 Nov disabled in the drop calendar ✔", "4: 9:30 AM disabled in the drop time list ✔", "5: equal → 'Drop time must be after pickup time' ✔", "6: 10:30 AM and 12:00 PM accepted ✔", "7: 24 Nov 8:00 AM accepted ✔ (Duration '2 Days')", "8: 'Drop date cannot be before pickup date' ✔", "9: not executed (needs 30 min idle; same component as OUT-10)", "10: 2028 accepted (Q-08)"],
+   "All executed rules work; step 9 not executed.", [E("P2P-07-2-slots", "Past slots"), E("P2P-07-5-same-day-equal-validation", "Equal time"), E("P2P-07-7-next-day-earlier-clock-results", "Next day accepted"), E("P2P-07-8-validation", "Pickup after drop")],
+   "Date/time", "Hebbal → Nandi Hills", "—"),
+ C("P2P-08", "Passengers: maximum 20, silent clamping, SUV 0 seats, multiple vehicles", "Fail", "Passenger limits and capacity handling.",
+   {"Route": "Yelahanka → Hassan (TRF-PTP-006), 29 Nov 2026 8:00 AM", "Vehicles": "VEH-007 D49NA, VEH-019 LSUV, VEH-002 D MPV, VEH-015 L9UB", "Passengers": "20, 21, 49, 1, 15"},
+   ["20 → D49NA → Confirm", "Type 21 and 49 → Book Now!", "1 → SUV", "15 → MPV's → popup → add L9UB"],
+   ["20 accepted", "21/49: clear max message", "SUV opens Confirm", "Second vehicle added (16 seats)"],
+   ["20 on 49-seater: Confirm ₹20,000 ✔", "21 and 49 silently become 20; search with 20 Pax ✘", "SUV: 'cover only 0 seats' ✘", "MPV 7 seats → adding L9UB shows 9 seats (replaced) ✘"],
+   "Three defects (P2P-08-Issue-01/02/03).", [E("P2P-08-pax20-confirm-cost", "20 pax"), E("P2P-08-pax21-results", "21 → 20"), E("P2P-08-pax1-confirm", "SUV 0 seats"), E("P2P-08-pax15-DMPV-confirm", "MPV 7"), E("P2P-08-pax15-plus-L9UB-confirm", "Replaced: 9")],
+   "Capacity", "20/21/49/1/15 pax", "D49NA, LSUV, D MPV, L9UB"),
+ C("P2P-09", "Swap From/To and Modify Inquiry: values kept, route change recalculated", "Pass", "Swap and Modify Inquiry persistence.",
+   {"Route": "Marathahalli → Mangaluru (TRF-PTP-005); changed To Udupi (TRF-PTP-009)", "Pickup": "30 Nov 2026 9:00 AM", "Passengers": "10", "Vehicle": "VEH-013 16 Seater Premium Urbania (P16UB)"},
+   ["Swap and swap back", "Book Now!", "Modify Inquiry: check pre-fill; To → Udupi; Save", "Fare Breakup and Confirm on the new route"],
+   ["Swap exchanges exactly", "Modify keeps every value; new route re-priced"],
+   ["Swap: Mangaluru ↔ Marathahalli, dates/pax unchanged ✔", "Modify Leg 1 pre-fill: all P2P values correct ✔", "After Save: route Marathahalli → Udupi, 30 Nov, 10 Pax ✔", "Breakup ₹12,500 (> 30 km); Confirm ₹12,500 ✔"],
+   "All checks met.", [E("P2P-09-swapped", "Swapped"), E("P2P-09-modify-prefill", "Modify pre-fill"), E("P2P-09-modified-results", "New route"), E("P2P-09-modified-confirm-cost", "Confirm")],
+   "Swap / Modify", "Marathahalli → Mangaluru → Udupi", "P16UB"),
+ C("P2P-10", "Swap control: date-times, passengers and selected places unchanged", "Pass", "Swap value retention and empty-field swap.",
+   {"Route": "Jayanagar 4th Block → Chikkaballapur (TRF-PTP-004)", "Pickup / Drop": "27 Nov 2026 2:00 PM / 6:00 PM", "Passengers": "6"},
+   ["Fill; record", "Swap; record", "Swap back; compare", "Swap; Book Now!", "Clear To; Swap; Book Now!"],
+   ["Only From/To exchange; dates and pax unchanged", "Places remain selected", "Swapped search uses swapped route", "Empty field: blank moves or Swap disabled"],
+   ["Swap: From Chikkaballapur, To 4th Block Jayanagar; 2:00 PM / 6:00 PM and 6 pax unchanged ✔", "Double swap restores the original ✔", "Swapped search: results with swapped route, 6 Pax ✔ (pickup outside Bengaluru accepted)", "Empty To: Swap does nothing; 'Drop location is required' (inconsistency)"],
+   "Value retention works; empty-field swap gives no feedback (P2P-10-Issue-01).", [E("P2P-10-1-filled", "Filled"), E("P2P-10-2-swapped", "Swapped"), E("P2P-10-5-results", "Swapped search"), E("P2P-10-6-validation", "Empty field")],
+   "Swap", "Jayanagar ↔ Chikkaballapur", "—"),
+ C("P2P-11", "Pickup scope: Transfer beyond Karnataka vs Local (Karnataka only)", "Pass", "Compare pickup scope of Transfer and Local.",
+   {"Transfer runs": ["A Whitefield → KIA", "B Belagavi → Whitefield", "C Chennai → Bengaluru International Airport (resolved to KIA)", "D Kochi → Mysuru", "E Malleshwaram → Chennai"], "Local pickups": "Whitefield, Mysuru, Belagavi, Chennai, Kochi (4 h, 4 pax)", "Date": "28 Nov 2026 9:00 AM"},
+   ["Transfer P2P: run A–E", "Local: same pickups, Book Now!"], ["Transfer accepts all three classes", "Local accepts Karnataka, rejects out-of-state with a clear message"],
+   ["Transfer: all five accepted, results '> 30 KM' ✔ (Chennai, Kochi outside Karnataka)", "Local: Whitefield, Mysuru, Belagavi → results 'Local - 4 HR / 80 KM' ✔", "Local: Chennai, Kochi blocked ✔ but with 'Pickup location is required' (misleading)",
+    "'Bengaluru International Airport' resolves to Kempegowda International Airport (Q-22 answered by the app)"],
+   "Scope behaves as described; Local message is misleading (P2P-11-Issue-01).",
+   [E("P2P-11-C-results", "Transfer: Chennai pickup"), E("P2P-11-D-results", "Transfer: Kochi pickup"), E("P2P-11-local-Mysuru-results", "Local: Mysuru"), E("P2P-11-local-Chennai-validation", "Local: Chennai blocked")],
+   "Location scope", "3 pickup classes", "—"),
+]
+
+# ------------------------------------------------------------------ issues (band mismatch + With Return)
+I(id="P2P-03-Issue-02", case="P2P-03", type="Defect", severity="Medium", category="Fare",
+  title="Two different distance bands on one results page: summary '> 30 KM' but vehicle-list badge 'Transfer - < 30 KM'",
+  where="Results page (send-inquiry): 'You have Searched For' summary vs 'Recommended Vehicles' badge",
+  steps=PRE + ["From Koramangala, To HSR Layout, 26 Nov 2026 11:00 AM, 1 passenger → Book Now!.", "Compare 'Distance' in the summary with the badge next to 'Recommended Vehicles for Your Trip'."],
+  expected="One band on every screen (T-03).", actual="Summary 'Distance: > 30 KM'; badge '20 Buses Found | Transfer - < 30 KM'; Fare Breakup and Confirm use the > 30 km rate (₹12,500 vs ₹10,500 Inside City). Reproduced in an isolated re-run.",
+  impact="Customer is told the trip is inside the city but is quoted the outside-city price.", evidence=[E("P2P-03-B-header-vs-summary", "Summary > 30 KM, badge < 30 KM"), E("P2P-03-B-confirm-cost", "Confirm ₹12,500")])
+I(id="RET-02-Issue-01", case="RET-02", alsoIn=["RET-05", "RET-06"], type="Inconsistency", severity="Medium", category="Fare",
+  title="Round trip: Confirm shows only one leg's amount as 'Estimated Grand Total'; the round-trip total appears only after submitting",
+  where="Confirm Your Trip & Selected Vehicles (Leg 1 / Leg 2 tabs) → success popup",
+  steps=PRER + ["Electronic City Phase 1 → Mysuru 27 Nov; return 29 Nov; 35 Seater Premium AC Coach on Leg 1 and Leg 2.", "Read Estimated Grand Total on Confirm; Confirm & Submit."],
+  expected="Confirm shows each leg and the combined total (R-04) before submission.",
+  actual="Confirm: 'Estimated Grand Total ₹18,500' (Leg 1 tab; Leg 2 tab shows its own ₹18,500 'Grand Total'); success popup 'Estimated Cost (Approx.) ₹37,000'. RET-05: tabs ₹6,500 and ₹8,000, no combined figure.",
+  impact="Customer confirms a round trip without seeing its total; the 'Grand Total' label is misleading.", evidence=[E("RET-02-main-leg2-confirm-cost", "Confirm: ₹18,500"), E("RET-02-main-submit-result", "Popup: ₹37,000"), E("RET-05-rt-confirm-leg2-tab-cost", "RET-05 Leg 2 tab: ₹8,000")])
+I(id="RET-04-Issue-01", case="RET-04", alsoIn=["RET-03"], type="Defect", severity="Medium", category="Functional",
+  title="Return date-times are fixed when Add Return is ticked and never follow later changes; an untouched return drop blocks the search",
+  where="Transfer → Add Return → Return Pickup / Drop Date & Time",
+  steps=PRER + ["KR Puram → Belagavi, outward 2 Dec 2026 6:30 AM; return Belagavi → Whitefield, set Return Pickup to 4 Dec 9:00 AM; leave Return Drop untouched.", "Book Now!."],
+  expected="Return drop defaults relative to the return pickup (as outward drop = pickup + 2 h), or the user is guided.",
+  actual="Return Drop stays at its tick-time default (20 Nov, page-load time); 'Return drop date cannot be before return pickup date'. Return pickup defaults (outward date +1/+2) are also not updated when the outward date changes later (RET-03 run F: 'Return pickup cannot be before drop date').",
+  impact="Every round trip needs all four date-times re-entered manually; otherwise it is blocked.", evidence=[E("RET-04-A-validation", "Return drop not following"), E("RET-03-F-validation", "Stale return defaults")])
+I(id="RET-03-Issue-01", case="RET-03", type="Inconsistency", severity="Low", category="Validation",
+  title="Same-day time conflict reported as 'Return pickup cannot be before drop date'", where="Add Return → Return Pickup Date & Time",
+  steps=PRER + ["Hebbal → Nandi Hills 24 Nov 7:00 AM → 9:00 AM; return pickup 24 Nov 8:30 AM → Book Now!."], expected="Message mentions the time (e.g. 'Return pickup must be after the outward drop time').",
+  actual="'Return pickup cannot be before drop date' (the date is the same).", impact="Confusing wording.", evidence=[E("RET-03-C-validation", "Run C message")])
+I(id="RET-07-Issue-01", case="RET-07", type="Clarification", severity="", category="Validation",
+  title="Return From = Return To (Mangaluru → Mangaluru) accepted", where="Add Return → return locations",
+  steps=PRER + ["Marathahalli → Mangaluru; return Mangaluru → Mangaluru → Book Now!."], expected="Per Q-21.", actual="Search runs ('> 30 KM').",
+  impact="Meaningless return leg can be quoted.", evidence=[E("RET-07-3-results", "Return From = To accepted")])
+I(id="RET-09-Issue-01", case="RET-09", type="Defect", severity="Medium", category="Functional",
+  title="Return locations do not follow outward changes or Swap after Add Return is ticked (stale return leg)",
+  where="Transfer → Add Return",
+  steps=PRER[:2] + ["From HSR Layout, To Coorg (Madikeri) → tick Add Return (return = Coorg → HSR Layout).", "Change To to Hubballi and From to Rajajinagar; then click Swap."],
+  expected="Return From/To follow the outward leg (R-09) or the user is told they are now independent.",
+  actual="Return stays Coorg (Madikeri) → HSR Layout after both changes and after Swap. Untick + re-tick re-syncs (Coorg → Rajajinagar) and resets manual return dates to the defaults. A manually edited return To (Whitefield) is kept.",
+  impact="A round trip can be submitted with a return leg that no longer matches the outward trip.", evidence=[E("RET-09-1", "Ticked: mirrored"), E("RET-09-2", "Outward changed: return stale"), E("RET-09-3", "After Swap: return stale"), E("RET-09-4", "Re-tick: re-synced")])
+I(id="RET-09-Issue-02", case="RET-09", alsoIn=["RET-04"], type="Clarification", severity="", category="Functional",
+  title="Modify Inquiry on a round trip edits one leg ('Modify Leg 1') and has no Add Return switch", where="Results → Modify Inquiry",
+  steps=PRER + ["Search a round trip → Modify Inquiry."], expected="Both legs and Add Return editable, or a documented per-leg flow (Q-13).",
+  actual="Pop-up 'Modify Leg 1' with outward fields only; return cannot be removed or edited there.", impact="Workflow to confirm.", evidence=[E("RET-09-modify-prefill", "Modify Leg 1"), E("RET-04-A-modify-prefill", "RET-04 Modify Leg 1")])
+for i in issues:
+    if i["id"] == "P2P-05-Issue-01": i["alsoIn"] = ["P2P-07", "RET-06"]; i["actual"] += " Return leg too: RET-06 return 10:30 PM → 12:30 AM = 2 days, ₹18,000 + ₹1,600 = ₹19,600."; i["evidence"].append(E("RET-06-B-confirm-leg2-tab-cost", "RET-06 return leg: ₹19,600"))
+    if i["id"] == "P2P-08-Issue-01": i["alsoIn"] = ["RET-02", "RET-04"]
+    if i["id"] == "P2P-02-Issue-02": i["alsoIn"] = ["P2P-03", "P2P-04", "P2P-08", "RET-04"]
+
+cases += [
+ C("RET-01", "Add Return: return fields, defaults and untick behaviour", "Pass", "Return field inventory, defaults and untick.",
+   {"Data": "TRF-RET-001 Whitefield → KIA, return KIA → Whitefield", "Outward": "23 Nov 2026 8:00 AM", "Return": "23 Nov 2026 8:00 PM → 10:00 PM", "Passengers": "6"},
+   ["Fill outward; tick Add Return; record", "Untick; re-tick; record", "Fill return; untick; Book Now!"],
+   ["Return fields appear", "Record whether return From/To mirror the outward leg (Q-13)", "Untick → one-way search"],
+   ["Return From, Return To, Return Pickup / Drop Date & Time appear ✔", "Return From = KIA, Return To = Whitefield: auto-populated in reverse ✔ (confirms the 18 Nov manual exploration; the 16–17 Nov blank observation no longer applies)",
+    "Return dates default to outward date + 1 / + 2 (24 / 25 Nov), time = page-load time", "Untick hides the return; re-tick re-populates ✔", "After untick: one-way search, single 'Transfer' leg ✔"],
+   "All checks met; mirroring confirmed.", [E("RET-01-1-ticked", "Ticked: mirrored"), E("RET-01-2-unticked", "Unticked"), E("RET-01-3-results", "One-way after untick")], "Add Return", "Whitefield ↔ KIA", "—"),
+ C("RET-02", "Round trip on different dates: both legs, fare, submission and My Inquiries", "Fail", "Main round-trip path with submission and post-submission verification.",
+   {"Outward": "Electronic City Phase 1 → Mysuru, 27 Nov 2026 8:00 AM → 11:00 AM", "Return": "Mysuru → Electronic City Phase 1, 29 Nov 2026 4:00 PM → 7:00 PM", "Passengers": "35 entered → 20 (cap)", "Vehicle": "VEH-010 35 Seater Premium AC Coach (P35AC) on both legs", "PNR": "LJWN815154"},
+   ["Search → Leg 1 results ('Multi-leg-Transfer')", "Fare Breakup Leg 1; Book This Vehicle → Leg 2 results", "Fare Breakup Leg 2; Book This Vehicle → Confirm", "Confirm & Submit (approved)", "Dashboard → My Inquiries → Edit Inquiry"],
+   ["Both legs and dates shown and priced", "Combined total = outward + return; popup = Confirm", "One inquiry with both legs in My Inquiries"],
+   ["Results: Leg 1 / Leg 2 tabs, label 'Multi-leg-Transfer'; Leg 1 27 Nov, Leg 2 29 Nov, each '> 30 KM' ✔", "Breakup both legs: Base (Outside City) ₹18,500, Late Allowance ₹1,000 (not applied) ✔",
+    "Confirm 'Route Summary: Multi-Leg (Transfer + Transfer)', 'Estimated Grand Total ₹18,500' (one leg) ✘", "Popup 'Inquiry Submitted Successfully!' ₹37,000 (= 2 × ₹18,500); one save-inquiry call ✔",
+    "My Inquiries: LJWN815154, Transfer, Bengaluru → Mysuru, 27–29 Nov 2026, 35 Seater Premium AC Coach (35), 20, New quotation ✔", "Details: two Transfer journeys (27 Nov E-City → Mysuru; 29 Nov Mysuru → E-City), ₹18,500 each, Trip Duration 3; Timings 00:00 / 00:00 ✘"],
+   "Round trip created correctly as two linked journeys, but Confirm hides the round-trip total and stored timings are wrong (RET-02-Issue-01, P2P-02-Issue-01). 35 passengers were clamped to 20 (workbook data exceeds the cap).",
+   [E("RET-02-main-results", "Leg 1 results"), E("RET-02-main-leg2-results", "Leg 2 results"), E("RET-02-main-leg2-fare-breakup", "Leg 2 breakup"), E("RET-02-main-leg2-confirm-cost", "Confirm ₹18,500"), E("RET-02-main-submit-result", "Popup ₹37,000"), E("RET-02-post-my-inquiries", "My Inquiries"), E("RET-02-post-LJWN815154-edit-form", "Details: 2 journeys")],
+   "Main path", "E-City ↔ Mysuru, 2 dates", "P35AC",
+   [F("35 Seater Premium AC Coach (P35AC)", TB("₹18,500 per leg", "₹1,000"), [["Confirm (Leg 1 tab) Estimated Grand Total", "₹18,500"], ["Popup Estimated Cost", "₹37,000"], ["Inquiry: journey 1 / journey 2", "₹18,500 / ₹18,500"]],
+      "18,500 (Leg 1) + 18,500 (Leg 2) = 37,000 ✔ = popup", ["Each leg priced at its own band (both Outside City)", "Combined total not shown on Confirm"], "Pass", ["Q-13 presentation of round-trip totals"])]),
+ C("RET-03", "Return date/time boundaries relative to the outward leg", "Pass", "Return pickup must be after the outward drop.",
+   {"Route": "Hebbal ↔ Nandi Hills (TRF-RET-003)", "Outward": "24 Nov 2026 7:00 AM → 9:00 AM", "Passengers": "8", "Vehicle": "VEH-008 45 Seater Premium AC Coach (L45P)",
+    "Return runs": ["A 24 Nov 6:00 PM (same day)", "B 24 Nov 9:00 AM (= outward drop)", "C 24 Nov 8:30 AM (30 min before)", "D 23 Nov (earlier date)", "E 24 Dec (different day)", "G 25 Nov 8:00 AM (next day, earlier clock)", "F outward 26 Nov, return defaults untouched"]},
+   ["Run A–G changing only the return", "Breakup + Confirm (both legs) for A and E"],
+   ["A, E, G accepted; B per Q-14; C, D blocked; F blocked or auto-moved", "A and E fares equal"],
+   ["A ✔ accepted; Leg 1 and Leg 2 ₹21,500 each", "B accepted (no minimum gap, Q-14)", "C ✔ blocked: 'Return pickup cannot be before drop date' (wording, RET-03-Issue-01)", "D ✔ 23 Nov disabled in the return calendar; blocked",
+    "E ✔ accepted; ₹21,500 per leg = A", "G ✔ accepted (date and time compared together)", "F ✔ blocked: defaults 19/20 Nov stayed before the outward trip (RET-04-Issue-01)"],
+   "All boundaries enforced; message wording and stale defaults logged separately.", [E("RET-03-A-leg2-confirm-cost", "A Confirm"), E("RET-03-C-validation", "C blocked"), E("RET-03-D-validation", "D blocked"), E("RET-03-E-leg2-confirm-cost", "E Confirm"), E("RET-03-G-results", "G accepted"), E("RET-03-F-validation", "F blocked")],
+   "Return boundaries", "Hebbal ↔ Nandi Hills", "L45P",
+   [F("45 Seater Premium AC Coach (L45P)", TB("₹21,500 per leg", "₹1,000"), [["A per leg", "₹21,500"], ["E per leg", "₹21,500"]], "A = E = 21,500 per leg (no waiting/day charge for a later return) ✔", ["Only the return date changed"], "Pass")]),
+ C("RET-04", "Non-mirrored and interstate return; Modify Inquiry", "Fail", "Edited return locations, interstate legs and Modify.",
+   {"A": "KR Puram → Belagavi; return Belagavi → Whitefield (TRF-RET-011)", "B": "Malleshwaram → Chennai; return Chennai → Bengaluru International Airport (TRF-RET-015)", "Dates": "Outward 2 Dec 2026 6:30 AM; return 4 Dec 9:00 AM → 12:00 PM", "Passengers": "40 entered → 20", "Vehicle": "VEH-020 45 Seater Luxury BharatBenz (45LBB)"},
+   ["Attempt 1: return drop left at default → Book Now!", "A: return drop set; search; Modify Inquiry pre-fill", "B: search, breakups, Confirm both legs"],
+   ["Edited return accepted; each leg banded by its own route", "Modify keeps both legs", "Interstate charges per Q-06", "BIA = KIA (Q-22)"],
+   ["Attempt 1 (A and B): 'Return drop date cannot be before return pickup date' – return drop did not follow ✘", "A: Belagavi → Whitefield return accepted ✔; Modify opens 'Modify Leg 1' with outward values only",
+    "B: both legs '> 30 KM', ₹23,000 each; no State Tax line (Q-06)", "Bengaluru International Airport resolved to Kempegowda International Airport (Q-22)"],
+   "Return drop date-time defect (RET-04-Issue-01); interstate pricing rule unconfirmed.", [E("RET-04-A-validation", "Attempt 1 blocked"), E("RET-04-A-modify-prefill", "Modify Leg 1"), E("RET-04-B-leg2-fare-breakup", "B Leg 2 breakup"), E("RET-04-B-leg2-confirm-cost", "B Confirm")],
+   "Non-mirrored / interstate", "Belagavi, Chennai", "45LBB",
+   [F("45 Seater Luxury BharatBenz (45LBB)", TB("₹23,000 per leg", "₹1,500"), [["B Leg 1", "₹23,000"], ["B Leg 2", "₹23,000"]], "Each interstate leg = flat Outside City base; no interstate line", ["Kerala/Tamil Nadu legs priced like intrastate"], "Inconclusive – fare rule not confirmed", ["Q-06 interstate"])]),
+ C("RET-05", "Per-leg band: Inside City outward + Outside City return vs one-way baseline", "Partial", "Each leg priced at its own band.",
+   {"Vehicle": "VEH-001 Sedan (D SDN)", "Passengers": "2", "Baseline": "MG Road → Domlur, 26 Nov 2026 10:00 AM (one-way)", "Round trip": "MG Road → Domlur 10:00 AM; return Domlur → KIA 4:00 PM → 6:00 PM"},
+   ["Baseline one-way: breakup + Confirm", "Round trip: Leg 1 and Leg 2 breakups, Confirm Leg 1 and Leg 2 tabs"], ["Outward = baseline (Inside City); return Outside City", "Round-trip total = baseline + return"],
+   ["Baseline: '< 30 KM', ₹6,500 ✔", "Round trip Leg 1: '< 30 KM' ₹6,500 = baseline ✔", "Leg 2 (Domlur → KIA): '> 30 KM' ₹8,000 ✔", "Combined total (₹14,500) never shown on Confirm; each tab labelled 'Estimated Grand Total' ✘"],
+   "Per-leg banding correct; combined total not verifiable before submit (RET-02-Issue-01).", [E("RET-05-base-confirm-cost", "Baseline ₹6,500"), E("RET-05-rt-leg2-fare-breakup", "Leg 2 breakup ₹8,000"), E("RET-05-rt-confirm-leg2-tab-cost", "Confirm Leg 2 tab ₹8,000")],
+   "Per-leg band", "MG Road ↔ Domlur / KIA", "D SDN",
+   [F("Sedan (D SDN)", [["Base Rate (Inside City)", "₹6,500", "Leg 1"], ["Base Rate (Outside City)", "₹8,000", "Leg 2"], ["Late Allowance", "₹500", "No (daytime)"]], [["Leg 1", "₹6,500"], ["Leg 2", "₹8,000"], ["Combined (expected)", "₹14,500 – not displayed"]],
+      "6,500 + 8,000 = 14,500 (not shown before submit)", ["Leg 1 equals the one-way baseline"], "Inconclusive – fare rule not confirmed", ["Q-13 round-trip total presentation"])]),
+ C("RET-06", "Late Allowance on the return leg only", "Fail", "Late Allowance applies only to the late leg.",
+   {"Route": "Jayanagar 4th Block ↔ Chikkaballapur (TRF-RET-004)", "Outward": "1 Dec 2026 9:00 AM → 11:00 AM", "Return A": "1 Dec 6:00 PM → 8:00 PM", "Return B": "1 Dec 10:30 PM → 2 Dec 12:30 AM", "Passengers": "12", "Vehicle": "VEH-003 12 Seater Tempo Traveller (D12TT)"},
+   ["Run A and B: breakups, Confirm Leg 1 and Leg 2 tabs"], ["A: no Late Allowance", "B: Late Allowance on the return only; outward unchanged"],
+   ["A: Leg 1 ₹9,000, Leg 2 ₹9,000 ✔", "B: Leg 1 ₹9,000 (unchanged) ✔", "B: Leg 2 dates '1,2 Dec', Vehicle Base Cost ₹18,000 + Late Allowance ₹1,600 = ₹19,600 ✘ (2 days for a 2-hour return)"],
+   "Late Allowance correctly limited to the return leg, but the return crossing midnight is charged as 2 days (P2P-05-Issue-01).", [E("RET-06-A-confirm-leg2-tab-cost", "A Leg 2 ₹9,000"), E("RET-06-B-confirm-leg2-tab-cost", "B Leg 2 ₹19,600")],
+   "Late window", "Return 6 PM vs 10:30 PM", "D12TT",
+   [F("12 Seater Tempo Traveller (D12TT)", TB("₹9,000 per leg", "₹800"), [["A Leg 1 / Leg 2", "₹9,000 / ₹9,000"], ["B Leg 1", "₹9,000"], ["B Leg 2", "₹18,000 + ₹1,600 = ₹19,600"]],
+      "Expected B Leg 2 = 9,000 + 800 = 9,800; actual 9,000×2 + 800×2 = 19,600", ["Midnight crossing doubles the leg"], "Fail", ["Q-09 late window"])]),
+ C("RET-07", "Return-leg location validation", "Pass", "Return field validation.",
+   {"Data": "TRF-RET-005 Marathahalli → Mangaluru, return Mangaluru → Marathahalli; 28 Nov / 30 Nov 2026; 5 passengers"},
+   ["Clear return From", "Clear return To", "Return From = To (Mangaluru)", "Clear the return date", "Untick Add Return with a blank return From"],
+   ["Errors under the return fields", "After untick: valid one-way search"],
+   ["'Return pickup location is required' ✔", "'Return drop location is required' ✔", "Return From = To accepted (Q-21)", "'Return pickup date is required' ✔", "Untick: one-way search runs ✔"],
+   "All validations under the return fields; same-location return is a business question.", [E("RET-07-1-validation", "Return From blank"), E("RET-07-2-validation", "Return To blank"), E("RET-07-3-results", "Return From = To"), E("RET-07-4-validation", "Return date blank"), E("RET-07-5-results", "Untick → one-way")],
+   "Validation", "Marathahalli ↔ Mangaluru", "—"),
+ C("RET-08", "Multiple vehicles within the 20-passenger cap", "Fail", "Add a second vehicle on a round trip.",
+   {"Route": "Yelahanka ↔ Hassan (TRF-RET-006)", "Dates": "Outward 8 Dec 2026 7:00 AM; return 10 Dec 6:00 PM → 9:00 PM", "Passengers": "20", "Vehicles": "VEH-003 D12TT (12) + VEH-015 L9UB (9)"},
+   ["Book This Vehicle D12TT → popup", "Book This Vehicle L9UB"], ["Both vehicles held (21 seats)"],
+   ["D12TT: 'cover only 12 seats' ✔", "Adding L9UB: 'cover only 9 seats' – D12TT replaced ✘"],
+   "Recurrence of P2P-08-Issue-03.", [E("RET-08-D12TT-confirm", "12 seats"), E("RET-08-plus-L9UB-confirm", "Replaced: 9")], "Capacity", "20 pax, 12 + 9", "D12TT, L9UB"),
+ C("RET-09", "Return auto-population, sync and stale values", "Fail", "Return mirrors and follows the outward leg.",
+   {"Outward": "HSR Layout → Coorg (Madikeri) (TRF-RET-007), 3 Dec 2026 7:00 AM", "Changes": "To → Hubballi, From → Rajajinagar (TRF-RET-008); manual return To Whitefield (TRF-RET-011)", "Passengers": "10"},
+   ["Tick Add Return", "Change outward To, then From", "Swap", "Untick, change To, re-tick", "Set return date; untick/re-tick", "Manual return To; change outward From", "Book Now!; Modify Inquiry"],
+   ["Return mirrors and follows every outward change", "Re-enable leaves no stale value", "Return dates per Q-27"],
+   ["1 ✔ return = Coorg (Madikeri) → HSR Layout", "2 ✘ after To/From changes the return stays Coorg → HSR Layout", "3 ✘ Swap does not update the return", "4 ✔ re-tick re-syncs (Coorg → Rajajinagar); no Hubballi left",
+    "5 return date 5 Dec 4:00 PM reset to the defaults (4/5 Dec) after untick/re-tick", "6 manual return To (Whitefield) kept after an outward change", "7 search: 'Multi-leg-Transfer' Leg 1/Leg 2 ✔; Modify shows 'Modify Leg 1' only, no Add Return switch"],
+   "Return does not follow outward changes (RET-09-Issue-01).", [E("RET-09-1", "Ticked"), E("RET-09-2", "Outward changed, return stale"), E("RET-09-3", "Swap, return stale"), E("RET-09-4", "Re-tick re-synced"), E("RET-09-7a-results", "Round-trip search"), E("RET-09-modify-prefill", "Modify Leg 1")],
+   "Return sync", "HSR ↔ Coorg / Hubballi", "—"),
+]
+
+byCase = {}
+for i in issues:
+    byCase.setdefault(i["case"], []).append(i["id"])
+    for a in i.get("alsoIn", []): byCase.setdefault(a, []).append(i["id"])
+for c in cases: c["issues"] = byCase.get(c["id"], [])
+
+fareSummary = [
+ ["P2P-02", "L9UB", "Whitefield → KIA, 10:00 AM", "₹17,500 (> 30 km)", "₹17,500 = popup", "Pass"],
+ ["P2P-03", "D MPV", "5 routes", "₹10,500 (< 30) / ₹12,500 (> 30)", "= band rate; run B badge contradicts", "Inconclusive"],
+ ["P2P-04", "L45V", "Hubballi / Kochi / Delhi", "₹24,000 flat", "₹24,000 each; Delhi 3 days ₹76,500", "Inconclusive"],
+ ["P2P-05", "P25AC", "4 start times", "₹16,000 + Late ₹1,000", "C (23:30→02:30) ₹34,000", "Fail"],
+ ["RET-02", "P35AC", "2 legs, 27/29 Nov", "₹18,500 per leg", "Confirm ₹18,500; popup ₹37,000", "Pass"],
+ ["RET-03", "L45P", "Return same day vs +1 month", "₹21,500 per leg", "Equal for A and E", "Pass"],
+ ["RET-04", "45LBB", "Interstate both legs", "₹23,000 per leg", "No interstate line", "Inconclusive"],
+ ["RET-05", "D SDN", "Inside + Outside City legs", "₹6,500 / ₹8,000", "Per leg correct; no total", "Inconclusive"],
+ ["RET-06", "D12TT", "Return 10:30 PM → 12:30 AM", "₹9,000 + Late ₹800", "Return ₹19,600 (2 days)", "Fail"],
+]
+pnrs = [
+ dict(pnr="SIVM916255", case="P2P-02", route="Whitefield → Kempegowda International Airport (BLR)", dates="25 Nov 2026 (pickup 10:00 AM; drop submitted 1:38 PM)", vehicle="9 Seater Luxury Urbania", pax=9, estimate="₹17,500", status="New quotation (validity 25/11/26)", notes="Point To Point main path; stored timings 00:00"),
+ dict(pnr="LJWN815154", case="RET-02", route="Electronic City Phase 1 → Mysuru; return Mysuru → Electronic City Phase 1", dates="27 Nov 2026 and 29 Nov 2026", vehicle="35 Seater Premium AC Coach (both legs)", pax=20, estimate="₹37,000 (2 × ₹18,500)", status="New quotation (validity 27/11/26)", notes="Round trip = one inquiry with two Transfer journeys; 35 pax entered, capped at 20; stored timings 00:00"),
+]
+counts = {}
+for c in cases: counts[c["status"]] = counts.get(c["status"], 0) + 1
+meta = dict(environment=ENV,
+  subtitle=f"Run {RUN} · 18 Nov 2026 · 20 Transfer use cases (USER-P2P-TC-01…11, USER-RET-TC-01…09, workbook v3.2) · 2 inquiries submitted with approval",
+  table={"Run ID": RUN, "Environment": ENV, "Scope": "Transfer – Point To Point (P2P-01 … P2P-11) and Transfer – With Return (RET-01 … RET-09) from User_Web_Outstation_Transfer_Use_Cases.xlsx v3.2. By Hours not in scope.",
+         "Results": ", ".join(f"{k} {v}" for k, v in sorted(counts.items())), "Submissions (approved)": "P2P-02 → SIVM916255; RET-02 → LJWN815154 (the two main-path submissions in the workbook approval plan)",
+         "Other approved actions": "None (no Save As Draft, Edit Inquiry update, cancel or payment)",
+         "Not performed": "P2P-07 step 9 (30-minute idle); independent map distance (P2P-02 step 3) – no measurement tool",
+         "Safety": "Network guard: payment/cancel always blocked; save-inquiry allowed only during the two approved submits; automatic draft saves blocked"},
+  highlights=["Night transfers crossing midnight are charged as 2 days (P2P ₹34,000 instead of ₹17,000; RET-06 return ₹19,600).",
+              "Drop time does not follow the pickup time (outward and return); the submitted P2P inquiry has drop 1:38 PM for a 10:00 AM pickup.",
+              "Both PNRs store timings 00:00 / 00:00 (same as the Outstation run).",
+              "Round trip: return From/To are auto-populated in reverse, but do not follow later outward changes or Swap.",
+              "Round-trip Confirm shows one leg as 'Estimated Grand Total' (₹18,500); the total ₹37,000 appears only after submitting.",
+              "Results page can show two different bands (summary > 30 KM, badge < 30 KM).",
+              "Second vehicle replaces the first (P2P and Return); passengers above 20 silently clamped; SUV 0 seats.",
+              "Transfer accepts pickups outside Karnataka (Chennai, Kochi); Local blocks them but says 'Pickup location is required'."])
+clar = ["Q-06 interstate transfers: no State Tax / permit line (Kerala, Tamil Nadu, Delhi).",
+        "Q-09 Late Allowance window: 05:30 start has none; 8:30 PM start has it.", "Q-10 band measurement: Koramangala → HSR Layout and Whitefield → Whitefield are '> 30 KM'.",
+        "Q-11 Transfer pickups outside Karnataka are accepted; is this intended? Maximum distance (Delhi accepted).",
+        "Q-12 drop date-time: user-entered but not derived from the pickup; does it drive the day count and fare (it does)?",
+        "Q-13 round trip: one inquiry with two journeys; how should Confirm show the total? Modify edits Leg 1 only.",
+        "Q-14 no minimum gap between outward drop and return pickup (equal accepted).", "Q-21 From = To and Return From = Return To accepted.",
+        "Q-22 'Bengaluru International Airport' resolves to Kempegowda International Airport (answered by the app).",
+        "Q-26 cap of 20 passengers on P2P/Return with silent clamping; workbook data for RET-02 (35) and RET-04 (40) exceeds it.",
+        "Q-27 return defaults = outward date + 1 / + 2 at the moment Add Return is ticked; not updated afterwards.",
+        "Q-08 booking window: 15 Nov 2028 accepted."]
+scope = ["Executed: all 11 P2P and 9 With Return use cases of the v3.2 workbook; results graded per case (Pass/Fail/Partial/Inconclusive).",
+         "Fare verdicts follow .claude/shared/fare-verification.md; amounts depending on unconfirmed rules are 'Inconclusive', never assumed.",
+         "Submissions limited to P2P-02 and RET-02; every other case stopped at the Confirm screen.",
+         "Round trips are a two-step flow (Leg 1 vehicle → Leg 2 vehicle → Confirm with Leg 1/Leg 2 tabs); both tabs were read where the case needed it (RET-05, RET-06 re-run).",
+         "Workbook data adjusted at run time: passengers above 20 are clamped by the app; RET-04/07/08 needed an explicit return drop (RET-04 first attempt kept as evidence of the defect).",
+         "Environment: the machine ran low on memory three times and the test browser was stopped; affected cases were re-run from the start. RET-07/RET-08 overlapped once in the same browser; those results were discarded and both re-run alone.",
+         "Preprod home page was redesigned during the run (18 Nov ~15:20); an overlay intercepts clicks on the Smart Inquiry tabs, handled with a DOM click. The inquiry forms were unchanged.",
+         "Evidence: screenshots mask phone numbers, e-mail and the account name. Outstation and Local reports untouched."]
+data = dict(meta=meta, cases=cases, issues=issues, fareSummary=fareSummary, clarifications=clar, scope=scope, pnrs=pnrs,
+            pnrNotes=["PNR = Inquiry ID in Dashboard → My Inquiries. Both are 'New quotation'.", "Timings are stored as 00:00 for both (P2P-02-Issue-01) – keep in mind for Admin-Web checks.",
+                      "LJWN815154 is one inquiry with two Transfer journeys (27 Nov and 29 Nov), ₹18,500 each, Trip Duration 3 days."])
+os.makedirs(f"results/{RUN}", exist_ok=True)
+json.dump(data, open(f"results/{RUN}/report-data.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+print("cases", len(cases), counts, "issues", len(issues), {t: sum(1 for i in issues if i['type'] == t) for t in ['Defect', 'Inconsistency', 'Suggestion', 'Clarification']})

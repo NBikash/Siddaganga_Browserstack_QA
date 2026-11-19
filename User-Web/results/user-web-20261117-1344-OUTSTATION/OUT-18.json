@@ -1,0 +1,361 @@
+{
+  "id": "OUT-18",
+  "pnr": "NCCC102640",
+  "started": "2026-11-17T10:52:51.778Z",
+  "steps": [
+    {
+      "label": "1-dependency",
+      "listed": {
+        "sr": 1,
+        "id": "NCCC102640",
+        "type": "Outstation",
+        "route": "Bengaluru → Hassan",
+        "dates": "11 Jan 2027 - 13 Jan 2027",
+        "vehicle": "16 Seater Premium Urbania (16)",
+        "pax": 14,
+        "validity": "11/01/27",
+        "status": "55d left New quotation"
+      }
+    },
+    {
+      "label": "2-3-baseline-and-editable",
+      "text": "Edit Inquiry - NCCC102640 Update inquiry details, trip setup, and journey assignments. Back To Dashboard Update Inquiry Basic Details Booking Type * Select Booking Type Local Outstation Transfer Dynamic Trip Month Select Month January February March April May June July August September October November December Start Date End Date Arrival Time Departure Time Trip Duration (Days) Number of Passengers Journey Details Outstation Journey 3 Days ▼ Dates: 1/11/2027 - 1/13/2027 (3 days) Timings: Arrival: 00:00 | Departure: 00:00 Destinations: Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India Belur, Karnataka, India Hassan, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz Add Bus Refresh Pricing Vehicles & Pricing: Vehicle Type 2 Quantity Total Cost Action 16 Seater Premium Urbania - 1 + ₹40,000.00 Remove Total Journey Cost: ₹40,000.00 Back To Dashboard Update Inquiry ",
+      "inputs": [
+        {
+          "name": "bookingType",
+          "type": "select-one",
+          "v": "Outstation",
+          "dis": false
+        },
+        {
+          "name": "tripMonth",
+          "type": "select-one",
+          "v": "January",
+          "dis": false
+        },
+        {
+          "ph": "Select start date",
+          "name": "",
+          "type": "text",
+          "v": "11/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select end date",
+          "name": "",
+          "type": "text",
+          "v": "13/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select arrival time",
+          "name": "arrivalTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select departure time",
+          "name": "departureTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter trip duration",
+          "name": "tripDuration",
+          "type": "number",
+          "v": "3",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter number of passengers",
+          "name": "pax",
+          "type": "number",
+          "v": "14",
+          "dis": false,
+          "ro": false
+        }
+      ],
+      "destinationOrLocationInputs": 0,
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-18-baseline-edit-form.png"
+    },
+    {
+      "label": "4-invalid-not-saved",
+      "typedEnd": "13/01/2027",
+      "msgs": [],
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-18-invalid-end-date-not-saved.png",
+      "afterCancel": [
+        {
+          "name": "bookingType",
+          "type": "select-one",
+          "v": "Outstation",
+          "dis": false
+        },
+        {
+          "name": "tripMonth",
+          "type": "select-one",
+          "v": "January",
+          "dis": false
+        },
+        {
+          "ph": "Select start date",
+          "name": "",
+          "type": "text",
+          "v": "11/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select end date",
+          "name": "",
+          "type": "text",
+          "v": "13/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select arrival time",
+          "name": "arrivalTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select departure time",
+          "name": "departureTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter trip duration",
+          "name": "tripDuration",
+          "type": "number",
+          "v": "3",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter number of passengers",
+          "name": "pax",
+          "type": "number",
+          "v": "14",
+          "dis": false,
+          "ro": false
+        }
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "5-edit-dates-save",
+      "endV": "14/01/2027",
+      "before": [
+        [
+          "bookingType",
+          "Outstation"
+        ],
+        [
+          "tripMonth",
+          "January"
+        ],
+        [
+          "Select start date",
+          "11/01/2027"
+        ],
+        [
+          "Select end date",
+          "14/01/2027"
+        ],
+        [
+          "Select arrival time",
+          "00:00"
+        ],
+        [
+          "Select departure time",
+          "00:00"
+        ],
+        [
+          "Enter trip duration",
+          "4"
+        ],
+        [
+          "Enter number of passengers",
+          "14"
+        ]
+      ],
+      "calls": [
+        "allowed(approved) POST /user/update-inquiry"
+      ],
+      "toasts": [
+        "",
+        "\"email\" is not allowed to be empty field",
+        "\"email\" is not allowed to be empty field"
+      ],
+      "url": "https://preprod.siddagangatravels.com/dashboard/inquiry-management/update-inquiry/<id>",
+      "shotBefore": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-18-edit-before-save.png",
+      "shotAfter": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-18-after-update.png"
+    },
+    {
+      "label": "6-7-persistence",
+      "rows": [
+        {
+          "sr": 1,
+          "id": "NCCC102640",
+          "type": "Outstation",
+          "route": "Bengaluru → Hassan",
+          "dates": "11 Jan 2027 - 13 Jan 2027",
+          "vehicle": "16 Seater Premium Urbania (16)",
+          "pax": 14,
+          "validity": "11/01/27",
+          "status": "55d left New quotation"
+        }
+      ],
+      "total": "1-10 of 13",
+      "reopen": [
+        {
+          "name": "bookingType",
+          "type": "select-one",
+          "v": "Outstation",
+          "dis": false
+        },
+        {
+          "name": "tripMonth",
+          "type": "select-one",
+          "v": "January",
+          "dis": false
+        },
+        {
+          "ph": "Select start date",
+          "name": "",
+          "type": "text",
+          "v": "11/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select end date",
+          "name": "",
+          "type": "text",
+          "v": "13/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select arrival time",
+          "name": "arrivalTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select departure time",
+          "name": "departureTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter trip duration",
+          "name": "tripDuration",
+          "type": "number",
+          "v": "3",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter number of passengers",
+          "name": "pax",
+          "type": "number",
+          "v": "14",
+          "dis": false,
+          "ro": false
+        }
+      ],
+      "reopenText": "Journey Details Outstation Journey 3 Days ▼ Dates: 1/11/2027 - 1/13/2027 (3 days) Timings: Arrival: 00:00 | Departure: 00:00 Destinations: Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India Belur, Karnataka, India Hassan, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater",
+      "reload": [
+        {
+          "name": "bookingType",
+          "type": "select-one",
+          "v": "Outstation",
+          "dis": false
+        },
+        {
+          "name": "tripMonth",
+          "type": "select-one",
+          "v": "January",
+          "dis": false
+        },
+        {
+          "ph": "Select start date",
+          "name": "",
+          "type": "text",
+          "v": "11/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select end date",
+          "name": "",
+          "type": "text",
+          "v": "13/01/2027",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select arrival time",
+          "name": "arrivalTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Select departure time",
+          "name": "departureTime",
+          "type": "time",
+          "v": "00:00",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter trip duration",
+          "name": "tripDuration",
+          "type": "number",
+          "v": "3",
+          "dis": false,
+          "ro": false
+        },
+        {
+          "ph": "Enter number of passengers",
+          "name": "pax",
+          "type": "number",
+          "v": "14",
+          "dis": false,
+          "ro": false
+        }
+      ]
+    },
+    {
+      "label": "8-pickup-destination-drop-edit",
+      "notPossible": "Edit Inquiry page shows pickup, destinations and drop only as read-only text; no control exists to change them (Edit 1 and pickup part of Edit 2 cannot be executed)."
+    }
+  ],
+  "finished": "2026-11-17T10:54:56.400Z",
+  "net": [
+    "allowed POST /user/get-inquiry-details",
+    "allowed POST /user/get-inquiry-details",
+    "allowed(approved) POST /user/update-inquiry",
+    "allowed POST /user/get-inquiry-details",
+    "allowed POST /user/get-inquiry-details"
+  ]
+}

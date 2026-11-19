@@ -1,0 +1,64 @@
+{
+  "url": "/dashboard/inquiry-management/update-inquiry/48f3a9cd-513a-44b4-bc82-5d33e3659ce6",
+  "text": "Update Inquiry Update Quote Cancel Select Booking Type Outstation Client Information OTC (One Time Customer) Contracted Customer Domestic International Search or Enter Client Name Enter Primary Email Address (Optional) Enter Primary Contact Number GST Value Change Trip Details Select Month January Trip Description Select Start Date & Time Select End Date & Time Select Arrival Time Select Arrival Time Select Departure Time Select Departure Time no of Trip days Enter Number of Pax's Date/Day Wise Category Assignment Reset Selection OutStation Single Date SelectionRange Selection Previous Month Next Month January 2027 SuMoTuWeThFrSa 272829303112 3456789 10111213141516 17181920212223 24252627282930 31123456 Save Assignment + Add New Journey Outstation 11/01/2027 - 13/01/2027 Vehicle Type: 16 Seater Premium Urbania 1 Amenities: NAME QTY No amenities Destination Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India Belur, Karnataka, India Hassan, Karnataka, India Save the customer details to create next trip quotation Vehicle Costs VEHICLE TYPE QUANTITY TOTAL KMS MINIMUM KM PER DAY PER KM EXTRA KM DRIVER ALLOW. DAY BATA DAYS NIGHT ALLOW. NIGHT BATA DAYS TOLL & PARKING STATE TAX ANY EXTRA'S FIXED COST ☐ APPLY FINAL QUOTE 16 Seater Premium Urbania 1 ​ ​ ​ ​ ​ 2400.00 ​ ​ 1600.00 ​ ​ ​ ​ ​ ​ Proforma Invoice Only Advance Payment Advance Payment History Record Advance Send Customer Inquiry Form Preview Quote Summary",
+  "costs": {
+    "totalKms": "900.00",
+    "minimumPerDay": "300.00",
+    "perKm": "40.00",
+    "extraKms": "0.00",
+    "driver": "800.00",
+    "dayBataDays": "3.00",
+    "noOfDays": "2.00",
+    "toll": "0.00",
+    "totalStateTax": "0.00",
+    "extra": "0.00",
+    "fixedCost": "0",
+    "totalApproxCost": "40000.00"
+  },
+  "shotForm": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-195-form-before.png",
+  "calendar": "Date/Day Wise Category Assignment Reset Selection",
+  "calButtons": [
+    "Reset Selection",
+    "Single Date Selection",
+    "Range Selection",
+    "Previous Month",
+    "Next Month",
+    "Save Assignment",
+    "+ Add New Journey"
+  ],
+  "highlight": [
+    "27:rgb(255, 255, 255)",
+    "28:rgb(255, 255, 255)",
+    "29:rgb(255, 255, 255)",
+    "30:rgb(255, 255, 255)",
+    "31:rgb(255, 255, 255)",
+    "1:rgb(255, 255, 255)",
+    "2:rgb(255, 255, 255)",
+    "3:rgb(255, 255, 255)",
+    "4:rgb(255, 255, 255)",
+    "5:rgb(255, 255, 255)",
+    "6:rgb(255, 255, 255)",
+    "7:rgb(255, 255, 255)",
+    "8:rgb(255, 255, 255)",
+    "9:rgb(255, 255, 255)",
+    "10:rgb(255, 255, 255)",
+    "11:rgb(169, 117, 5)",
+    "12:rgb(169, 117, 5)",
+    "13:rgb(169, 117, 5)",
+    "14:rgb(255, 255, 255)",
+    "15:rgb(255, 255, 255)"
+  ],
+  "journey": {
+    "dialog": 1,
+    "text": "Previous Month Next Month January 2027 SuMoTuWeThFrSa 272829303112 3456789 10111213141516 17181920212223 24252627282930 31123456",
+    "fields": [],
+    "buttons": [
+      "Previous Month",
+      "Next Month"
+    ],
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-195-add-new-journey-opened.png"
+  },
+  "afterReload": [
+    "Journey O"
+  ]
+}

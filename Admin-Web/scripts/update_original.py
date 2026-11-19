@@ -1,9 +1,9 @@
 """Append scenarios that exist in the review copy but not yet in the main four-column documents.
 
-Main documents: documentation/scenarios/Admin_Web_Scenarios_and_Use_Cases.xlsx|.md
+Main documents: documentation/05_Superseded_Catalogues_2026-10-30/scenario-catalogue/Admin_Web_Scenarios_and_Use_Cases.xlsx|.md
 - existing rows are kept exactly (IDs, titles, steps);
 - rows whose Scenario ID is not yet present are taken from review/Admin_Web_Scenarios_and_Use_Cases_REVIEW.xlsx;
-- the current main files are backed up to documentation/scenarios/archive/<timestamp>/ first.
+- the current main files are backed up to documentation/90_Archive/scenario-catalogue/<timestamp>/ first.
 Run: python scripts/update_original.py
 """
 import json
@@ -33,7 +33,7 @@ def main():
     final = sorted(list(current) + new, key=lambda r: (order[r[1]], int(r[0].rsplit("-", 1)[1])))
 
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    arch = MAIN_X.parent / "archive" / stamp
+    arch = bs.bd.ROOT / "documentation" / "90_Archive" / "scenario-catalogue" / stamp
     arch.mkdir(parents=True, exist_ok=True)
     for p in (MAIN_X, MAIN_M):
         shutil.copy2(p, arch / p.name)

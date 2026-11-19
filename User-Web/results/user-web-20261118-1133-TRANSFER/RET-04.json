@@ -1,0 +1,391 @@
+{
+  "id": "RET-04",
+  "started": "2026-11-18T09:00:26.345Z",
+  "steps": [
+    {
+      "label": "A",
+      "state": {
+        "from": "K R Puram, Bengaluru, Karnataka, India",
+        "to": "Belagavi, Karnataka, India",
+        "rfrom": "Belagavi, Karnataka, India",
+        "rto": "Whitefield, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-12-02",
+          "6:30 AM",
+          "2026-12-02",
+          "4:30 PM",
+          "2026-12-04",
+          "9:00 AM",
+          "2026-12-04",
+          "12:00 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Transfer Garage (Start) → K R Puram, Bengaluru, Karnataka, India → Belagavi, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :2 Dec- 2026 Pickup Address:K R Puram, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Belagavi, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Belagavi, Karnataka, India",
+        "route": "Garage (Start) → K R Puram, Bengaluru, Karnataka, India → Belagavi, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-A-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "modify": {
+        "title": "Modify Leg 1",
+        "toggles": {
+          "md": null,
+          "dd": null
+        },
+        "fields": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "K R Puram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Belagavi, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "6:30 AM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "4:30 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "20"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-A-modify-prefill.png"
+      }
+    },
+    {
+      "label": "B",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Malleshwaram",
+            "suggestions": [
+              "Malleshwaram Bengaluru, Karnataka, India",
+              "Malleshwaram Shopping Point 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Malleshwaram 8th Cross Road, Malleshwaram, Bengaluru, Karnataka, India",
+              "Malleshwaram Dose Corner 17th Cross Road, Malleshwaram, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Malleshwaram, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Chennai",
+            "suggestions": [
+              "Chennai Tamil Nadu, India",
+              "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+              "Chennai Central Tamil Nadu",
+              "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+            ],
+            "chosen": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Search return pickup location",
+            "query": "Chennai",
+            "suggestions": [
+              "Chennai Tamil Nadu, India",
+              "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+              "Chennai Central Tamil Nadu",
+              "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+            ],
+            "chosen": "Chennai, Tamil Nadu, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "query": "Bengaluru International Airport",
+            "suggestions": [
+              "Kempegowda International Airport Bengaluru (BLR) Devanahalli, Bengaluru, Karnataka, India",
+              "International Airport Road Byatarayanapura, Sri Venkateshpura Layout, Sampigehalli, Bengaluru, Karnataka, India",
+              "Bangalore international airport area planning authority Devanahalli Town, Karnataka, India",
+              "Terminal 1 Karnataka"
+            ],
+            "chosen": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-02",
+            "disabled": false,
+            "value": "2026-12-02"
+          },
+          {
+            "label": "6:30 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-04",
+            "disabled": false,
+            "value": "2026-12-04"
+          },
+          {
+            "label": "9:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-04",
+            "disabled": false,
+            "value": "2026-12-04"
+          },
+          {
+            "label": "12:00 PM",
+            "disabled": false
+          }
+        ],
+        "ret": true,
+        "state": {
+          "from": "Malleshwaram, Bengaluru, Karnataka, India",
+          "to": "Chennai, Tamil Nadu, India",
+          "rfrom": "Chennai, Tamil Nadu, India",
+          "rto": "Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "ret": true,
+          "dt": [
+            "2026-12-02",
+            "6:30 AM",
+            "2026-12-02",
+            "4:33 PM",
+            "2026-12-04",
+            "9:00 AM",
+            "2026-12-04",
+            "12:00 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-form-r2.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Transfer Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return) Distance:> 30 KM Dates :2 Dec- 2026 Pickup Address:Malleshwaram, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Chennai, Tamil Nadu, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Chennai, Tamil Nadu, India",
+        "route": "Garage (Start) → Malleshwaram, Bengaluru, Karnataka, India → Chennai, Tamil Nadu, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "45LBB",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹23,000",
+          "Late Allowance",
+          "₹1,500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "281 hp · 1100 Nm · 26% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury BharatBenz – 1",
+        "route": [
+          "Multi-Leg (Transfer + Transfer)",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Malleshwaram, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Chennai, Tamil Nadu, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "2 Dec, 2026",
+        "passenger": "20",
+        "dropoff": "Chennai, Tamil Nadu, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹23,000"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹23,000"
+          ]
+        ],
+        "total": "₹23,000",
+        "buttons": [
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Malleshwaram, Bengaluru, Karnataka, India",
+                "Chennai, Tamil Nadu, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [],
+              "imgMarkers": 0,
+              "paths": 4
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-leg2-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-leg2-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-leg2-confirm-cost.png",
+        "leg2": {
+          "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Transfer Garage (Start) → Chennai, Tamil Nadu, India → Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :4 Dec- 2026 Pickup Address:Chennai, Tamil Nadu, India Duration:1 Day Passengers:20 Pax Drop Address:Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India",
+          "legTabs": [
+            "Leg 1 ✓",
+            "Leg 2",
+            "Leg 1 ✓",
+            "Leg 2"
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-leg2-results.png",
+          "details": {
+            "vehicle": "45LBB",
+            "pricing": [
+              "Transfer Trip Pricing",
+              "Transfer Trip - Outside City",
+              "Standard transfer rental package",
+              "Base Rate (Outside City)",
+              "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+              "₹23,000",
+              "Late Allowance",
+              "₹1,500",
+              "Toll & Parking",
+              "Actuals",
+              "GST",
+              "Additional",
+              "Vehicle Technical Specifications :",
+              "Engine Performance :",
+              "281 hp · 1100 Nm · 26% gradability",
+              "Suspension :",
+              "Safety Features :",
+              "Transmission :",
+              "Vehicle Comfort Metrics",
+              "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+              "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+              "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+              "Vertical Smoothness ({\"min\":\"88\",\"max\":\"100\",\"current\":\"92\"})",
+              "Proceed To Booking",
+              "Confirm availability & lock pricing"
+            ],
+            "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-04-B-leg2-fare-breakup.png"
+          }
+        },
+        "text": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 45 Seater Luxury BharatBenz – 1 45 Seater Luxury BharatBenz 45 Seater Type: 45 Seater Luxury BharatBenz Luggage: Route Summary : Multi-Leg (Transfer + Transfer) From Garage Garage Pickup Location Malleshwaram, Bengaluru, Karnataka, India Dropoff Location Chennai, Tamil Nadu, India Back to Garage Garage Dates 2 Dec, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹23,000 Estimated Grand Total ₹23,000 Confirm & Submit Booking"
+      }
+    }
+  ],
+  "finished": "2026-11-18T09:07:30.960Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

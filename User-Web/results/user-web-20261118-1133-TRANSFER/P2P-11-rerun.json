@@ -1,0 +1,92 @@
+{
+  "id": "P2P-11",
+  "started": "2026-11-18T08:24:51.546Z",
+  "steps": [
+    {
+      "label": "local-Belagavi",
+      "place": {
+        "ph": "Search pickup location",
+        "query": "Belagavi",
+        "suggestions": [
+          "Belagavi Karnataka, India",
+          "Belagavi Airport Bagalkote - Belagavi Road, Sambra, Karnataka, India",
+          "Belagavi Bus Stand Raviwar Peth, Belagavi Cantonment, Karnataka, India",
+          "Belagavi Railway Station [BGM] Shastri Nagar, Shahapur, Belagavi Cantonment, Karnataka, India"
+        ],
+        "chosen": "Belagavi, Karnataka, India"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 4 HR / 80 KM",
+        "summary": ": Map Data Terms Leg 1 Local Garage (Start) → Belagavi, Karnataka, India → Belagavi, Karnataka, India → Garage (Return) Distance:80 KM Dates :18 Nov, 2026 Pickup Address:Belagavi, Karnataka, India Duration:4 Hours Passengers:4 Pax Drop Address:Belagavi, Karnataka, India Modify Inquiry Vehicle Prefer",
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-local-Belagavi-results.png"
+      }
+    },
+    {
+      "label": "local-Chennai",
+      "place": {
+        "ph": "Search pickup location",
+        "query": "Chennai",
+        "suggestions": [
+          "Chennai Tamil Nadu, India",
+          "Chennai International Airport (MAA) Airport Road, Meenambakkam, Chennai, Tamil Nadu, India",
+          "Chennai Central Tamil Nadu",
+          "Chennai Central Railway Station Periamet, Jutkapuram, Park Town, Chennai, Tamil Nadu, India"
+        ],
+        "chosen": "Chennai, Tamil Nadu, India"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": []
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-local-Chennai-validation.png"
+      }
+    },
+    {
+      "label": "local-Kochi",
+      "place": {
+        "ph": "Search pickup location",
+        "query": "Kochi",
+        "suggestions": [
+          "Kochi Keralam, India",
+          "Kochi International Airport (COK) Keralam, India",
+          "Kochi Marriott Hotel N. H. 47, Edappally, Kochi, Keralam, India",
+          "Kochi Kurry Klub Avalahalii, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Kochi, Keralam, India"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": []
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-11-local-Kochi-validation.png"
+      }
+    }
+  ],
+  "finished": "2026-11-18T08:27:24.790Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

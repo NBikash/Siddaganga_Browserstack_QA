@@ -1,0 +1,52 @@
+[
+  {
+    "label": "transfer-A",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "transfer-B",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "transfer-C",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "transfer-D",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "transfer-E",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "local-Whitefield",
+    "nav": true
+  },
+  {
+    "label": "local-Mysuru",
+    "nav": true
+  },
+  {
+    "label": "local-Belagavi",
+    "err": "Error: page.waitForTimeout: Target page, context or browser has been closed"
+  },
+  {
+    "label": "local-Chennai",
+    "err": "Error: page.waitForTimeout: Target page, context or browser has been closed"
+  },
+  {
+    "label": "local-Kochi",
+    "err": "Error: page.waitForTimeout: Target page, context or browser has been closed"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "label": "1-untouched",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Drop time must be after pickup time"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "2-drop-before-pickup",
+    "nav": true,
+    "dist": "340 KM",
+    "dur": "1 Day"
+  },
+  {
+    "label": "3-earlier-time",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Drop time must be after pickup time"
+      ],
+      "toasts": [
+        "Selected time: 10:30 AM",
+        "Selected time: 6:30 AM"
+      ]
+    }
+  },
+  {
+    "label": "4-equal",
+    "nav": false,
+    "val": {
+      "inline": [
+        "Drop time must be after pickup time"
+      ],
+      "toasts": [
+        "Selected time: 10:30 AM",
+        "Selected time: 10:30 AM"
+      ]
+    }
+  },
+  {
+    "label": "5-past-date"
+  },
+  {
+    "label": "6-past-slot"
+  },
+  {
+    "label": "7-idle-default",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days"
+  },
+  {
+    "label": "8-pickup-after-drop",
+    "nav": true,
+    "dist": "346 KM",
+    "dur": "1 Day"
+  },
+  {
+    "label": "9-drop-picker-min"
+  },
+  {
+    "label": "10-earliest-valid",
+    "nav": true,
+    "dist": "346 KM",
+    "dur": "1 Day"
+  }
+]

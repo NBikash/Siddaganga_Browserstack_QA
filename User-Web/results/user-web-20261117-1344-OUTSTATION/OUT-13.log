@@ -1,0 +1,34 @@
+[
+  {
+    "label": "A-cross-month",
+    "nav": true,
+    "dist": "1336 KM",
+    "dur": "3 Days",
+    "total": "₹1,31,560",
+    "popup": null
+  },
+  {
+    "label": "B-cross-year",
+    "nav": true,
+    "dist": "1336 KM",
+    "dur": "3 Days",
+    "total": "₹1,31,560",
+    "popup": null
+  },
+  {
+    "label": "C-31-days",
+    "nav": true,
+    "dist": "9300 KM",
+    "dur": "31 Days",
+    "total": "₹11,56,000",
+    "popup": null
+  },
+  {
+    "label": "D-far-future",
+    "nav": true,
+    "dist": "1336 KM",
+    "dur": "3 Days",
+    "total": "₹1,31,560",
+    "popup": null
+  }
+]

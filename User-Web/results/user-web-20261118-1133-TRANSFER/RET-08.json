@@ -1,0 +1,115 @@
+{
+  "id": "RET-08",
+  "started": "2026-11-18T10:26:55.480Z",
+  "steps": [
+    {
+      "label": "multi-vehicle",
+      "state": {
+        "from": "Yelahanka, Bengaluru, Karnataka, India",
+        "to": "Hassan, Karnataka, India",
+        "rfrom": "Hassan, Karnataka, India",
+        "rto": "Yelahanka, Bengaluru, Karnataka, India",
+        "ret": true,
+        "dt": [
+          "2026-12-08",
+          "7:00 AM",
+          "2026-12-08",
+          "5:57 PM",
+          "2026-12-10",
+          "6:00 PM",
+          "2026-12-10",
+          "9:00 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Transfer Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :8 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "first": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 20 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 20 passengers, but your selected buses cover only 12 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-D12TT-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-D12TT-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 20 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry"
+      },
+      "second": {
+        "cta": "Book This Vehicle",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 20 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 20 passengers, but your selected buses cover only 9 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-plus-L9UB-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-plus-L9UB-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 20 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry"
+      }
+    }
+  ],
+  "finished": "2026-11-18T10:30:37.313Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

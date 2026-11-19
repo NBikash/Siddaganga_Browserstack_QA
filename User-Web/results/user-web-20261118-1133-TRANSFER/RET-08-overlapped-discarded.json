@@ -1,0 +1,122 @@
+{
+  "id": "RET-08",
+  "started": "2026-11-18T09:56:10.972Z",
+  "steps": [
+    {
+      "label": "multi-vehicle",
+      "state": {
+        "from": "",
+        "to": null,
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "3:27 PM"
+        ],
+        "pax": "20"
+      },
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Marathahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "3:27 PM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "5:27 PM"
+          },
+          {
+            "ph": "Search return pickup location",
+            "v": "Mangal"
+          },
+          {
+            "ph": "Search return drop location",
+            "v": ""
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-19"
+          },
+          {
+            "ph": "text",
+            "v": "5:27 PM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-20"
+          },
+          {
+            "ph": "text",
+            "v": "5:27 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-08-validation.png"
+      }
+    }
+  ],
+  "finished": "2026-11-18T09:58:12.263Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces"
+  ]
+}

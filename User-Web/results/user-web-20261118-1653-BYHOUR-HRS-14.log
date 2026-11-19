@@ -1,0 +1,38 @@
+[
+  {
+    "label": "A-Whitefield",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "6 Hours"
+  },
+  {
+    "label": "B-Mysuru",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "6 Hours"
+  },
+  {
+    "label": "C-Chennai",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": [
+        "Selected time: 9:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "D-Koramangala-Chennai",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": [
+        "Selected time: 9:00 AM"
+      ]
+    }
+  }
+]

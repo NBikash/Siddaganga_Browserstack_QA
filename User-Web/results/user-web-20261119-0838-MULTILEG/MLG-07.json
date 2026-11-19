@@ -1,0 +1,285 @@
+{
+  "id": "MLG-07",
+  "started": "2026-11-19T04:14:16.252Z",
+  "steps": [
+    {
+      "label": "1-build",
+      "s1": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-l1-saved.png"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "header": "20 Buses Found | Local - 8 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :7 Dec, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:8 Hours Passengers:20 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars In",
+        "distance": "80 KM",
+        "pax": "20",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-results.png"
+      }
+    },
+    {
+      "label": "2-compare",
+      "compare": [
+        {
+          "code": "L45P",
+          "control": null,
+          "note": "no compare control found on the card (page 1)"
+        },
+        {
+          "code": "45LBB",
+          "control": null,
+          "note": "no compare control found on the card (page 1)"
+        },
+        {
+          "code": "L45NV",
+          "control": null,
+          "note": "no compare control found on the card (page 1)"
+        },
+        {
+          "code": "L49NV",
+          "control": null,
+          "note": "no compare control found on the card (page 1)"
+        }
+      ]
+    },
+    {
+      "label": "3-leg1-L45V",
+      "select": {
+        "modal": null,
+        "isConfirm": false,
+        "toasts": [
+          "Vehicle selected for Leg 1. Please select vehicles for other legs."
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-leg1-after-select.png"
+      }
+    },
+    {
+      "label": "4-leg2-capacity",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "header": "20 Buses Found | Transfer - > 30 KM Delux Starts From ₹16,500 4.5 33 Seater D",
+        "labels": [
+          "Multi-leg-Transfer"
+        ],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 [active]"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Transfer Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :8 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Nandi Hills, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India ",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Nandi Hills, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-leg2-results.png"
+      },
+      "small": {
+        "modal": "Passenger Capacity Not Complete! You need seats for 20 passengers, but your selected buses cover only 9 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "isConfirm": false,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓ [active]"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-leg2-L9UB-after-select.png"
+      },
+      "ok": {
+        "modal": "Confirm Your Trip & Selected Vehicles Keyboard shortcuts Map data ©2026 Google Terms Report a map error Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater Type: 45 Seater Luxury Volvo Luggage: Route Summary : Multi-Leg (Local + Transfer) From Garage Garage Pickup Location Whitefield, Bengaluru, Karnataka, India Back to Garage Garage Dates 7 Dec, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹15,500 Day Bata Cost (Before 10pm or After 6am) ₹1,500 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹17,000 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓",
+          "Leg 2 ✓ [active]",
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-leg2-P25AC-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "45 Seater Luxury Volvo – 1 45 Seater Luxury Volvo 45 Seater",
+            "routeSummary": "Multi-Leg (Local + Transfer)",
+            "pickup": "Whitefield, Bengaluru, Karnataka, India",
+            "dropoff": null,
+            "dates": "7 Dec, 2026",
+            "passenger": "20",
+            "cost": "Vehicle Base Cost ₹15,500 Day Bata Cost (Before 10pm or After 6am) ₹1,500 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹17,000",
+            "total": "₹17,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-a-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater",
+            "routeSummary": "Multi-Leg (Local + Transfer)",
+            "pickup": "Hebbal, Bengaluru, Karnataka, India",
+            "dropoff": "Nandi Hills, Karnataka, India",
+            "dates": "8 Dec, 2026",
+            "passenger": "20",
+            "cost": "Vehicle Base Cost ₹16,000 Estimated Grand Total ₹16,000",
+            "total": "₹16,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-a-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "5 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    },
+    {
+      "label": "5-change-leg1",
+      "r1": {
+        "navigated": true,
+        "found": "20 Buses Found | Local - 8 HR / 80 KM",
+        "header": "20 Buses Found | Local - 8 HR / 80 KM Delux Starts From ₹11,000 4.5 33 Seater",
+        "labels": [
+          "Multi-leg-Local"
+        ],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2 ✓"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 ✓ Multi-leg-Local Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:80 KM Dates :7 Dec, 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:8 Hours Passengers:20 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Car",
+        "distance": "80 KM",
+        "pax": "20",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹11,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹11,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹13,500",
+          "Sedan D SDN 4 ₹4,500",
+          "MPV's D MPV 7 ₹7,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹5,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/leg1-results.png"
+      },
+      "select": {
+        "modal": "Confirm Your Trip & Selected Vehicles Customer Details: Bikash N <phone> Estimated total based on selected route. Final quote may vary slightly based on actual travel logs and taxes. Leg 1 Leg 2 Selected Vehicles : 45 Seater Premium AC Coach – 1 45 Seater Premium AC Coach 45 Seater Type: 45 Seater Premium AC Coach Luggage: Standard Belly Bay (4–6 m³) + Overhead Racks Route Summary : Multi-Leg (Local + Transfer) From Garage Garage Pickup Location Whitefield, Bengaluru, Karnataka, India Back to Garage Garage Dates 7 Dec, 2026 Passenger 20 Estimated Trip Cost : Vehicle Base Cost ₹13,500 Day Bata Cost (Before 10pm or After 6am) ₹1,000 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹14,500 Confirm & Submit Booking",
+        "isConfirm": true,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2 ✓",
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-leg1-L45P-after-select.png"
+      },
+      "tabs": [
+        "Leg 1 ✓ [active]",
+        "Leg 2 ✓",
+        "Leg 1 [active]",
+        "Leg 2"
+      ],
+      "confirm": {
+        "open": true,
+        "title": "Confirm Your Trip & Selected Vehicles Ke",
+        "legCount": 2,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": "45 Seater Premium AC Coach – 1 45 Seater Premium AC Coach 45 Seater",
+            "routeSummary": "Multi-Leg (Local + Transfer)",
+            "pickup": "Whitefield, Bengaluru, Karnataka, India",
+            "dropoff": null,
+            "dates": "7 Dec, 2026",
+            "passenger": "20",
+            "cost": "Vehicle Base Cost ₹13,500 Day Bata Cost (Before 10pm or After 6am) ₹1,000 Night Bata Cost (Before 6am or After 10pm) ₹0 Estimated Grand Total ₹14,500",
+            "total": "₹14,500",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-b-confirm-leg1.png"
+          },
+          {
+            "leg": 2,
+            "vehicles": "25 Seater Premium AC Coach – 1 25 Seater Premium AC Coach 25 Seater",
+            "routeSummary": "Multi-Leg (Local + Transfer)",
+            "pickup": "Hebbal, Bengaluru, Karnataka, India",
+            "dropoff": "Nandi Hills, Karnataka, India",
+            "dates": "8 Dec, 2026",
+            "passenger": "20",
+            "cost": "Vehicle Base Cost ₹16,000 Estimated Grand Total ₹16,000",
+            "total": "₹16,000",
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-07-b-confirm-leg2.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Keyboard shortcuts",
+          "Map Data",
+          "5 km Click to toggle between metric and imperial units",
+          "Leg 1",
+          "Leg 2",
+          "Confirm & Submit Booking"
+        ]
+      }
+    }
+  ],
+  "finished": "2026-11-19T04:17:01.010Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "selects": [
+    {
+      "value": "Outstation",
+      "options": [
+        "Local",
+        "Outstation",
+        "Transfer",
+        "Dynamic"
+      ]
+    },
+    {
+      "value": "November",
+      "options": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ]
+    }
+  ],
+  "shotSelect": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-booking-type-options.png",
+  "desc": "QA INQ functional test UMNF499106 (19 Nov 2026)",
+  "descOptions": [
+    "Contact: QA-TEST-1119-QUO-05 | Email: <email> | Phone: <phone> | Passengers: 25 | Luggage: Light (Handbags Only) | Comfort: Standard | Notes: QA-TEST-1119-QUO-05 automated test, please ignore | Stops: QA-TEST-1119 Malleswaram",
+    "QA functional test LD-353 booking edit",
+    "QA INQ functional test UMNF499106 (19 Nov 2026)"
+  ],
+  "shotDesc": "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-trip-description-options-r2.png"
+}

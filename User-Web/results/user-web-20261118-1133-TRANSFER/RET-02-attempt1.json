@@ -1,0 +1,295 @@
+{
+  "id": "RET-02",
+  "started": "2026-11-18T08:29:51.118Z",
+  "steps": [
+    {
+      "label": "search",
+      "fill": {
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "Search return pickup location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "Search return drop location",
+            "query": "Electronic City Phase 1",
+            "suggestions": [
+              "Phase 1, Electronic City Bengaluru, Karnataka, India",
+              "Electronic city phase 1 Wipro Avenue, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka, India",
+              "Electronic City Phase I Neeladri Nagar, Electronic City Phase I, Electronic City, Hebbagodi, Karnataka, India",
+              "Electronic City phase 1 cricket ground Maragondanahalli, Electronic City, Hulimangala, Karnataka, India"
+            ],
+            "chosen": "Phase 1, Electronic City, Bengaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "8:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-27",
+            "disabled": false,
+            "value": "2026-11-27"
+          },
+          {
+            "label": "11:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-29",
+            "disabled": false,
+            "value": "2026-11-29"
+          },
+          {
+            "label": "4:00 PM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-29",
+            "disabled": false,
+            "value": "2026-11-29"
+          },
+          {
+            "label": "7:00 PM",
+            "disabled": false
+          }
+        ],
+        "ret": true,
+        "state": {
+          "from": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "to": "Mysuru, Karnataka, India",
+          "rfrom": "Mysuru, Karnataka, India",
+          "rto": "Phase 1, Electronic City, Bengaluru, Karnataka, India",
+          "ret": true,
+          "dt": [
+            "2026-11-27",
+            "8:00 AM",
+            "2026-11-27",
+            "11:00 AM",
+            "2026-11-29",
+            "4:00 PM",
+            "2026-11-29",
+            "7:00 PM"
+          ],
+          "pax": "20"
+        }
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Transfer Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :27 Nov- 2026 Pickup Address:Phase 1, Electronic City, Bengaluru, Karnataka, India Duration:1 Day Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Phase 1, Electronic City, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-main-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      },
+      "details": {
+        "vehicle": "P35AC",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹18,500",
+          "Late Allowance",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "160 hp · 550 Nm · 23% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-main-fare-breakup.png"
+      }
+    },
+    {
+      "label": "confirm-for-submit",
+      "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.",
+      "errorShot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-confirm-for-submit-error.png"
+    },
+    {
+      "label": "submit",
+      "skipped": "no confirm modal"
+    },
+    {
+      "label": "my-inquiries",
+      "listTotal": "1-10 of 15",
+      "top3": [
+        "1 SIVM916255 Transfer Bengaluru → Bengaluru 25 Nov 2026 - 25 Nov 2026 9 Seater Luxury Urbania (9) 9 25/11/26 7d left New quotation",
+        "2 BGVS613665 Outstation Bengaluru → Bengaluru 01 Jan 2027 - 01 Jan 2027 Sedan (4) 4 01/01/27 44d left New quotation",
+        "3 NCCC102640 Outstation Bengaluru → Hassan 11 Jan 2027 - 13 Jan 2027 16 Seater Premium Urbania (16) 14 11/01/27 54d left New quotation"
+      ],
+      "row": {
+        "sr": 1,
+        "id": "SIVM916255",
+        "type": "Transfer",
+        "route": "Bengaluru → Bengaluru",
+        "dates": "25 Nov 2026 - 25 Nov 2026",
+        "vehicle": "9 Seater Luxury Urbania (9)",
+        "pax": 9,
+        "validity": "25/11/26",
+        "status": "7d left New quotation"
+      },
+      "details": {
+        "url": "https://preprod.siddagangatravels.com/dashboard/inquiry-management/update-inquiry/<id>",
+        "text": "Edit Inquiry - SIVM916255 Update inquiry details, trip setup, and journey assignments. Back To Dashboard Update Inquiry Basic Details Booking Type * Select Booking Type Local Outstation Transfer Dynamic Trip Month Select Month January February March April May June July August September October November December Start Date End Date Arrival Time Departure Time Trip Duration (Days) Number of Passengers Journey Details Transfer Journey 1 Day ▼ Dates: 11/25/2026 - 11/25/2026 (1 day) Timings: Arrival: 00:00 | Departure: 00:00 Pickup Location: Whitefield, Bengaluru, Karnataka, India Drop Location: Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz Add Bus Refresh Pricing Vehicles & Pricing: Vehicle Type 2 Quantity Total Cost Action 9 Seater Luxury Urbania - 1 + ₹17,500.00 Remove Total Journey Cost: ₹17,500.00 Back To Dashboard Update Inquiry ",
+        "inputs": [
+          {
+            "name": "bookingType",
+            "type": "select-one",
+            "v": "Transfer",
+            "dis": false
+          },
+          {
+            "name": "tripMonth",
+            "type": "select-one",
+            "v": "November",
+            "dis": false
+          },
+          {
+            "ph": "Select start date",
+            "name": "",
+            "type": "text",
+            "v": "25/11/2026",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select end date",
+            "name": "",
+            "type": "text",
+            "v": "25/11/2026",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select arrival time",
+            "name": "arrivalTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select departure time",
+            "name": "departureTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter trip duration",
+            "name": "tripDuration",
+            "type": "number",
+            "v": "1",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter number of passengers",
+            "name": "pax",
+            "type": "number",
+            "v": "9",
+            "dis": false,
+            "ro": false
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-post-SIVM916255-edit-form.png"
+      },
+      "quotation": {
+        "url": "https://preprod.siddagangatravels.com/dashboard",
+        "text": "<phone> <email> Bikash N 5 Home Services Our Fleet About Us Contact Us Dashboard Regular Client Welcome Back - Bikash N! Back To Home Dashboard Booking Invoices Support My Inquiries My Trips Saved Routes View All Inquiries : All Inquiries Inquiry Type Local Outstation Transfer Select Status All New Quotation Pending Revised Quotation Vehicle Type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz + Add New Inquiry Sr No. Inquiry ID Inquiry Type Route Trip Date Vehicle Type Passengers Validity Date Status Action 1 SIVM916255 Transfer Bengaluru → Bengaluru 25 Nov 2026 - 25 Nov 2026 9 Seater Luxury Urbania (9) 9 25/11/26 7d left New quotation 2 BGVS613665 Outstation Bengaluru → Bengaluru 01 Jan 2027 - 01 Jan 2027 Sedan (4) 4 01/01/27 44d left New quotation 3 NCCC102640 Outstation Bengaluru → Hassan 11 Jan 2027 - 13 Jan 2027 16 Seater Premium Urbania (16) 14 11/01/27 54d left New quotation 4 UMNF499106 Outstation Bengaluru → Mysuru 24 Nov 2026 - 25 Nov 2026 28 Seater Premium AC Coach (28) 20 24/11/26 6d left New quotation 5 DDEV675048 Outstation Bengaluru → Bengaluru 15 Nov 2026 - 15 Nov 2026 33 Seater Deluxe Coach (35) 1 15/11/26 Expired New quotation 6 YIAC324313 Outstation Bengaluru → Bengaluru 15 Nov 2026 - 15 Nov 2026 33 Seater Deluxe Coach (35) 2 15/11/26 Expired New quotation 7 WPKT544822 Local Bengaluru → Bengaluru 20 Nov 2026 - 20 Nov 2026 16 Seater Premium Urbania (16) 1 20/11/26 2d left Revised quotation 8 PGDO412043 Local Bengaluru → Mangaluru 12 Nov 2026 - 12 Nov 2026 MPV's (7) 3 12/11/26 Expired Revised quotation 9 FXZB482309 Local Bengaluru → Maddur 20 Nov 2026 - 20 Nov 2026 16 Seater Premium Urbania (16) 1 20/11/26 2d left New quotation 10 XMGZ467530 Local Bengaluru → Bengaluru 20 Nov 2026 - 20 Nov 2026 16 Seater Premium Urbania (16) 1 20/11/26 2d left Revised quotation Rows per page: 10 15 20 25 30 1-10 of 15 About Siddaganga Siddaganga is a trusted travel and logistics partner delivering safe, reliable, and professionally managed transport solutions for every journey. With a modern fleet and people-first service, we connect businesses and travelers with confidence and care. Sitemap Privacy Policy Terms & Condition Quick Links Offers Contact Schedules Refund Status Agent Registration Careers Company Our Fleets Confirm Phone Booking Testimonials FAQ About us Our Services Employee Shuttle Services Corporate Travel & Offsites Delegates & Executive Transport Government & PSU Transport View All Services Contact Us <phone> , 080-23119838, <phone> <email> Siddaganga Travels #48,Service Road, 1st Stage, 6th Phase, WOC Road, Rajajinagar, Bangalore, Karnataka-560010 Copyright 2026 @Siddaganga All right reserved.",
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/RET-02-post-SIVM916255-inquiry-details.png",
+        "modal": false
+      }
+    }
+  ],
+  "finished": "2026-11-18T08:33:30.469Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/get-inquiry-details"
+  ]
+}

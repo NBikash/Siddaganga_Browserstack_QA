@@ -1,0 +1,20 @@
+[
+  {
+    "label": "1-2-search",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "8 Hours"
+  },
+  {
+    "label": "3-4-confirm",
+    "total": "₹83,000",
+    "popup": null
+  },
+  {
+    "label": "5-modify-remove-date",
+    "nav": true
+  },
+  {
+    "label": "6-modify-toggles-off"
+  }
+]

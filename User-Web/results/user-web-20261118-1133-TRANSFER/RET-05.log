@@ -1,0 +1,18 @@
+[
+  {
+    "label": "baseline-one-way",
+    "nav": true,
+    "band": "< 30 KM",
+    "header": "Transfer - < 30 KM",
+    "total": "₹6,500",
+    "popup": null
+  },
+  {
+    "label": "round-trip",
+    "nav": true,
+    "band": "< 30 KM",
+    "header": "Transfer - < 30 KM",
+    "total": "₹6,500",
+    "popup": null
+  }
+]

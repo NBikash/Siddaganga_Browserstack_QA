@@ -1,0 +1,299 @@
+{
+  "id": "MLG-09",
+  "started": "2026-11-19T04:27:33.432Z",
+  "steps": [
+    {
+      "label": "Passengers for ",
+      "Local": {
+        "v": "30",
+        "min": "",
+        "max": ""
+      },
+      "Outstation": {
+        "v": "30",
+        "min": "",
+        "max": ""
+      },
+      "Transfer": {
+        "v": "30",
+        "min": "1",
+        "max": "20"
+      }
+    },
+    {
+      "label": "2-legs",
+      "f1pax": "55",
+      "s1": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-l1-saved.png"
+      },
+      "transferDefault": "30",
+      "typed21": "21",
+      "kept21": "21",
+      "msgs21": {
+        "inline": [],
+        "toasts": [
+          "Outstation leg added!"
+        ]
+      },
+      "shot21": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-trf-21.png",
+      "typed30": "30",
+      "kept30": "30",
+      "f2": [
+        "radio=on",
+        "Search pickup location=Rajajinagar, Bengaluru, Karnataka, India",
+        "Search drop location=Hubballi, Karnataka, India",
+        "text=2026-12-15",
+        "text=8:00 AM",
+        "text=2026-12-15",
+        "text=11:57 AM",
+        "Enter number of passengers=21"
+      ],
+      "save21": {
+        "toasts": [
+          "Transfer leg added!"
+        ],
+        "msgs": {
+          "inline": [],
+          "toasts": [
+            "Transfer leg added!"
+          ]
+        },
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-save-21.png"
+      },
+      "save20": null
+    },
+    {
+      "label": "3-change-total",
+      "after": {
+        "legs": {
+          "header": [],
+          "badges": [],
+          "innerLegs": [],
+          "step1": true
+        },
+        "tab": null,
+        "form": []
+      },
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-after-trash.png",
+      "back": true,
+      "next": {
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Outstation",
+            "Leg 2 Transfer"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "tab": "Transfer",
+        "form": [
+          "radio=on",
+          "Search pickup location=Rajajinagar, Bengaluru, Karnataka, India",
+          "Search drop location=Hubballi, Karnataka, India",
+          "text=2026-12-15",
+          "text=8:00 AM",
+          "text=2026-12-15",
+          "text=11:57 AM",
+          "Enter number of passengers=21"
+        ]
+      },
+      "badges": [
+        {
+          "n": 1,
+          "pax": "55",
+          "tab": "Outstation"
+        },
+        {
+          "n": 2,
+          "pax": "21",
+          "tab": "Transfer"
+        }
+      ],
+      "shot2": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-after-total-18.png"
+    },
+    {
+      "label": "4-results",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :13-14 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:55 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India ",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "55",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-results.png"
+      },
+      "leg1": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :13-14 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:55 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India ",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "55",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-leg1-results.png"
+      },
+      "sel45": {
+        "modal": "Passenger Capacity Not Complete! You need seats for 55 passengers, but your selected buses cover only 45 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "isConfirm": false,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-leg1-45LBB-after-select.png"
+      },
+      "popupButtons": [
+        "",
+        "Cancel Inquiry"
+      ],
+      "sel12": {
+        "modal": "Passenger Capacity Not Complete! You need seats for 55 passengers, but your selected buses cover only 12 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "isConfirm": false,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-leg1-D12TT-after-select.png"
+      },
+      "tabs": [
+        "Leg 1 ✓ [active]",
+        "Leg 2"
+      ],
+      "leg2": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹36,000 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2"
+        ],
+        "summary": ": Map Data Terms Leg 1 ✓ Leg 2 Multi-leg-Outstation Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return) Distance:600 KM Dates :13-14 Dec- 2026 Pickup Address:Yelahanka, Bengaluru, Karnataka, India Duration:2 Days Passengers:55 Pax Drop Address:Hassan, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi Indi",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "55",
+        "drop": "Hassan, Karnataka, India",
+        "route": "Garage (Start) → Yelahanka, Bengaluru, Karnataka, India → Hassan, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-leg2-results.png"
+      },
+      "sel49": {
+        "modal": "Passenger Capacity Not Complete! You need seats for 55 passengers, but your selected buses cover only 49 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "isConfirm": false,
+        "toasts": [],
+        "legTabs": [
+          "Leg 1 ✓ [active]",
+          "Leg 2"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-leg2-D49NA-after-select.png"
+      },
+      "confirm": {
+        "open": true,
+        "title": "Passenger Capacity Not Complete! You nee",
+        "legCount": 0,
+        "legs": [
+          {
+            "leg": 1,
+            "vehicles": null,
+            "routeSummary": null,
+            "pickup": null,
+            "dropoff": null,
+            "dates": null,
+            "passenger": null,
+            "cost": null,
+            "total": null,
+            "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-09-confirm-leg1.png"
+          }
+        ],
+        "overallTotal": null,
+        "buttons": [
+          "Cancel Inquiry"
+        ]
+      }
+    }
+  ],
+  "finished": "2026-11-19T04:31:10.965Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

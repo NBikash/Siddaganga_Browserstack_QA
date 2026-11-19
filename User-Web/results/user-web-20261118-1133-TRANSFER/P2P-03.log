@@ -1,0 +1,42 @@
+[
+  {
+    "label": "run-A",
+    "nav": true,
+    "band": "< 30 KM",
+    "header": "Transfer - < 30 KM",
+    "total": "₹10,500",
+    "popup": null
+  },
+  {
+    "label": "run-B",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - < 30 KM",
+    "total": "₹12,500",
+    "popup": null
+  },
+  {
+    "label": "run-C",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "total": "₹12,500",
+    "popup": null
+  },
+  {
+    "label": "run-D",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "total": "₹12,500",
+    "popup": null
+  },
+  {
+    "label": "run-E",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM",
+    "total": "₹12,500",
+    "popup": null
+  }
+]

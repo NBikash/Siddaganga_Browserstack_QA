@@ -1,0 +1,34 @@
+[
+  {
+    "label": "A",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹19,000",
+    "popup": null
+  },
+  {
+    "label": "B",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹20,000",
+    "popup": null
+  },
+  {
+    "label": "C",
+    "nav": true,
+    "dist": "600 KM",
+    "dur": "2 Days",
+    "total": "₹37,000",
+    "popup": null
+  },
+  {
+    "label": "D",
+    "nav": true,
+    "dist": "300 KM",
+    "dur": "1 Day",
+    "total": "₹19,000",
+    "popup": null
+  }
+]

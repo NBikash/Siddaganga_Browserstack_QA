@@ -1,0 +1,313 @@
+{
+  "id": "HRS-11",
+  "started": "2026-11-18T13:39:31.543Z",
+  "steps": [
+    {
+      "label": "1-switching",
+      "filled": {
+        "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "dt": [
+          "2026-12-09",
+          "7:00 AM"
+        ],
+        "pax": "8",
+        "hours": "10",
+        "toggles": [
+          false,
+          true
+        ],
+        "chips": []
+      },
+      "p2p": [
+        {
+          "ph": "radio",
+          "v": "on"
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "Search drop location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "7:09 PM"
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "9:09 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "back1": {
+        "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "dt": [
+          "2026-12-09",
+          "7:00 AM"
+        ],
+        "pax": "8",
+        "hours": "10",
+        "toggles": [
+          false,
+          true
+        ],
+        "chips": []
+      },
+      "local": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-18"
+        },
+        {
+          "ph": "text",
+          "v": "7:09 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        },
+        {
+          "ph": "Enter Number of Hours",
+          "v": "1"
+        }
+      ],
+      "back2": {
+        "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "dt": [
+          "2026-12-09",
+          "7:00 AM"
+        ],
+        "pax": "8",
+        "hours": "10",
+        "toggles": [
+          false,
+          true
+        ],
+        "chips": []
+      },
+      "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-after-switch.png"
+    },
+    {
+      "label": "2-search",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Coorg, Madikeri, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :9 Dec, 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:10 Hours Passengers:8 Pax Drop Address:Coorg, Madikeri, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "8",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Coorg, Madikeri, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-first-results.png",
+        "header": "20 Buses Found | Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "hoursTxt": "10 Hours",
+        "datesTxt": "9 Dec, 2026"
+      },
+      "card": "MPV's D MPV 7 ₹12,500"
+    },
+    {
+      "label": "3-modify-hours",
+      "pre": {
+        "title": "Modify Leg 1",
+        "toggles": {
+          "md": false,
+          "dd": true
+        },
+        "fields": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-09"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Coorg, Madikeri, Karnataka, India"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "8"
+          },
+          {
+            "ph": "Enter Number of Hours",
+            "v": "10"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modify-prefill.png",
+        "state": {
+          "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+          "drop": "Coorg, Madikeri, Karnataka, India",
+          "dt": [
+            "2026-12-09",
+            "7:00 AM"
+          ],
+          "pax": "8",
+          "hours": "10",
+          "toggles": [
+            false,
+            true
+          ],
+          "chips": []
+        }
+      },
+      "after": {
+        "pickup": "Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "dt": [
+          "2026-12-09",
+          "7:00 AM"
+        ],
+        "pax": "8",
+        "hours": "12",
+        "toggles": [
+          false,
+          true
+        ],
+        "chips": []
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Coorg, Madikeri, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :9 Dec, 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:12 Hours Passengers:8 Pax Drop Address:Coorg, Madikeri, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "pax": "8",
+        "drop": "Coorg, Madikeri, Karnataka, India",
+        "route": "Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Coorg, Madikeri, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-results.png"
+      }
+    },
+    {
+      "label": "4-new-fare",
+      "summary": "You have Searched For : Map Data Terms Leg 1 Transfer Garage (Start) → Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India → Coorg, Madikeri, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :9 Dec, 2026 Pickup Address:Sarjapur Road, Kaikondrahalli, Bengaluru, Karnataka, India Duration:12 Hours Passengers:8 Pax Drop Address:Coorg, Madikeri, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitc",
+      "details": {
+        "vehicle": "D MPV",
+        "pricing": [
+          "Transfer Trip Pricing",
+          "Transfer Trip - Outside City",
+          "Standard transfer rental package",
+          "Base Rate (Outside City)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)(> 30 km)",
+          "₹12,500",
+          "Late Allowance",
+          "₹800",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "103 hp · 137 Nm",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"650\",\"max\":\"729\",\"current\":\"690\"})",
+          "Recliner Degree ({\"min\":\"100\",\"max\":\"117\",\"current\":\"108\"})",
+          "Acoustic Insulation ({\"min\":\"45\",\"max\":\"61\",\"current\":\"55\"})",
+          "Vertical Smoothness ({\"min\":\"55\",\"max\":\"71\",\"current\":\"62\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Send Inquiry",
+        "title": "Passenger Capacity Not Complete!",
+        "popup": "Passenger Capacity Not Complete! You need seats for 8 passengers, but your selected buses cover only 7 seats. Please add one or more buses to continue. Cancel Inquiry",
+        "route": null,
+        "dates": null,
+        "passenger": "You need seats for 8 passengers, but your selected buses cover only 7 seats.",
+        "dropoff": null,
+        "cost": [],
+        "buttons": [
+          "Cancel Inquiry"
+        ],
+        "map": {
+          "count": 0,
+          "maps": [],
+          "shot": null
+        },
+        "shot": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261118-1653-BYHOUR/HRS-11-modified-confirm-cost.png",
+        "text": "Passenger Capacity Not Complete! You need seats for 8 passengers, but your selected buses cover only 7 seats. Please add one or more buses to continue. Cancel Inquiry"
+      }
+    }
+  ],
+  "finished": "2026-11-18T13:43:33.385Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

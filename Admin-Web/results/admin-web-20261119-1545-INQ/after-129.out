@@ -1,0 +1,34 @@
+{
+  "row": "not listed: rows for QRY-129: 0",
+  "qaIds": [
+    "QRY-194 Revised quotation",
+    "QRY-213 Revised quotation",
+    "QRY-215 Revised quotation",
+    "QRY-211 Revised quotation",
+    "QRY-228 Revised quotation",
+    "QRY-128 Revised quotation",
+    "QRY-134 Revised quotation"
+  ],
+  "shotList": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-qa-list-after.png",
+  "kpi": "Total Inquiries 186 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+  "unfiltered": "Showing 1 to 5 of 18 entries",
+  "statusOptions": [
+    "Select Status",
+    "All",
+    "New quotation",
+    "Pending",
+    "Revised quotation"
+  ],
+  "leadRow": "1 LD-346 Bikash N N/A N/A 12/11/2026 Unassigned Open",
+  "leadMenu": [
+    "View Lead",
+    "Assign",
+    "Delete"
+  ],
+  "lead": {
+    "pnr": "IAJA754847",
+    "inquiryId": "QRY-129",
+    "status": "Approved"
+  },
+  "leadShot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-lead-LD-346-after.png"
+}

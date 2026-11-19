@@ -1,0 +1,248 @@
+{
+  "id": "MLG-06",
+  "started": "2026-11-19T04:10:56.402Z",
+  "steps": [
+    {
+      "label": "1-two-legs",
+      "s1": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-l1-saved.png"
+      },
+      "f2": [
+        "checkbox=false",
+        "checkbox=true",
+        "Search pickup location=Hebbal, Bengaluru, Karnataka, India",
+        "text=2026-12-06",
+        "text=7:00 AM",
+        "Search destination 1 location=Chikkaballapur, Karnataka, India",
+        "Search drop location=Yelahanka, Bengaluru, Karnataka, India",
+        "text=2026-12-06",
+        "text=9:00 PM",
+        "Enter number of passengers=6"
+      ],
+      "s2": {
+        "toasts": [
+          "Outstation leg added!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-l2-saved.png"
+      }
+    },
+    {
+      "label": "2-edit-leg2",
+      "pre": {
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "tab": "Outstation",
+        "form": [
+          "checkbox=false",
+          "checkbox=true",
+          "Search pickup location=Hebbal, Bengaluru, Karnataka, India",
+          "text=2026-12-06",
+          "text=7:00 AM",
+          "Search destination 1 location=Chikkaballapur, Karnataka, India",
+          "Search drop location=Yelahanka, Bengaluru, Karnataka, India",
+          "text=2026-12-06",
+          "text=9:00 PM",
+          "Enter number of passengers=6"
+        ]
+      },
+      "preShot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-leg2-prefill.png",
+      "ddPrefilled": true,
+      "place": {
+        "ph": "Search destination 1 location",
+        "idx": 0,
+        "query": "Nandi Hills",
+        "suggestions": [
+          "Nandi Hills Karnataka, India",
+          "Nandi Hills Karnataka Nandi Hills, Karnataka, India",
+          "Nandi Hills Sunrise View point Nandi Hills, Karnataka, India",
+          "Nandi hills Manivartapete, Sultanpete, Bengaluru, Karnataka, India"
+        ],
+        "chosen": "Nandi Hills, Karnataka, India"
+      },
+      "save": {
+        "toasts": [
+          "Outstation leg updated!"
+        ],
+        "msgs": [],
+        "tabAfter": "Transfer",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-leg2-updated-saved.png"
+      }
+    },
+    {
+      "label": "3-edit-leg1",
+      "pre": {
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "tab": "Local",
+        "form": [
+          "checkbox=false",
+          "checkbox=false",
+          "Search pickup location=Hebbal, Bengaluru, Karnataka, India",
+          "text=2026-12-05",
+          "text=8:00 AM",
+          "Enter number of passengers=6",
+          "Enter Number of Hours=6"
+        ]
+      },
+      "preShot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-leg1-prefill.png",
+      "hours": "8",
+      "save": {
+        "toasts": [
+          "Local leg updated!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #3"
+          ],
+          "badges": [
+            "Leg 1 Local",
+            "Leg 2 Outstation"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-leg1-updated-saved.png"
+      }
+    },
+    {
+      "label": "4-delete-leg1",
+      "after": {
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Outstation"
+          ],
+          "innerLegs": [],
+          "step1": false
+        },
+        "tab": "Outstation",
+        "form": [
+          "checkbox=false",
+          "checkbox=true",
+          "Search pickup location=Hebbal, Bengaluru, Karnataka, India",
+          "text=2026-12-06",
+          "text=7:00 AM",
+          "Search destination 1 location=Nandi Hills, Karnataka, India",
+          "Search drop location=Yelahanka, Bengaluru, Karnataka, India",
+          "text=2026-12-06",
+          "text=9:00 PM",
+          "Enter number of passengers=6"
+        ]
+      },
+      "toasts": [
+        "Local leg updated!",
+        "Leg 1 removed"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-after-delete.png"
+    },
+    {
+      "label": "5-results",
+      "tabBefore": "Outstation",
+      "skip": null,
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "header": "20 Buses Found | Outstation - 0 KM Delux Starts From ₹17,500 4.5 33 Seater De",
+        "labels": [
+          "Multi-leg-Outstation"
+        ],
+        "legTabs": [
+          "Leg 1 [active]",
+          "Leg 2"
+        ],
+        "summary": "You have Searched For : Map Data Terms Leg 1 Leg 2 Multi-leg-Outstation Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Yelahanka, Bengaluru, Karnataka, India → Garage (Return) Distance:300 KM Dates :6 Dec- 2026 Pickup Address:Hebbal, Bengaluru, Karnataka, India Duration:1 Day Passengers:6 Pax Drop Address:Yelahanka, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force ",
+        "distance": "300 KM",
+        "duration": "1 Day",
+        "pax": "6",
+        "drop": "Yelahanka, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Hebbal, Bengaluru, Karnataka, India → Nandi Hills, Karnataka, India → Yelahanka, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹17,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹19,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹17,500",
+          "Sedan D SDN 4 ₹10,100",
+          "MPV's D MPV 7 ₹15,800",
+          "12 Seater Tempo Traveller D12TT 12 ₹8,300"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-06-results.png"
+      }
+    }
+  ],
+  "finished": "2026-11-19T04:13:27.277Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing"
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "label": "1-blank-from",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "2-blank-to",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "3-from-eq-to",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "4-unresolved",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": []
+    }
+  }
+]

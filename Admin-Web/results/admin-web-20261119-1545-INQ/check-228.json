@@ -1,0 +1,27 @@
+{
+  "lead": {
+    "row": "1 LD-415 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+    "pnr": "NCCC102640",
+    "inquiryId": "QRY-195",
+    "status": "Revised quotation",
+    "vehicles": [
+      "Vehicle Name 16 Seater Premium Urbania "
+    ],
+    "shot": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-LD-415-view-lead-after-trip2-r2.png"
+  },
+  "row228": "228 QRY-228 Bikash N National 12 Seater Tempo Traveller — <phone> 11/01/2027 View Quote Revised quotation Record Advance",
+  "menu228": [
+    "View Quote",
+    "Edit",
+    "Send To Booking",
+    "Record Advance",
+    "Send Quote",
+    "Send Proforma Invoice",
+    "Download Proforma Invoice",
+    "Send Bus Images",
+    "Cancel Inquiry",
+    "Delete"
+  ],
+  "editUrl228": "/dashboard/inquiry-management/update-inquiry/48f3a9cd-513a-44b4-bc82-5d33e3659ce6",
+  "sameForm": true
+}

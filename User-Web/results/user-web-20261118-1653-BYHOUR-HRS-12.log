@@ -1,0 +1,18 @@
+[
+  {
+    "label": "1-local",
+    "nav": true,
+    "header": "20 Buses Found | Local - 8 HR / 80 KM",
+    "hrs": "8 Hours",
+    "total": "₹8,300",
+    "popup": null
+  },
+  {
+    "label": "2-by-hour",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "8 Hours",
+    "total": "₹12,500",
+    "popup": null
+  }
+]

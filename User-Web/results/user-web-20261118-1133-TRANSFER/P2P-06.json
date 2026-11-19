@@ -1,0 +1,221 @@
+{
+  "id": "P2P-06",
+  "started": "2026-11-18T06:48:32.918Z",
+  "steps": [
+    {
+      "label": "1-blank-from",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Pickup location is required"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": ""
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "12:18 PM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "2:18 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-06-1-validation.png"
+      }
+    },
+    {
+      "label": "2-blank-to",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": ""
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "12:19 PM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "2:19 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-06-2-validation.png"
+      }
+    },
+    {
+      "label": "3-from-eq-to",
+      "state": {
+        "from": "Whitefield, Bengaluru, Karnataka, India",
+        "to": "Whitefield, Bengaluru, Karnataka, India",
+        "rfrom": null,
+        "rto": null,
+        "ret": false,
+        "dt": [
+          "2026-11-18",
+          "12:20 PM",
+          "2026-11-18",
+          "2:20 PM"
+        ],
+        "pax": "1"
+      },
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Transfer - > 30 KM",
+        "summary": ": Map Data Terms Leg 1 Transfer Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return) Distance:> 30 KM Dates :18 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:1 Day Passengers:1 Pax Drop Address:Whitefield, Bengaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "duration": "1 Day",
+        "pax": "1",
+        "drop": "Whitefield, Bengaluru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Whitefield, Bengaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹16,500",
+          "40 Seater Deluxe Coach D40NA 40 ₹18,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹20,000",
+          "Sedan D SDN 4 ₹8,000",
+          "MPV's D MPV 7 ₹12,500",
+          "12 Seater Tempo Traveller D12TT 12 ₹9,000"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-06-3-results.png",
+        "header": "Transfer - > 30 KM",
+        "band": "> 30 KM",
+        "durationTxt": "1 Day"
+      }
+    },
+    {
+      "label": "4-unresolved",
+      "typed": "Xyzabc123",
+      "res": {
+        "navigated": false,
+        "msgs": {
+          "inline": [
+            "Drop location is required"
+          ],
+          "toasts": []
+        },
+        "form": [
+          {
+            "ph": "radio",
+            "v": "on"
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Xyzabc123"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "12:21 PM"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-18"
+          },
+          {
+            "ph": "text",
+            "v": "2:21 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "1"
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261118-1133-TRANSFER/P2P-06-4-validation.png"
+      }
+    }
+  ],
+  "finished": "2026-11-18T06:51:41.282Z",
+  "loads": [],
+  "net": [
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST https://places.googleapis.com/$rpc/google.maps.places.v1.Places/AutocompletePlaces"
+  ]
+}

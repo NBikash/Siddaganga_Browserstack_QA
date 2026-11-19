@@ -1,0 +1,374 @@
+{
+  "id": "OUT-02",
+  "started": "2026-11-17T10:44:28.056Z",
+  "steps": [
+    {
+      "label": "search",
+      "fill": {
+        "toggles": {},
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Whitefield",
+            "suggestions": [
+              "Whitefield Bengaluru, Karnataka, India",
+              "Whitefield railway station back gate Station Road, Kadugodi, Bengaluru, Karnataka, India",
+              "Whitefield Inner circle ground Inner Circle Road, Dodsworth Layout, Whitefield, Bengaluru, Karnataka, India",
+              "Whitefield metro parking Kadugodi Flyover, Kadugodi Colony, Kadugodi, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Mysuru",
+            "suggestions": [
+              "Mysuru Karnataka, India",
+              "Mysuru Palace Agrahara, Chamrajpura, Mysuru, Karnataka, India",
+              "Mysuru Junction Railway Station Back Gate Medar Block, Yadavagiri, Mysuru, Karnataka, India",
+              "Mysuru Shri Chamundeshwari Devi Temple Chamundi Hill, Mysuru, Karnataka, India"
+            ],
+            "chosen": "Mysuru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-24",
+            "disabled": false,
+            "value": "2026-11-24"
+          },
+          {
+            "label": "9:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-11-25",
+            "disabled": false,
+            "value": "2026-11-25"
+          },
+          {
+            "label": "8:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Whitefield, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-24"
+          },
+          {
+            "ph": "text",
+            "v": "9:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Mysuru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-25"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "20"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -39,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Whitefield, Bengaluru, Karnataka, India",
+              "Mysuru, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 20 km per 33 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 7
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": ": G P D G Map Data Terms Leg 1 Outstation Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return) Distance:600 KM Dates :24-25 Nov- 2026 Pickup Address:Whitefield, Bengaluru, Karnataka, India Duration:2 Days Passengers:20 Pax Drop Address:Mysuru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters Ltd Show Advanced",
+        "distance": "600 KM",
+        "duration": "2 Days",
+        "pax": "20",
+        "drop": "Mysuru, Karnataka, India",
+        "route": "Garage (Start) → Whitefield, Bengaluru, Karnataka, India → Mysuru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹36,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹39,000",
+          "49 Seater Deluxe Coach D49NA 49 ₹36,000",
+          "Sedan D SDN 4 ₹20,700",
+          "MPV's D MPV 7 ₹32,400",
+          "12 Seater Tempo Traveller D12TT 12 ₹17,400"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-results.png"
+      },
+      "details": {
+        "vehicle": "P28AC",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹15,600",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,000",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,000",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "140 hp · 450 Nm · 22% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"730\",\"max\":\"800\",\"current\":\"760\"})",
+          "Recliner Degree ({\"min\":\"118\",\"max\":\"135\",\"current\":\"125\"})",
+          "Acoustic Insulation ({\"min\":\"62\",\"max\":\"79\",\"current\":\"70\"})",
+          "Vertical Smoothness ({\"min\":\"72\",\"max\":\"87\",\"current\":\"78\"})",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-fare-breakup.png"
+      },
+      "confirm": {
+        "cta": "Book This Vehicle",
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 28 Seater Premium AC Coach – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Whitefield, Bengaluru, Karnataka, India",
+          "Dropoff Location",
+          "Mysuru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "24,25 Nov, 2026",
+        "passenger": "20",
+        "dropoff": "Mysuru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹31,200"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹2,000"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹1,000"
+          ],
+          [
+            "State Tax",
+            "₹0"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹34,200"
+          ]
+        ],
+        "total": "₹34,200",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Whitefield, Bengaluru, Karnataka, India",
+                "Mysuru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 8
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-confirm-cost.png"
+      }
+    },
+    {
+      "label": "submit",
+      "submit": {
+        "messages": [
+          "Inquiry Submitted Successfully! We're calculating the most accurate price for your trip. Estimated Cost (Approx.) ₹34,200 Based on route, dates, vehicle availability & fuel estimates Track My Booking Back to Home"
+        ],
+        "calls": [
+          "allowed(approved) POST /user/save-inquiry"
+        ],
+        "saveCalls": 1,
+        "estimate": "₹34,200",
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-main-submit-result.png"
+      }
+    },
+    {
+      "label": "track-my-booking",
+      "url": "https://preprod.siddagangatravels.com/send-inquiry",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-track-my-booking.png"
+    },
+    {
+      "label": "my-inquiries",
+      "listTotal": "1-10 of 12",
+      "top3": [
+        "1 UMNF499106 Outstation Bengaluru → Mysuru 24 Nov 2026 - 25 Nov 2026 28 Seater Premium AC Coach (28) 20 24/11/26 7d left New quotation",
+        "2 DDEV675048 Outstation Bengaluru → Bengaluru 15 Nov 2026 - 15 Nov 2026 33 Seater Deluxe Coach (35) 1 15/11/26 Expired New quotation",
+        "3 YIAC324313 Outstation Bengaluru → Bengaluru 15 Nov 2026 - 15 Nov 2026 33 Seater Deluxe Coach (35) 2 15/11/26 Expired New quotation"
+      ],
+      "row": {
+        "sr": 1,
+        "id": "UMNF499106",
+        "type": "Outstation",
+        "route": "Bengaluru → Mysuru",
+        "dates": "24 Nov 2026 - 25 Nov 2026",
+        "vehicle": "28 Seater Premium AC Coach (28)",
+        "pax": 20,
+        "validity": "24/11/26",
+        "status": "7d left New quotation"
+      },
+      "details": {
+        "url": "https://preprod.siddagangatravels.com/dashboard/inquiry-management/update-inquiry/<id>",
+        "text": "Edit Inquiry - UMNF499106 Update inquiry details, trip setup, and journey assignments. Back To Dashboard Update Inquiry Basic Details Booking Type * Select Booking Type Local Outstation Transfer Dynamic Trip Month Select Month January February March April May June July August September October November December Start Date End Date Arrival Time Departure Time Trip Duration (Days) Number of Passengers Journey Details Outstation Journey 2 Days ▼ Dates: 11/24/2026 - 11/25/2026 (2 days) Timings: Arrival: 00:00 | Departure: 00:00 Destinations: Whitefield, Bengaluru, Karnataka, India Mysuru, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz Add Bus Refresh Pricing Vehicles & Pricing: Vehicle Type 2 Quantity Total Cost Action 28 Seater Premium AC Coach - 1 + ₹34,200.00 Remove Total Journey Cost: ₹34,200.00 Back To Dashboard Update Inquiry ",
+        "inputs": [
+          {
+            "name": "bookingType",
+            "type": "select-one",
+            "v": "Outstation",
+            "dis": false
+          },
+          {
+            "name": "tripMonth",
+            "type": "select-one",
+            "v": "November",
+            "dis": false
+          },
+          {
+            "ph": "Select start date",
+            "name": "",
+            "type": "text",
+            "v": "24/11/2026",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select end date",
+            "name": "",
+            "type": "text",
+            "v": "25/11/2026",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select arrival time",
+            "name": "arrivalTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Select departure time",
+            "name": "departureTime",
+            "type": "time",
+            "v": "00:00",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter trip duration",
+            "name": "tripDuration",
+            "type": "number",
+            "v": "2",
+            "dis": false,
+            "ro": false
+          },
+          {
+            "ph": "Enter number of passengers",
+            "name": "pax",
+            "type": "number",
+            "v": "20",
+            "dis": false,
+            "ro": false
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-02-post-UMNF499106-edit-form.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T10:47:28.552Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/save-inquiry",
+    "allowed POST /user/get-inquiry-details"
+  ]
+}

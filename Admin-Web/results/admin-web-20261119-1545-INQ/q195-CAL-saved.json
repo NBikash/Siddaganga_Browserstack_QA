@@ -1,0 +1,113 @@
+{
+  "CAL": {
+    "stage": "CAL",
+    "url": "/dashboard/inquiry-management/update-inquiry/48f3a9cd-513a-44b4-bc82-5d33e3659ce6",
+    "before": {
+      "trips": [],
+      "journeys": [],
+      "dateLines": [
+        "11/01/2027 - 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      }
+    },
+    "shotBefore": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-before-r3.png",
+    "cellCount": 42,
+    "afterPick": [
+      "11",
+      "12",
+      "13"
+    ],
+    "shotPicked": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-range-picked-r2.png",
+    "toasts": [],
+    "afterSave": {
+      "trips": [
+        "Trip-1"
+      ],
+      "journeys": [
+        "Journey A: Outstation"
+      ],
+      "dateLines": [
+        "11/01/2027, 12/01/2027, 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ]
+    },
+    "shotSaved": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-save-assignment-r2.png",
+    "costsBeforeQuote": {
+      "totalKms": "900.00",
+      "minimumPerDay": "300.00",
+      "perKm": "40.00",
+      "extraKms": "",
+      "driver": "800.00",
+      "dayBataDays": "3.00",
+      "noOfDays": "2.00",
+      "toll": "",
+      "totalStateTax": "0.00",
+      "extra": "",
+      "fixedCost": "0",
+      "totalApproxCost": "40000.00"
+    },
+    "toastsQuote": [
+      "Data updated successfully !"
+    ],
+    "net": [
+      "POST /api/v1/admin/pricing-inquiry 200",
+      "POST /api/v1/admin/pricing-inquiry 200",
+      "POST /api/v1/admin/update-inquiry 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/lead-target/attach-inquiry 200",
+      "POST /public/api/v1/crypto/session 200",
+      "POST /api/v1/admin/inquiry/details 200",
+      "POST /api/v1/admin/update-fcm-token 200"
+    ],
+    "console": [],
+    "afterReopen": {
+      "trips": [],
+      "journeys": [],
+      "dateLines": [
+        "11/01/2027 - 13/01/2027"
+      ],
+      "highlighted": [
+        "11",
+        "12",
+        "13"
+      ],
+      "costs": {
+        "totalKms": "900.00",
+        "minimumPerDay": "300.00",
+        "perKm": "40.00",
+        "extraKms": "0.00",
+        "driver": "800.00",
+        "dayBataDays": "3.00",
+        "noOfDays": "2.00",
+        "toll": "0.00",
+        "totalStateTax": "0.00",
+        "extra": "0.00",
+        "fixedCost": "0",
+        "totalApproxCost": "40000.00"
+      }
+    },
+    "shotAfter": "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-CAL-after-reopen-refresh-r2.png"
+  }
+}

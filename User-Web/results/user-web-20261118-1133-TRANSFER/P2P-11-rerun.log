@@ -1,0 +1,26 @@
+[
+  {
+    "label": "local-Belagavi",
+    "nav": true
+  },
+  {
+    "label": "local-Chennai",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": []
+    }
+  },
+  {
+    "label": "local-Kochi",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Pickup location is required"
+      ],
+      "toasts": []
+    }
+  }
+]

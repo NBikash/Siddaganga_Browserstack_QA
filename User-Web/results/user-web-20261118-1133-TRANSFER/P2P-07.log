@@ -1,0 +1,76 @@
+[
+  {
+    "label": "1-past-date",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "2-today-past-slot"
+  },
+  {
+    "label": "3-drop-date-before-pickup",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "4-same-day-earlier",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "5-same-day-equal",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop time must be after pickup time"
+      ],
+      "toasts": [
+        "Selected time: 10:00 AM",
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "6a-same-day-later",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "6b-same-day-default",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "7-next-day-earlier-clock",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  },
+  {
+    "label": "8-pickup-after-drop",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop date cannot be before pickup date"
+      ],
+      "toasts": [
+        "Selected time: 10:00 AM",
+        "Selected time: 12:00 PM"
+      ]
+    }
+  },
+  {
+    "label": "9-idle"
+  },
+  {
+    "label": "10-far-future",
+    "nav": true,
+    "band": "> 30 KM",
+    "header": "Transfer - > 30 KM"
+  }
+]

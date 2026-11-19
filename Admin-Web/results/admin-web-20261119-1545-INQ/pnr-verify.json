@@ -1,0 +1,48 @@
+{
+  "total0": "Showing 1 to 5 of 219 entries",
+  "found": {
+    "ZLPS490392": {
+      "leadId": "LD-436",
+      "rowText": "3 LD-436 Bikash N N/A N/A 19/11/2026 Unassigned Open",
+      "details": "Lead Details Lead Information Lead ID LD-436 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR ZLPS490392 Inquiry ID QRY-216 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month January Passengers (PAX) 18 Trip Days 3 Start Date 03/01/2027 End Date 05/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 03/01/2027 End Date 05/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Koramangala, Bengaluru, Karnataka, India Drop Location Hassan, Karnataka, India Journey Type Outstation Trip Days 3 Amenities - Vehicle 1 Vehicle Name 21 Seater Premium AC Coach Vehicle Type Mini Coach Seats 21 No. of Vehicles 1 Total Costing ₹42,800 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ZLPS490392-LD-436-view-lead.png"
+    },
+    "ORZS120376": {
+      "leadId": "LD-433",
+      "rowText": "6 LD-433 Bikash N N/A N/A 18/11/2026 Unassigned Open",
+      "details": "Lead Details Lead Information Lead ID LD-433 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR ORZS120376 Inquiry ID QRY-213 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 40 Trip Days 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Whitefield, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 40 Seater Premium AC Coach Vehicle Type Full-Size Coach Seats 40 No. of Vehicles 1 Total Costing ₹20,000 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ORZS120376-LD-433-view-lead.png"
+    },
+    "LJWN815154": {
+      "leadId": "LD-431",
+      "rowText": "8 LD-431 Bikash N N/A N/A 18/11/2026 Unassigned Open",
+      "details": "Lead Details Lead Information Lead ID LD-431 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR LJWN815154 Inquiry ID QRY-211 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 10 Trip Days 2 Start Date 27/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 27/11/2026 End Date 27/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Phase 1, Electronic City, Bengaluru, Karnataka, India Drop Location Mysuru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 35 Seater Premium AC Coach Vehicle Type Midi Coach Seats 35 No. of Vehicles 1 Total Costing ₹18,500 Journey 2 Start Date 29/11/2026 End Date 29/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Mysuru, Karnataka, India Drop Location Phase 1, Electronic City, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 35 Seater Premium AC Coach Vehicle Type Midi Coach Seats 35 No. of Vehicles 1 Total Costing ₹18,500 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-LJWN815154-LD-431-view-lead.png"
+    },
+    "SIVM916255": {
+      "leadId": "LD-428",
+      "rowText": "11 LD-428 Bikash N N/A N/A 18/11/2026 Unassigned Open",
+      "details": "Lead Details Lead Information Lead ID LD-428 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR SIVM916255 Inquiry ID QRY-208 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month November Passengers (PAX) 9 Trip Days 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 25/11/2026 End Date 25/11/2026 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Whitefield, Bengaluru, Karnataka, India Drop Location Kempegowda International Airport Bengaluru (BLR), Devanahalli, Bengaluru, Karnataka, India Journey Type Transfer Trip Days 1 Amenities - Vehicle 1 Vehicle Name 9 Seater Luxury Urbania Vehicle Type Luxury Van Seats 9 No. of Vehicles 1 Total Costing ₹17,500 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-SIVM916255-LD-428-view-lead.png"
+    },
+    "NCCC102640": {
+      "leadId": "LD-415",
+      "rowText": "24 LD-415 Bikash N N/A N/A 17/11/2026 Unassigned Open",
+      "details": "Lead Details Lead Information Lead ID LD-415 Client Name Bikash N Expected Value - Stage - Status Open Assigned To Unassigned Inquiry Information Inquiry PNR NCCC102640 Inquiry ID QRY-195 Customer Name Bikash N Email - Mobile Number <phone> Status New quotation Client Type National Month January Passengers (PAX) 14 Trip Days 3 Start Date 11/01/2027 End Date 13/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Journey Details Journey 1 Start Date 11/01/2027 End Date 13/01/2027 Pickup Time 12:00 AM Drop Time 12:00 AM Pickup Location Koramangala, Bengaluru, Karnataka, India Drop Location Hassan, Karnataka, India Journey Type Outstation Trip Days 3 Amenities - Vehicle 1 Vehicle Name 16 Seater Premium Urbania Vehicle Type Passenger Van Seats 16 No. of Vehicles 1 Total Costing ₹40,000 Send To Inquiry",
+      "shot": "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-NCCC102640-LD-415-view-lead.png"
+    }
+  },
+  "missing": [
+    "UMNF499106",
+    "BGVS613665",
+    "YOIT928679"
+  ],
+  "seen": [
+    "LD-436:ZLPS490392",
+    "LD-433:ORZS120376",
+    "LD-431:LJWN815154",
+    "LD-428:SIVM916255",
+    "LD-415:NCCC102640"
+  ],
+  "note": "Redacted 19 Nov 2026: the scan opened leads of other clients by mistake; only the QA test client's leads are kept."
+}

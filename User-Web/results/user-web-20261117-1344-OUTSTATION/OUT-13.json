@@ -1,0 +1,1103 @@
+{
+  "id": "OUT-13",
+  "started": "2026-11-17T10:13:54.579Z",
+  "steps": [
+    {
+      "label": "A-cross-month",
+      "fill": {
+        "toggles": {
+          "dd": true
+        },
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Thanisandra",
+            "suggestions": [
+              "Thanisandra Bengaluru, Karnataka, India",
+              "Thanisandra Main Road Sinthan Nagar, P&T Layout, Manayata Tech Park, Bengaluru, Karnataka, India",
+              "Thanisandra BBMP Office Thanisandra Main Road, Sinthan Nagar, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka, India",
+              "Thanisandra CAR Parade ground Sri Balaji Krupa Layout, Thanisandra, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Panaji",
+            "suggestions": [
+              "Panaji Goa, India",
+              "Panaji, Goa Kerant, Caranzalem, Panaji, Goa, India",
+              "Panaji Bus Stand Circle Patto Centre, Bambolim, Goa, India",
+              "Panaji Residency Altinho, Panaji, Goa, India"
+            ],
+            "chosen": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "query": "Gokarna",
+            "suggestions": [
+              "Gokarna Karnataka, India",
+              "Gokarna Main Beach Belehittal Road, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Shiva Athmalinga Koti Teertha Road, Kotiteertha, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Kudle Beach Dandebagh, Gokarna, Karnataka, India"
+            ],
+            "chosen": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mangaluru",
+            "suggestions": [
+              "Mangaluru Karnataka, India",
+              "Mangaluru International Airport Bajpe Road, Kenjar, Mangaluru, Karnataka, India",
+              "Mangaluru Central Railway Station Paid Car Parking Attavar, Mangaluru, Karnataka, India",
+              "MANGALURU KAIRUCHI 7th Main Road, Mico Layout, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Mangaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-11-30",
+            "disabled": false,
+            "value": "2026-11-30"
+          },
+          {
+            "label": "7:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2026-12-02",
+            "disabled": false,
+            "value": "2026-12-02"
+          },
+          {
+            "label": "8:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-11-30"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "v": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-02"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -72,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Thanisandra, Bengaluru, Karnataka, India",
+              "Panaji, Goa, India",
+              "Gokarna, Karnataka, India",
+              "Mangaluru, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 100 km per 41 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "D",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 7
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:1336 KM Dates :30 Nov- 2026 | 1-2 Dec- 2026 Pickup Address:Thanisandra, Bengaluru, Karnataka, India Duration:3 Days Passengers:30 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car For",
+        "distance": "1336 KM",
+        "duration": "3 Days",
+        "pax": "30",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹86,980",
+          "40 Seater Deluxe Coach D40NA 40 ₹94,660",
+          "49 Seater Deluxe Coach D49NA 49 ₹90,980",
+          "Sedan D SDN 4 ₹45,752",
+          "MPV's D MPV 7 ₹71,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹38,900"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Thanisandra, Bengaluru, Karnataka, India",
+          "Panaji, Goa, India → Gokarna, Karnataka, India",
+          "Dropoff Location",
+          "Mangaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "30 Nov, 2026 | 1,2 Dec, 2026",
+        "passenger": "30",
+        "dropoff": "Mangaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹1,13,560"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹4,500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹3,000"
+          ],
+          [
+            "State Tax",
+            "₹10,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹1,31,560"
+          ]
+        ],
+        "total": "₹1,31,560",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Thanisandra, Bengaluru, Karnataka, India",
+                "Panaji, Goa, India",
+                "Gokarna, Karnataka, India",
+                "Mangaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 10
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-A-cross-month-confirm-cost.png"
+      }
+    },
+    {
+      "label": "B-cross-year",
+      "fill": {
+        "toggles": {
+          "dd": true
+        },
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Thanisandra",
+            "suggestions": [
+              "Thanisandra Bengaluru, Karnataka, India",
+              "Thanisandra Main Road Sinthan Nagar, P&T Layout, Manayata Tech Park, Bengaluru, Karnataka, India",
+              "Thanisandra BBMP Office Thanisandra Main Road, Sinthan Nagar, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka, India",
+              "Thanisandra CAR Parade ground Sri Balaji Krupa Layout, Thanisandra, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Panaji",
+            "suggestions": [
+              "Panaji Goa, India",
+              "Panaji, Goa Kerant, Caranzalem, Panaji, Goa, India",
+              "Panaji Bus Stand Circle Patto Centre, Bambolim, Goa, India",
+              "Panaji Residency Altinho, Panaji, Goa, India"
+            ],
+            "chosen": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "query": "Gokarna",
+            "suggestions": [
+              "Gokarna Karnataka, India",
+              "Gokarna Main Beach Belehittal Road, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Shiva Athmalinga Koti Teertha Road, Kotiteertha, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Kudle Beach Dandebagh, Gokarna, Karnataka, India"
+            ],
+            "chosen": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mangaluru",
+            "suggestions": [
+              "Mangaluru Karnataka, India",
+              "Mangaluru International Airport Bajpe Road, Kenjar, Mangaluru, Karnataka, India",
+              "Mangaluru Central Railway Station Paid Car Parking Attavar, Mangaluru, Karnataka, India",
+              "MANGALURU KAIRUCHI 7th Main Road, Mico Layout, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Mangaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-31",
+            "disabled": false,
+            "value": "2026-12-31"
+          },
+          {
+            "label": "7:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2027-01-02",
+            "disabled": false,
+            "value": "2027-01-02"
+          },
+          {
+            "label": "8:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-31"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "v": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2027-01-02"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -385,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Thanisandra, Bengaluru, Karnataka, India",
+              "Panaji, Goa, India",
+              "Gokarna, Karnataka, India",
+              "Mangaluru, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 100 km per 41 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "D",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 7
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:1336 KM Dates :31 Dec- 2026 | 1-2 Jan- 2027 Pickup Address:Thanisandra, Bengaluru, Karnataka, India Duration:3 Days Passengers:30 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car For",
+        "distance": "1336 KM",
+        "duration": "3 Days",
+        "pax": "30",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹86,980",
+          "40 Seater Deluxe Coach D40NA 40 ₹94,660",
+          "49 Seater Deluxe Coach D49NA 49 ₹90,980",
+          "Sedan D SDN 4 ₹45,752",
+          "MPV's D MPV 7 ₹71,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹38,900"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Thanisandra, Bengaluru, Karnataka, India",
+          "Panaji, Goa, India → Gokarna, Karnataka, India",
+          "Dropoff Location",
+          "Mangaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "31 Dec, 2026 | 1,2 Jan, 2027",
+        "passenger": "30",
+        "dropoff": "Mangaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹1,13,560"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹4,500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹3,000"
+          ],
+          [
+            "State Tax",
+            "₹10,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹1,31,560"
+          ]
+        ],
+        "total": "₹1,31,560",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Thanisandra, Bengaluru, Karnataka, India",
+                "Panaji, Goa, India",
+                "Gokarna, Karnataka, India",
+                "Mangaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 10
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-B-cross-year-confirm-cost.png"
+      }
+    },
+    {
+      "label": "C-31-days",
+      "fill": {
+        "toggles": {
+          "dd": true
+        },
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Thanisandra",
+            "suggestions": [
+              "Thanisandra Bengaluru, Karnataka, India",
+              "Thanisandra Main Road Sinthan Nagar, P&T Layout, Manayata Tech Park, Bengaluru, Karnataka, India",
+              "Thanisandra BBMP Office Thanisandra Main Road, Sinthan Nagar, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka, India",
+              "Thanisandra CAR Parade ground Sri Balaji Krupa Layout, Thanisandra, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Panaji",
+            "suggestions": [
+              "Panaji Goa, India",
+              "Panaji, Goa Kerant, Caranzalem, Panaji, Goa, India",
+              "Panaji Bus Stand Circle Patto Centre, Bambolim, Goa, India",
+              "Panaji Residency Altinho, Panaji, Goa, India"
+            ],
+            "chosen": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "query": "Gokarna",
+            "suggestions": [
+              "Gokarna Karnataka, India",
+              "Gokarna Main Beach Belehittal Road, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Shiva Athmalinga Koti Teertha Road, Kotiteertha, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Kudle Beach Dandebagh, Gokarna, Karnataka, India"
+            ],
+            "chosen": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mangaluru",
+            "suggestions": [
+              "Mangaluru Karnataka, India",
+              "Mangaluru International Airport Bajpe Road, Kenjar, Mangaluru, Karnataka, India",
+              "Mangaluru Central Railway Station Paid Car Parking Attavar, Mangaluru, Karnataka, India",
+              "MANGALURU KAIRUCHI 7th Main Road, Mico Layout, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Mangaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2026-12-27",
+            "disabled": false,
+            "value": "2026-12-27"
+          },
+          {
+            "label": "7:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2027-01-26",
+            "disabled": false,
+            "value": "2027-01-26"
+          },
+          {
+            "label": "8:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2026-12-27"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "v": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2027-01-26"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -385,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Thanisandra, Bengaluru, Karnataka, India",
+              "Panaji, Goa, India",
+              "Gokarna, Karnataka, India",
+              "Mangaluru, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 100 km per 41 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "D",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 7
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:9300 KM Dates :27-28-29-30-31 Dec- 2026 | 1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26 Jan- 2027 Pickup Address:Thanisandra, Bengaluru, Karnataka, India Duration:31 Days Passengers:30 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota",
+        "distance": "9300 KM",
+        "duration": "31 Days",
+        "pax": "30",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹5,81,000",
+          "40 Seater Deluxe Coach D40NA 40 ₹6,28,500",
+          "49 Seater Deluxe Coach D49NA 49 ₹5,85,000",
+          "Sedan D SDN 4 ₹3,28,600",
+          "MPV's D MPV 7 ₹5,14,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹2,82,800"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-results.png"
+      },
+      "details": {
+        "vehicle": "L45NV",
+        "pricing": [
+          "Outstation Trip Pricing",
+          "Outstation Trip - Minimum Kms per Day",
+          "Standard outstation rental package",
+          "Base Rate (Minimum Kms per Day)",
+          "Included (✔ Driver ✔ Fuel ✔Day Allowance)",
+          "₹34,000",
+          "Day Bata Cost (Before 10pm or After 6am)",
+          "₹1,500",
+          "Night Bata Cost (Before 6am or After 10pm)",
+          "₹1,500",
+          "Toll & Parking",
+          "Actuals",
+          "GST",
+          "Additional",
+          "Vehicle Technical Specifications :",
+          "Engine Performance :",
+          "340 hp · 1600 Nm · 30% gradability",
+          "Suspension :",
+          "Safety Features :",
+          "Transmission :",
+          "Vehicle Comfort Metrics",
+          "Seat Pitch ({\"min\":\"800\",\"max\":\"1000\",\"current\":\"860\"})",
+          "Recliner Degree ({\"min\":\"135\",\"max\":\"180\",\"current\":\"140\"})",
+          "Acoustic Insulation ({\"min\":\"80\",\"max\":\"100\",\"current\":\"85\"})",
+          "Vertical Smoothness (N/A)",
+          "Proceed To Booking",
+          "Confirm availability & lock pricing"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-fare-breakup.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Thanisandra, Bengaluru, Karnataka, India",
+          "Panaji, Goa, India → Gokarna, Karnataka, India",
+          "Dropoff Location",
+          "Mangaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "27,28,29,30,31 Dec, 2026 | 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 Jan, 2027",
+        "passenger": "30",
+        "dropoff": "Mangaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹10,54,000"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹46,500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹45,000"
+          ],
+          [
+            "State Tax",
+            "₹10,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹11,56,000"
+          ]
+        ],
+        "total": "₹11,56,000",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                570,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Thanisandra, Bengaluru, Karnataka, India",
+                "Panaji, Goa, India",
+                "Gokarna, Karnataka, India",
+                "Mangaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 10
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-C-31-days-confirm-cost.png"
+      }
+    },
+    {
+      "label": "D-far-future",
+      "fill": {
+        "toggles": {
+          "dd": true
+        },
+        "places": [
+          {
+            "ph": "Search pickup location",
+            "query": "Thanisandra",
+            "suggestions": [
+              "Thanisandra Bengaluru, Karnataka, India",
+              "Thanisandra Main Road Sinthan Nagar, P&T Layout, Manayata Tech Park, Bengaluru, Karnataka, India",
+              "Thanisandra BBMP Office Thanisandra Main Road, Sinthan Nagar, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka, India",
+              "Thanisandra CAR Parade ground Sri Balaji Krupa Layout, Thanisandra, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "query": "Panaji",
+            "suggestions": [
+              "Panaji Goa, India",
+              "Panaji, Goa Kerant, Caranzalem, Panaji, Goa, India",
+              "Panaji Bus Stand Circle Patto Centre, Bambolim, Goa, India",
+              "Panaji Residency Altinho, Panaji, Goa, India"
+            ],
+            "chosen": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "query": "Gokarna",
+            "suggestions": [
+              "Gokarna Karnataka, India",
+              "Gokarna Main Beach Belehittal Road, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Shiva Athmalinga Koti Teertha Road, Kotiteertha, Dandebagh, Gokarna, Karnataka, India",
+              "Gokarna Kudle Beach Dandebagh, Gokarna, Karnataka, India"
+            ],
+            "chosen": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "query": "Mangaluru",
+            "suggestions": [
+              "Mangaluru Karnataka, India",
+              "Mangaluru International Airport Bajpe Road, Kenjar, Mangaluru, Karnataka, India",
+              "Mangaluru Central Railway Station Paid Car Parking Attavar, Mangaluru, Karnataka, India",
+              "MANGALURU KAIRUCHI 7th Main Road, Mico Layout, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka, India"
+            ],
+            "chosen": "Mangaluru, Karnataka, India"
+          }
+        ],
+        "dates": [
+          {
+            "iso": "2028-11-15",
+            "disabled": false,
+            "value": "2028-11-15"
+          },
+          {
+            "label": "7:00 AM",
+            "disabled": false
+          },
+          {
+            "iso": "2028-11-17",
+            "disabled": false,
+            "value": "2028-11-17"
+          },
+          {
+            "label": "8:00 PM",
+            "disabled": false
+          }
+        ],
+        "form": [
+          {
+            "ph": "checkbox",
+            "v": false
+          },
+          {
+            "ph": "checkbox",
+            "v": true
+          },
+          {
+            "ph": "Search pickup location",
+            "v": "Thanisandra, Bengaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2028-11-15"
+          },
+          {
+            "ph": "text",
+            "v": "7:00 AM"
+          },
+          {
+            "ph": "Search destination 1 location",
+            "v": "Panaji, Goa, India"
+          },
+          {
+            "ph": "Search destination 2 location",
+            "v": "Gokarna, Karnataka, India"
+          },
+          {
+            "ph": "Search drop location",
+            "v": "Mangaluru, Karnataka, India"
+          },
+          {
+            "ph": "text",
+            "v": "2028-11-17"
+          },
+          {
+            "ph": "text",
+            "v": "8:00 PM"
+          },
+          {
+            "ph": "Enter number of passengers",
+            "v": "30"
+          }
+        ]
+      },
+      "formMap": {
+        "count": 1,
+        "maps": [
+          {
+            "box": [
+              996,
+              -385,
+              374,
+              800
+            ],
+            "labels": [
+              "Garage (Start)",
+              "Thanisandra, Bengaluru, Karnataka, India",
+              "Panaji, Goa, India",
+              "Gokarna, Karnataka, India",
+              "Mangaluru, Karnataka, India",
+              "Garage (Return)",
+              "Undo last edit",
+              "Map Data",
+              "Map Scale: 100 km per 41 pixels"
+            ],
+            "letters": [
+              "G",
+              "P",
+              "D",
+              "D",
+              "D",
+              "G"
+            ],
+            "imgMarkers": 0,
+            "paths": 7
+          }
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-form-map.png"
+      },
+      "formShot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-form.png",
+      "res": {
+        "navigated": true,
+        "found": "20 Buses Found | Outstation - 0 KM",
+        "summary": "You have Searched For : G P D D D G Map Data Terms Leg 1 Outstation Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return) Distance:1336 KM Dates :15-16-17 Nov- 2028 Pickup Address:Thanisandra, Bengaluru, Karnataka, India Duration:3 Days Passengers:30 Pax Drop Address:Mangaluru, Karnataka, India Modify Inquiry Vehicle Preferences Vehicle Age Preference Brand New (0-2 years) Standard (2-5 years) Any Any Available Comfort Priority Seat pitch priority Luggage space priority Ride comfort priority Clear Preferences Luxury Premium Deluxe Volvo Bus India Ashok Leyland SML Isuzu Eicher India Daimler India Force India Tata Motors Kia Corporation Honda Cars India Limited Audi India Mercedes-Benz India Private Limited BMW India Toyota Kirloskar Motor Private Limited Jaguar Land Rover India Limited Sedan Car Force Moters",
+        "distance": "1336 KM",
+        "duration": "3 Days",
+        "pax": "30",
+        "drop": "Mangaluru, Karnataka, India",
+        "route": "Garage (Start) → Thanisandra, Bengaluru, Karnataka, India → Panaji, Goa, India → Gokarna, Karnataka, India → Mangaluru, Karnataka, India → Garage (Return)",
+        "page1": [
+          "33 Seater Deluxe Coach D35NA 35 ₹86,980",
+          "40 Seater Deluxe Coach D40NA 40 ₹94,660",
+          "49 Seater Deluxe Coach D49NA 49 ₹90,980",
+          "Sedan D SDN 4 ₹45,752",
+          "MPV's D MPV 7 ₹71,300",
+          "12 Seater Tempo Traveller D12TT 12 ₹38,900"
+        ],
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-results.png"
+      },
+      "confirm": {
+        "title": "Confirm Your Trip & Selected Vehicles",
+        "popup": null,
+        "selected": "Selected Vehicles : 45 Seater Luxury 9600 Volvo – 1",
+        "route": [
+          "Outstation",
+          "From Garage",
+          "Garage",
+          "Pickup Location",
+          "Thanisandra, Bengaluru, Karnataka, India",
+          "Panaji, Goa, India → Gokarna, Karnataka, India",
+          "Dropoff Location",
+          "Mangaluru, Karnataka, India",
+          "Back to Garage",
+          "Garage"
+        ],
+        "dates": "15,16,17 Nov, 2028",
+        "passenger": "30",
+        "dropoff": "Mangaluru, Karnataka, India",
+        "cost": [
+          [
+            "Vehicle Base Cost",
+            "₹1,13,560"
+          ],
+          [
+            "Day Bata Cost (Before 10pm or After 6am)",
+            "₹4,500"
+          ],
+          [
+            "Night Bata Cost (Before 6am or After 10pm)",
+            "₹3,000"
+          ],
+          [
+            "State Tax",
+            "₹10,500"
+          ],
+          [
+            "Estimated Grand Total",
+            "₹1,31,560"
+          ]
+        ],
+        "total": "₹1,31,560",
+        "buttons": [
+          "Confirm & Submit Booking"
+        ],
+        "map": {
+          "count": 1,
+          "maps": [
+            {
+              "box": [
+                38,
+                143,
+                600,
+                900
+              ],
+              "labels": [
+                "Garage (Start)",
+                "Thanisandra, Bengaluru, Karnataka, India",
+                "Panaji, Goa, India",
+                "Gokarna, Karnataka, India",
+                "Mangaluru, Karnataka, India",
+                "Garage (Return)",
+                "Undo last edit"
+              ],
+              "letters": [
+                "G",
+                "P",
+                "D",
+                "D",
+                "D",
+                "G"
+              ],
+              "imgMarkers": 0,
+              "paths": 10
+            }
+          ],
+          "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-confirm-map.png"
+        },
+        "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-confirm.png",
+        "shotCost": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-13-D-far-future-confirm-cost.png"
+      }
+    }
+  ],
+  "finished": "2026-11-17T10:24:49.380Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save",
+    "allowed POST /user/pricing",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}

@@ -1,0 +1,269 @@
+[
+  {
+    "ts": "2026-11-16T11:57:50.369Z",
+    "id": "AW-LEA-001",
+    "module": "Lead Management",
+    "title": "Identify record by PNR, then Lead ID lookup",
+    "objective": "Identify record by PNR, then Lead ID lookup",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Search Lead Info = Bikash",
+      "View Lead on each row; read Inquiry PNR",
+      "Search Lead Info = Lead ID"
+    ],
+    "expected": "Exact PNR match; Lead ID search returns 1 row",
+    "actual": "6 of 10 PNRs matched exactly (LD-345/346/347/351/352/397); LD-346 search returns 1 row. 4 PNRs not on any Bikash N lead",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-003-search-lead-id.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.381Z",
+    "id": "AW-LEA-003",
+    "module": "Lead Management",
+    "title": "Search Lead Info variants",
+    "objective": "Search Lead Info variants",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Search LD-346",
+      "LD-34",
+      "Bikash",
+      "IAJA754847 (PNR)",
+      "zzzz-no-match"
+    ],
+    "expected": "Matching rows; no-match shows empty state",
+    "actual": "LD-346: 1 row; LD-34: 10 entries; Bikash: 15 entries; PNR: 0 (PNR not searchable); no-match: \"No data available\", Showing 0 to 0 of 0",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-003-search-lead-id.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-003-search-no-match.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.383Z",
+    "id": "AW-LEA-004",
+    "module": "Lead Management",
+    "title": "Status filter and Reset",
+    "objective": "Status filter and Reset",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Open status dropdown",
+      "Select Open",
+      "Reset Filter"
+    ],
+    "expected": "Only Open rows; Reset restores",
+    "actual": "Options All Status/Active/Closed/Open; Open -> 193 of 194, all Open; Reset -> All Status, 194",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-004-status-options.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-004-filter-open.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.385Z",
+    "id": "AW-LEA-005",
+    "module": "Lead Management",
+    "title": "Date filter and pagination",
+    "objective": "Date filter and pagination",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Look for a date filter",
+      "Next page"
+    ],
+    "expected": "Date filter works; pages move",
+    "actual": "No date filter exists on the Lead list (same as run 20261113). Next page shows 6 to 10 of 194",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-005-pagination.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.387Z",
+    "id": "AW-LEA-009",
+    "module": "Lead Management",
+    "title": "Assign lead to employee",
+    "objective": "Assign lead to employee",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "LD-346 row menu > Assign",
+      "Open employee dropdown"
+    ],
+    "expected": "Employees listed; assignment saved",
+    "actual": "Dialog shows \"No sales employees found\"; dropdown has only \"Select Employee\". Cannot assign",
+    "status": "Blocked",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-009-assign-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.389Z",
+    "id": "AW-LEA-010",
+    "module": "Lead Management",
+    "title": "Send To Inquiry (transition)",
+    "objective": "Send To Inquiry (transition)",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Row menu > Send To Inquiry on LD-346/347/352/345/351",
+      "Update Quote with values unchanged"
+    ],
+    "expected": "Inquiry created and listed",
+    "actual": "Each opened Update Quote; toast \"Inquiry details successfully !\"; QRY-937/938/943/936/942 listed as Revised quotation. Lead Stage stays N/A, Status Open",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-010-LD-346-update-quote-form.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-010-LD-346-after-update-quote.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.394Z",
+    "id": "AW-LEA-016",
+    "module": "Lead Management",
+    "title": "Create a lead with valid data",
+    "objective": "Create a lead with valid data",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "+ Add Lead",
+      "Client Name \"QA Test Lead\", Expected Value 1000, Stage Prospecting, Status Open",
+      "Create Lead"
+    ],
+    "expected": "Lead created and listed",
+    "actual": "Toast \"Lead target created successfully!\"; LD-411 QA Test Lead, Prospecting, Rs 1,000, Open listed first; total 193 -> 194",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-016-add-lead-filled.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-016-new-lead-in-list.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.396Z",
+    "id": "AW-LEA-022",
+    "module": "Lead Management",
+    "title": "Send the same lead to Inquiry twice",
+    "objective": "Send the same lead to Inquiry twice",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "After LEA-010, reopen the lead row menu"
+    ],
+    "expected": "Second send prevented",
+    "actual": "Send To Inquiry no longer offered (menu: View Lead, Assign, Delete) for all 5 leads",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-022-LD-346-menu-after-send.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.399Z",
+    "id": "AW-LEA-023",
+    "module": "Lead Management",
+    "title": "Cancel deleting a lead",
+    "objective": "Cancel deleting a lead",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "LD-397 row menu > Delete",
+      "Dialog \"Confirm Lead Deletion\" > Cancel",
+      "Refresh, search LD-397"
+    ],
+    "expected": "Lead unchanged",
+    "actual": "Dialog closed, no delete API call, LD-397 still listed after refresh",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-023-LD-397-delete-dialog.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/deldismiss-LD-397-search-after-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.401Z",
+    "id": "AW-LEA-024",
+    "module": "Lead Management",
+    "title": "Delete a lead",
+    "objective": "Delete a lead",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "LD-397 row menu > Delete > Delete Lead (approved by user)",
+      "Refresh, search LD-397"
+    ],
+    "expected": "Lead removed",
+    "actual": "POST lead-target/delete 200; toast \"Lead target deleted successfully!\"; LD-397 no longer found after refresh",
+    "status": "Pass",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-023-LD-397-delete-dialog-r3.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/delconfirm-LD-397-search-after-refresh.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.403Z",
+    "id": "AW-LEA-025",
+    "module": "Lead Management",
+    "title": "Update a lead's Stage and Status after creation",
+    "objective": "Update a lead's Stage and Status after creation",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Inspect View Lead and row menu on LD-346"
+    ],
+    "expected": "An edit control for Stage/Status",
+    "actual": "No edit control: View Lead is read-only; menu has only View Lead / Send To Inquiry / Assign / Delete. Needs business confirmation whether editing is intended",
+    "status": "Blocked",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-025-view-lead-controls.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LD-346-row-menu.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.405Z",
+    "id": "AW-LEA-026",
+    "module": "Lead Management",
+    "title": "Default sort order and column sorting",
+    "objective": "Default sort order and column sorting",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Note default order",
+      "Click LEAD ID, CREATED DATE, CLIENT NAME headers"
+    ],
+    "expected": "Sortable columns",
+    "actual": "Default newest first (LD-410 at top). Headers have no sort control; clicking changes nothing",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-026-after-header-clicks.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T11:57:50.408Z",
+    "id": "AW-LEA-028",
+    "module": "Lead Management",
+    "title": "Reassign an already-assigned lead",
+    "objective": "Reassign an already-assigned lead",
+    "pre": "Superadmin, Preprod",
+    "steps": [
+      "Requires an assigned lead (LEA-009)"
+    ],
+    "expected": "Reassignment saved",
+    "actual": "Not possible: no sales employees available to assign",
+    "status": "Blocked",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-009-assign-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-16T12:02:35.243Z",
+    "id": "AW-LEA-027",
+    "module": "Lead Management",
+    "title": "Delete a lead already sent to Inquiry",
+    "objective": "A converted lead cannot be deleted, or deletion keeps linked data consistent",
+    "pre": "LD-351 (PNR PGDO412043) sent to Inquiry as QRY-942; user approved the delete",
+    "steps": [
+      "Search Lead Info = LD-351",
+      "Row menu > Delete",
+      "Confirm Lead Deletion > Delete Lead",
+      "Refresh; search LD-351",
+      "Inquiry Management: search QRY-942"
+    ],
+    "expected": "Delete refused for a lead that already has an inquiry, or a warning about the linked inquiry",
+    "actual": "No warning; POST lead-target/delete 200, toast \"Lead target deleted successfully!\"; LD-351 gone after refresh. QRY-942 is still listed (Revised quotation) with no source lead",
+    "status": "Fail",
+    "evidence": [
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/LEA-027-LD-351-delete-dialog.png",
+      "screenshots/functional/admin-web-20261116-1523-FUNC/lead/delconfirm-LD-351-search-after-refresh.png"
+    ]
+  }
+]

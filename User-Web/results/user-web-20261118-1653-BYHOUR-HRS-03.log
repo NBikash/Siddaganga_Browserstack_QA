@@ -1,0 +1,84 @@
+[
+  {
+    "label": "hours-0",
+    "nav": false,
+    "msgs": {
+      "inline": [],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "hours-1",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "1 Hour"
+  },
+  {
+    "label": "hours-24",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "24 Hours"
+  },
+  {
+    "label": "hours-25",
+    "nav": false,
+    "msgs": {
+      "inline": [],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "hours--1",
+    "nav": false,
+    "msgs": {
+      "inline": [],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "hours-blank",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+      ],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "hours-1.5",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "1 Hour"
+  },
+  {
+    "label": "hours-abc",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "numberOfHours must be a `number` type, but the final value was: `NaN` (cast from the value `\"\"`)."
+      ],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  },
+  {
+    "label": "hours-100",
+    "nav": false,
+    "msgs": {
+      "inline": [],
+      "toasts": [
+        "Selected time: 10:00 AM"
+      ]
+    }
+  }
+]

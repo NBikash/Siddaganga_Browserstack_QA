@@ -1,0 +1,19 @@
+[
+  {
+    "label": "1-switching"
+  },
+  {
+    "label": "2-search",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "10 Hours"
+  },
+  {
+    "label": "3-modify-hours",
+    "nav": true
+  },
+  {
+    "label": "4-new-fare",
+    "popup": "Passenger Capacity Not Complete! You need seats for 8 passengers, but your selected buses cover only 7 seats. Please add one or more buses to continue. Cancel Inquiry"
+  }
+]

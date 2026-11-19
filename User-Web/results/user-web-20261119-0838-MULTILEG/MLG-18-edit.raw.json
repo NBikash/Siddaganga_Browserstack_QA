@@ -1,0 +1,15 @@
+{
+  "out": {
+    "url": "https://preprod.siddagangatravels.com/dashboard/inquiry-management/update-inquiry/<id>",
+    "text": "Edit Inquiry - ZLPS490392 Update inquiry details, trip setup, and journey assignments. Back To Dashboard Update Inquiry Basic Details Booking Type * Select Booking Type Local Outstation Transfer Dynamic Trip Month Select Month January February March April May June July August September October November December Start Date End Date Arrival Time Departure Time Trip Duration (Days) Number of Passengers Journey Details Outstation Journey 3 Days ▼ Dates: 1/3/2027 - 1/5/2027 (3 days) Timings: Arrival: 00:00 | Departure: 00:00 Destinations: Koramangala, Bengaluru, Karnataka, India Chikkamagaluru, Karnataka, India Belur, Karnataka, India Hassan, Karnataka, India Add / Change Bus Select vehicle type 33 Seater Deluxe Coach 40 Seater Deluxe Coach 49 Seater Deluxe Coach Sedan MPV's 12 Seater Tempo Traveller 45 Seater Premium AC Coach 40 Seater Premium AC Coach 35 Seater Premium AC Coach 28 Seater Premium AC Coach 25 Seater Premium AC Coach 21 Seater Premium AC Coach 16 Seater Premium Urbania 12 Seater Luxury Urbania 9 Seater Luxury Urbania 45 Seater Luxury Volvo 45 Seater Luxury 9600 Volvo 49 Seater Luxury 9600 Volvo SUV 45 Seater Luxury BharatBenz Add Bus Refresh Pricing Vehicles & Pricing: Vehicle Type 2 Quantity Total Cost Action 21 Seater Premium AC Coach - 1 + ₹42,800.00 Remove Total Journey Cost: ₹42,800.00 Back To Dashboard Update Inquiry ",
+    "bookingType": "Outstation",
+    "times": [
+      "00:00",
+      "00:00"
+    ],
+    "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-18-edit-edit-form.png"
+  },
+  "net": [
+    "allowed POST /user/get-inquiry-details"
+  ]
+}

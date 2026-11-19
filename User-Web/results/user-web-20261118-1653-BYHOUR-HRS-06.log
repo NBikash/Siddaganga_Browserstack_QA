@@ -1,0 +1,30 @@
+[
+  {
+    "label": "A-Hyderabad-4h",
+    "err": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "label": "B-Hyderabad-24h",
+    "nav": true,
+    "header": "20 Buses Found | Transfer - > 30 KM",
+    "hrs": "24 Hours",
+    "total": "₹38,500",
+    "popup": null
+  },
+  {
+    "label": "C-Munnar-2h",
+    "err": "TimeoutError: locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "label": "D-Goa-24h",
+    "nav": false,
+    "msgs": {
+      "inline": [
+        "Drop location is required"
+      ],
+      "toasts": [
+        "Selected time: 6:00 AM"
+      ]
+    }
+  }
+]

@@ -1,0 +1,146 @@
+{
+  "id": "OUT-16",
+  "started": "2026-11-17T11:04:28.344Z",
+  "steps": [
+    {
+      "label": "1-save-draft",
+      "msg": [
+        "",
+        "Selected time: 7:00 AM",
+        "Selected time: 7:00 PM",
+        "Saving draft...",
+        "Draft saved successfully!"
+      ],
+      "calls": [
+        "allowed(approved) POST /user/draft-inquiry/save"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-16-saved.png"
+    },
+    {
+      "label": "2-reload-restore",
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "4:35 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "4:35 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "bodyHasDraft": "Draft Book Now! Chat With Us G Map data ©2026 Google Terms Report a map error Popular Routes People Book Most All Local Outst",
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-16-after-reload.png"
+    },
+    {
+      "label": "3-autosave",
+      "calls": [
+        "allowed(approved) POST /user/draft-inquiry/save",
+        "allowed(approved) POST /user/draft-inquiry/save",
+        "allowed POST /crypto/session",
+        "allowed POST /general/policies-info",
+        "allowed POST /user/update-fcm-token",
+        "allowed POST /crypto/session",
+        "allowed POST https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+        "allowed POST /general/popular-routes",
+        "allowed POST /general/explore-fleet-data",
+        "allowed POST /general/popular-routes",
+        "allowed POST /user/update-fcm-token",
+        "allowed POST /general/popular-routes"
+      ],
+      "form": [
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "checkbox",
+          "v": false
+        },
+        {
+          "ph": "Search pickup location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "4:36 PM"
+        },
+        {
+          "ph": "Search destination 1 location",
+          "v": ""
+        },
+        {
+          "ph": "text",
+          "v": "2026-11-17"
+        },
+        {
+          "ph": "text",
+          "v": "4:36 PM"
+        },
+        {
+          "ph": "Enter number of passengers",
+          "v": "1"
+        }
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261117-1344-OUTSTATION/OUT-16-after-return.png"
+    },
+    {
+      "label": "4-5-drafts-and-my-inquiries",
+      "listTotal": "1-10 of 14",
+      "top": [
+        "1 BGVS613665 Outstation Bengaluru → Bengaluru 01 Jan 2027 - 01 Jan 2027 Sedan (4) 4 01/01/27 45d left New quotation",
+        "2 NCCC102640 Outstation Bengaluru → Hassan 11 Jan 2027 - 13 Jan 2027 16 Seater Premium Urbania (16) 14 11/01/27 55d left New quotation",
+        "3 UMNF499106 Outstation Bengaluru → Mysuru 24 Nov 2026 - 25 Nov 2026 28 Seater Premium AC Coach (28) 20 24/11/26 7d left New quotation"
+      ],
+      "draftMentions": [],
+      "deletion": "Not performed: no drafts view found / deletion not separately approved"
+    }
+  ],
+  "finished": "2026-11-17T11:07:28.768Z",
+  "loads": [],
+  "net": [
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed(approved) POST /user/draft-inquiry/save",
+    "allowed POST /general/policies-info"
+  ]
+}

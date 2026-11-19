@@ -1,0 +1,426 @@
+[
+  {
+    "ts": "2026-11-19T11:15:14.420Z",
+    "id": "INQ-ISS-01",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries – Search Inquiry Info",
+    "title": "Search by Inquiry ID does not find the inquiry (matches the old internal ID instead)",
+    "classification": "Functional",
+    "severity": "Medium",
+    "record": "QRY-194 (UMNF499106)",
+    "steps": [
+      "Inquiry Management → Total Inquiries",
+      "Search Inquiry Info = \"QRY-194\"",
+      "Search = \"194\"",
+      "Search = \"Bikash\" (QRY-194 is listed)"
+    ],
+    "expected": "QRY-194 returned",
+    "actual": "QRY-194 → 0 entries; 194 → 21 entries (no filter); \"QRY-937\" (pre-renumbering ID) returns QRY-129",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-001-search-QRY-194-r3.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.422Z",
+    "id": "INQ-ISS-02",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries",
+    "title": "Inquiry list cannot be sorted; default order is neither by ID nor by date",
+    "classification": "UX (clarification)",
+    "severity": "Low",
+    "steps": [
+      "Search \"Bikash\"",
+      "Click INQUIRY ID / INQUIRY START DATE / CLIENT NAME"
+    ],
+    "expected": "Sortable columns or documented order",
+    "actual": "No sort control; order unchanged",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/INQ-036-after-header-clicks.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.423Z",
+    "id": "INQ-ISS-03",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries – STATUS column",
+    "title": "Clicking the status label \"Revised quotation\" opens the Convert into Booking dialog",
+    "classification": "UX / Functional (irreversible action reachable from a status label)",
+    "severity": "Medium",
+    "record": "QRY-213 (ORZS120376)",
+    "steps": [
+      "Total Inquiries",
+      "Click the \"Revised quotation\" status label of QRY-213"
+    ],
+    "expected": "Status label is informational (or opens status details)",
+    "actual": "Dialog \"Choose Trip(s)\" with Quote 1803, Transfer, 40 Seater Premium AC Coach ₹20000.00 and \"Convert into Booking\". Dismissed with the dialog Cancel; QRY-213 unchanged (still Revised quotation)",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/UNEXPECTED-dialog-from-status-click.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.427Z",
+    "id": "INQ-ISS-04",
+    "module": "Inquiry Management",
+    "screen": "Lead View / Update Quote",
+    "title": "Passengers 10 in Admin vs 20 in User-Web; Trip Days 2 for a 27–29 Nov round trip",
+    "classification": "Data inconsistency (User-Web → Admin)",
+    "severity": "Medium",
+    "record": "LJWN815154 (LD-431, QRY-211)",
+    "steps": [
+      "Lead Management: Search \"Bikash\" → LD-431 → View Lead",
+      "Compare with User-Web My Inquiries LJWN815154 (20 pax, 27–29 Nov)"
+    ],
+    "expected": "Pax 20, trip spans 27–29 Nov",
+    "actual": "Passengers (PAX) 10; Trip Days 2 (journeys 27/11 and 29/11, 1 day each)",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-LJWN815154-LD-431-view-lead-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.430Z",
+    "id": "INQ-ISS-06",
+    "module": "Inquiry Management",
+    "screen": "Lead View / Update Quote",
+    "title": "Pickup/Drop time shows 12:00 AM for every User-Web inquiry (submitted times lost)",
+    "classification": "Data inconsistency (recurrence of User-Web timing defect; 13 Nov ISS-07)",
+    "severity": "High",
+    "record": "All 8 PNRs",
+    "steps": [
+      "View Lead of each PNR"
+    ],
+    "expected": "Submitted pickup/drop times (e.g. 10:00 AM)",
+    "actual": "Pickup Time 12:00 AM, Drop Time 12:00 AM on every journey",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ZLPS490392-LD-436-view-lead-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-YOIT928679-LD-435-view-lead.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ORZS120376-LD-433-view-lead-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:15:14.432Z",
+    "id": "INQ-ISS-07",
+    "module": "Inquiry Management",
+    "screen": "Lead View / Update Quote",
+    "title": "By Hour inquiry is shown as Transfer without the hour package",
+    "classification": "Data inconsistency (recurrence of HRS-02 finding)",
+    "severity": "Medium",
+    "record": "ORZS120376 (LD-433, QRY-213)",
+    "steps": [
+      "View Lead LD-433"
+    ],
+    "expected": "By Hour, 4 hours",
+    "actual": "Journey Type Transfer; no hours anywhere",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-ORZS120376-LD-433-view-lead-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.853Z",
+    "id": "INQ-ISS-08",
+    "module": "Inquiry Management",
+    "screen": "Update Quote – Vehicle Costs",
+    "title": "Total Approx Cost is not recalculated when extra km, toll or extras change (also after saving); View Quote/Preview keep the old total",
+    "classification": "Functional (recurrence of 13 Nov ISS-06)",
+    "severity": "High",
+    "record": "QRY-194",
+    "steps": [
+      "Edit QRY-194",
+      "Extra KM 50, Toll 500, Extras 250",
+      "Update Quote; re-open; View Quote"
+    ],
+    "expected": "₹37,550",
+    "actual": "₹34,200 in form, View Quote and Preview; components saved",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-costs-changed-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-C-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-C-view-quote-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.855Z",
+    "id": "INQ-ISS-09",
+    "module": "Inquiry Management",
+    "screen": "Update Quote – Trip Description",
+    "title": "Trip Description suggestions show other inquiries' descriptions, including contact details",
+    "classification": "Data privacy",
+    "severity": "Medium",
+    "record": "QRY-194",
+    "steps": [
+      "Edit QRY-194",
+      "Clear Trip Description to open its suggestions"
+    ],
+    "expected": "Only generic presets, or this client's own descriptions",
+    "actual": "Suggestions include descriptions from other inquiries; one contains an email and a phone number (QA test data of another session). Masked in evidence",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-194-trip-description-options-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.856Z",
+    "id": "INQ-ISS-10",
+    "module": "Inquiry Management",
+    "screen": "Update Quote – Change GST Value",
+    "title": "GST change is saved immediately (\"Customer info updated successfully\") without Update Quote, and does not affect Total Approx Cost",
+    "classification": "Functional (clarification)",
+    "severity": "Low",
+    "record": "QRY-194",
+    "steps": [
+      "Edit QRY-194 → GST Change → 0% → Save"
+    ],
+    "expected": "GST change applied with the quote (Update Quote/Cancel) and reflected in the quote amount",
+    "actual": "Saved at once (form Cancel cannot undo it); total unchanged at 0% and 5%. Reverted to 5%",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-B-gst-changed-applied.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T11:36:09.858Z",
+    "id": "INQ-ISS-11",
+    "module": "Inquiry Management",
+    "screen": "Update Quote – Fixed Cost / Apply Final Quote",
+    "title": "Applied Fixed Cost is saved but not used as the final quote",
+    "classification": "Functional (recurrence of 13 Nov QT-05)",
+    "severity": "High",
+    "record": "QRY-194",
+    "steps": [
+      "Edit QRY-194",
+      "Tick Apply fixed cost; Fixed Cost 36000",
+      "Update Quote; re-open; View Quote"
+    ],
+    "expected": "Final quote ₹36,000",
+    "actual": "Fixed cost 36000.00 saved; total and View Quote ₹34,200",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-D-fixed-cost-before-save.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/EDIT-D-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/after-D-view-quote-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.056Z",
+    "id": "INQ-ISS-12",
+    "module": "Inquiry Management",
+    "screen": "Update Quote → Total Inquiries / Lead",
+    "title": "Saving a quote with an added trip changes the inquiry ID (QRY-195 → QRY-228), raises a \"New inquiry\" notification and makes list and lead disagree",
+    "classification": "Functional / Data consistency",
+    "severity": "High",
+    "record": "NCCC102640 (LD-415)",
+    "steps": [
+      "Edit QRY-195 → + Add New Journey → fill → Update",
+      "Update Quote",
+      "Total Inquiries (QA client)",
+      "Lead LD-415 → View Lead"
+    ],
+    "expected": "Same inquiry ID; list shows the inquiry's vehicles; lead and list consistent; no new-inquiry alert",
+    "actual": "Toast \"New Inquiry Alert – New inquiry NCCC102640 … has been received\"; list shows QRY-228 (12 Seater Tempo Traveller only) instead of QRY-195; lead still QRY-195 / 16 Seater Premium Urbania; QRY-228 Edit = same form",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-after-reopen-refresh.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-LD-415-view-lead-after-trip2-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.057Z",
+    "id": "INQ-ISS-13",
+    "module": "Inquiry Management",
+    "screen": "Update Quote – Trip-2 Vehicle Costs",
+    "title": "Added journey is priced with Per KM 0 and no night allowance: ₹2,400 for a 900 km, 3-day trip",
+    "classification": "Functional (pricing)",
+    "severity": "High",
+    "record": "NCCC102640 Trip-2 (12 Seater Tempo Traveller NAC)",
+    "steps": [
+      "Add New Journey Koramangala → Hassan, 12 Seater Tempo Traveller (Non-AC)",
+      "Update; Update Quote; re-open"
+    ],
+    "expected": "Tariff-based per-km rate and allowances (or a validation that no tariff exists)",
+    "actual": "Per KM 0.00, night days 0.00, Total Approx Cost 2400.00",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-trip2-costs.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.058Z",
+    "id": "INQ-ISS-14",
+    "module": "Inquiry Management",
+    "screen": "Preview Quote Summary",
+    "title": "Preview Quote Summary lists no quotations after a second trip is added",
+    "classification": "Functional",
+    "severity": "High",
+    "record": "NCCC102640 (QRY-228)",
+    "steps": [
+      "After INQ-ISS-12 steps, open the form → Preview Quote Summary"
+    ],
+    "expected": "Trip 1 and Trip 2 quotations listed",
+    "actual": "\"Quotation Summary Combined Quotes Detailed Quotes Cancel\"",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/Q195-JRN-preview.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.059Z",
+    "id": "INQ-ISS-05",
+    "module": "Inquiry Management",
+    "screen": "Lead View",
+    "title": "Intermediate destinations are not shown in Lead View Lead (only pickup and drop); the quote form does list them",
+    "classification": "Data display (User-Web → Admin)",
+    "severity": "Low",
+    "record": "NCCC102640 (LD-415), BGVS613665 (LD-416)",
+    "steps": [
+      "View Lead LD-415",
+      "Open the QRY-195 quote form"
+    ],
+    "expected": "All stops in View Lead",
+    "actual": "View Lead: Koramangala → Hassan only; quote form Destination: Koramangala, Chikkamagaluru, Belur, Hassan",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/PNR-NCCC102640-LD-415-view-lead-r2.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/quote/QRY-195-form-before.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:02:47.060Z",
+    "id": "INQ-ISS-15",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries – pagination",
+    "title": "Changing rows per page while a search is active shows no entries",
+    "classification": "Functional",
+    "severity": "Low",
+    "record": "QA client search",
+    "steps": [
+      "Search Inquiry Info = \"Bikash\" (10 entries)",
+      "Rows per page 05 → 20"
+    ],
+    "expected": "10 entries on one page",
+    "actual": "Showing 0 to 0 of 0 entries (with the Client filter instead of search, 20 rows per page shows all 10)",
+    "evidence": []
+  },
+  {
+    "ts": "2026-11-19T12:59:14.087Z",
+    "id": "INQ-ISS-16",
+    "module": "Inquiry Management",
+    "screen": "Cancel Inquiry & Process Refund",
+    "title": "Scheduled trip start shown as 5:30 am (stored 00:00 shifted by +5:30), used for the hours-before-trip penalty slab",
+    "classification": "Functional (time zone)",
+    "severity": "Medium",
+    "record": "QRY-135",
+    "steps": [
+      "QRY-135 → Cancel Inquiry"
+    ],
+    "expected": "Trip start = the inquiry pickup time (12:00 AM as stored, or the submitted time)",
+    "actual": "Scheduled trip start 20/11/2026, 5:30:00 am; hours before trip start 11.6",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-dialog-before-confirm.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.091Z",
+    "id": "INQ-ISS-17",
+    "module": "Inquiry Management",
+    "screen": "Cancel Inquiry / Total Inquiries",
+    "title": "Cancelled inquiry vanishes from Inquiry Management (no Cancelled filter); cancellation invoice charges the full trip cost as penalty although nothing was paid",
+    "classification": "Functional / Business rule (clarification)",
+    "severity": "Low",
+    "record": "QRY-135, INV-106",
+    "steps": [
+      "Confirm cancellation of QRY-135",
+      "Total Inquiries; Status filter"
+    ],
+    "expected": "Cancelled inquiries viewable (status filter); penalty rule documented",
+    "actual": "Not listed; filter options All/New quotation/Pending/Revised quotation. INV-106: trip cost ₹8,300, penalty ₹8,300 (20% + one-day charge ₹7,500, capped), refund ₹0, no advance paid",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-QRY-135-qa-list-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CXL-confirm-QRY-135-result-dialog.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.093Z",
+    "id": "INQ-ISS-18",
+    "module": "Inquiry Management",
+    "screen": "Delete inquiry → Lead View",
+    "title": "After deleting an inquiry the lead still shows it as active (Inquiry ID and status \"Revised quotation\")",
+    "classification": "Data consistency",
+    "severity": "Medium",
+    "record": "QRY-130 / LD-347",
+    "steps": [
+      "Delete QRY-130 (Yes)",
+      "Lead LD-347 → View Lead"
+    ],
+    "expected": "Lead shows no inquiry, or the inquiry as deleted; Send To Inquiry possible again",
+    "actual": "Inquiry ID QRY-130, status Revised quotation; lead menu View Lead/Assign/Delete",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/DEL-confirm-QRY-130-lead-LD-347-r2.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T12:59:14.094Z",
+    "id": "INQ-ISS-19",
+    "module": "Inquiry Management",
+    "screen": "Total Inquiries – KPI cards",
+    "title": "KPI cards: Conversion Rate, Pending Approvals and Total Quote Value stay 0 after a conversion; Total Inquiries (186–189) does not match the list (18–21)",
+    "classification": "Data consistency (recurrence of 13 Nov ISS-11)",
+    "severity": "Medium",
+    "record": "QA client inquiries",
+    "steps": [
+      "Convert QRY-129 into booking B-129",
+      "Read KPI cards"
+    ],
+    "expected": "Conversion rate > 0; quote value = sum of quotes",
+    "actual": "Total Inquiries 186 Conversion Rate 0 Pending Approvals 0 Total Quote Value 0",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/inquiry/CONV-QRY-129-qa-list-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.186Z",
+    "id": "INQ-ISS-20",
+    "module": "Inquiry Management",
+    "screen": "Send Quote",
+    "title": "Send Now sometimes hangs (spinner, no request sent); a second attempt sends immediately",
+    "classification": "Functional (intermittent)",
+    "severity": "Low",
+    "record": "QRY-194",
+    "steps": [
+      "QRY-194 → Send Quote → Send Now"
+    ],
+    "expected": "Request sent and result shown",
+    "actual": "Attempt 1: spinner, no API call in 13 s, no message. Attempt 2: sent (200) in 1 s",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-send-after.png",
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Quote-retry-after.png"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.187Z",
+    "id": "INQ-ISS-21",
+    "module": "Inquiry Management",
+    "screen": "Download Proforma Invoice (PDF)",
+    "title": "Proforma: amount in words (₹35,910 incl. GST) differs from the total (₹34,200) and no GST line is shown; shows Booking ID B-194 for an unconverted inquiry",
+    "classification": "Functional / Document content",
+    "severity": "High",
+    "record": "QRY-194, PI-B-1003",
+    "steps": [
+      "QRY-194 → Download Proforma Invoice",
+      "Read Total Amount and Amount (in words)"
+    ],
+    "expected": "Words = figures; GST shown if charged; reference = inquiry/quote",
+    "actual": "Total Rs. 34,200.00; words \"Thirty Five Thousand Nine Hundred Ten Only\"; no GST row; Booking ID B-194",
+    "evidence": [
+      "results/admin-web-20261119-1545-INQ/downloads/QRY-194-PI-B-1003_proforma.pdf"
+    ]
+  },
+  {
+    "ts": "2026-11-19T13:11:22.188Z",
+    "id": "INQ-ISS-22",
+    "module": "Inquiry Management",
+    "screen": "Send Bus Images",
+    "title": "Send Bus Images fails (\"Failed to generate bus images PDF\", HTTP 400) and sends without any confirmation",
+    "classification": "Functional",
+    "severity": "High",
+    "record": "QRY-194 (28 Seater Premium AC Coach)",
+    "steps": [
+      "QRY-194 row menu → Send Bus Images"
+    ],
+    "expected": "Confirmation dialog; images sent",
+    "actual": "Immediate POST send-bus-images-whatsapp 400; toast \"Failed to generate bus images PDF\"",
+    "evidence": [
+      "screenshots/functional/admin-web-20261119-1545-INQ/comms/COMM-Send-Bus-Images-inspect-no-dialog.png"
+    ]
+  }
+]

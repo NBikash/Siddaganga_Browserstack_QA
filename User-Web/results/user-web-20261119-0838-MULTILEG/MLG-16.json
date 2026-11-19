@@ -1,0 +1,116 @@
+{
+  "id": "MLG-16",
+  "started": "2026-11-19T05:26:33.105Z",
+  "steps": [
+    {
+      "label": "1-save-local-switch",
+      "save": {
+        "toasts": [
+          "Local leg added!"
+        ],
+        "msgs": [
+          "*"
+        ],
+        "tabAfter": "Outstation",
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-16-l1-saved.png"
+      },
+      "standaloneLocal": [
+        "checkbox=false",
+        "checkbox=false",
+        "Search pickup location=",
+        "text=2026-11-19",
+        "text=10:56 AM",
+        "Enter number of passengers=1",
+        "Enter Number of Hours=1"
+      ],
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-16-standalone-local.png",
+      "n0": 14
+    },
+    {
+      "label": "2-enter-hsr-back",
+      "place": "HSR Layout, Bengaluru, Karnataka, India",
+      "multi": {
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tab": "Outstation",
+        "form": [
+          "checkbox=false",
+          "checkbox=false",
+          "Search pickup location=",
+          "text=2026-11-19",
+          "text=10:57 AM",
+          "Search destination 1 location=",
+          "text=2026-11-19",
+          "text=10:57 AM",
+          "Enter number of passengers=6"
+        ]
+      },
+      "text": "Trip Leg Leg 1 Local Trip Leg #2 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Destinations First Destination * + Add Another Destination Drop Date & Time Passengers for Leg 1 + Add Another Leg Save As Draft Save! Skip Outstation Book No",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-16-back-to-multi.png"
+    },
+    {
+      "label": "3-byhour-back",
+      "byHour": [],
+      "multi": {
+        "legs": {
+          "header": [
+            "Trip Leg #2"
+          ],
+          "badges": [
+            "Leg 1 Local"
+          ],
+          "innerLegs": [
+            "Leg 1"
+          ],
+          "step1": false
+        },
+        "tab": "Outstation",
+        "form": [
+          "checkbox=false",
+          "checkbox=false",
+          "Search pickup location=",
+          "text=2026-11-19",
+          "text=10:57 AM",
+          "Search destination 1 location=",
+          "text=2026-11-19",
+          "text=10:57 AM",
+          "Enter number of passengers=6"
+        ]
+      },
+      "text": "Trip Leg Leg 1 Local Trip Leg #2 Local Outstation Transfer Leg 1 Multi-day Trip Drop at different location Pickup Location Pickup Date & Time Destinations First Destination * + Add Another Destination Drop Date & Time Passengers for Leg 1 + Add Another Leg Save As Draft Save! Skip Outstation Book No",
+      "shot": "screenshots/exec-ot/user-web-20261119-0838-MULTILEG/MLG-16-after-byhour.png",
+      "draftCalls": [
+        "BLOCKED POST /user/draft-inquiry/save",
+        "BLOCKED POST /user/draft-inquiry/save"
+      ]
+    }
+  ],
+  "finished": "2026-11-19T05:28:03.771Z",
+  "loads": [],
+  "net": [
+    "BLOCKED POST /user/draft-inquiry/save",
+    "BLOCKED POST /user/draft-inquiry/save"
+  ]
+}
